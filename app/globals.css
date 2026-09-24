@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: #fff;
+  color: #181511;
+  font-family: var(--font-poppins), sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle paper texture overlay (2-3% opacity grain) */
+.paper-grain {
+  position: relative;
+}
+
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #E7665D;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #E7665D;
+  outline-offset: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* 3D Book Cover realism effects */
+.book-spine-effect {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    -4px 0 12px -2px rgba(26, 23, 18, 0.22),
+    0 10px 30px -10px rgba(26, 23, 18, 0.25),
+    0 2px 4px rgba(26, 23, 18, 0.08);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.book-spine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 14px;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(0, 0, 0, 0.24) 45%,
+      rgba(0, 0, 0, 0.05) 70%,
+      rgba(255, 255, 255, 0.18) 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.book-spine-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* Deckle / Page edge side simulation */
+.book-edge-side {
+  position: relative;
+}
+
+.book-edge-side::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: -5px;
+  bottom: 2px;
+  width: 5px;
+  background: repeating-linear-gradient(to bottom,
+      #f5efe0 0px,
+      #ece3ce 1px,
+      #ffffff 2px);
+  border-radius: 0 2px 2px 0;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Subtle foil shine for seals and typography */
+.foil-gold-text {
+  color: #E7665D;
+  text-shadow: 0 0.5px 0.5px rgba(255, 255, 255, 0.6);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5efe0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F7D8D4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E7665D;
+}
