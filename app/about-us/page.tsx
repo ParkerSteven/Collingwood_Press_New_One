@@ -132,7 +132,7 @@ export default function AboutUsPage() {
         </section>
 
         {/* Team Anchor Section */}
-        <section id="team" className="py-14 lg:py-20 bg-paper border-b border-line">
+        <section id="team" className="py-10 lg:py-16 bg-paper border-b border-line">
           <Container className="flex flex-col gap-14">
             <SectionHeading
               eyebrow="Publishing Leadership"
