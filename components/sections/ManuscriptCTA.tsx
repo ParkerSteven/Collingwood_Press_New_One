@@ -126,7 +126,7 @@ export default function ManuscriptCTA() {
               </div>
 
               <div className="sm:col-span-2 mt-2">
-                <Button type="submit" variant="primary" size="lg" className="w-full">
+                <Button type="submit" variant="primary" size="lg" className="w-full font-sans">
                   <span>Submit Manuscript for Senior Editor Appraisal</span>
                   <ArrowRight size={15} />
                 </Button>

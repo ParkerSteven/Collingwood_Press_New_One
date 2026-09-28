@@ -18,13 +18,13 @@ export default function StatBar() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="flex flex-col items-center text-center px-4 sm:px-6 lg:border-r lg:border-white/10 lg:last:border-r-0"
             >
-              <span className="font-serif text-[2.75rem] sm:text-[3.25rem] font-normal leading-none text-[#D8574E] tracking-tight">
+              <span className="font-sans text-[2.3rem] sm:text-[2.7rem] font-semibold italic leading-none text-[#D8574E] tracking-tight">
                 {stat.value}
               </span>
               <span className="mt-3 font-sans text-[11px] sm:text-[11.5px] font-semibold tracking-[0.18em] uppercase text-[#666] leading-snug">
                 {stat.label}
               </span>
-              <span className="mt-1.5 max-w-[13rem] text-[0.8rem] text-[#666] leading-relaxed font-sans">
+              <span className="mt-1.5 max-w-[13rem] text-[0.8rem] text-[#666] font-normal leading-relaxed font-sans">
                 {stat.subtext}
               </span>
             </motion.div>

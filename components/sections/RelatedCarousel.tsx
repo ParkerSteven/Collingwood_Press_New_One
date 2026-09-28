@@ -112,7 +112,7 @@ export default function RelatedCarousel() {
     const container = scrollerRef.current;
     const card = container.querySelector<HTMLElement>(".book-carousel-card");
     const step = card ? card.offsetWidth + 24 : 220;
-    
+
     container.scrollBy({
       left: direction === "left" ? -step : step,
       behavior: "smooth",
@@ -131,7 +131,7 @@ export default function RelatedCarousel() {
   };
 
   return (
-    <section className="bg-[#0D1527] py-20 sm:py-24 lg:py-28 border-b border-white/10 text-white overflow-hidden relative">
+    <section className="hero-gradient py-20 sm:py-24 lg:py-28 border-b border-white/10 text-white overflow-hidden relative">
       <Container className="flex flex-col gap-12">
         {/* Header Row with Eyebrow, Title, and Scroll Navigation */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
@@ -175,8 +175,8 @@ export default function RelatedCarousel() {
         {/* Bookshelf Presentation Track */}
         <div className="relative w-full">
           {/* Subtle gradient side edge masks for cinematic entry */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-[#0D1527] to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-[#0D1527] to-transparent" />
+          {/* <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-[#0D1527] to-transparent" /> */}
+          {/* <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-[#0D1527] to-transparent" /> */}
 
           <div
             ref={scrollerRef}
@@ -234,11 +234,10 @@ export default function RelatedCarousel() {
                 key={`dot-${book.title}`}
                 onClick={() => scrollToIndex(i)}
                 aria-label={`Jump to book ${book.title}`}
-                className={`h-1.5 rounded-full transition-all ${
-                  activeIndex === i
-                    ? "w-8 bg-[#E7665D]"
-                    : "w-2 bg-white/20 hover:bg-white/40"
-                }`}
+                className={`h-1.5 rounded-full transition-all ${activeIndex === i
+                  ? "w-8 bg-[#E7665D]"
+                  : "w-2 bg-white/20 hover:bg-white/40"
+                  }`}
               />
             ))}
           </div>

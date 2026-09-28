@@ -14,7 +14,7 @@ export default function TrustBand() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-sm border border-white/10 bg-[#090f1d] p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden"
+          className="relative rounded-sm border border-white/10 hero-gradient p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden"
         >
           {/* Subtle background publisher emblem watermark */}
           <div className="absolute right-6 -bottom-10 pointer-events-none opacity-[0.03] text-white select-none">

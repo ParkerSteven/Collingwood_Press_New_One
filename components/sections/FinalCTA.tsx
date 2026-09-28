@@ -7,7 +7,7 @@ import { Phone, MapPin, Mail, Clock, ArrowRight } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="bg-[#0D1527] py-24 sm:py-28 lg:py-32 border-b border-white/10 text-white relative overflow-hidden">
+    <section className="hero-gradient py-24 sm:py-28 lg:py-32 border-b border-white/10 text-white relative overflow-hidden">
       {/* Background ambient editorial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E7665D]/5 blur-[120px] rounded-full pointer-events-none" />
 
