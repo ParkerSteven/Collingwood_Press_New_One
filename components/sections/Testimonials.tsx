@@ -59,13 +59,13 @@ export default function Testimonials() {
                 </div>
 
                 {/* Literary Quote */}
-                <blockquote className="font-serif italic text-[1.35rem] sm:text-[1.65rem] lg:text-[1.75rem] leading-[1.25] text-ink">
+                <blockquote className="font-sans text-ink-soft relative lg:top-8 pb-6  italic text-[1rem] sm:text-[1.2rem] lg:text-[1.3rem] leading-[1.25]">
                   &ldquo;{featured.quote}&rdquo;
                 </blockquote>
               </div>
 
               {/* Author Citation with larger portrait */}
-              <div className="mt-8 pt-6 border-t border-line/70 flex items-center gap-4">
+              <div className="pt-6 border-t border-line/70 flex items-center gap-4">
                 <img
                   src={featured.avatar}
                   alt={`Author portrait of ${featured.name}`}
@@ -74,13 +74,13 @@ export default function Testimonials() {
                 />
                 <div className="flex flex-col">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-serif text-[1.2rem] sm:text-[1.3rem] font-medium text-ink leading-tight">
+                    <h3 className="font-sans text-[1.2rem] sm:text-[1.3rem] font-medium text-ink leading-tight">
                       {featured.name}
                     </h3>
                     <CheckCircle size={14} className="text-[#E7665D] shrink-0" />
                   </div>
                   <span className="font-sans text-xs text-ink-muted mt-0.5">
-                    {featured.role} &bull; Author of <span className="italic font-serif text-ink">{featured.book}</span>
+                    {featured.role} &bull; Author of <span className="italic font-sans text-ink">{featured.book}</span>
                   </span>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function Testimonials() {
                       className="w-10 h-10 rounded-full object-cover border border-line"
                     />
                     <div className="overflow-hidden">
-                      <p className={`font-serif text-[0.98rem] leading-tight truncate ${isSelected ? "text-[#E7665D] font-medium" : "text-ink"}`}>
+                      <p className={`font-sans text-[0.98rem] leading-tight truncate ${isSelected ? "text-[#E7665D] font-medium" : "text-ink"}`}>
                         {t.name}
                       </p>
                       <p className="font-sans text-[11px] text-ink-muted truncate mt-0.5">
@@ -151,7 +151,7 @@ export default function Testimonials() {
                     </div>
                   </div>
 
-                  <p className="mt-3 font-serif italic text-xs text-ink-soft line-clamp-2 leading-relaxed">
+                  <p className="mt-3 font-sans italic text-xs text-ink-soft line-clamp-2 leading-relaxed">
                     &ldquo;{t.quote}&rdquo;
                   </p>
 

@@ -29,7 +29,7 @@ export default function FinalCTA() {
           </div>
 
           {/* Headline */}
-          <h2 className="mt-5 font-serif text-[2.8rem] sm:text-[3.6rem] lg:text-[4.2rem] font-medium leading-[1.06] text-white tracking-tight text-balance">
+          <h2 className="mt-5 font-serif text-[2.5rem] sm:text-[3rem] lg:text-[3.3rem] font-medium leading-[1.06] text-white tracking-tight text-balance">
             Your manuscript is ready.{" "}
             <span className="italic text-[#F08A82] block sm:inline font-normal">
               Let&rsquo;s make it a book.

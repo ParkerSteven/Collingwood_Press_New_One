@@ -24,7 +24,7 @@ export default function SectionHeading({
     <div className={`flex flex-col gap-4 sm:gap-5 max-w-3xl ${align === "center" ? "mx-auto" : ""} ${alignment} ${className}`}>
       {eyebrow && <Eyebrow tone={tone} align={align}>{eyebrow}</Eyebrow>}
       <h2
-        className={`font-serif text-[2.1rem] sm:text-[2.6rem] lg:text-[2.9rem] font-medium leading-[1.12] text-ink tracking-tight text-balance ${titleClassName}`}
+        className={`font-serif text-[1.5rem] sm:text-[2rem] lg:text-[2.4rem] font-medium leading-[1.12] text-ink tracking-tight text-balance ${titleClassName}`}
       >
         {title}
       </h2>

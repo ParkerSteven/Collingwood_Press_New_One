@@ -37,7 +37,7 @@ export default function CoverSpotlight() {
                 <Award size={14} />
               </span>
               <div>
-                <span className="font-serif text-[15px] font-medium text-ink">
+                <span className="font-sans text-[15px] font-medium text-ink">
                   Exhibition Archive: Commission No. 842
                 </span>
                 <span className="font-sans text-[11px] text-ink-muted block mt-0.5">
@@ -78,17 +78,17 @@ export default function CoverSpotlight() {
                   className="w-12 h-12 rounded-full object-cover border border-line shadow-sm"
                 />
                 <div>
-                  <h4 className="font-serif text-[1.18rem] font-medium text-ink">
+                  <h4 className="font-sans text-[1.18rem] font-medium text-ink">
                     John Terrell
                   </h4>
                   <p className="font-sans text-xs text-ink-muted">
-                    Author of <span className="italic font-serif">The Last King</span> &bull; 1st Edition
+                    Author of <span className="italic font-sans">The Last King</span> &bull; 1st Edition
                   </p>
                 </div>
               </div>
 
               {/* Pull Quote */}
-              <blockquote className="font-serif italic text-[1.25rem] sm:text-[1.38rem] leading-snug text-ink text-balance border-l-2 border-[#E7665D] pl-5 my-0.5">
+              <blockquote className="font-sans italic text-[1] sm:text-[1.1rem] leading-snug text-ink text-balance border-l-2 border-[#E7665D] pl-5 my-0.5">
                 &ldquo;Our book covers are a piece of art that you can show your friends. The final
                 design exceeded our wildest dreams—the embossed foil lettering and the cinematic mood
                 drew readers the moment we unveiled the proofs.&rdquo;
@@ -100,7 +100,7 @@ export default function CoverSpotlight() {
                   <span className="text-[10px] uppercase tracking-wider text-ink-muted font-semibold block">
                     Typography Specimen
                   </span>
-                  <span className="font-serif font-medium text-ink mt-1 block">
+                  <span className="font-sans font-medium text-ink mt-1 block">
                     Classical Cormorant &amp; Trajan
                   </span>
                 </div>
@@ -108,7 +108,7 @@ export default function CoverSpotlight() {
                   <span className="text-[10px] uppercase tracking-wider text-ink-muted font-semibold block">
                     Finishing Treatment
                   </span>
-                  <span className="font-serif font-medium text-ink mt-1 block">
+                  <span className="font-sans font-medium text-ink mt-1 block">
                     Soft-Touch Matte + Gold Foil
                   </span>
                 </div>

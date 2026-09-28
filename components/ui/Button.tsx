@@ -15,13 +15,13 @@ interface ButtonProps {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#E7665D] text-white border border-[#E7665D] hover:bg-[#d8574e] hover:border-[#d8574e] active:bg-[#c2463e] transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5",
+    "button-primary text-white border border-[#E7665D] shadow-sm hover:shadow-lg hover:-translate-y-0.5",
   outline:
     "bg-transparent text-ink border border-line-strong hover:border-[#E7665D] hover:text-[#E7665D] hover:bg-paper-card transition-all duration-200 active:bg-paper-warm",
   secondary:
     "bg-paper-card text-ink border border-line hover:border-line-strong hover:bg-paper-warm active:bg-paper-muted shadow-subtle transition-all duration-200",
   dark:
-    "bg-ink text-white border border-ink hover:bg-[#2A241C] hover:border-[#2A241C] active:bg-[#151310] shadow-subtle transition-all duration-200",
+    "bg-gradient-to-r from-[#181511] to-[#363028] text-white border border-ink hover:from-[#2A241C] hover:to-[#484036] hover:border-[#2A241C] active:from-[#151310] active:to-[#2A241C] shadow-subtle hover:shadow-md transition-all duration-300",
 };
 
 const sizes = {
@@ -39,7 +39,7 @@ export default function Button({
   type = "button",
   onClick,
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-sm font-sans font-medium tracking-[0.02em] transition-all duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E7665D] disabled:opacity-60 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`;
+  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-md font-sans font-medium tracking-[0.02em] transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E7665D] disabled:opacity-60 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (

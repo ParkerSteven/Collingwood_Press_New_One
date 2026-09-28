@@ -52,7 +52,7 @@ export default function MarketingServices() {
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3.5 font-sans text-[0.91rem] leading-relaxed text-ink-muted">
+                  <p className="mt-3.5 font-sans text-[0.81rem] leading-relaxed text-ink-muted">
                     {service.description}
                   </p>
 

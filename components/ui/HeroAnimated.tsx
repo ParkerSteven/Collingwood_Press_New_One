@@ -32,7 +32,7 @@ export default function HeroAnimated() {
                     initial="hidden"
                     animate="show"
                     custom={1}
-                    className="mt-6 font-serif text-[3rem] sm:text-[3.8rem] lg:text-[4.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance"
+                    className="mt-6 font-serif text-[3rem] sm:text-[3.8rem] lg:text-[3.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance"
                 >
                     You wrote the book.{" "}
                     <span className="text-[#E7665D] italic font-normal inline">

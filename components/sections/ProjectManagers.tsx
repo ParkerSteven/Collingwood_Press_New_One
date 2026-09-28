@@ -52,7 +52,7 @@ export default function ProjectManagers() {
                     <span className="font-sans text-[10px] uppercase tracking-[0.16em] text-white/80 font-medium block mb-1">
                       {pm.experience}
                     </span>
-                    <h3 className="font-serif text-[1.45rem] font-medium leading-tight">
+                    <h3 className="font-sans text-[1.45rem] font-medium leading-tight">
                       {pm.name}
                     </h3>
                   </div>
@@ -70,7 +70,7 @@ export default function ProjectManagers() {
                   </div>
 
                   {/* Philosophy Quote */}
-                  <div className="p-3.5 rounded-sm bg-[#fdf6f5] border-l-2 border-[#E7665D] text-xs font-serif italic text-ink/90 leading-relaxed">
+                  <div className="p-3.5 rounded-sm bg-[#fdf6f5] border-l-2 border-[#E7665D] text-xs font-sans italic text-ink/90 leading-relaxed">
                     {pm.philosophy}
                   </div>
 

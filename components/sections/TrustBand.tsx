@@ -31,7 +31,7 @@ export default function TrustBand() {
                 </span>
               </div>
 
-              <h2 className="font-serif text-[2.2rem] sm:text-[2.75rem] lg:text-[3rem] font-medium leading-[1.08] text-white text-balance">
+              <h2 className="font-serif text-[1.5rem] sm:text-[2rem] lg:text-[2.2rem] font-medium leading-[1.08] text-white text-balance">
                 The internet is full of promises.{" "}
                 <span className="italic font-normal text-[#F08A82] block sm:inline">
                   Not all of them are real.

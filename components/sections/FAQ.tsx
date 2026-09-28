@@ -46,10 +46,10 @@ export default function FAQ() {
                   className="flex w-full items-start sm:items-center justify-between gap-4 py-5 sm:py-6 text-left cursor-pointer transition-colors"
                 >
                   <div className="flex items-start sm:items-center gap-4 sm:gap-6 flex-1 pr-2">
-                    <span className="font-serif text-lg sm:text-xl font-normal text-ink-muted/50 group-hover:text-[#E7665D] transition-colors shrink-0">
+                    <span className="font-sans text-lg sm:text-xl font-normal text-ink-muted/50 group-hover:text-[#E7665D] transition-colors shrink-0">
                       {numberFormatted}
                     </span>
-                    <span className={`font-serif text-[1.12rem] sm:text-[1.28rem] font-medium leading-snug transition-colors ${isOpen ? "text-[#E7665D]" : "text-ink group-hover:text-ink-soft"
+                    <span className={`font-sans text-[1rem] italic sm:text-[1.18rem] font-normal leading-snug transition-colors ${isOpen ? "text-[#E7665D]" : "text-ink-soft group-hover:text-ink-soft"
                       }`}>
                       {faq.question}
                     </span>
