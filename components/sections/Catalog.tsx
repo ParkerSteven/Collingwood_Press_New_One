@@ -43,6 +43,7 @@ export default function Catalog() {
                     accent={book.accent}
                     artTheme={book.artTheme}
                     elevation={true}
+                    frontSrc={book.frontSrc}
                   />
                 </div>
 

@@ -30,11 +30,11 @@ export default function ProjectManagers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.55, delay: i * 0.1 }}
-              className="group flex flex-col justify-between rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_6px_32px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden"
+              className="group flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden"
             >
               <div>
                 {/* Executive Portrait with Editorial Frame */}
-                <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-[#fdf6f5]">
+                <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-[#1C2434]">
                   <img
                     src={pm.avatar}
                     alt={`Portrait of ${pm.name}, ${pm.title}`}

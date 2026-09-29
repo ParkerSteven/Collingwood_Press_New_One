@@ -107,39 +107,37 @@ const StickySocialStrip = () => {
     ];
 
     return (
-        <div className="fixed left-0 top-[40%] z-[9999] hidden -translate-y-1/2 md:flex">
-            <div className="flex flex-col items-center gap-1.5 rounded-r-xl border border-l-0 border-white/20 bg-gradient-to-b from-[#1d2a48]/95 to-[#111a33]/95 px-1.5 py-2.5 shadow-[0_10px_24px_rgba(4,10,30,0.42)] backdrop-blur-md">
+        <div className="fixed left-0 top-1/2 z-[9999] hidden -translate-y-1/2 md:flex">
+            <div className="flex flex-col items-center gap-1.5 rounded-r-2xl border border-l-0 border-white/20 bg-gradient-to-b from-[#1d2a48]/95 to-[#111a33]/95 px-2 py-3 shadow-[0_10px_24px_rgba(4,10,30,0.42)] backdrop-blur-md">
                 {/* BBB Seal */}
                 <Link
                     href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
                     target="_blank"
                     rel="nofollow"
                     aria-label="Open BBB profile"
-                    className="mb-1 rounded-md border border-white/30 bg-white/95 p-1 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                    className="mb-0.5 flex w-9 items-center justify-center rounded-md border border-white/30 bg-white/95 p-1 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                 >
                     <img
                         src="https://seal-austin.bbb.org/seals/blue-seal-63-134-bbb-1000231047.png"
                         alt="BBB Review"
                         width={28}
                         height={60}
-                        className="h-auto w-7"
+                        className="h-auto w-7 object-contain"
                     />
-
                 </Link>
                 <Link
                     href="https://www.ibpa-online.org/"
                     target="_blank"
                     rel="nofollow"
-                    aria-label="Open BBB profile"
-                    className="mb-1 rounded-md border border-white/30 bg-white/95 p-1 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                    aria-label="Open IBPA profile"
+                    className="mb-1 flex w-9 items-center justify-center rounded-md border border-white/30 bg-white/95 p-1 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                 >
-
                     <img
                         src={ibpaonline.src}
                         alt="IBPA Online"
                         width={28}
-                        height={60}
-                        className="h-auto w-7 gap-1.5"
+                        height={36}
+                        className="h-auto w-7 object-contain"
                     />
                 </Link>
 
@@ -151,22 +149,22 @@ const StickySocialStrip = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Open ${social.name}`}
-                        className="group grid h-8 w-8 place-items-center rounded-sm border border-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-[0_5px_14px_rgba(0,0,0,0.26)]"
+                        className="group grid h-9 w-9 place-items-center rounded-md border border-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-[0_5px_14px_rgba(0,0,0,0.26)]"
                         title={social.name}
                     >
                         {social.img ? (
                             <img
                                 src={social.img.src}
                                 alt={`${social.name} Icon`}
-                                width={26}
-                                height={26}
-                                className="h-[26px] w-[26px] transition-transform duration-300 group-hover:scale-105"
+                                width={28}
+                                height={28}
+                                className="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-110"
                             />
-                        ) :
-                            <div className="flex h-[26px] w-[26px] items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                        ) : (
+                            <div className="flex h-7 w-7 items-center justify-center transition-transform duration-300 group-hover:scale-110 [&>svg]:h-full [&>svg]:w-full">
                                 {social.icon}
                             </div>
-                        }
+                        )}
                     </Link>
                 ))}
             </div>

@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Compass, Megaphone, Trophy, ArrowRight } from "lucide-react";
+import { Check, Globe2, Megaphone, Store, ArrowRight, CheckCircle2 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { marketingServices } from "@/lib/data";
 
-const icons = [Compass, Megaphone, Trophy];
+const icons = [Globe2, Megaphone, Store];
 
 export default function MarketingServices() {
   return (
@@ -33,26 +33,31 @@ export default function MarketingServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="group relative flex flex-col justify-between rounded-sm border border-[#E7665D]/25 bg-white p-8 sm:p-9 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_6px_32px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white p-8 sm:p-9 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300"
               >
                 <div className="flex flex-col">
                   {/* Icon + Number + Badge */}
                   <div className="flex items-center justify-between pb-5 mb-5 border-b border-line/70">
-                    <span className="font-serif text-2xl font-normal text-ink-muted/50 group-hover:text-[#E7665D] transition-colors">
-                      0{i + 1}
-                    </span>
-                    <span className="font-sans text-[10.5px] uppercase tracking-[0.16em] text-ink-muted font-semibold bg-[#fdf6f5] px-2.5 py-1 rounded-sm border border-[#E7665D]/20">
+                    <div className="flex items-center gap-3.5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 shadow-sm group-hover:bg-[#E7665D] group-hover:text-white group-hover:border-[#E7665D] group-hover:scale-105 transition-all duration-300">
+                        <Icon size={24} strokeWidth={1.75} />
+                      </div>
+                      <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
+                        0{i + 1}
+                      </span>
+                    </div>
+                    <span className="font-sans text-[10.5px] uppercase tracking-[0.16em] text-ink-muted font-semibold bg-[#fdf6f5] px-2.5 py-1 rounded-md border border-[#E7665D]/20">
                       {service.badge}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-[1.35rem] font-medium text-ink leading-snug group-hover:text-ink transition-colors">
+                  <h3 className="font-serif text-[1.4rem] font-medium text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3.5 font-sans text-[0.81rem] leading-relaxed text-ink-muted">
+                  <p className="mt-3.5 font-sans text-[0.88rem] leading-relaxed text-ink-muted">
                     {service.description}
                   </p>
 

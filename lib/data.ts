@@ -182,7 +182,7 @@ export const projectManagers: ProjectManager[] = [
     experience: "24 Years in Literary & Trade Publishing",
     bio: "Former acquisitions editor for East Coast literary presses. Michael has guided over 400 titles from initial manuscript evaluation through global bookstore distribution.",
     philosophy: "“A true editor doesn't rewrite your story; they polish the glass until your original light shines without distortion.”",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&h=480&q=80", // Will be swapped with distinguished portraits below
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&h=750&q=85",
     specialties: ["Developmental Editing", "Commercial Narrative Pacing", "Trade Acquisitions"],
   },
   {
@@ -191,7 +191,7 @@ export const projectManagers: ProjectManager[] = [
     experience: "16 Years in Author Publishing",
     bio: "With an editorial background spanning university presses and independent imprints, Rachel coordinates every author's timeline, production milestones, and marketing launch with calm precision.",
     philosophy: "“Writing is an intensely solitary act. Publishing should never feel that way.”",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=480&q=80",
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&h=750&q=85",
     specialties: ["Author Positioning", "Launch Strategy", "Editorial Project Management"],
   },
   {
@@ -200,50 +200,50 @@ export const projectManagers: ProjectManager[] = [
     experience: "18 Years in Book Architecture & Design",
     bio: "A master of classical book design and digital typography, Sarah inspects proof pages letter-by-letter to ensure flawless kerning, binding integrity, and print perfection.",
     philosophy: "“The finest typography is silent—it invites the reader deep into the prose without demanding applause for itself.”",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=480&q=80",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&h=750&q=85",
     specialties: ["Book Interior Architecture", "Dust Jacket Finishes", "Print Galley Proofing"],
   },
 ];
 
-// Let's refine Michael Turner's avatar to a distinguished male editorial portrait
-projectManagers[0].avatar = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=480&q=80";
-
 export const catalogBooks = [
   {
-    title: "Goodfidence",
-    subtitle: "A Primer on Quiet Financial Independence",
-    author: "Brandon Estelle, PhD",
-    genre: "Personal Finance & Philosophy",
-    blurb: "“A masterclass in accessible financial thought that reads with the grace of timeless literature.”",
-    citation: "Financial Review Weekly",
-    specs: "Hardcover with Linen Spine • 288 Pages • ISBN 978-1-954",
+    title: "Space World",
+    subtitle: "A Celestial Odyssey of Cosmic Discovery",
+    author: "Josh Emerson",
+    genre: "Illustrated Sci-Fi & Speculative Fiction",
+    blurb: "“A visual and narrative triumph that pairs breathtaking cosmic illustration with profound speculative philosophy.”",
+    citation: "The Speculative Review",
+    specs: "Hardcover with Silver Foil • 340 Pages • ISBN 978-1-954",
     bg: "#1C2434",
     accent: "#D4B07B",
     artTheme: "geometric" as const,
+    frontSrc: "/assets/images/PublishedAuthors/JoshEmerson/josh COVER DESIGN front.jpg",
   },
   {
     title: "Fate of the Silver Wolf",
     subtitle: "Chronicles of the Northern Marches, Vol. I",
-    author: "Gregory T. Weatherby",
-    genre: "Historical & Epic Fantasy",
-    blurb: "“Immaculate worldbuilding complemented by an embossed collector's edition that belongs on every collector's shelf.”",
+    author: "Sonya E. Maestler",
+    genre: "Dark Fantasy & Supernatural Thriller",
+    blurb: "“Immaculate worldbuilding complemented by a dark, brooding cover illustration that commands attention on any shelf.”",
     citation: "The Historical Fiction Guild",
     specs: "Foil-Embossed Hardcover • 464 Pages • ISBN 978-1-955",
     bg: "#1E332A",
     accent: "#E2C38F",
     artTheme: "foliage" as const,
+    frontSrc: "/assets/images/PublishedAuthors/susan-clark/WOLF FULL BOOK COVER DESIGN front.jpg",
   },
   {
-    title: "The Liberation of Sue Moody",
-    subtitle: "A Novel of Second Chances",
-    author: "Joel Radford",
-    genre: "Contemporary Literary Fiction",
-    blurb: "“Quiet, devastatingly observant, and printed with the restrained elegance of a mid-century classic.”",
+    title: "The Politician's Curse",
+    subtitle: "A Satirical Chronicle of Modern Power",
+    author: "Michael D. Evans",
+    genre: "Satirical Fiction & Illustrated Narrative",
+    blurb: "“Biting satire meets vivid editorial illustration—a bold, unforgettable work of contemporary literary wit.”",
     citation: "Independent Book Review",
     specs: "French-Fold Trade Paperback • 312 Pages • ISBN 978-1-956",
     bg: "#872E1E",
     accent: "#F6DFB7",
     artTheme: "coast" as const,
+    frontSrc: "/assets/images/PublishedAuthors/Michael D. Evans/front.jpg",
   },
 ];
 

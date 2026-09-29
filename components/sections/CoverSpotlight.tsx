@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import BookCover from "@/components/ui/BookCover";
-import { Sparkles, Palette, ArrowRight, Award } from "lucide-react";
+import { Palette, ArrowRight, Award } from "lucide-react";
 
 export default function CoverSpotlight() {
   return (
@@ -28,10 +29,10 @@ export default function CoverSpotlight() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-70px" }}
           transition={{ duration: 0.65 }}
-          className="mx-auto w-full max-w-4xl rounded-sm border border-[#E7665D]/25 bg-white p-6 sm:p-10 lg:p-12 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)]"
+          className="mx-auto w-full max-w-4xl rounded-lg border border-[#E7665D]/25 bg-white p-5 shadow-[0_6px_32px_0_rgba(231,102,93,0.14),0_1px_4px_0_rgba(0,0,0,0.06)] sm:p-8 lg:p-10"
         >
           {/* Gallery Header Plaque */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 mb-8 border-b border-line/80 gap-3">
+          <div className="mb-6 flex flex-col items-start justify-between gap-3 border-b border-line/80 pb-5 sm:mb-8 sm:flex-row sm:items-center">
             <div className="flex items-center gap-3">
               <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-[#E7665D]/10 text-[#E7665D] text-xs border border-[#E7665D]/20">
                 <Award size={14} />
@@ -53,33 +54,37 @@ export default function CoverSpotlight() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 items-center gap-7 min-[480px]:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-12">
             {/* Book Cover Showcase with enhanced depth */}
-            <div className="mx-auto w-52 sm:w-60 drop-shadow-[0_20px_30px_rgba(24,21,17,0.22)] transition-transform duration-300 hover:scale-[1.03]">
+            <div className="mx-auto w-32 drop-shadow-[0_24px_36px_rgba(24,21,17,0.28)] transition-transform duration-300 hover:scale-[1.03] sm:w-36 lg:w-44">
               <BookCover
                 title="The Last King"
                 subtitle="A Chronicle of Crown &amp; Blood"
-                author="John Terrell"
+                author="Josh Peter"
                 genre="Historical Thriller"
                 bg="#191B24"
                 accent="#F08A82"
                 artTheme="geometric"
                 elevation={true}
+                frontSrc="/assets/images/PublishedAuthors/Josh Peter/Book (4).png"
               />
             </div>
 
             {/* Author Pull Quote & Case Study */}
-            <div className="flex flex-col gap-6">
+            <div className="flex min-w-0 flex-col gap-5 sm:gap-6">
               {/* Author Citation with Portrait */}
-              <div className="flex items-center gap-3.5">
-                <img
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&h=160&q=80"
-                  alt="Author John Terrell"
-                  className="w-12 h-12 rounded-full object-cover border border-line shadow-sm"
+              <div className="flex flex-col items-center gap-3.5 text-center lg:flex-row lg:items-center lg:text-left">
+                <Image
+                  src="/assets/images/PublishedAuthors/Josh Peter/Chc 1.png"
+                  alt="Author Josh Peter"
+                  width={192}
+                  height={192}
+                  sizes="(max-width: 640px) 160px, 192px"
+                  className="h-40 w-40 shrink-0 rounded-full border-2 border-[#E7665D]/30 object-cover shadow-sm sm:h-48 sm:w-48"
                 />
-                <div>
+                <div className="min-w-0">
                   <h4 className="font-sans text-[1.18rem] font-medium text-ink">
-                    John Terrell
+                    Josh Peter
                   </h4>
                   <p className="font-sans text-xs text-ink-muted">
                     Author of <span className="italic font-sans">The Last King</span> &bull; 1st Edition
@@ -88,14 +93,14 @@ export default function CoverSpotlight() {
               </div>
 
               {/* Pull Quote */}
-              <blockquote className="font-sans italic text-[1] sm:text-[1.1rem] leading-snug text-ink text-balance border-l-2 border-[#E7665D] pl-5 my-0.5">
+              <blockquote className="my-0.5 border-l-2 border-[#E7665D] pl-4 font-sans text-sm italic leading-snug text-ink text-balance sm:pl-5 sm:text-base">
                 &ldquo;Our book covers are a piece of art that you can show your friends. The final
                 design exceeded our wildest dreams—the embossed foil lettering and the cinematic mood
                 drew readers the moment we unveiled the proofs.&rdquo;
               </blockquote>
 
               {/* Design Breakdown Pills */}
-              <div className="grid grid-cols-2 gap-3 pt-1 text-xs font-sans text-ink-soft">
+              <div className="grid grid-cols-1 gap-2 pt-1 font-sans text-xs text-ink-soft sm:grid-cols-2 sm:gap-3">
                 <div className="p-3 rounded-sm bg-[#fdf6f5] border border-[#E7665D]/20">
                   <span className="text-[10px] uppercase tracking-wider text-ink-muted font-semibold block">
                     Typography Specimen
@@ -116,7 +121,7 @@ export default function CoverSpotlight() {
 
               {/* Solid Button */}
               <div className="pt-2">
-                <Button href="/contact-us#manuscript-review" variant="primary" size="md">
+                <Button href="/contact-us#manuscript-review" variant="primary" size="md" className="max-w-full text-center text-xs sm:text-sm">
                   <span>Commission Your Book Cover Design</span>
                   <ArrowRight size={14} />
                 </Button>
