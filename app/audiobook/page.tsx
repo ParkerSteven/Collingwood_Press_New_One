@@ -3,6 +3,7 @@
 import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -205,36 +206,60 @@ export default function AudiobookPage() {
                 Your Audiobook, Where <em className="italic text-[#E7665D]">Listeners Already Are</em>
               </h2>
               <p className="mt-3.5 text-sm sm:text-base text-ink-muted text-center max-w-2xl mx-auto leading-relaxed font-sans">
-                                Paid search, social campaigns, video, email and reader communities.<br className="hidden sm:inline" />
-                                {" "}We set them up, run them together, and report on each one.
-                            </p>
+                Paid search, social campaigns, video, email and reader communities.<br className="hidden sm:inline" />
+                {" "}We set them up, run them together, and report on each one.
+              </p>
             </div>
           </div>
 
-          <div className="relative pt-4 pb-10 mb-14">
-            <div className="audio-logo-viewport" role="region" aria-label="Audiobook distribution platforms">
-              <div className="audio-logo-track">
-                {[0, 1].map((copy) => (
-                  <div
-                    key={copy}
-                    className="audio-logo-group"
-                    aria-hidden={copy === 1 ? true : undefined}
-                  >
-                    {platforms.map((r) => (
-                      <div key={`${r.name}-${copy}`} className="audio-logo-card">
-                        <span className="audio-logo-symbol">
+          <div
+            className="mk-platform-viewport relative pt-4 pb-10 mb-14"
+            role="region"
+            aria-label="Audiobook distribution platforms"
+          >
+            <div className="mk-platform-track">
+              {[0, 1].map((copy) => (
+                <div
+                  key={copy}
+                  className="mk-platform-group"
+                  aria-hidden={copy === 1 ? true : undefined}
+                >
+                  {platforms.map((r) => (
+                    <div
+                      key={`${r.name}-${copy}`}
+                      className="flip-card mk-platform-card"
+                      tabIndex={copy === 0 ? 0 : -1}
+                      aria-label={`${r.name} audiobook distribution platform`}
+                    >
+                      <div className="flip-inner">
+                        <div className="flip-face mk-platform-front">
+                          <span className="font-serif text-[16px] tracking-wide text-ink text-center px-3 font-semibold">
+                            {r.name}
+                          </span>
+                        </div>
+                        <div className="flip-face flip-back mk-platform-back">
                           {r.mark ? (
-                            <img src={r.mark} alt="" aria-hidden="true" loading="lazy" />
+                            <Image
+                              src={r.mark}
+                              alt=""
+                              aria-hidden="true"
+                              width={150}
+                              height={42}
+                              className="max-h-[42px] max-w-[150px] w-auto object-contain"
+                            />
                           ) : (
-                            <Headphones size={32} aria-hidden="true" />
+                            <Headphones
+                              size={32}
+                              aria-hidden="true"
+                              className="text-[#A83E39]"
+                            />
                           )}
-                        </span>
-                        <span className="audio-logo-name">{r.name}</span>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
 
