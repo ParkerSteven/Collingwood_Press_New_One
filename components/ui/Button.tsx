@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 
-export type ButtonVariant = "primary" | "outline" | "dark" | "secondary";
+export type ButtonVariant = "primary" | "outline" | "outline-white" | "dark" | "secondary";
 
 interface ButtonProps {
   children: ReactNode;
@@ -18,6 +18,8 @@ const variants: Record<ButtonVariant, string> = {
     "button-primary text-white border border-[#E7665D] shadow-sm hover:shadow-lg hover:-translate-y-0.5",
   outline:
     "bg-transparent text-ink border border-line-strong hover:border-[#E7665D] hover:text-[#E7665D] hover:bg-paper-card transition-all duration-200 active:bg-paper-warm",
+  "outline-white":
+    "bg-transparent text-white border border-white/40 hover:border-white hover:text-white hover:bg-white/10 transition-all duration-300 active:bg-white/20",
   secondary:
     "bg-paper-card text-ink border border-line hover:border-line-strong hover:bg-paper-warm active:bg-paper-muted shadow-subtle transition-all duration-200",
   dark:

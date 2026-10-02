@@ -7,13 +7,13 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { 
-  FileCheck2, 
-  Sparkles, 
-  BookOpen, 
-  CheckCircle2, 
-  Search, 
-  Layers, 
+import {
+  FileCheck2,
+  Sparkles,
+  BookOpen,
+  CheckCircle2,
+  Search,
+  Layers,
   ArrowRight,
   ShieldCheck,
   Check,
@@ -76,23 +76,21 @@ export default function EditingPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink">
+      <main className="bg-white text-ink">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-paper pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-line">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.02] mix-blend-multiply bg-[radial-gradient(#181A1F_1px,transparent_1px)] [background-size:24px_24px]" />
-          
+        <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
           <Container>
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <Eyebrow tone="gold">
+              <Eyebrow tone="coral" align="center">
                 Trade Publishing Standards &bull; Chicago Manual of Style
               </Eyebrow>
 
-              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] font-bold leading-[1.08] text-ink tracking-tight text-balance">
+              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
                 Every line sharpened.{" "}
-                <span className="text-[#B8964E] block sm:inline">Every voice preserved.</span>
+                <span className="italic text-[#E7665D] block sm:inline">Every voice preserved.</span>
               </h1>
 
-              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-ink-soft font-sans max-w-2xl">
+              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
                 Real trade publishing requires more than automated spelling checks. Our senior editors read your prose with literary sensitivity, challenging your manuscript where it needs discipline and honoring it where it shines.
               </p>
 
@@ -101,22 +99,22 @@ export default function EditingPage() {
                   <span>Claim a Free 1,000-Word Sample Edit</span>
                   <ArrowRight size={15} />
                 </Button>
-                <Button href="#tiers" variant="outline" size="lg">
+                <Button href="#tiers" variant="outline-white" size="lg">
                   <span>View Editorial Tiers</span>
                 </Button>
               </div>
 
-              <div className="mt-10 pt-6 border-t border-line flex flex-wrap items-center justify-center gap-6 text-xs text-ink-muted">
+              <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-[#C5A059]" />
+                  <CheckCircle2 size={14} className="text-[#E7665D]" />
                   <span>Experienced Trade Press Editors</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={14} className="text-[#C5A059]" />
+                  <ShieldCheck size={14} className="text-[#E7665D]" />
                   <span>Chicago Manual of Style 17th Edition</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <FileCheck2 size={14} className="text-[#C5A059]" />
+                  <FileCheck2 size={14} className="text-[#E7665D]" />
                   <span>Track Changes &amp; Direct Phone Calls</span>
                 </div>
               </div>
@@ -125,14 +123,14 @@ export default function EditingPage() {
         </section>
 
         {/* The 4 Editorial Tiers */}
-        <section id="tiers" className="py-20 lg:py-28 bg-paper-warm border-b border-line">
+        <section id="tiers" className="py-20 lg:py-28 bg-white border-b border-line">
           <Container className="flex flex-col gap-14">
             <SectionHeading
               eyebrow="Comprehensive Editorial Rigor"
               title={
                 <>
                   Four distinct levels of{" "}
-                  <span className="italic text-[#9E7C35]">editorial craftsmanship</span>
+                  <span className="italic text-[#E7665D]">editorial craftsmanship</span>
                 </>
               }
               description="From high-level architectural surgery to final word-by-word proofing, each tier fulfills a vital role in taking your manuscript from raw draft to trade-grade volume."
@@ -142,14 +140,14 @@ export default function EditingPage() {
               {editorialTiers.map((item) => (
                 <div
                   key={item.name}
-                  className="p-8 sm:p-10 rounded-xs border border-line bg-paper-card shadow-card flex flex-col justify-between hover:border-[#C5A059]/40 hover:shadow-cardHover transition-all"
+                  className="p-8 sm:p-10 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between hover:border-[#E7665D]/50 transition-all duration-300"
                 >
                   <div>
                     <div className="flex items-center justify-between pb-4 mb-4 border-b border-line">
-                      <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#9E7C35]">
+                      <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D]">
                         {item.tier}
                       </span>
-                      <span className="font-sans text-[11px] text-ink-muted bg-paper-warm px-2.5 py-1 rounded-xs border border-line">
+                      <span className="font-sans text-[11px] text-ink-muted bg-[#fdf6f5] px-2.5 py-1 rounded-sm border border-[#E7665D]/20">
                         {item.tagline}
                       </span>
                     </div>
@@ -163,13 +161,13 @@ export default function EditingPage() {
                     </p>
 
                     <div className="mt-6 pt-5 border-t border-line/70">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#9E7C35] block mb-3">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#E7665D] block mb-3">
                         Included Focus Areas
                       </span>
                       <ul className="flex flex-col gap-2.5 text-xs text-ink-soft">
                         {item.focus.map((pt) => (
                           <li key={pt} className="flex items-start gap-2">
-                            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#C5A059]/15 text-[#9E7C35] text-[10px] mt-0.5 font-bold">
+                            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#E7665D]/15 text-[#E7665D] text-[10px] mt-0.5 font-bold">
                               ✓
                             </span>
                             <span>{pt}</span>
@@ -185,10 +183,11 @@ export default function EditingPage() {
         </section>
 
         {/* Sample Edit Callout */}
-        <section className="py-20 bg-[#0D1527] text-white border-b border-[#1E293B]">
-          <Container>
+        <section className="hero-gradient py-20 text-white border-b border-white/10 relative overflow-hidden paper-grain">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
+          <Container className="relative z-10">
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E8C98B]">
+              <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
                 Risk-Free Sample Evaluation
               </span>
               <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">

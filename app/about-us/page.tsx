@@ -51,22 +51,21 @@ export default function AboutUsPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink">
+      <main className="bg-white text-ink">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-paper pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-line">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.02] mix-blend-multiply bg-[radial-gradient(#181A1F_1px,transparent_1px)] [background-size:24px_24px]" />
+        <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
           <Container>
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <Eyebrow tone="gold">
+              <Eyebrow tone="coral" align="center">
                 Founded 2009 &bull; Subsidiary of Hambone Publishers LLC
               </Eyebrow>
 
-              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] font-bold leading-[1.08] text-ink tracking-tight text-balance">
+              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
                 Dedicated to shepherding fine manuscripts into{" "}
-                <span className="text-[#B8964E] block sm:inline">shelf-ready literature.</span>
+                <span className="italic text-[#E7665D] block sm:inline">shelf-ready literature.</span>
               </h1>
 
-              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-ink-soft font-sans max-w-2xl">
+              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
                 The Collingwood Press was established on a simple, enduring premise: that independent authors deserve the exact same editorial caliber, typographical majesty, and global bookstore distribution once reserved only for major New York publishing houses.
               </p>
 
@@ -75,7 +74,7 @@ export default function AboutUsPage() {
                   <span>Meet Our Publishing Directors</span>
                   <ArrowRight size={15} />
                 </Button>
-                <Button href="/contact-us" variant="outline" size="lg">
+                <Button href="/contact-us" variant="outline-white" size="lg">
                   <span>Contact Our Editorial Desk</span>
                 </Button>
               </div>
@@ -84,11 +83,11 @@ export default function AboutUsPage() {
         </section>
 
         {/* The Heritage Story */}
-        <section className="py-20 lg:py-24 bg-paper-warm border-b border-line">
+        <section className="py-20 lg:py-24 bg-white border-b border-line">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <div className="flex flex-col gap-5">
-                <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#9E7C35]">
+                <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E7665D]">
                   Our Heritage &amp; Ethos
                 </span>
                 <h2 className="font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-ink leading-tight">
@@ -102,25 +101,25 @@ export default function AboutUsPage() {
                 </p>
               </div>
 
-              <div className="p-8 sm:p-10 rounded-xs border-2 border-line-strong bg-paper-card shadow-card flex flex-col gap-6">
+              <div className="p-8 sm:p-10 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col gap-6">
                 <h3 className="font-serif text-xl font-bold text-ink">
                   The The Collingwood Press Commitments
                 </h3>
                 <div className="flex flex-col gap-4 text-xs sm:text-sm text-ink-soft">
                   <div className="flex items-start gap-3">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C5A059] text-black text-xs font-bold mt-0.5">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7665D] text-white text-xs font-bold mt-0.5">
                       ✓
                     </span>
                     <span><strong>100% Author Ownership:</strong> You retain complete creative copyright, film rights, and author royalties for all time.</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C5A059] text-black text-xs font-bold mt-0.5">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7665D] text-white text-xs font-bold mt-0.5">
                       ✓
                     </span>
                     <span><strong>Dedicated Direct Access:</strong> Every author is paired with a named, seasoned trade editor with direct telephone access.</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C5A059] text-black text-xs font-bold mt-0.5">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7665D] text-white text-xs font-bold mt-0.5">
                       ✓
                     </span>
                     <span><strong>Master Craftsmanship:</strong> Zero automated templates. Custom InDesign interiors, bespoke artwork, and archival proofs.</span>
@@ -132,14 +131,14 @@ export default function AboutUsPage() {
         </section>
 
         {/* Team Anchor Section */}
-        <section id="team" className="py-10 lg:py-16 bg-paper border-b border-line">
+        <section id="team" className="py-16 lg:py-20 bg-white border-b border-line">
           <Container className="flex flex-col gap-14">
             <SectionHeading
               eyebrow="Publishing Leadership"
               title={
                 <>
                   Meet the senior directors{" "}
-                  <span className="italic text-[#9E7C35]">guiding your title</span>
+                  <span className="italic text-[#E7665D]">guiding your title</span>
                 </>
               }
               description="Our directors bring decades of trade press, university press, and literary agency experience directly to your publishing journey."
@@ -149,7 +148,7 @@ export default function AboutUsPage() {
               {projectManagers.map((pm) => (
                 <div
                   key={pm.name}
-                  className="rounded-xs border border-line bg-paper-card shadow-card overflow-hidden flex flex-col justify-between"
+                  className="rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] overflow-hidden flex flex-col justify-between"
                 >
                   <div>
                     <div className="h-64 overflow-hidden relative">
@@ -169,13 +168,13 @@ export default function AboutUsPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <span className="text-xs uppercase font-medium text-[#9E7C35] block mb-2">
+                      <span className="text-xs uppercase font-medium text-[#E7665D] block mb-2">
                         {pm.title}
                       </span>
                       <p className="text-xs sm:text-sm text-ink-soft leading-relaxed">
                         {pm.bio}
                       </p>
-                      <div className="mt-4 p-3 rounded-xs bg-paper-warm border-l-2 border-[#C5A059] text-xs font-serif italic text-ink/90">
+                      <div className="mt-4 p-3 rounded-sm bg-[#fdf6f5] border-l-2 border-[#E7665D] text-xs font-serif italic text-ink/90">
                         {pm.philosophy}
                       </div>
                     </div>
@@ -187,14 +186,14 @@ export default function AboutUsPage() {
         </section>
 
         {/* Partners Anchor Section */}
-        <section id="partners" className="py-20 bg-paper-warm border-b border-line">
+        <section id="partners" className="py-20 bg-white border-b border-line">
           <Container className="flex flex-col gap-12">
             <SectionHeading
               eyebrow="Industry Standing &amp; Accreditations"
               title={
                 <>
                   Collingwood Partners &amp;{" "}
-                  <span className="italic text-[#9E7C35]">Trade Affiliations</span>
+                  <span className="italic text-[#E7665D]">Trade Affiliations</span>
                 </>
               }
               description="We maintain strict operational standards verified by the industry's most reputable governing bodies and distributors."
@@ -204,9 +203,9 @@ export default function AboutUsPage() {
               {partners.map((p) => (
                 <div
                   key={p.name}
-                  className="p-6 rounded-xs border border-line bg-paper-card shadow-card flex flex-col justify-between text-center items-center"
+                  className="p-6 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between text-center items-center"
                 >
-                  <Award size={24} className="text-[#9E7C35] mb-3" />
+                  <Award size={24} className="text-[#E7665D] mb-3" />
                   <h4 className="font-serif text-base font-bold text-ink">
                     {p.name}
                   </h4>
@@ -220,14 +219,14 @@ export default function AboutUsPage() {
         </section>
 
         {/* Blog Anchor Section */}
-        <section id="blog" className="py-20 lg:py-24 bg-paper border-b border-line">
+        <section id="blog" className="py-20 lg:py-24 bg-white border-b border-line">
           <Container className="flex flex-col gap-12">
             <SectionHeading
               eyebrow="Author Educational Dispatches"
               title={
                 <>
                   From the The Collingwood Press{" "}
-                  <span className="italic text-[#9E7C35]">Editorial Blog</span>
+                  <span className="italic text-[#E7665D]">Editorial Blog</span>
                 </>
               }
               description="In-depth analysis, craft guidance, and industry insights written by senior publishing editors."
@@ -237,10 +236,10 @@ export default function AboutUsPage() {
               {blogArticles.map((art) => (
                 <div
                   key={art.title}
-                  className="p-7 rounded-xs border border-line bg-paper-card shadow-card flex flex-col justify-between"
+                  className="p-7 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#9E7C35] font-semibold block mb-2">
+                    <span className="text-[10px] uppercase tracking-wider text-[#E7665D] font-semibold block mb-2">
                       {art.date}
                     </span>
                     <h4 className="font-serif text-lg font-bold text-ink leading-snug">
@@ -262,11 +261,12 @@ export default function AboutUsPage() {
         </section>
 
         {/* AI & LLM Resources Anchor Section */}
-        <section id="ai-resources" className="py-20 lg:py-24 bg-[#0D1527] text-white border-b border-[#1E293B]">
-          <Container>
+        <section id="ai-resources" className="hero-gradient py-20 lg:py-24 text-white border-b border-white/10 relative overflow-hidden paper-grain">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
+          <Container className="relative z-10">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">
-                <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E8C98B]">
+                <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
                   Technology &amp; Authorship Ethics
                 </span>
                 <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
@@ -277,9 +277,9 @@ export default function AboutUsPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-xs border border-[#C5A059]/30 bg-[#111C30] flex flex-col gap-5">
+              <div className="p-8 rounded-sm border border-white/10 bg-white/[0.04] flex flex-col gap-5">
                 <div>
-                  <h3 className="font-serif text-lg font-bold text-[#E8C98B]">
+                  <h3 className="font-serif text-lg font-bold text-[#F08A82]">
                     1. Zero AI Ghostwriting or Automated Prose Substitution
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
@@ -288,7 +288,7 @@ export default function AboutUsPage() {
                 </div>
 
                 <div className="border-t border-white/10 pt-4">
-                  <h3 className="font-serif text-lg font-bold text-[#E8C98B]">
+                  <h3 className="font-serif text-lg font-bold text-[#F08A82]">
                     2. Copyright Protection &amp; LLM Scraping Defense
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
@@ -297,7 +297,7 @@ export default function AboutUsPage() {
                 </div>
 
                 <div className="border-t border-white/10 pt-4">
-                  <h3 className="font-serif text-lg font-bold text-[#E8C98B]">
+                  <h3 className="font-serif text-lg font-bold text-[#F08A82]">
                     3. Ethical Research &amp; Market Discovery Assistance
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">

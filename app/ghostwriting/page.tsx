@@ -7,15 +7,15 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { 
-  PenTool, 
-  ShieldCheck, 
-  Lock, 
-  FileText, 
-  Sparkles, 
-  BookOpen, 
-  CheckCircle2, 
-  Clock, 
+import {
+  PenTool,
+  ShieldCheck,
+  Lock,
+  FileText,
+  Sparkles,
+  BookOpen,
+  CheckCircle2,
+  Clock,
   MessageSquareQuote,
   ArrowRight
 } from "lucide-react";
@@ -82,23 +82,21 @@ export default function GhostwritingPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink">
+      <main className="bg-white text-ink">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-paper pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-line">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.02] mix-blend-multiply bg-[radial-gradient(#181A1F_1px,transparent_1px)] [background-size:24px_24px]" />
-          
+        <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
           <Container>
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <Eyebrow tone="gold">
+              <Eyebrow tone="coral" align="center">
                 Bespoke Trade Collaboration &bull; Strict Non-Disclosure
               </Eyebrow>
 
-              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] font-bold leading-[1.08] text-ink tracking-tight text-balance">
+              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
                 You have the story.{" "}
-                <span className="text-[#B8964E] block sm:inline">We provide the pen.</span>
+                <span className="italic text-[#E7665D] block sm:inline">We provide the pen.</span>
               </h1>
 
-              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-ink-soft font-sans max-w-2xl">
+              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
                 Partner with seasoned trade ghostwriters who capture your authentic voice, shepherd your ideas into compelling prose, and craft a book that commands respect in the marketplace.
               </p>
 
@@ -107,23 +105,23 @@ export default function GhostwritingPage() {
                   <span>Schedule a Confidential Consultation</span>
                   <ArrowRight size={15} />
                 </Button>
-                <Button href="#process" variant="outline" size="lg">
+                <Button href="#process" variant="outline-white" size="lg">
                   <span>Explore Collaboration Process</span>
                 </Button>
               </div>
 
               {/* Guarantees */}
-              <div className="mt-10 pt-6 border-t border-line flex flex-wrap items-center justify-center gap-6 text-xs text-ink-muted">
+              <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
                 <div className="flex items-center gap-2">
-                  <Lock size={14} className="text-[#C5A059]" />
+                  <Lock size={14} className="text-[#E7665D]" />
                   <span>100% Strict NDA Protection</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={14} className="text-[#C5A059]" />
+                  <ShieldCheck size={14} className="text-[#E7665D]" />
                   <span>100% Author Copyright &amp; Royalties</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-[#C5A059]" />
+                  <CheckCircle2 size={14} className="text-[#E7665D]" />
                   <span>Matched with Vetted Trade Authors</span>
                 </div>
               </div>
@@ -132,14 +130,14 @@ export default function GhostwritingPage() {
         </section>
 
         {/* Specialized Genres */}
-        <section className="py-20 lg:py-24 bg-paper-warm border-b border-line">
+        <section className="py-20 lg:py-24 bg-white border-b border-line">
           <Container className="flex flex-col gap-12">
             <SectionHeading
               eyebrow="Specialized Literary Domains"
               title={
                 <>
                   Ghostwriting crafted for{" "}
-                  <span className="italic text-[#9E7C35]">high-impact genres</span>
+                  <span className="italic text-[#E7665D]">high-impact genres</span>
                 </>
               }
               description="Our guild of ghostwriters includes published novelists, former major press editors, and award-winning journalists selected specifically for your genre."
@@ -151,10 +149,10 @@ export default function GhostwritingPage() {
                 return (
                   <div
                     key={item.title}
-                    className="p-7 rounded-xs border border-line bg-paper-card shadow-card flex flex-col justify-between hover:border-[#C5A059]/40 hover:shadow-cardHover transition-all"
+                    className="p-7 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_6px_32px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] flex flex-col justify-between transition-all duration-300"
                   >
                     <div>
-                      <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-[#C5A059]/15 text-[#9E7C35] border border-[#C5A059]/30 mb-5">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-sm bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-5">
                         <Icon size={20} />
                       </span>
                       <h3 className="font-serif text-[1.2rem] font-bold text-ink">
@@ -172,27 +170,27 @@ export default function GhostwritingPage() {
         </section>
 
         {/* Step-by-Step Collaborative Process */}
-        <section id="process" className="py-20 lg:py-28 bg-paper border-b border-line">
+        <section id="process" className="py-20 lg:py-28 bg-white border-b border-line">
           <Container className="flex flex-col gap-14">
             <SectionHeading
               eyebrow="The Ghostwriting Methodology"
               title={
                 <>
                   How we shepherd your vision{" "}
-                  <span className="italic text-[#9E7C35]">from notes to finished manuscript</span>
+                  <span className="italic text-[#E7665D]">from notes to finished manuscript</span>
                 </>
               }
               description="A structured, collaborative framework designed to respect your time while guaranteeing uncompromising literary depth."
             />
 
             <div className="flex flex-col gap-6 max-w-4xl mx-auto w-full">
-              {ghostwritingSteps.map((s, idx) => (
+              {ghostwritingSteps.map((s) => (
                 <div
                   key={s.step}
-                  className="p-7 sm:p-8 rounded-xs border border-line bg-paper-card shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-[#C5A059]/40 transition-all"
+                  className="p-7 sm:p-8 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300"
                 >
                   <div className="flex flex-col gap-2 max-w-xl">
-                    <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#9E7C35]">
+                    <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D]">
                       {s.step}
                     </span>
                     <h3 className="font-serif text-[1.3rem] font-bold text-ink">
@@ -203,7 +201,7 @@ export default function GhostwritingPage() {
                     </p>
                   </div>
 
-                  <div className="shrink-0 p-3.5 rounded-xs bg-paper-warm border border-line text-xs font-sans">
+                  <div className="shrink-0 p-3.5 rounded-sm bg-[#fdf6f5] border border-[#E7665D]/20 text-xs font-sans">
                     <span className="text-[10px] uppercase tracking-wider text-ink-muted block">
                       Milestone Deliverable
                     </span>
@@ -218,10 +216,11 @@ export default function GhostwritingPage() {
         </section>
 
         {/* Testimonial Feature Card */}
-        <section className="py-20 bg-[#0D1527] text-white border-b border-[#1E293B]">
-          <Container>
+        <section className="hero-gradient py-20 lg:py-24 text-white border-b border-white/10 relative overflow-hidden paper-grain">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
+          <Container className="relative z-10">
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#C5A059]/20 text-[#C5A059] mb-6 border border-[#C5A059]/40">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#E7665D]/15 text-[#F08A82] mb-6 border border-[#E7665D]/30 shadow-[0_0_20px_rgba(231,102,93,0.2)]">
                 <MessageSquareQuote size={24} />
               </span>
               <blockquote className="font-serif italic text-[1.3rem] sm:text-[1.6rem] leading-snug text-slate-100 text-balance">
@@ -231,7 +230,7 @@ export default function GhostwritingPage() {
                 <span className="font-serif text-[1.1rem] font-bold text-white">
                   Julian Vance
                 </span>
-                <span className="text-xs text-[#E8C98B] font-sans tracking-wide mt-0.5">
+                <span className="text-xs text-[#F08A82] font-sans tracking-wide mt-0.5 font-medium">
                   Author of <span className="italic">Beyond the Horizon</span> &bull; 40,000+ copies sold
                 </span>
               </div>
@@ -240,10 +239,10 @@ export default function GhostwritingPage() {
         </section>
 
         {/* Final CTA Banner */}
-        <section className="py-20 bg-paper">
+        <section className="py-20 bg-white">
           <Container>
-            <div className="p-8 sm:p-12 rounded-xs border-2 border-[#C5A059]/30 bg-paper-warm text-center max-w-3xl mx-auto flex flex-col items-center shadow-card">
-              <span className="text-xs uppercase tracking-[0.16em] font-semibold text-[#9E7C35]">
+            <div className="p-8 sm:p-12 rounded-sm border border-[#E7665D]/25 bg-white text-center max-w-3xl mx-auto flex flex-col items-center shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)]">
+              <span className="text-xs uppercase tracking-[0.16em] font-semibold text-[#E7665D]">
                 Confidential Project Inquiries
               </span>
               <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-ink leading-tight">
@@ -259,7 +258,7 @@ export default function GhostwritingPage() {
                 </Button>
                 <a
                   href="tel:+19362233644"
-                  className="text-xs font-semibold text-ink-soft hover:text-[#9E7C35] transition-colors"
+                  className="text-xs font-semibold text-ink-soft hover:text-[#E7665D] transition-colors"
                 >
                   Or call +1 (936) 223-3644
                 </a>

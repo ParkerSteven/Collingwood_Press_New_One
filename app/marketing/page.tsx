@@ -71,22 +71,21 @@ export default function MarketingPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink">
+      <main className="bg-white text-ink">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-paper pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-line">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.02] mix-blend-multiply bg-[radial-gradient(#181A1F_1px,transparent_1px)] [background-size:24px_24px]" />
+        <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
           <Container>
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <Eyebrow tone="gold">
+              <Eyebrow tone="coral" align="center">
                 Commercial Discovery &bull; Global Book Publicity
               </Eyebrow>
 
-              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] font-bold leading-[1.08] text-ink tracking-tight text-balance">
+              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
                 Your book is in print.{" "}
-                <span className="text-[#B8964E] block sm:inline">Now we place it in readers&rsquo; hands.</span>
+                <span className="italic text-[#E7665D] block sm:inline">Now we place it in readers&rsquo; hands.</span>
               </h1>
 
-              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-ink-soft font-sans max-w-2xl">
+              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
                 Publication day is not the finish line—it is day one of your book&rsquo;s public life. Our marketing strategists craft bespoke campaigns built around the commercial realities of your genre.
               </p>
 
@@ -95,7 +94,7 @@ export default function MarketingPage() {
                   <span>Develop Your Custom Launch Campaign</span>
                   <ArrowRight size={15} />
                 </Button>
-                <Button href="#book-fairs" variant="outline" size="lg">
+                <Button href="#book-fairs" variant="outline-white" size="lg">
                   <span>International Book Fair Representation</span>
                 </Button>
               </div>
@@ -104,14 +103,14 @@ export default function MarketingPage() {
         </section>
 
         {/* Marketing Pillars */}
-        <section className="py-20 lg:py-24 bg-paper-warm border-b border-line">
+        <section className="py-20 lg:py-24 bg-white border-b border-line">
           <Container className="flex flex-col gap-12">
             <SectionHeading
               eyebrow="Targeted Campaign Cadence"
               title={
                 <>
                   Strategic publicity designed for{" "}
-                  <span className="italic text-[#9E7C35]">lasting literary momentum</span>
+                  <span className="italic text-[#E7665D]">lasting literary momentum</span>
                 </>
               }
               description="We avoid one-size-fits-all promotional spam. Every marketing package is engineered to create compounding credibility with readers, reviewers, and booksellers."
@@ -121,10 +120,10 @@ export default function MarketingPage() {
               {marketingPillars.map((p) => (
                 <div
                   key={p.title}
-                  className="p-8 sm:p-10 rounded-xs border border-line bg-paper-card shadow-card flex flex-col justify-between hover:border-[#C5A059]/40 hover:shadow-cardHover transition-all"
+                  className="p-8 sm:p-10 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between hover:border-[#E7665D]/50 transition-all duration-300"
                 >
                   <div>
-                    <span className="font-sans text-[10px] uppercase tracking-[0.14em] font-bold text-[#9E7C35] bg-paper-warm px-2.5 py-1 rounded-xs border border-line inline-block mb-4">
+                    <span className="font-sans text-[10px] uppercase tracking-[0.14em] font-bold text-[#E7665D] bg-[#fdf6f5] px-2.5 py-1 rounded-sm border border-[#E7665D]/20 inline-block mb-4">
                       {p.badge}
                     </span>
                     <h3 className="font-serif text-[1.3rem] font-bold text-ink">
@@ -141,10 +140,11 @@ export default function MarketingPage() {
         </section>
 
         {/* Book Fairs Anchor Section */}
-        <section id="book-fairs" className="py-20 lg:py-28 bg-[#0D1527] text-white border-b border-[#1E293B]">
-          <Container className="flex flex-col gap-14">
+        <section id="book-fairs" className="hero-gradient py-20 lg:py-28 text-white border-b border-white/10 relative overflow-hidden paper-grain">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
+          <Container className="relative z-10 flex flex-col gap-14">
             <div className="text-center max-w-2xl mx-auto">
-              <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E8C98B]">
+              <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
                 Global Rights &amp; Exhibition
               </span>
               <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
@@ -159,10 +159,10 @@ export default function MarketingPage() {
               {bookFairs.map((fair) => (
                 <div
                   key={fair.name}
-                  className="p-6 rounded-xs border border-[#C5A059]/30 bg-[#111C30] shadow-sm flex flex-col justify-between"
+                  className="p-6 rounded-sm border border-white/10 bg-white/[0.04] shadow-sm flex flex-col justify-between hover:border-[#E7665D]/40 transition-colors"
                 >
                   <div>
-                    <div className="flex items-center gap-2 mb-2 text-xs font-sans text-[#E8C98B]">
+                    <div className="flex items-center gap-2 mb-2 text-xs font-sans text-[#F08A82]">
                       <Globe size={14} />
                       <span>{fair.location}</span>
                     </div>
@@ -173,7 +173,7 @@ export default function MarketingPage() {
                       {fair.focus}
                     </p>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-2 text-[11px] text-[#C5A059]">
+                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-2 text-[11px] text-[#F08A82]">
                     <CheckCircle2 size={13} />
                     <span>Physical Catalog &amp; Stand Placement Included</span>
                   </div>

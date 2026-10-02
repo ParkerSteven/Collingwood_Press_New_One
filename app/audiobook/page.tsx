@@ -7,13 +7,13 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { 
-  Headphones, 
-  Mic2, 
-  Sliders, 
-  Radio, 
-  ShieldCheck, 
-  CheckCircle2, 
+import {
+  Headphones,
+  Mic2,
+  Sliders,
+  Radio,
+  ShieldCheck,
+  CheckCircle2,
   ArrowRight,
   Music,
   Volume2
@@ -47,22 +47,21 @@ export default function AudiobookPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink">
+      <main className="bg-white text-ink">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-paper pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-line">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.02] mix-blend-multiply bg-[radial-gradient(#181A1F_1px,transparent_1px)] [background-size:24px_24px]" />
+        <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
           <Container>
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <Eyebrow tone="gold">
+              <Eyebrow tone="coral" align="center">
                 Audible &amp; ACX Certified Studio Production
               </Eyebrow>
 
-              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] font-bold leading-[1.08] text-ink tracking-tight text-balance">
+              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
                 Your story given voice.{" "}
-                <span className="text-[#B8964E] block sm:inline">Broadcast-grade audiobook mastery.</span>
+                <span className="italic text-[#E7665D] block sm:inline">Broadcast-grade audiobook mastery.</span>
               </h1>
 
-              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-ink-soft font-sans max-w-2xl">
+              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
                 Audiobooks represent the fastest-growing segment of the publishing industry. We shepherd your book into pristine audio with award-winning voice talent, state-of-the-art sound engineering, and global retail distribution.
               </p>
 
@@ -71,22 +70,22 @@ export default function AudiobookPage() {
                   <span>Audition Narrators for Your Book</span>
                   <ArrowRight size={15} />
                 </Button>
-                <Button href="#standards" variant="outline" size="lg">
+                <Button href="#standards" variant="outline-white" size="lg">
                   <span>View Production Standards</span>
                 </Button>
               </div>
 
-              <div className="mt-10 pt-6 border-t border-line flex flex-wrap items-center justify-center gap-6 text-xs text-ink-muted">
+              <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
                 <div className="flex items-center gap-2">
-                  <Mic2 size={14} className="text-[#C5A059]" />
+                  <Mic2 size={14} className="text-[#E7665D]" />
                   <span>SAG-AFTRA Professional Narrators</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck size={14} className="text-[#C5A059]" />
+                  <ShieldCheck size={14} className="text-[#E7665D]" />
                   <span>100% Guaranteed ACX / Audible Acceptance</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Headphones size={14} className="text-[#C5A059]" />
+                  <Headphones size={14} className="text-[#E7665D]" />
                   <span>Distributed to Audible, Spotify &amp; Libraries</span>
                 </div>
               </div>
@@ -95,14 +94,14 @@ export default function AudiobookPage() {
         </section>
 
         {/* The Audio Process */}
-        <section className="py-20 lg:py-24 bg-paper-warm border-b border-line">
+        <section className="py-20 lg:py-24 bg-white border-b border-line">
           <Container className="flex flex-col gap-12">
             <SectionHeading
               eyebrow="The Studio Pipeline"
               title={
                 <>
                   How we craft your volume into{" "}
-                  <span className="italic text-[#9E7C35]">an immersive audio experience</span>
+                  <span className="italic text-[#E7665D]">an immersive audio experience</span>
                 </>
               }
               description="A seamless, end-to-end studio workflow that transforms your manuscript into broadcast-quality sound files ready for global listeners."
@@ -112,10 +111,10 @@ export default function AudiobookPage() {
               {audioSteps.map((step) => (
                 <div
                   key={step.title}
-                  className="p-8 rounded-xs border border-line bg-paper-card shadow-card flex flex-col justify-between hover:border-[#C5A059]/40 hover:shadow-cardHover transition-all"
+                  className="p-8 rounded-sm border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between hover:border-[#E7665D]/50 transition-all duration-300"
                 >
                   <div>
-                    <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#9E7C35] block mb-2">
+                    <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-2">
                       {step.step}
                     </span>
                     <h3 className="font-serif text-[1.25rem] font-bold text-ink">
@@ -132,10 +131,11 @@ export default function AudiobookPage() {
         </section>
 
         {/* Standards Banner */}
-        <section id="standards" className="py-20 bg-[#0D1527] text-white border-b border-[#1E293B]">
-          <Container>
+        <section id="standards" className="hero-gradient py-20 text-white border-b border-white/10 relative overflow-hidden paper-grain">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
+          <Container className="relative z-10">
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-              <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E8C98B]">
+              <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
                 Acoustic Perfection Guaranteed
               </span>
               <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">

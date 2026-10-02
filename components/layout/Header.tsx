@@ -16,13 +16,13 @@ import MobileMenu from "../ui/MobileMenu";
 // ]
 
 const navItems = [
-  { label: "Ghostwriting", href: "#" },
-  { label: "Editing", href: "#" },
-  { label: "Publishing", href: "#" },
-  { label: "Marketing", href: "#" },
-  { label: "Audiobook", href: "#" },
-  { label: "About Us", href: "#" },
-  { label: "Contact Us", href: "#" },
+  { label: "Ghostwriting", href: "/ghostwriting" },
+  { label: "Editing", href: "/editing" },
+  { label: "Publishing", href: "/publishing" },
+  { label: "Marketing", href: "/marketing" },
+  { label: "Audiobook", href: "/audiobook" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 export default function Header() {
   return (

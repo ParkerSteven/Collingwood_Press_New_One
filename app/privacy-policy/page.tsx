@@ -9,17 +9,22 @@ export default function PrivacyPolicyPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink py-16 sm:py-24">
+      {/* Hero */}
+      <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-14 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-white/10 text-white">
         <Container className="max-w-3xl">
-          <Eyebrow tone="gold">Legal &amp; Author Protection</Eyebrow>
-          <h1 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-ink">
+          <Eyebrow tone="coral">Legal &amp; Author Protection</Eyebrow>
+          <h1 className="mt-4 font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             Privacy Policy
           </h1>
-          <p className="mt-2 text-xs text-ink-muted">
+          <p className="mt-2 text-xs text-[#ccccccad]">
             Last Updated: January 2026 &bull; The Collingwood Press (Subsidiary of Hambone Publishers LLC)
           </p>
+        </Container>
+      </section>
 
-          <div className="mt-8 flex flex-col gap-6 text-sm text-ink-soft leading-relaxed font-sans">
+      <main className="bg-white text-ink py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <div className="flex flex-col gap-6 text-sm text-ink-soft leading-relaxed font-sans">
             <p>
               At The Collingwood Press, we hold author confidentiality and data protection in the highest regard. This Privacy Policy outlines how your personal information, submitted manuscripts, and creative intellectual property are gathered, utilized, and guarded.
             </p>
@@ -49,7 +54,7 @@ export default function PrivacyPolicyPage() {
               4. Contact Our Privacy Officer
             </h2>
             <p>
-              For inquiries regarding data access or deletion requests, please contact our legal desk at <a href="mailto:info@thecollingwoodpress.com" className="text-[#9E7C35] underline">info@thecollingwoodpress.com</a>.
+              For inquiries regarding data access or deletion requests, please contact our legal desk at <a href="mailto:info@thecollingwoodpress.com" className="text-[#E7665D] underline font-medium">info@thecollingwoodpress.com</a>.
             </p>
           </div>
         </Container>

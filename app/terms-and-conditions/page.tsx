@@ -9,16 +9,21 @@ export default function TermsAndConditionsPage() {
     <>
       <UtilityBar />
       <Header />
-      <main className="bg-paper text-ink py-16 sm:py-24">
+      {/* Hero */}
+      <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-14 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-white/10 text-white">
         <Container className="max-w-3xl">
-          <Eyebrow tone="gold">Publishing Standards &amp; Terms</Eyebrow>
-          <h1 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-ink">
+          <Eyebrow tone="coral">Publishing Standards &amp; Terms</Eyebrow>
+          <h1 className="mt-4 font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             Terms &amp; Conditions
           </h1>
-          <p className="mt-2 text-xs text-ink-muted">
+          <p className="mt-2 text-xs text-[#ccccccad]">
             Last Updated: January 2026 &bull; The Collingwood Press (Subsidiary of Hambone Publishers LLC)
           </p>
+        </Container>
+      </section>
 
+      <main className="bg-white text-ink py-16 sm:py-24">
+        <Container className="max-w-3xl">
           <div className="mt-8 flex flex-col gap-6 text-sm text-ink-soft leading-relaxed font-sans">
             <p>
               Welcome to the official website of The Collingwood Press, an independent literary imprint operated by Hambone Publishers LLC. By accessing this website or utilizing our publishing services, you agree to comply with and be bound by the following terms and conditions.
@@ -27,7 +32,7 @@ export default function TermsAndConditionsPage() {
             <h2 className="font-serif text-xl font-bold text-ink mt-2">
               1. Disclaimer of Affiliation
             </h2>
-            <p className="p-4 rounded-xs border border-[#C5A059]/30 bg-paper-warm italic text-ink font-medium">
+            <p className="p-4 rounded-sm border border-[#E7665D]/30 bg-[#fdf6f5] italic text-ink font-medium">
               The Collingwood Press is not affiliated with any other publisher operating under a similar name. All publishing agreements and transactions are executed under Hambone Publishers LLC.
             </p>
 
