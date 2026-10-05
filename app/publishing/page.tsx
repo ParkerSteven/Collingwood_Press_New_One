@@ -77,7 +77,7 @@ const publishingRoadmap = [
     },
 ];
 
-const formats = [
+export const formats = [
     {
         title: "Collector-Grade Hardcovers",
         tagline: "Archival Physical Presence",
@@ -299,52 +299,99 @@ export default function PublishingPage() {
 
                 {/* Formats Section */}
                 <section className="py-20 lg:py-24 bg-white border-b border-line">
-                    <Container className="flex flex-col gap-12">
-                        <SectionHeading
-                            eyebrow="Three Coordinated Editions"
-                            title={
-                                <>
-                                    Crafted for every reading environment,{" "}
-                                    <span className="italic text-[#E7665D]">compromised on none</span>
-                                </>
-                            }
-                            description="Every acquired title is prepared simultaneously across hardcover, paperback, and reflowable digital formats."
-                        />
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {formats.map((f) => {
-                                const Icon = f.icon;
-                                return (
-                                    <div
-                                        key={f.title}
-                                        className="p-8 sm:p-9 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300"
-                                    >
-                                        <div>
-                                            <div className="flex items-center justify-between mb-5">
-                                                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 shadow-sm">
-                                                    <Icon size={24} />
-                                                </span>
-                                                <span className="font-sans text-[10.5px] uppercase tracking-[0.16em] text-ink-muted font-semibold bg-[#fdf6f5] px-2.5 py-1 rounded-md border border-[#E7665D]/20">
-                                                    {f.badge}
-                                                </span>
-                                            </div>
-                                            <h3 className="font-serif text-[1.3rem] font-bold text-ink">
-                                                {f.title}
-                                            </h3>
-                                            <span className="text-xs text-ink-muted italic block mt-0.5 mb-3">
-                                                {f.tagline}
+                    <SectionHeading
+                        eyebrow="Three Coordinated Editions"
+                        title={
+                            <>
+                                Crafted for every reading environment,{" "}
+                                <span className="italic text-[#E7665D]">compromised on none</span>
+                            </>
+                        }
+                        description="Every acquired title is prepared simultaneously across hardcover, paperback, and reflowable digital formats."
+                    />
+                    <Container className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center mt-20">
+                        {/* LEFT: Content */}
+                        <div className="flex flex-col gap-10">
+                            <div className="flex flex-col">
+                                {formats.map((f) => {
+                                    const Icon = f.icon;
+                                    return (
+                                        <div
+                                            key={f.title}
+                                            className="flex items-start gap-5 py-6 border-t border-[#E7665D]/20 last:border-b"
+                                        >
+                                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30">
+                                                <Icon size={22} />
                                             </span>
-                                            <p className="mt-2 text-sm text-ink-soft leading-relaxed">
-                                                {f.specs}
-                                            </p>
+
+                                            <div className="flex-1">
+                                                <div className="flex items-center justify-between gap-3">
+                                                    <h3 className="font-serif text-[1.2rem] font-bold text-ink">
+                                                        {f.title}
+                                                    </h3>
+                                                    <span className="shrink-0 font-sans text-[10.5px] uppercase tracking-[0.16em] text-ink-muted font-semibold bg-[#fdf6f5] px-2.5 py-1 rounded-md border border-[#E7665D]/20">
+                                                        {f.badge}
+                                                    </span>
+                                                </div>
+                                                <span className="text-xs text-ink-muted italic block mt-0.5 mb-2">
+                                                    {f.tagline}
+                                                </span>
+                                                <p className="text-sm text-ink-soft leading-relaxed">
+                                                    {f.specs}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                );
-                            })}
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* RIGHT: Dummy book covers */}
+                        <div className="relative flex items-center justify-center py-10">
+                            {/* soft backdrop */}
+                            <div className="absolute inset-0 m-auto h-[85%] w-[85%] rounded-3xl bg-[#fdf6f5] border border-[#E7665D]/15 -z-10" />
+
+                            {/* back book */}
+                            <div className="absolute w-[200px] sm:w-[240px] aspect-[2/3] -translate-x-24 sm:-translate-x-32 rotate-[-8deg] rounded-r-md rounded-l-sm bg-gradient-to-br from-[#2b2b3a] to-[#14141c] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.35)] flex flex-col justify-between p-5 opacity-90">
+                                <span className="text-[9px] uppercase tracking-[0.2em] text-white/50">A Novel</span>
+                                <div>
+                                    <p className="font-serif text-lg font-bold text-white leading-tight">
+                                        The Quiet Hours
+                                    </p>
+                                    <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/60">
+                                        Maya Hartwell
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* front book */}
+                            <div className="relative w-[240px] sm:w-[290px] aspect-[2/3] rotate-[3deg] rounded-r-lg rounded-l-sm bg-gradient-to-br from-[#E7665D] via-[#d9564d] to-[#b8433b] shadow-[0_30px_60px_-12px_rgba(231,102,93,0.55),0_8px_20px_rgba(0,0,0,0.2)] overflow-hidden flex flex-col justify-between p-7 sm:p-8">
+                                {/* spine */}
+                                <div className="absolute left-0 top-0 h-full w-3 bg-gradient-to-r from-black/30 to-transparent" />
+                                <div className="absolute left-3 top-0 h-full w-px bg-white/20" />
+                                {/* decorative circle */}
+                                <div className="absolute -right-12 -top-12 h-44 w-44 rounded-full border border-white/25" />
+                                <div className="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-white/20" />
+
+                                <span className="relative text-[10px] uppercase tracking-[0.25em] text-white/80 font-semibold">
+                                    Bestselling Edition
+                                </span>
+
+                                <div className="relative">
+                                    <div className="h-px w-10 bg-white/70 mb-4" />
+                                    <h4 className="font-serif text-[1.9rem] sm:text-[2.2rem] font-bold text-white leading-[1.05]">
+                                        Where the
+                                        <br />
+                                        <span className="italic font-normal">Light Falls</span>
+                                    </h4>
+                                    <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-white/85 font-semibold">
+                                        Elena Marlowe
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </Container>
                 </section>
-
                 {/* Cover Design Spotlight Anchor Section */}
                 <section id="cover-design" className="py-20 lg:py-24 bg-[#fdfbf7] border-b border-line">
                     <Container className="flex flex-col gap-12">
