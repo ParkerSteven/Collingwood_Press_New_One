@@ -32,7 +32,7 @@ import {
     Flame,
     ShoppingCart
 } from "lucide-react";
-import { formats } from "../publishing/page";
+import { formats } from "@/lib/formats";
 
 type BrandMark = { title: string; hex: string; path: string };
 
@@ -121,16 +121,6 @@ const bookFairs = [
         location: "London, United Kingdom",
         focus: "The global marketplace for rights negotiation, European bookstore placement, and Commonwealth distribution channels.",
     },
-    {
-        name: "American Library Association (ALA) Annual",
-        location: "United States (Rotational)",
-        focus: "Direct exposure to over 15,000 public and university acquisition librarians responsible for nationwide catalog purchasing.",
-    },
-    {
-        name: "Beijing & Tokyo International Book Fairs",
-        location: "Asia-Pacific Region",
-        focus: "Expanding author footprint into rapidly growing East Asian translation rights markets and academic collections.",
-    },
 ];
 
 const platformStrip = [
@@ -151,6 +141,17 @@ const platformStrip = [
     "threads",
     "substack",
     "wordpress",
+];
+
+const shelfOne = [
+    { h: 78, c: "#E7665D" }, { h: 92, c: "#f4f1ea" }, { h: 70, c: "#3b4a6b" },
+    { h: 88, c: "#F08A82" }, { h: 74, c: "#f4f1ea" }, { h: 96, c: "#b8433b" },
+    { h: 80, c: "#2f3b57" }, { h: 90, c: "#E7665D" }, { h: 72, c: "#f4f1ea" },
+];
+const shelfTwo = [
+    { h: 90, c: "#f4f1ea" }, { h: 74, c: "#E7665D" }, { h: 96, c: "#2f3b57" },
+    { h: 80, c: "#F08A82" }, { h: 70, c: "#b8433b" }, { h: 92, c: "#f4f1ea" },
+    { h: 76, c: "#3b4a6b" }, { h: 86, c: "#E7665D" }, { h: 94, c: "#f4f1ea" },
 ];
 
 const brandMarks: Record<string, BrandMark> = {
@@ -676,30 +677,90 @@ export default function MarketingPage() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
-                            {bookFairs.map((fair) => (
-                                <div
-                                    key={fair.name}
-                                    className="p-6 sm:p-7 rounded-xl border border-white/10 bg-white/[0.04] shadow-sm flex flex-col justify-between hover:border-[#E7665D]/40 transition-colors"
-                                >
-                                    <div>
-                                        <div className="flex items-center gap-2 mb-2.5 text-xs font-sans text-[#F08A82]">
-                                            <Globe size={14} />
-                                            <span className="font-semibold">{fair.location}</span>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+                            {/* LEFT: Content */}
+                            <div className="flex flex-col gap-5">
+                                {bookFairs.map((fair) => (
+                                    <div
+                                        key={fair.name}
+                                        className="p-6 sm:p-7 rounded-xl border border-white/10 bg-white/[0.04] shadow-sm flex flex-col justify-between hover:border-[#E7665D]/40 transition-colors"
+                                    >
+                                        <div>
+                                            <div className="flex items-center gap-2 mb-2.5 text-xs font-sans text-[#F08A82]">
+                                                <Globe size={14} />
+                                                <span className="font-semibold">{fair.location}</span>
+                                            </div>
+                                            <h3 className="font-serif text-[1.25rem] font-bold text-white leading-snug">
+                                                {fair.name}
+                                            </h3>
+                                            <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                                {fair.focus}
+                                            </p>
                                         </div>
-                                        <h3 className="font-serif text-[1.25rem] font-bold text-white leading-snug">
-                                            {fair.name}
-                                        </h3>
-                                        <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                                            {fair.focus}
+                                        <div className="mt-5 pt-3 border-t border-white/10 flex items-center gap-2 text-[11px] text-[#F08A82] font-medium">
+                                            <CheckCircle2 size={13} />
+                                            <span>Physical Catalog &amp; Stand Placement Included</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* RIGHT: Dummy book fair stand */}
+                            <div className="relative flex items-center justify-center py-8">
+                                {/* glow */}
+                                <div className="absolute h-[80%] w-[80%] rounded-full bg-[#E7665D]/20 blur-3xl -z-10" />
+
+                                <div className="relative w-full max-w-[460px]">
+                                    {/* banner */}
+                                    <div className="relative mx-auto -mb-1 w-[92%] rounded-t-xl bg-gradient-to-r from-[#E7665D] via-[#d9564d] to-[#b8433b] px-6 py-4 text-center shadow-[0_10px_30px_-8px_rgba(231,102,93,0.6)]">
+                                        <p className="text-[9px] uppercase tracking-[0.3em] text-white/80 font-semibold">
+                                            International
+                                        </p>
+                                        <p className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+                                            Book Fair
                                         </p>
                                     </div>
-                                    <div className="mt-5 pt-3 border-t border-white/10 flex items-center gap-2 text-[11px] text-[#F08A82] font-medium">
-                                        <CheckCircle2 size={13} />
-                                        <span>Physical Catalog &amp; Stand Placement Included</span>
+
+                                    {/* booth body */}
+                                    <div className="rounded-2xl border border-white/15 bg-gradient-to-b from-[#1b2233] to-[#10141f] p-5 sm:p-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)]">
+                                        {[shelfOne, shelfTwo].map((shelf, i) => (
+                                            <div key={i} className="mb-1">
+                                                <div className="flex items-end justify-center gap-1.5 h-[110px]">
+                                                    {shelf.map((b, idx) => (
+                                                        <div
+                                                            key={idx}
+                                                            className="w-[9%] max-w-[34px] rounded-t-[3px] relative"
+                                                            style={{ height: `${b.h}%`, backgroundColor: b.c }}
+                                                        >
+                                                            <span className="absolute inset-x-0 top-2 mx-auto h-px w-3/5 bg-black/20" />
+                                                            <span className="absolute inset-x-0 bottom-3 mx-auto h-px w-3/5 bg-black/20" />
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                <div className="h-2 rounded-sm bg-gradient-to-b from-[#8a6a4a] to-[#5b432d] shadow-md" />
+                                            </div>
+                                        ))}
+
+                                        {/* counter */}
+                                        <div className="mt-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.05] px-4 py-3">
+                                            <div>
+                                                <p className="text-[9px] uppercase tracking-[0.22em] text-white/50">Stand</p>
+                                                <p className="font-serif text-lg font-bold text-white leading-none">14B</p>
+                                            </div>
+                                            <div className="flex items-center gap-2 text-[11px] text-[#F08A82] font-medium">
+                                                <CheckCircle2 size={14} />
+                                                <span>Catalog on display</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* floating badge */}
+                                    <div className="absolute -right-2 sm:-right-6 -top-4 flex items-center gap-2 rounded-full border border-[#E7665D]/40 bg-[#10141f] px-4 py-2 shadow-lg">
+                                        <Globe size={14} className="text-[#F08A82]" />
+                                        <span className="text-[11px] font-semibold text-white tracking-wide">Global Reach</span>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
                         </div>
 
                         <div className="text-center">

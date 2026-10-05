@@ -26,7 +26,7 @@ import {
   Sparkles,
   Check
 } from "lucide-react";
-import { formats } from "../publishing/page";
+import { formats } from "@/lib/formats";
 
 const productionProcess = [
   {

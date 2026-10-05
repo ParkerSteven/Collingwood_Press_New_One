@@ -104,9 +104,11 @@ export default function HeroAnimated() {
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
                             >
-                                <img
+                                <Image
                                     src="/blue-seal.png"
                                     alt="The Collingwood Press BBB Business Review"
+                                    width={120}
+                                    height={40}
                                     className="block h-auto max-h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                                 />
                             </Link>

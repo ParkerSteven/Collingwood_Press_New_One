@@ -1,6 +1,7 @@
 "use client";
 
 import UtilityBar from "@/components/layout/UtilityBar";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
@@ -25,6 +26,7 @@ import {
     BookOpenCheck,
     Printer
 } from "lucide-react";
+import { formats } from "@/lib/formats";
 
 const publishingRoadmap = [
     {
@@ -77,29 +79,6 @@ const publishingRoadmap = [
     },
 ];
 
-export const formats = [
-    {
-        title: "Collector-Grade Hardcovers",
-        tagline: "Archival Physical Presence",
-        specs: "Archival Smyth-sewn binding with rich linen cloth or printed dust jacket, gold foil spine stamping, head & tail bands, and optional custom endpapers.",
-        icon: Book,
-        badge: "Trade Hardcover",
-    },
-    {
-        title: "French-Fold Trade Paperbacks",
-        tagline: "Everyday Commercial Elegance",
-        specs: "Premium 60lb/70lb natural cream interior paper, velvet soft-touch matte lamination, scoring on hinges, and optional embossed spot UV lettering.",
-        icon: Layers,
-        badge: "Trade Paperback",
-    },
-    {
-        title: "Mastered Reflowable ePubs",
-        tagline: "Universal Screen Fidelity",
-        specs: "Hand-coded valid ePub3 and Kindle formats tailored for responsive font scaling, high-DPI tablets, dynamic TOCs, and cross-platform fidelity.",
-        icon: Sparkles,
-        badge: "Digital ePub3",
-    },
-];
 
 const checklistItems = [
     "Complete polished manuscript in Word or RTF format",
@@ -220,11 +199,12 @@ export default function PublishingPage() {
                                         {/* Back — colored brand logo */}
                                         <div className="flip-face flip-back bg-white border border-[#E7665D]/30 px-4">
                                             {r.img ? (
-                                                <img
+                                                <Image
                                                     src={r.img}
                                                     alt={r.name}
-                                                    loading="lazy"
-                                                    className="max-h-[42px] max-w-[150px] w-auto object-contain"
+                                                    width={150}
+                                                    height={42}
+                                                    className="max-h-[42px] max-w-[150px] w-auto h-auto object-contain"
                                                 />
                                             ) : null}
                                         </div>

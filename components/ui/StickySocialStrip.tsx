@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import reviews from '../../public/assets/images/socials/reviews.svg';
 import instagram from '../../public/assets/images/socials/instagram.svg';
 import tiktok from '../../public/assets/images/socials/tiktok.svg';
@@ -117,7 +118,7 @@ const StickySocialStrip = () => {
                     aria-label="Open BBB profile"
                     className="mb-0.5 flex w-9 items-center justify-center rounded-md border border-white/30 bg-white/95 p-1 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                 >
-                    <img
+                    <Image
                         src="https://seal-austin.bbb.org/seals/blue-seal-63-134-bbb-1000231047.png"
                         alt="BBB Review"
                         width={28}
@@ -132,8 +133,8 @@ const StickySocialStrip = () => {
                     aria-label="Open IBPA profile"
                     className="mb-1 flex w-9 items-center justify-center rounded-md border border-white/30 bg-white/95 p-1 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                 >
-                    <img
-                        src={ibpaonline.src}
+                    <Image
+                        src={ibpaonline}
                         alt="IBPA Online"
                         width={28}
                         height={36}
@@ -153,8 +154,8 @@ const StickySocialStrip = () => {
                         title={social.name}
                     >
                         {social.img ? (
-                            <img
-                                src={social.img.src}
+                            <Image
+                                src={social.img}
                                 alt={`${social.name} Icon`}
                                 width={28}
                                 height={28}

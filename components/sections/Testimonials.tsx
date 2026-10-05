@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import BookCover from "@/components/ui/BookCover";
@@ -66,11 +67,12 @@ export default function Testimonials() {
 
               {/* Author Citation with larger portrait */}
               <div className="pt-6 border-t border-line/70 flex items-center gap-4">
-                <img
+                <Image
                   src={featured.avatar}
                   alt={`Author portrait of ${featured.name}`}
+                  width={64}
+                  height={64}
                   className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border border-line shadow-sm"
-                  loading="lazy"
                 />
                 <div className="flex flex-col">
                   <div className="flex items-center gap-2">
@@ -136,9 +138,11 @@ export default function Testimonials() {
                     }`}
                 >
                   <div className="flex items-center gap-3">
-                    <img
+                    <Image
                       src={t.avatar}
                       alt={t.name}
+                      width={40}
+                      height={40}
                       className="w-10 h-10 rounded-full object-cover border border-line"
                     />
                     <div className="overflow-hidden">

@@ -1,6 +1,7 @@
 "use client";
 
 import UtilityBar from "@/components/layout/UtilityBar";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
@@ -271,10 +272,12 @@ export default function AboutUsPage() {
                                 >
                                     <div>
                                         <div className="h-64 overflow-hidden relative">
-                                            <img
+                                            <Image
                                                 src={pm.avatar}
                                                 alt={pm.name}
-                                                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 33vw"
+                                                className="object-cover object-top hover:scale-105 transition-transform duration-500"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                                             <div className="absolute bottom-3 left-4 right-4 text-white">

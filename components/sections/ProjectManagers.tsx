@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -35,11 +36,12 @@ export default function ProjectManagers() {
               <div>
                 {/* Executive Portrait with Editorial Frame */}
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-[#1C2434]">
-                  <img
+                  <Image
                     src={pm.avatar}
                     alt={`Portrait of ${pm.name}, ${pm.title}`}
-                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
 
