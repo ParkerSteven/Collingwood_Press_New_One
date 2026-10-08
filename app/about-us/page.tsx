@@ -126,9 +126,7 @@ export default function AboutUsPage() {
                                     <span className="font-sans text-xs sm:text-sm font-semibold text-ink mt-1">
                                         {item.label}
                                     </span>
-                                    <span className="font-sans text-[11px] text-ink-muted mt-0.5 max-w-[180px]">
-                                        {item.subtext}
-                                    </span>
+
                                 </div>
                             ))}
                         </div>
