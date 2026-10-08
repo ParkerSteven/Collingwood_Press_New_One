@@ -1,143 +1,252 @@
+
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  Feather,
+  BookOpenText,
+  PenLine,
+  BookMarked,
+  Megaphone,
+  Headphones,
+  ArrowUpRight,
+  ArrowRight,
+} from "lucide-react";
+
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
-import { Feather, Shield, Check, ArrowRight, Users, Layers, ShieldCheck, PhoneCall } from "lucide-react";
+
+const services = [
+  {
+    number: "01",
+    icon: BookOpenText,
+    title: "Book Editing & Proofreading Services",
+    description:
+      "Our book editing services cover every level of refinement your manuscript needs: developmental editing that strengthens structure and argument, line editing that tightens prose and voice, copy editing that catches every inconsistency, and proofreading that removes the final errors before your book goes to production.",
+    link: "/editing/",
+    cta: "Explore our editing services",
+  },
+  {
+    number: "02",
+    icon: PenLine,
+    title: "Ghostwriting Services",
+    description:
+      "Have a story, a business philosophy or a memoir worth telling, but need a skilled hand to write it? Our ghostwriting services match you with a professional writer who interviews you, captures your voice and delivers a complete, publication-ready manuscript. Your name on the cover. Your story, told your way.",
+    link: "/ghostwriting/",
+    cta: "Explore our ghostwriting services",
+  },
+  {
+    number: "03",
+    icon: BookMarked,
+    title: "Publishing Guidance",
+    description:
+      "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties. You stay the publisher. We do the production work. Whether it’s a novel, memoir, business book, or children’s book, every project gets the same high-standard editorial care, bespoke cover art, and custom interior layout.",
+    link: "/publishing/",
+    cta: "Explore our book publishing services",
+  },
+  {
+    number: "04",
+    icon: Megaphone,
+    title: "Book Marketing, PR & Launch Strategy",
+    description:
+      "A great book needs a clear strategy to reach the right audience. Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility. We run Amazon advertising targeted by genre, outreach to reviewers and niche outlets, and media placement built around the book.",
+    link: "/marketing/",
+    cta: "Explore our marketing services",
+  },
+  {
+    number: "05",
+    icon: Headphones,
+    title: "Audiobook Recording & Distribution",
+    description:
+      "We review the manuscript, cast a professional audiobook narrator, and record in a studio. One voice or several, matched to the characters. No AI narration. Our audiobook production services edit and proof the files, master them, then support you in uploading and distributing the finished audiobook to Audible, Apple Books and other listening platforms.",
+    link: "/audiobook/",
+    cta: "Explore our audiobook services",
+  },
+];
 
 export default function TrustBand() {
-  const manifestoPillars = [
-    {
-      icon: Users,
-      title: "Dedicated Human Trade Editor",
-      description: "A seasoned editor reads every sentence with care. Never automated, outsourced, or rushed.",
-      badge: "Editorial Integrity",
-    },
-    {
-      icon: Layers,
-      title: "Master InDesign Typography",
-      description: "Handcrafted interior typesetting with balanced gutter margins and classical book architecture.",
-      badge: "Print Perfection",
-    },
-    {
-      icon: ShieldCheck,
-      title: "100% Rights & Royalties",
-      description: "You keep all intellectual property, master files, and every single dollar of retail earnings.",
-      badge: "Zero Deductions",
-    },
-    {
-      icon: PhoneCall,
-      title: "Direct Director Phone Line",
-      description: "Speak directly with your assigned project director by phone whenever you need guidance.",
-      badge: "No Support Tickets",
-    },
-  ];
-
   return (
-    <section className="bg-[#0D1527] py-20 sm:py-28 border-b border-white/10 text-white relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
+    <section
+      id="publishing-services"
+      aria-labelledby="publishing-services-heading"
+      className="relative overflow-hidden border-b border-white/10 bg-[#0D1527] py-20 text-white sm:py-24 lg:py-28"
+    >
+      {/* Background accents */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-40 h-96 w-96 rounded-full bg-[#E7665D]/[0.07] blur-3xl"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#4167A5]/10 blur-3xl"
+      />
 
       <Container>
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-xl border border-white/10 bg-gradient-to-b from-[#131C31] to-[#0A1020] p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden"
+          className="relative z-10 mx-auto mb-12 max-w-3xl text-center lg:mb-16"
         >
-          {/* Subtle publisher emblem watermark */}
-          <div className="absolute right-6 -bottom-10 pointer-events-none opacity-[0.03] text-white select-none">
-            <Feather size={320} strokeWidth={0.75} />
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#E7665D]" />
+
+            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F08A82] sm:text-[11px]">
+              Everything Your Book Needs, Handled by One Team
+            </span>
+
+            <span className="h-px w-8 bg-[#E7665D]" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-10 lg:gap-14 items-center relative z-10">
-            {/* Left Content */}
-            <div className="flex flex-col gap-7">
-              <div className="inline-flex items-center gap-3">
-                <span className="w-8 h-px bg-[#E7665D]" />
-                <span className="font-sans text-[11px] uppercase tracking-[0.22em] font-semibold text-[#F08A82]">
-                  The Collingwood Press Publishing Manifesto
-                </span>
-              </div>
+          <h2
+            id="publishing-services-heading"
+            className="font-serif text-[2rem] max-w-3xl font-medium leading-[1.12] tracking-tight text-white sm:text-[2.5rem] lg:text-[2.7rem]"
+          >
+            Complete Book Publishing Services{" "}
+            <span className="italic text-[#F08A82]">
+              Under One Roof
+            </span>
+          </h2>
 
-              <h2 className="font-serif text-[1.85rem] sm:text-[2.4rem] lg:text-[2.6rem] font-medium leading-[1.12] text-white text-balance">
-                The internet is full of promises.{" "}
-                <span className="italic font-normal text-[#F08A82] block sm:inline">
-                  Not all of them are real.
-                </span>
-              </h2>
+          <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.95rem] leading-[1.85] text-slate-300 sm:text-[1rem]">
+            Publishing a book involves dozens of moving parts,
+            and no author should have to juggle them alone.
+            Our{" "}
+            <strong className="font-medium text-white">
+              book publishing services
+            </strong>{" "}
+            bring editing, design, production, distribution and
+            promotion together under one coordinated team,
+            so nothing falls through the cracks.
+          </p>
+        </motion.div>
 
-              <p className="text-[1rem] sm:text-[1.05rem] leading-relaxed text-slate-300 font-sans max-w-2xl">
-                The publishing world is flooded with vanity mills running automated template conversions.
-                We operate on an uncompromising craft standard: <strong className="text-white font-medium">real human editors, bespoke typography, and complete author ownership.</strong>
-              </p>
+        {/* Decorative editorial divider */}
+        <div className="relative z-10 mb-7 flex items-center gap-4">
+          <span className="h-[2px] w-9 bg-[#E7665D]" />
 
-              {/* Crispy Pictorial Feature Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                {manifestoPillars.map((pillar) => {
-                  const PillarIcon = pillar.icon;
-                  return (
-                    <div
-                      key={pillar.title}
-                      className="group flex flex-col gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] p-4 sm:p-5 hover:border-[#E7665D]/40 hover:bg-white/[0.06] transition-all duration-300"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#E7665D]/15 text-[#F08A82] border border-[#E7665D]/30 group-hover:scale-105 transition-transform">
-                          <PillarIcon size={18} strokeWidth={1.75} />
-                        </div>
-                        <span className="font-sans text-[10px] uppercase tracking-wider text-[#F08A82] font-semibold bg-[#E7665D]/10 px-2 py-0.5 rounded border border-[#E7665D]/20">
-                          {pillar.badge}
-                        </span>
-                      </div>
-                      <h3 className="font-serif text-[1.12rem] font-medium text-white group-hover:text-[#F08A82] transition-colors">
-                        {pillar.title}
-                      </h3>
-                      <p className="font-sans text-[0.84rem] leading-relaxed text-slate-300/85">
-                        {pillar.description}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-slate-400">
+            Our Publishing Expertise
+          </span>
 
-            {/* Right Action & Publisher Seal Card */}
-            <div className="flex flex-col items-center justify-center text-center p-8 sm:p-10 bg-gradient-to-b from-[#10192e] to-[#0a1020] rounded-xl border border-white/15 ring-1 ring-white/5 shadow-2xl relative">
-              <div className="relative mb-5">
-                <div className="absolute inset-0 rounded-full bg-[#E7665D]/20 blur-xl" />
-                <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-[#E7665D]/50 bg-[#E7665D]/15 text-[#F08A82] shadow-inner">
-                  <Shield size={28} strokeWidth={1.5} />
+          <span className="h-px flex-1 bg-white/10" />
+
+          <span className="font-sans text-xs text-[#F08A82]">
+            01 — 05
+          </span>
+        </div>
+
+        {/* Five service cards */}
+        <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6 lg:gap-6">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <motion.article
+                key={service.number}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{
+                  duration: 0.55,
+                  delay: Math.min(index * 0.08, 0.32),
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className={`group relative flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-gradient-to-b from-[#172138] to-[#101A2E] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_18px_42px_rgba(0,0,0,0.18)] sm:p-8 ${index < 3
+                  ? "lg:col-span-2"
+                  : "lg:col-span-3"
+                  }`}
+              >
+                {/* Coral top border on hover */}
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full"
+                />
+
+                {/* Card header */}
+                <div className="mb-8 flex items-start justify-between">
+                  <div className="flex h-13 w-13 items-center justify-center rounded-md border border-[#E7665D]/25 bg-[#E7665D]/10 p-3 text-[#F08A82]">
+                    <Icon
+                      size={25}
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  <span className="font-serif text-[2.5rem] italic leading-none text-white/10">
+                    {service.number}
+                  </span>
                 </div>
-              </div>
 
-              <span className="font-serif text-[1.4rem] font-medium text-white">
-                The Author First Guarantee
-              </span>
-              <span className="inline-flex items-center gap-1.5 font-sans text-[11px] uppercase tracking-[0.18em] text-[#F08A82] mt-1.5 font-semibold bg-[#E7665D]/10 px-3 py-1 rounded-full border border-[#E7665D]/25">
-                <Check size={12} strokeWidth={2.5} />
-                IBPA Verified Trade Standards
+                {/* Service text */}
+                <div className="flex flex-1 flex-col">
+                  <h3 className="max-w-md font-serif text-[1.3rem] font-medium leading-[1.2] text-white transition-colors duration-300 group-hover:text-[#F08A82] sm:text-[1.4rem]">
+                    {service.title}
+                  </h3>
+
+                  <div className="my-5 h-px w-12 bg-[#E7665D]/60" />
+
+                  <p className="font-sans text-[0.77rem] leading-[1.85] text-slate-300 sm:text-[0.83rem]">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Service link */}
+                <div className="mt-9 border-t border-white/10 pt-5">
+                  <Link
+                    href={service.link}
+                    className="group/link inline-flex items-center gap-2 font-sans text-[0.82rem] font-semibold text-[#F08A82] transition-colors hover:text-white"
+                    aria-label={service.cta}
+                  >
+                    <span>{service.cta}</span>
+
+                    <ArrowUpRight
+                      size={16}
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
+                    />
+                  </Link>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        {/* Bottom statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative z-10 mt-10 flex flex-col gap-5 rounded-md border border-white/10 bg-white/[0.035] px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-9"
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#E7665D]/25 bg-[#E7665D]/10 text-[#F08A82]">
+              <Feather size={21} strokeWidth={1.5} />
+            </div>
+
+            <div>
+              <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#F08A82]">
+                The Collingwood Press
               </span>
 
-              <p className="font-sans text-[0.85rem] text-slate-300 leading-relaxed mt-4 max-w-xs">
-                Every title published under The Collingwood Press imprint adheres strictly to independent trade
-                publishing criteria with 100% author copyright protection.
+              <p className="mt-1 font-serif text-xl text-white sm:text-2xl">
+                One dedicated team. Every stage of your book.
               </p>
-
-              <div className="w-full h-px bg-white/10 my-6" />
-
-              <div className="w-full flex flex-col gap-3">
-                <Button href="/about-us" variant="primary" size="md" className="w-full justify-center">
-                  <span>Discover Our Standards</span>
-                  <ArrowRight size={14} />
-                </Button>
-                <span className="text-[11px] text-slate-400 font-sans">
-                  Zero hidden royalties &bull; Transparent contracts
-                </span>
-              </div>
             </div>
           </div>
+
+          <Link
+            href="/publishing/"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#E7665D] px-5 py-3 font-sans text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#d9574e]"
+          >
+            Explore Publishing Services
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </motion.div>
       </Container>
     </section>

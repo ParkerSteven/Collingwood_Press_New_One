@@ -20,10 +20,10 @@ export default function HeroAnimated() {
     return (
         <>
             {/* Left Column */}
-            <div className="max-w-3xl">
+            <div className="max-w-5xl">
                 <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
                     <Eyebrow tone="coral" align="left">
-                        Independent Trade Publishing &bull; Author Imprint
+                        Your Book. Your Rights. Your Publishing Journey.
                     </Eyebrow>
                 </motion.div>
 
@@ -32,13 +32,13 @@ export default function HeroAnimated() {
                     initial="hidden"
                     animate="show"
                     custom={1}
-                    className="mt-6 font-serif text-[3rem] sm:text-[3.8rem] lg:text-[3.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance"
+                    className="mt-6  font-serif text-[3rem] sm:text-[3rem] lg:text-[3.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance"
                 >
-                    You wrote the book.{" "}
+                    Trusted Book Publishing{" "}
                     <span className="text-[#E7665D] italic font-normal inline">
-                        Now let&rsquo;s publish it
+                        Company<br className="hidden sm:block" /> & Author
                     </span>{" "}
-                    with the dignity it deserves.
+                    Services
                 </motion.h1>
 
                 <motion.p
@@ -48,10 +48,7 @@ export default function HeroAnimated() {
                     custom={2}
                     className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-[#ccccccad] font-sans font-normal max-w-2xl"
                 >
-                    Bringing a manuscript into the world shouldn&rsquo;t feel like a gamble with automated
-                    mills or aloof gatekeepers. At The Collingwood Press, seasoned trade editors, master
-                    typographers, and dedicated book publicists champion your work from first proof to
-                    international bookstore distribution.
+                    You wrote the book. You should own every part of what comes next. The Collingwood Press is a full-service book publishing company built for authors who refuse to hand over their royalties, their rights or their creative direction. Senior editors, original book design and worldwide distribution come with one non-negotiable promise: 100% of your copyright and royalties stay with you. From manuscript to marketplace, our author services elevate your work without ever taking ownership of it.
                 </motion.p>
 
                 <motion.div
@@ -62,11 +59,11 @@ export default function HeroAnimated() {
                     className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
                 >
                     <Button href="#manuscript-review" variant="primary" size="md" className="shadow-sm hover:shadow-md">
-                        <span>Submit Manuscript for Review</span>
+                        <span>Get a Free Publishing Consultation</span>
                         <ArrowRight size={15} />
                     </Button>
                     <Button href="/about-us#team" variant="outline" size="md" className="text-white">
-                        <span>Meet Your Publishing Director</span>
+                        <span>Talk to a Senior Editor</span>
                     </Button>
                 </motion.div>
 

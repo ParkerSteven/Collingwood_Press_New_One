@@ -1,246 +1,339 @@
+
 "use client";
 
-import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
-import BookCover from "@/components/ui/BookCover";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Globe2,
+  BookOpen,
+  Search,
+  Megaphone,
+  Send,
+  ArrowRight,
+  ArrowUpRight,
+  BarChart3,
+  Store,
+  Users,
+  Target,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
 
-
-const booksData = [
-  // NEW 3
+const marketingServices = [
   {
-    id: 1,
-    title: "GODFIDENCE",
-    author: "By Veronica Graham R.N., BSN",
-    genre: "Literary Fiction",
-    blurb:
-      "This is the powerful, transparent story of Veronica Graham — the girl doctors said wouldn’t live past the age of 12. Through trauma, abuse, rejection, and unimaginable odds, she didn’t just survive — she soared. A soul-stirring journey of faith, resilience, and divine empowerment, this book is your spiritual roadmap mapped with tears, sealed with truth, and ignited by hope.",
-    frontSrc: "/assets/images/bookmockups/B1F.jpg",
-    backSrc: "/assets/images/bookmockups/B1B.jpg",
-    coverColor: "#E8E2D7",
-  },
-
-  {
-    id: 6,
-    title: "Fate of the Silver Wolf",
-    author: "By Sonya E. Maestler",
-    genre: "Children's / Picture Book",
-    blurb:
-      "Fate of the Silver Wolf follows seventeen-year-old Aylin, an outsider in a strict werewolf pack where tradition rules and bloodlines matter. Torn between love, secrets of her origin, and a terrifying darkness, Aylin must discover the truth about her bloodline and a power that could reshape the fate of the pack. Perfect for fans of paranormal romance, shifter fantasy, and coming-of-age supernatural adventures.",
-    frontSrc: "/assets/images/bookmockups/B2F.jpg",
-    backSrc: "/assets/images/bookmockups/B2B.jpg",
-    coverColor: "#F3E9D8",
+    number: "01",
+    icon: Globe2,
+    eyebrow: "Retail Distribution",
+    title: "Retail Visibility Across Amazon & Beyond",
+    description:
+      "We configure your metadata, categories and search keywords for maximum visibility on Amazon, IngramSpark, Barnes & Noble and other high-traffic retail channels, so readers searching your genre find your book.",
+    features: [
+      {
+        icon: Search,
+        label: "Metadata & Search Keywords",
+      },
+      {
+        icon: Store,
+        label: "Global Retail Channels",
+      },
+    ],
   },
   {
-    id: 4,
-    title: "The Liberation of Sue Moody",
-    author: "By Gail Gelburd",
-    genre: "Historical Fiction",
-    blurb:
-      "The story of journalist Sue Moody is one about survival of war, bombings, starvation, Nazi Germany, abandonment, and of simply trying to be a woman with a career in the early twentieth century. Inspired by thousands of letters, journals, and manuscripts found in an abandoned house, Gelburd has created a compelling first-person narrative of resilience and courage across continents and decades.",
-    frontSrc: "/assets/images/bookmockups/B3F.jpg",
-    backSrc: "/assets/images/bookmockups/B3B.jpg",
-    coverColor: "#DDE6F3",
+    number: "02",
+    icon: BookOpen,
+    eyebrow: "Pre-Launch Publicity",
+    title: "Early Buzz Through ARCs & Media Outreach",
+    description:
+      "Pre-release attention can define a book's trajectory. We manage Advance Reader Copy distribution, coordinate outreach to reviewers and book bloggers, and pitch relevant media to build credibility before launch day.",
+    features: [
+      {
+        icon: Send,
+        label: "Advance Reader Copies",
+      },
+      {
+        icon: Users,
+        label: "Reviewers & Media Outreach",
+      },
+    ],
   },
   {
-    id: 5,
-    title: "Drag Racing",
-    author: "By Mark L. Brothers",
-    genre: "Speculative Fiction",
-    blurb:
-      "From South Florida’s rebellious 1950s streets to the thundering drag strips of Kentucky, David Heath’s life has been one wild, high-octane ride. A fearless racer, paratrooper, and self-taught mechanic who later became a neurosurgeon, his story is a powerful blend of adrenaline, resilience, and redemption. Strap in for a ride that’s as thrilling as it is inspiring.",
-    frontSrc: "/assets/images/bookmockups/B4F.jpg",
-    backSrc: "/assets/images/bookmockups/B4B.jpg",
-    coverColor: "#E7D9E9",
-  },
-
-  // Existing
-  {
-    id: 2,
-    title: "Shattered",
-    author: "by Emily Henry",
-    genre: "Sci-fi / Dystopian",
-    blurb:
-      "Shattered is a dystopian story set 100 years in the future where the revolution of technology led to the collapse of the Earth, forcing people to rely on technology to sustain themselves. In this society, two men band together to save the life of an innocent child through unconventional means — seeking to give this child a new heart.",
-    frontSrc: "/assets/images/bookmockups/B5F.jpg",
-    backSrc: "/assets/images/bookmockups/B5B.jpg",
-    coverColor: "#F6D7DA",
-  },
-  {
-    id: 3,
-    title: "Serious Roommate Problems",
-    author: "By Paul Arala",
-    genre: "Romance",
-    blurb:
-      "When Pete’s wife Holly walks out on their marriage, he packs his bags and takes the first bus to Brooklyn, New York. What follows is a wild tale of dangerous roommates, unexpected love, and ridiculous adventures. This is the final novel in the two-part Roommate Problems series, following Pete and Holly’s journey from New York to Portland, Oregon.",
-    frontSrc: "/assets/images/bookmockups/B6F.jpg",
-    backSrc: "/assets/images/bookmockups/B6B.jpg",
-    coverColor: "#D7E7F6",
+    number: "03",
+    icon: Megaphone,
+    eyebrow: "Launch & Growth",
+    title: "Strategic Launch Campaigns & Bookstore Placement",
+    description:
+      "A launch is more than a date on a calendar. We plan pre-release activity, manage digital ad campaigns, pursue bookstore placement and sustain momentum long after your book goes live.",
+    features: [
+      {
+        icon: Target,
+        label: "Targeted Digital Campaigns",
+      },
+      {
+        icon: BarChart3,
+        label: "Long-Term Book Visibility",
+      },
+    ],
   },
 ];
 
-
 export default function RelatedCarousel() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const checkScroll = () => {
-    if (!scrollerRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollerRef.current;
-    setCanScrollLeft(scrollLeft > 10);
-    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-
-    // Calculate approximate active card index
-    const cardWidth = 210; // width + gap
-    const idx = Math.round(scrollLeft / cardWidth);
-    setActiveIndex(Math.min(Math.max(0, idx), booksData.length - 1));
-  };
-
-  useEffect(() => {
-    const scroller = scrollerRef.current;
-    if (!scroller) return;
-    scroller.addEventListener("scroll", checkScroll, { passive: true });
-    checkScroll();
-    return () => scroller.removeEventListener("scroll", checkScroll);
-  }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollerRef.current) return;
-    const container = scrollerRef.current;
-    const card = container.querySelector<HTMLElement>(".book-carousel-card");
-    const step = card ? card.offsetWidth + 24 : 220;
-
-    container.scrollBy({
-      left: direction === "left" ? -step : step,
-      behavior: "smooth",
-    });
-  };
-
-  const scrollToIndex = (index: number) => {
-    if (!scrollerRef.current) return;
-    const container = scrollerRef.current;
-    const card = container.querySelector<HTMLElement>(".book-carousel-card");
-    const step = card ? card.offsetWidth + 24 : 220;
-    container.scrollTo({
-      left: index * step,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section className="hero-gradient py-20 sm:py-24 lg:py-28 border-b border-white/10 text-white overflow-hidden relative">
-      <Container className="flex flex-col gap-12">
-        {/* Header Row with Eyebrow, Title, and Scroll Navigation */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/10 pb-8">
-          <div>
-            <div className="inline-flex items-center gap-3">
-              <span className="w-6 h-px bg-[#E7665D]" />
-              <span className="font-sans text-[11px] uppercase tracking-[0.2em] font-semibold text-[#F08A82]">
-                Trade Catalog &bull; Recent Releases
-              </span>
-            </div>
-            <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.75rem] font-medium text-white tracking-tight">
-              Recently published,{" "}
-              <span className="italic text-[#F08A82] font-normal">recently loved</span>
-            </h2>
-            <p className="mt-2 text-[0.92rem] text-slate-400 font-sans max-w-xl leading-relaxed">
-              Distinguished titles crafted with bespoke interior typography, custom cover finishes, and distributed globally across retail bookshops.
-            </p>
+    <section
+      id="marketing-distribution"
+      aria-labelledby="marketing-distribution-heading"
+      className="relative overflow-hidden border-b border-white/10 bg-[#0D1527] py-20 text-white sm:py-24 lg:py-28"
+    >
+      {/* Background decoration */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-[#E7665D]/[0.06] blur-3xl"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-[#4D6FA8]/10 blur-3xl"
+      />
+
+      <Container>
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 mx-auto mb-14 max-w-4xl text-center lg:mb-16"
+        >
+          {/* Eyebrow */}
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#E7665D]" />
+
+            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F08A82] sm:text-[11px]">
+              Reach Readers Everywhere Your Book Belongs
+            </span>
+
+            <span className="h-px w-8 bg-[#E7665D]" />
           </div>
 
-          {/* Left / Right Carousel Navigation Controls */}
-          <div className="flex items-center gap-3 self-end sm:self-auto shrink-0">
-            <button
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              aria-label="Scroll carousel left"
-              className="flex h-11 w-11 items-center justify-center rounded-sm border border-white/20 bg-white/5 text-white shadow-subtle hover:bg-[#E7665D] hover:border-[#E7665D] transition-all disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              aria-label="Scroll carousel right"
-              className="flex h-11 w-11 items-center justify-center rounded-sm border border-white/20 bg-white/5 text-white shadow-subtle hover:bg-[#E7665D] hover:border-[#E7665D] transition-all disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+          {/* Heading */}
+          <h2
+            id="marketing-distribution-heading"
+            className="font-serif text-[2rem] max-w-2xl mx-auto font-medium leading-[1.12] tracking-tight text-white sm:text-[2.5rem] lg:text-[2.7rem]"
+          >
+            Book Marketing & Distribution{" "}
+            <span className="italic text-[#F08A82]">
+              That Gets You Discovered
+            </span>
+          </h2>
+
+          {/* Intro */}
+          <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.96rem] leading-[1.85] text-slate-300 sm:text-[1rem]">
+            Getting published is one milestone. Getting read
+            is another. We build distribution plans, retail
+            positioning and promotional campaigns designed
+            to put your book in front of the readers most
+            likely to buy it.
+          </p>
+        </motion.div>
+
+        {/* Editorial divider */}
+        <div className="relative z-10 mb-8 flex items-center gap-4">
+          <span className="h-[2px] w-9 bg-[#E7665D]" />
+
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-slate-400">
+            Marketing & Distribution Expertise
+          </span>
+
+          <span className="h-px flex-1 bg-white/10" />
+
+          <span className="font-sans text-xs text-[#F08A82]">
+            01 — 03
+          </span>
         </div>
 
-        {/* Bookshelf Presentation Track */}
-        <div className="relative w-full">
-          {/* Subtle gradient side edge masks for cinematic entry */}
-          {/* <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-[#0D1527] to-transparent" /> */}
-          {/* <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-[#0D1527] to-transparent" /> */}
+        {/* Three Marketing Service Cards */}
+        <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {marketingServices.map((service, index) => {
+            const Icon = service.icon;
 
-          <div
-            ref={scrollerRef}
-            className="flex items-end gap-8 sm:gap-10 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-8 pb-12 px-4 sm:px-12 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {booksData.map((book, i) => (
-              <motion.div
-                key={book.title}
-                initial={{ opacity: 0, y: 20 }}
+            return (
+              <motion.article
+                key={service.number}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="book-carousel-card w-52 sm:w-60 shrink-0 snap-center group flex flex-col items-center text-center cursor-pointer"
-                onClick={() => scrollToIndex(i)}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.55,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-md border border-white/10 bg-gradient-to-b from-[#19243B] to-[#111A2D] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_18px_42px_rgba(0,0,0,0.2)]"
               >
-                {/* Book Cover with 3D shadow and hover lift */}
-                <div className="w-full flex justify-center drop-shadow-[0_16px_28px_rgba(0,0,0,0.55)] group-hover:drop-shadow-[0_26px_38px_rgba(0,0,0,0.7)] group-hover:-translate-y-3 transition-all duration-300">
-                  <div className="w-48 sm:w-56">
-                    <BookCover
-                      title={book.title}
-                      author={book.author}
-                      genre={book.genre}
-                      bg={book.coverColor}
-                      frontSrc={book.frontSrc}
-                      elevation={true}
+                {/* Top accent */}
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full"
+                />
+
+                {/* Visual Header */}
+                <div className="relative flex min-h-[170px] items-center justify-center overflow-hidden border-b border-white/10 bg-[#172238] p-8 sm:min-h-[190px]">
+                  <div
+                    aria-hidden="true"
+                    className="absolute h-44 w-44 rounded-full border border-[#E7665D]/10"
+                  />
+
+                  <div
+                    aria-hidden="true"
+                    className="absolute h-32 w-32 rounded-full border border-white/10"
+                  />
+
+                  <div
+                    aria-hidden="true"
+                    className="absolute h-20 w-20 rounded-full bg-[#E7665D]/10 blur-2xl"
+                  />
+
+                  <span className="absolute left-6 top-5 font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#F08A82]">
+                    {service.eyebrow}
+                  </span>
+
+                  <span className="absolute right-6 top-5 font-serif text-3xl italic text-white/15">
+                    {service.number}
+                  </span>
+
+                  {/* Main service icon */}
+                  <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border border-[#E7665D]/35 bg-[#E7665D]/10 text-[#F08A82] shadow-[0_0_45px_rgba(231,102,93,0.12)] transition-transform duration-500 group-hover:scale-110">
+                    <Icon
+                      size={35}
+                      strokeWidth={1.3}
+                      aria-hidden="true"
                     />
+                  </div>
+
+                  {/* Decorative dots */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute bottom-6 left-7 flex gap-1.5"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#E7665D]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
                   </div>
                 </div>
 
-                {/* Centered Book Metadata */}
-                <div className="mt-5 flex flex-col items-center text-center w-full px-2">
-                  <span className="font-sans text-[10px] uppercase tracking-[0.16em] text-[#F08A82] font-semibold block">
-                    {book.genre}
-                  </span>
-                  <p className="font-serif text-[1.12rem] sm:text-[1.2rem] font-medium text-white group-hover:text-[#F08A82] transition-colors mt-1 max-w-full line-clamp-1">
-                    {book.title}
+                {/* Card Body */}
+                <div className="flex flex-1 flex-col p-7 sm:p-8">
+                  <h3 className="font-serif text-[1.3rem] font-medium leading-[1.2] text-white transition-colors group-hover:text-[#F08A82] sm:text-[1.5rem]">
+                    {service.title}
+                  </h3>
+
+                  <div className="my-5 h-[2px] w-10 bg-[#E7665D]/70" />
+
+                  <p className="font-sans text-[0.9rem] leading-[1.85] text-slate-300 sm:text-[0.94rem]">
+                    {service.description}
                   </p>
-                  <p className="font-sans text-xs text-slate-300/90 mt-0.5 line-clamp-1">
-                    {book.author}
-                  </p>
+
+                  {/* Supporting service details */}
+                  <div className="mt-auto pt-8">
+                    <div className="border-t border-white/10 pt-5">
+                      <span className="mb-4 block font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                        Key Focus Areas
+                      </span>
+
+                      <div className="flex flex-col gap-3">
+                        {service.features.map((feature) => {
+                          const FeatureIcon = feature.icon;
+
+                          return (
+                            <div
+                              key={feature.label}
+                              className="flex items-center gap-3"
+                            >
+                              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#E7665D]/10 text-[#F08A82]">
+                                <FeatureIcon
+                                  size={15}
+                                  strokeWidth={1.6}
+                                  aria-hidden="true"
+                                />
+                              </span>
+
+                              <span className="font-sans text-xs text-slate-200">
+                                {feature.label}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </motion.article>
+            );
+          })}
+        </div>
 
-          {/* Bookshelf Line Underneath */}
-          <div className="w-full h-px bg-white/10 relative -mt-6">
-            <div className="absolute inset-x-12 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E7665D]/30 to-transparent" />
-          </div>
-
-          {/* Carousel Pagination Indicator */}
-          <div className="flex items-center justify-center gap-2 mt-6">
-            {booksData.map((book, i) => (
-              <button
-                key={`dot-${book.title}`}
-                onClick={() => scrollToIndex(i)}
-                aria-label={`Jump to book ${book.title}`}
-                className={`h-1.5 rounded-full transition-all ${activeIndex === i
-                  ? "w-8 bg-[#E7665D]"
-                  : "w-2 bg-white/20 hover:bg-white/40"
-                  }`}
+        {/* Bottom Marketing CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="relative z-10 mt-10 flex flex-col items-start justify-between gap-6 rounded-md border border-white/10 bg-white/[0.04] px-7 py-7 sm:flex-row sm:items-center sm:px-9"
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-[#E7665D]/25 bg-[#E7665D]/10 text-[#F08A82]">
+              <Sparkles
+                size={22}
+                strokeWidth={1.5}
+                aria-hidden="true"
               />
-            ))}
+            </div>
+
+            <div>
+              <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#F08A82]">
+                Beyond Publication
+              </span>
+
+              <p className="mt-1 font-serif text-xl font-medium text-white sm:text-2xl">
+                Your book deserves to be discovered.
+              </p>
+
+              <p className="mt-2 max-w-xl font-sans text-sm leading-relaxed text-slate-300">
+                From retailer setup to pre-launch publicity
+                and ongoing promotion, we help connect your
+                book with its audience.
+              </p>
+            </div>
           </div>
+
+          <Link
+            href="/marketing/"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#E7665D] px-5 py-3.5 font-sans text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#D9574E]"
+          >
+            Explore Our Marketing Services
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </motion.div>
+
+        {/* Bottom trust indicators */}
+        <div className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+          {[
+            "Retail Distribution",
+            "ARC & Reviewer Outreach",
+            "Strategic Book Launches",
+          ].map((item) => (
+            <span
+              key={item}
+              className="inline-flex items-center gap-2 font-sans text-xs text-slate-400"
+            >
+              <CheckCircle2
+                size={15}
+                className="text-[#F08A82]"
+                strokeWidth={1.7}
+                aria-hidden="true"
+              />
+              {item}
+            </span>
+          ))}
         </div>
       </Container>
     </section>

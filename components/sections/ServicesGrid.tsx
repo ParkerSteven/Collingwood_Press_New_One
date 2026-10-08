@@ -1,81 +1,248 @@
+
 "use client";
 
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
-import { formattingServices } from "@/lib/data";
-import { BookOpen, Layers, PenTool, CheckCircle2, ArrowRight } from "lucide-react";
+import {
+  FileSearch,
+  ClipboardList,
+  PenLine,
+  Palette,
+  PackageCheck,
+  Megaphone,
+  ArrowRight,
+  Clock3,
+  CheckCircle2,
+} from "lucide-react";
 
-const icons = [BookOpen, Layers, PenTool, CheckCircle2];
+const publishingSteps = [
+  {
+    number: "01",
+    title: "Free Manuscript Review",
+    icon: FileSearch,
+    description:
+      "Send us your manuscript or opening chapters. A senior editor reads your work and gives you a candid assessment, typically within 5 to 7 days.",
+    note: "Typically 5–7 days",
+  },
+  {
+    number: "02",
+    title: "Your Publishing Plan & Agreement",
+    icon: ClipboardList,
+    description:
+      "We map the services, timeline and budget around your goals, and put the terms, including your rights, in writing before any work begins.",
+    note: "Clear plans & transparent terms",
+  },
+  {
+    number: "03",
+    title: "Editing & Manuscript Refinement",
+    icon: PenLine,
+    description:
+      "Your senior editor takes the manuscript through the editing stages it needs, from developmental and line editing to copy editing and final proofreading.",
+    note: "Professional editorial refinement",
+  },
+  {
+    number: "04",
+    title: "Cover Design & Interior Typesetting",
+    icon: Palette,
+    description:
+      "We design an original cover and hand-typeset your interior in Adobe InDesign. You review and approve proofs before anything goes to print.",
+    note: "Original design & approved proofs",
+  },
+  {
+    number: "05",
+    title: "Production & Distribution Setup",
+    icon: PackageCheck,
+    description:
+      "We prepare your final files and configure metadata, categories and keywords, then set up distribution to Amazon, IngramSpark, Barnes & Noble and other retail channels.",
+    note: "Retail-ready production",
+  },
+  {
+    number: "06",
+    title: "Launch & Marketing",
+    icon: Megaphone,
+    description:
+      "We run your launch with ARC distribution, reviewer and media outreach and advertising, and keep momentum going after release day.",
+    note: "Launch support & ongoing visibility",
+  },
+];
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="bg-white py-14 lg:py-20">
-      <Container className="flex flex-col gap-14 sm:gap-16">
-        <SectionHeading
-          eyebrow="Interior Architecture &amp; Binding"
-          title={
-            <>
-              Your manuscript is finished.{" "}
-              <span className="italic text-[#E7665D]">Now we prepare it for the shelf.</span>
-            </>
-          }
-          description="Whether you have an unformatted Word document or a complex manuscript requiring dual-column indices and footnoting, our master typographers engineer your pages for world-class readability."
-        />
+    <section
+      id="publishing-process"
+      aria-labelledby="publishing-process-heading"
+      className="relative overflow-hidden border-b border-line bg-[#FCFAF7] py-20 lg:py-28"
+    >
+      <Container>
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
+        >
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#E7665D]" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {formattingServices.map((service, i) => {
-            const Icon = icons[i];
+            <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
+              From First Chapter to Finished Book
+            </span>
+
+            <span className="h-px w-8 bg-[#E7665D]" />
+          </div>
+
+          <h2
+            id="publishing-process-heading"
+            className="font-serif text-[2rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.5rem] lg:text-[2.7rem]"
+          >
+            Our Book Publishing Process:{" "}
+            <span className="italic text-[#E7665D]">
+              From Manuscript to Marketplace
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.96rem] leading-[1.85] text-ink-muted sm:text-[1rem]">
+            Publishing should never feel like guesswork. Here is
+            how a project moves through our{" "}
+            <strong className="font-semibold text-ink">
+              book publishing process
+            </strong>
+            , typically in 3 to 6 months depending on scope.
+          </p>
+        </motion.div>
+
+        {/* Process progress heading */}
+        <div className="mb-7 flex items-center gap-4">
+          <span className="h-[2px] w-9 bg-[#E7665D]" />
+
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-ink-muted">
+            Your Publishing Journey
+          </span>
+
+          <span className="h-px flex-1 bg-line" />
+
+          <span className="font-sans text-xs text-[#E7665D]">
+            01 — 06
+          </span>
+        </div>
+
+        {/* Six-step process grid */}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {publishingSteps.map((step, index) => {
+            const Icon = step.icon;
+
             return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
+              <motion.article
+                key={step.number}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group flex flex-col justify-between rounded-sm border border-[#E7665D]/25 bg-white p-7 sm:p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_6px_32px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300"
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.55,
+                  delay: (index % 3) * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-sm border border-[#E7665D]/20 bg-white p-7 shadow-[0_4px_20px_rgba(17,26,48,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_14px_35px_rgba(231,102,93,0.10)] sm:p-8"
               >
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between pb-4 border-b border-line/70">
-                    <span className="font-serif text-2xl sm:text-3xl font-normal text-ink-muted/50 group-hover:text-[#E7665D] transition-colors">
-                      {service.step}
+                {/* Top accent */}
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full"
+                />
+
+                {/* Step header */}
+                <div className="mb-6 flex items-start justify-between border-b border-line/70 pb-6">
+                  <div>
+                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
+                      Step {step.number}
                     </span>
-                    <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-[#fdf6f5] text-ink-soft border border-[#E7665D]/20 group-hover:border-[#E7665D]/40 group-hover:text-[#E7665D] transition-colors">
-                      <Icon size={18} strokeWidth={1.5} />
-                    </span>
+
+                    <div className="mt-2 font-serif text-[2.7rem] font-normal leading-none text-[#E7665D]/35">
+                      {step.number}
+                    </div>
                   </div>
 
-                  <h3 className="font-serif text-[1.2rem] font-medium text-ink leading-snug mt-1 group-hover:text-ink transition-colors">
-                    {service.title}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#FDF3F1] text-[#E7665D] transition-colors duration-300 group-hover:border-[#E7665D]/50">
+                    <Icon
+                      size={23}
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+
+                {/* Step content */}
+                <div className="flex flex-1 flex-col">
+                  <h3 className="font-serif text-[1.3rem] font-medium leading-[1.22] text-ink sm:text-[1.3rem]">
+                    {step.title}
                   </h3>
 
-                  <p className="text-[0.91rem] leading-relaxed text-ink-muted font-sans">
-                    {service.description}
+                  <p className="mt-4 font-sans text-[0.79rem] leading-[1.85] text-ink-muted sm:text-[0.84rem]">
+                    {step.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-line/60">
-                  <span className="inline-flex items-center gap-2 font-sans text-xs text-ink-soft">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E7665D]" />
-                    {service.highlight}
+                {/* Card footer */}
+                <div className="mt-8 flex items-center gap-2 border-t border-line/70 pt-5">
+                  <CheckCircle2
+                    size={15}
+                    strokeWidth={1.8}
+                    className="shrink-0 text-[#E7665D]"
+                    aria-hidden="true"
+                  />
+
+                  <span className="font-sans text-[11px] font-medium text-ink-soft">
+                    {step.note}
                   </span>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
 
-        {/* Action Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <Button href="/publishing" variant="outline" size="lg">
-            <span>Explore Publishing Formats</span>
+        {/* Process duration and action */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-10 flex flex-col items-center justify-between gap-6 rounded-sm border border-[#E7665D]/25 bg-white px-7 py-7 shadow-[0_4px_24px_rgba(231,102,93,0.06)] sm:flex-row sm:px-9"
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#FDF3F1] text-[#E7665D]">
+              <Clock3
+                size={22}
+                strokeWidth={1.6}
+                aria-hidden="true"
+              />
+            </div>
+
+            <div>
+              <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
+                Typical Publishing Timeline
+              </span>
+
+              <p className="mt-1 font-serif text-xl font-medium text-ink sm:text-2xl">
+                3–6 Months From Manuscript to Marketplace
+              </p>
+
+              <p className="mt-1 font-sans text-xs text-ink-muted">
+                Timelines vary depending on manuscript scope and services.
+              </p>
+            </div>
+          </div>
+
+          <Button
+            href="/contact-us#manuscript-review"
+            variant="primary"
+            size="lg"
+          >
+            <span>Start with a Free Manuscript Review</span>
+            <ArrowRight size={15} aria-hidden="true" />
           </Button>
-          <Button href="/contact-us#manuscript-review" variant="primary" size="lg">
-            <span>Submit Manuscript for Formatting</span>
-            <ArrowRight size={14} />
-          </Button>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

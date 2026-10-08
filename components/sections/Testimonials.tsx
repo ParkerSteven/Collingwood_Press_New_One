@@ -1,176 +1,148 @@
+
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import {
+  BookOpenText,
+  LayoutTemplate,
+  ShieldCheck,
+  MessagesSquare,
+  ArrowUpRight,
+} from "lucide-react";
+
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import BookCover from "@/components/ui/BookCover";
-import { testimonials } from "@/lib/data";
-import { CheckCircle, ChevronLeft, ChevronRight, Star } from "lucide-react";
+
+const benefits = [
+  {
+    number: "01",
+    icon: BookOpenText,
+    title: "Dedicated Senior Editor",
+    description:
+      "Every manuscript is assigned to a senior editor with deep genre knowledge and real publishing experience. No automated feedback loops. No revolving door of freelancers. One experienced professional guides your book from rough draft to finished product.",
+  },
+  {
+    number: "02",
+    icon: LayoutTemplate,
+    title: "Custom InDesign Typography",
+    description:
+      "Your interior is typeset by hand in Adobe InDesign, shaped around the pacing, tone and visual conventions of your genre. We do not pull from a template library. Every layout is built for your manuscript.",
+  },
+  {
+    number: "03",
+    icon: ShieldCheck,
+    title: "100% Rights & Royalty Guarantee",
+    description:
+      "Your intellectual property stays exactly where it belongs: with you. Full copyright. Full royalties. That guarantee is written into every publishing agreement we sign.",
+  },
+  {
+    number: "04",
+    icon: MessagesSquare,
+    title: "Direct Access to Publishing Directors",
+    description:
+      "You will never be sent to a call center or left waiting on a support ticket. Our publishing directors work with you directly and give clear answers and honest guidance at every stage.",
+  },
+];
 
 export default function Testimonials() {
-  const [selectedIdx, setSelectedIdx] = useState(0);
-  const featured = testimonials[selectedIdx] || testimonials[0];
-
   return (
-    <section className="bg-white py-20 lg:py-28 border-b border-line">
-      <Container className="flex flex-col gap-14 sm:gap-16">
-        <SectionHeading
-          eyebrow="Author Acclaim &amp; Case Studies"
-          title={
-            <>
-              Because we turn first-draft uncertainty into{" "}
-              <span className="italic text-[#E7665D]">shelf-ready literature</span>
-            </>
-          }
-          description="Every author who enters our press shares the same quiet conviction: their story matters, and it deserves to be published with pride. Here is how our authors describe the partnership."
-        />
+    <section
+      id="why-choose-us"
+      aria-labelledby="why-choose-us-heading"
+      className="relative overflow-hidden border-b border-line bg-white py-20 lg:py-28"
+    >
+      <Container>
+        {/* Section heading */}
+        <div id="why-choose-us-heading">
+          <SectionHeading
+            eyebrow="Author-First Publishing, Built Around Your Rights"
+            title={
+              <>
+                Why Authors Choose This{" "}
+                <span className="italic text-[#E7665D]">
+                  Book Publishing Company
+                </span>
+              </>
+            }
+            description="The traditional publishing model forces a trade: professional quality in exchange for your rights, your earnings and often your creative say. We rejected that trade from day one. The Collingwood Press brings major-house editorial standards to every project and leaves you in full control of your work."
+          />
+        </div>
 
-        {/* Featured Testimonial Hero Card */}
-        <motion.article
-          key={featured.name}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="elative rounded-sm border border-[#E7665D]/25 bg-white p-7 sm:p-10 lg:p-12 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)]"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-[1.45fr_0.55fr] gap-8 lg:gap-12 items-center">
-            {/* Left: Pull Quote & Author Info */}
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                {/* Editorial Topline with Star Rating */}
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-line/70">
-                  <div className="flex items-center gap-2">
-                    <span className="font-sans text-[11px] uppercase tracking-[0.18em] font-semibold text-[#E7665D]">
-                      Featured Author Case Study
-                    </span>
-                    <span className="text-line-strong">&bull;</span>
-                    <span className="font-sans text-[11px] uppercase tracking-[0.14em] text-ink-muted">
-                      {featured.genre}
-                    </span>
+        {/* Editorial divider */}
+        <div className="mt-12 flex items-center gap-4 lg:mt-16">
+          <span className="h-[2px] w-10 bg-[#E7665D]" />
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-muted">
+            The Collingwood Difference
+          </span>
+          <span className="h-px flex-1 bg-line" />
+          <span className="font-sans text-xs text-[#E7665D]">
+            01 — 04
+          </span>
+        </div>
+
+        {/* Benefits grid */}
+        <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+
+            return (
+              <motion.article
+                key={benefit.number}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.55,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-sm border border-line bg-[#FCFAF7] p-7 transition-all duration-300 hover:border-[#E7665D]/40 hover:bg-white hover:shadow-[0_12px_36px_rgba(17,26,48,0.07)] sm:p-9 lg:p-10"
+              >
+                {/* Top edge accent */}
+                <div className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full" />
+
+                {/* Icon and number */}
+                <div className="mb-8 flex items-start justify-between">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#E7665D]/10 text-[#E7665D]">
+                    <Icon
+                      size={25}
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    />
                   </div>
 
-                  <div className="flex items-center gap-1">
-                    {[...Array(featured.rating)].map((_, idx) => (
-                      <Star key={idx} size={14} className="fill-[#E7665D] text-[#E7665D]" />
-                    ))}
-                    <span className="text-[11px] text-ink-muted font-sans ml-1 hidden sm:inline">Verified Author</span>
-                  </div>
-                </div>
-
-                {/* Literary Quote */}
-                <blockquote className="font-sans text-ink-soft relative lg:top-8 pb-6  italic text-[1rem] sm:text-[1.2rem] lg:text-[1.3rem] leading-[1.25]">
-                  &ldquo;{featured.quote}&rdquo;
-                </blockquote>
-              </div>
-
-              {/* Author Citation with larger portrait */}
-              <div className="pt-6 border-t border-line/70 flex items-center gap-4">
-                <Image
-                  src={featured.avatar}
-                  alt={`Author portrait of ${featured.name}`}
-                  width={64}
-                  height={64}
-                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border border-line shadow-sm"
-                />
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-sans text-[1.2rem] sm:text-[1.3rem] font-medium text-ink leading-tight">
-                      {featured.name}
-                    </h3>
-                    <CheckCircle size={14} className="text-[#E7665D] shrink-0" />
-                  </div>
-                  <span className="font-sans text-xs text-ink-muted mt-0.5">
-                    {featured.role} &bull; Author of <span className="italic font-sans text-ink">{featured.book}</span>
+                  <span className="font-serif text-4xl italic leading-none text-[#E7665D]/30">
+                    {benefit.number}
                   </span>
                 </div>
-              </div>
-            </div>
 
-            {/* Right: Book Jacket Display */}
-            <div className="flex flex-col items-center justify-center p-6 sm:p-8 rounded-sm bg-paper-warm/70 border border-line/80 text-center">
-              <div className="w-28 sm:w-32 drop-shadow-xl hover:scale-105 transition-transform duration-300">
-                <BookCover
-                  title={featured.jacketArt.title}
-                  author={featured.jacketArt.author}
-                  genre={featured.genre}
-                  bg={featured.jacketArt.colorBg}
-                  accent={featured.jacketArt.colorAccent}
-                  artTheme={featured.jacketArt.artTheme}
-                  elevation={true}
-                />
-              </div>
+                {/* Card content */}
+                <div className="flex flex-1 flex-col">
+                  <h3 className="mb-4 max-w-[340px] font-serif text-[1.3rem] font-medium leading-[1.2] tracking-tight text-ink sm:text-[1.5rem]">
+                    {benefit.title}
+                  </h3>
 
-              <div className="mt-5 flex flex-col items-center">
-                <span className="font-serif text-[1.05rem] font-medium text-ink">
-                  {featured.book}
-                </span>
-                <span className="font-sans text-[11px] text-ink-muted mt-0.5">
-                  {featured.jacketArt.subtitle || "Collingwood 1st Edition"}
-                </span>
-                <span className="font-sans text-[10px] uppercase tracking-[0.16em] text-[#E7665D] font-semibold mt-2 px-2.5 py-0.5 rounded-sm bg-[#E7665D]/10 border border-[#E7665D]/20">
-                  Cloth Hardcover &bull; Digital
-                </span>
-              </div>
-            </div>
-          </div>
-        </motion.article>
-
-        {/* Supporting Testimonial Cards & Selector */}
-        <div>
-          <div className="flex items-center justify-between mb-4">
-            <span className="font-sans text-[11px] uppercase tracking-[0.18em] font-semibold text-ink-muted">
-              Select Author Narrative:
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {testimonials.map((t, idx) => {
-              const isSelected = idx === selectedIdx;
-              return (
-                <button
-                  key={t.name}
-                  onClick={() => setSelectedIdx(idx)}
-                  className={`text-left p-4 sm:p-5 rounded-sm border transition-all duration-200 cursor-pointer flex flex-col justify-between ${isSelected
-                    ? "border-[#E7665D] bg-paper-card shadow-sm ring-1 ring-[#E7665D]/20"
-                    : "border-line bg-paper-card/70 hover:bg-paper-card hover:border-line-strong"
-                    }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <Image
-                      src={t.avatar}
-                      alt={t.name}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 rounded-full object-cover border border-line"
-                    />
-                    <div className="overflow-hidden">
-                      <p className={`font-sans text-[0.98rem] leading-tight truncate ${isSelected ? "text-[#E7665D] font-medium" : "text-ink"}`}>
-                        {t.name}
-                      </p>
-                      <p className="font-sans text-[11px] text-ink-muted truncate mt-0.5">
-                        {t.genre}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="mt-3 font-sans italic text-xs text-ink-soft line-clamp-2 leading-relaxed">
-                    &ldquo;{t.quote}&rdquo;
+                  <p className="font-sans text-[0.8rem] leading-[1.85] text-ink-soft sm:text-[0.85rem]">
+                    {benefit.description}
                   </p>
+                </div>
 
-                  <div className="mt-3 pt-2.5 border-t border-line/60 flex items-center justify-between">
-                    <span className="font-sans text-[10px] text-ink-muted truncate">
-                      {t.book}
-                    </span>
-                    <span className={`text-[10px] uppercase font-sans font-semibold tracking-wider ${isSelected ? "text-[#E7665D]" : "text-ink-muted"}`}>
-                      {isSelected ? "Active" : "Read"} &rarr;
-                    </span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+                {/* Bottom element */}
+                <div className="mt-9 flex items-center justify-between border-t border-line/80 pt-5">
+                  <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                    Our Publishing Promise
+                  </span>
+
+                  <ArrowUpRight
+                    size={17}
+                    strokeWidth={1.6}
+                    aria-hidden="true"
+                    className="text-[#E7665D] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  />
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </Container>
     </section>

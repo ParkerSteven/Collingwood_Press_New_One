@@ -103,24 +103,9 @@ export default function PlatformLogos() {
   const carouselItems = [...retailerLogos, ...retailerLogos, ...retailerLogos];
 
   return (
-    <section className="bg-white py-16 sm:py-20 overflow-hidden paper-grain">
+    <section className="bg-white overflow-hidden paper-grain">
       <Container className="flex flex-col items-center gap-8">
-        {/* Section Heading */}
-        <div className="flex flex-col items-center text-center max-w-2xl">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-px bg-[#E7665D]/60" />
-            <span className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#E7665D] font-semibold">
-              Global Distribution &amp; Retail Booktrade
-            </span>
-            <span className="w-8 h-px bg-[#E7665D]/60" />
-          </div>
-          <h2 className="mt-3 font-serif text-[1.9rem] sm:text-[2.35rem] font-medium text-ink tracking-tight">
-            Our authors&rsquo; books sell everywhere readers shop
-          </h2>
-          <p className="mt-2 text-[0.95rem] text-ink-muted/90 font-sans max-w-lg leading-relaxed">
-            Direct ingestion into over 40,000 retail storefronts, university libraries, and global digital catalogs.
-          </p>
-        </div>
+
 
         {/* Infinite Marquee */}
         <div className="relative w-full overflow-hidden mt-4">

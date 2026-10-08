@@ -1,85 +1,219 @@
+
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Globe2, Megaphone, Store, ArrowRight, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
-import SectionHeading from "@/components/ui/SectionHeading";
-import { marketingServices } from "@/lib/data";
+import {
+  BookOpenText,
+  BriefcaseBusiness,
+  Palette,
+  UserRound,
+  ArrowUpRight,
+} from "lucide-react";
 
-const icons = [Globe2, Megaphone, Store];
+const teamMembers = [
+  {
+    id: "01",
+    name: "[INSERT NAME]",
+    role: "Senior Editor",
+    icon: BookOpenText,
+    image: "", // Add verified team member photo path
+    imageAlt: "",
+    bio: "[INSERT 2–3 sentence bio: genre expertise, years of experience, notable titles.]",
+    specialty: "Editorial Leadership",
+  },
+  {
+    id: "02",
+    name: "[INSERT NAME]",
+    role: "Publishing Director",
+    icon: BriefcaseBusiness,
+    image: "", // Add verified team member photo path
+    imageAlt: "",
+    bio: "[INSERT 2–3 sentence bio: role in the publishing process and what authors can expect.]",
+    specialty: "Publishing Direction",
+  },
+  {
+    id: "03",
+    name: "[INSERT NAME]",
+    role: "Design Lead",
+    icon: Palette,
+    image: "", // Add verified team member photo path
+    imageAlt: "",
+    bio: "[INSERT 2–3 sentence bio: design background and specialties.]",
+    specialty: "Cover & Interior Design",
+  },
+];
 
 export default function MarketingServices() {
   return (
-    <section id="marketing" className="bg-white py-20 lg:py-28">
-      <Container className="flex flex-col gap-14 sm:gap-16">
-        <SectionHeading
-          eyebrow="Author Reach &amp; Sales Strategy"
-          title={
-            <>
-              Your book is in print.{" "}
-              <span className="italic text-[#E7665D]">Now we place it in readers&rsquo; hands.</span>
-            </>
-          }
-          description="Publication day is not the finish line—it is day one of your book's public life. Our marketing team crafts customized campaigns tailored to the commercial realities of your genre."
-        />
+    <section
+      id="publishing-team"
+      aria-labelledby="publishing-team-heading"
+      className="relative overflow-hidden border-b border-line bg-white py-20 lg:py-28"
+    >
+      <Container>
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
+        >
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#E7665D]" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8">
-          {marketingServices.map((service, i) => {
-            const Icon = icons[i];
+            <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
+              The People Behind Your Publishing Journey
+            </span>
+
+            <span className="h-px w-8 bg-[#E7665D]" />
+          </div>
+
+          <h2
+            id="publishing-team-heading"
+            className="font-serif text-[2rem] max-w-2xl mx-auto font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.7rem] lg:text-[2.7rem]"
+          >
+            Meet the Publishing Team{" "}
+            <span className="italic text-[#E7665D]">
+              Behind Your Book
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.97rem] leading-[1.85] text-ink-muted sm:text-[1.05rem]">
+            Real names, real experience, direct access.
+            These are the professionals who will work on
+            your manuscript.
+          </p>
+        </motion.div>
+
+        {/* Section divider */}
+        <div className="mb-7 flex items-center gap-4">
+          <span className="h-[2px] w-9 bg-[#E7665D]" />
+
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-ink-muted">
+            Our Publishing Professionals
+          </span>
+
+          <span className="h-px flex-1 bg-line" />
+
+          <span className="font-sans text-xs text-[#E7665D]">
+            01 — 03
+          </span>
+        </div>
+
+        {/* Team member cards */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+          {teamMembers.map((member, index) => {
+            const Icon = member.icon;
+
             return (
-              <motion.div
-                key={service.title}
+              <motion.article
+                key={member.id}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="group relative flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white p-8 sm:p-9 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300"
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.55,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-md border border-[#E7665D]/20 bg-[#FCFAF7] shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/45 hover:shadow-[0_14px_38px_rgba(231,102,93,0.10)]"
               >
-                <div className="flex flex-col">
-                  {/* Icon + Number + Badge */}
-                  <div className="flex items-center justify-between pb-5 mb-5 border-b border-line/70">
-                    <div className="flex items-center gap-3.5">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 shadow-sm group-hover:bg-[#E7665D] group-hover:text-white group-hover:border-[#E7665D] group-hover:scale-105 transition-all duration-300">
-                        <Icon size={24} strokeWidth={1.75} />
+                {/* Portrait */}
+                <div className="relative h-[310px] overflow-hidden bg-gradient-to-br from-[#EAE5DD] via-[#D9D6D0] to-[#C7C9CD] sm:h-[350px]">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={
+                        member.imageAlt ||
+                        `${member.name}, ${member.role} at The Collingwood Press`
+                      }
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+                      <div className="flex h-28 w-28 items-center justify-center rounded-full border border-[#A8A5A0]/40 bg-white/25">
+                        <UserRound
+                          size={54}
+                          strokeWidth={1}
+                          className="text-[#8E918F]"
+                          aria-hidden="true"
+                        />
                       </div>
-                      <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
-                        0{i + 1}
+
+                      <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#858683]">
+                        Team Portrait Placeholder
                       </span>
                     </div>
-                    <span className="font-sans text-[10.5px] uppercase tracking-[0.16em] text-ink-muted font-semibold bg-[#fdf6f5] px-2.5 py-1 rounded-md border border-[#E7665D]/20">
-                      {service.badge}
+                  )}
+
+                  {/* Portrait overlay */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#121A2B]/60 to-transparent" />
+
+                  <span className="absolute left-5 top-5 rounded-sm border border-white/25 bg-[#121A2B]/65 px-3 py-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
+                    Team Member {member.id}
+                  </span>
+
+                  <div className="absolute bottom-5 left-6 right-6">
+                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-[#F7B0A9]">
+                      The Collingwood Press
                     </span>
+
+                    <h3 className="mt-1 font-serif text-[1.8rem] font-medium leading-tight text-white">
+                      {member.name}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Profile content */}
+                <div className="flex flex-1 flex-col p-7 sm:p-8">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#FDF0ED] text-[#E7665D]">
+                      <Icon
+                        size={19}
+                        strokeWidth={1.6}
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    <div>
+                      <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-[#E7665D]">
+                        {member.role}
+                      </span>
+
+                      <span className="mt-0.5 block font-sans text-[11px] text-ink-muted">
+                        {member.specialty}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="font-serif text-[1.4rem] font-medium text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                    {service.title}
-                  </h3>
+                  <div className="my-6 h-px bg-line/80" />
 
-                  {/* Description */}
-                  <p className="mt-3.5 font-sans text-[0.88rem] leading-relaxed text-ink-muted">
-                    {service.description}
+                  <p className="font-sans text-[0.91rem] leading-[1.85] text-ink-muted">
+                    {member.bio}
                   </p>
 
-                  {/* Divider */}
-                  <div className="w-full h-px bg-line/70 my-6" />
+                  {/* Card footer */}
+                  <div className="mt-auto pt-8">
+                    <div className="flex items-center justify-between border-t border-line/80 pt-5">
+                      <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                        Publishing Team
+                      </span>
 
-                  {/* Points */}
-                  <ul className="flex flex-col gap-3">
-                    {service.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-3 text-[0.88rem] font-sans text-ink-soft"
-                      >
-                        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#E7665D]/15 text-[#E7665D] text-[10px] mt-0.5 font-bold">
-                          ✓
-                        </span>
-                        <span className="leading-snug pt-px">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                      <ArrowUpRight
+                        size={17}
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                        className="text-[#E7665D]"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

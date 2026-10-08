@@ -1,155 +1,160 @@
+
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
-import { ShieldCheck, Clock, PhoneCall, CheckCircle2, Lock, ArrowRight } from "lucide-react";
+import {
+  Quote,
+  BookOpenText,
+  CheckCircle2,
+} from "lucide-react";
+
+type Testimonial = {
+  id: string;
+  quote: string;
+  author: string;
+  book: string;
+  genre?: string;
+};
+
+const testimonials: Testimonial[] = [
+  {
+    id: "01",
+    quote: "[INSERT real quote]",
+    author: "[INSERT Author Name]",
+    book: "[INSERT Book Title]",
+    genre: "",
+  },
+  {
+    id: "02",
+    quote: "[INSERT real quote, ideally from a different genre]",
+    author: "[INSERT Author Name]",
+    book: "[INSERT Book Title]",
+    genre: "",
+  },
+  {
+    id: "03",
+    quote: "[INSERT real quote]",
+    author: "[INSERT Author Name]",
+    book: "[INSERT Book Title]",
+    genre: "",
+  },
+];
 
 export default function ManuscriptCTA() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <section id="manuscript-review" className="bg-white py-20 lg:py-10">
+    <section
+      id="author-testimonials"
+      aria-labelledby="author-testimonials-heading"
+      className="relative overflow-hidden border-b border-line bg-white py-20 lg:py-28"
+    >
       <Container>
+        {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-70px" }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl border border-[#E7665D]/25 bg-white p-8 sm:p-12 lg:p-14 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] rounded-sm"
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
         >
-          {/* Header Plaque */}
-          <div className="text-center max-w-xl mx-auto flex flex-col items-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#fdf6f5] text-[#E7665D] font-sans text-[11px] font-semibold tracking-[0.18em] uppercase border border-[#E7665D]/20">
-              <ShieldCheck size={13} />
-              <span>Complimentary Editorial Evaluation</span>
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#E7665D]" />
+
+            <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
+              Hear It From Our Authors
             </span>
 
-            <h2 className="mt-4 font-serif text-[2.3rem] sm:text-[2.85rem] font-medium text-ink leading-tight text-balance">
-              Your story&rsquo;s next chapter{" "}
-              <span className="italic text-[#E7665D] font-normal">starts here</span>
-            </h2>
-
-            <p className="mt-3 font-sans text-[0.98rem] leading-relaxed text-ink-muted">
-              Submit your manuscript or opening chapters. Within 5–7 business days, a senior trade
-              editor reads your work and provides an honest, constructive appraisal—free of sales
-              pressure or automated replies.
-            </p>
+            <span className="h-px w-8 bg-[#E7665D]" />
           </div>
 
-          {submitted ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="mt-10 p-8 rounded-sm bg-[#fdf6f5] border border-[#E7665D]/20 text-center flex flex-col items-center gap-3"
-            >
-              <div className="w-12 h-12 rounded-full bg-forest/10 text-forest flex items-center justify-center">
-                <CheckCircle2 size={24} />
-              </div>
-              <h3 className="font-serif text-xl font-medium text-ink">
-                Manuscript Received with Appreciation
-              </h3>
-              <p className="text-sm font-sans text-ink-soft max-w-md leading-relaxed">
-                Your submission has been cataloged and assigned to our Senior Acquisitions Editor.
-                Expect our comprehensive editorial appraisal and telephone invite within 5 business days.
-              </p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="mt-2 text-xs font-sans text-[#E7665D] underline hover:text-ink transition-colors"
-              >
-                Submit another manuscript
-              </button>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleSubmit} className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11.5px] font-semibold text-ink uppercase tracking-wider">
-                  Author Full Name <span className="text-[#E7665D]">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g., Katherine Vance"
-                  className="rounded-sm border border-line bg-white px-4 py-3 text-[0.92rem] text-ink placeholder:text-ink-muted/50 transition-all outline-none"
-                />
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11.5px] font-semibold text-ink uppercase tracking-wider">
-                  Email Address <span className="text-[#E7665D]">*</span>
-                </label>
-                <input
-                  type="email"
-                  required
-                  placeholder="author@example.com"
-                  className="rounded-sm border border-line bg-white px-4 py-3 text-[0.92rem] text-ink placeholder:text-ink-muted/50 transition-all outline-none"
-                />
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11.5px] font-semibold text-ink uppercase tracking-wider">
-                  Working Title &amp; Genre
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g., The Silent Moor (Literary Mystery)"
-                  className="rounded-sm border border-line bg-white px-4 py-3 text-[0.92rem] text-ink placeholder:text-ink-muted/50 transition-all outline-none"
-                />
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11.5px] font-semibold text-ink uppercase tracking-wider">
-                  Approximate Word Count / Status
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g., 75,000 words (Completed 2nd Draft)"
-                  className="rounded-sm border border-line bg-white px-4 py-3 text-[0.92rem] text-ink placeholder:text-ink-muted/50 transition-all outline-none"
-                />
-              </div>
-
-              <div className="sm:col-span-2 flex flex-col gap-1.5">
-                <label className="font-sans text-[11.5px] font-semibold text-ink uppercase tracking-wider">
-                  Manuscript Synopsis &amp; Publishing Goals
-                </label>
-                <textarea
-                  rows={3}
-                  placeholder="Briefly describe your story, target readership, and what you hope to achieve with this publication..."
-                  className="rounded-sm border border-line bg-white px-4 py-3 text-[0.92rem] text-ink placeholder:text-ink-muted/50 transition-all outline-none"
-                />
-              </div>
-
-              <div className="sm:col-span-2 mt-2">
-                <Button type="submit" variant="primary" size="lg" className="w-full font-sans">
-                  <span>Submit Manuscript for Senior Editor Appraisal</span>
-                  <ArrowRight size={15} />
-                </Button>
-              </div>
-            </form>
-          )}
-
-          {/* Three Reassurance Badges */}
-          <div className="mt-8 pt-6 border-t border-line/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center font-sans text-xs text-ink-muted">
-            <div className="flex items-center justify-center gap-2">
-              <Clock size={15} className="text-[#E7665D] shrink-0" />
-              <span>5–7 Business Day Review</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <PhoneCall size={15} className="text-[#E7665D] shrink-0" />
-              <span>Direct Call with Editor</span>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <Lock size={15} className="text-[#E7665D] shrink-0" />
-              <span>100% Confidential &amp; Protected</span>
-            </div>
-          </div>
+          <h2
+            id="author-testimonials-heading"
+            className="font-serif text-[2rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.7rem] lg:text-[2.9rem]"
+          >
+            What Authors Say About{" "}
+            <span className="italic text-[#E7665D]">
+              Publishing With Us
+            </span>
+          </h2>
         </motion.div>
+
+        {/* Testimonials grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+          {testimonials.map((testimonial, index) => (
+            <motion.article
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group relative flex h-full flex-col overflow-hidden rounded-md border border-[#E7665D]/20 bg-[#FCFAF7] p-7 shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_14px_38px_rgba(231,102,93,0.10)] sm:p-9"
+            >
+              {/* Accent top line */}
+              <div
+                aria-hidden="true"
+                className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full"
+              />
+
+              {/* Quote icon */}
+              <div className="mb-7 flex items-start justify-between">
+                <div className="flex h-13 w-13 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#FDF0ED] p-3 text-[#E7665D]">
+                  <Quote
+                    size={25}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <span className="font-serif text-3xl italic text-[#E7665D]/30">
+                  {testimonial.id}
+                </span>
+              </div>
+
+              {/* Author quotation */}
+              <blockquote className="flex-1">
+                <p className="font-serif text-[1.3rem] italic leading-[1.55] text-ink sm:text-[1.45rem]">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+              </blockquote>
+
+              {/* Author information */}
+              <div className="mt-9 border-t border-line/80 pt-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#E7665D]/20 bg-white text-[#E7665D]">
+                    <BookOpenText
+                      size={20}
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="font-sans text-[1rem] font-semibold leading-snug text-ink">
+                      {testimonial.author}
+                    </h3>
+
+                    <p className="mt-1 font-sans text-xs leading-relaxed text-ink-muted">
+                      Author of{" "}
+                      <span className="italic text-ink">
+                        {testimonial.book}
+                      </span>
+                    </p>
+
+                    {testimonial.genre && (
+                      <span className="mt-2 block font-sans text-[10px] uppercase tracking-[0.13em] text-[#E7665D]">
+                        {testimonial.genre}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </Container>
     </section>
   );

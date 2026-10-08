@@ -1,30 +1,29 @@
 export interface StatItem {
   value: string;
   label: string;
-  subtext: string;
 }
 
 export const stats: StatItem[] = [
   {
     value: "1,300+",
     label: "Titles Brought to Print",
-    subtext: "Distributed across international booksellers"
   },
   {
     value: "94%",
-    label: "Placement Rate",
-    subtext: "Manuscripts accepted into active production"
+    label: "Production Placement Rate",
   },
   {
     value: "5–7 Days",
-    label: "Comprehensive Review",
-    subtext: "Thorough appraisal by a senior trade editor"
+    label: "Senior Editor Review",
   },
   {
     value: "4.9 / 5.0",
     label: "Author Satisfaction",
-    subtext: "Across 15 years of independent press publishing"
   },
+  {
+    value: "100%",
+    label: "Copyright & Royalties Retained",
+  }
 ];
 
 export const platforms = [
@@ -391,4 +390,59 @@ export const faqs = [
     answer:
       "We treat book jackets as pieces of visual literature. Our design team analyzes your genre's market conventions, creates custom typographic lockups and hand-crafted artwork, and applies sophisticated tactile finishes such as foil stamping, spot gloss, and soft-touch matte lamination.",
   },
+];
+
+
+export type Book = {
+  id: number;
+  title: string;
+  author: string;
+  image: string;
+  slug: string;
+};
+
+export const books: Book[] = [
+  { id: 1, title: "The Quiet Harbor", author: "Denise Alvarado", image: "/assets/images/bookmockups/B1F.jpg", slug: "the-quiet-harbor" },
+  { id: 2, title: "Ashes of the Salt Road", author: "Michael Callaghan", image: "/assets/images/bookmockups/B2F.jpg", slug: "ashes-of-the-salt-road" },
+  { id: 3, title: "A Liberation Not Yet Moody", author: "Rachel Keller", image: "/assets/images/bookmockups/B3F.jpg", slug: "a-liberation-not-yet-moody" },
+  { id: 4, title: "Four Winters in Aldermere", author: "Sarah Edwards", image: "/assets/images/bookmockups/B4F.jpg", slug: "four-winters-in-aldermere" },
+  { id: 5, title: "The Cartographer's Daughter", author: "Josh Porter", image: "/assets/images/bookmockups/B5F.jpg", slug: "the-cartographers-daughter" },
+  { id: 6, title: "Embers & Orchards", author: "Marianne Holloway", image: "/assets/images/bookmockups/B6F.jpg", slug: "embers-and-orchards" },
+  { id: 7, title: "What the River Kept", author: "Thomas Ainsley", image: "/assets/images/bookmockups/B1F.jpg", slug: "what-the-river-kept" },
+  { id: 8, title: "Lanterns Over Kestrel Bay", author: "Priya Nandakumar", image: "/assets/images/bookmockups/B2F.jpg", slug: "lanterns-over-kestrel-bay" },
+  { id: 9, title: "The Last Clockmaker of Vienna", author: "Elena Brandt", image: "/assets/images/bookmockups/B3F.jpg", slug: "the-last-clockmaker-of-vienna" },
+  { id: 10, title: "Small Hours, Long Shadows", author: "Julian Frost", image: "/assets/images/bookmockups/B4F.jpg", slug: "small-hours-long-shadows" },
+  { id: 11, title: "Atlas of Unsent Letters", author: "Camille Dubois", image: "/assets/images/bookmockups/B5F.jpg", slug: "atlas-of-unsent-letters" },
+  { id: 12, title: "The Weight of Rain", author: "Omar Haddad", image: "/assets/images/bookmockups/B6F.jpg", slug: "the-weight-of-rain" },
+  { id: 13, title: "Northbound", author: "Grace Whitlock", image: "/assets/images/bookmockups/B1F.jpg", slug: "northbound" },
+  { id: 14, title: "The Glasshouse Inheritance", author: "Victoria Ashworth", image: "/assets/images/bookmockups/B2F.jpg", slug: "the-glasshouse-inheritance" },
+  { id: 15, title: "Paper Kingdoms", author: "Daniel Okafor", image: "/assets/images/bookmockups/B3F.jpg", slug: "paper-kingdoms" },
+  { id: 16, title: "A Door in the Orchard Wall", author: "Helena Marsh", image: "/assets/images/bookmockups/B4F.jpg", slug: "a-door-in-the-orchard-wall" },
+  { id: 17, title: "The Understudy", author: "Nathan Caldwell", image: "/assets/images/bookmockups/B5F.jpg", slug: "the-understudy" },
+  { id: 18, title: "Salt, Smoke & Starlight", author: "Isabel Moreno", image: "/assets/images/bookmockups/B6F.jpg", slug: "salt-smoke-and-starlight" },
+  { id: 19, title: "The Midnight Archivist", author: "Peter Lindqvist", image: "/assets/images/bookmockups/B1F.jpg", slug: "the-midnight-archivist" },
+  { id: 20, title: "Where the Lighthouse Leans", author: "Fiona Maclean", image: "/assets/images/bookmockups/B2F.jpg", slug: "where-the-lighthouse-leans" },
+  { id: 21, title: "Ten Thousand Mornings", author: "Samuel Greer", image: "/assets/images/bookmockups/B3F.jpg", slug: "ten-thousand-mornings" },
+  { id: 22, title: "The Violin Maker's Apprentice", author: "Lucia Ferraro", image: "/assets/images/bookmockups/B4F.jpg", slug: "the-violin-makers-apprentice" },
+  { id: 23, title: "Borrowed Light", author: "Adrian Sloane", image: "/assets/images/bookmockups/B4F.jpg", slug: "borrowed-light" },
+  { id: 24, title: "An Honest Season", author: "Naomi Tate", image: "/assets/images/bookmockups/B5F.jpg", slug: "an-honest-season" },
+];
+
+export type Illustration = {
+  id: number;
+  title: string;
+  image: string;
+  alt: string;
+};
+
+export const illustrations: Illustration[] = [
+  { id: 1, title: "Illustration 01", image: "/assets/images/two tone illustration.png", alt: "Collingwood illustration 01" },
+  { id: 2, title: "Illustration 02", image: "/assets/images/ink illustration.png", alt: "Collingwood illustration 02" },
+  { id: 3, title: "Illustration 03", image: "/assets/images/Scientific illustration.png", alt: "Collingwood illustration 03" },
+  { id: 4, title: "Illustration 04", image: "/assets/images/2d vector illustration 1.png", alt: "Collingwood illustration 04" },
+  { id: 5, title: "Illustration 05", image: "/assets/images/2d realistic illustration.png", alt: "Collingwood illustration 05" },
+  { id: 6, title: "Illustration 06", image: "/assets/images/two tone illustration.png", alt: "Collingwood illustration 06" },
+  { id: 7, title: "Illustration 07", image: "/assets/images/ink illustration.png", alt: "Collingwood illustration 07" },
+  { id: 8, title: "Illustration 08", image: "/assets/images/Scientific illustration.png", alt: "Collingwood illustration 08" },
+  { id: 9, title: "Illustration 09", image: "/assets/images/2d vector illustration 1.png", alt: "Collingwood illustration 09" },
 ];

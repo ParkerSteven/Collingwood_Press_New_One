@@ -18,14 +18,18 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.thecollingwoodpress.com"),
+
   title: {
-    default: "The Collingwood Press | Full-Service Book Publishing for Authors",
+    default: "Trusted Book Publishing Company | Keep 100% Royalties",
     template: "%s | The Collingwood Press",
   },
+
   description:
-    "The Collingwood Press takes first-draft manuscripts to shelf-ready books. Editing, formatting, cover design, and marketing, guided by a real project manager from day one.",
+    "Best book publishing company for independent authors. Professional ghostwriting, editing, cover design, marketing and global distribution services. You keep copyright and 100% of royalties.",
+
   keywords: [
     "book publishing company",
     "self publishing services",
@@ -33,21 +37,24 @@ export const metadata: Metadata = {
     "book cover design",
     "author marketing services",
   ],
+
   openGraph: {
-    title: "The Collingwood Press | Full-Service Book Publishing for Authors",
+    title: "Trusted Book Publishing Company | Keep 100% Royalties",
     description:
-      "From first draft to shelf-ready. Editing, design, and marketing for authors who want their book published with care.",
+      "Best book publishing company for independent authors. Professional ghostwriting, editing, cover design, marketing and global distribution services. You keep copyright and 100% of royalties.",
     url: "https://www.thecollingwoodpress.com",
     siteName: "The Collingwood Press",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "The Collingwood Press | Full-Service Book Publishing for Authors",
+    title: "Trusted Book Publishing Company | Keep 100% Royalties",
     description:
-      "From first draft to shelf-ready. Editing, design, and marketing for authors who want their book published with care.",
+      "Best book publishing company for independent authors. Professional ghostwriting, editing, cover design, marketing and global distribution services. You keep copyright and 100% of royalties.",
   },
 };
+
 
 export default function RootLayout({
   children,
