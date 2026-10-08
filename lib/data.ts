@@ -484,7 +484,7 @@ export const books: Book[] = [
     id: 12,
     title: "Fate of the Silver Wolf",
     author: "Sonya E. Destler",
-    image: "/assets/images/bookmockups/Bk12.jpg",
+    image: "/assets/images/bookmockups/BK12.jpg",
     slug: "#"
   },
   {
