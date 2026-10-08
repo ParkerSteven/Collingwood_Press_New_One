@@ -401,32 +401,123 @@ export type Book = {
   slug: string;
 };
 
+
 export const books: Book[] = [
-  { id: 1, title: "The Quiet Harbor", author: "Denise Alvarado", image: "/assets/images/bookmockups/B1F.jpg", slug: "the-quiet-harbor" },
-  { id: 2, title: "Ashes of the Salt Road", author: "Michael Callaghan", image: "/assets/images/bookmockups/B2F.jpg", slug: "ashes-of-the-salt-road" },
-  { id: 3, title: "A Liberation Not Yet Moody", author: "Rachel Keller", image: "/assets/images/bookmockups/B3F.jpg", slug: "a-liberation-not-yet-moody" },
-  { id: 4, title: "Four Winters in Aldermere", author: "Sarah Edwards", image: "/assets/images/bookmockups/B4F.jpg", slug: "four-winters-in-aldermere" },
-  { id: 5, title: "The Cartographer's Daughter", author: "Josh Porter", image: "/assets/images/bookmockups/B5F.jpg", slug: "the-cartographers-daughter" },
-  { id: 6, title: "Embers & Orchards", author: "Marianne Holloway", image: "/assets/images/bookmockups/B6F.jpg", slug: "embers-and-orchards" },
-  { id: 7, title: "What the River Kept", author: "Thomas Ainsley", image: "/assets/images/bookmockups/B1F.jpg", slug: "what-the-river-kept" },
-  { id: 8, title: "Lanterns Over Kestrel Bay", author: "Priya Nandakumar", image: "/assets/images/bookmockups/B2F.jpg", slug: "lanterns-over-kestrel-bay" },
-  { id: 9, title: "The Last Clockmaker of Vienna", author: "Elena Brandt", image: "/assets/images/bookmockups/B3F.jpg", slug: "the-last-clockmaker-of-vienna" },
-  { id: 10, title: "Small Hours, Long Shadows", author: "Julian Frost", image: "/assets/images/bookmockups/B4F.jpg", slug: "small-hours-long-shadows" },
-  { id: 11, title: "Atlas of Unsent Letters", author: "Camille Dubois", image: "/assets/images/bookmockups/B5F.jpg", slug: "atlas-of-unsent-letters" },
-  { id: 12, title: "The Weight of Rain", author: "Omar Haddad", image: "/assets/images/bookmockups/B6F.jpg", slug: "the-weight-of-rain" },
-  { id: 13, title: "Northbound", author: "Grace Whitlock", image: "/assets/images/bookmockups/B1F.jpg", slug: "northbound" },
-  { id: 14, title: "The Glasshouse Inheritance", author: "Victoria Ashworth", image: "/assets/images/bookmockups/B2F.jpg", slug: "the-glasshouse-inheritance" },
-  { id: 15, title: "Paper Kingdoms", author: "Daniel Okafor", image: "/assets/images/bookmockups/B3F.jpg", slug: "paper-kingdoms" },
-  { id: 16, title: "A Door in the Orchard Wall", author: "Helena Marsh", image: "/assets/images/bookmockups/B4F.jpg", slug: "a-door-in-the-orchard-wall" },
-  { id: 17, title: "The Understudy", author: "Nathan Caldwell", image: "/assets/images/bookmockups/B5F.jpg", slug: "the-understudy" },
-  { id: 18, title: "Salt, Smoke & Starlight", author: "Isabel Moreno", image: "/assets/images/bookmockups/B6F.jpg", slug: "salt-smoke-and-starlight" },
-  { id: 19, title: "The Midnight Archivist", author: "Peter Lindqvist", image: "/assets/images/bookmockups/B1F.jpg", slug: "the-midnight-archivist" },
-  { id: 20, title: "Where the Lighthouse Leans", author: "Fiona Maclean", image: "/assets/images/bookmockups/B2F.jpg", slug: "where-the-lighthouse-leans" },
-  { id: 21, title: "Ten Thousand Mornings", author: "Samuel Greer", image: "/assets/images/bookmockups/B3F.jpg", slug: "ten-thousand-mornings" },
-  { id: 22, title: "The Violin Maker's Apprentice", author: "Lucia Ferraro", image: "/assets/images/bookmockups/B4F.jpg", slug: "the-violin-makers-apprentice" },
-  { id: 23, title: "Borrowed Light", author: "Adrian Sloane", image: "/assets/images/bookmockups/B4F.jpg", slug: "borrowed-light" },
-  { id: 24, title: "An Honest Season", author: "Naomi Tate", image: "/assets/images/bookmockups/B5F.jpg", slug: "an-honest-season" },
+  {
+    id: 1,
+    title: "Season of Liturgy",
+    author: "Kate Moody", // VERIFY: Full author name
+    image: "/assets/images/bookmockups/Bk1.jpg",
+    slug: "https://www.amazon.com/Seasonal-Liturgy-Meditations-Throughout-Year/dp/B0HLY5655F/ref=sr_1_1?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-1&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 2,
+    title: "Cops & Lovers: Unspoken Truths",
+    author: "JR Wilrose", // VERIFY: Author spelling
+    image: "/assets/images/bookmockups/Bk2.jpg",
+    slug: "https://www.amazon.com/Cops-Lovers-Unspoken-Truths-One-ebook/dp/B0HK5Y5S37/ref=sr_1_3?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-3&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 3,
+    title: "Grace in the Questions",
+    author: "John Davidson", // VERIFY: Author spelling
+    image: "/assets/images/bookmockups/Bk3.jpg",
+    slug: "https://www.amazon.com/GRACE-QUESTIONS-Walking-Through-Questions-ebook/dp/B0HH7Q6CJN/ref=sr_1_4?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-4&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 4,
+    title: "Mudpuddles", // VERIFY: Full title
+    author: "Miles R. Stember",
+    image: "/assets/images/bookmockups/Bk4.jpg",
+    slug: "https://www.amazon.com/Mudpuddles-New-Friend-Miles-Stember-ebook/dp/B0HFQ5DPSQ/ref=sr_1_5?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-5&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 5,
+    title: "12 Minutes to Freedom",
+    author: "Todd Shevlin",
+    image: "/assets/images/bookmockups/Bk5.jpg",
+    slug: "https://www.amazon.com/12-Minutes-Freedom-Todd-Shevlin/dp/B0HFBMGG3G/ref=sr_1_7?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-7&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 6,
+    title: "We Are All Gods Walking",
+    author: "David Jay",
+    image: "/assets/images/bookmockups/Bk6.jpg",
+    slug: "https://www.amazon.com/We-Are-All-Gods-Walking/dp/B0HD9MXFTC/ref=sr_1_9?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-9&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 7,
+    title: "The Kid That Found Courage",
+    author: "Jasper Townsend",
+    image: "/assets/images/bookmockups/Bk7.jpg",
+    slug: "https://www.amazon.com/Kid-That-Found-Courage-ebook/dp/B0HBGYQ4ZR/ref=sr_1_10?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-10&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 8,
+    title: "Love & Hate",
+    author: "Andrew McClure",
+    image: "/assets/images/bookmockups/Bk8.jpg",
+    slug: "https://www.amazon.com/Love-Hate-Andrew-McClure-ebook/dp/B0H8ZW3DWF/ref=sr_1_11?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-11&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 9,
+    title: "Whispers of the Heart",
+    author: "Stacey Michelle",
+    image: "/assets/images/bookmockups/Bk9.jpg",
+    slug: "https://www.amazon.com/Whispers-Heart-Stacey-Michelle/dp/B0H4C2Z28K/ref=sr_1_13?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-13&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 10,
+    title: "Whispers in Bellbrook",
+    author: "Helen Stafford",
+    image: "/assets/images/bookmockups/Bk10.jpg",
+    slug: "https://www.amazon.com/Whispers-Bellebrook-Helen-Stafford-ebook/dp/B072BV8G2R/ref=sr_1_15?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-15&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 11,
+    title: "Bellbrook's Secrets",
+    author: "Helen Stafford",
+    image: "/assets/images/bookmockups/Bk11.jpg",
+    slug: "https://www.amazon.com/Bellebrooks-Secrets-Helen-Stafford-ebook/dp/B071F7GLM2/ref=sr_1_16?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-16&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 12,
+    title: "Fate of the Silver Wolf",
+    author: "Sonya E. Destler",
+    image: "/assets/images/bookmockups/Bk12.jpg",
+    slug: "#"
+  },
+  {
+    id: 13,
+    title: "The Liberation of Sue Moody",
+    author: "Gail Gelbard",
+    image: "/assets/images/bookmockups/Bk13.jpg",
+    slug: "#"
+  },
+  {
+    id: 14,
+    title: "Stress Remains Forever", // VERIFY: Cover title
+    author: "Don Austin", // VERIFY: Author name
+    image: "/assets/images/bookmockups/Bk14.jpg",
+    slug: "#"
+  },
+  {
+    id: 15,
+    title: "39 Virtues of Integrity",
+    author: "Sir Wolfgang ...", // VERIFY: Full author name
+    image: "/assets/images/bookmockups/Bk15.jpg",
+    slug: "https://www.amazon.com/39-Virtues-Integrity-Sir-Wolfdogg-ebook/dp/B0HLT47MDR/ref=sr_1_2?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-2&unfiltered=1&xpid=C913lH7VLAd-Y"
+  },
+  {
+    id: 16,
+    title: "Mechanics for the Body: Common Sense for the Soul",
+    author: "Author to verify",
+    image: "/assets/images/bookmockups/Bk16.webp",
+    slug: "https://www.amazon.com/Mechanic-Body-Common-Sense-Soul/dp/B0HDWC3ZNH/ref=sr_1_8?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-8&unfiltered=1&xpid=C913lH7VLAd-Y"
+  }
 ];
+
+
 
 export type Illustration = {
   id: number;
@@ -435,14 +526,27 @@ export type Illustration = {
   alt: string;
 };
 
-export const illustrations: Illustration[] = [
-  { id: 1, title: "Illustration 01", image: "/assets/images/two tone illustration.png", alt: "Collingwood illustration 01" },
-  { id: 2, title: "Illustration 02", image: "/assets/images/ink illustration.png", alt: "Collingwood illustration 02" },
-  { id: 3, title: "Illustration 03", image: "/assets/images/Scientific illustration.png", alt: "Collingwood illustration 03" },
-  { id: 4, title: "Illustration 04", image: "/assets/images/2d vector illustration 1.png", alt: "Collingwood illustration 04" },
-  { id: 5, title: "Illustration 05", image: "/assets/images/2d realistic illustration.png", alt: "Collingwood illustration 05" },
-  { id: 6, title: "Illustration 06", image: "/assets/images/two tone illustration.png", alt: "Collingwood illustration 06" },
-  { id: 7, title: "Illustration 07", image: "/assets/images/ink illustration.png", alt: "Collingwood illustration 07" },
-  { id: 8, title: "Illustration 08", image: "/assets/images/Scientific illustration.png", alt: "Collingwood illustration 08" },
-  { id: 9, title: "Illustration 09", image: "/assets/images/2d vector illustration 1.png", alt: "Collingwood illustration 09" },
-];
+export type IllustrationProject = {
+  id: number;
+  title: string;
+  cover: string;
+  images: Illustration[];
+};
+
+export const illustrationProjects: IllustrationProject[] =
+  Array.from({ length: 9 }, (_, index) => {
+    const projectNumber = index + 1;
+    const folder = `/assets/Project ${projectNumber}`;
+
+    return {
+      id: projectNumber,
+      title: `Project ${projectNumber}`,
+      cover: `${folder}/1.jpg`,
+      images: Array.from({ length: 3 }, (_, imageIndex) => ({
+        id: imageIndex + 1,
+        title: `Image ${imageIndex + 1}`,
+        image: `${folder}/${imageIndex + 1}.jpg`,
+        alt: `Project ${projectNumber} - Image ${imageIndex + 1}`,
+      })),
+    };
+  });

@@ -15,7 +15,7 @@ type BookCardProps = {
 
 export default function BookCard({ book, href, priority = false }: BookCardProps) {
     const content = (
-        <>
+        <Link href={book.slug} target="_blank">
             <div
                 className="
           relative aspect-[2/3] w-full overflow-hidden rounded-[2px] bg-[#E9E3D6]
@@ -45,7 +45,7 @@ export default function BookCard({ book, href, priority = false }: BookCardProps
                 {book.title}
             </h3>
             <p className="mt-1.5 text-sm text-slate-500">{book.author}</p>
-        </>
+        </Link>
     );
 
     const baseClasses = "group block w-full text-left";
