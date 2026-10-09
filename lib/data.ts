@@ -485,36 +485,92 @@ export const books: Book[] = [
     title: "Fate of the Silver Wolf",
     author: "Sonya E. Destler",
     image: "/assets/images/bookmockups/BK12.jpg",
-    slug: "#"
+    slug: "https://www.amazon.com/Fate-Silver-Wolf-Sonya-Destler/dp/1967864071/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.gy813hgTcqEOsxV4mouBEnd7nTddT-Mcog8CeQHddEwFUONzw5phf3yToS4lodKBS-4484aJnWl7AgUQ_npBhidlOJDSUgj_iZN9f1k6rKeCoLEx8B66slCRYL8nJAqi7rF0IfARL-wZJfq_-I8Y_3HCX-l7Pn-f_zlAYfzqFi9It5BmhoBu4rhkk0hsqUPsuzgvSY-Fpzyzv9T7B7M-vCuAz-1p-glI44_sUTKtOmA.sWb8oRN21AAzjvi7snWnybLfxt46X0Cr1nCZEfZuBdc&qid=1774022665&sr=8-1"
   },
   {
     id: 13,
     title: "The Liberation of Sue Moody",
-    author: "Gail Gelbard",
+    author: "Gail Gelburd",
     image: "/assets/images/bookmockups/Bk13.jpg",
-    slug: "#"
+    slug: "https://www.amazon.com/Liberation-Sue-Moody-Slaying-Dragons/dp/1967864101/ref=sr_1_1?crid=1K892WE9Q8FA0&dib=eyJ2IjoiMSJ9.5Ij0ZSupFXLlIIO1Qfp-xw.6N5UTiCR-LwuRXKmsrETxJIxO5mG7NapCskqNmt_Lfo&dib_tag=se&keywords=The+Liberation+of+Sue+Moody%3A+Slaying+the+Dragons&nsdOptOutParam=true&qid=1774022756&sprefix=the+liberation+of+sue+moody+slaying+the+dragons%2Caps%2C264&sr=8-1"
   },
   {
     id: 14,
-    title: "Stress Remains Forever", // VERIFY: Cover title
-    author: "Don Austin", // VERIFY: Author name
+    title: "Serious Roommate Problems",
+    author: "Paul Arata",
     image: "/assets/images/bookmockups/Bk14.jpg",
     slug: "#"
   },
   {
     id: 15,
-    title: "39 Virtues of Integrity",
-    author: "Sir Wolfgang ...", // VERIFY: Full author name
+    title: "Llama Louise: The Shy Llama That Wasn't",
+    author: "Reneé Marie Borowy",
     image: "/assets/images/bookmockups/Bk15.jpg",
-    slug: "https://www.amazon.com/39-Virtues-Integrity-Sir-Wolfdogg-ebook/dp/B0HLT47MDR/ref=sr_1_2?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-2&unfiltered=1&xpid=C913lH7VLAd-Y"
+    slug: "https://www.amazon.com/Llama-Louise-Shy-That-Wasnt/dp/B0FF66WYQB/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.R6EgJdl-hnKGwcjiAGIiZcqqYDtQVQKFIqxFRgQvccFTimGtukvzARWFdDQTdVbnp9VLglET7r17cBRjttl8-mH6FWbCqcZltALG3DB9-W4D3q_u4rK-LNucfRInAXRr-75q0ZIZgj1_iPOWOoBwgQ.m0BdwEqYQdM6krDk96JOUQlJwy8UrX42k15a-PvFcPw&qid=1774022526&sr=8-1"
   },
   {
     id: 16,
     title: "Mechanics for the Body: Common Sense for the Soul",
-    author: "Author to verify",
+    author: "Jill Suzanne Coleman",
     image: "/assets/images/bookmockups/Bk16.webp",
-    slug: "https://www.amazon.com/Mechanic-Body-Common-Sense-Soul/dp/B0HDWC3ZNH/ref=sr_1_8?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.pr1_3mXHGis1a3E84VFbtzTdcbE3uCBzgSfMmCtI4KhyG9kHWdhFkp-8pzreFVZWOddKzE7t5m3WhVKr8wH7ksonjU-2sanZDNA3NrJehozB4BhgF6kvRpaY7XxH2WZrk516JfIKvcFd5BZA5aqOXiknFPW7PllpAdB3xvhWjQ9X1aD8P1fkhC2VrS2wMeKUxqG9HV4XJIbdYtoY75TYEy5dg-IYzHcICOB6nHrMFUs.dX0fQ7NVJK4_N-8vKl2Stu97omcqydaM1MFGxo7TpCw&dib_tag=se&qid=1791486159&refinements=p_30%3ACollingwood+Press&s=books&sr=1-8&unfiltered=1&xpid=C913lH7VLAd-Y"
-  }
+    slug: "#"
+  },
+  {
+    id: 17,
+    title: "Llama Louise Says: Color With Me!!",
+    author: "Renee' Marie Borowy",
+    image: "/assets/images/bookmockups/Bk17.jpg",
+    slug: "https://www.amazon.com/Llama-Louise-Says-Color-Me/dp/1967864209/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.dexR7N2NuMqIpawwn2NUOzyW3CqMJP_ly9FKQxjf85rqWoICZQa99gzdTIRMZhkY.078iq5uLW5RP9hqk-rDYcsAQg-dTxOlSK0c3JU0aQhY&qid=1774023304&sr=8-1"
+  },
+  {
+    id: 18,
+    title: "Voices of Nature: The Postures of Light",
+    author: "Juniper Uriah Pearson Good",
+    image: "/assets/images/bookmockups/BK18.jpg",
+    slug: "https://www.amazon.com/Voices-Nature-Juniper-Urieh-Pearson/dp/1967864330/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.dyCPtRnMrAXtoGLa1vtIeupsKLNCKPm6sNxzOnCc8zFzghy8JsCY9_aVbzx7JGG_.EO03_xf4z3Ubkc06551dnxehvb0HEV-ADZm7t8jlo28&qid=1774023558&sr=8-1"
+  },
+  {
+    id: 19,
+    title: "Emotions",
+    author: "Al Bayyat",
+    image: "/assets/images/bookmockups/Bk19.jpg",
+    slug: "https://www.amazon.com/Emotions-Al-Bayyat/dp/1967864233/ref=sr_1_1?crid=16EHSKQDH9QW9&dib=eyJ2IjoiMSJ9.IpgCHnfuHc8LwfHFWu4D-g.8yDiIKF0Z-9r-tXyQqfOuLaFxBmlSv4ZHx0UlUROvdY&dib_tag=se&keywords=Emotions+Al+Bayyat&qid=1774023419&sprefix=emotions+al+bayyat%2Caps%2C299&sr=8-1"
+  },
+  {
+    id: 20,
+    title: "Shattered: Everything Falls to Pieces",
+    author: "Caleb Ekeh",
+    image: "/assets/images/bookmockups/Bk20.jpg",
+    slug: "https://www.amazon.com/SHATTERED-Caleb-Ekeh/dp/1967864160/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.X_KOAWBGPUpeFb_r_JLa0d4OJnD-sGR-0O-LsfRZDQSEnehga5aMmrSWhmK0Zx6Axw34qpxfRGcxYRwKEqLAN-asNRGLtes4Q6YXWzip17gpdc7tcxYogLf4DK6ZbFuTk__Cn9dAeyvhiQJgzfKLzANO_E9S9q_fLRGsOtoRVTVuOw225Bc5Z7nWNt5P9QTXOEg_8fFGlptmcIuO1zBjcYUb8QHKd2Ifc3GE6rKYtG4.yumiloeu34nH-dm_EblJzEBcztf5iUkhUFADLYWrbqY&qid=1774023050&sr=8-1"
+  },
+  {
+    id: 21,
+    title: "Mechanics for the Body: Common Sense for the Soul",
+    author: "Jill Suzanne Coleman",
+    image: "/assets/images/bookmockups/Bk16.webp",
+    slug: "#"
+  },
+  {
+    id: 22,
+    title: "Silver, Silver Little Star",
+    author: "Renee' Marie Borowy",
+    image: "/assets/images/bookmockups/Bk22.jpg",
+    slug: "https://www.amazon.com/Silver-Little-Renee-Marie-Borowy/dp/1967864187/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.1RuHX9unmXi6uCNagvokfYb6naJ1mRRjJEyfn3U0R63tzrmalgQjHs-47VfHKeDCI_i5yME10CMCnDFENZw6hhtVQBTBLQ6anTpbr_DAxdFW_WYjsPhQxzO6CKa6rfIxctSvG4OrhFCgusL34zkOImWmnH-9VpLHydS6tQWoFNyBg7L_-4rja-slfXqUDcR5vHLHqMs4yGFhLBa6p9QoZyIEfDmYm4DZhKXUIPANFwo.Ji7XwDs8kjP1MeirNJ1q-d-k__-f4Q8KIO5N7rKxeKE&qid=1774023187&sr=8-1"
+  },
+  {
+    id: 23,
+    title: "Drag Racing's Original Kentucky Colonel: The David Heath Story",
+    author: "Mark L. Brothers",
+    image: "/assets/images/bookmockups/Bk23.jpg",
+    slug: "https://www.amazon.com/Racings-Original-Kentucky-Colonel-David/dp/1967864136/ref=sr_1_1?crid=1COHNVO7D6LW4&dib=eyJ2IjoiMSJ9.G3_xc5w5rSrUh_X4e4InqA.pTvZYo4yO2kp08OtuCz7LNyBsKjRw4qesmMB4PDt3pA&dib_tag=se&keywords=Drag+Racings+Original+Kentucky+Colonel-The+David+Heath+Story&nsdOptOutParam=true&qid=1774022848&sprefix=drag+racings+original+kentucky+colonel-the+david+heath+story%2Caps%2C383&sr=8-1"
+  },
+  {
+    id: 24,
+    title: "Godfidence",
+    author: "Veronica Graham RN, BSN",
+    image: "/assets/images/bookmockups/Bk24.jpg",
+    slug: "https://www.amazon.com/GODFIDENCE-Spiritual-Road-Overcome-Overachieve/dp/B0F5PBYXN1/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.5ivoxzxGg-6uZvf9orE2YhQJqZ-IpKhK1WP5JJyVnXwsA2IOnHRbIuBcnsi6d98fg__nyHEpj0HRN4rZYoQEXTPJwA4Zj-Q0uIZMlL3AUk8.yiL_bv90ziCEXIZdt-psBGWzvDrjxZvNjVV2KqbpLVs&qid=1774022402&sr=8-1"
+  },
 ];
 
 
