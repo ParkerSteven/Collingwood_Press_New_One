@@ -22,7 +22,7 @@ const services = [
     icon: BookOpenText,
     title: "Book Editing & Proofreading Services",
     description:
-      "Our book editing services cover every level of refinement your manuscript needs: developmental editing that strengthens structure and argument, line editing that tightens prose and voice, copy editing that catches every inconsistency, and proofreading that removes the final errors before your book goes to production.",
+      "Our book editing services cover every level of refinement your manuscript needs: developmental editing that strengthens structure and argument, line editing that tightens prose and voice, copyediting that addresses all inconsistencies, and proofreading that removes the final errors before your book goes to production.",
     link: "/editing/",
     cta: "Explore our editing services",
   },
@@ -40,7 +40,7 @@ const services = [
     icon: BookMarked,
     title: "Publishing Guidance",
     description:
-      "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties. You stay the publisher. We do the production work. Whether it’s a novel, memoir, business book, or children’s book, every project gets the same high-standard editorial care, bespoke cover art, and custom interior layout.",
+      "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties. You stay the publisher. We do the production work. Whether it’s a novel, memoir, business book, or children’s book, every project receives the same high level of editorial care, bespoke cover art, and custom interior layout.",
     link: "/publishing/",
     cta: "Explore our book publishing services",
   },
@@ -49,7 +49,7 @@ const services = [
     icon: Megaphone,
     title: "Book Marketing, PR & Launch Strategy",
     description:
-      "A great book needs a clear strategy to reach the right audience. Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility. We run Amazon advertising targeted by genre, outreach to reviewers and niche outlets, and media placement built around the book.",
+      "A great book needs a clear strategy to reach the right audience. Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility. We manage genre-targeted Amazon advertising, outreach to reviewers and niche publications, and media campaigns tailored to your book.",
     link: "/marketing/",
     cta: "Explore our marketing services",
   },
@@ -58,7 +58,7 @@ const services = [
     icon: Headphones,
     title: "Audiobook Recording & Distribution",
     description:
-      "We review the manuscript, cast a professional audiobook narrator, and record in a studio. One voice or several, matched to the characters. No AI narration. Our audiobook production services edit and proof the files, master them, then support you in uploading and distributing the finished audiobook to Audible, Apple Books and other listening platforms.",
+      "We review the manuscript, cast a professional audiobook narrator, and record in a studio. One voice or several, matched to the characters. No AI narration. Our audiobook production team edits, reviews, and masters the recordings before assisting with distribution and distributing the finished audiobook to Audible, Apple Books and other listening platforms.",
     link: "/audiobook/",
     cta: "Explore our audiobook services",
   },
@@ -114,30 +114,12 @@ export default function TrustBand() {
           <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.95rem] leading-[1.85] text-slate-300 sm:text-[1rem]">
             Publishing a book involves dozens of moving parts,
             and no author should have to juggle them alone.
-            Our{" "}
-            <strong className="font-medium text-white">
-              book publishing services
-            </strong>{" "}
+            Our book publishing services
             bring editing, design, production, distribution and
             promotion together under one coordinated team,
             so nothing falls through the cracks.
           </p>
         </motion.div>
-
-        {/* Decorative editorial divider */}
-        <div className="relative z-10 mb-7 flex items-center gap-4">
-          <span className="h-[2px] w-9 bg-[#E7665D]" />
-
-          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-slate-400">
-            Our Publishing Expertise
-          </span>
-
-          <span className="h-px flex-1 bg-white/10" />
-
-          <span className="font-sans text-xs text-[#F08A82]">
-            01 — 05
-          </span>
-        </div>
 
         {/* Five service cards */}
         <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6 lg:gap-6">

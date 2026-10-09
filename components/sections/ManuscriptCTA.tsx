@@ -69,7 +69,7 @@ export default function ManuscriptCTA() {
 
           <h2
             id="author-testimonials-heading"
-            className="font-serif text-[2rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.7rem] lg:text-[2.9rem]"
+            className="font-serif text-[2rem] max-w-2xl mx-auto font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.5rem] lg:text-[2.7rem]"
           >
             What Authors Say About{" "}
             <span className="italic text-[#E7665D]">

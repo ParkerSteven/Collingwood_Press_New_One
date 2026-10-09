@@ -56,18 +56,6 @@ export default function CoverSpotlight() {
           </p>
         </motion.div>
 
-        {/* Editorial divider */}
-        <div className="mb-7 flex items-center gap-4">
-          <span className="h-[2px] w-9 bg-[#E7665D]" />
-          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-ink-muted">
-            Design & Production Craft
-          </span>
-          <span className="h-px flex-1 bg-line" />
-          <span className="font-sans text-xs text-[#E7665D]">
-            01 — 02
-          </span>
-        </div>
-
         {/* Two premium showcase cards */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Card 1: Cover Design */}
@@ -127,15 +115,12 @@ export default function CoverSpotlight() {
               </h3>
 
               <p className="mt-4 font-sans text-[0.92rem] leading-[1.75] text-ink-muted">
-                Every{" "}
-                <strong className="font-semibold text-ink">
-                  book cover design
-                </strong>{" "}
+                Every book cover design
                 is an original composition built to signal genre,
                 tone and authority at first glance. For authors
                 who want a physical product as compelling as the
                 story inside, we offer premium finishes including
-                foil stamping, embossing and archival-grade paper.
+                foil stamping, embossing and premium paper stocks (if this describes the actual print options).
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">

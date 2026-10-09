@@ -19,14 +19,14 @@ const benefits = [
     icon: BookOpenText,
     title: "Dedicated Senior Editor",
     description:
-      "Every manuscript is assigned to a senior editor with deep genre knowledge and real publishing experience. No automated feedback loops. No revolving door of freelancers. One experienced professional guides your book from rough draft to finished product.",
+      "Every manuscript is assigned to a senior editor with deep genre knowledge and real publishing experience. No automated feedback loops. No constantly changing editorial team. One experienced professional guides your book from rough draft to finished product.",
   },
   {
     number: "02",
     icon: LayoutTemplate,
     title: "Custom InDesign Typography",
     description:
-      "Your interior is typeset by hand in Adobe InDesign, shaped around the pacing, tone and visual conventions of your genre. We do not pull from a template library. Every layout is built for your manuscript.",
+      "Your book's interior is professionally typeset in Adobe InDesign, shaped around the pacing, tone and visual conventions of your genre. We do not pull from a template library. Every layout is built for your manuscript.",
   },
   {
     number: "03",
@@ -58,30 +58,18 @@ export default function Testimonials() {
             eyebrow="Author-First Publishing, Built Around Your Rights"
             title={
               <>
-                Why Authors Choose This{" "}
+                Why Authors Choose {" "}
                 <span className="italic text-[#E7665D]">
-                  Book Publishing Company
+                  The Collingwood Press
                 </span>
               </>
             }
-            description="The traditional publishing model forces a trade: professional quality in exchange for your rights, your earnings and often your creative say. We rejected that trade from day one. The Collingwood Press brings major-house editorial standards to every project and leaves you in full control of your work."
+            description="The traditional publishing model forces a trade: professional quality in exchange for your rights, your earnings, and often your creative control. We rejected that trade from day one. The Collingwood Press brings major-house editorial standards to every project and leaves you in full control of your work."
           />
         </div>
 
-        {/* Editorial divider */}
-        <div className="mt-12 flex items-center gap-4 lg:mt-16">
-          <span className="h-[2px] w-10 bg-[#E7665D]" />
-          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-muted">
-            The Collingwood Difference
-          </span>
-          <span className="h-px flex-1 bg-line" />
-          <span className="font-sans text-xs text-[#E7665D]">
-            01 — 04
-          </span>
-        </div>
-
         {/* Benefits grid */}
-        <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
+        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
 
@@ -125,20 +113,6 @@ export default function Testimonials() {
                   <p className="font-sans text-[0.8rem] leading-[1.85] text-ink-soft sm:text-[0.85rem]">
                     {benefit.description}
                   </p>
-                </div>
-
-                {/* Bottom element */}
-                <div className="mt-9 flex items-center justify-between border-t border-line/80 pt-5">
-                  <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
-                    Our Publishing Promise
-                  </span>
-
-                  <ArrowUpRight
-                    size={17}
-                    strokeWidth={1.6}
-                    aria-hidden="true"
-                    className="text-[#E7665D] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                  />
                 </div>
               </motion.article>
             );

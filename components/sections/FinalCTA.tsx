@@ -79,12 +79,7 @@ export default function FinalCTA() {
             stands and what it needs. Whether you are weeks
             from publication or still shaping a first draft,
             we will help you map the clearest path forward.
-            The right{" "}
-            <strong className="font-semibold text-white">
-              book publishing company
-            </strong>{" "}
-            makes all the difference, and we are ready to
-            prove it.
+            With the right publishing partner, your manuscript can take its next step with confidence.
           </p>
 
           {/* Main button */}

@@ -109,25 +109,7 @@ export default function ProjectManagers() {
           transition={{ duration: 0.65 }}
           className="overflow-hidden rounded-md border border-[#E7665D]/20 bg-white shadow-[0_8px_35px_rgba(17,26,48,0.06)]"
         >
-          {/* Table intro band */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-[#FCFAF7] px-6 py-5 sm:px-8">
-            <div className="flex items-center gap-3">
-              <BookOpen
-                size={19}
-                className="text-[#E7665D]"
-                strokeWidth={1.6}
-                aria-hidden="true"
-              />
 
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
-                Publishing Model Comparison
-              </span>
-            </div>
-
-            <span className="font-sans text-[11px] text-ink-muted">
-              3 Publishing Paths • 7 Key Factors
-            </span>
-          </div>
 
           {/* Horizontal scroll on mobile */}
           <div

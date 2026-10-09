@@ -27,7 +27,7 @@ const marketingServices = [
     eyebrow: "Retail Distribution",
     title: "Retail Visibility Across Amazon & Beyond",
     description:
-      "We configure your metadata, categories and search keywords for maximum visibility on Amazon, IngramSpark, Barnes & Noble and other high-traffic retail channels, so readers searching your genre find your book.",
+      "We configure your metadata, categories and search keywords to improve discoverability on Amazon, IngramSpark, Barnes & Noble and other high-traffic retail channels, so readers searching your genre find your book.",
     features: [
       {
         icon: Search,
@@ -136,21 +136,6 @@ export default function RelatedCarousel() {
           </p>
         </motion.div>
 
-        {/* Editorial divider */}
-        <div className="relative z-10 mb-8 flex items-center gap-4">
-          <span className="h-[2px] w-9 bg-[#E7665D]" />
-
-          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-slate-400">
-            Marketing & Distribution Expertise
-          </span>
-
-          <span className="h-px flex-1 bg-white/10" />
-
-          <span className="font-sans text-xs text-[#F08A82]">
-            01 — 03
-          </span>
-        </div>
-
         {/* Three Marketing Service Cards */}
         <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {marketingServices.map((service, index) => {
@@ -208,16 +193,6 @@ export default function RelatedCarousel() {
                       aria-hidden="true"
                     />
                   </div>
-
-                  {/* Decorative dots */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute bottom-6 left-7 flex gap-1.5"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#E7665D]" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                  </div>
                 </div>
 
                 {/* Card Body */}
@@ -270,49 +245,6 @@ export default function RelatedCarousel() {
             );
           })}
         </div>
-
-        {/* Bottom Marketing CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="relative z-10 mt-10 flex flex-col items-start justify-between gap-6 rounded-md border border-white/10 bg-white/[0.04] px-7 py-7 sm:flex-row sm:items-center sm:px-9"
-        >
-          <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-[#E7665D]/25 bg-[#E7665D]/10 text-[#F08A82]">
-              <Sparkles
-                size={22}
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
-            </div>
-
-            <div>
-              <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#F08A82]">
-                Beyond Publication
-              </span>
-
-              <p className="mt-1 font-serif text-xl font-medium text-white sm:text-2xl">
-                Your book deserves to be discovered.
-              </p>
-
-              <p className="mt-2 max-w-xl font-sans text-sm leading-relaxed text-slate-300">
-                From retailer setup to pre-launch publicity
-                and ongoing promotion, we help connect your
-                book with its audience.
-              </p>
-            </div>
-          </div>
-
-          <Link
-            href="/marketing/"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#E7665D] px-5 py-3.5 font-sans text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#D9574E]"
-          >
-            Explore Our Marketing Services
-            <ArrowRight size={16} aria-hidden="true" />
-          </Link>
-        </motion.div>
 
         {/* Bottom trust indicators */}
         <div className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">

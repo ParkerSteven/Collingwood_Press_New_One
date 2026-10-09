@@ -297,21 +297,6 @@ export default function FAQ() {
             </p>
           </motion.div>
 
-          {/* Editorial divider */}
-          <div className="mb-7 flex items-center gap-4">
-            <span className="h-[2px] w-9 bg-[#E7665D]" />
-
-            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-ink-muted">
-              Publishing Knowledge
-            </span>
-
-            <span className="h-px flex-1 bg-line" />
-
-            <span className="font-sans text-xs text-[#E7665D]">
-              01 — 03
-            </span>
-          </div>
-
           {/* Blog cards */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
             {blogPosts.map((post, index) => {

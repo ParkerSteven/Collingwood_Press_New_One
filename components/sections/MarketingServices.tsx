@@ -82,26 +82,13 @@ export default function MarketingServices() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.97rem] leading-[1.85] text-ink-muted sm:text-[1.05rem]">
-            Real names, real experience, direct access.
+            Experienced professionals. Personal guidance. Direct communication.
             These are the professionals who will work on
             your manuscript.
           </p>
         </motion.div>
 
-        {/* Section divider */}
-        <div className="mb-7 flex items-center gap-4">
-          <span className="h-[2px] w-9 bg-[#E7665D]" />
 
-          <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-ink-muted">
-            Our Publishing Professionals
-          </span>
-
-          <span className="h-px flex-1 bg-line" />
-
-          <span className="font-sans text-xs text-[#E7665D]">
-            01 — 03
-          </span>
-        </div>
 
         {/* Team member cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">

@@ -23,7 +23,7 @@ export default function HeroAnimated() {
             <div className="max-w-5xl">
                 <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
                     <Eyebrow tone="coral" align="left">
-                        Your Book. Your Rights. Your Publishing Journey.
+                        Your Story. Your Vision. Your Publishing Journey.
                     </Eyebrow>
                 </motion.div>
 
@@ -48,7 +48,7 @@ export default function HeroAnimated() {
                     custom={2}
                     className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-[#ccccccad] font-sans font-normal max-w-2xl"
                 >
-                    You wrote the book. You should own every part of what comes next. The Collingwood Press is a full-service book publishing company built for authors who refuse to hand over their royalties, their rights or their creative direction. Senior editors, original book design and worldwide distribution come with one non-negotiable promise: 100% of your copyright and royalties stay with you. From manuscript to marketplace, our author services elevate your work without ever taking ownership of it.
+                    You wrote the book. You should own every part of what comes next. The Collingwood Press is a full-service book publishing company built for authors who refuse to hand over their royalties, their rights, or their creative direction. Senior editors, original book design and worldwide distribution come with one non-negotiable promise: 100% of your copyright and royalties stay with you. From manuscript to marketplace, our author services elevate your work without ever taking ownership of it.
                 </motion.p>
 
                 <motion.div
