@@ -332,7 +332,7 @@ export default function PublishingPage() {
                             <div className="absolute inset-0 m-auto h-[85%] w-[85%] rounded-3xl bg-[#fdf6f5] border border-[#E7665D]/15 -z-10" />
 
                             <Image
-                                src="/Publishing Mckp.png"
+                                src="/publishing_HeroSC.png"
                                 alt="Publishing Book Editions Mockup"
                                 width={650}
                                 height={650}
