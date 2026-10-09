@@ -114,7 +114,7 @@ export default function PublishingPage() {
             <Header />
             <main className="bg-white text-ink">
                 {/* Hero */}
-                <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
+                <section className="publishing-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
                     <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
                     <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
 
@@ -331,44 +331,14 @@ export default function PublishingPage() {
                             {/* soft backdrop */}
                             <div className="absolute inset-0 m-auto h-[85%] w-[85%] rounded-3xl bg-[#fdf6f5] border border-[#E7665D]/15 -z-10" />
 
-                            {/* back book */}
-                            <div className="absolute w-[200px] sm:w-[240px] aspect-[2/3] -translate-x-24 sm:-translate-x-32 rotate-[-8deg] rounded-r-md rounded-l-sm bg-gradient-to-br from-[#2b2b3a] to-[#14141c] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.35)] flex flex-col justify-between p-5 opacity-90">
-                                <span className="text-[9px] uppercase tracking-[0.2em] text-white/50">A Novel</span>
-                                <div>
-                                    <p className="font-serif text-lg font-bold text-white leading-tight">
-                                        The Quiet Hours
-                                    </p>
-                                    <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/60">
-                                        Maya Hartwell
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* front book */}
-                            <div className="relative w-[240px] sm:w-[290px] aspect-[2/3] rotate-[3deg] rounded-r-lg rounded-l-sm bg-gradient-to-br from-[#E7665D] via-[#d9564d] to-[#b8433b] shadow-[0_30px_60px_-12px_rgba(231,102,93,0.55),0_8px_20px_rgba(0,0,0,0.2)] overflow-hidden flex flex-col justify-between p-7 sm:p-8">
-                                {/* spine */}
-                                <div className="absolute left-0 top-0 h-full w-3 bg-gradient-to-r from-black/30 to-transparent" />
-                                <div className="absolute left-3 top-0 h-full w-px bg-white/20" />
-                                {/* decorative circle */}
-                                <div className="absolute -right-12 -top-12 h-44 w-44 rounded-full border border-white/25" />
-                                <div className="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-white/20" />
-
-                                <span className="relative text-[10px] uppercase tracking-[0.25em] text-white/80 font-semibold">
-                                    Bestselling Edition
-                                </span>
-
-                                <div className="relative">
-                                    <div className="h-px w-10 bg-white/70 mb-4" />
-                                    <h4 className="font-serif text-[1.9rem] sm:text-[2.2rem] font-bold text-white leading-[1.05]">
-                                        Where the
-                                        <br />
-                                        <span className="italic font-normal">Light Falls</span>
-                                    </h4>
-                                    <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-white/85 font-semibold">
-                                        Elena Marlowe
-                                    </p>
-                                </div>
-                            </div>
+                            <Image
+                                src="/Publishing Mckp.png"
+                                alt="Publishing Book Editions Mockup"
+                                width={650}
+                                height={650}
+                                className="w-full max-w-md lg:max-w-lg h-auto object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+                                priority
+                            />
                         </div>
                     </Container>
                 </section>

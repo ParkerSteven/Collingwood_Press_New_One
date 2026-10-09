@@ -499,7 +499,7 @@ export const books: Book[] = [
     title: "Serious Roommate Problems",
     author: "Paul Arata",
     image: "/assets/images/bookmockups/Bk14.jpg",
-    slug: "#"
+    slug: "https://www.amazon.com/Serious-Roommate-Problems-Paul-Arata/dp/1967864403"
   },
   {
     id: 15,
@@ -513,7 +513,7 @@ export const books: Book[] = [
     title: "Mechanics for the Body: Common Sense for the Soul",
     author: "Jill Suzanne Coleman",
     image: "/assets/images/bookmockups/Bk16.webp",
-    slug: "#"
+    slug: "https://www.amazon.com/Mechanic-Body-Common-Sense-Soul/dp/B0HDWC3ZNH/ref=sr_1_9?Adv-Srch-Books-Submit.x=23&Adv-Srch-Books-Submit.y=13&dib=eyJ2IjoiMSJ9.ikqubuNU3cTqoCxBVK_NL14U_PHxAoE-4g29LCHNGSWilrCCGrqxQSlKbul5-0PZgCAZmfDQHo3xgzcmgnXfE2ve-P7_NrtMxVMC1QYb5Heq3_RvIHzumFQi8hdvGrx130SJI5BwNmF4zsGlbvdfUCsufihW9wtkjuItjud_oV6UQyK2mXLUCxAucPsdO3RVbWHyxTuzHW4p6jvzN3Ok_b23Hy3tNNeOu6UHQrMFpeo.R3TVkVOGpwI4tZJluMv8-IIt3BHnnLlO6Vbq6SG035M&dib_tag=se&qid=1791575078&refinements=p_30%3ACollingwood+Press&s=books&sr=1-9&unfiltered=1&xpid=C913lH7VLAd-Y"
   },
   {
     id: 17,
@@ -545,27 +545,20 @@ export const books: Book[] = [
   },
   {
     id: 21,
-    title: "Mechanics for the Body: Common Sense for the Soul",
-    author: "Jill Suzanne Coleman",
-    image: "/assets/images/bookmockups/Bk16.webp",
-    slug: "#"
-  },
-  {
-    id: 22,
     title: "Silver, Silver Little Star",
     author: "Renee' Marie Borowy",
     image: "/assets/images/bookmockups/Bk22.jpg",
     slug: "https://www.amazon.com/Silver-Little-Renee-Marie-Borowy/dp/1967864187/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.1RuHX9unmXi6uCNagvokfYb6naJ1mRRjJEyfn3U0R63tzrmalgQjHs-47VfHKeDCI_i5yME10CMCnDFENZw6hhtVQBTBLQ6anTpbr_DAxdFW_WYjsPhQxzO6CKa6rfIxctSvG4OrhFCgusL34zkOImWmnH-9VpLHydS6tQWoFNyBg7L_-4rja-slfXqUDcR5vHLHqMs4yGFhLBa6p9QoZyIEfDmYm4DZhKXUIPANFwo.Ji7XwDs8kjP1MeirNJ1q-d-k__-f4Q8KIO5N7rKxeKE&qid=1774023187&sr=8-1"
   },
   {
-    id: 23,
+    id: 22,
     title: "Drag Racing's Original Kentucky Colonel: The David Heath Story",
     author: "Mark L. Brothers",
     image: "/assets/images/bookmockups/Bk23.jpg",
     slug: "https://www.amazon.com/Racings-Original-Kentucky-Colonel-David/dp/1967864136/ref=sr_1_1?crid=1COHNVO7D6LW4&dib=eyJ2IjoiMSJ9.G3_xc5w5rSrUh_X4e4InqA.pTvZYo4yO2kp08OtuCz7LNyBsKjRw4qesmMB4PDt3pA&dib_tag=se&keywords=Drag+Racings+Original+Kentucky+Colonel-The+David+Heath+Story&nsdOptOutParam=true&qid=1774022848&sprefix=drag+racings+original+kentucky+colonel-the+david+heath+story%2Caps%2C383&sr=8-1"
   },
   {
-    id: 24,
+    id: 23,
     title: "Godfidence",
     author: "Veronica Graham RN, BSN",
     image: "/assets/images/bookmockups/Bk24.jpg",

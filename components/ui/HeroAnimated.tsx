@@ -12,7 +12,10 @@ const fadeUp = {
     show: (i: number) => ({
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] },
+        transition: {
+            duration: 0.6, delay: i * 0.09, ease: [0.22, 1,
+                .36, 1]
+        },
     }),
 };
 
@@ -122,7 +125,7 @@ export default function HeroAnimated() {
                 className="relative mx-auto w-full max-w-[480px] lg:max-w-[520px] h-[460px] sm:h-[520px] lg:h-[550px] flex items-center justify-center"
             >
                 {/* Soft ambient backlight */}
-                <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-[#ded4c1]/40 via-[#eae1d0]/30 to-transparent blur-3xl pointer-events-none" />
+                <div className="absolute inset-8 rounded-full pointer-events-none" />
 
                 <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]">
                     <Image
@@ -134,8 +137,6 @@ export default function HeroAnimated() {
                         priority
                     />
                 </div>
-
-
             </motion.div>
         </>
     );
