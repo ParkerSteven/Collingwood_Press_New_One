@@ -566,8 +566,6 @@ export const books: Book[] = [
   },
 ];
 
-
-
 export type Illustration = {
   id: number;
   title: string;

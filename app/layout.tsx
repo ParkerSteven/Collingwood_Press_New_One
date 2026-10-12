@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import StickySocialStrip from "@/components/ui/StickySocialStrip";
+import { StickySocialStripLeft } from "@/components/ui/StickySocialStrip";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${cormorant.variable}`}>
       <body className="font-sans antialiased text-ink bg-paper selection:bg-coral selection:text-white">
-        <StickySocialStrip />
+        <StickySocialStripLeft />
         {children}
       </body>
     </html>

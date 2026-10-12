@@ -1,7 +1,6 @@
 import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
 import Hero from "@/components/sections/Hero";
 import StatBar from "@/components/sections/StatBar";
 import PlatformLogos from "@/components/sections/PlatformLogos";

@@ -86,7 +86,7 @@ body {
             rgba(17, 24, 45, 0.86) 30%,
             rgba(34, 46, 73, 0.82) 60%,
             rgba(59, 75, 105, 0.78) 100%),
-        url("/Publishing_HeroSC.jpg");
+        url("/publishing_HeroSC.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
