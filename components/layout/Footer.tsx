@@ -54,8 +54,6 @@ const authorLibraryLinks = [
   { label: "Collingwood Partners", href: "#" },
   { label: "Author Checklist", href: "#" },
 ];
-
-
 export const socialLinks = [
   {
     name: 'Instagram',
