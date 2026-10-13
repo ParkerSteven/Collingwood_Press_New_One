@@ -13,8 +13,10 @@ import Catalog from "@/components/sections/Catalog";
 import RelatedCarousel from "@/components/sections/RelatedCarousel";
 import MarketingServices from "@/components/sections/MarketingServices";
 import ManuscriptCTA from "@/components/sections/ManuscriptCTA";
-import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
+import FAQAccordion from "@/components/sections/FAQAccordion";
+import { faqs } from "@/lib/data";
+import HomeBlogs from "@/components/sections/HomeBlogs";
 
 export default function Home() {
   return (
@@ -34,7 +36,20 @@ export default function Home() {
         <RelatedCarousel />
         <MarketingServices />
         <ManuscriptCTA />
-        <FAQ />
+        <FAQAccordion
+          items={faqs}
+          eyebrow="What Authors Want to Know"
+          title={
+            <>
+              Book Publishing FAQs:{" "}
+              <span className="italic text-[#E7665D]">
+                What Authors Ask Before They Start
+              </span>
+            </>
+          }
+          sectionId="faq"
+        />
+        <HomeBlogs />
         <FinalCTA />
       </main>
       <Footer />

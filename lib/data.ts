@@ -392,6 +392,51 @@ export const faqs = [
   },
 ];
 
+export const publishingFAQs = [
+  {
+    question: "Can a first-time author publish with you?",
+    answer:
+      "Yes. A first book follows the same professional production path as any other title. You remain the publisher of record. We handle the editorial development, the cover design, the interior typesetting, and the retail setup. You do not need a literary agent, and you do not surrender your book to a traditional house. Our self-publishing services are built for authors at every stage.",
+  },
+  {
+    question: "Do I need an ISBN to self-publish?",
+    answer:
+      "Print distribution requires an ISBN, and so does placement in any store beyond Amazon. We register the ISBN directly to you, so you are the publisher of record. A free KDP ISBN lists Amazon as the publisher instead. We do not use one.",
+  },
+  {
+    question: "How do I get my book on Amazon KDP and IngramSpark?",
+    answer:
+      "We prepare the production files and the metadata, then open both accounts in your name. KDP carries the Kindle edition, paperback, and hardcover. IngramSpark is the path to bookstores and libraries worldwide. You keep the login credentials. Our Amazon KDP publishing services handle every technical requirement.",
+  },
+  {
+    question: "What formats can you publish?",
+    answer:
+      "Paperback, hardcover, and eBook. Print editions use print-on-demand production, which eliminates the need for large upfront print runs. Audiobook production is available as a separate service, recorded by a professional narrator.",
+  },
+  {
+    question: "Who is the publisher of record?",
+    answer:
+      "You are. The ISBN is registered in your name, and the retail accounts are opened in your name. Some self-publishing company services assign an ISBN from their own prefix, making them the publisher on the record. We never do that.",
+  },
+  {
+    question: "What is a galley proof, and do I see it?",
+    answer:
+      "It is the finished proof of the pages, bound and printed before the book goes to retail. You read every page, mark what needs changing, and we do not upload the final files until you have signed off. No book goes live without your explicit approval.",
+  },
+  {
+    question: "Can I publish a book without handing it to a publisher?",
+    answer:
+      "Yes. This is a self-publishing services model, not a rights deal. You hire the production. You keep the copyright and the royalties. The Collingwood Press provides professional-grade execution without requiring you to surrender any ownership.",
+  },
+  {
+    question: "What happens after the book is live?",
+    answer:
+      "Your book sits in your accounts, and the royalties flow directly to you. A launch campaign, advertising, and reviewer outreach are planned separately through our marketing services if you want them. They are not bundled into the production invoice.",
+  },
+];
+
+
+
 
 export type Book = {
   id: number;

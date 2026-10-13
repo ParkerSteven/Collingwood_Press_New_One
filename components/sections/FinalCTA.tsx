@@ -1,6 +1,6 @@
 
 "use client";
-
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -22,7 +22,38 @@ const businessInfo = {
   email: "[INSERT email]",
 };
 
-export default function FinalCTA() {
+type FinalCTAProps = {
+  eyebrow?: string;
+  title?: ReactNode;
+  description?: ReactNode;
+  buttonText?: string;
+  buttonHref?: string;
+};
+export default function FinalCTA({
+  eyebrow = "Your Next Step Starts Here",
+  title = (
+    <>
+      Ready to Publish Your Book?{" "}
+      <span className="block italic font-normal text-[#F08A82] sm:inline">
+        Let&apos;s Talk.
+      </span>
+    </>
+  ),
+  description = (
+    <>
+      Send us your manuscript or your opening chapters.
+      A senior editor will review your work and give you
+      a candid, no-obligation assessment of where it
+      stands and what it needs. Whether you are weeks
+      from publication or still shaping a first draft,
+      we will help you map the clearest path forward.
+      With the right publishing partner, your manuscript
+      can take its next step with confidence.
+    </>
+  ),
+  buttonText = "Submit Manuscript for Free Editorial Review",
+  buttonHref = "/contact-us#manuscript-review",
+}: FinalCTAProps) {
   return (
     <section
       id="final-cta"
@@ -54,7 +85,7 @@ export default function FinalCTA() {
             <span className="h-px w-8 bg-[#E7665D]" />
 
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F08A82]">
-              Your Next Step Starts Here
+              {eyebrow}
             </span>
 
             <span className="h-px w-8 bg-[#E7665D]" />
@@ -65,27 +96,18 @@ export default function FinalCTA() {
             id="final-cta-heading"
             className="font-serif text-[2.4rem] max-w-2xl font-medium leading-[1.08] tracking-tight text-white sm:text-[2.7rem] lg:text-[2.9rem]"
           >
-            Ready to Publish Your Book?{" "}
-            <span className="block italic font-normal text-[#F08A82] sm:inline">
-              Let&apos;s Talk.
-            </span>
+            {title}
           </h2>
 
           {/* Description */}
           <p className="mx-auto mt-7 max-w-3xl font-sans text-[0.98rem] leading-[1.9] text-slate-300 sm:text-[1rem]">
-            Send us your manuscript or your opening chapters.
-            A senior editor will review your work and give you
-            a candid, no-obligation assessment of where it
-            stands and what it needs. Whether you are weeks
-            from publication or still shaping a first draft,
-            we will help you map the clearest path forward.
-            With the right publishing partner, your manuscript can take its next step with confidence.
+            {description}
           </p>
 
           {/* Main button */}
           <div className="mt-9 flex flex-col items-center gap-4">
             <Button
-              href="/contact-us#manuscript-review"
+              href={buttonHref}
               variant="primary"
               size="lg"
               className="max-w-full px-7 py-4 text-center text-sm shadow-[0_10px_30px_rgba(231,102,93,0.22)] transition-shadow hover:shadow-[0_15px_35px_rgba(231,102,93,0.3)] sm:px-9 sm:text-base"
@@ -97,7 +119,7 @@ export default function FinalCTA() {
               />
 
               <span>
-                Submit Manuscript for Free Editorial Review
+                {buttonText}
               </span>
 
               <ArrowRight
