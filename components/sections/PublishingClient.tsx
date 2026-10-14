@@ -27,6 +27,7 @@ import { Fragment } from "react";
 import FAQAccordion from "./FAQAccordion";
 import { publishingFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
+import Link from "next/link";
 
 
 const publishingRoadmap = [
@@ -134,7 +135,7 @@ export default function PublishingClient() {
                             <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[2.7rem] lg:text-[2.9rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
                                 Professional Book Publishing Services for{" "}
                                 <span className="italic text-[#E7665D] block sm:inline">
-                                    First-Time &amp; Established Authors
+                                    First-Time Authors
                                 </span>
                             </h1>
 
@@ -196,70 +197,7 @@ export default function PublishingClient() {
 
 
                 {/* SECTION 2: Trust & Proof Bar */}
-                <section
-                    id="trust-proof"
-                    aria-label="Our Publishing Commitments"
-                    className="relative overflow-hidden bg-[#fdfbf7] py-10 sm:py-12 lg:py-14 border-b border-line"
-                >
-                    <Container>
-                        <h2
-                            id="trust-proof-heading"
-                            className="mt-4 text-center mb-8 font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-[1.12] tracking-tight"
-                        >
-                            Trust &amp;{" "}
-                            <span className="text-[#E7665D]">
-                                Proof Bar
-                            </span>
-                        </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
 
-                            {/* Trust Card 1 */}
-                            <div className="group flex flex-col items-center justify-center gap-4 rounded-xl border border-[#E7665D]/20 bg-white px-5 py-7 text-center shadow-[0_4px_20px_rgba(231,102,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_10px_30px_rgba(231,102,93,0.12)]">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#E7665D]/25 bg-[#fdf6f5] text-[#E7665D] transition-all duration-300 group-hover:bg-[#E7665D] group-hover:text-white">
-                                    <Globe size={23} strokeWidth={1.8} />
-                                </div>
-
-                                <h3 className="max-w-[200px] font-serif text-[1rem] font-bold leading-snug text-ink">
-                                    Ingram Global Wholesale Distribution
-                                </h3>
-                            </div>
-
-                            {/* Trust Card 2 */}
-                            <div className="group flex flex-col items-center justify-center gap-4 rounded-xl border border-[#E7665D]/20 bg-white px-5 py-7 text-center shadow-[0_4px_20px_rgba(231,102,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_10px_30px_rgba(231,102,93,0.12)]">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#E7665D]/25 bg-[#fdf6f5] text-[#E7665D] transition-all duration-300 group-hover:bg-[#E7665D] group-hover:text-white">
-                                    <ShieldCheck size={23} strokeWidth={1.8} />
-                                </div>
-
-                                <h3 className="max-w-[200px] font-serif text-[1rem] font-bold leading-snug text-ink">
-                                    100% Author Copyright &amp; Royalties
-                                </h3>
-                            </div>
-
-                            {/* Trust Card 3 */}
-                            <div className="group flex flex-col items-center justify-center gap-4 rounded-xl border border-[#E7665D]/20 bg-white px-5 py-7 text-center shadow-[0_4px_20px_rgba(231,102,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_10px_30px_rgba(231,102,93,0.12)]">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#E7665D]/25 bg-[#fdf6f5] text-[#E7665D] transition-all duration-300 group-hover:bg-[#E7665D] group-hover:text-white">
-                                    <BookOpenCheck size={23} strokeWidth={1.8} />
-                                </div>
-
-                                <h3 className="max-w-[200px] font-serif text-[1rem] font-bold leading-snug text-ink">
-                                    Custom InDesign Craftsmanship
-                                </h3>
-                            </div>
-
-                            {/* Trust Card 4 */}
-                            <div className="group flex flex-col items-center justify-center gap-4 rounded-xl border border-[#E7665D]/20 bg-white px-5 py-7 text-center shadow-[0_4px_20px_rgba(231,102,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_10px_30px_rgba(231,102,93,0.12)]">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#E7665D]/25 bg-[#fdf6f5] text-[#E7665D] transition-all duration-300 group-hover:bg-[#E7665D] group-hover:text-white">
-                                    <Globe size={23} strokeWidth={1.8} />
-                                </div>
-
-                                <h3 className="max-w-[200px] font-serif text-[1rem] font-bold leading-snug text-ink">
-                                    Global Distribution Channels
-                                </h3>
-                            </div>
-
-                        </div>
-                    </Container>
-                </section>
 
 
                 {/* REQUIRED NEW SECTION: From Manuscript to Published Book */}
@@ -296,9 +234,15 @@ export default function PublishingClient() {
                                     <div className="flip-inner shadow-sm hover:shadow-md transition-shadow">
                                         {/* Front — name only */}
                                         <div className="flip-face bg-paper/95 border border-line hover:border-[#E7665D] transition-colors">
-                                            <span className="font-serif text-[16px] tracking-wide text-ink text-center px-3 font-semibold">
-                                                {r.name}
-                                            </span>
+                                            {r.img ? (
+                                                <Image
+                                                    src={r.img}
+                                                    alt={r.name}
+                                                    width={150}
+                                                    height={42}
+                                                    className="max-h-[42px] max-w-[150px] w-auto h-auto object-contain"
+                                                />
+                                            ) : null}
                                         </div>
                                         {/* Back — colored brand logo */}
                                         <div className="flip-face flip-back bg-white border border-[#E7665D]/30 px-4">
@@ -382,12 +326,9 @@ export default function PublishingClient() {
                                                         (keyword) =>
                                                             keyword.toLowerCase() === part.toLowerCase()
                                                     ) ? (
-                                                        <strong
-                                                            key={index}
-                                                            className="font-semibold text-ink"
-                                                        >
+                                                        <>
                                                             {part}
-                                                        </strong>
+                                                        </>
                                                     ) : (
                                                         <Fragment key={index}>
                                                             {part}
@@ -743,17 +684,15 @@ export default function PublishingClient() {
                                     Author Resource Library
                                 </span>
 
-                                <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
+                                <h2 className="mt-3 max-w-3xl mx-auto font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
                                     Manuscript Preparation Templates &amp; Style Guides
                                 </h2>
 
                                 <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
                                     Download industry-standard manuscript formatting templates
                                     and style guides crafted by our senior editorial directors.
-                                    These resources help{" "}
-                                    <strong className="font-semibold text-white">
-                                        self-publishing for new authors
-                                    </strong>{" "}
+                                    These resources help
+                                    self-publishing for new Authors
                                     start on the right foundation and reduce revision cycles
                                     during production.
                                 </p>
@@ -837,10 +776,8 @@ export default function PublishingClient() {
                                         <p className="mt-3 text-sm text-slate-300 leading-relaxed">
                                             Strategic categorization guide to optimize bookstore
                                             discoverability. Understanding BISAC codes is essential
-                                            for any author using{" "}
-                                            <strong className="font-semibold text-white">
-                                                book distribution services
-                                            </strong>{" "}
+                                            for any author using
+                                            book distribution services
                                             to reach the right readers.
                                         </p>
                                     </div>
@@ -884,7 +821,7 @@ export default function PublishingClient() {
                                     <span className="w-8 h-px bg-[#E7665D]/60" />
                                 </div>
 
-                                <h2 className="mt-4 font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-tight tracking-tight">
+                                <h2 className="mt-4 max-w-2xl mx-auto font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-tight tracking-tight">
                                     The Collingwood Author{" "}
                                     <span className="text-[#E7665D]">
                                         Publishing Checklist
@@ -894,10 +831,8 @@ export default function PublishingClient() {
                                 <p className="mt-4 text-sm sm:text-base text-ink-soft leading-relaxed max-w-2xl">
                                     Every milestone we shepherd on your behalf before a single
                                     carton of books ships from the bindery. This checklist
-                                    represents the complete scope of professional{" "}
-                                    <strong className="font-semibold text-ink">
-                                        book publishing services
-                                    </strong>{" "}
+                                    represents the complete scope of professional
+                                    book publishing services
                                     production.
                                 </p>
                             </div>
@@ -966,7 +901,7 @@ export default function PublishingClient() {
                                 <span className="w-8 h-px bg-[#E7665D]/60" />
                             </div>
 
-                            <h2 className="mt-4 max-w-3xl font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-tight tracking-tight">
+                            <h2 className="mt-4 max-w-2xl font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-tight tracking-tight">
                                 Related Author Services:{" "}
                                 <span className="text-[#E7665D]">
                                     Editing, Marketing &amp; Audiobook Production
@@ -974,10 +909,8 @@ export default function PublishingClient() {
                             </h2>
 
                             <p className="mt-4 max-w-3xl text-sm sm:text-base text-ink-soft leading-relaxed">
-                                Publishing is one stage of a larger process. Our{" "}
-                                <strong className="font-semibold text-ink">
-                                    book publishing services
-                                </strong>{" "}
+                                Publishing is one stage of a larger process. Our
+                                book publishing services
                                 integrate seamlessly with every other service an author needs.
                                 Whether your manuscript still requires editorial development
                                 or your published book is ready for a marketing campaign, our
@@ -1008,7 +941,7 @@ export default function PublishingClient() {
                                 </div>
 
                                 <div className="mt-7 border-t border-line/70 pt-5">
-                                    <a
+                                    <Link
                                         href="/editing"
                                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
                                     >
@@ -1017,7 +950,7 @@ export default function PublishingClient() {
                                             size={16}
                                             className="transition-transform duration-300 group-hover:translate-x-1"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -1042,7 +975,7 @@ export default function PublishingClient() {
                                 </div>
 
                                 <div className="mt-7 border-t border-line/70 pt-5">
-                                    <a
+                                    <Link
                                         href="/marketing"
                                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
                                     >
@@ -1051,7 +984,7 @@ export default function PublishingClient() {
                                             size={16}
                                             className="transition-transform duration-300 group-hover:translate-x-1"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -1075,8 +1008,8 @@ export default function PublishingClient() {
                                 </div>
 
                                 <div className="mt-7 border-t border-line/70 pt-5">
-                                    <a
-                                        href="/audiobook-production"
+                                    <Link
+                                        href="/audiobook"
                                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
                                     >
                                         Learn more: Audiobook Production Services
@@ -1084,7 +1017,7 @@ export default function PublishingClient() {
                                             size={16}
                                             className="transition-transform duration-300 group-hover:translate-x-1"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
