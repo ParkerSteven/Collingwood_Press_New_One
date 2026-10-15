@@ -15,33 +15,30 @@ import {
 const teamMembers = [
   {
     id: "01",
-    name: "[INSERT NAME]",
-    role: "Senior Editor",
+    name: "Lincoln Grayson",
+    role: "Editorial Director",
     icon: BookOpenText,
-    image: "", // Add verified team member photo path
+    image: "/LincoIn.jpeg", // Add verified team member photo path
     imageAlt: "",
-    bio: "[INSERT 2–3 sentence bio: genre expertise, years of experience, notable titles.]",
-    specialty: "Editorial Leadership",
+    bio: "Lincoln leads the editorial side of The Collingwood. In US publishing, the Editorial Director sets editorial standards, oversees which manuscripts are taken on, and is accountable for the quality of every title that ships",
   },
   {
     id: "02",
-    name: "[INSERT NAME]",
-    role: "Publishing Director",
+    name: "Pamela Hayek",
+    role: "Managing Editor",
     icon: BriefcaseBusiness,
-    image: "", // Add verified team member photo path
+    image: "/Pamela.jpeg", // Add verified team member photo path
     imageAlt: "",
-    bio: "[INSERT 2–3 sentence bio: role in the publishing process and what authors can expect.]",
-    specialty: "Publishing Direction",
+    bio: "Pamela keeps every title on schedule and to standard from manuscript to print. In US publishing, the Managing Editor coordinates copyediting, proofreading, design and production, and is the author’s main point of contact for timelines.,specialty: 'Publishing Direction'",
   },
   {
     id: "03",
-    name: "[INSERT NAME]",
-    role: "Design Lead",
+    name: "Camden Wayne",
+    role: "Director of Marketing and Publicity",
     icon: Palette,
-    image: "", // Add verified team member photo path
+    image: "/Camden.jpeg", // Add verified team member photo path
     imageAlt: "",
-    bio: "[INSERT 2–3 sentence bio: design background and specialties.]",
-    specialty: "Cover & Interior Design",
+    bio: "Camden is responsible for getting each book in front of its readers. In US publishing, this role plans the launch, manages retailer presence and drives reviews and media coverage.",
   },
 ];
 
@@ -172,9 +169,9 @@ export default function MarketingServices() {
                         {member.role}
                       </span>
 
-                      <span className="mt-0.5 block font-sans text-[11px] text-ink-muted">
+                      {/* <span className="mt-0.5 block font-sans text-[11px] text-ink-muted">
                         {member.specialty}
-                      </span>
+                      </span> */}
                     </div>
                   </div>
 

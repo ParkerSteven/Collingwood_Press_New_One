@@ -20,23 +20,23 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: "01",
-    quote: "[INSERT real quote]",
-    author: "[INSERT Author Name]",
-    book: "[INSERT Book Title]",
+    quote: "“I review every detail, and the Collingwood team kept pace: editing done in July, formatting fixes turned around fast, and honest advice on how to position the book.",
+    author: "Todd Shevlin",
+    book: "12 Minutes to Freedom",
     genre: "",
   },
   {
     id: "02",
-    quote: "[INSERT real quote, ideally from a different genre]",
-    author: "[INSERT Author Name]",
-    book: "[INSERT Book Title]",
+    quote: "My first book, handled with care and encouragement: patient through every cover revision, and the decisions stayed mine.",
+    author: "John David Amon",
+    book: "Grace in the Questions",
     genre: "",
   },
   {
     id: "03",
-    quote: "[INSERT real quote]",
-    author: "[INSERT Author Name]",
-    book: "[INSERT Book Title]",
+    quote: "An absolute pleasure to work with. Pamela caught spelling, tense slips, and hidden errors in the recipes and index that everyone else had missed for years.",
+    author: "Jill Coleman",
+    book: "*** · Verified Reviewer",
     genre: "",
   },
 ];
@@ -138,7 +138,7 @@ export default function ManuscriptCTA() {
                     </h3>
 
                     <p className="mt-1 font-sans text-xs leading-relaxed text-ink-muted">
-                      Author of{" "}
+                      {/* Author of{" "} */}
                       <span className="italic text-ink">
                         {testimonial.book}
                       </span>
