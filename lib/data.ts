@@ -480,6 +480,61 @@ export const marketingFAQs = [
 ];
 
 
+export const editingFAQs = [
+    {
+        question: "What's included in book editing services?",
+        answer:
+            "Every engagement includes a marked-up manuscript with tracked changes, margin comments, a custom style sheet, and direct communication with your editor. Developmental editing also includes a standalone editorial letter. The specific scope depends on which service level your manuscript needs.",
+    },
+    {
+        question: "How much do book editing services cost?",
+        answer:
+            "Pricing depends on your manuscript's word count and the level of editing required. Proofreading services start at $0.01 per word. Copyediting starts at $0.02. Line editing starts at $0.03. Developmental editing starts at $0.05. Exact pricing is provided after we review your manuscript.",
+    },
+    {
+        question: "How do book editing services work?",
+        answer:
+            "You submit your manuscript, we review the opening pages and send a quote, your assigned editor completes the work using tracked changes, and you receive the marked-up file with a style sheet and any supplementary documents. The book editing services process follows four steps: submit, review, edit, deliver.",
+    },
+    {
+        question: "Do you offer book editing services for self-published authors?",
+        answer:
+            "Yes. The majority of our clients are self-published authors and indie authors who need professional editing without signing with a traditional publisher. We follow the same standards used by trade houses.",
+    },
+    {
+        question: "Which type of editing do I need?",
+        answer:
+            "If your manuscript has structural problems with pacing, plot, or organization, you need developmental editing. If the structure works but the prose needs tightening, you need line editing. If the writing is polished but needs grammatical precision, you need copy editing. If the book is production-ready and just needs a final error check, you need proofreading. We will recommend the right combination after reviewing your opening pages.",
+    },
+    {
+        question: "Can I get a sample edit?",
+        answer:
+            "Yes. Send us your first 1,000 words and a senior editor will return them within 48 hours with tracked changes, margin notes, and a brief assessment. No payment required, no obligation.",
+    },
+    {
+        question: "What is the difference between line editing and developmental editing?",
+        answer:
+            "Developmental editing addresses the book's structure: chapter order, pacing, character arcs, and thematic coherence. Line editing addresses the prose: sentence rhythm, word choice, clarity, and voice. Developmental works on the blueprint. Line editing works on the finish. If both need attention, developmental comes first.",
+    },
+    {
+        question: "What file format do you accept?",
+        answer:
+            "We accept Word (.doc and .docx), Google Docs, and RTF. Edits are returned in Word with tracked changes enabled. If you need a different format, let us know when you submit.",
+    },
+    {
+        question: "Can I communicate with the editor?",
+        answer:
+            "Yes. You speak directly with the editor assigned to your project by phone and email. You are not routed through a customer service team or a project manager. Your editor is your single point of contact from start to delivery.",
+    },
+    {
+        question: "Do you edit children's books?",
+        answer:
+            "Yes. We offer children's book editing for picture books, early readers, chapter books, and middle grade. Our editors understand the specific conventions these formats require, including age-appropriate vocabulary, pacing for younger readers, and illustration-text coordination for picture books.",
+    },
+];
+
+
+
 
 
 export type Book = {
