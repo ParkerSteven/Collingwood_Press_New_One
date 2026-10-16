@@ -589,6 +589,57 @@ export const editingFAQs = [
   },
 ];
 
+
+export const audiobookFAQs = [
+  {
+    question: "What's included in audiobook production services?",
+    answer:
+      "Our audiobook production services include manuscript preparation, narrator casting with custom audition samples, studio recording, editing, mastering to platform specifications, quality control, one round of revisions, and upload support for Audible and other platforms. You receive mastered chapter files, metadata, and a pronunciation guide.",
+  },
+  {
+    question: "How much does audiobook production cost?",
+    answer:
+      "Cost depends on the length of the manuscript, the narrator selected, and whether you choose professional narration or author-narrated recording. We provide a custom quote after reviewing your manuscript. Pricing is per finished hour of audio, and a typical 60,000-word book produces approximately 7 to 8 hours of finished audio.",
+  },
+  {
+    question: "How long does audiobook production take?",
+    answer:
+      "Most projects are completed in 6 to 12 weeks from manuscript submission to finished files. The timeline depends on book length, narrator availability, and the revision process. We provide specific delivery dates when we send your quote.",
+  },
+  {
+    question: "Can I choose my narrator?",
+    answer:
+      "Yes. We present you with custom audition samples recorded from your manuscript by multiple narrators. You listen, compare, and select the voice you want. You are never assigned a narrator without your approval.",
+  },
+  {
+    question: "Do you distribute to Audible and other platforms?",
+    answer:
+      "Yes. We prepare distribution-ready files for Audible, Apple Books, Spotify, Google Play, Kobo, Scribd, Barnes & Noble, OverDrive, and other platforms. We can handle the upload process for you or deliver the files for you to distribute independently.",
+  },
+  {
+    question:
+      "What's the difference between author-narrated and professional narrator?",
+    answer:
+      "A professional narrator is a trained voice performer who records in a studio environment under a producer's direction. An author narrated audiobook uses your own voice, with guided recording support and the same post-production and mastering. Professional narration is the standard choice for most genres. Author narration works well for memoirs and personal nonfiction where your voice is part of the book's identity.",
+  },
+  {
+    question: "Can I produce an audiobook for an already published book?",
+    answer:
+      "Yes. Audiobook production is a standalone project. Your book does not need to be republished. If you have a finalized manuscript in print or ebook, we can begin production immediately.",
+  },
+  {
+    question: "What file formats and standards do you deliver?",
+    answer:
+      "Mastered chapter files in MP3 (192kbps or higher, 44.1 kHz, mono) and WAV. All files meet Audible/ACX specifications for RMS levels, peak headroom, and noise floor. Chapter markers and metadata are included for platform ingestion.",
+  },
+  {
+    question: "Do you offer a sample or audition?",
+    answer:
+      "Yes. Before production begins, we record custom audition samples from your manuscript using narrators matched to your genre. You review the samples and select your narrator before any full recording starts.",
+  },
+];
+
+
 export type Book = {
   id: number;
   title: string;
