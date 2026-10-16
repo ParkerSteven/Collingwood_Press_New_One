@@ -193,7 +193,7 @@ export default function EditingPageClient() {
                                 and a custom style sheet. No automated tools.
                                 No anonymous freelancers. One assigned{" "}
                                 book editor who works with you
-                                by phone and email through every round of revision.
+                                by phone and email works with you from first read to final delivery..
                             </p>
 
                             {/* CTA Buttons */}
@@ -231,7 +231,7 @@ export default function EditingPageClient() {
                                         size={14}
                                         className="text-[#E7665D]"
                                     />
-                                    <span>Chicago Manual of Style 17th Edition</span>
+                                    <span>Chicago Manual of Style current edition</span>
                                 </div>
 
                                 <div className="flex items-center gap-2">
@@ -747,14 +747,14 @@ export default function EditingPageClient() {
                                     icon: BookOpen,
                                     badge: "Editorial Standards",
                                     description:
-                                        "Chicago Manual of Style compliance (17th Edition) as the default standard. APA, AP, or MLA available on request.",
+                                        "Chicago Manual of Style compliance (current edition) as the default standard. APA, AP, or MLA available on request.",
                                 },
                                 {
                                     title: "Direct Editor Communication",
                                     icon: PhoneCall,
                                     badge: "Personal Support",
                                     description:
-                                        "Direct communication with your assigned editor by phone and email. You are never routed through a project manager or a support queue.",
+                                        "Direct communication with your assigned editor by phone and email. You work directly with your assigned editor on all editorial questions. or a support queue.",
                                 },
                                 {
                                     title: "One Round of Follow-up",
@@ -901,7 +901,7 @@ export default function EditingPageClient() {
                 />
 
 
-                
+
 
                 {/* SECTION 8: CLOSING CTA - BOOK EDITING SERVICES */}
                 <FinalCTA
