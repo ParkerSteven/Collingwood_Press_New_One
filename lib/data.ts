@@ -433,7 +433,7 @@ export const faqs = [
   {
     question: "How much does it cost to publish a book?",
     answer:
-      "n 2026, a typical professional self-published book runs about $2,940 to $5,660, based on a review of more than 230,000 freelancer quotes. Editing is the highest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting, and ads sit outside that range. With The Collingwood Press, the price depends on the services you choose. You fund the work, and you keep the copyright and 100% royalties. Request a free consultation for an itemized quote.",
+      "In 2026, a typical professional self-published book runs about $2,940 to $5,660, based on a review of more than 230,000 freelancer quotes. Editing is the highest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting, and ads sit outside that range. With The Collingwood Press, the price depends on the services you choose. You fund the work, and you keep the copyright and 100% royalties. Request a free consultation for an itemized quote.",
   },
 ];
 

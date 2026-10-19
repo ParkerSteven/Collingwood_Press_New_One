@@ -15,10 +15,7 @@ import {
     Sparkles,
     BookOpen,
     CheckCircle2,
-    MessageSquareQuote,
     ArrowRight,
-    Check,
-    PhoneCall,
     Feather,
     Lightbulb,
     BriefcaseBusiness,
@@ -36,6 +33,7 @@ import {
 import FAQAccordion from "./FAQAccordion";
 import { ghostwritingFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
+import HeroSection from "./HeroSection";
 
 const ghostwritingSteps = [
     {
@@ -139,88 +137,9 @@ export default function GhostwritingClientPage() {
             <main className="bg-white text-ink">
 
                 {/* SECTION 1: HERO */}
-                <section className="ghost-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-                    <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-
-                            {/* Eyebrow */}
-                            <Eyebrow tone="coral" align="center">
-                                Confidential Collaborative Ghostwriting
-                            </Eyebrow>
-
-                            {/* H1 Heading */}
-                            <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                                Professional{" "}
-                                <span className="italic text-[#E7665D] block sm:inline">
-                                    Ghostwriting Services
-                                </span>
-                            </h1>
-
-                            {/* Hero Description */}
-                            <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
-                                You have the expertise, the experience, or the story.
-                                What you need is someone who can turn it into a finished
-                                book. Our
-                                professional ghostwriting services
-                                pair you with an experienced writer who captures your
-                                voice, follows your direction, and delivers a complete{" "}
-                                manuscript
-                                you are proud to put your name on. You stay involved
-                                in the direction and{" "}
-                                revisions
-                                at every stage. We handle the writing. The process is
-                                fully confidential, and you retain all{" "}
-                                rights
-                                to the finished work. Whether you are starting from
-                                a rough idea or building on a partial draft, this
-                                is how you
-                                hire a ghostwriter
-                                and get a book that reads like you wrote it yourself.
-                            </p>
-
-                            {/* CTA Buttons */}
-                            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-                                <Button
-                                    href="/contact-us#manuscript-review"
-                                    variant="primary"
-                                    size="lg"
-                                >
-                                    <span>Get a Ghostwriting Quote</span>
-                                    <ArrowRight size={15} />
-                                </Button>
-
-                                <Button
-                                    href="/contact-us"
-                                    variant="outline-white"
-                                    size="lg"
-                                >
-                                    <span>Schedule a Consultation</span>
-                                </Button>
-                            </div>
-
-                            {/* Existing Guarantees — Unchanged */}
-                            <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
-                                <div className="flex items-center gap-2">
-                                    <Lock size={14} className="text-[#E7665D]" />
-                                    <span>100% Strict NDA Protection</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <ShieldCheck size={14} className="text-[#E7665D]" />
-                                    <span>100% Author Copyright &amp; Royalties</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <CheckCircle2 size={14} className="text-[#E7665D]" />
-                                    <span>Matched with Vetted Trade Authors</span>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
+                <HeroSection
+                    className="relative ghost-hero-gradient overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
+                />
 
                 {/* SECTION 2: WHO THIS IS FOR */}
                 <section className="py-20 lg:py-28 bg-white border-b border-line">
@@ -1233,7 +1152,6 @@ export default function GhostwritingClientPage() {
                     </Container>
                 </section>
 
-
                 <FAQAccordion
                     items={ghostwritingFAQs}
                     eyebrow="Ghostwriting FAQ"
@@ -1244,9 +1162,6 @@ export default function GhostwritingClientPage() {
                     }
                     sectionId="editing-faq"
                 />
-
-
-
 
                 {/* SECTION 11: CLOSING CTA - GHOSTWRITING SERVICES */}
                 <FinalCTA
@@ -1272,8 +1187,6 @@ export default function GhostwritingClientPage() {
                     buttonText="Get a Ghostwriting Quote"
                     buttonHref="/contact-us#manuscript-review"
                 />
-
-
             </main>
             <Footer />
         </>

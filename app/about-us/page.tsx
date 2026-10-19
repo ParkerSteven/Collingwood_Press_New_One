@@ -26,6 +26,7 @@ import {
     CheckCircle2,
     Check
 } from "lucide-react";
+import HeroSection from "@/components/sections/HeroSection";
 
 const blogArticles = [
     {
@@ -82,37 +83,35 @@ export default function AboutUsPage() {
             <Header />
             <main className="bg-white text-ink">
                 {/* Hero */}
-                <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-                    <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-                            <Eyebrow tone="coral" align="center">
-                                Founded 2009 &bull; Subsidiary of Hambone Publishers LLC
-                            </Eyebrow>
-
-                            <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                                Dedicated to shepherding fine manuscripts into{" "}
-                                <span className="italic text-[#E7665D] block sm:inline">shelf-ready literature.</span>
-                            </h1>
-
-                            <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
-                                The Collingwood Press was established on a simple, enduring premise: that independent authors deserve the exact same editorial caliber, typographical majesty, and global bookstore distribution once reserved only for major New York publishing houses.
-                            </p>
-
-                            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-                                <Button href="#team" variant="primary" size="lg">
-                                    <span>Meet Our Publishing Directors</span>
-                                    <ArrowRight size={15} />
-                                </Button>
-                                <Button href="/contact-us" variant="outline-white" size="lg">
-                                    <span>Contact Our Editorial Desk</span>
-                                </Button>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
+                <HeroSection
+                    className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
+                    eyebrow="Founded 2009 • Subsidiary of Hambone Publishers LLC"
+                    title="Dedicated to shepherding fine manuscripts into"
+                    highlightText="shelf-ready literature."
+                    description={
+                        <p>
+                            The Collingwood Press was established on a simple,
+                            enduring premise: that independent authors deserve
+                            the exact same editorial caliber, typographical
+                            majesty, and global bookstore distribution once
+                            reserved only for major New York publishing houses.
+                        </p>
+                    }
+                    buttons={[
+                        {
+                            text: "Meet Our Publishing Directors",
+                            href: "#team",
+                            variant: "primary",
+                            showArrow: true,
+                        },
+                        {
+                            text: "Contact Our Editorial Desk",
+                            href: "/contact-us",
+                            variant: "outline-white",
+                        },
+                    ]}
+                    guarantees={[]}
+                />
 
                 {/* Key Milestones & Statistics Bar */}
                 <section className="py-12 bg-white border-b border-line">

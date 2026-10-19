@@ -28,6 +28,7 @@ import FAQAccordion from "./FAQAccordion";
 import { publishingFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
 import Link from "next/link";
+import HeroSection from "./HeroSection";
 
 
 const publishingRoadmap = [
@@ -122,78 +123,57 @@ export default function PublishingClient() {
             <main className="bg-white text-ink">
                 {/* Hero */}
 
-                <section className="publishing-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-                    <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-                            <Eyebrow tone="coral" align="center">
-                                Full-Service Independent Trade Publishing
-                            </Eyebrow>
-
-                            <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[2.7rem] lg:text-[2.9rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                                Professional Book Publishing Services for{" "}
-                                <span className="italic text-[#E7665D] block sm:inline">
-                                    First-Time Authors
-                                </span>
-                            </h1>
-
-                            <p className="mt-5 text-[0.9rem] sm:text-[1rem] leading-relaxed text-[#ccccccad] font-sans max-w-5xl">
-                                Your manuscript deserves more than a template upload and an
-                                automated conversion. Our
-                                book publishing services
-                                take every project from raw draft to retail-ready hardcover,
-                                paperback, and eBook through hands-on editorial development,
-                                custom InDesign typesetting, original cover artwork, and
-                                worldwide distribution via Amazon KDP, IngramSpark, and
-                                Barnes &amp; Noble. Whether you are a
-                                first-time author
-                                navigating the industry for the first time or a seasoned writer
-                                launching your next title, we handle the entire production
-                                pipeline while you retain 100% of your copyright and royalties.
-                                No rights transfers. No royalty splits. Just professional
-                                publishing built around the author who wrote the book.
-                            </p>
-
-                            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-                                <Button
-                                    href="/contact-us#manuscript-review"
-                                    variant="primary"
-                                    size="lg"
-                                >
-                                    <span>Submit Manuscript for Publishing</span>
-                                    <ArrowRight size={15} />
-                                </Button>
-
-                                <Button
-                                    href="#publishing-process"
-                                    variant="outline-white"
-                                    size="lg"
-                                >
-                                    <span>Explore The 6-Step Journey</span>
-                                </Button>
-                            </div>
-
-                            <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
-                                <div className="flex items-center gap-2">
-                                    <CheckCircle2 size={14} className="text-[#E7665D]" />
-                                    <span>Ingram Global Wholesale Distribution</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <ShieldCheck size={14} className="text-[#E7665D]" />
-                                    <span>100% Author Copyright &amp; Royalties</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <BookOpenCheck size={14} className="text-[#E7665D]" />
-                                    <span>Custom InDesign Craftsmanship</span>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
+                <HeroSection
+                    className="publishing-hero-gradient"
+                    eyebrow="Full-Service Independent Trade Publishing"
+                    title="Professional Book Publishing Services for"
+                    highlightText="First-Time Authors"
+                    description={
+                        <p>
+                            Your manuscript deserves more than a template upload
+                            and an automated conversion. Our book publishing
+                            services take every project from raw draft to
+                            retail-ready hardcover, paperback, and eBook through
+                            hands-on editorial development, custom InDesign
+                            typesetting, original cover artwork, and worldwide
+                            distribution via Amazon KDP, IngramSpark, and
+                            Barnes &amp; Noble. Whether you are a first-time author
+                            navigating the industry for the first time or a
+                            seasoned writer launching your next title, we handle
+                            the entire production pipeline while you retain
+                            100% of your copyright and royalties. No rights
+                            transfers. No royalty splits. Just professional
+                            publishing built around the author who wrote the book.
+                        </p>
+                    }
+                    buttons={[
+                        {
+                            text: "Submit Manuscript for Publishing",
+                            href: "/contact-us#manuscript-review",
+                            variant: "primary",
+                            showArrow: true,
+                        },
+                        {
+                            text: "Explore The 6-Step Journey",
+                            href: "#publishing-process",
+                            variant: "outline-white",
+                        },
+                    ]}
+                    guarantees={[
+                        {
+                            text: "Ingram Global Wholesale Distribution",
+                            icon: CheckCircle2,
+                        },
+                        {
+                            text: "100% Author Copyright & Royalties",
+                            icon: ShieldCheck,
+                        },
+                        {
+                            text: "Custom InDesign Craftsmanship",
+                            icon: BookOpenCheck,
+                        },
+                    ]}
+                />
 
 
                 {/* SECTION 2: Trust & Proof Bar */}

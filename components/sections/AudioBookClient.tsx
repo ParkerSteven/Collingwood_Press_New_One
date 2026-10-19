@@ -30,6 +30,7 @@ import { formats } from "@/lib/formats";
 import FAQAccordion from "./FAQAccordion";
 import { audiobookFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
+import HeroSection from "./HeroSection";
 
 const productionProcess = [
   {
@@ -156,87 +157,56 @@ export default function AudiobookPage() {
       <main className="bg-white text-ink">
         {/* Hero */}
 
-        <section className="audiobook-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
-
-          <Container className="relative z-10">
-            <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-
-              <Eyebrow tone="coral" align="center">
-                Studio-Grade Audiobook Production
-              </Eyebrow>
-
-              <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                Professional Audiobook Production{" "}
-                <span className="italic text-[#E7665D] block sm:inline">
-                  That Keeps Listeners Engaged
-                </span>
-              </h1>
-
-              <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
-                Most self-produced audiobooks lose listeners in the first ten
-                minutes. The narration is flat, the recording has background
-                noise, or the audio fails platform technical requirements and
-                gets rejected on upload. These are production problems, and
-                they are why
-                professional audiobook production
-                exists. Our
-                audiobook production services
-                handle everything from
-                narrator casting
-                and
-                studio recording
-                to
-                audio mastering
-                and distribution to Audible, Apple Books, Spotify, and
-                40+ additional platforms. You provide the manuscript.
-                We deliver
-                distribution-ready
-                chapter files
-                that meet every technical standard and sound the way a
-                published audiobook should.
-              </p>
-
-              <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-                <Button
-                  href="/contact-us#manuscript-review"
-                  variant="primary"
-                  size="lg"
-                >
-                  <span>Audition Narrators for Your Book</span>
-                  <ArrowRight size={15} />
-                </Button>
-
-                <Button
-                  href="#production-process"
-                  variant="outline-white"
-                  size="lg"
-                >
-                  <span>Explore the Production Process</span>
-                </Button>
-              </div>
-
-              <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
-                <div className="flex items-center gap-2">
-                  <Mic2 size={14} className="text-[#E7665D]" />
-                  <span>SAG-AFTRA Professional Narrators</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <ShieldCheck size={14} className="text-[#E7665D]" />
-                  <span>100% Guaranteed ACX / Audible Acceptance</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Headphones size={14} className="text-[#E7665D]" />
-                  <span>Distributed to Audible, Spotify &amp; Libraries</span>
-                </div>
-              </div>
-
-            </div>
-          </Container>
-        </section>
+        <HeroSection
+          className="audiobook-hero-gradient"
+          eyebrow="Studio-Grade Audiobook Production"
+          title="Professional Audiobook Production"
+          highlightText="That Keeps Listeners Engaged"
+          description={
+            <p>
+              Most self-produced audiobooks lose listeners in the
+              first ten minutes. The narration is flat, the recording
+              has background noise, or the audio fails platform
+              technical requirements and gets rejected on upload.
+              These are production problems, and they are why
+              professional audiobook production exists. Our
+              audiobook production services handle everything from
+              narrator casting and studio recording to audio
+              mastering and distribution to Audible, Apple Books,
+              Spotify, and 40+ additional platforms. You provide
+              the manuscript. We deliver distribution-ready
+              chapter files that meet every technical standard
+              and sound the way a published audiobook should.
+            </p>
+          }
+          buttons={[
+            {
+              text: "Audition Narrators for Your Book",
+              href: "/contact-us#manuscript-review",
+              variant: "primary",
+              showArrow: true,
+            },
+            {
+              text: "Explore the Production Process",
+              href: "#production-process",
+              variant: "outline-white",
+            },
+          ]}
+          guarantees={[
+            {
+              text: "SAG-AFTRA Professional Narrators",
+              icon: Mic2,
+            },
+            {
+              text: "100% Guaranteed ACX / Audible Acceptance",
+              icon: ShieldCheck,
+            },
+            {
+              text: "Distributed to Audible, Spotify & Libraries",
+              icon: Headphones,
+            },
+          ]}
+        />
 
 
         {/* REQUIRED NEW SECTION 1: Audiobook Production Process (6 Steps) */}
@@ -259,7 +229,7 @@ export default function AudiobookPage() {
                 </em>
               </h2>
 
-              <div className="mt-5 flex flex-col gap-4 text-sm sm:text-base text-ink-muted text-center max-w-3xl mx-auto leading-relaxed font-sans">
+              <div className="mt-5 pb-20 flex flex-col gap-4 text-sm sm:text-base text-ink-muted text-center max-w-3xl mx-auto leading-relaxed font-sans">
                 <p>
                   Recording an audiobook at home sounds simple until you try
                   it. Untreated rooms produce echo and inconsistent tone.
@@ -289,59 +259,6 @@ export default function AudiobookPage() {
                   that meets platform standards the first time.
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Logo Carousel — Same Design & Animation */}
-          <div
-            className="mk-platform-viewport relative pt-8 mt-8 mb-20"
-            role="region"
-            aria-label="Audiobook distribution platforms"
-          >
-            <div className="mk-platform-track">
-              {[0, 1].map((copy) => (
-                <div
-                  key={copy}
-                  className="mk-platform-group"
-                  aria-hidden={copy === 1 ? true : undefined}
-                >
-                  {platforms.map((r) => (
-                    <div
-                      key={`${r.name}-${copy}`}
-                      className="flip-card mk-platform-card"
-                      tabIndex={copy === 0 ? 0 : -1}
-                      aria-label={`${r.name} audiobook distribution platform`}
-                    >
-                      <div className="flip-inner">
-                        <div className="flip-face mk-platform-front">
-                          <span className="font-serif text-[20px] sm:text-[22px] tracking-wide text-ink text-center px-3 font-semibold">
-                            {r.name}
-                          </span>
-                        </div>
-
-                        <div className="flip-face flip-back mk-platform-back">
-                          {r.mark ? (
-                            <Image
-                              src={r.mark}
-                              alt=""
-                              aria-hidden="true"
-                              width={150}
-                              height={42}
-                              className="max-h-[42px] max-w-[150px] w-auto object-contain"
-                            />
-                          ) : (
-                            <Headphones
-                              size={32}
-                              aria-hidden="true"
-                              className="text-[#A83E39]"
-                            />
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
             </div>
           </div>
 
@@ -591,9 +508,7 @@ export default function AudiobookPage() {
                     genre, tone, and your preferences. Each candidate
                     records a custom audition sample from your manuscript.
                     You review the samples and choose the voice. For{" "}
-                    <strong className="font-semibold text-white">
-                      author narrated audiobook
-                    </strong>{" "}
+                    author narrated audiobook
                     projects, we skip casting and move directly to
                     recording preparation.
                   </p>
@@ -642,13 +557,9 @@ export default function AudiobookPage() {
                     Audio editors proof-listen against the manuscript
                     word by word. Mouth clicks, stray breaths, retakes,
                     ambient noise, and pacing errors are removed.{" "}
-                    <strong className="font-semibold text-white">
-                      Post-production
-                    </strong>{" "}
+                    Post-production
                     produces clean, assembled{" "}
-                    <strong className="font-semibold text-white">
-                      chapter files
-                    </strong>{" "}
+                    chapter files
                     ready for mastering.
                   </p>
                 </div>
@@ -677,9 +588,7 @@ export default function AudiobookPage() {
                     -23dB and -18dB, peak headroom at -3dB, noise floor
                     below -60dB, and consistent room tone across all
                     chapters. The result is an{" "}
-                    <strong className="font-semibold text-white">
-                      Audible ready audiobook
-                    </strong>{" "}
+                    Audible ready audiobook
                     that passes platform review on the first submission.
                   </p>
                 </div>
@@ -738,7 +647,7 @@ export default function AudiobookPage() {
         {/* SECTION 6: What You Actually Get */}
         <section
           id="audiobook-deliverables"
-          className="py-20 lg:py-28 bg-[#fdfbf7] border-b border-line"
+          className="py-20 lg:pt-24 lg:pb-20 bg-[#fdfbf7] border-b border-line"
         >
           <Container>
             {/* Section Heading */}
@@ -1110,30 +1019,57 @@ export default function AudiobookPage() {
                 Supported platforms
               </h3>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                {[
-                  "Audible",
-                  "Amazon",
-                  "Apple Books",
-                  "Google Play Books",
-                  "Spotify",
-                  "Kobo",
-                  "Scribd",
-                  "Barnes & Noble",
-                  "OverDrive",
-                  "Hoopla",
-                  "Libro.fm",
-                  "Storytel",
-                ].map((platform) => (
-                  <div
-                    key={platform}
-                    className="flex items-center justify-center min-h-[75px] rounded-xl border border-[#E7665D]/20 bg-white px-4 py-5 text-center shadow-sm hover:border-[#E7665D]/50 hover:shadow-md transition-all duration-300"
-                  >
-                    <span className="font-serif text-[16px] sm:text-[18px] font-semibold text-ink">
-                      {platform}
-                    </span>
-                  </div>
-                ))}
+              {/* Logo Carousel — Same Design & Animation */}
+              <div
+                className="mk-platform-viewport relative pt-8 mt-8"
+                role="region"
+                aria-label="Audiobook distribution platforms"
+              >
+                <div className="mk-platform-track">
+                  {[0, 1].map((copy) => (
+                    <div
+                      key={copy}
+                      className="mk-platform-group"
+                      aria-hidden={copy === 1 ? true : undefined}
+                    >
+                      {platforms.map((r) => (
+                        <div
+                          key={`${r.name}-${copy}`}
+                          className="flip-card mk-platform-card"
+                          tabIndex={copy === 0 ? 0 : -1}
+                          aria-label={`${r.name} audiobook distribution platform`}
+                        >
+                          <div className="flip-inner">
+                            <div className="flip-face mk-platform-front">
+                              <span className="font-serif text-[18px] sm:text-[20px] tracking-wide text-ink text-center px-3 font-semibold">
+                                {r.name}
+                              </span>
+                            </div>
+
+                            <div className="flip-face flip-back mk-platform-back">
+                              {r.mark ? (
+                                <Image
+                                  src={r.mark}
+                                  alt=""
+                                  aria-hidden="true"
+                                  width={150}
+                                  height={42}
+                                  className="max-h-[42px] max-w-[150px] w-auto object-contain"
+                                />
+                              ) : (
+                                <Headphones
+                                  size={32}
+                                  aria-hidden="true"
+                                  className="text-[#A83E39]"
+                                />
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 

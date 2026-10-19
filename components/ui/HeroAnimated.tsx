@@ -49,7 +49,7 @@ export default function HeroAnimated() {
                     initial="hidden"
                     animate="show"
                     custom={2}
-                    className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-[#ccccccad] font-sans font-normal max-w-2xl"
+                    className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-slate-300 font-sans font-normal max-w-2xl"
                 >
                     You wrote the book. You should own every part of what comes next. The Collingwood Press is a full-service book publishing company built for authors who refuse to hand over their royalties, their rights, or their creative direction. Senior editors, original book design and worldwide distribution come with one non-negotiable promise: 100% of your copyright and royalties stay with you. From manuscript to marketplace, our author services elevate your work without ever taking ownership of it.
                 </motion.p>

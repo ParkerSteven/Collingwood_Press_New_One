@@ -37,6 +37,7 @@ import Image from "next/image";
 import FAQAccordion from "./FAQAccordion";
 import { marketingFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
+import HeroSection from "./HeroSection";
 
 type BrandMark = { title: string; hex: string; path: string };
 
@@ -367,88 +368,56 @@ export default function MarketingPage() {
             <main className="bg-white text-ink">
                 {/* Hero */}
 
-                <section className="marketing-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-                    <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-                            <Eyebrow tone="coral" align="center">
-                                Strategic Book Marketing for Independent Authors
-                            </Eyebrow>
-
-                            <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                                Professional{" "}
-                                <span className="italic text-[#E7665D]">
-                                    Book Marketing Services
-                                </span>{" "}
-                                for Self-Published Authors
-                            </h1>
-
-                            <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
-                                Most books do not fail because they are poorly written.
-                                They fail because no one finds them. If your book is
-                                published and sales are flat, or if you are approaching
-                                launch without a plan for getting readers to the page,
-                                that is a marketing problem. Our
-                                book marketing services are designed
-                                for self-published authors who need a
-                                structured, measurable campaign across the channels
-                                where readers actually discover and buy books. We
-                                handle Amazon Ads, social media, email funnels, paid
-                                advertising, media outreach, and{" "}
-                                author branding as a coordinated plan,
-                                not a list of products you have to pick from and manage
-                                yourself.
-                            </p>
-
-                            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-                                <Button
-                                    href="/contact-us#manuscript-review"
-                                    variant="primary"
-                                    size="lg"
-                                >
-                                    <span>Get Your Custom Marketing Plan</span>
-                                    <ArrowRight size={15} />
-                                </Button>
-
-                                <Button
-                                    href="#marketing-services"
-                                    variant="outline-white"
-                                    size="lg"
-                                >
-                                    <span>See What&apos;s Included</span>
-                                </Button>
-                            </div>
-
-                            <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
-                                <div className="flex items-center gap-2">
-                                    <CheckCircle2
-                                        size={14}
-                                        className="text-[#E7665D]"
-                                    />
-                                    <span>Targeted Comp-Author Audiences</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <Globe
-                                        size={14}
-                                        className="text-[#E7665D]"
-                                    />
-                                    <span>International Rights Fair Representation</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <Trophy
-                                        size={14}
-                                        className="text-[#E7665D]"
-                                    />
-                                    <span>Verified ARC &amp; Reviewer Syndication</span>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
+                <HeroSection
+                    className="marketing-hero-gradient"
+                    eyebrow="Strategic Book Marketing for Independent Authors"
+                    title="Professional"
+                    highlightText="Book Marketing Services"
+                    titleSuffix="for Self-Published Authors"
+                    description={
+                        <p>
+                            Most books do not fail because they are poorly written.
+                            They fail because no one finds them. If your book is
+                            published and sales are flat, or if you are approaching
+                            launch without a plan for getting readers to the page,
+                            that is a marketing problem. Our book marketing services
+                            are designed for self-published authors who need a
+                            structured, measurable campaign across the channels
+                            where readers actually discover and buy books. We
+                            handle Amazon Ads, social media, email funnels, paid
+                            advertising, media outreach, and author branding as a
+                            coordinated plan, not a list of products you have to
+                            pick from and manage yourself.
+                        </p>
+                    }
+                    buttons={[
+                        {
+                            text: "Get Your Custom Marketing Plan",
+                            href: "/contact-us#manuscript-review",
+                            variant: "primary",
+                            showArrow: true,
+                        },
+                        {
+                            text: "See What's Included",
+                            href: "#marketing-services",
+                            variant: "outline-white",
+                        },
+                    ]}
+                    guarantees={[
+                        {
+                            text: "Targeted Comp-Author Audiences",
+                            icon: CheckCircle2,
+                        },
+                        {
+                            text: "International Rights Fair Representation",
+                            icon: Globe,
+                        },
+                        {
+                            text: "Verified ARC & Reviewer Syndication",
+                            icon: Trophy,
+                        },
+                    ]}
+                />
 
 
                 {/* REQUIRED NEW SECTION 1: Book Marketing Services */}
@@ -1233,7 +1202,7 @@ export default function MarketingPage() {
                         <>
                             Send us your book or tell us about the title you are
                             preparing to launch. A{" "}
-                                book marketing consultant
+                            book marketing consultant
                             on our team will review your genre positioning, your
                             current market presence, and your goals, then deliver
                             a clear assessment of what a results-driven campaign

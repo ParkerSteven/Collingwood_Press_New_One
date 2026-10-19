@@ -28,6 +28,7 @@ import { motion } from "framer-motion";
 import FAQAccordion from "./FAQAccordion";
 import { editingFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
+import HeroSection from "./HeroSection";
 
 const editingProcessSteps = [
     {
@@ -153,100 +154,60 @@ export default function EditingPageClient() {
             <main className="bg-white text-ink">
 
                 {/* SECTION 1: HERO - BOOK EDITING SERVICES */}
-                <section className="editing-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-                    <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-
-                            {/* Eyebrow */}
-                            <Eyebrow tone="coral" align="center">
-                                Professional Editorial Services
-                            </Eyebrow>
-
-                            {/* H1 Heading */}
-                            <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                                Professional{" "}
-                                <span className="italic text-[#E7665D]">
-                                    Book Editing Services
-                                </span>
-                            </h1>
-
-                            {/* Hero Description */}
-                            <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
-                                A manuscript that loses readers in the first three
-                                chapters usually has a fixable problem. The pacing
-                                drags. The structure wanders. The sentences are
-                                clear to the writer but confusing to everyone else.
-                                These are editing problems, and they are the reason
-                                most rejection letters exist. Our
-                                book editing services cover four
-                                levels of professional editing:
-                                proofreading, copy editing, line editing, and
-                                developmental editing. Each one targets a different
-                                layer of the manuscript, and your editor recommends
-                                exactly which levels your book needs after reading
-                                the opening pages. You receive a{" "}
-                                marked-up manuscript with{" "}
-                                tracked changes, margin notes,
-                                and a custom style sheet. No automated tools.
-                                No anonymous freelancers. One assigned{" "}
-                                book editor who works with you
-                                by phone and email works with you from first read to final delivery..
-                            </p>
-
-                            {/* CTA Buttons */}
-                            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-                                <Button
-                                    href="/contact-us#manuscript-review"
-                                    variant="primary"
-                                    size="lg"
-                                >
-                                    <span>Get a Quote</span>
-                                    <ArrowRight size={15} />
-                                </Button>
-
-                                <Button
-                                    href="/contact-us#manuscript-review"
-                                    variant="outline-white"
-                                    size="lg"
-                                >
-                                    <span>Request a Free Sample Edit</span>
-                                </Button>
-                            </div>
-
-                            {/* Existing Trust Badges */}
-                            <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75">
-                                <div className="flex items-center gap-2">
-                                    <CheckCircle2
-                                        size={14}
-                                        className="text-[#E7665D]"
-                                    />
-                                    <span>Experienced Trade Press Editors</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <ShieldCheck
-                                        size={14}
-                                        className="text-[#E7665D]"
-                                    />
-                                    <span>Chicago Manual of Style current edition</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    <FileCheck2
-                                        size={14}
-                                        className="text-[#E7665D]"
-                                    />
-                                    <span>
-                                        Track Changes &amp; Direct Phone Consultations
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
+                <HeroSection
+                    className="editing-hero-gradient"
+                    eyebrow="Professional Editorial Services"
+                    title="Professional"
+                    highlightText="Book Editing Services"
+                    description={
+                        <p>
+                            A manuscript that loses readers in the first three
+                            chapters usually has a fixable problem. The pacing
+                            drags. The structure wanders. The sentences are
+                            clear to the writer but confusing to everyone else.
+                            These are editing problems, and they are the reason
+                            most rejection letters exist. Our book editing
+                            services cover four levels of professional editing:
+                            proofreading, copy editing, line editing, and
+                            developmental editing. Each one targets a different
+                            layer of the manuscript, and your editor recommends
+                            exactly which levels your book needs after reading
+                            the opening pages. You receive a marked-up manuscript
+                            with tracked changes, margin notes, and a custom style
+                            sheet. No automated tools. No anonymous freelancers.
+                            One assigned book editor who works with you by phone
+                            and email works with you from first read to final
+                            delivery.
+                        </p>
+                    }
+                    buttons={[
+                        {
+                            text: "Get a Quote",
+                            href: "/contact-us#manuscript-review",
+                            variant: "primary",
+                            showArrow: true,
+                        },
+                        {
+                            text: "Request a Free Sample Edit",
+                            href: "/contact-us#manuscript-review",
+                            variant: "outline-white",
+                        },
+                    ]}
+                    guarantees={[
+                        {
+                            text: "Experienced Trade Press Editors",
+                            icon: CheckCircle2,
+                        },
+                        {
+                            text: "Chicago Manual of Style current edition",
+                            icon: ShieldCheck,
+                        },
+                        {
+                            text: "Track Changes & Direct Phone Consultations",
+                            icon: FileCheck2,
+                        },
+                    ]}
+                />
 
 
                 {/* REQUIRED NEW SECTION: Our Editing Process */}
@@ -850,7 +811,6 @@ export default function EditingPageClient() {
                                         your first 1,000 words. We return it
                                         within 48 hours with tracked changes
                                         and a brief diagnostic summary.
-                                        No purchase obligation.
                                     </p>
 
                                     <div className="mt-5 flex flex-wrap justify-center lg:justify-start gap-5 text-xs text-ink-muted">

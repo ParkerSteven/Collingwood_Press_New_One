@@ -23,6 +23,7 @@ import {
     Sparkles
 } from "lucide-react";
 import { motion } from "framer-motion";
+import HeroSection from "@/components/sections/HeroSection";
 
 export default function ContactUsPage() {
     const [submitted, setSubmitted] = useState(false);
@@ -38,38 +39,34 @@ export default function ContactUsPage() {
             <Header />
             <main className="bg-white text-ink">
                 {/* Hero */}
-                <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white">
-                    <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
+                <HeroSection
+                    className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
+                    eyebrow="Publisher Inquiries • Direct Editorial Line"
+                    title="Connect directly with"
+                    highlightText="our publishing directors."
+                    description={
+                        <p>
+                            Whether you are holding an unpolished first draft or an
+                            active production-ready manuscript, our doors and phone
+                            lines are open. We invite authors to discuss their
+                            publishing vision without sales pressure.
+                        </p>
+                    }
+                    buttons={[]}
+                    guarantees={[]}
+                >
+                    <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs text-white/80">
+                        <span className="inline-flex items-center gap-1.5 bg-white/[0.06] px-3.5 py-1.5 rounded-full border border-white/10">
+                            <Clock size={13} className="text-[#E7665D]" />
+                            <span>Fast Response Within 24 Hours</span>
+                        </span>
 
-                    <Container className="relative z-10">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-                            <Eyebrow tone="coral" align="center">
-                                Publisher Inquiries &bull; Direct Editorial Line
-                            </Eyebrow>
-
-                            <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.4rem] font-bold leading-[1.08] text-white tracking-tight text-balance">
-                                Connect directly with{" "}
-                                <span className="italic text-[#E7665D] block sm:inline">our publishing directors.</span>
-                            </h1>
-
-                            <p className="mt-5 text-[1.06rem] sm:text-[1.14rem] leading-relaxed text-[#ccccccad] font-sans max-w-2xl">
-                                Whether you are holding an unpolished first draft or an active production-ready manuscript, our doors and phone lines are open. We invite authors to discuss their publishing vision without sales pressure.
-                            </p>
-
-                            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs text-white/80">
-                                <span className="inline-flex items-center gap-1.5 bg-white/[0.06] px-3.5 py-1.5 rounded-full border border-white/10">
-                                    <Clock size={13} className="text-[#E7665D]" />
-                                    <span>Fast Response Within 24 Hours</span>
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 bg-white/[0.06] px-3.5 py-1.5 rounded-full border border-white/10">
-                                    <Lock size={13} className="text-[#E7665D]" />
-                                    <span>Strict Non-Disclosure Protection</span>
-                                </span>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
+                        <span className="inline-flex items-center gap-1.5 bg-white/[0.06] px-3.5 py-1.5 rounded-full border border-white/10">
+                            <Lock size={13} className="text-[#E7665D]" />
+                            <span>Strict Non-Disclosure Protection</span>
+                        </span>
+                    </div>
+                </HeroSection>
 
                 {/* Contact Info Cards */}
                 <section className="py-16 sm:py-20 bg-white border-b border-line">
