@@ -1154,14 +1154,14 @@ export default function AudiobookPage() {
 
         <FAQAccordion
           items={audiobookFAQs}
-          eyebrow="Editing FAQ"
+          eyebrow="Audiobook FAQ"
           title={
             <>
               Frequently Asked Questions{" "}
 
             </>
           }
-          sectionId="editing-faq"
+          sectionId="audiobook-faq"
         />
 
         {/* SECTION 10: Closing CTA */}

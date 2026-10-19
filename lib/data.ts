@@ -639,6 +639,59 @@ export const audiobookFAQs = [
   },
 ];
 
+export const ghostwritingFAQs = [
+  {
+    question: "How much do ghostwriting services cost?",
+    answer:
+      "Ghostwriting cost depends on manuscript length, genre complexity, research needs, timeline, and ghostwriter experience. We provide a clear quote after the consultation. There are no hidden fees, and the quoted price covers the agreed scope of work.",
+  },
+  {
+    question: "How long does it take to ghostwrite a book?",
+    answer:
+      "Most projects take 4 to 9 months from consultation to final delivery. Shorter books and straightforward narratives move faster. Research-heavy nonfiction and complex fiction take longer. Your quote includes specific milestone dates for each stage of the process.",
+  },
+  {
+    question: "Can I choose my ghostwriter?",
+    answer:
+      "Yes. We recommend ghostwriters based on genre experience, writing style, and availability. You review their background and, in most cases, speak with them before the project begins. You are never assigned a writer without your approval.",
+  },
+  {
+    question: "What's included in ghostwriting services?",
+    answer:
+      "A collaborative outline, a full manuscript written in staged drafts, agreed revision rounds, voice matching, and a final clean file in Word format. Editing and design are separate. Everything included is defined and agreed before work starts.",
+  },
+  {
+    question: "How does the ghostwriting process work?",
+    answer:
+      "Consultation, outline approval, staged writing with feedback at defined intervals, revisions on the completed draft, and final delivery. You review and approve key stages throughout. The publishing path is discussed as a natural next step once the manuscript is finished.",
+  },
+  {
+    question: "Is ghostwriting confidential?",
+    answer:
+      "Yes. Every project is covered by a non-disclosure agreement. The ghostwriter's involvement, the manuscript content, and the project details stay private. Confidentiality is standard across all of our ghostwriting services.",
+  },
+  {
+    question: "Do you offer ghostwriting for self-published authors?",
+    answer:
+      "Yes. Ghostwriting services for self-published authors follow the same process. Once the manuscript is delivered, we can discuss editing, design, and publishing support so the book moves from finished draft to published title without delays.",
+  },
+  {
+    question: "Can you work from a partial manuscript or outline?",
+    answer:
+      "Yes. If you have a partial draft, an outline, interview recordings, or research notes, we can pick up where you left off. The ghostwriter reviews what exists, identifies what is needed, and builds the rest of the manuscript from your existing material.",
+  },
+  {
+    question: "Who owns the rights to the finished book?",
+    answer:
+      "You do. The ghostwriter assigns all rights to you upon delivery. Full copyright ownership. Your name goes on the cover and in all publishing records.",
+  },
+  {
+    question: "What happens after the manuscript is finished?",
+    answer:
+      "The finished manuscript is ready for editing and production. We can discuss the best publishing path for your book, whether that is traditional submission, hybrid publishing, or self-publishing, and connect you with the right support for editing, cover design, formatting, and distribution.",
+  },
+];
+
 
 export type Book = {
   id: number;
