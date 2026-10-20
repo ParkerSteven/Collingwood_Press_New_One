@@ -319,9 +319,9 @@ export default function Footer() {
               >
                 <MapPin size={14} className="text-[#E7665D] shrink-0 group-hover:scale-110 transition-transform" />
                 <p>6777 Camp Bowie Blvd, Fort Worth, TX 76116, United States</p>
-               
+
               </Link>
-               <div>
+              <div>
                 <span className="font-medium">
                   <iframe
                     title="The Collingwood Press Location"
@@ -334,7 +334,7 @@ export default function Footer() {
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
                 </span>
-                </div>
+              </div>
             </div>
 
             {/* Social Icons */}
@@ -345,7 +345,7 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 {/* Facebook */}
                 <Link
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/theCollingwoodpress"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -358,7 +358,7 @@ export default function Footer() {
 
                 {/* X (Twitter) */}
                 <Link
-                  href="https://x.com"
+                  href="https://x.com/CollingwoodUS"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X (formerly Twitter)"
@@ -371,7 +371,7 @@ export default function Footer() {
 
                 {/* Instagram */}
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/thecollingwoodpress/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -384,7 +384,7 @@ export default function Footer() {
 
                 {/* TikTok */}
                 <Link
-                  href="https://tiktok.com"
+                  href="https://www.tiktok.com/@thecollingwoodpress"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok"

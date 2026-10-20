@@ -8,7 +8,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { projectManagers, stats } from "@/lib/data";
+import { AboutStats, aiPolicyData, projectManagers, stats } from "@/lib/data";
 import {
     Building2,
     ShieldCheck,
@@ -24,55 +24,76 @@ import {
     Compass,
     HeartHandshake,
     CheckCircle2,
-    Check
+    Check,
+    MessageCircle
 } from "lucide-react";
 import HeroSection from "@/components/sections/HeroSection";
+import StatBar from "@/components/sections/StatBar";
+import MarketingServices from "@/components/sections/MarketingServices";
 
-const blogArticles = [
+export const blogArticles = [
     {
-        title: "Trade Publishing vs. Vanity Mills: A Candid Author's Guide",
+        title: "Trade Publishing vs. Vanity Presses: What Authors Need to Know",
+        excerpt:
+            "How to tell the difference between a publishing partner that invests in your book and a service that processes files for a fee. What to look for in contracts, pricing models, and production standards.",
         date: "August 2026",
-        excerpt: "How to identify predatory automated self-publishing factories and protect your manuscript's intellectual property and financial future.",
+        href: "#",
     },
     {
-        title: "The Typography of a Bestseller: Why InDesign Matters",
+        title: "Why Interior Typesetting Matters More Than Most Authors Realize",
+        excerpt:
+            "Margins, baseline grids, running headers, and why automated PDF conversions produce books that look unprofessional on the shelf. A practical look at what proper InDesign typesetting delivers.",
         date: "July 2026",
-        excerpt: "An inside look at gutter margins, baseline grids, running headers, and why automated PDF template conversions ruin the reading experience.",
+        href: "#",
     },
     {
-        title: "Navigating Advance Reading Copies (ARCs) for Maximum Impact",
+        title: "Using Advance Reading Copies (ARCs) to Build Early Momentum",
+        excerpt:
+            "When to send ARCs, who to send them to, and how verified reader reviews on Amazon and Goodreads create the organic visibility that paid advertising alone cannot produce.",
         date: "June 2026",
-        excerpt: "Strategic timing, reviewer outreach etiquette, and how verified reader reviews create organic Amazon and Goodreads momentum.",
+        href: "#",
     },
 ];
 
-const partners = [
-    { name: "Ingram Content Group", role: "Global Wholesale Booktrade Distribution" },
-    { name: "IBPA (Independent Book Publishers Association)", role: "Trade Code of Ethics & Standards" },
-    { name: "Better Business Bureau (BBB A+)", role: "Accredited Commercial Integrity" },
-    { name: "Bowker Identifier Services", role: "Official Global ISBN & Barcode Registry" },
+export const partners = [
+    {
+        name: "Ingram Content Group",
+        role: "Global wholesale book distribution. Ingram places our titles in 40,000+ bookstores, library systems, and academic institutions worldwide.",
+    },
+    {
+        name: "IBPA (Independent Book Publishers Association)",
+        role: "Trade membership and adherence to the IBPA Code of Ethics, the industry standard for independent publisher conduct.",
+    },
+    {
+        name: "Better Business Bureau (BBB A+)",
+        role: "Accredited business with an A+ rating for commercial integrity and complaint resolution.",
+    },
+    {
+        name: "Bowker Identifier Services",
+        role: "Official ISBN registration and barcode assignment. All ISBNs are registered in the author's name.",
+    },
 ];
 
-const coreValues = [
+export const coreValues = [
     {
+        icon: BookOpen,
         title: "Editorial Honesty",
-        desc: "We challenge your manuscript where it needs discipline and champion it where it shines—never sycophantic praise or generic checks.",
-        icon: Target,
+        desc: "Your editor tells you what the manuscript needs, not what you want to hear. Good editing means challenging the work where it falls short and supporting it where it succeeds. We do not offer generic approval or surface-level checks.",
     },
     {
-        title: "Typographical Respect",
-        desc: "Books are cultural artifacts. We honor classical typesetting, balanced gutters, and tactile embellishments worthy of private libraries.",
-        icon: Compass,
+        icon: Award,
+        title: "Production Quality",
+        desc: "Books are physical and digital products that readers judge on appearance, feel, and readability. We typeset interiors in InDesign, design covers as original compositions, and review printed proofs before a book reaches retail. Templates and automated conversions are not part of our process.",
     },
     {
-        title: "Author Sovereignty",
-        desc: "You retain 100% of your copyright, creative ownership, master files, and every dollar of net retail royalties without exception.",
         icon: ShieldCheck,
+        title: "Author Ownership",
+        desc: "You retain 100% of your copyright, your master files, and every dollar of net royalties. The ISBN is registered in your name. The retail accounts belong to you. We never take a share of your sales or assign rights to ourselves.",
     },
     {
-        title: "Human Partnership",
-        desc: "Every author is assigned a named, seasoned trade editor with direct telephone consultation access at every phase of publication.",
-        icon: HeartHandshake,
+        icon: MessageCircle,
+        title: "Direct Communication",
+        desc: "Every author works with a named editor who is available by phone and email throughout the project. You are never handed off to a support team or routed through an automated system. Your editor knows your book because they read it.",
     },
 ];
 
@@ -83,18 +104,24 @@ export default function AboutUsPage() {
             <Header />
             <main className="bg-white text-ink">
                 {/* Hero */}
+
                 <HeroSection
                     className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
-                    eyebrow="Founded 2009 • Subsidiary of Hambone Publishers LLC"
-                    title="Dedicated to shepherding fine manuscripts into"
-                    highlightText="shelf-ready literature."
+                    eyebrow="Founded in 2009. Subsidiary of Hambone Publishers LLC."
+                    title="A Book Publishing Company"
+                    highlightText="Built Around the Author"
                     description={
                         <p>
-                            The Collingwood Press was established on a simple,
-                            enduring premise: that independent authors deserve
-                            the exact same editorial caliber, typographical
-                            majesty, and global bookstore distribution once
-                            reserved only for major New York publishing houses.
+                            The Collingwood Press was founded on a straightforward
+                            idea: independent authors should have access to the
+                            same editorial standards, production quality, and
+                            global distribution that traditional publishing houses
+                            provide, without giving up their copyright or their
+                            royalties. We are a full-service{" "}
+                            book publishing company that handles
+                            ghostwriting, editing, design, publishing, marketing,
+                            and audiobook production under one roof. You keep
+                            ownership of your work. We do the production.
                         </p>
                     }
                     buttons={[
@@ -114,65 +141,86 @@ export default function AboutUsPage() {
                 />
 
                 {/* Key Milestones & Statistics Bar */}
-                <section className="py-12 bg-white border-b border-line">
-                    <Container>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                            {stats.map((item) => (
-                                <div key={item.label} className="p-4 flex flex-col items-center">
-                                    <span className="font-serif text-3xl sm:text-4xl font-bold text-[#E7665D]">
-                                        {item.value}
-                                    </span>
-                                    <span className="font-sans text-xs sm:text-sm font-semibold text-ink mt-1">
-                                        {item.label}
-                                    </span>
+                <StatBar stats={AboutStats} />
 
-                                </div>
-                            ))}
-                        </div>
-                    </Container>
-                </section>
 
-                {/* The Heritage Story & Mission / Vision */}
-                <section className="py-20 lg:py-28 bg-[#fdfbf7] border-b border-line">
+
+                {/* Who We Are - Heritage & Ethos */}
+                <section className="py-20 lg:py-14 bg-[#fdfbf7] border-b border-line">
                     <Container>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
                             <div className="flex flex-col gap-5">
                                 <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E7665D]">
-                                    Our Heritage &amp; Ethos
+                                    Our Heritage and Ethos
                                 </span>
-                                <h2 className="font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-ink leading-tight">
-                                    An editor&rsquo;s press built on human relationships
+
+                                <h2 className="font-serif text-[2rem] font-bold text-ink leading-tight">
+                                    An Independent Press Built on Direct Author Relationships
                                 </h2>
-                                <p className="text-sm sm:text-base text-ink-soft leading-relaxed font-sans">
-                                    The commercial book industry has fractured into two extremes: indifferent legacy gatekeepers who reject 99% of manuscripts without reading past page three, and predatory vanity mills that automate PDF conversions with zero editorial oversight.
+
+                                <p className="text-sm  text-ink-soft leading-relaxed font-sans">
+                                    The publishing industry gives authors two options, and
+                                    neither one works well. Traditional houses reject the
+                                    vast majority of submissions without reading past the
+                                    first few pages. Vanity presses accept everything,
+                                    charge upfront fees, and deliver automated output with
+                                    no editorial involvement. Neither model serves the
+                                    author who has a serious manuscript and wants
+                                    professional results.
                                 </p>
-                                <p className="text-sm sm:text-base text-ink-soft leading-relaxed font-sans">
-                                    The Collingwood Press, operating proudly as a subsidiary of Hambone Publishers LLC, bridges this chasm. We provide authors with a true publishing partner: an acquisitions editor who reads your draft line-by-line, discusses changes by phone, and protects your creative ownership unconditionally.
+
+                                <p className="text-sm text-ink-soft leading-relaxed font-sans">
+                                    The Collingwood Press, a subsidiary of Hambone
+                                    Publishers LLC, operates as a third option. We pair
+                                    every author with a named editor who reads the
+                                    manuscript, provides candid feedback by phone, and
+                                    manages the project through production and
+                                    distribution. We do not use automated formatting
+                                    tools. We do not assign your book to a queue. You
+                                    work with real people who understand publishing.
                                 </p>
                             </div>
 
+                            {/* What We Commit To */}
                             <div className="p-8 sm:p-10 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col gap-6">
                                 <h3 className="font-serif text-xl font-bold text-ink">
-                                    The Collingwood Press Commitments
+                                    What We Commit To
                                 </h3>
+
                                 <div className="flex flex-col gap-4 text-xs sm:text-sm text-ink-soft">
                                     <div className="flex items-start gap-3">
                                         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7665D] text-white text-xs font-bold mt-0.5">
                                             ✓
                                         </span>
-                                        <span><strong>100% Author Ownership:</strong> You retain complete creative copyright, film rights, and author royalties for all time.</span>
+                                        <span>
+                                            <strong>100% Author Ownership.</strong>{" "}
+                                            You retain full copyright, film rights, and
+                                            royalties. That is written into every agreement.
+                                        </span>
                                     </div>
+
                                     <div className="flex items-start gap-3">
                                         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7665D] text-white text-xs font-bold mt-0.5">
                                             ✓
                                         </span>
-                                        <span><strong>Dedicated Direct Access:</strong> Every author is paired with a named, seasoned trade editor with direct telephone access.</span>
+                                        <span>
+                                            <strong>Direct Editor Access.</strong>{" "}
+                                            Every author is paired with a senior trade
+                                            editor. You speak with them by phone. No ticket
+                                            systems, no chatbots.
+                                        </span>
                                     </div>
+
                                     <div className="flex items-start gap-3">
                                         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7665D] text-white text-xs font-bold mt-0.5">
                                             ✓
                                         </span>
-                                        <span><strong>Master Craftsmanship:</strong> Zero automated templates. Custom InDesign interiors, bespoke artwork, and archival proofs.</span>
+                                        <span>
+                                            <strong>Production Standards.</strong>{" "}
+                                            Custom InDesign interiors, original cover
+                                            artwork, and physical proof review before
+                                            any book goes to retail.
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -180,50 +228,69 @@ export default function AboutUsPage() {
 
                         {/* Mission & Vision Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-14 pt-12 border-t border-line/70">
+                            {/* Mission */}
                             <div className="p-8 rounded-xl bg-white border border-[#E7665D]/25 shadow-sm">
                                 <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-2">
                                     Our Mission
                                 </span>
+
                                 <h3 className="font-serif text-2xl font-bold text-ink mb-3">
-                                    Democratizing Trade-Caliber Literature
+                                    Our Mission
                                 </h3>
+
                                 <p className="text-sm text-ink-soft leading-relaxed">
-                                    To provide discerning independent authors with the exact same high-level developmental editing, InDesign interior typography, bespoke jacket artistry, and global bookstore distribution once exclusively controlled by legacy publishers.
+                                    To give independent authors access to the same
+                                    quality of editing, design, and distribution that
+                                    the largest publishing houses deliver, without
+                                    requiring them to surrender their rights, their
+                                    royalties, or their creative direction.
                                 </p>
                             </div>
 
+                            {/* Vision */}
                             <div className="p-8 rounded-xl bg-white border border-[#E7665D]/25 shadow-sm">
                                 <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-2">
                                     Our Vision
                                 </span>
+
                                 <h3 className="font-serif text-2xl font-bold text-ink mb-3">
-                                    Author Sovereignty &amp; Enduring Craft
+                                    Our Vision
                                 </h3>
+
                                 <p className="text-sm text-ink-soft leading-relaxed">
-                                    A literary landscape where serious writers never have to sacrifice their copyright, royalty rights, or artistic voice to see their work printed in heirloom-grade physical editions and stocked in global libraries.
+                                    A publishing industry where the quality of the
+                                    finished book depends on the standards of the
+                                    people who made it, not on whether the author
+                                    signed with a major house or published
+                                    independently.
                                 </p>
                             </div>
                         </div>
                     </Container>
                 </section>
 
+
+
                 {/* Core Values Section */}
-                <section className="py-20 lg:py-28 bg-white border-b border-line">
+                <section className="py-20 bg-white border-b border-line">
                     <Container className="flex flex-col gap-14">
                         <SectionHeading
-                            eyebrow="Foundational Principles"
+                            eyebrow="How We Work"
                             title={
                                 <>
-                                    The values that guide{" "}
-                                    <span className="italic text-[#E7665D]">every manuscript</span>
+                                    The Values That Guide{" "}
+                                    <span className="italic text-[#E7665D]">
+                                        Every Project
+                                    </span>
                                 </>
                             }
-                            description="We operate without corporate indifference or automated shortcuts. These four pillars anchor every author relationship."
+                            description="We operate without shortcuts and without indifference. These four principles hold across every manuscript, every author, and every project stage."
                         />
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto w-full">
                             {coreValues.map((val) => {
                                 const Icon = val.icon;
+
                                 return (
                                     <div
                                         key={val.title}
@@ -233,9 +300,11 @@ export default function AboutUsPage() {
                                             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-5">
                                                 <Icon size={20} />
                                             </div>
+
                                             <h4 className="font-serif text-[1.2rem] font-bold text-ink">
                                                 {val.title}
                                             </h4>
+
                                             <p className="mt-2.5 text-xs sm:text-sm text-ink-soft leading-relaxed">
                                                 {val.desc}
                                             </p>
@@ -248,74 +317,23 @@ export default function AboutUsPage() {
                 </section>
 
                 {/* Team Anchor Section */}
-                <section id="team" className="py-20 lg:py-28 bg-[#fdfbf7] border-b border-line">
-                    <Container className="flex flex-col gap-14">
-                        <SectionHeading
-                            eyebrow="Publishing Leadership"
-                            title={
-                                <>
-                                    Meet the senior directors{" "}
-                                    <span className="italic text-[#E7665D]">guiding your title</span>
-                                </>
-                            }
-                            description="Our directors bring decades of trade press, university press, and literary agency experience directly to your publishing journey."
-                        />
+                <MarketingServices />
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {projectManagers.map((pm) => (
-                                <div
-                                    key={pm.name}
-                                    className="rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] overflow-hidden flex flex-col justify-between hover:border-[#E7665D]/50 transition-all duration-300"
-                                >
-                                    <div>
-                                        <div className="h-64 overflow-hidden relative">
-                                            <Image
-                                                src={pm.avatar}
-                                                alt={pm.name}
-                                                fill
-                                                sizes="(max-width: 768px) 100vw, 33vw"
-                                                className="object-cover object-top hover:scale-105 transition-transform duration-500"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                                            <div className="absolute bottom-3 left-4 right-4 text-white">
-                                                <span className="text-[10px] uppercase tracking-wider text-white/80 font-medium block">
-                                                    {pm.experience}
-                                                </span>
-                                                <h3 className="font-serif text-lg font-bold">
-                                                    {pm.name}
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div className="p-6">
-                                            <span className="text-xs uppercase font-medium text-[#E7665D] block mb-2">
-                                                {pm.title}
-                                            </span>
-                                            <p className="text-xs sm:text-sm text-ink-soft leading-relaxed">
-                                                {pm.bio}
-                                            </p>
-                                            <div className="mt-4 p-3 rounded-md bg-[#fdf6f5] border-l-2 border-[#E7665D] text-xs font-serif italic text-ink/90">
-                                                {pm.philosophy}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </Container>
-                </section>
 
                 {/* Partners Anchor Section */}
                 <section id="partners" className="py-20 bg-white border-b border-line">
                     <Container className="flex flex-col gap-12">
                         <SectionHeading
-                            eyebrow="Industry Standing &amp; Accreditations"
+                            eyebrow="Trade Affiliations"
                             title={
                                 <>
-                                    Collingwood Partners &amp;{" "}
-                                    <span className="italic text-[#E7665D]">Trade Affiliations</span>
+                                    Partners and{" "}
+                                    <span className="italic text-[#E7665D]">
+                                        Trade Affiliations
+                                    </span>
                                 </>
                             }
-                            description="We maintain strict operational standards verified by the industry's most reputable governing bodies and distributors."
+                            description="We maintain verified operational standards through the publishing industry's primary governing bodies and distribution networks."
                         />
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto w-full">
@@ -324,10 +342,15 @@ export default function AboutUsPage() {
                                     key={p.name}
                                     className="p-6 sm:p-7 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between text-center items-center hover:border-[#E7665D]/50 transition-all duration-300"
                                 >
-                                    <Award size={26} className="text-[#E7665D] mb-3" />
+                                    <Award
+                                        size={26}
+                                        className="text-[#E7665D] mb-3"
+                                    />
+
                                     <h4 className="font-serif text-base font-bold text-ink">
                                         {p.name}
                                     </h4>
+
                                     <p className="text-xs text-ink-muted mt-2 leading-relaxed">
                                         {p.role}
                                     </p>
@@ -337,18 +360,25 @@ export default function AboutUsPage() {
                     </Container>
                 </section>
 
+
+
                 {/* Blog Anchor Section */}
-                <section id="blog" className="py-20 lg:py-24 bg-[#fdfbf7] border-b border-line">
+                <section
+                    id="blog"
+                    className="py-20 lg:py-24 bg-[#fdfbf7] border-b border-line"
+                >
                     <Container className="flex flex-col gap-12">
                         <SectionHeading
                             eyebrow="Author Educational Dispatches"
                             title={
                                 <>
-                                    From the The Collingwood Press{" "}
-                                    <span className="italic text-[#E7665D]">Editorial Blog</span>
+                                    From the Collingwood Press{" "}
+                                    <span className="italic text-[#E7665D]">
+                                        Editorial Blog
+                                    </span>
                                 </>
                             }
-                            description="In-depth analysis, craft guidance, and industry insights written by senior publishing editors."
+                            description="Practical publishing guidance and industry analysis written by our senior editors."
                         />
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto w-full">
@@ -361,16 +391,24 @@ export default function AboutUsPage() {
                                         <span className="text-[10px] uppercase tracking-wider text-[#E7665D] font-semibold block mb-2">
                                             {art.date}
                                         </span>
+
                                         <h4 className="font-serif text-lg font-bold text-ink leading-snug">
                                             {art.title}
                                         </h4>
+
                                         <p className="text-xs sm:text-sm text-ink-soft leading-relaxed mt-2.5">
                                             {art.excerpt}
                                         </p>
                                     </div>
+
                                     <div className="mt-5 pt-3 border-t border-line">
-                                        <Button href="/contact-us" variant="outline" size="sm" className="w-full">
-                                            <span>Read Dispatch</span>
+                                        <Button
+                                            href={art.href}
+                                            variant="outline"
+                                            size="sm"
+                                            className="w-full"
+                                        >
+                                            <span>Read More</span>
                                         </Button>
                                     </div>
                                 </div>
@@ -379,55 +417,62 @@ export default function AboutUsPage() {
                     </Container>
                 </section>
 
-                {/* AI & LLM Resources Anchor Section */}
-                <section id="ai-resources" className="hero-gradient py-20 lg:py-24 text-white border-b border-white/10 relative overflow-hidden paper-grain">
+
+                <section
+                    id="ai-resources"
+                    className="hero-gradient py-20 lg:py-24 text-white border-b border-white/10 relative overflow-hidden paper-grain"
+                >
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
+
                     <Container className="relative z-10">
                         <div className="max-w-3xl mx-auto">
+                            {/* Section Heading */}
                             <div className="text-center mb-10">
                                 <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
-                                    Technology &amp; Authorship Ethics
+                                    Technology and Authorship Ethics
                                 </span>
+
                                 <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
-                                    AI &amp; LLM Publishing Resources Policy
+                                    AI and LLM Publishing Resources Policy
                                 </h2>
+
                                 <p className="mt-3 text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
-                                    How The Collingwood Press protects human creative copyright while empowering authors with responsible, ethical research tools.
+                                    How The Collingwood Press handles artificial intelligence
+                                    tools in relation to the books we produce and the authors
+                                    we work with.
                                 </p>
                             </div>
 
+                            {/* AI Policy Items */}
                             <div className="p-8 sm:p-9 rounded-xl border border-white/10 bg-white/[0.04] flex flex-col gap-5">
-                                <div>
-                                    <h3 className="font-serif text-lg font-bold text-[#F08A82]">
-                                        1. Zero AI Ghostwriting or Automated Prose Substitution
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
-                                        The Collingwood Press strictly refuses to use automated LLM text generation in place of human trade editors or ghostwriters. Every manuscript line is drafted, refined, and typeset by real publishing professionals.
-                                    </p>
-                                </div>
+                                {aiPolicyData.map((item, index) => (
+                                    <div
+                                        key={item.title}
+                                        className={
+                                            index !== 0
+                                                ? "border-t border-white/10 pt-4"
+                                                : ""
+                                        }
+                                    >
+                                        <h3 className="font-serif text-lg font-bold text-[#F08A82]">
+                                            {index + 1}. {item.title}
+                                        </h3>
 
-                                <div className="border-t border-white/10 pt-4">
-                                    <h3 className="font-serif text-lg font-bold text-[#F08A82]">
-                                        2. Copyright Protection &amp; LLM Scraping Defense
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
-                                        We register and file official copyright notices, digital watermarks, and DRM configurations designed to shield your intellectual property from unauthorized ingestion by commercial artificial intelligence training sets.
-                                    </p>
-                                </div>
-
-                                <div className="border-t border-white/10 pt-4">
-                                    <h3 className="font-serif text-lg font-bold text-[#F08A82]">
-                                        3. Ethical Research &amp; Market Discovery Assistance
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
-                                        We provide authors with guidance on using modern research tools ethically for historical fact verification, comparative title search, and metadata keyword analysis without compromising creative integrity.
-                                    </p>
-                                </div>
+                                        <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
 
+                            {/* CTA Button */}
                             <div className="mt-10 text-center">
-                                <Button href="/contact-us" variant="primary" size="lg">
-                                    <span>Inquire About Author Copyright Defense</span>
+                                <Button
+                                    href="/contact-us"
+                                    variant="primary"
+                                    size="lg"
+                                >
+                                    <span>Inquire About Author Copyright Protection</span>
                                     <ArrowRight size={15} />
                                 </Button>
                             </div>

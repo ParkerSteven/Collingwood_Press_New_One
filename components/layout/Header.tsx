@@ -60,8 +60,8 @@ export default function Header() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={`text-[13px] font-medium tracking-[0.01em] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:bg-[#E7665D] after:transition-all ${isActive
-                    ? "text-[#E7665D] after:w-full"
-                    : "text-ink-soft hover:text-[#E7665D] after:w-0 hover:after:w-full"
+                  ? "text-[#E7665D] after:w-full"
+                  : "text-ink-soft hover:text-[#E7665D] after:w-0 hover:after:w-full"
                   }`}
               >
                 {item.label}
@@ -82,12 +82,12 @@ export default function Header() {
             <ArrowUpRight size={13} />
           </Button> */}
           <Button
-            href="#"
+            href="/contact-us"
             variant="primary"
             size="sm"
             className="px-4 py-2 text-xs font-semibold"
           >
-            <span>Claim Your Free Manuscript</span>
+            <span>Submit Your Manuscript</span>
             <ArrowUpRight size={13} />
           </Button>
         </div>

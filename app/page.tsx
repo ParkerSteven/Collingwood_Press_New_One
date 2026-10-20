@@ -15,7 +15,7 @@ import MarketingServices from "@/components/sections/MarketingServices";
 import ManuscriptCTA from "@/components/sections/ManuscriptCTA";
 import FinalCTA from "@/components/sections/FinalCTA";
 import FAQAccordion from "@/components/sections/FAQAccordion";
-import { faqs } from "@/lib/data";
+import { faqs, stats } from "@/lib/data";
 import HomeBlogs from "@/components/sections/HomeBlogs";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <StatBar />
+        <StatBar stats={stats} />
         <PlatformLogos />
         <Testimonials />
         <TrustBand />

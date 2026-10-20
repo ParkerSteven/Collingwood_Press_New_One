@@ -26,6 +26,180 @@ export const stats: StatItem[] = [
   },
 ];
 
+export const AboutStats: StatItem[] = [
+  {
+    value: "1,300+",
+    label: "Titles Brought to Print",
+  },
+  {
+    value: "94%",
+    label: "Production Placement Rate",
+  },
+  {
+    value: "5 to 7 Day",
+    label: "Senior Editor Review",
+  },
+  {
+    value: "4.9 / 5.0",
+    label: "Author Satisfaction",
+  },
+  {
+    value: "100%",
+    label: "Copyright and Royalties Retained",
+  },
+];
+
+
+
+export interface AIPolicyItem {
+  title: string;
+  description: string;
+}
+
+export const aiPolicyData: AIPolicyItem[] = [
+  {
+    title: "No AI-Generated Manuscript Content",
+    description:
+      "We do not use AI text generation tools in place of human editors, ghostwriters, or proofreaders. Every line of every manuscript is written, revised, and reviewed by a professional. AI-generated prose does not meet our editorial standards and is not accepted as a deliverable.",
+  },
+  {
+    title: "Copyright Protection Against LLM Scraping",
+    description:
+      "We register copyright notices, apply digital watermarks, and configure DRM protections designed to prevent unauthorized use of your published content by commercial AI training systems. Your intellectual property is protected against ingestion by third-party models.",
+  },
+  {
+    title: "Ethical Use of Research Tools",
+    description:
+      "We provide authors with guidance on using modern research tools responsibly for fact verification, comparative title research, and metadata keyword analysis. These tools support the author's work without replacing creative judgment or original writing.",
+  },
+];
+
+
+export interface TermsSubsection {
+  title: string;
+  paragraphs?: string[];
+}
+
+export interface TermsSection {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  subsections?: TermsSubsection[];
+}
+
+export const termsSections: TermsSection[] = [
+  {
+    title: "Terms and Definitions",
+    bullets: [
+      '"Website" refers to all online information on The Collingwood Press website pages.',
+      '"Customer," "You," or "Yours" refers to you and/or any other person making an order on your behalf to The Collingwood Press.',
+      '"Product" refers to all services and goods delivered to the Customer in line with his or her Order by The Collingwood Press.',
+      '"Order" refers to a Customer\'s request to purchase services or products from The Collingwood Press by phone or email. Upon payment through credit card, cash receipt, or bank wire transfer, we are required to finalize orders.',
+    ],
+  },
+  {
+    title: "Refund Policy",
+    paragraphs: [
+      "To fully appreciate the benefits and limits defined by The Collingwood Press Policy, it is critical that you read and completely comprehend the return policy. Only in exceptional circumstances and under specific conditions can we provide refunds, as described below.",
+    ],
+  },
+  {
+    title: "Change of Mind",
+    paragraphs: [
+      "Before our writers/editors begin working on the assignment, the buyer is entitled to a 100% refund. If you change your mind about placing your purchase and decide not to continue your project with us for whatever reason, you can request a refund within the first hour after placing your order. In all other situations, a 15% processing fee will be applied.",
+      "We offer partial refunds for change of mind requests under the following conditions:",
+    ],
+    bullets: [
+      "Within 2 Days of Purchase: A pro-rated refund is available if a refund request is submitted within the first 2 days of the purchase date.",
+      "After 3 Days: Refunds for change of mind are not available after 3 days from the date of purchase.",
+    ],
+  },
+  {
+    title: "Incompetent Delivery",
+    paragraphs: [
+      "Customers are only entitled to a refund when they have exhausted all of the alternatives made available. If the work does not meet the project criteria (as requested/documented by the client), we are dedicated to ensuring that our customers are completely satisfied, and we often resolve these concerns by providing revisions without any additional charges. To ensure total satisfaction, we assign, re-assign, and re-write your job. You can save FREE copies for the future, but they will have the same value, and you can use them at any moment. If we are still unable to provide what you have requested, a refund will be issued based on a mutually agreed-upon proportion, but only in the cases where no delivery is completely off the mark.",
+    ],
+  },
+  {
+    title: "Delivery Errors",
+    paragraphs: [
+      'We believe in "On Time Delivery"; however, if we fail to deliver the requested services on time after three efforts to reach us, your refund will be handled if documentation evidences establish that the late delivery was the company\'s fault.',
+    ],
+  },
+  {
+    title: "Timeline for Refunds",
+    paragraphs: [
+      "Within 60 days after delivery, you must request a refund. Refund requests made after the deadline will not be considered. Customers should keep in mind the deadline for requesting a refund when placing an order.",
+    ],
+  },
+  {
+    title: "Cases in Which a Refund Will Not Be Given",
+    paragraphs: [
+      "In the event of a late delivery owing to minor technical issues such as grammar, typing, word count, missing references, and so on, reimbursements will be handled after mutual agreement, and the firm will only settle with a partial refund or discounts saved for future orders. The firm shall not be held liable for any delays caused by the client.",
+    ],
+  },
+  {
+    title: "Clause of Application",
+    paragraphs: [
+      "If a project has been abandoned in terms of approvals or specifications for a period of at least 45 days due to a lack of written contact between the customer and the account manager, the project will be considered closed. The project will be reactivated at a cost.",
+    ],
+  },
+  {
+    title: "Project Has Been Completed",
+    paragraphs: [
+      'A "closed project" is one that has been completed or has not been claimed for at least 45 days, and for which The Collingwood Press cannot be held accountable once that time has passed.',
+    ],
+  },
+  {
+    title: "Personal Use and Copyright",
+    paragraphs: [
+      "The Products that are supplied to you are entirely unique. You and your business own the complete copyright to the Products and any content supplied to you. You undertake to indemnify, defend, and hold the Company harmless for any and all unauthorized uses of the Company's materials made accessible to you. Any unauthorized use of this Website's supplied Products and/or content may result in civil or criminal consequences.",
+    ],
+  },
+  {
+    title: "Plagiarism Is Prohibited",
+    paragraphs: [
+      "Plagiarism or any other act of fraud or dishonesty is not tolerated, encouraged, or knowingly participated in by us. All copyright laws are strictly enforced by us, and we will not knowingly enable any Customer to plagiarize or breach copyright laws. The Company, its affiliates, and/or partners are not responsible for any medical, improper, illegal, or otherwise unlawful use of the Products and/or other written content obtained from our Website.",
+    ],
+  },
+  {
+    title: "Our Image Policy",
+    paragraphs: [
+      "We do not hold the rights to photos unless they are expressly produced by or in-house artists, thus we do not utilize them. We will just send you URLs to recommended photos that you may copy and paste into your own website. You can use royalty-free photos without fear, but you may have to pay the owner if the image is copyrighted.",
+    ],
+  },
+  {
+    title: "Liability Restrictions",
+    paragraphs: [
+      "You agree to hold the Company, its employees, officers, directors, shareholders, agents, representatives, affiliates, subsidiaries, advertising, promotion, and fulfillment agencies, and third-party providers or sources of information or data, and legal advisors (the \"Company's Affiliates\") harmless from any and all losses, damages, rights, claims, and actions of any kind arising from your use of the Site.",
+    ],
+  },
+  {
+    title: "Email and Mobile Phone Policy",
+    subsections: [
+      {
+        title: "1. Consent and Usage",
+        paragraphs: [
+          "By providing your email address and/or mobile phone number, you consent to receive communication from The Collingwood Press.",
+        ],
+      },
+      {
+        title: "2. Carrier Charges Disclosure",
+        paragraphs: [
+          "Standard messaging and data rates may apply. Please consult your mobile service carrier for details.",
+        ],
+      },
+      {
+        title: "3. Stop and Unsubscribe",
+        paragraphs: [
+          'For emails, click the "Unsubscribe" link. For mobile, reply "STOP" or "Unsubscribe" to any SMS.',
+        ],
+      },
+    ],
+  },
+];
+
+
 export const platforms = [
   { name: "Ingram Content Group", note: "Global Distribution" },
   { name: "Barnes & Noble", note: "Retail & Online" },
