@@ -61,12 +61,22 @@ export default function HeroAnimated() {
                     custom={3}
                     className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
                 >
-                    <Button href="#manuscript-review" variant="primary" size="md" className="shadow-sm hover:shadow-md">
+                    <Button href="/contact-us" variant="primary" size="md" className="shadow-sm hover:shadow-md">
                         <span>Get a Free Publishing Consultation</span>
                         <ArrowRight size={15} />
                     </Button>
-                    <Button href="/about-us#team" variant="outline" size="md" className="text-white">
-                        <span>Talk to a Senior Editor</span>
+                    <Button onClick={() => {
+                        if (typeof window !== 'undefined' && window.BrevoConversations) {
+                            // the API doesn't expose an "open" method – use openChat instead
+                            // passing `true` opens the widget immediately (argument is optional)
+                            window.BrevoConversations('openChat');
+                        } else {
+                            // fallback if the script hasn't injected yet; we don't have a /chat
+                            // route, so navigate to the homepage instead (or remove entirely)
+                            window.location.href = '/';
+                        }
+                    }} variant="outline" size="md" className="text-white">
+                        Talk to a Senior Editor
                     </Button>
                 </motion.div>
 

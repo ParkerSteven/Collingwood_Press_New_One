@@ -97,7 +97,7 @@ export default function AboutUsPage() {
                     buttons={[
                         {
                             text: "Meet Our Publishing Directors",
-                            href: "#team",
+                            href: "/#publishing-team",
                             variant: "primary",
                             showArrow: true,
                         },

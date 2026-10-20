@@ -181,21 +181,7 @@ export default function MarketingServices() {
                     {member.bio}
                   </p>
 
-                  {/* Card footer */}
-                  <div className="mt-auto pt-8">
-                    <div className="flex items-center justify-between border-t border-line/80 pt-5">
-                      <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
-                        Publishing Team
-                      </span>
 
-                      <ArrowUpRight
-                        size={17}
-                        strokeWidth={1.7}
-                        aria-hidden="true"
-                        className="text-[#E7665D]"
-                      />
-                    </div>
-                  </div>
                 </div>
               </motion.article>
             );

@@ -368,10 +368,8 @@ export default function PublishingClient() {
                                                     and tail bands, and optional custom endpapers. Built
                                                     for bookstore display, gift giving, and long-term
                                                     shelf presence. Whether you are publishing literary
-                                                    fiction, a memoir, or a{" "}
-                                                    <strong className="font-semibold text-ink">
-                                                        children&apos;s book
-                                                    </strong>
+                                                    fiction, a memoir, or a
+                                                    children&apos;s book
                                                     , the hardcover edition establishes the authority of
                                                     your work.
                                                 </>
@@ -384,10 +382,8 @@ export default function PublishingClient() {
                                                     Premium 60lb or 70lb natural cream interior paper,
                                                     velvet soft-touch matte lamination, scoring on hinges,
                                                     and optional embossed spot UV lettering. This format
-                                                    is the commercial backbone of most{" "}
-                                                    <strong className="font-semibold text-ink">
-                                                        indie publishing services
-                                                    </strong>{" "}
+                                                    is the commercial backbone of most
+                                                    indie publishing marketingServices
                                                     because it balances quality with an accessible retail
                                                     price that drives volume.
                                                 </>
@@ -399,10 +395,8 @@ export default function PublishingClient() {
                                                 <>
                                                     Hand-coded valid ePub3 and Kindle formats tailored for
                                                     responsive font scaling, high-DPI tablets, dynamic
-                                                    tables of contents, and cross-platform fidelity. Our{" "}
-                                                    <strong className="font-semibold text-ink">
-                                                        ebook publishing
-                                                    </strong>{" "}
+                                                    tables of contents, and cross-platform fidelity. Our
+                                                    ebook publishing
                                                     process ensures your digital edition reads as polished
                                                     as the print version on every device, from a Kindle
                                                     Paperwhite to an iPad Pro.
