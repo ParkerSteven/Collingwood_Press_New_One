@@ -20,8 +20,8 @@ const servicesLinks = [
   { label: "Editing", href: "/editing" },
   { label: "Publishing", href: "/publishing" },
   { label: "Marketing", href: "/marketing" },
-  { label: "Book Fairs", href: "#" },
-  { label: "Cover Design", href: "#" },
+  // { label: "Book Fairs", href: "#" },
+  // { label: "Cover Design", href: "#" },
   { label: "Audiobook Production", href: "/audiobook" },
 ];
 
@@ -39,7 +39,7 @@ const companyLinks = [
   { label: "Our Team", href: "/#publishing-team" },
   { label: "Contact", href: "/contact-us" },
   { label: "Blog", href: "/#publishing-insights" },
-  { label: "AI & LLM Resources", href: "/" },
+  { label: "AI & LLM Resources", href: "/ai-and-llm-resources" },
 ];
 
 // const authorLibraryLinks = [

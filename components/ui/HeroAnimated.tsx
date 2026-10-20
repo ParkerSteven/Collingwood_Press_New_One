@@ -108,21 +108,21 @@ export default function HeroAnimated() {
 
                         <span className="hidden h-7 w-px bg-line sm:block" aria-hidden="true" />
 
-                        <div className="flex h-11 items-center">
-                            <Link
-                                href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
-                                target="_blank"
-                                rel="nofollow noopener noreferrer"
-                            >
-                                <Image
-                                    src="/blue-seal.png"
-                                    alt="The Collingwood Press BBB Business Review"
-                                    width={120}
-                                    height={40}
-                                    className="block h-auto max-h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-                                />
-                            </Link>
-                        </div>
+                        {/* <div className="flex h-11 items-center"> */}
+                        <Link
+                            href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
+                            target="_blank"
+                            rel="nofollow noopener noreferrer"
+                        >
+                            <Image
+                                src="/blue-seal.png"
+                                alt="The Collingwood Press BBB Business Review"
+                                width={140}
+                                height={44}
+                                className="block h-auto max-h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                            />
+                        </Link>
+                        {/* </div> */}
                     </div>
                 </div>
             </div>
