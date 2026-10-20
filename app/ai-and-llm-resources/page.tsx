@@ -339,7 +339,7 @@ export default function AILLMResourcesPage() {
                                     The Collingwood Press emphasizes author ownership,
                                     direct editorial communication, professional
                                     production standards, and the development of
-                                    publishable books that reflect each author's
+                                    publishable books that reflect each author&apos;s
                                     original creative direction.
                                 </p>
                             </div>

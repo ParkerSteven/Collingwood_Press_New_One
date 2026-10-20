@@ -456,16 +456,21 @@ export default function ContactUsClientPage() {
 
                                 {/* Map */}
                                 <div className="overflow-hidden rounded-xl border border-[#E7665D]/20 shadow-sm">
-                                    <iframe
-                                        title="The Collingwood Press Office"
-                                        src="https://www.google.com/maps?q=6777%20Camp%20Bowie%20Blvd%20Ste%20125%2C%20Fort%20Worth%2C%20TX%2076116&output=embed"
-                                        width="100%"
-                                        height="260"
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        className="block w-full border-0"
-                                        allowFullScreen
-                                    />
+                                    <a href="https://www.google.com/maps/dir//The+Collingwood+Press,+6777+Camp+Bowie+Blvd,+Fort+Worth,+TX+76116,+United+States/@24.9233408,67.1285248,25585m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x864e7323299d9751:0xcc1f2e674682154f!2m2!1d-97.4339746!2d32.7202269?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
+                                        target="_blank"
+                                    >
+                                        <iframe
+                                            title="The Collingwood Press Office"
+                                            src="https://www.google.com/maps?q=6777%20Camp%20Bowie%20Blvd%20Ste%20125%2C%20Fort%20Worth%2C%20TX%2076116&output=embed"
+                                            width="100%"
+                                            height="260"
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            className="block w-full border-0"
+                                            allowFullScreen
+                                        />
+                                    </a>
+
                                 </div>
 
                                 {/* Contact Details */}
@@ -479,11 +484,14 @@ export default function ContactUsClientPage() {
                                             <h4 className="font-sans text-sm font-semibold text-ink">
                                                 Office Address
                                             </h4>
+                                            <a href="https://www.google.com/maps/dir//The+Collingwood+Press,+6777+Camp+Bowie+Blvd,+Fort+Worth,+TX+76116,+United+States/@24.9233408,67.1285248,25585m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x864e7323299d9751:0xcc1f2e674682154f!2m2!1d-97.4339746!2d32.7202269?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
 
-                                            <p className="mt-1 font-sans text-sm leading-relaxed text-ink-soft">
-                                                6777 Camp Bowie Blvd Ste. 125,
-                                                Fort Worth, TX 76116
-                                            </p>
+                                                <p className="mt-1 font-sans text-sm leading-relaxed text-ink-soft">
+                                                    6777 Camp Bowie Blvd Ste. 125,
+                                                    Fort Worth, TX 76116
+                                                </p>
+                                            </a>
+
                                         </div>
                                     </div>
 
