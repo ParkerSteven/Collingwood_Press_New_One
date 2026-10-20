@@ -65,17 +65,7 @@ export default function HeroAnimated() {
                         <span>Get a Free Publishing Consultation</span>
                         <ArrowRight size={15} />
                     </Button>
-                    <Button onClick={() => {
-                        if (typeof window !== 'undefined' && window.BrevoConversations) {
-                            // the API doesn't expose an "open" method – use openChat instead
-                            // passing `true` opens the widget immediately (argument is optional)
-                            window.BrevoConversations('openChat');
-                        } else {
-                            // fallback if the script hasn't injected yet; we don't have a /chat
-                            // route, so navigate to the homepage instead (or remove entirely)
-                            window.location.href = '/';
-                        }
-                    }} variant="outline" size="md" className="text-white">
+                    <Button href="/contact-us" variant="outline" size="md" className="text-white">
                         Talk to a Senior Editor
                     </Button>
                 </motion.div>
@@ -105,9 +95,7 @@ export default function HeroAnimated() {
                                 className="block h-12 w-auto object-contain"
                             />
                         </Link>
-
                         <span className="hidden h-7 w-px bg-line sm:block" aria-hidden="true" />
-
                         {/* <div className="flex h-11 items-center"> */}
                         <Link
                             href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
