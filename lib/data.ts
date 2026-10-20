@@ -199,6 +199,26 @@ export const termsSections: TermsSection[] = [
   },
 ];
 
+export const partners = [
+  {
+    name: "Ingram Content Group",
+    role: "Global wholesale book distribution. Ingram places our titles in 40,000+ bookstores, library systems, and academic institutions worldwide.",
+  },
+  {
+    name: "IBPA (Independent Book Publishers Association)",
+    role: "Trade membership and adherence to the IBPA Code of Ethics, the industry standard for independent publisher conduct.",
+  },
+  {
+    name: "Better Business Bureau (BBB A+)",
+    role: "Accredited business with an A+ rating for commercial integrity and complaint resolution.",
+  },
+  {
+    name: "Bowker Identifier Services",
+    role: "Official ISBN registration and barcode assignment. All ISBNs are registered in the author's name.",
+  },
+];
+
+
 
 export const platforms = [
   { name: "Ingram Content Group", note: "Global Distribution" },

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, type ChangeEvent, type FormEvent } fr
 import { useRouter } from "next/navigation";
 import { submitToGoogleSheet } from "@/lib/submitToGoogleSheet";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface PopupFormProps {
     isOpen: boolean;
@@ -641,9 +642,11 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <img
+                                        <Image
                                             src="/assets/images/IBPA_H_proudmember.png"
                                             alt="IBPA Proud Member"
+                                            width={170}
+                                            height={50}
                                         />
                                     </Link>
 
@@ -653,9 +656,11 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <img
+                                        <Image
                                             src="/assets/images/blue-seal-200-42-whitetxt-bbb-1000231047.png"
                                             alt="BBB Accredited"
+                                            width={150}
+                                            height={42}
                                         />
                                     </Link>
                                 </div>

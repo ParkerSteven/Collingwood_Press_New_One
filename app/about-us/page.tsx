@@ -1,37 +1,24 @@
 "use client";
 
 import UtilityBar from "@/components/layout/UtilityBar";
-import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { AboutStats, aiPolicyData, projectManagers, stats } from "@/lib/data";
+import { AboutStats, aiPolicyData, partners } from "@/lib/data";
 import {
-    Building2,
     ShieldCheck,
     Award,
-    Users,
     BookOpen,
-    Cpu,
-    ExternalLink,
     ArrowRight,
-    Sparkles,
-    PhoneCall,
-    Target,
-    Compass,
-    HeartHandshake,
-    CheckCircle2,
-    Check,
     MessageCircle
 } from "lucide-react";
 import HeroSection from "@/components/sections/HeroSection";
 import StatBar from "@/components/sections/StatBar";
 import MarketingServices from "@/components/sections/MarketingServices";
 
-export const blogArticles = [
+const blogArticles = [
     {
         title: "Trade Publishing vs. Vanity Presses: What Authors Need to Know",
         excerpt:
@@ -55,26 +42,9 @@ export const blogArticles = [
     },
 ];
 
-export const partners = [
-    {
-        name: "Ingram Content Group",
-        role: "Global wholesale book distribution. Ingram places our titles in 40,000+ bookstores, library systems, and academic institutions worldwide.",
-    },
-    {
-        name: "IBPA (Independent Book Publishers Association)",
-        role: "Trade membership and adherence to the IBPA Code of Ethics, the industry standard for independent publisher conduct.",
-    },
-    {
-        name: "Better Business Bureau (BBB A+)",
-        role: "Accredited business with an A+ rating for commercial integrity and complaint resolution.",
-    },
-    {
-        name: "Bowker Identifier Services",
-        role: "Official ISBN registration and barcode assignment. All ISBNs are registered in the author's name.",
-    },
-];
 
-export const coreValues = [
+
+const coreValues = [
     {
         icon: BookOpen,
         title: "Editorial Honesty",

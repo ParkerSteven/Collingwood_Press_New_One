@@ -85,8 +85,8 @@ export default function PrivacyChoicesPage() {
 
                 <p>
                   Under California law (CCPA/CPRA), this type
-                  of data sharing may qualify as a "sale" or
-                  "sharing" of your personal information,
+                  of data sharing may qualify as a &quot;sale&quot; or
+                  &quot;sharing&quot; of your personal information,
                   even when no money changes hands. As a
                   California resident, you have the right
                   to opt out of this activity.
