@@ -42,7 +42,7 @@ interface HeroSectionProps {
 const defaultButtons: HeroButton[] = [
     {
         text: "Get a Ghostwriting Quote",
-        href: "/contact-us#manuscript-review",
+        href: "/contact-us",
         variant: "primary",
         showArrow: true,
     },

@@ -73,7 +73,7 @@ export default function Header() {
         {/* Desktop Action Button */}
         <div className="hidden items-center gap-4 lg:flex">
           {/* <Button
-            href="/contact-us#manuscript-review"
+            href="/contact-us"
             variant="primary"
             size="sm"
             className="px-4 py-2 text-xs font-semibold"
@@ -85,9 +85,9 @@ export default function Header() {
             href="/contact-us"
             variant="primary"
             size="sm"
-            className="px-4 py-2 text-xs font-semibold"
+            className="px-3 py-2 text-xs font-semibold"
           >
-            <span>Submit Your Manuscript</span>
+            <span>Complimentary Manuscript Review</span>
             <ArrowUpRight size={13} />
           </Button>
         </div>

@@ -33,7 +33,7 @@ export default function Home() {
         <CoverSpotlight />
         <ProjectManagers />
         {/* <Catalog /> */}
-        <RelatedCarousel />
+        {/* <RelatedCarousel /> */}
         <MarketingServices />
         <ManuscriptCTA />
         <FAQAccordion

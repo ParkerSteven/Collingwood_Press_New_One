@@ -22,7 +22,7 @@ const services = [
     icon: BookOpenText,
     title: "Book Editing & Proofreading Services",
     description:
-      "Our book editing services cover every level of refinement your manuscript needs: developmental editing that strengthens structure and argument, line editing that tightens prose and voice, copyediting that addresses all inconsistencies, and proofreading that removes the final errors before your book goes to production.",
+      "Our book editing services cover every stage: developmental editing for structure and argument, line editing for voice, copy editing for consistency, and final proofreading.",
     link: "/editing/",
     cta: "Explore our editing services",
   },
@@ -31,7 +31,7 @@ const services = [
     icon: PenLine,
     title: "Ghostwriting Services",
     description:
-      "Have a story, a business philosophy or a memoir worth telling, but need a skilled hand to write it? Our ghostwriting services match you with a professional writer who interviews you, captures your voice and delivers a complete, publication-ready manuscript. Your name on the cover. Your story, told your way.",
+      "Our ghostwriting services match you with a professional writer who interviews you, captures your voice and delivers a complete, publication-ready manuscript.",
     link: "/ghostwriting/",
     cta: "Explore our ghostwriting services",
   },
@@ -40,7 +40,7 @@ const services = [
     icon: BookMarked,
     title: "Publishing Guidance",
     description:
-      "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties. You stay the publisher. We do the production work. Whether it’s a novel, memoir, business book, or children’s book, every project receives the same high level of editorial care, bespoke cover art, and custom interior layout.",
+      "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties.",
     link: "/publishing/",
     cta: "Explore our book publishing services",
   },
@@ -49,7 +49,7 @@ const services = [
     icon: Megaphone,
     title: "Book Marketing, PR & Launch Strategy",
     description:
-      "A great book needs a clear strategy to reach the right audience. Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility. We manage genre-targeted Amazon advertising, outreach to reviewers and niche publications, and media campaigns tailored to your book.",
+      "Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility.",
     link: "/marketing/",
     cta: "Explore our marketing services",
   },
@@ -58,7 +58,7 @@ const services = [
     icon: Headphones,
     title: "Audiobook Recording & Distribution",
     description:
-      "We review the manuscript, cast a professional audiobook narrator, and record in a studio. One voice or several, matched to the characters. No AI narration. Our audiobook production team edits, reviews, and masters the recordings before assisting with distribution and distributing the finished audiobook to Audible, Apple Books and other listening platforms.",
+      "Our audiobook production team edits, reviews, and masters the recordings before assisting with distribution and distributing the finished audiobook to Audible, Apple Books and other listening platforms.",
     link: "/audiobook/",
     cta: "Explore our audiobook services",
   },

@@ -42,7 +42,7 @@ const ghostwritingSteps = [
         title: "Deep Voice Discovery & Intake",
         description: "Through recorded conversations, personal notes, and extensive archival reviews, your dedicated ghostwriter immerses themselves in your tone, cadence, vocabulary, and worldview to ensure your authentic voice powers every sentence.",
         deliverable: "Custom Voice Profile & Narrative Archetype",
-        duration: "Weeks 1–2",
+        duration: "Weeks 1 to 2",
     },
     {
         step: "Phase 02",
@@ -551,7 +551,7 @@ export default function GhostwritingClientPage() {
                             {/* CTA Button */}
                             <div className="mt-10 flex justify-center">
                                 <Button
-                                    href="/contact-us#manuscript-review"
+                                    href="/contact-us"
                                     variant="primary"
                                     size="lg"
                                 >
@@ -1094,7 +1094,7 @@ export default function GhostwritingClientPage() {
                         {/* CTA Button */}
                         <div className="mt-9 flex justify-center">
                             <Button
-                                href="/contact-us#manuscript-review"
+                                href="/contact-us"
                                 variant="primary"
                                 size="lg"
                             >
@@ -1185,7 +1185,7 @@ export default function GhostwritingClientPage() {
                         </>
                     }
                     buttonText="Get a Ghostwriting Quote"
-                    buttonHref="/contact-us#manuscript-review"
+                    buttonHref="/contact-us"
                 />
             </main>
             <Footer />

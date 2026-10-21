@@ -20,7 +20,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: "01",
-    quote: "“I review every detail, and the Collingwood team kept pace: editing done in July, formatting fixes turned around fast, and honest advice on how to position the book.",
+    quote: "I review every detail, and the Collingwood team kept pace: editing done in July, formatting fixes turned around fast, and honest advice on how to position the book.",
     author: "Todd Shevlin",
     book: "12 Minutes to Freedom",
     genre: "",
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
     id: "03",
     quote: "An absolute pleasure to work with. Pamela caught spelling, tense slips, and hidden errors in the recipes and index that everyone else had missed for years.",
     author: "Jill Coleman",
-    book: "*** · Verified Reviewer",
+    book: "",
     genre: "",
   },
 ];
@@ -117,7 +117,7 @@ export default function ManuscriptCTA() {
               {/* Author quotation */}
               <blockquote className="flex-1">
                 <p className="font-serif text-[1.3rem] italic leading-[1.55] text-ink sm:text-[1.45rem]">
-                  &ldquo;{testimonial.quote}&rdquo;
+                  {testimonial.quote}
                 </p>
               </blockquote>
 

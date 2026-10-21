@@ -23,7 +23,7 @@ const publishingSteps = [
     icon: FileSearch,
     description:
       "Send us your manuscript or opening chapters. A senior editor reads your work and gives you a candid assessment, typically within 5 to 7 days.",
-    note: "Typically 5–7 days",
+    note: "Typically 5 to 7 days",
   },
   {
     number: "02",

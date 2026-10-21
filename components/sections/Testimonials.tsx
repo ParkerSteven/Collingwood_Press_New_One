@@ -19,28 +19,28 @@ const benefits = [
     icon: BookOpenText,
     title: "Dedicated Senior Editor",
     description:
-      "Every manuscript is assigned to a senior editor with deep genre knowledge and real publishing experience. No automated feedback loops. No constantly changing editorial team. One experienced professional guides your book from rough draft to finished product.",
+      "A senior editor reviews your manuscript from start to finish.",
   },
   {
     number: "02",
     icon: LayoutTemplate,
     title: "Custom InDesign Typography",
     description:
-      "Your book's interior is professionally typeset in Adobe InDesign, shaped around the pacing, tone and visual conventions of your genre. We do not pull from a template library. Every layout is built for your manuscript.",
+      "Professional interior formatting that looks print-ready.",
   },
   {
     number: "03",
     icon: ShieldCheck,
     title: "100% Rights & Royalty Guarantee",
     description:
-      "Your intellectual property stays exactly where it belongs: with you. Full copyright. Full royalties. That guarantee is written into every publishing agreement we sign.",
+      "You keep full rights and higher royalties.",
   },
   {
     number: "04",
     icon: MessagesSquare,
     title: "Direct Access to Publishing Directors",
     description:
-      "You will never be sent to a call center or left waiting on a support ticket. Our publishing directors work with you directly and give clear answers and honest guidance at every stage.",
+      "Work directly with the team handling your book.",
   },
 ];
 

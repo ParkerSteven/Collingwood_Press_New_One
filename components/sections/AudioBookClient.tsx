@@ -182,7 +182,7 @@ export default function AudiobookPage() {
           buttons={[
             {
               text: "Audition Narrators for Your Book",
-              href: "/contact-us#manuscript-review",
+              href: "/contact-us",
               variant: "primary",
               showArrow: true,
             },
@@ -630,7 +630,7 @@ export default function AudiobookPage() {
                 </p>
 
                 <Button
-                  href="/contact-us#manuscript-review"
+                  href="/contact-us"
                   variant="primary"
                   size="lg"
                 >
@@ -1122,7 +1122,7 @@ export default function AudiobookPage() {
             </>
           }
           buttonText="Get a Custom Production Quote"
-          buttonHref="/contact-us#manuscript-review"
+          buttonHref="/contact-us"
         />
 
 

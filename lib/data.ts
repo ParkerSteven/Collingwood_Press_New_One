@@ -13,7 +13,7 @@ export const stats: StatItem[] = [
     label: "Production Placement Rate",
   },
   {
-    value: "5–7 Days",
+    value: "5 to 7 Days",
     label: "Senior Editor Review",
   },
   {
@@ -577,41 +577,17 @@ export const faqs = [
     answer:
       "Unlike automated self-publishing mills that charge exorbitant fees for automated PDF exports, The Collingwood Press operates with the ethos of a traditional literary house. Every author is assigned a dedicated senior trade editor who reads the manuscript line-by-line, discusses structural revisions directly by phone, and coordinates bespoke interior typesetting, custom cover art, and global distribution.",
   },
-  {
-    question: "Who retains the copyright and royalties to my book?",
-    answer:
-      "You retain 100% of your copyright, creative ownership, and publishing rights at all times. The Collingwood Press does not claim rights to your intellectual property or take permanent cuts of your author royalties. Our role is that of a trusted publishing partner and production house.",
-  },
+
   {
     question: "What is included in the complimentary manuscript review?",
     answer:
-      "When you submit your manuscript, a senior trade editor reads your opening chapters and summary. Within 5–7 business days, you receive an honest, constructive editorial evaluation analyzing narrative pacing, genre marketability, proofing requirements, and a transparent scope of work. There is zero obligation to publish with us.",
+      "When you submit your manuscript, a senior trade editor reads your opening chapters and summary. Within 5 to 7 business days, you receive an honest, constructive editorial evaluation analyzing narrative pacing, genre marketability, proofing requirements, and a transparent scope of work. There is zero obligation to publish with us.",
   },
-  {
-    question: "How long does the complete publication journey typically take?",
-    answer:
-      "A thorough, professional publishing journey typically takes 10 to 16 weeks from manuscript acceptance to physical shelf readiness. This allows adequate time for rigorous developmental and copy editing, interior InDesign typesetting, custom jacket illustration and foil blocking, physical proof copy review, and advance marketing outreach.",
-  },
+
   {
     question: "Will my book be available in physical bookstores and libraries?",
     answer:
       "Yes. We distribute through the Ingram Content Group, the world's largest wholesale distributor for booksellers, allowing any independent bookstore, Barnes & Noble location, or public library worldwide to order your physical hardcover and paperback editions directly into their catalog.",
-  },
-  {
-    question: "Can you accommodate both print and digital formats?",
-    answer:
-      "Yes. Every title is prepared in three distinct formats: a collector-grade hardcover with optional foil embossing, a French-fold trade paperback for retail shelves, and a reflowable ePub designed specifically for Amazon Kindle, Apple Books, Kobo, and Barnes & Noble Nook.",
-  },
-  {
-    question: "What if my manuscript is still a rough first draft?",
-    answer:
-      "Many of our authors begin with an unpolished first draft. Our editorial team offers developmental editing and structural story coaching to help shape your raw manuscript into a compelling, market-ready literary work before typesetting begins.",
-  },
-  {
-    question:
-      "What goes into custom book cover design at The Collingwood Press?",
-    answer:
-      "We treat book jackets as pieces of visual literature. Our design team analyzes your genre's market conventions, creates custom typographic lockups and hand-crafted artwork, and applies sophisticated tactile finishes such as foil stamping, spot gloss, and soft-touch matte lamination.",
   },
   {
     question: "How long does the publishing process take?",
@@ -622,12 +598,12 @@ export const faqs = [
     question:
       "What is the difference between hybrid, traditional and self-publishing?",
     answer:
-      "Traditional publishing is publisher-funded, but the house keeps most of the royalties and most of the creative control. Hybrid publishing is also author-funded, and the publisher usually stays on the contract and often keeps a share of the royalties. Self-publishing leaves you as the publisher. You keep the copyright and the royalties, and you hire the team. The Collingwood Press is an assisted self-publishing company. You stay the publisher. We handle the editing, design, and distribution.",
+      "Traditional publishing is publisher-funded, but the house keeps most of the royalties and most of the creative control. Hybrid publishing is also author-funded, and the publisher usually stays on the contract and often keeps a share of the royalties. Self-publishing leaves you as the publisher. You keep the copyright and the royalties, and you hire the team.",
   },
   {
     question: "How much does it cost to publish a book?",
     answer:
-      "In 2026, a typical professional self-published book runs about $2,940 to $5,660, based on a review of more than 230,000 freelancer quotes. Editing is the highest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting, and ads sit outside that range. With The Collingwood Press, the price depends on the services you choose. You fund the work, and you keep the copyright and 100% royalties. Request a free consultation for an itemized quote.",
+      "In 2026, a typical professional self-published book runs about $2,940 to $5,660, based on a review of more than 230,000 freelancer quotes. Editing is the highest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting, and ads sit outside that range.",
   },
 ];
 

@@ -120,7 +120,7 @@ export default function CoverSpotlight() {
                 tone and authority at first glance. For authors
                 who want a physical product as compelling as the
                 story inside, we offer premium finishes including
-                foil stamping, embossing and premium paper stocks (if this describes the actual print options).
+                foil stamping, embossing and premium paper stocks.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">
@@ -141,7 +141,7 @@ export default function CoverSpotlight() {
 
               <div className="mt-auto pt-8">
                 <Button
-                  href="/contact-us#manuscript-review"
+                  href="/contact-us"
                   variant="primary"
                   size="md"
                 >
@@ -273,7 +273,7 @@ export default function CoverSpotlight() {
 
               <div className="mt-auto pt-8">
                 <Button
-                  href="/contact-us#manuscript-review"
+                  href="/contact-us"
                   variant="outline"
                   size="md"
                 >

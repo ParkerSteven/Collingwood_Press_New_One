@@ -14,8 +14,8 @@ import Link from "next/link";
 const comparisonData = [
   {
     feature: "Author Royalties",
-    hybrid: "Often a split, commonly 50–85% of net",
-    traditional: "Typically 10–15%",
+    hybrid: "Often a split, commonly 50 to 85% of net",
+    traditional: "Typically 10 to 15%",
     collingwood: "100%",
   },
   {
@@ -32,9 +32,9 @@ const comparisonData = [
   },
   {
     feature: "Timeline to Release",
-    hybrid: "Often 6–12 months",
-    traditional: "Typically 1–2 years",
-    collingwood: "3–6 months",
+    hybrid: "Often 6 to 12 months",
+    traditional: "Typically 1 to 2 years",
+    collingwood: "3 to 6 months",
   },
   {
     feature: "Editorial & Design Team",
@@ -243,7 +243,7 @@ export default function ProjectManagers() {
           </div>
 
           <Link
-            href="/contact-us#manuscript-review"
+            href="/contact-us"
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#E7665D] px-5 py-3.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-[#D9574E]"
           >
             Discuss Your Publishing Options

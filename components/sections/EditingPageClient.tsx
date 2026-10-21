@@ -183,13 +183,13 @@ export default function EditingPageClient() {
                     buttons={[
                         {
                             text: "Get a Quote",
-                            href: "/contact-us#manuscript-review",
+                            href: "/contact-us",
                             variant: "primary",
                             showArrow: true,
                         },
                         {
                             text: "Request a Free Sample Edit",
-                            href: "/contact-us#manuscript-review",
+                            href: "/contact-us",
                             variant: "outline-white",
                         },
                     ]}
@@ -380,7 +380,7 @@ export default function EditingPageClient() {
                             </div>
 
                             <Button
-                                href="/contact-us#manuscript-review"
+                                href="/contact-us"
                                 variant="primary"
                                 size="lg"
                             >
@@ -835,7 +835,7 @@ export default function EditingPageClient() {
                                 {/* CTA Button */}
                                 <div className="shrink-0">
                                     <Button
-                                        href="/contact-us#manuscript-review"
+                                        href="/contact-us"
                                         variant="primary"
                                         size="lg"
                                     >
@@ -886,7 +886,7 @@ export default function EditingPageClient() {
                         </>
                     }
                     buttonText="Get a Quote for Your Manuscript"
-                    buttonHref="/contact-us#manuscript-review"
+                    buttonHref="/contact-us"
                 />
 
 

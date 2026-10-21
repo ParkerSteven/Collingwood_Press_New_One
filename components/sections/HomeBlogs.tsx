@@ -17,10 +17,10 @@ const blogPosts = [
         number: "01",
         image: "/book-editor.png",
         imageAlt: "Book publishing costs and budgeting",
-        title: "How Much Does a Book Editor Cost? (2026 Rates by Editing Type)",
+        title: "Book editing guide 2026: stages, costs, and how to hire",
         description:
-            "How much does it cost to publish a book? Traditional publishing costs $0 out of pocket. Self-publishing usually costs 2,000-6,000 for a professional book. Hybrid publishing runs 5,000-25,000 or more. Costs depend on editing, cover design, formatting, and marketing. ",
-        href: "https://parkerpublishers.com/how-much-does-a-book-editor-cost/",
+            "Learn the 5 book editing stages in order, what each costs in 2026, and how to hire the right editor, with checklists for novels, memoirs, and nonfiction.",
+        href: "https://www.thecollingwoodpress.com/blogs/book-editing-guide/",
     },
     {
         number: "02",
@@ -29,7 +29,7 @@ const blogPosts = [
         title: "How Much Does It Cost to Publish a Book? 0-6K Budget + Avoid Overpaying",
         description:
             "How much does it cost to publish a book? Traditional publishing costs $0 out of pocket. Self-publishing usually costs 2,000-6,000 for a professional book. Hybrid publishing runs 5,000-25,000 or more. Costs depend on editing, cover design, formatting, and marketing. ",
-        href: "https://parkerpublishers.com/how-much-does-it-cost-to-publish-a-book/",
+        href: "#",
     },
     {
         number: "03",
@@ -38,7 +38,7 @@ const blogPosts = [
         title: "How to Self-Publish a Book: A Simple Guide",
         description:
             "Self-publishing has become a powerful choice for writers who prefer to be the bosses of their work and want to get it to their audience as soon as possible.This guide explains how to self-publish a book in a clear way, from finishing the draft to selling it online.",
-        href: "https://parkerpublishers.com/how-to-self-publish-a-book-a-simple-guide/",
+        href: "#",
     },
     {
         number: "04",
@@ -47,7 +47,7 @@ const blogPosts = [
         title: "10 Best Hybrid Publishing Companies in 2026 (Submission Links + Costs)",
         description:
             "The best hybrid publishing companies in 2026 help authors combine professional publishing support with greater creative control than traditional publishing. Parker Publishers stands out for authors seeking personalized guidance and a more hands-on publishing experience.",
-        href: "https://parkerpublishers.com/hybrid-publishing-companies/",
+        href: "#",
     },
     {
         number: "05",
@@ -56,7 +56,7 @@ const blogPosts = [
         title: "How to Advertise My Book In 2026: 13 Ways to Get More Readers",
         description:
             "Authors have a strong book idea, but they struggle when it is time to turn that idea into a complete manuscript. Learning how to write an outline for a book helps writers organize scattered thoughts, create a clear direction, and understand what needs to happen before they start writing chapter one.",
-        href: "https://parkerpublishers.com/how-to-write-an-outline-for-a-book/",
+        href: "#",
     },
     {
         number: "06",
@@ -65,7 +65,7 @@ const blogPosts = [
         title: "How To Write an Outline for A Book: 8-Steps Framework + Free Template",
         description:
             "Authors have a strong book idea, but they struggle when it is time to turn that idea into a complete manuscript. Learning how to write an outline for a book helps writers organize scattered thoughts, create a clear direction, and understand what needs to happen before they start writing chapter one.",
-        href: "https://parkerpublishers.com/how-to-write-an-outline-for-a-book/",
+        href: "#",
     },
 ];
 

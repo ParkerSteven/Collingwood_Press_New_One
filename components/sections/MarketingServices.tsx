@@ -16,29 +16,29 @@ const teamMembers = [
   {
     id: "01",
     name: "Lincoln Grayson",
-    role: "Editorial Director",
+    role: "Publishing Director",
     icon: BookOpenText,
     image: "/LincoIn.jpeg", // Add verified team member photo path
-    imageAlt: "",
-    bio: "Lincoln leads the editorial side of The Collingwood. In US publishing, the Editorial Director sets editorial standards, oversees which manuscripts are taken on, and is accountable for the quality of every title that ships",
+    imageAlt: "LincoIn",
+    // bio: "Lincoln leads the editorial side of The Collingwood. In US publishing, the Editorial Director sets editorial standards, oversees which manuscripts are taken on, and is accountable for the quality of every title that ships",
   },
   {
     id: "02",
     name: "Pamela Hayek",
-    role: "Managing Editor",
+    role: "Editorial Director",
     icon: BriefcaseBusiness,
     image: "/Pamela.jpeg", // Add verified team member photo path
-    imageAlt: "",
-    bio: "Pamela keeps every title on schedule and to standard from manuscript to print. In US publishing, the Managing Editor coordinates copyediting, proofreading, design and production, and is the author’s main point of contact for timelines.,specialty: 'Publishing Direction'",
+    imageAlt: "Pamela",
+    // bio: "Pamela keeps every title on schedule and to standard from manuscript to print. In US publishing, the Managing Editor coordinates copyediting, proofreading, design and production, and is the author’s main point of contact for timelines.,specialty: 'Publishing Direction'",
   },
   {
     id: "03",
     name: "Camden Wayne",
-    role: "Director of Marketing and Publicity",
+    role: "Design & Marketing Lead",
     icon: Palette,
     image: "/Camden.jpeg", // Add verified team member photo path
-    imageAlt: "",
-    bio: "Camden is responsible for getting each book in front of its readers. In US publishing, this role plans the launch, manages retailer presence and drives reviews and media coverage.",
+    imageAlt: "Camden",
+    // bio: "Camden is responsible for getting each book in front of its readers. In US publishing, this role plans the launch, manages retailer presence and drives reviews and media coverage.",
   },
 ];
 
@@ -138,9 +138,9 @@ export default function MarketingServices() {
                   {/* Portrait overlay */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#121A2B]/60 to-transparent" />
 
-                  <span className="absolute left-5 top-5 rounded-sm border border-white/25 bg-[#121A2B]/65 px-3 py-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
+                  {/* <span className="absolute left-5 top-5 rounded-sm border border-white/25 bg-[#121A2B]/65 px-3 py-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
                     Team Member {member.id}
-                  </span>
+                  </span> */}
 
                   <div className="absolute bottom-5 left-6 right-6">
                     <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-[#F7B0A9]">
@@ -174,14 +174,6 @@ export default function MarketingServices() {
                       </span> */}
                     </div>
                   </div>
-
-                  <div className="my-6 h-px bg-line/80" />
-
-                  <p className="font-sans text-[0.91rem] leading-[1.85] text-ink-muted">
-                    {member.bio}
-                  </p>
-
-
                 </div>
               </motion.article>
             );
