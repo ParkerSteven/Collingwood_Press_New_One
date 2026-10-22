@@ -44,6 +44,25 @@ body {
             #3b4b69 100%);
 }
 
+.section-gradient {
+    background:
+        radial-gradient(ellipse at 10% 20%,
+            rgba(0, 105, 215, 0.85) 0%,
+            rgba(0, 65, 165, 0.55) 35%,
+            transparent 70%),
+        radial-gradient(ellipse at 100% 65%,
+            rgba(255, 95, 45, 0.90) 0%,
+            rgba(210, 55, 45, 0.65) 40%,
+            transparent 75%),
+        linear-gradient(110deg,
+            #061631 0%,
+            #092a62 30%,
+            #17376b 50%,
+            #352b57 60%,
+            #b63d39 80%,
+            #f3764c 100%);
+}
+
 .blog-article-content p.blog-tldr {
     display: block;
     margin-bottom: 24px;

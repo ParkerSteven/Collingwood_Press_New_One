@@ -13,7 +13,7 @@ type Book = {
 };
 
 interface BookCarouselProps {
-    books?: Book[];
+    // books?: Book[];
     heading?: string;
     subheading?: string;
 }
@@ -21,7 +21,7 @@ interface BookCarouselProps {
 const AUTO_SLIDE_DELAY = 5000;
 
 export default function BookCarousel({
-    books = bookCovers,
+    // books = bookCovers,
     heading = "Explore the Books We've Proudly  Published for Our Authors",
     subheading = "Books from authors we’ve worked with, published across different genres and styles.",
 }: BookCarouselProps) {
@@ -66,14 +66,14 @@ export default function BookCarousel({
 
     const resetAutoSlide = useCallback(() => {
         clearAutoSlide();
-        if (pausedRef.current || books.length <= 1) return;
+        if (pausedRef.current || bookCovers.length <= 1) return;
         timerRef.current = setTimeout(() => {
             if (!pausedRef.current && !dragRef.current.active && !document.hidden) {
                 scroll("right");
             }
             resetAutoSlide();
         }, AUTO_SLIDE_DELAY);
-    }, [books.length, clearAutoSlide, scroll]);
+    }, [bookCovers.length, clearAutoSlide, scroll]);
 
     useEffect(() => {
         resetAutoSlide();
@@ -184,7 +184,7 @@ export default function BookCarousel({
                     className={`w-full min-w-0 overflow-x-auto overflow-y-hidden overscroll-x-contain touch-pan-x select-none snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${isDragging ? "cursor-grabbing snap-none" : "cursor-grab"}`}
                 >
                     <ul className="flex w-full gap-3 pb-4 sm:gap-4 lg:gap-6">
-                        {books.map((book, i) => (
+                        {bookCovers.map((book, i) => (
                             <li
                                 key={`${book.title}-${i}`}
                                 className="
@@ -195,9 +195,10 @@ export default function BookCarousel({
     lg:w-[calc((100%-96px)/5)]
   "
                             >
-                                {book.href ? (
+                                {book.slug ? (
                                     <a
-                                        href={book.href}
+                                        href={book.slug}
+                                        target="_blank"
                                         draggable={false}
                                         onClick={(e) => {
                                             if (ignoreClickRef.current) {
@@ -224,7 +225,7 @@ export default function BookCarousel({
                         type="button"
                         onClick={() => handleArrowClick("left")}
                         aria-label="Previous books"
-                        disabled={books.length <= 1}
+                        disabled={bookCovers.length <= 1}
                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-[#E7665D] hover:bg-[#E7665D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:opacity-40 sm:h-12 sm:w-12"
                     >
                         <ChevronLeft size={21} />
@@ -233,7 +234,7 @@ export default function BookCarousel({
                         type="button"
                         onClick={() => handleArrowClick("right")}
                         aria-label="Next books"
-                        disabled={books.length <= 1}
+                        disabled={bookCovers.length <= 1}
                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-[#E7665D] hover:bg-[#E7665D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:opacity-40 sm:h-12 sm:w-12"
                     >
                         <ChevronRight size={21} />

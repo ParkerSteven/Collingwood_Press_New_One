@@ -64,7 +64,7 @@ export default function TrustBand() {
     <section
       id="publishing-services"
       aria-labelledby="publishing-services-heading"
-      className="relative overflow-hidden border-b border-white/10 bg-[#0D1527] py-20 text-white sm:py-24 lg:py-28"
+      className="relative overflow-hidden hero-gradient py-20 text-white sm:py-24 lg:py-28"
     >
       {/* Background accents */}
       <div
