@@ -34,10 +34,10 @@ import {
 } from "lucide-react";
 import { formats } from "@/lib/formats";
 import Image from "next/image";
-import FAQAccordion from "./FAQAccordion";
+import FAQAccordion from "../sections/FAQAccordion";
 import { marketingFAQs } from "@/lib/data";
-import FinalCTA from "./FinalCTA";
-import HeroSection from "./HeroSection";
+import FinalCTA from "../sections/FinalCTA";
+import HeroSection from "../sections/HeroSection";
 
 type BrandMark = { title: string; hex: string; path: string };
 

@@ -163,19 +163,39 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
         };
     }, [openPopup, pathname]);
 
-    // Handle opening AI chat directly
+    // Handle opening active chat directly (Brevo or Jotform)
     useEffect(() => {
         const handleOpenAIChat = (): void => {
             setShouldLoadWidget(true);
 
             const tryOpen = (): boolean => {
-                const agentInstance = (window as Window & {
-                    jotformAgentInstance?: {
-                        setIsOpened?: (opened: boolean) => void;
-                        setIsExpanded?: (expanded: boolean) => void;
-                    };
-                }).jotformAgentInstance;
+                const w = window as any;
 
+                // 1. Try Brevo Conversations API
+                if (typeof w.BrevoConversations === "function") {
+                    try {
+                        w.BrevoConversations("show");
+                        w.BrevoConversations("openChat", true);
+                        w.BrevoConversations("expandWidget", true);
+                        return true;
+                    } catch (e) {}
+                } else if (w.BrevoConversations && Array.isArray(w.BrevoConversations.q)) {
+                    w.BrevoConversations("show");
+                    w.BrevoConversations("openChat", true);
+                }
+
+                // 2. Try Brevo iframe trigger click or hash navigation
+                const brevoIframe = document.querySelector<HTMLElement>(
+                    "#brevo-conversations-widget, .brevo-conversations-widget, iframe[src*='conversations-widget.brevo.com']"
+                );
+                if (brevoIframe) {
+                    try {
+                        window.location.hash = "brevoConversationsExpanded";
+                    } catch (e) {}
+                }
+
+                // 3. Try global jotformAgentInstance
+                const agentInstance = w.jotformAgentInstance;
                 if (agentInstance && typeof agentInstance.setIsOpened === "function") {
                     agentInstance.setIsOpened(true);
                     if (typeof agentInstance.setIsExpanded === "function") {
@@ -184,6 +204,7 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
                     return true;
                 }
 
+                // 4. Try clicking DOM elements inside the Jotform widget container
                 const trigger = document.querySelector<HTMLElement>(
                     "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b .__chat, " +
                     "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b .__avatar, " +
@@ -198,6 +219,15 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
 
                 return false;
             };
+
+            // Pre-queue for Brevo immediately in case script is in flight
+            const w = window as any;
+            if (w.BrevoConversations) {
+                try {
+                    w.BrevoConversations("show");
+                    w.BrevoConversations("openChat", true);
+                } catch (e) {}
+            }
 
             if (!tryOpen()) {
                 let attempts = 0;
@@ -311,6 +341,12 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
                 w[c] = w[c] || function() {
                   (w[c].q = w[c].q || []).push(arguments);
                 };
+
+                if (w.__pendingOpenAIChat) {
+                  w[c]('show');
+                  w[c]('openChat', true);
+                  w.__pendingOpenAIChat = false;
+                }
 
                 var s = d.createElement('script');
                 s.async = true;

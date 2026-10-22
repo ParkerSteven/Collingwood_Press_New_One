@@ -21,10 +21,10 @@ import {
     Clock,
     PhoneCall
 } from "lucide-react";
-import FAQAccordion from "./FAQAccordion";
+import FAQAccordion from "../sections/FAQAccordion";
 import { editingFAQs } from "@/lib/data";
-import FinalCTA from "./FinalCTA";
-import HeroSection from "./HeroSection";
+import FinalCTA from "../sections/FinalCTA";
+import HeroSection from "../sections/HeroSection";
 
 const editingProcessSteps = [
     {

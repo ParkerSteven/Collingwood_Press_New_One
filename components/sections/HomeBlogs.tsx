@@ -10,7 +10,6 @@ import {
     ChevronRight,
 } from "lucide-react";
 
-import Container from "@/components/ui/Container";
 
 const blogPosts = [
     {
@@ -73,7 +72,7 @@ export default function HomeBlogs() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [totalPages, setTotalPages] = useState(2);
-    const [cardsPerPage, setCardsPerPage] = useState(3);
+    const [cardsPerPage, setCardsPerPage] = useState(5);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -84,8 +83,8 @@ export default function HomeBlogs() {
     const hasMoved = useRef(false);
 
     const getPerView = () => {
-        if (typeof window === "undefined") return 3;
-        if (window.innerWidth >= 1024) return 3;
+        if (typeof window === "undefined") return 5;
+        if (window.innerWidth >= 1024) return 5;
         if (window.innerWidth >= 640) return 2;
         return 1;
     };
@@ -200,7 +199,7 @@ export default function HomeBlogs() {
             aria-labelledby="publishing-insights-heading"
             className="relative overflow-hidden border-b border-line bg-[#FCFAF7] py-20 lg:py-28"
         >
-            <Container>
+            <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16">
                 {/* Blog Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -288,79 +287,70 @@ export default function HomeBlogs() {
                                     handlePrev();
                                 }
                             }}
-                            className={`flex gap-6 lg:gap-7 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 -my-4 px-1 select-none focus:outline-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:none ${isDragging ? "cursor-grabbing" : "cursor-grab"
+                            className={`flex gap-4 lg:gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 -my-4 px-1 select-none focus:outline-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:none ${isDragging ? "cursor-grabbing" : "cursor-grab"
                                 }`}
                         >
+
                             {blogPosts.map((post) => (
-                                <div
+                                <Link
                                     key={post.number}
+                                    href={post.href}
                                     data-blog-card
-                                    className="w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-56px)/3)] shrink-0 snap-start flex flex-col"
+                                    onClick={(e) => {
+                                        if (hasMoved.current) {
+                                            e.preventDefault();
+                                        }
+                                    }}
+                                    className="group block w-full sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-80px)/5)] shrink-0 snap-start min-w-0"
                                 >
-                                    <article className="group flex h-full flex-col overflow-hidden rounded-sm border border-[#E7665D]/20 bg-white shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_12px_32px_rgba(231,102,93,0.1)]">
-                                        {/* Article Image Header */}
-                                        <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden border-b border-[#E7665D]/10 bg-[#172238]">
+                                    <article className="flex h-full flex-col overflow-hidden rounded-sm border border-[#E7665D]/20 bg-white shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#E7665D]/50 group-hover:shadow-[0_12px_32px_rgba(231,102,93,0.15)]">
+
+                                        {/* Blog Image */}
+                                        <div className="relative h-48 sm:h-48 lg:h-44 xl:h-52 shrink-0 overflow-hidden bg-[#172238]">
                                             <Image
                                                 src={post.image}
                                                 alt={post.imageAlt}
                                                 fill
-                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                                className="object-conatin transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none select-none"
+                                                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
+                                                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                                             />
 
-                                            {/* Gradient Overlay */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#101A30]/75 via-[#101A30]/15 to-[#101A30]/20" />
+                                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101A30]/50 via-transparent to-transparent" />
                                         </div>
 
-                                        {/* Article Content */}
-                                        <div className="flex flex-1 flex-col p-7 sm:p-8">
+                                        {/* Blog Content */}
+                                        <div className="flex flex-1 flex-col p-5 sm:p-6 lg:p-5 xl:p-6">
+
                                             <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#E7665D]">
                                                 Publishing Insights
                                             </span>
 
-                                            <h3 className="mt-3 font-serif text-[1.3rem] font-medium leading-[1.22] text-ink sm:text-[1.5rem]">
+                                            <h3 className="mt-3 font-serif text-[1.2rem] font-medium leading-[1.25] text-ink transition-colors duration-300 group-hover:text-[#E7665D] lg:text-[1.08rem] xl:text-[1.25rem]">
                                                 {post.title}
                                             </h3>
 
-                                            <p className="mt-4 font-sans text-[0.9rem] leading-[1.85] text-ink-muted">
+                                            <p className="mt-3 font-sans text-[0.85rem] leading-[1.65] text-ink-muted">
                                                 {post.description}
                                             </p>
 
-                                            {/* Article Link */}
-                                            <div className="mt-auto pt-8">
+                                            {/* Read More - No nested Link */}
+                                            <div className="mt-auto pt-6">
                                                 <div className="border-t border-line/80 pt-5">
-                                                    {post.href ? (
-                                                        <Link
-                                                            target="_blank"
-                                                            href={post.href}
-                                                            onClick={(e) => {
-                                                                if (hasMoved.current) {
-                                                                    e.preventDefault();
-                                                                }
-                                                            }}
-                                                            className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#E7665D] transition-colors hover:text-ink"
-                                                        >
-                                                            Read the guide
-                                                            <ArrowUpRight
-                                                                size={17}
-                                                                aria-hidden="true"
-                                                            />
-                                                        </Link>
-                                                    ) : (
-                                                        <span className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#E7665D]">
-                                                            Read the guide
-                                                            <ArrowUpRight
-                                                                size={17}
-                                                                aria-hidden="true"
-                                                            />
-                                                        </span>
-                                                    )}
+                                                    <span className="inline-flex items-center gap-2 font-sans text-xs xl:text-sm font-semibold text-[#E7665D] transition-all duration-300 group-hover:gap-3">
+                                                        Read the guide
+                                                        <ArrowUpRight
+                                                            size={17}
+                                                            aria-hidden="true"
+                                                            className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                                                        />
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </article>
-                                </div>
+                                </Link>
                             ))}
+
                         </div>
                     </div>
 
@@ -427,7 +417,7 @@ export default function HomeBlogs() {
                         </div>
                     </div>
                 </motion.div>
-            </Container>
+            </div>
         </section>
     );
 }

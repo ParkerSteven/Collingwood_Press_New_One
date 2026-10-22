@@ -27,10 +27,10 @@ import {
   Check
 } from "lucide-react";
 import { formats } from "@/lib/formats";
-import FAQAccordion from "./FAQAccordion";
+import FAQAccordion from "../sections/FAQAccordion";
 import { audiobookFAQs } from "@/lib/data";
-import FinalCTA from "./FinalCTA";
-import HeroSection from "./HeroSection";
+import FinalCTA from "../sections/FinalCTA";
+import HeroSection from "../sections/HeroSection";
 
 const productionProcess = [
   {

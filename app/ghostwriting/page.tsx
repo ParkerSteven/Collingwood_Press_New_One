@@ -1,4 +1,4 @@
-import GhostwritingClientPage from "@/components/sections/GhostwritingPage";
+import GhostwritingClientPage from "@/components/pages/GhostwritingPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

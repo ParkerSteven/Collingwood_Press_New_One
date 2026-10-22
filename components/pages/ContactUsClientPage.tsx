@@ -23,7 +23,7 @@ import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { submitToGoogleSheet } from "@/lib/submitToGoogleSheet";
-import HeroSection from "./HeroSection";
+import HeroSection from "../sections/HeroSection";
 
 interface ContactFormData {
     manuscript: string;

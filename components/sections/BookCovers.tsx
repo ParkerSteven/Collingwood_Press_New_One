@@ -22,8 +22,8 @@ const AUTO_SLIDE_DELAY = 5000;
 
 export default function BookCarousel({
     books = bookCovers,
-    heading = "Explore the Books We've Proudly Published for Our Authors",
-    subheading = "",
+    heading = "Explore the Books We've Proudly  Published for Our Authors",
+    subheading = "Books from authors we’ve worked with, published across different genres and styles.",
 }: BookCarouselProps) {
     const carouselRef = useRef<HTMLDivElement>(null);
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -139,7 +139,9 @@ export default function BookCarousel({
             <div className="mx-auto w-full max-w-6xl min-w-0 px-4 sm:px-6 lg:px-8">
                 <header className="mx-auto mb-7 max-w-3xl text-center sm:mb-10">
                     <h2 className="font-serif text-[clamp(1.65rem,5vw,2.5rem)] font-semibold leading-tight tracking-tight text-white">
-                        {heading}
+                        Explore the Books We&apos;ve Proudly <span className="text-[#D56057]">
+                            Published for Our Authors
+                        </span>
                     </h2>
                     {subheading && (
                         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">

@@ -5,21 +5,16 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Feather,
-  BookOpenText,
-  PenLine,
-  BookMarked,
-  Megaphone,
-  Headphones,
-  ArrowUpRight,
   ArrowRight,
 } from "lucide-react";
 
 import Container from "@/components/ui/Container";
+import ServiceCard from "../ui/ServicesCard";
 
 const services = [
   {
     number: "01",
-    icon: BookOpenText,
+    image: "/CollingwoodPressIcons/Editing.png",
     title: "Book Editing Services",
     description:
       "Our book editing services cover every stage: developmental editing for structure and argument, line editing for voice, copy editing for consistency, and final proofreading.",
@@ -28,7 +23,7 @@ const services = [
   },
   {
     number: "02",
-    icon: PenLine,
+    image: "/CollingwoodPressIcons/Ghostwriting.png",
     title: "Ghostwriting Services",
     description:
       "Our ghostwriting services match you with a professional writer who interviews you, captures your voice and delivers a complete, publication-ready manuscript.",
@@ -37,7 +32,7 @@ const services = [
   },
   {
     number: "03",
-    icon: BookMarked,
+    image: "/CollingwoodPressIcons/Publishing.png",
     title: "Publishing Services",
     description:
       "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties.",
@@ -46,7 +41,7 @@ const services = [
   },
   {
     number: "04",
-    icon: Megaphone,
+    image: "/CollingwoodPressIcons/Marketing.png",
     title: "Book Marketing, PR & Launch Strategy",
     description:
       "Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility.",
@@ -55,7 +50,7 @@ const services = [
   },
   {
     number: "05",
-    icon: Headphones,
+    image: "/CollingwoodPressIcons/Audiobook.png",
     title: "Audiobook Recording & Distribution",
     description:
       "Our audiobook production team edits, reviews, and masters the recordings before assisting with distribution and distributing the finished audiobook to Audible, Apple Books and other listening platforms.",
@@ -123,75 +118,18 @@ export default function TrustBand() {
 
         {/* Five service cards */}
         <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6 lg:gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.article
-                key={service.number}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{
-                  duration: 0.55,
-                  delay: Math.min(index * 0.08, 0.32),
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-gradient-to-b from-[#172138] to-[#101A2E] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_18px_42px_rgba(0,0,0,0.18)] sm:p-6 ${index < 3
-                  ? "lg:col-span-2"
-                  : "lg:col-span-3"
-                  }`}
-              >
-                {/* Coral top border on hover */}
-                <div
-                  aria-hidden="true"
-                  className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full"
-                />
-
-                {/* Card header */}
-                <div className="mb-8 flex items-start justify-between">
-                  <div className="flex h-13 w-13 items-center justify-center rounded-md border border-[#E7665D]/25 bg-[#E7665D]/10 p-3 text-[#F08A82]">
-                    <Icon
-                      size={25}
-                      strokeWidth={1.5}
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-
-                {/* Service text */}
-                <div className="flex flex-1 flex-col">
-                  <h3 className="max-w-md font-serif text-[1rem] font-medium leading-[1.2] text-white transition-colors duration-300 group-hover:text-[#F08A82] sm:text-[1.3rem]">
-                    {service.title}
-                  </h3>
-
-                  <div className="my-5 h-px w-12 bg-[#E7665D]/60" />
-
-                  <p className="font-sans text-[0.77rem] leading-[1.85] text-slate-300 sm:text-[0.83rem]">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Service link */}
-                <div className="mt-9 border-t border-white/10 pt-5">
-                  <Link
-                    href={service.link}
-                    className="group/link inline-flex items-center gap-2 font-sans text-[0.82rem] font-semibold text-[#F08A82] transition-colors hover:text-white"
-                    aria-label={service.cta}
-                  >
-                    <span>{service.cta}</span>
-
-                    <ArrowUpRight
-                      size={16}
-                      strokeWidth={1.8}
-                      aria-hidden="true"
-                      className="transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
-                    />
-                  </Link>
-                </div>
-              </motion.article>
-            );
-          })}
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.number}
+              number={service.number}
+              image={service?.image}
+              title={service.title}
+              description={service.description}
+              link={service.link}
+              cta={service.cta}
+              index={index}
+            />
+          ))}
         </div>
 
         {/* Bottom statement */}

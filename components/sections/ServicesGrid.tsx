@@ -3,69 +3,8 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
-import {
-  FileSearch,
-  ClipboardList,
-  PenLine,
-  Palette,
-  PackageCheck,
-  Megaphone,
-  ArrowRight,
-  Clock3,
-  CheckCircle2,
-} from "lucide-react";
-
-const publishingSteps = [
-  {
-    number: "01",
-    title: "Free Manuscript Review",
-    icon: FileSearch,
-    description:
-      "Send us your manuscript or opening chapters. A senior editor reads your work and gives you a candid assessment, typically within 5 to 7 days.",
-    note: "Typically 5 to 7 days",
-  },
-  {
-    number: "02",
-    title: "Your Publishing Plan & Agreement",
-    icon: ClipboardList,
-    description:
-      "We map the services, timeline and budget around your goals, and put the terms, including your rights, in writing before any work begins.",
-    note: "Clear plans & transparent terms",
-  },
-  {
-    number: "03",
-    title: "Editing & Manuscript Refinement",
-    icon: PenLine,
-    description:
-      "Your senior editor takes the manuscript through the editing stages it needs, from developmental and line editing to copy editing and final proofreading.",
-    note: "Professional editorial refinement",
-  },
-  {
-    number: "04",
-    title: "Cover Design & Interior Typesetting",
-    icon: Palette,
-    description:
-      "We design an original cover and hand-typeset your interior in Adobe InDesign. You review and approve proofs before anything goes to print.",
-    note: "Original design & approved proofs",
-  },
-  {
-    number: "05",
-    title: "Production & Distribution Setup",
-    icon: PackageCheck,
-    description:
-      "We prepare your final files and configure metadata, categories and keywords, then set up distribution to Amazon, IngramSpark, Barnes & Noble and other retail channels.",
-    note: "Retail-ready production",
-  },
-  {
-    number: "06",
-    title: "Launch & Marketing",
-    icon: Megaphone,
-    description:
-      "We run your launch with ARC distribution, reviewer and media outreach and advertising, and keep momentum going after release day.",
-    note: "Launch support & ongoing visibility",
-  },
-];
+import { publishingSteps } from "@/lib/data";
+import { CheckCircle2 } from "lucide-react";
 
 export default function ServicesGrid() {
   return (
@@ -115,7 +54,7 @@ export default function ServicesGrid() {
         {/* Connected Publishing Process */}
         <div className="relative mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-3 lg:gap-y-24">
-            {publishingSteps.map((step, index) => {
+            {publishingSteps?.map((step, index) => {
               const Icon = step.icon;
 
               // Snake flow:

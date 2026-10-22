@@ -24,11 +24,12 @@ import {
 } from "lucide-react";
 import { formats } from "@/lib/formats";
 import { Fragment } from "react";
-import FAQAccordion from "./FAQAccordion";
-import { publishingFAQs } from "@/lib/data";
-import FinalCTA from "./FinalCTA";
+import FAQAccordion from "../sections/FAQAccordion";
+import { publishingFAQs, resources } from "@/lib/data";
+import FinalCTA from "../sections/FinalCTA";
 import Link from "next/link";
-import HeroSection from "./HeroSection";
+import HeroSection from "../sections/HeroSection";
+import ResourceCard from "../ui/Card";
 
 
 const publishingRoadmap = [
@@ -174,11 +175,6 @@ export default function PublishingClient() {
                         },
                     ]}
                 />
-
-
-                {/* SECTION 2: Trust & Proof Bar */}
-
-
 
                 {/* REQUIRED NEW SECTION: From Manuscript to Published Book */}
                 <section id="publishing-process" className="py-20 lg:py-20 bg-[#fdfbf7] border-b border-line">
@@ -674,100 +670,16 @@ export default function PublishingClient() {
 
                             {/* Resource Cards */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {/* Card 1 */}
-                                <div className="p-6 rounded-lg border border-white/10 bg-white/[0.04] hover:border-[#E7665D]/40 transition-colors flex flex-col justify-between">
-                                    <div>
-                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#E7665D]/15 text-[#F08A82] mb-5">
-                                            <FileSpreadsheet size={20} />
-                                        </div>
-
-                                        <h4 className="font-serif text-lg font-bold text-white leading-snug">
-                                            Standard Trade Word Template (.docx)
-                                        </h4>
-
-                                        <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                                            Standard 1-inch margins, Times or Garamond 12pt,
-                                            styled headings, and clean page breaks. Request your
-                                            copy through our manuscript review form.
-                                        </p>
-                                    </div>
-
-                                    <div className="mt-6 pt-5 border-t border-white/10">
-                                        <Button
-                                            href="/contact-us#manuscript-review"
-                                            variant="primary"
-                                            size="sm"
-                                            className="w-full"
-                                        >
-                                            <span>Request Template</span>
-                                            <ArrowRight size={15} />
-                                        </Button>
-                                    </div>
-                                </div>
-
-                                {/* Card 2 */}
-                                <div className="p-6 rounded-lg border border-white/10 bg-white/[0.04] hover:border-[#E7665D]/40 transition-colors flex flex-col justify-between">
-                                    <div>
-                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#E7665D]/15 text-[#F08A82] mb-5">
-                                            <FileText size={20} />
-                                        </div>
-
-                                        <h4 className="font-serif text-lg font-bold text-white leading-snug">
-                                            Memoir Chapter Outline Kit (.pdf)
-                                        </h4>
-
-                                        <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                                            Pacing worksheets and emotional arc mapping for
-                                            autobiographical storytelling. Designed for memoirists
-                                            working through their first draft.
-                                        </p>
-                                    </div>
-
-                                    <div className="mt-6 pt-5 border-t border-white/10">
-                                        <Button
-                                            href="/contact-us#manuscript-review"
-                                            variant="primary"
-                                            size="sm"
-                                            className="w-full"
-                                        >
-                                            <span>Request Kit</span>
-                                            <ArrowRight size={15} />
-                                        </Button>
-                                    </div>
-                                </div>
-
-                                {/* Card 3 */}
-                                <div className="p-6 rounded-lg border border-white/10 bg-white/[0.04] hover:border-[#E7665D]/40 transition-colors flex flex-col justify-between">
-                                    <div>
-                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#E7665D]/15 text-[#F08A82] mb-5">
-                                            <BookOpenCheck size={20} />
-                                        </div>
-
-                                        <h4 className="font-serif text-lg font-bold text-white leading-snug">
-                                            BISAC Subject Code Reference Guide
-                                        </h4>
-
-                                        <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                                            Strategic categorization guide to optimize bookstore
-                                            discoverability. Understanding BISAC codes is essential
-                                            for any author using
-                                            book distribution services
-                                            to reach the right readers.
-                                        </p>
-                                    </div>
-
-                                    <div className="mt-6 pt-5 border-t border-white/10">
-                                        <Button
-                                            href="/contact-us#manuscript-review"
-                                            variant="primary"
-                                            size="sm"
-                                            className="w-full"
-                                        >
-                                            <span>Request Guide</span>
-                                            <ArrowRight size={15} />
-                                        </Button>
-                                    </div>
-                                </div>
+                                {resources.map((resource) => (
+                                    <ResourceCard
+                                        key={resource.id}
+                                        icon={resource.icon}
+                                        title={resource.title}
+                                        description={resource.description}
+                                        buttonText={resource.buttonText}
+                                        href={resource.href}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </Container>

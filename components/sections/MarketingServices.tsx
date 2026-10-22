@@ -5,42 +5,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import {
-  BookOpenText,
-  BriefcaseBusiness,
-  Palette,
   UserRound,
-  ArrowUpRight,
 } from "lucide-react";
+import { teamMembers } from "@/lib/data";
 
-const teamMembers = [
-  {
-    id: "01",
-    name: "Lincoln Grayson",
-    role: "Publishing Director",
-    icon: BookOpenText,
-    image: "/LincoIn.jpeg", // Add verified team member photo path
-    imageAlt: "LincoIn",
-    // bio: "Lincoln leads the editorial side of The Collingwood. In US publishing, the Editorial Director sets editorial standards, oversees which manuscripts are taken on, and is accountable for the quality of every title that ships",
-  },
-  {
-    id: "02",
-    name: "Pamela Hayek",
-    role: "Editorial Director",
-    icon: BriefcaseBusiness,
-    image: "/Pamela.jpeg", // Add verified team member photo path
-    imageAlt: "Pamela",
-    // bio: "Pamela keeps every title on schedule and to standard from manuscript to print. In US publishing, the Managing Editor coordinates copyediting, proofreading, design and production, and is the author’s main point of contact for timelines.,specialty: 'Publishing Direction'",
-  },
-  {
-    id: "03",
-    name: "Camden Wayne",
-    role: "Design & Marketing Lead",
-    icon: Palette,
-    image: "/Camden.jpeg", // Add verified team member photo path
-    imageAlt: "Camden",
-    // bio: "Camden is responsible for getting each book in front of its readers. In US publishing, this role plans the launch, manages retailer presence and drives reviews and media coverage.",
-  },
-];
+
 
 export default function MarketingServices() {
   return (

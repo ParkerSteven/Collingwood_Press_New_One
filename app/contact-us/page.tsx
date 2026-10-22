@@ -1,4 +1,4 @@
-import ContactUsClientPage from "@/components/sections/ContactUsClientPage";
+import ContactUsClientPage from "@/components/pages/ContactUsClientPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

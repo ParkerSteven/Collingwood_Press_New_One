@@ -44,6 +44,38 @@ body {
             #3b4b69 100%);
 }
 
+.blog-article-content p.blog-tldr {
+    display: block;
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.blog-article-content .blog-tldr-label {
+    display: inline;
+    font-weight: 700;
+    color: #181511;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-article-content .blog-tldr-label+* {
+    display: inline;
+}
+
+.blog-article-content p.blog-tldr-inline {
+    display: block !important;
+    margin: 0 0 24px !important;
+    line-height: 1.8;
+}
+
+.blog-article-content p.blog-tldr-inline strong {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 700;
+    color: #181511;
+}
+
 .ghost-hero-gradient {
     background:
         radial-gradient(circle at 85% 15%,

@@ -1,4 +1,4 @@
-import PublishingClient from "@/components/sections/PublishingClient";
+import PublishingClient from "@/components/pages/PublishingClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

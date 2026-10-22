@@ -314,24 +314,13 @@ export default function Footer() {
                 <span className="font-medium">+1 (936) 223-3644</span>
               </Link>
               <Link target="_blank" rel="noopener noreferrer" href={"https://www.google.com/maps/search/?api=1&query=The+Collingwood+Press+6777+Camp+Bowie+Blvd+Fort+Worth+TX+76116"}
-                className=" text-slate-300 hover:text-[#F08A82] transition-colors flex items-center gap-2 group"
+                className=" text-slate-300 hover:text-[#F08A82] mt-1 transition-colors flex items-start gap-2 group"
               >
-                <MapPin size={14} className="text-[#E7665D] shrink-0 group-hover:scale-110 transition-transform" />
+                <MapPin size={16} className="text-[#E7665D] shrink-0 group-hover:scale-110 transition-transform" />
                 <p>6777 Camp Bowie Blvd, Fort Worth, TX 76116, United States</p>
               </Link>
               <div>
-                <span className="font-medium">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.963072729635!2d-97.4339746!3d32.7202269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7323299d9751%3A0xcc1f2e674682154f!2sThe%20Collingwood%20Press!5e1!3m2!1sen!2sus!4v1792605694864!5m2!1sen!2sus"
-                    width="150"
-                    height="50"
-                    style={{ border: "0" }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    title="The Collingwood Press Location"
-                  />
-                </span>
+
               </div>
             </div>
           </div>

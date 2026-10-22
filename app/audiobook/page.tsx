@@ -1,5 +1,5 @@
 
-import AudiobookPage from "@/components/sections/AudioBookClient";
+import AudiobookPage from "@/components/pages/AudioBookClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

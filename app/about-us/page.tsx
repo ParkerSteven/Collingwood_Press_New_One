@@ -103,7 +103,7 @@ export default function AboutUsPage() {
                         },
                         {
                             text: "Contact Our Editorial Desk",
-                            href: "/contact-us",
+                            href: "/contact-us#manuscript-review",
                             variant: "outline-white",
                         },
                     ]}
@@ -438,7 +438,7 @@ export default function AboutUsPage() {
                             {/* CTA Button */}
                             <div className="mt-10 text-center">
                                 <Button
-                                    href="/contact-us"
+                                    href="/contact-us#manuscript-review"
                                     variant="primary"
                                     size="lg"
                                 >

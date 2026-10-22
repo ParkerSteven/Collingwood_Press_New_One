@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, type ChangeEvent, type FormEvent } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { submitToGoogleSheet } from "@/lib/submitToGoogleSheet";
 import Link from "next/link";
@@ -29,12 +30,15 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
         marketingConsent: false,
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isDismissed, setIsDismissed] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     const router = useRouter();
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const handleClose = useCallback(() => {
-        setIsDismissed(true);
         onClose();
     }, [onClose]);
 
@@ -149,9 +153,9 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
         }
     };
 
-    if (!isOpen || isDismissed) return null;
+    if (!isOpen || !mounted) return null;
 
-    return (
+    return createPortal(
         <>
             <style>{`
         .lead-popup-overlay {
@@ -667,7 +671,7 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
                             </div>
 
                             <div className="lead-popup-footer-line ">
-                                Official Communication Channels • The The Collingwood Press
+                                Official Communication Channels • The Collingwood Press
                             </div>
                         </div>
                     </div>
@@ -816,7 +820,8 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
                     </div>
                 </div>
             </div>
-        </>
+        </>,
+        document.body
     );
 };
 

@@ -1,3 +1,173 @@
+import {
+  BookOpenText,
+  Palette,
+  Megaphone,
+  FileSpreadsheet,
+  FileText,
+  BookOpenCheck,
+  FileSearch,
+  ClipboardList,
+  PenLine,
+  PackageCheck,
+  BriefcaseBusiness,
+} from "lucide-react";
+
+import type { LucideIcon } from "lucide-react";
+
+export const benefits = [
+  {
+    number: "01",
+    icon: "/CollingwoodPressIcons/Dedicated Senior Editor.png",
+    title: "Dedicated Senior Editor",
+    description:
+      "A senior editor reviews your manuscript from start to finish.",
+  },
+  {
+    number: "02",
+    icon: "/CollingwoodPressIcons/Custom InDesign Typography.png",
+    title: "Custom InDesign Typography",
+    description:
+      "Professional interior formatting that looks print-ready.",
+  },
+  {
+    number: "03",
+    icon: "/CollingwoodPressIcons/Rights & Royalty Guarantee.png",
+    title: "100% Rights & Royalty Guarantee",
+    description:
+      "You keep full rights and higher royalties.",
+  },
+  {
+    number: "04",
+    icon: "/CollingwoodPressIcons/Direct Access to Publishing Directors.png",
+    title: "Direct Access to Publishing Directors",
+    description:
+      "Work directly with the team handling your book.",
+  },
+];
+
+
+export interface Service {
+  id: number;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  linkText: string;
+  href: string;
+}
+
+export const publishingSteps = [
+  {
+    number: "01",
+    title: "Free Manuscript Review",
+    icon: FileSearch,
+    description:
+      "Send us your manuscript or opening chapters. A senior editor reads your work and gives you a candid assessment, typically within 5 to 7 days.",
+    note: "Typically 5 to 7 days",
+  },
+  {
+    number: "02",
+    title: "Your Publishing Plan & Agreement",
+    icon: ClipboardList,
+    description:
+      "We map the services, timeline and budget around your goals, and put the terms, including your rights, in writing before any work begins.",
+    note: "Clear plans & transparent terms",
+  },
+  {
+    number: "03",
+    title: "Editing & Manuscript Refinement",
+    icon: PenLine,
+    description:
+      "Your senior editor takes the manuscript through the editing stages it needs, from developmental and line editing to copy editing and final proofreading.",
+    note: "Professional editorial refinement",
+  },
+  {
+    number: "04",
+    title: "Cover Design & Interior Typesetting",
+    icon: Palette,
+    description:
+      "We design an original cover and hand-typeset your interior in Adobe InDesign. You review and approve proofs before anything goes to print.",
+    note: "Original design & approved proofs",
+  },
+  {
+    number: "05",
+    title: "Production & Distribution Setup",
+    icon: PackageCheck,
+    description:
+      "We prepare your final files and configure metadata, categories and keywords, then set up distribution to Amazon, IngramSpark, Barnes & Noble and other retail channels.",
+    note: "Retail-ready production",
+  },
+  {
+    number: "06",
+    title: "Launch & Marketing",
+    icon: Megaphone,
+    description:
+      "We run your launch with ARC distribution, reviewer and media outreach and advertising, and keep momentum going after release day.",
+    note: "Launch support & ongoing visibility",
+  },
+];
+
+
+export const resources = [
+  {
+    id: 1,
+    icon: FileSpreadsheet,
+    title: "Standard Trade Word Template (.docx)",
+    description:
+      "Standard 1-inch margins, Times or Garamond 12pt, styled headings, and clean page breaks. Request your copy through our manuscript review form.",
+    buttonText: "Request Template",
+    href: "/contact-us#manuscript-review",
+  },
+  {
+    id: 2,
+    icon: FileText,
+    title: "Memoir Chapter Outline Kit (.pdf)",
+    description:
+      "Pacing worksheets and emotional arc mapping for autobiographical storytelling. Designed for memoirists working through their first draft.",
+    buttonText: "Request Kit",
+    href: "/contact-us#manuscript-review",
+  },
+  {
+    id: 3,
+    icon: BookOpenCheck,
+    title: "BISAC Subject Code Reference Guide",
+    description:
+      "Strategic categorization guide to optimize bookstore discoverability. Understanding BISAC codes is essential for any author using book distribution services to reach the right readers.",
+    buttonText: "Request Guide",
+    href: "/contact-us#manuscript-review",
+  },
+];
+
+export const teamMembers = [
+  {
+    id: "01",
+    name: "Lincoln Grayson",
+    role: "Publishing Director",
+    icon: BookOpenText,
+    image: "/LincoIn.jpeg", // Add verified team member photo path
+    imageAlt: "LincoIn",
+    // bio: "Lincoln leads the editorial side of The Collingwood. In US publishing, the Editorial Director sets editorial standards, oversees which manuscripts are taken on, and is accountable for the quality of every title that ships",
+  },
+  {
+    id: "02",
+    name: "Pamela Hayek",
+    role: "Editorial Director",
+    icon: BriefcaseBusiness,
+    image: "/Pamela.jpeg", // Add verified team member photo path
+    imageAlt: "Pamela",
+    // bio: "Pamela keeps every title on schedule and to standard from manuscript to print. In US publishing, the Managing Editor coordinates copyediting, proofreading, design and production, and is the author’s main point of contact for timelines.,specialty: 'Publishing Direction'",
+  },
+  {
+    id: "03",
+    name: "Camden Wayne",
+    role: "Design & Marketing Lead",
+    icon: Palette,
+    image: "/Camden.jpeg", // Add verified team member photo path
+    imageAlt: "Camden",
+    // bio: "Camden is responsible for getting each book in front of its readers. In US publishing, this role plans the launch, manages retailer presence and drives reviews and media coverage.",
+  },
+];
+
+
 export interface StatItem {
   value: string;
   label: string;
@@ -25,6 +195,8 @@ export const stats: StatItem[] = [
     label: "Copyright & Royalties Retained",
   },
 ];
+
+
 
 export const AboutStats: StatItem[] = [
   {

@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
     CalendarDays,
-    Clock,
-    User,
     ArrowRight,
     ArrowLeft,
     ChevronRight,
@@ -13,16 +11,14 @@ import {
     CheckCircle2,
     Sparkles,
     PhoneCall,
-    Share2,
 } from 'lucide-react';
-
 import { decodeHTMLEntities } from '@/lib/util';
 import UtilityBar from '@/components/layout/UtilityBar';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import BlogShareButtons from '@/components/site/BlogShareButtons';
+import BlogArticleActions from '@/components/pages/BlogArticleSections';
 
 export const revalidate = 60;
 
@@ -118,6 +114,25 @@ async function fetchPostBySlug(slug: string): Promise<WordPressPost | null> {
 
     return null;
 }
+
+
+
+function formatBlogHtml(html: string): string {
+    // Find standalone TL;DR heading or paragraph.
+    const tldrRegex =
+        /<(h[1-6]|p)\b[^>]*>\s*(?:<(?:strong|b|span)\b[^>]*>\s*)*TL\s*[,;:]?\s*DR\s*:?\s*(?:<\/(?:strong|b|span)>\s*)*<\/\1>\s*(<p\b[^>]*>[\s\S]*?<\/p>)/i;
+
+    return html.replace(tldrRegex, (_match, _tag, paragraph: string) => {
+        const description = paragraph
+            .replace(/^<p\b[^>]*>/i, "")
+            .replace(/<\/p>\s*$/i, "")
+            .trim();
+
+        return `<p class="blog-tldr-inline"><strong>TL;DR: </strong>${description}</p>`;
+    });
+}
+
+
 
 async function fetchRecentPosts(excludeSlug: string): Promise<WordPressPost[]> {
     try {
@@ -272,26 +287,60 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
             <Header />
 
             <main className="min-h-screen bg-[#faf8f5] text-[#181511]">
+                {/* Scoped rules for the HTML coming from WordPress */}
+                <style>{`
+                    .blog-article-content { min-width: 0; overflow-wrap: break-word; }
+                    .blog-article-content img,
+                    .blog-article-content figure img {
+                        display: block;
+                        max-width: 100% !important;
+                        height: auto !important;
+                        object-fit: contain !important;
+                    }
+                    .blog-article-content .blog-tldr-label {
+                        display: inline !important;
+                        color: #E7665D;
+                        font-weight: 700;
+                        margin-right: 0.3rem;
+                    }
+                    .blog-article-content figure { max-width: 100%; margin-left: 0; margin-right: 0; }
+                    .blog-article-content .wp-block-table { max-width: 100%; overflow-x: auto; }
+                    .blog-article-content table {
+                        display: block;
+                        width: 100%;
+                        overflow-x: auto;
+                        border-collapse: collapse;
+                        -webkit-overflow-scrolling: touch;
+                    }
+                    .blog-article-content table th,
+                    .blog-article-content table td {
+                        padding: 12px 14px;
+                        min-width: 145px;
+                        vertical-align: top;
+                        text-align: left;
+                        white-space: normal;
+                        word-break: normal;
+                        overflow-wrap: normal;
+                        hyphens: none;
+                    }
+                    .blog-article-content table th:first-child,
+                    .blog-article-content table td:first-child {
+                        min-width: 190px;
+                    }
+                    .blog-article-content table th { font-weight: 600; }
+                    .blog-article-content :is(h2, h3, h4):has(+ p) { scroll-margin-top: 100px; }
+                    @media (max-width: 639px) {
+                        .blog-article-content table th,
+                        .blog-article-content table td { min-width: 130px; padding: 10px 12px; }
+                        .blog-article-content table th:first-child,
+                        .blog-article-content table td:first-child { min-width: 165px; }
+                    }
+                `}</style>
                 {/* Hero / Header Section */}
                 <section className="relative overflow-hidden bg-[#0d1527] pt-12 pb-16 text-white sm:pt-16 sm:pb-24 border-b border-white/10">
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1d2b4f]/60 via-[#0d1527] to-[#070b14] pointer-events-none" />
 
                     <Container className="relative z-10 max-w-4xl">
-                        {/* Breadcrumbs */}
-                        {/* <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-white/70">
-                            <Link href="/" className="transition hover:text-white">
-                                Home
-                            </Link>
-                            <ChevronRight className="h-3.5 w-3.5 text-white/40" />
-                            <Link href="/blogs" className="transition hover:text-white">
-                                The Collingwood Press Journal
-                            </Link>
-                            <ChevronRight className="h-3.5 w-3.5 text-white/40" />
-                            <span className="truncate max-w-[220px] sm:max-w-xs text-white/90 font-medium">
-                                {title}
-                            </span>
-                        </nav> */}
-
                         {/* Category Badge */}
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#E7665D]/30 bg-[#E7665D]/15 px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#F08A82]">
                             <BookOpen className="h-3.5 w-3.5" />
@@ -306,10 +355,10 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                 </section>
 
                 {/* Main Content Area */}
-                <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-                    <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+                <section className="mx-auto max-w-[1500px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 xl:gap-10">
                         {/* Article Body Column */}
-                        <article className="lg:col-span-8">
+                        <article className="min-w-0 lg:col-span-9">
                             {/* Featured Image */}
                             {featuredImage && (
                                 <div className="mb-10 overflow-hidden rounded-xl border border-line bg-white shadow-card">
@@ -317,7 +366,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                                     <img
                                         src={featuredImage}
                                         alt={title}
-                                        className="h-auto w-full max-h-[500px] object-cover"
+                                        className="block h-auto max-h-[520px] w-full object-contain"
                                         loading="eager"
                                     />
                                 </div>
@@ -325,20 +374,14 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
 
                             {/* Rendered WordPress HTML Content */}
                             <div
-                                className="blog-article-content rounded-xl border border-[#ebe4df] bg-white p-6 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgba(17,24,39,0.04)]"
-                                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+                                className="blog-article-content rounded-xl border border-[#ebe4df] bg-white p-5 sm:p-7 lg:p-8"
+                                dangerouslySetInnerHTML={{
+                                    __html: formatBlogHtml(post.content.rendered),
+                                }}
                             />
 
-                            {/* Share Strip & Article Footer */}
-                            <div className="mt-10 rounded-lg border border-[#e8e0dc] bg-white p-6 shadow-sm">
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted">
-                                        <Share2 className="h-4 w-4 text-[#E7665D]" />
-                                        <span>Found this valuable? Share with fellow writers:</span>
-                                    </div>
-                                    <BlogShareButtons title={title} url={canonicalUrl} />
-                                </div>
-                            </div>
+                            {/* Interactive share controls stay inside a Client Component */}
+                            <BlogArticleActions title={title} url={canonicalUrl} />
 
                             {/* Author Bio Box */}
                             <div className="mt-8 flex flex-col sm:flex-row gap-5 rounded-xl border border-[#e8e0dc] bg-[#fffefa] p-7 shadow-sm">
@@ -375,7 +418,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                         </article>
 
                         {/* Sidebar Column */}
-                        <aside className="lg:col-span-4 space-y-8">
+                        <aside className="min-w-0 space-y-8 lg:col-span-3">
                             {/* Sticky Manuscript Consultation Card */}
                             <div className="sticky top-28 space-y-6">
                                 <div className="rounded-xl border border-[#E7665D]/30 bg-gradient-to-b from-[#fffefe] to-[#fbf7f4] p-6 shadow-[0_10px_30px_rgba(231,102,93,0.08)]">

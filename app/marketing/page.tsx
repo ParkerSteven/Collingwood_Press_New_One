@@ -1,5 +1,5 @@
 
-import MarketingPage from "@/components/sections/MarketingPageClient";
+import MarketingPage from "@/components/pages/MarketingPageClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -7,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { openAIChat } from "@/lib/chat";
+import PopupForm from "@/components/forms/popupform";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 16 },
@@ -21,6 +23,8 @@ const fadeUp = {
 };
 
 export default function HeroAnimated() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
     return (
         <>
             {/* Left Column */}
@@ -62,13 +66,21 @@ export default function HeroAnimated() {
                     custom={3}
                     className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
                 >
-                    <Button href="/contact-us#manuscript-review" variant="primary" size="md" className="shadow-sm hover:shadow-md">
+                    <Button
+                        onClick={() => setIsPopupOpen(true)}
+                        variant="primary"
+                        size="md"
+                        className="shadow-sm hover:shadow-md cursor-pointer"
+                    >
                         <span>Get a Free Publishing Consultation</span>
                         <ArrowRight size={15} />
                     </Button>
                     <Button
                         onClick={openAIChat}
-                        variant="outline" size="md" className="text-white">
+                        variant="outline"
+                        size="md"
+                        className="text-white cursor-pointer"
+                    >
                         Talk to a Senior Editor
                     </Button>
                 </motion.div>
@@ -139,6 +151,13 @@ export default function HeroAnimated() {
                     />
                 </div>
             </motion.div>
+
+            {/* Lead Consultation Popup Form */}
+            <PopupForm
+                isOpen={isPopupOpen}
+                onClose={() => setIsPopupOpen(false)}
+                source="Hero Section - Free Publishing Consultation"
+            />
         </>
     );
 }

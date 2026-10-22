@@ -1,4 +1,4 @@
-import EditingPageClient from "@/components/sections/EditingPageClient";
+import EditingPageClient from "@/components/pages/EditingPageClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
