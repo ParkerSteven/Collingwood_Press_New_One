@@ -66,7 +66,7 @@ export default function Testimonials() {
                 <div className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full" />
 
                 {/* Image and Title */}
-                <div className="mb-3 flex items-start gap-2">
+                <div className="mb-3 flex items-center sm:items-start gap-2">
 
                   <div className="relative flex h-14 w-14 shrink-0 items-center justify-center">
                     <Image

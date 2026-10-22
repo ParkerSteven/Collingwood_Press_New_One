@@ -6,21 +6,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import {
   ArrowRight,
-  MapPin,
-  Phone,
-  Mail,
-  BookOpenText,
 } from "lucide-react";
-
-const businessInfo = {
-  name: "The Collingwood Press",
-  street: "[INSERT street address]",
-  city: "Fort Worth",
-  state: "TX",
-  zip: "[INSERT ZIP]",
-  phone: "[INSERT phone]",
-  email: "[INSERT email]",
-};
 
 type FinalCTAProps = {
   eyebrow?: string;
@@ -82,13 +68,13 @@ export default function FinalCTA({
         >
           {/* Eyebrow */}
           <div className="mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
 
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F08A82]">
               {eyebrow}
             </span>
 
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           {/* Heading */}
@@ -110,14 +96,8 @@ export default function FinalCTA({
               href={buttonHref}
               variant="primary"
               size="lg"
-              className="max-w-full px-7 py-4 text-center text-sm shadow-[0_10px_30px_rgba(231,102,93,0.22)] transition-shadow hover:shadow-[0_15px_35px_rgba(231,102,93,0.3)] sm:px-9 sm:text-base"
+              className="max-w-full px-4 py-4 text-center text-sm shadow-[0_10px_30px_rgba(231,102,93,0.22)] transition-shadow hover:shadow-[0_15px_35px_rgba(231,102,93,0.3)] sm:px-9 sm:text-base"
             >
-              <BookOpenText
-                size={17}
-                strokeWidth={1.7}
-                aria-hidden="true"
-              />
-
               <span>
                 {buttonText}
               </span>

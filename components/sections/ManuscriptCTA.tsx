@@ -58,13 +58,13 @@ export default function ManuscriptCTA() {
           className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
 
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
               Hear It From Our Authors
             </span>
 
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2

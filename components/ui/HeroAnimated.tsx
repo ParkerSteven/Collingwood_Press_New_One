@@ -40,7 +40,7 @@ export default function HeroAnimated() {
                     initial="hidden"
                     animate="show"
                     custom={1}
-                    className="mt-6  font-serif text-[3rem] sm:text-[3rem] lg:text-[3.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance"
+                    className="mt-6  font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance"
                 >
                     Trusted Book Publishing{" "}
                     <span className="text-[#E7665D] italic font-normal inline">

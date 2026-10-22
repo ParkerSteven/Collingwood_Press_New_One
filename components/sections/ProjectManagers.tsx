@@ -73,13 +73,13 @@ export default function ProjectManagers() {
           className="mx-auto mb-12 max-w-4xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
 
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
               Know Your Options Before You Commit
             </span>
 
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2
@@ -154,7 +154,7 @@ export default function ProjectManagers() {
                       />
 
                       <span className="text-sm font-semibold leading-snug text-ink">
-                        Self-Publishing with The Collingwood Press
+                        Self-Publishing
                       </span>
                     </div>
 

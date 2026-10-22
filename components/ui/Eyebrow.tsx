@@ -28,19 +28,17 @@ export default function Eyebrow({
 
   return (
     <div
-      className={`inline-flex items-center gap-3 ${
-        align === "center" ? "justify-center mx-auto" : "justify-start"
-      }`}
-    >
-      <span className={`h-px w-6 sm:w-8 ${lineColors[tone] || lineColors.coral}`} aria-hidden="true" />
-      <span
-        className={`font-sans text-[11px] sm:text-[11.5px] font-semibold tracking-[0.2em] uppercase ${
-          toneClasses[tone] || toneClasses.coral
+      className={`inline-flex items-center gap-3 ${align === "center" ? "justify-center mx-auto" : "justify-start"
         }`}
+    >
+      {/* <span className={`h-px w-6 sm:w-8 ${lineColors[tone] || lineColors.coral}`} aria-hidden="true" /> */}
+      <span
+        className={`font-sans text-[11px] sm:text-[11.5px] font-semibold tracking-[0.2em] uppercase ${toneClasses[tone] || toneClasses.coral
+          }`}
       >
         {children}
       </span>
-      <span className={`h-px w-6 sm:w-8 ${lineColors[tone] || lineColors.coral}`} aria-hidden="true" />
+      {/* <span className={`h-px w-6 sm:w-8 ${lineColors[tone] || lineColors.coral}`} aria-hidden="true" /> */}
     </div>
   );
 }

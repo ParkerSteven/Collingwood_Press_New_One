@@ -138,31 +138,26 @@ export default function Footer() {
 
           {/* Left Column: Branding, Description & Badges (4 cols) */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-4 lg:pr-6">
-            <Link href="/" className="flex items-center gap-3 group w-fit">
-              {/* <span className="flex h-10 w-10 items-center justify-center rounded-xs border border-[#C5A059]/40 bg-[#C5A059]/10 text-[#C5A059] font-serif text-xl font-bold transition-all group-hover:border-[#C5A059] group-hover:bg-[#C5A059]/20">
-                C
-              </span>
-              <div className="flex flex-col">
-                <span className="font-serif text-[1.3rem] font-bold text-white leading-tight tracking-tight group-hover:text-[#E8C98B] transition-colors">
-                  The Collingwood Press
-                </span>
-                <span className="font-sans text-[8.5px] uppercase tracking-[0.18em] text-[#C5A059]/80 font-medium">
-                  Independent Publishing House &bull; Est. 2009
-                </span>
-              </div> */}
-              <Image src={'/footerLogo.png'}
-                alt="The Collingwood Press"
-                width={260}
-                height={50}
-                priority
-                className="object-contain" />
-            </Link>
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <Link
+                href="/"
+                className="flex items-center justify-center md:justify-start gap-3 group w-fit"
+              >
+                <Image
+                  src="/footerLogo.png"
+                  alt="The Collingwood Press"
+                  width={260}
+                  height={50}
+                  priority
+                  className="object-contain"
+                />
+              </Link>
 
-            <p className="text-[0.78rem] leading-relaxed text-slate-300 max-w-sm font-sans">
-              A boutique independent press dedicated to shepherding fine manuscripts into print with
-              trade-grade editing, bespoke typography, and international distribution.
-            </p>
-
+              <p className="text-[0.78rem] leading-relaxed text-slate-300 max-w-sm font-sans mt-3">
+                A boutique independent press dedicated to shepherding fine manuscripts into print with
+                trade-grade editing, bespoke typography, and international distribution.
+              </p>
+            </div>
             {/* Accreditation Badges */}
             <div className="mt-4 w-full">
               <div className="flex items-center justify-center gap-6 sm:gap-8">

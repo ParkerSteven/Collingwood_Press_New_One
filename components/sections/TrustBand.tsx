@@ -87,13 +87,13 @@ export default function TrustBand() {
           className="relative z-10 mx-auto mb-12 max-w-3xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
 
             <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F08A82] sm:text-[11px]">
               Everything Your Book Needs, Handled by One Team
             </span>
 
-            <span className="h-px w-8 bg-[#E7665D]" />
+            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2
@@ -150,7 +150,7 @@ export default function TrustBand() {
                 The Collingwood Press
               </span>
 
-              <p className="mt-1 font-serif text-xl text-white sm:text-2xl">
+              <p className="mt-1 font-sans text-[12px] text-white sm:text-base">
                 One dedicated team. Every stage of your book.
               </p>
             </div>

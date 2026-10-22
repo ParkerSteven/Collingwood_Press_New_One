@@ -209,13 +209,13 @@ export default function HomeBlogs() {
                     className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
                 >
                     <div className="mb-5 flex items-center justify-center gap-3">
-                        <span className="h-px w-8 bg-[#E7665D]" />
+                        {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
 
                         <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
                             From The Collingwood Press
                         </span>
 
-                        <span className="h-px w-8 bg-[#E7665D]" />
+                        {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
                     </div>
 
                     <h2
@@ -305,17 +305,14 @@ export default function HomeBlogs() {
                                 >
                                     <article className="flex h-full flex-col overflow-hidden rounded-sm border border-[#E7665D]/20 bg-white shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#E7665D]/50 group-hover:shadow-[0_12px_32px_rgba(231,102,93,0.15)]">
 
-                                        {/* Blog Image */}
-                                        <div className="relative h-48 sm:h-48 lg:h-44 xl:h-52 shrink-0 overflow-hidden bg-[#172238]">
+                                        <div className="w-full overflow-hidden">
                                             <Image
                                                 src={post.image}
                                                 alt={post.imageAlt}
-                                                fill
-                                                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
-                                                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                                                width={800}
+                                                height={550}
+                                                className="w-full h-auto md:h-[260px] md:object-cover object-center"
                                             />
-
-                                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101A30]/50 via-transparent to-transparent" />
                                         </div>
 
                                         {/* Blog Content */}
