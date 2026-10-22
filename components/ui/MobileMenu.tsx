@@ -53,13 +53,13 @@ export default function MobileMenu() {
                                 Direct Press Line: +1 (936) 223-3644
                             </a>
                             <Button
-                                href="/contact-us"
+                                href="/contact-us#manuscript-review"
                                 variant="primary"
                                 size="sm"
                                 className="w-full text-xs font-semibold py-2.5"
                                 onClick={() => setOpen(false)}
                             >
-                                Claim Your Free Manuscript
+                                Complimentary Manuscript Review
                             </Button>
                         </div>
                     </Container>
