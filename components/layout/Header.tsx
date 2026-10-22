@@ -82,7 +82,7 @@ export default function Header() {
             <ArrowUpRight size={13} />
           </Button> */}
           <Button
-            href="/contact-us"
+            href="/contact-us#manuscript-review "
             variant="primary"
             size="sm"
             className="px-3 py-2 text-xs font-semibold"

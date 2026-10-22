@@ -17,6 +17,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import { faqs, stats } from "@/lib/data";
 import HomeBlogs from "@/components/sections/HomeBlogs";
+import BookCarousel from "@/components/sections/BookCovers";
 
 export default function Home() {
   return (
@@ -30,7 +31,8 @@ export default function Home() {
         <Testimonials />
         <TrustBand />
         <ServicesGrid />
-        <CoverSpotlight />
+        {/* <CoverSpotlight /> */}
+        <BookCarousel />
         <ProjectManagers />
         {/* <Catalog /> */}
         {/* <RelatedCarousel /> */}

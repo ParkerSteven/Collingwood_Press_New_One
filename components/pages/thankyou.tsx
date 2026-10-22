@@ -18,6 +18,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MarketingServices from "../sections/MarketingServices";
+import { openAIChat } from "@/lib/chat";
 import UtilityBar from "../layout/UtilityBar";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
@@ -79,17 +80,9 @@ function ThankyouContent(): ReactElement {
         )
         .join(" ");
 
-    // Open Brevo chat or fallback popup
+    // Open AI chat or Brevo chat
     const handleOpenChat = (): void => {
-        const chatWindow = window as Window & {
-            BrevoConversations?: (command: "openChat") => void;
-        };
-
-        if (typeof chatWindow.BrevoConversations === "function") {
-            chatWindow.BrevoConversations("openChat");
-        } else {
-            window.dispatchEvent(new Event("openFallbackPopup"));
-        }
+        openAIChat();
     };
 
     return (

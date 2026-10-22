@@ -6,6 +6,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { openAIChat } from "@/lib/chat";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 16 },
@@ -61,11 +62,13 @@ export default function HeroAnimated() {
                     custom={3}
                     className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
                 >
-                    <Button href="/contact-us" variant="primary" size="md" className="shadow-sm hover:shadow-md">
+                    <Button href="/contact-us#manuscript-review" variant="primary" size="md" className="shadow-sm hover:shadow-md">
                         <span>Get a Free Publishing Consultation</span>
                         <ArrowRight size={15} />
                     </Button>
-                    <Button href="/contact-us" variant="outline" size="md" className="text-white">
+                    <Button
+                        onClick={openAIChat}
+                        variant="outline" size="md" className="text-white">
                         Talk to a Senior Editor
                     </Button>
                 </motion.div>

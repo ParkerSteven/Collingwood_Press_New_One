@@ -83,7 +83,7 @@ export async function generateMetadata({ searchParams }: BlogsPageProps): Promis
     };
 }
 
-const POSTS_PER_PAGE = 9;
+const POSTS_PER_PAGE = 10;
 const WP_POSTS_ENDPOINT = 'https://collingwoodblogs.hambonepublishers.com/wp-json/wp/v2/posts';
 const WP_REQUEST_HEADERS = {
     Accept: 'application/json',
@@ -229,8 +229,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                 } catch (retryError) {
                     if (attempt < MAX_RETRIES) {
                         console.warn(
-                            `WP API fetch error on attempt ${attempt}: ${
-                                retryError instanceof Error ? retryError.message : String(retryError)
+                            `WP API fetch error on attempt ${attempt}: ${retryError instanceof Error ? retryError.message : String(retryError)
                             }, retrying...`
                         );
                         await new Promise((r) => setTimeout(r, 500 * attempt));
@@ -347,8 +346,8 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                                     <img
                                         src={getImageUrl(featuredPost)}
                                         alt={plainText(featuredPost.title.rendered)}
-                                        loading="eager"
-                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                                        loading="lazy"
+                                        className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
                                     />
                                     <span className="absolute left-5 top-5 rounded-sm bg-[#eb6c63] px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white">
                                         Featured Story
@@ -417,11 +416,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                                 href={buildBlogPageHref(Math.max(1, currentPage - 1))}
                                 aria-disabled={currentPage === 1}
                                 tabIndex={currentPage === 1 ? -1 : undefined}
-                                className={`inline-flex h-11 items-center gap-1 rounded-sm border px-4 text-xs font-bold transition-colors ${
-                                    currentPage === 1
-                                        ? 'pointer-events-none border-[#e4e0dd] text-[#b3b5b8]'
-                                        : 'border-[#ded8d3] bg-white text-[#172238] hover:border-[#eb6c63] hover:text-[#eb6c63]'
-                                }`}
+                                className={`inline-flex h-11 items-center gap-1 rounded-sm border px-4 text-xs font-bold transition-colors ${currentPage === 1
+                                    ? 'pointer-events-none border-[#e4e0dd] text-[#b3b5b8]'
+                                    : 'border-[#ded8d3] bg-white text-[#172238] hover:border-[#eb6c63] hover:text-[#eb6c63]'
+                                    }`}
                             >
                                 <ChevronLeft className="h-4 w-4" /> Previous
                             </Link>
@@ -447,11 +445,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                                         key={pageNumber}
                                         href={buildBlogPageHref(pageNumber)}
                                         aria-current={isCurrent ? 'page' : undefined}
-                                        className={`inline-flex h-11 min-w-11 items-center justify-center rounded-sm border px-3 text-xs font-bold transition-colors ${
-                                            isCurrent
-                                                ? 'border-[#eb6c63] bg-[#eb6c63] text-white shadow-sm'
-                                                : 'border-[#ded8d3] bg-white text-[#172238] hover:border-[#eb6c63] hover:text-[#eb6c63]'
-                                        }`}
+                                        className={`inline-flex h-11 min-w-11 items-center justify-center rounded-sm border px-3 text-xs font-bold transition-colors ${isCurrent
+                                            ? 'border-[#eb6c63] bg-[#eb6c63] text-white shadow-sm'
+                                            : 'border-[#ded8d3] bg-white text-[#172238] hover:border-[#eb6c63] hover:text-[#eb6c63]'
+                                            }`}
                                     >
                                         {pageNumber}
                                     </Link>
@@ -463,11 +460,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                                 href={buildBlogPageHref(Math.min(totalPages, currentPage + 1))}
                                 aria-disabled={currentPage === totalPages}
                                 tabIndex={currentPage === totalPages ? -1 : undefined}
-                                className={`inline-flex h-11 items-center gap-1 rounded-sm border px-4 text-xs font-bold transition-colors ${
-                                    currentPage === totalPages
-                                        ? 'pointer-events-none border-[#e4e0dd] text-[#b3b5b8]'
-                                        : 'border-[#ded8d3] bg-white text-[#172238] hover:border-[#eb6c63] hover:text-[#eb6c63]'
-                                }`}
+                                className={`inline-flex h-11 items-center gap-1 rounded-sm border px-4 text-xs font-bold transition-colors ${currentPage === totalPages
+                                    ? 'pointer-events-none border-[#e4e0dd] text-[#b3b5b8]'
+                                    : 'border-[#ded8d3] bg-white text-[#172238] hover:border-[#eb6c63] hover:text-[#eb6c63]'
+                                    }`}
                             >
                                 Next <ChevronRight className="h-4 w-4" />
                             </Link>

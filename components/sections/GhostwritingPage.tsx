@@ -551,7 +551,7 @@ export default function GhostwritingClientPage() {
                             {/* CTA Button */}
                             <div className="mt-10 flex justify-center">
                                 <Button
-                                    href="/contact-us"
+                                    href="/contact-us#manuscript-review"
                                     variant="primary"
                                     size="lg"
                                 >
@@ -1185,7 +1185,7 @@ export default function GhostwritingClientPage() {
                         </>
                     }
                     buttonText="Get a Ghostwriting Quote"
-                    buttonHref="/contact-us"
+                    buttonHref="/contact-us#manuscript-review"
                 />
             </main>
             <Footer />

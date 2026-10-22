@@ -182,7 +182,7 @@ export default function AudiobookPage() {
           buttons={[
             {
               text: "Audition Narrators for Your Book",
-              href: "/contact-us",
+              href: "/contact-us#manuscript-review",
               variant: "primary",
               showArrow: true,
             },
@@ -389,7 +389,7 @@ export default function AudiobookPage() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row items-start gap-2 pt-2">
                   <Button
-                    href="/contact-us"
+                    href="/contact-us#manuscript-review"
                     variant="primary"
                     size="lg"
                   >
@@ -398,7 +398,7 @@ export default function AudiobookPage() {
                   </Button>
 
                   <Button
-                    href="/contact-us"
+                    href="/contact-us#manuscript-review"
                     variant="outline"
                     size="lg"
                   >
@@ -630,7 +630,7 @@ export default function AudiobookPage() {
                 </p>
 
                 <Button
-                  href="/contact-us"
+                  href="/contact-us#manuscript-review"
                   variant="primary"
                   size="lg"
                 >
@@ -1122,7 +1122,7 @@ export default function AudiobookPage() {
             </>
           }
           buttonText="Get a Custom Production Quote"
-          buttonHref="/contact-us"
+          buttonHref="/contact-us#manuscript-review"
         />
 
 

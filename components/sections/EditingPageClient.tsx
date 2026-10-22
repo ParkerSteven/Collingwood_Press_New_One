@@ -5,18 +5,15 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
 import {
     FileCheck2,
-    Sparkles,
     BookOpen,
     CheckCircle2,
     Search,
     Layers,
     ArrowRight,
     ShieldCheck,
-    Check,
     MessageSquareQuote,
     ClipboardCheck,
     PenTool,
@@ -24,7 +21,6 @@ import {
     Clock,
     PhoneCall
 } from "lucide-react";
-import { motion } from "framer-motion";
 import FAQAccordion from "./FAQAccordion";
 import { editingFAQs } from "@/lib/data";
 import FinalCTA from "./FinalCTA";
@@ -183,13 +179,13 @@ export default function EditingPageClient() {
                     buttons={[
                         {
                             text: "Get a Quote",
-                            href: "/contact-us",
+                            href: "/contact-us#manuscript-review",
                             variant: "primary",
                             showArrow: true,
                         },
                         {
                             text: "Request a Free Sample Edit",
-                            href: "/contact-us",
+                            href: "/contact-us#manuscript-review",
                             variant: "outline-white",
                         },
                     ]}
@@ -380,7 +376,7 @@ export default function EditingPageClient() {
                             </div>
 
                             <Button
-                                href="/contact-us"
+                                href="/contact-us#manuscript-review"
                                 variant="primary"
                                 size="lg"
                             >
@@ -835,7 +831,7 @@ export default function EditingPageClient() {
                                 {/* CTA Button */}
                                 <div className="shrink-0">
                                     <Button
-                                        href="/contact-us"
+                                        href="/contact-us#manuscript-review"
                                         variant="primary"
                                         size="lg"
                                     >
@@ -886,7 +882,7 @@ export default function EditingPageClient() {
                         </>
                     }
                     buttonText="Get a Quote for Your Manuscript"
-                    buttonHref="/contact-us"
+                    buttonHref="/contact-us#manuscript-review"
                 />
 
 

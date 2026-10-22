@@ -20,7 +20,7 @@ const services = [
   {
     number: "01",
     icon: BookOpenText,
-    title: "Book Editing & Proofreading Services",
+    title: "Book Editing Services",
     description:
       "Our book editing services cover every stage: developmental editing for structure and argument, line editing for voice, copy editing for consistency, and final proofreading.",
     link: "/editing/",
@@ -38,7 +38,7 @@ const services = [
   {
     number: "03",
     icon: BookMarked,
-    title: "Publishing Guidance",
+    title: "Publishing Services",
     description:
       "Through our publishing services, you get the editorial precision, design quality and retail distribution of a traditional house, while you keep 100% of your copyright and royalties.",
     link: "/publishing/",
@@ -137,7 +137,7 @@ export default function TrustBand() {
                   delay: Math.min(index * 0.08, 0.32),
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-gradient-to-b from-[#172138] to-[#101A2E] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_18px_42px_rgba(0,0,0,0.18)] sm:p-8 ${index < 3
+                className={`group relative flex h-full flex-col overflow-hidden rounded-lg border border-white/10 bg-gradient-to-b from-[#172138] to-[#101A2E] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_18px_42px_rgba(0,0,0,0.18)] sm:p-6 ${index < 3
                   ? "lg:col-span-2"
                   : "lg:col-span-3"
                   }`}
@@ -157,15 +157,11 @@ export default function TrustBand() {
                       aria-hidden="true"
                     />
                   </div>
-
-                  <span className="font-serif text-[2.5rem] italic leading-none text-white/10">
-                    {service.number}
-                  </span>
                 </div>
 
                 {/* Service text */}
                 <div className="flex flex-1 flex-col">
-                  <h3 className="max-w-md font-serif text-[1.3rem] font-medium leading-[1.2] text-white transition-colors duration-300 group-hover:text-[#F08A82] sm:text-[1.4rem]">
+                  <h3 className="max-w-md font-serif text-[1rem] font-medium leading-[1.2] text-white transition-colors duration-300 group-hover:text-[#F08A82] sm:text-[1.3rem]">
                     {service.title}
                   </h3>
 

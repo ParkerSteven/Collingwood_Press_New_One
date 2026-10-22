@@ -69,13 +69,14 @@ const publishingSteps = [
 
 export default function ServicesGrid() {
   return (
+
     <section
       id="publishing-process"
       aria-labelledby="publishing-process-heading"
       className="relative overflow-hidden border-b border-line bg-[#FCFAF7] py-20 lg:py-28"
     >
       <Container>
-        {/* Section heading */}
+        {/* Section heading - unchanged */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,80 +112,136 @@ export default function ServicesGrid() {
           </p>
         </motion.div>
 
-        {/* Six-step process grid */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {publishingSteps.map((step, index) => {
-            const Icon = step.icon;
+        {/* Connected Publishing Process */}
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-3 lg:gap-y-24">
+            {publishingSteps.map((step, index) => {
+              const Icon = step.icon;
 
-            return (
-              <motion.article
-                key={step.number}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.55,
-                  delay: (index % 3) * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-sm border border-[#E7665D]/20 bg-white p-7 shadow-[0_4px_20px_rgba(17,26,48,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_14px_35px_rgba(231,102,93,0.10)] sm:p-8"
-              >
-                {/* Top accent */}
-                <div
-                  aria-hidden="true"
-                  className="absolute left-0 top-0 h-[2px] w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full"
-                />
+              // Snake flow:
+              // 1 -> 2 -> 3
+              //           |
+              // 6 <- 5 <- 4
 
-                {/* Step header */}
-                <div className="mb-6 flex items-start justify-between border-b border-line/70 pb-6">
-                  <div>
-                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
-                      Step {step.number}
-                    </span>
+              const positions = [
+                "lg:col-start-1 lg:row-start-1",
+                "lg:col-start-2 lg:row-start-1",
+                "lg:col-start-3 lg:row-start-1",
+                "lg:col-start-3 lg:row-start-2",
+                "lg:col-start-2 lg:row-start-2",
+                "lg:col-start-1 lg:row-start-2",
+              ];
 
-                    <div className="mt-2 font-serif text-[2.7rem] font-normal leading-none text-[#E7665D]/35">
-                      {step.number}
-                    </div>
-                  </div>
-
-                  <div className="flex h-12 w-12 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#FDF3F1] text-[#E7665D] transition-colors duration-300 group-hover:border-[#E7665D]/50">
+              return (
+                <motion.article
+                  key={step.number}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: (index % 3) * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className={`group relative flex h-full min-w-0 flex-col rounded-xl border border-[#E7665D]/20 bg-white px-6 pb-7 pt-12 shadow-[0_8px_30px_rgba(17,26,48,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_15px_40px_rgba(231,102,93,0.12)] sm:px-8 ${positions[index] ?? ""}`}
+                >
+                  {/* Floating Icon */}
+                  <div className="absolute -top-7 left-7 flex h-14 w-14 items-center justify-center rounded-full border-4 border-[#FCFAF7] bg-[#E7665D] text-white shadow-lg">
                     <Icon
                       size={23}
-                      strokeWidth={1.5}
+                      strokeWidth={1.6}
                       aria-hidden="true"
                     />
                   </div>
-                </div>
 
-                {/* Step content */}
-                <div className="flex flex-1 flex-col">
-                  <h3 className="font-serif text-[1.3rem] font-medium leading-[1.22] text-ink sm:text-[1.3rem]">
-                    {step.title}
-                  </h3>
+                  {/* Step Number */}
+                  <div className="mb-5 flex items-center justify-between">
+                    <span className="font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-[#E7665D]">
+                      Step {step.number}
+                    </span>
 
-                  <p className="mt-4 font-sans text-[0.79rem] leading-[1.85] text-ink-muted sm:text-[0.84rem]">
-                    {step.description}
-                  </p>
-                </div>
+                    <span className="font-serif text-4xl italic text-[#E7665D]/20">
+                      {step.number}
+                    </span>
+                  </div>
 
-                {/* Card footer */}
-                <div className="mt-8 flex items-center gap-2 border-t border-line/70 pt-5">
-                  <CheckCircle2
-                    size={15}
-                    strokeWidth={1.8}
-                    className="shrink-0 text-[#E7665D]"
-                    aria-hidden="true"
-                  />
+                  {/* Original Content */}
+                  <div className="flex flex-1 flex-col">
+                    <h3 className="font-serif text-[1.3rem] font-medium leading-[1.22] text-ink">
+                      {step.title}
+                    </h3>
 
-                  <span className="font-sans text-[11px] font-medium text-ink-soft">
-                    {step.note}
-                  </span>
-                </div>
-              </motion.article>
-            );
-          })}
+                    <p className="mt-4 font-sans text-[0.84rem] leading-[1.85] text-ink-muted">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  {/* Original Footer */}
+                  <div className="mt-7 flex items-center gap-2 border-t border-line/70 pt-5">
+                    <CheckCircle2
+                      size={15}
+                      strokeWidth={1.8}
+                      className="shrink-0 text-[#E7665D]"
+                      aria-hidden="true"
+                    />
+
+                    <span className="font-sans text-[11px] font-medium text-ink-soft">
+                      {step.note}
+                    </span>
+                  </div>
+
+                  {/* Desktop Right Connectors: 1->2, 2->3 */}
+                  {index < 2 && (
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-full top-1/2 hidden w-12 -translate-y-1/2 items-center lg:flex"
+                    >
+                      <div className="h-[2px] w-full bg-[#E7665D]/60" />
+                      <div className="absolute right-0 h-2.5 w-2.5 rotate-45 border-r-2 border-t-2 border-[#E7665D]" />
+                    </div>
+                  )}
+
+                  {/* Desktop Down Connector: 3->4 */}
+                  {index === 2 && (
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-1/2 top-full hidden h-24 -translate-x-1/2 flex-col items-center lg:flex"
+                    >
+                      <div className="h-full w-[2px] bg-[#E7665D]/60" />
+                      <div className="absolute bottom-0 h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#E7665D]" />
+                    </div>
+                  )}
+                  {/* Desktop Left Connectors: 4 → 5, 5 → 6 */}
+                  {(index === 3 || index === 4) && (
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute right-full top-1/2 hidden w-12 -translate-y-1/2 items-center lg:flex"
+                    >
+                      {/* Connecting Line */}
+                      <div className="h-[2px] w-full bg-[#E7665D]/60" />
+
+                      {/* Left Pointing Arrow */}
+                      <div className="absolute left-0 h-2.5 w-2.5 -rotate-45 border-l-2 border-t-2 border-[#E7665D]" />
+                    </div>
+                  )}
+
+                  {/* Mobile / Tablet Vertical Connectors */}
+                  {index < publishingSteps.length - 1 && (
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-1/2 top-full flex h-16 -translate-x-1/2 flex-col items-center lg:hidden"
+                    >
+                      <div className="h-full w-[2px] bg-[#E7665D]/60" />
+                      <div className="absolute bottom-0 h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#E7665D]" />
+                    </div>
+                  )}
+                </motion.article>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>
+
   );
 }

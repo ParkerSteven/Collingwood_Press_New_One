@@ -318,7 +318,6 @@ export default function Footer() {
               >
                 <MapPin size={14} className="text-[#E7665D] shrink-0 group-hover:scale-110 transition-transform" />
                 <p>6777 Camp Bowie Blvd, Fort Worth, TX 76116, United States</p>
-
               </Link>
               <div>
                 <span className="font-medium">

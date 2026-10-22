@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { books } from "@/lib/data";
+import { bookCovers } from "@/lib/data";
 import BookCard from "@/components/sections/BookCard";
 import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
@@ -37,7 +37,7 @@ export default function ProfilePage() {
                     </header>
 
                     <ul className="grid grid-cols-2 gap-x-6 gap-y-12 sm:gap-x-8 md:grid-cols-3 md:gap-y-14 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-16">
-                        {books.map((book, index) => (
+                        {bookCovers.map((book, index) => (
                             <li key={book.id}>
                                 {/* Remove the href prop below if /books/[slug] isn't ready yet */}
                                 <BookCard

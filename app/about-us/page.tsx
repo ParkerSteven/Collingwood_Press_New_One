@@ -20,25 +20,25 @@ import MarketingServices from "@/components/sections/MarketingServices";
 
 const blogArticles = [
     {
-        title: "Trade Publishing vs. Vanity Presses: What Authors Need to Know",
+        title: "Developmental Editing vs Manuscript Assessment: Which Do You Need?",
         excerpt:
-            "How to tell the difference between a publishing partner that invests in your book and a service that processes files for a fee. What to look for in contracts, pricing models, and production standards.",
-        date: "August 2026",
-        href: "#",
+            "A manuscript assessment delivers a high-level, big-picture report on your book’s strengths and weaknesses. ",
+        date: "October 15, 2026",
+        href: "https://www.thecollingwoodpress.com/blogs/developmental-editing-vs-manuscript-assessment",
     },
     {
-        title: "Why Interior Typesetting Matters More Than Most Authors Realize",
+        title: "How to Prepare a Manuscript for an Editor: 2026 Checklist",
         excerpt:
-            "Margins, baseline grids, running headers, and why automated PDF conversions produce books that look unprofessional on the shelf. A practical look at what proper InDesign typesetting delivers.",
-        date: "July 2026",
-        href: "#",
+            "To prepare a manuscript for an editor, finish your draft, self-edit, collect beta reader feedback, format in a clean",
+        date: "October 14, 2026",
+        href: "https://www.thecollingwoodpress.com/blogs/prepare-a-manuscript-for-an-editor",
     },
     {
-        title: "Using Advance Reading Copies (ARCs) to Build Early Momentum",
+        title: "Book Marketing Guide 2026: Process, Costs & Strategies to Sell More Books",
         excerpt:
-            "When to send ARCs, who to send them to, and how verified reader reviews on Amazon and Goodreads create the organic visibility that paid advertising alone cannot produce.",
+            "Book marketing in 2026 requires shifting away from outdated keyword tricks to master algorithmic visibility and build independent.",
         date: "June 2026",
-        href: "#",
+        href: "https://www.thecollingwoodpress.com/blogs/book-marketing-guide",
     },
 ];
 

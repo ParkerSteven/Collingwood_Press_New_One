@@ -26,46 +26,46 @@ const blogPosts = [
         number: "02",
         image: "/blog-2.png",
         imageAlt: "Professional book marketing strategies",
-        title: "How Much Does It Cost to Publish a Book? 0-6K Budget + Avoid Overpaying",
+        title: "How to Publish a Book in 2026: Complete Process & Costs",
         description:
-            "How much does it cost to publish a book? Traditional publishing costs $0 out of pocket. Self-publishing usually costs 2,000-6,000 for a professional book. Hybrid publishing runs 5,000-25,000 or more. Costs depend on editing, cover design, formatting, and marketing. ",
-        href: "#",
+            "Learn how to publish a book in 2026 with real costs, timelines, and publishing paths.",
+        href: "https://www.thecollingwoodpress.com/blogs/how-to-publish-a-book-complete-guide/",
     },
     {
         number: "03",
-        image: "/blog-2.png",
+        image: "/third-blog.png",
         imageAlt: "Professional manuscript editing process",
-        title: "How to Self-Publish a Book: A Simple Guide",
+        title: "Book Marketing in 2026: Costs & Strategies to Sell Books",
         description:
-            "Self-publishing has become a powerful choice for writers who prefer to be the bosses of their work and want to get it to their audience as soon as possible.This guide explains how to self-publish a book in a clear way, from finishing the draft to selling it online.",
-        href: "#",
+            "Plan, budget and launch with a proven book marketing process. Costs, timelines, checklists and strategies for self-published and traditionally published authors.",
+        href: "https://www.thecollingwoodpress.com/blogs/book-marketing-guide/",
     },
     {
         number: "04",
-        image: "/hybridCompanies.png",
+        image: "/fourth-blog.png",
         imageAlt: "Book publishing costs and budgeting",
-        title: "10 Best Hybrid Publishing Companies in 2026 (Submission Links + Costs)",
+        title: "Book Ghostwriting Guide 2026: Cost, Process & Publishing",
         description:
-            "The best hybrid publishing companies in 2026 help authors combine professional publishing support with greater creative control than traditional publishing. Parker Publishers stands out for authors seeking personalized guidance and a more hands-on publishing experience.",
-        href: "#",
+            "Book ghostwriting guide 2026 covering costs, timelines, contracts, and publishing steps before hiring a professional ghostwriter.",
+        href: "https://www.thecollingwoodpress.com/blogs/book-ghostwriting-guide/",
     },
     {
         number: "05",
-        image: "/advertise-book.png",
+        image: "/fifthBlog.png",
         imageAlt: "Professional book marketing strategies",
-        title: "How to Advertise My Book In 2026: 13 Ways to Get More Readers",
+        title: "How Long Does It Take to Publish a Book? 2026 Timeline",
         description:
-            "Authors have a strong book idea, but they struggle when it is time to turn that idea into a complete manuscript. Learning how to write an outline for a book helps writers organize scattered thoughts, create a clear direction, and understand what needs to happen before they start writing chapter one.",
-        href: "#",
+            "How Long Does It Take to Publish a Book? Check 2026 timelines for self-publishing, traditional publishing, Amazon KDP, and every major step.",
+        href: "https://www.thecollingwoodpress.com/blogs/how-long-does-it-take-to-publish-a-book/",
     },
     {
         number: "06",
-        image: "/blog-2.png",
+        image: "/sixBlog.png",
         imageAlt: "Professional manuscript editing process",
-        title: "How To Write an Outline for A Book: 8-Steps Framework + Free Template",
+        title: "Self Publishing Checklist 2026: 46 Steps to Launch Your Book",
         description:
-            "Authors have a strong book idea, but they struggle when it is time to turn that idea into a complete manuscript. Learning how to write an outline for a book helps writers organize scattered thoughts, create a clear direction, and understand what needs to happen before they start writing chapter one.",
-        href: "#",
+            "A complete self publishing checklist for 2026. Follow 46 steps and publish your book on Amazon KDP and beyond.",
+        href: "https://www.thecollingwoodpress.com/blogs/self-publishing-checklist/",
     },
 ];
 
@@ -305,16 +305,11 @@ export default function HomeBlogs() {
                                                 alt={post.imageAlt}
                                                 fill
                                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none select-none"
+                                                className="object-conatin transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none select-none"
                                             />
 
                                             {/* Gradient Overlay */}
                                             <div className="absolute inset-0 bg-gradient-to-t from-[#101A30]/75 via-[#101A30]/15 to-[#101A30]/20" />
-
-                                            {/* Article Number */}
-                                            <span className="absolute bottom-4 right-5 z-10 font-serif text-3xl italic text-white/70">
-                                                {post.number}
-                                            </span>
                                         </div>
 
                                         {/* Article Content */}
@@ -380,9 +375,7 @@ export default function HomeBlogs() {
                             <span className="text-ink-muted">
                                 0{totalPages}
                             </span>
-                            <span className="ml-2 hidden text-[11px] normal-case text-ink-muted/80 md:inline">
-                                ({blogPosts.length} Editorial Guides)
-                            </span>
+
                         </div>
 
                         {/* Interactive Dots */}

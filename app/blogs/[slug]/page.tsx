@@ -278,7 +278,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
 
                     <Container className="relative z-10 max-w-4xl">
                         {/* Breadcrumbs */}
-                        <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-white/70">
+                        {/* <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-white/70">
                             <Link href="/" className="transition hover:text-white">
                                 Home
                             </Link>
@@ -290,40 +290,18 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                             <span className="truncate max-w-[220px] sm:max-w-xs text-white/90 font-medium">
                                 {title}
                             </span>
-                        </nav>
+                        </nav> */}
 
                         {/* Category Badge */}
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#E7665D]/30 bg-[#E7665D]/15 px-3.5 py-1 text-[11px] font-bold uppercase tracking-widest text-[#F08A82]">
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#E7665D]/30 bg-[#E7665D]/15 px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#F08A82]">
                             <BookOpen className="h-3.5 w-3.5" />
                             {primaryCategory}
                         </div>
 
                         {/* Article Title */}
-                        <h1 className="font-serif text-3xl font-bold leading-[1.2] text-white sm:text-4xl lg:text-[42px]">
+                        <h1 className="font-serif text-2xl font-bold leading-[1.2] text-white sm:text-[2.4rem] max-w-3xl">
                             {title}
                         </h1>
-
-                        {/* Post Meta */}
-                        <div className="mt-7 flex flex-wrap items-center gap-y-4 gap-x-6 border-t border-white/15 pt-6 text-xs text-white/80">
-                            <div className="flex items-center gap-2">
-                                <User className="h-4 w-4 text-[#E7665D]" />
-                                <span className="font-medium text-white">{authorName}</span>
-                            </div>
-
-                            <div className="flex items-center gap-2">
-                                <CalendarDays className="h-4 w-4 text-[#E7665D]" />
-                                <span>{formattedDate}</span>
-                            </div>
-
-                            <div className="flex items-center gap-2">
-                                <Clock className="h-4 w-4 text-[#E7665D]" />
-                                <span>{readTimeMinutes} min read</span>
-                            </div>
-
-                            <div className="ml-auto">
-                                <BlogShareButtons title={title} url={canonicalUrl} />
-                            </div>
-                        </div>
                     </Container>
                 </section>
 

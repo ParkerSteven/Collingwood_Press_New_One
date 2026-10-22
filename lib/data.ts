@@ -871,7 +871,7 @@ export type Book = {
   slug: string;
 };
 
-export const books: Book[] = [
+export const bookCovers: Book[] = [
   {
     id: 1,
     title: "Season of Liturgy",

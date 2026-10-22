@@ -181,7 +181,7 @@ export default function FAQAccordion({
                     </div>
 
                     <Button
-                        href="/contact-us"
+                        href="/contact-us#manuscript-review"
                         variant="primary"
                         size="md"
                     >

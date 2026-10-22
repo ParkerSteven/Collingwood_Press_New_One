@@ -52,7 +52,7 @@ export default function FinalCTA({
     </>
   ),
   buttonText = "Submit Manuscript for Free Editorial Review",
-  buttonHref = "/contact-us",
+  buttonHref = "/contact-us#manuscript-review",
 }: FinalCTAProps) {
   return (
     <section

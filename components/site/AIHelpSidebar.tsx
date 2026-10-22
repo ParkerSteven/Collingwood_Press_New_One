@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import { X, MessageSquare, ArrowRight } from "lucide-react";
+import { openAIChat } from "@/lib/chat";
 
 // Props Interface
 interface AIHelpSidebarProps {
@@ -201,7 +202,10 @@ export default function AIHelpSidebar({
                 <div className="absolute bottom-0 left-0 w-full p-6 bg-white border-t border-[#1F2A44]/5 flex flex-col gap-3">
                     <button
                         type="button"
-                        onClick={onClose}
+                        onClick={() => {
+                            onClose();
+                            openAIChat();
+                        }}
                         className="w-full bg-[#1F2A44] text-white font-bold py-4 rounded-xl hover:bg-[#0B1B3B] transition-all shadow-[4px_4px_0_#EB6358]"
                     >
                         I understand, show me the agent

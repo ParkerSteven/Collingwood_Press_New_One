@@ -149,7 +149,7 @@ export default function PublishingClient() {
                     buttons={[
                         {
                             text: "Submit Manuscript for Publishing",
-                            href: "/contact-us",
+                            href: "/contact-us#manuscript-review",
                             variant: "primary",
                             showArrow: true,
                         },
@@ -694,7 +694,7 @@ export default function PublishingClient() {
 
                                     <div className="mt-6 pt-5 border-t border-white/10">
                                         <Button
-                                            href="/contact-us"
+                                            href="/contact-us#manuscript-review"
                                             variant="primary"
                                             size="sm"
                                             className="w-full"
@@ -725,7 +725,7 @@ export default function PublishingClient() {
 
                                     <div className="mt-6 pt-5 border-t border-white/10">
                                         <Button
-                                            href="/contact-us"
+                                            href="/contact-us#manuscript-review"
                                             variant="primary"
                                             size="sm"
                                             className="w-full"
@@ -758,7 +758,7 @@ export default function PublishingClient() {
 
                                     <div className="mt-6 pt-5 border-t border-white/10">
                                         <Button
-                                            href="/contact-us"
+                                            href="/contact-us#manuscript-review"
                                             variant="primary"
                                             size="sm"
                                             className="w-full"
@@ -843,7 +843,7 @@ export default function PublishingClient() {
                             {/* CTA */}
                             <div className="mt-12 lg:mt-14 flex flex-col items-center text-center">
                                 <Button
-                                    href="/contact-us"
+                                    href="/contact-us#manuscript-review"
                                     variant="primary"
                                     size="lg"
                                 >
@@ -1036,7 +1036,7 @@ export default function PublishingClient() {
                         </>
                     }
                     buttonText="Submit Manuscript for Free Editorial Review"
-                    buttonHref="/contact-us"
+                    buttonHref="/contact-us#manuscript-review"
                 />
             </main>
             <Footer />

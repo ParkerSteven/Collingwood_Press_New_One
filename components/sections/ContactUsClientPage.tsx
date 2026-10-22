@@ -223,7 +223,9 @@ export default function ContactUsClientPage() {
                 >
                     <Container>
                         {/* Section Heading */}
-                        <div className="mx-auto mb-12 max-w-2xl text-center">
+                        <div className="mx-auto mb-12 max-w-2xl text-center"
+                            id="manuscript-review"
+                        >
                             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
                                 Start Your Publishing Journey
                             </span>
@@ -242,7 +244,9 @@ export default function ContactUsClientPage() {
                         </div>
 
                         {/* Contact Form + Office Information */}
-                        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
+                        <div
+
+                            className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
 
                             {/* Left - Publishing Form */}
                             <div className="rounded-xl border border-[#E7665D]/25 bg-white p-7 sm:p-9 lg:p-10 shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)]">

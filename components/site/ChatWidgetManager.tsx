@@ -163,6 +163,60 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
         };
     }, [openPopup, pathname]);
 
+    // Handle opening AI chat directly
+    useEffect(() => {
+        const handleOpenAIChat = (): void => {
+            setShouldLoadWidget(true);
+
+            const tryOpen = (): boolean => {
+                const agentInstance = (window as Window & {
+                    jotformAgentInstance?: {
+                        setIsOpened?: (opened: boolean) => void;
+                        setIsExpanded?: (expanded: boolean) => void;
+                    };
+                }).jotformAgentInstance;
+
+                if (agentInstance && typeof agentInstance.setIsOpened === "function") {
+                    agentInstance.setIsOpened(true);
+                    if (typeof agentInstance.setIsExpanded === "function") {
+                        agentInstance.setIsExpanded(true);
+                    }
+                    return true;
+                }
+
+                const trigger = document.querySelector<HTMLElement>(
+                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b .__chat, " +
+                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b .__avatar, " +
+                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b input, " +
+                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b button"
+                );
+
+                if (trigger) {
+                    trigger.click();
+                    return true;
+                }
+
+                return false;
+            };
+
+            if (!tryOpen()) {
+                let attempts = 0;
+                const pollInterval = window.setInterval(() => {
+                    attempts += 1;
+                    if (tryOpen() || attempts >= 30) {
+                        window.clearInterval(pollInterval);
+                    }
+                }, 150);
+            }
+        };
+
+        window.addEventListener("openAIChat", handleOpenAIChat);
+
+        return () => {
+            window.removeEventListener("openAIChat", handleOpenAIChat);
+        };
+    }, []);
+
     // Determine active chat widget based on Pakistan time
     useEffect(() => {
         const checkTimeAndSetWidget = (): void => {
@@ -294,19 +348,56 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
                         >
                             {`
                 (function() {
-                  var s = document.createElement('script');
+                  var _AgentInitializer = window.AgentInitializer;
+                  function wrapInit(ai) {
+                    if (!ai || ai.__wrapped) return ai;
+                    var origInit = ai.init;
+                    if (typeof origInit === 'function') {
+                      ai.init = function(config) {
+                        var instance = origInit.call(this, config);
+                        window.jotformAgentInstance = instance;
+                        if (window.__pendingOpenAIChat) {
+                          try {
+                            instance.setIsOpened(true);
+                            if (instance.setIsExpanded) instance.setIsExpanded(true);
+                          } catch (e) {}
+                          window.__pendingOpenAIChat = false;
+                        }
+                        return instance;
+                      };
+                      ai.__wrapped = true;
+                    }
+                    return ai;
+                  }
 
+                  if (_AgentInitializer) {
+                    wrapInit(_AgentInitializer);
+                  }
+
+                  try {
+                    Object.defineProperty(window, 'AgentInitializer', {
+                      configurable: true,
+                      enumerable: true,
+                      get: function() { return _AgentInitializer; },
+                      set: function(val) { _AgentInitializer = wrapInit(val); }
+                    });
+                  } catch (e) {}
+
+                  var s = document.createElement('script');
                   s.src =
                     'https://cdn.jotfor.ms/agent/embedjs/019d4a7018e47a9ba9de1aa47b2de6686c0b/embed.js';
-
                   s.async = true;
                   document.head.appendChild(s);
                 })();
 
+                window.openAIChat = function() {
+                  window.dispatchEvent(new Event('openAIChat'));
+                };
+
                 window.BrevoConversations = function(command) {
                   if (command === 'openChat') {
                     window.dispatchEvent(
-                      new Event('openFallbackPopup')
+                      new Event('openAIChat')
                     );
                   }
                 };
