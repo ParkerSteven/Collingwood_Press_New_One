@@ -18,7 +18,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MarketingServices from "../sections/MarketingServices";
-import { openAIChat } from "@/lib/chat";
+// import { openAIChat } from "@/lib/chat";
 import UtilityBar from "../layout/UtilityBar";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
@@ -81,9 +81,9 @@ function ThankyouContent(): ReactElement {
         .join(" ");
 
     // Open AI chat or Brevo chat
-    const handleOpenChat = (): void => {
-        openAIChat();
-    };
+    // const handleOpenChat = (): void => {
+    //     openAIChat();
+    // };
 
     return (
         <>
@@ -135,7 +135,7 @@ function ThankyouContent(): ReactElement {
 
                             {/* Buttons */}
                             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-                                <button
+                                {/* <button
                                     type="button"
                                     onClick={handleOpenChat}
                                     className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#E7665D] px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-[0_4px_14px_rgba(231,102,93,0.25)] transition-all duration-300 hover:bg-[#D8574E]"
@@ -143,7 +143,7 @@ function ThankyouContent(): ReactElement {
                                     <MessageCircle size={17} />
                                     In a Hurry? Talk to Us
                                     <ArrowRight size={15} />
-                                </button>
+                                </button> */}
 
                                 <Link
                                     href="/"

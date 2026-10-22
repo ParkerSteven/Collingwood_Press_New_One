@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react";
 import { X, MessageSquare, ArrowRight } from "lucide-react";
-import { openAIChat } from "@/lib/chat";
+// import { openAIChat } from "@/lib/chat";
 
 // Props Interface
 interface AIHelpSidebarProps {
@@ -52,8 +52,8 @@ export default function AIHelpSidebar({
     return (
         <div
             className={`fixed inset-0 z-[99999] transition-opacity duration-300 ${isOpen
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
                 }`}
             role="dialog"
             aria-modal="true"
@@ -200,7 +200,7 @@ export default function AIHelpSidebar({
 
                 {/* Footer Area */}
                 <div className="absolute bottom-0 left-0 w-full p-6 bg-white border-t border-[#1F2A44]/5 flex flex-col gap-3">
-                    <button
+                    {/* <button
                         type="button"
                         onClick={() => {
                             onClose();
@@ -209,7 +209,7 @@ export default function AIHelpSidebar({
                         className="w-full bg-[#1F2A44] text-white font-bold py-4 rounded-xl hover:bg-[#0B1B3B] transition-all shadow-[4px_4px_0_#EB6358]"
                     >
                         I understand, show me the agent
-                    </button>
+                    </button> */}
 
                     <p className="text-[10px] text-center text-gray-400 font-medium uppercase tracking-tighter">
                         Professional Publishing Guidance • Secure
