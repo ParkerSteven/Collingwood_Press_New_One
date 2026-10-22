@@ -27,7 +27,7 @@ export default function StatBar({ stats }: StatBarProps) {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="flex flex-col items-center text-center px-4 sm:px-6 lg:border-r lg:border-white/10 lg:last:border-r-0"
             >
-              <span className="font-sans text-[1.8rem] sm:text-[2rem] font-semibold italic leading-none text-[#D8574E] tracking-tight">
+              <span className="font-sans text-[1.8rem] sm:text-[2rem] font-semibold leading-none text-[#D8574E] tracking-tight">
                 {stat.value}
               </span>
 
