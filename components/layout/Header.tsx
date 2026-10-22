@@ -72,15 +72,6 @@ export default function Header() {
 
         {/* Desktop Action Button */}
         <div className="hidden items-center gap-4 lg:flex">
-          {/* <Button
-            href="/contact-us"
-            variant="primary"
-            size="sm"
-            className="px-4 py-2 text-xs font-semibold"
-          >
-            <span>Claim Your Free Manuscript</span>
-            <ArrowUpRight size={13} />
-          </Button> */}
           <Button
             href="/contact-us#manuscript-review "
             variant="primary"

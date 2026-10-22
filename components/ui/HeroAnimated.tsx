@@ -76,7 +76,8 @@ export default function HeroAnimated() {
                         <ArrowRight size={15} />
                     </Button>
                     <Button
-                        onClick={openAIChat}
+                        // onClick={openAIChat}
+                        href="/contact-us#manuscript-review"
                         variant="outline"
                         size="md"
                         className="text-white cursor-pointer"
