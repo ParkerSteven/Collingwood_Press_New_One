@@ -1034,6 +1034,309 @@ export const ghostwritingFAQs = [
   },
 ];
 
+export const toSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+export const events = [
+  {
+    name: "Artcontact Istanbul",
+    location: "Istanbul, Turkey",
+    dates: "May 13 – May 17, 2026",
+    image: "/assets/images/book-fairs/Artcontact Istanbul/banner.png",
+    description:
+      "Artcontact Istanbul is a landmark European-Asian art publishing event crossing cultures in the capital of Turkish culture. The book fair represents the art books of the whole region, with a particular focus on Ottoman and contemporary Turkish art. Tourists may attend lectures on art historical publishing or participate in a printmaking demonstration. In the books and rare books section of the event, collectible art publications are offered as well as booths of publishers presenting the current exhibition catalogues.",
+    highlights: [
+      "Ottoman art books",
+      "Demonstrations of printmaking techniques",
+      "Collector of art books",
+      "Tours of the gallery district",
+    ],
+  },
+  {
+    name: "Nairobi Litfest",
+    location: "Nairobi, Kenya",
+    dates: "May 8 to May 10, 2026",
+    image: "/assets/images/book-fairs/Nairobi Litfest/banner.png",
+    description:
+      "Kenya's flagship celebration of African voices and Pan-African storytelling, Nairobi Litfest is a Hay Festival partner event that has rapidly become the most important literary gathering in East Africa. The festival pulls in novelists, poets, journalists, and translators across the continent and the diaspora, with conversations centred on contemporary African identity, climate justice, language politics, and the post-colonial novel. Visitors can sit in on craft masterclasses, attend evening readings under canvas, and meet emerging publishers from Nairobi, Lagos, Cape Town, and Kampala.",
+    highlights: [
+      "Pan-African author panels",
+      "Swahili and Anglophone literature dialogues",
+      "Translation and publishing workshops",
+      "Emerging writers showcase",
+    ],
+  },
+  {
+    name: "Hay Festival Hay-on-Wye",
+    location: "Hay-on-Wye, Wales, United Kingdom",
+    dates: "May 21 to May 31, 2026",
+    image: "/assets/images/book-fairs/Hay Festival Hay-on-Wye/banner.png",
+    description:
+      "For eleven days each spring, a small Welsh market town becomes the most quoted literary stage in the English-speaking world. Hay is where prime ministers, Booker winners, climate scientists, and stand-up comedians share a tent and an audience, drawing 250,000 visitors to a programme of nearly 600 events. The festival's combination of bookish prestige and field-of-flags charm makes it the single most photographed literary event in the UK calendar, and its commissioned conversations routinely set the agenda for the autumn publishing season.",
+    highlights: [
+      "Headline author conversations",
+      "Hay Festival Medal ceremonies",
+      "Hay Player digital recordings",
+      "Family and children's literature stage",
+    ],
+  },
+  {
+    name: "Beijing International Book Fair",
+    location: "Beijing, China",
+    dates: "June 17 to June 21, 2026",
+    image: "/assets/images/book-fairs/Beijing International Book Fair/banner.png",
+    description:
+      "BIBF is the largest publishing event in Asia and the second largest in the world by exhibitor count, drawing more than 2,600 exhibitors from over 100 countries to the China National Convention Center. It is the single most consequential rights market east of Frankfurt, where Chinese publishers acquire translation rights, foreign houses scout for licensable IP, and English-language content moves into the world's largest emerging reading market. The fair runs alongside a heavy programme of bilateral publishing forums and cross-border digital licensing summits.",
+    highlights: [
+      "Translation rights marketplace",
+      "Children's and YA publishing showcase",
+      "Audio and digital licensing forum",
+      "BIBF Publishing Conference",
+    ],
+  },
+  {
+    name: "Sao Paulo International Book Biennial",
+    location: "Sao Paulo, Brazil",
+    dates: "July 3 to July 12, 2026",
+    image: "/assets/images/book-fairs/Sao Paulo International Book Biennial/banner.png",
+    description:
+      "Brazil's largest book fair and one of the most important in the Portuguese-speaking world, the Sao Paulo Bienal do Livro turns the Expo Center Norte into a 50,000-square-metre temple to reading. Over ten days the fair welcomes more than 600,000 visitors, hundreds of authors, and the country's full publishing apparatus, with strong attention to translated fiction, Latin American voices, and the children's market. It is the commercial centre of gravity for the Lusophone book trade and a critical access point for any English-language publisher pursuing the Brazilian rights market.",
+    highlights: [
+      "Portuguese-language rights trading",
+      "Latin American author lineup",
+      "Children's and educational publishing pavilion",
+      "Book club and reader engagement stages",
+    ],
+  },
+  {
+    name: "Edinburgh International Book Festival",
+    location: "Edinburgh, Scotland, United Kingdom",
+    dates: "August 15 to August 30, 2026",
+    image: "/assets/images/book-fairs/Edinburgh International Book Festival/BANNER.png",
+    description:
+      "The world's largest public celebration of the written word, Edinburgh International Book Festival programmes more than 900 events across sixteen days at the height of the Edinburgh Festival season. The festival's stages attract Nobel laureates, debut novelists, working journalists, and global thinkers, all running parallel to the Fringe, the International Festival, and the Art Festival. For an author, an Edinburgh appearance is a credentialing event: the kind of booking that produces feature coverage, broadcast invitations, and a measurable bump in UK sales.",
+    highlights: [
+      "Front List headline series at McEwan Hall",
+      "First Book Award programme",
+      "Live radio and podcast broadcasts",
+      "International author residencies",
+    ],
+  },
+  {
+    name: "Gothenburg Book Fair",
+    location: "Gothenburg, Sweden",
+    dates: "September 24 to September 27, 2026",
+    image: "/assets/images/book-fairs/Gothenburg Book Fair/BANNER.png",
+    description:
+      "Bok and Bibliotek, known internationally as the Gothenburg Book Fair, is the largest cultural event in the Nordic countries and the most important literary trade fair in Scandinavia. The fair gathers Swedish, Norwegian, Danish, Finnish, and Icelandic publishers, with a strong programme on press freedom, library policy, and the Scandinavian school market. The 2026 fair will spotlight Popular Adult Education, the Nordic tradition of community-based lifelong learning, alongside the customary programme of crime fiction, translated literature, and children's books.",
+    highlights: [
+      "Nordic crime fiction showcase",
+      "Library and education policy seminars",
+      "Translated literature programme",
+      "Free press and journalism forum",
+    ],
+  },
+  {
+    name: "Frankfurter Buchmesse (Frankfurt Book Fair)",
+    location: "Frankfurt, Germany",
+    dates: "October 7 to October 11, 2026",
+    image: "/assets/images/book-fairs/Frankfurter Buchmesse (Frankfurt Book Fair)/BANNER.png",
+    description:
+      "Frankfurt is the centre of the global publishing universe. For five days every October, more than 4,300 exhibitors from over 100 countries gather at Messe Frankfurt to trade rights, broker translation deals, sign contracts, and set the editorial agenda for the year ahead. Czechia takes the 2026 Guest of Honour spotlight with the motto Czechia: A Country on the Coast, bringing 23 publishing houses and a full cultural programme. For any publisher serious about international rights, Frankfurt is non-optional.",
+    highlights: [
+      "Frankfurt Rights Meeting",
+      "Czechia Guest of Honour pavilion",
+      "Frankfurt Audio Area and audiobook deals",
+      "Frankfurt Kids Conference",
+    ],
+  },
+  {
+    name: "New York Comic Con Writers Block",
+    location: "New York, NY, United States",
+    dates: "October 8 to October 11, 2026",
+    image: "/assets/images/book-fairs/New York Comic Con Writers Block/banner.png",
+    description:
+      "The dedicated literary programming inside ReedPop's New York Comic Con, the Writers Block has quietly become one of the most commercially productive author appearances in the United States. With more than 200,000 fans flowing through the Javits Center and a programme that mixes graphic novelists, romantasy stars, science fiction headliners, and YA voices, an NYCC signing line is a measurable phenomenon, with bestselling authors routinely selling four-figure copies in a weekend and breaking out new releases into the BookTok and Bookstagram conversation.",
+    highlights: [
+      "Romantasy and SFF author panels",
+      "Graphic novel and comics programming",
+      "YA author signings",
+      "Publisher pop-up bookstores",
+    ],
+  },
+  {
+    name: "Boston Book Festival",
+    location: "Boston, MA, United States",
+    dates: "October 17, 2026",
+    image: "/assets/images/book-fairs/Boston Book Festival/banner.png",
+    description:
+      "A free one-day urban literary festival anchored at Copley Square in the heart of Boston, BBF programmes more than 200 authors across 100 sessions and draws an audience of around 40,000 readers. The festival is unusually strong on literary fiction, journalism, and serious nonfiction, with deep institutional ties to Boston's universities, publishing houses, and independent bookstores. It is the kind of event that builds genuine East Coast critical attention rather than mass-market sales spikes.",
+    highlights: [
+      "Copley Square outdoor main stages",
+      "Roxbury satellite programming",
+      "Literary fiction and journalism panels",
+      "BBF Unbound creative writing workshops",
+    ],
+  },
+  {
+    name: "Sharjah International Book Fair",
+    location: "Sharjah, United Arab Emirates",
+    dates: "November 4 to November 15, 2026",
+    image: "/assets/images/book-fairs/Sharjah International Book Fair/banner.png",
+    description:
+      "SIBF is the third largest book fair in the world and the most important publishing event in the Arab world, drawing more than two million visitors over twelve days to the Expo Centre Sharjah. The fair operates as both an enormous consumer event, with 1.3 million titles in 210 languages, and a serious rights marketplace through its preceding Publishers Conference and US 300,000 dollar annual translation grant programme. Morocco serves as the 2026 Guest of Honour, with a full pavilion of Moroccan literature, music, and intellectual history.",
+    highlights: [
+      "Morocco Guest of Honour pavilion",
+      "SIBF Publishers Conference rights trading",
+      "Translation grant fund",
+      "Arabic and Islamic literature showcase",
+    ],
+  },
+  {
+    name: "Miami Book Fair International",
+    location: "Miami, FL, United States",
+    dates: "November 15 to November 22, 2026",
+    image: "/assets/images/book-fairs/Miami Book Fair International/banner.png",
+    description:
+      "Founded in 1984 and consistently ranked among the top literary festivals in the United States, the Miami Book Fair anchors its eight-day run at Miami Dade College with a programme of more than 500 authors, including a major Spanish-language Ibero-American component. The fair is uniquely positioned at the cultural crossroads of North America and Latin America, with bilingual programming, robust street fair attendance, and a track record of breaking Latinx and Caribbean voices into the wider American conversation.",
+    highlights: [
+      "Ibero-American author programme",
+      "Bilingual Spanish and English panels",
+      "Street Fair weekend",
+      "Children's Alley family programming",
+    ],
+  },
+  {
+    name: "Guadalajara International Book Fair (FIL)",
+    location: "Guadalajara, Jalisco, Mexico",
+    dates: "November 28 to December 6, 2026",
+    image: "/assets/images/book-fairs/Guadalajara International Book Fair (FIL)/banner.png",
+    description:
+      "FIL Guadalajara is the largest publishing event in the Spanish-speaking world and the most important rights fair in Latin America, drawing more than 800,000 attendees and 2,000 publishers to the Expo Guadalajara each November. Beyond its scale, FIL is the centre of gravity for Spanish-language literary culture, awarding the prestigious FIL Literary Award in Romance Languages and hosting Guest of Honour programmes that have launched entire national literatures into international visibility. Sharjah is the 2026 Guest of Honour, bringing an Arabic-Spanish translation programme.",
+    highlights: [
+      "Spanish-language rights marketplace",
+      "Sharjah Guest of Honour programme",
+      "FIL Literary Award ceremony",
+      "Latin American children's literature showcase",
+    ],
+  },
+  {
+    name: "Cairo International Book Fair",
+    location: "Cairo, Egypt",
+    dates: "January 21 to February 4, 2027",
+    image: "/assets/images/book-fairs/Cairo International Book Fair/banner.png",
+    description:
+      "Established in 1969 to mark the millennium of Cairo, CIBF is the oldest book fair in the Arab world and one of the largest by visitor numbers, regularly drawing more than three million attendees to the Egypt International Exhibition Center. The fair is the principal commercial event for Arabic-language publishing, with a heavy concentration of Egyptian, Lebanese, Saudi, Jordanian, and Moroccan houses, and a programme that ranges from religious scholarship and classical Arabic literature to contemporary fiction, children's books, and academic publishing.",
+    highlights: [
+      "Arabic-language publishing pavilion",
+      "Religious and classical literature halls",
+      "Cultural programming and lectures",
+      "Egyptian author signings",
+    ],
+  },
+  {
+    name: "Jaipur Literature Festival",
+    location: "Jaipur, Rajasthan, India",
+    dates: "January 28 to February 1, 2027",
+    image: "/assets/images/book-fairs/Jaipur Literature Festival/banner.png",
+    description:
+      "Branded as the greatest literary show on earth, JLF gathers more than 350 authors and a half-million-strong audience under the painted gates of Diggi Palace in Rajasthan. The festival operates without ticket prices and without VIP areas, which is partly why its conversations regularly produce the headlines that drive India's English-language publishing market for the year. Past programmes have featured Nobel laureates, sitting heads of state, and breakout debut novelists in the same week, all in a format that prioritises live argument over commercial pitching.",
+    highlights: [
+      "Diggi Palace heritage venue",
+      "Free public access programming",
+      "South Asian author lineup",
+      "International translated literature stage",
+    ],
+  },
+  {
+    name: "Taipei International Book Exhibition (TIBE)",
+    location: "Taipei, Taiwan",
+    dates: "February 4 to February 9, 2027",
+    image: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg",
+    description:
+      "Taiwan's flagship book fair has quietly become one of the most internationally savvy rights markets in Asia, with 364 publishing houses, 31 countries, and 61 dedicated rights meetings programmed across its 34th edition. TIBE combines a robust trade floor with one of the most visually inventive consumer experiences in publishing, including a children's pavilion built around a literary food market concept. Thailand will be the 2026 Guest of Honour, with the fair organised around the theme Reading is Amazing.",
+    highlights: [
+      "Thailand Guest of Honour pavilion",
+      "Rights meetings programme",
+      "Children's literary food market",
+      "Comics and manga showcase",
+    ],
+  },
+  {
+    name: "Tucson Festival of Books",
+    location: "Tucson, AZ, United States",
+    dates: "March 13 to March 14, 2027",
+    image: "/assets/images/book-fairs/Tucson Festival of Books/banner.png",
+    description:
+      "The largest free book festival in the United States, the Tucson Festival of Books draws more than 130,000 attendees to the University of Arizona campus for a weekend of more than 350 author sessions across every genre, from cookbook authors to Pulitzer winners. The festival has carved out a particular reputation as the premier Western literary event, with strong borderlands, Indigenous, and Latinx programming alongside mainstream commercial fiction and serious nonfiction. Author appearances at Tucson reliably produce regional press coverage and a measurable Amazon sales lift.",
+    highlights: [
+      "University of Arizona main campus venues",
+      "Borderlands and Indigenous author programming",
+      "Children's Entertainment Stage",
+      "Science City programming pavilion",
+    ],
+  },
+  {
+    name: "London Book Fair",
+    location: "London, United Kingdom",
+    dates: "March 16 to March 18, 2027",
+    image: "/assets/images/book-fairs/London Book Fair/banner.png",
+    description:
+      "The premier English-language rights fair on the global publishing calendar, the London Book Fair brings around 30,000 publishers, agents, rights professionals, scouts, and content buyers from over 100 countries to Olympia London. The 2027 edition marks the fair's move to the ExCeL Centre after one final outing at Olympia, with the international rights centre, Writers Summit, Academic and Professional Publishing Conference, and Audio Area anchoring three days of structured deal-making. For any house pursuing English-territory rights, this is the single most important spring event.",
+    highlights: [
+      "International Rights Centre",
+      "Writers Summit programme",
+      "Audio publishing showcase",
+      "Trailblazer Awards ceremony",
+    ],
+  },
+  {
+    name: "Leipzig Book Fair (Leipziger Buchmesse)",
+    location: "Leipzig, Germany",
+    dates: "March 18 to March 21, 2027",
+    image: "/assets/images/book-fairs/Leipzig Book Fair (Leipziger Buchmesse)/banner.png",
+    description:
+      "Smaller and significantly more reader-facing than its Frankfurt counterpart, the Leipzig Book Fair is Germany's premier celebration of the act of reading itself, with the Leipzig Reads programme spilling 3,000 events across the city's cafes, theatres, and bookstores in addition to the main exhibition halls. The fair awards the Leipzig Book Prize, including a major translation honour, and runs alongside the parallel comics convention Manga-Comic-Con. For a publisher, Leipzig is the spring inflection point in the German-language calendar.",
+    highlights: [
+      "Leipzig Book Prize ceremony",
+      "Leipzig Reads city programming",
+      "Manga-Comic-Con co-event",
+      "Independent press showcase",
+    ],
+  },
+  {
+    name: "Bologna Children's Book Fair",
+    location: "Bologna, Italy",
+    dates: "March 22 to March 25, 2027",
+    image: "/assets/images/book-fairs/Bologna Children's Book Fair/banner.png",
+    description:
+      "The world's largest professional trade fair dedicated to children's and young adult publishing, Bologna is where every illustrator, picture book editor, agent, and licensing executive in global kids publishing convenes for four days each spring. The fair awards the BolognaRagazzi Prizes, hosts the Illustrators Exhibition (the publishing industry's single most important visual talent showcase), and runs an intensive Rights Centre with translation deals across more than 90 countries. For any publisher with a children's or YA list, attendance is non-negotiable.",
+    highlights: [
+      "Illustrators Exhibition",
+      "BolognaRagazzi Prizes",
+      "Children's Rights Centre",
+      "Author and Illustrator Cafe programming",
+    ],
+  },
+  {
+    name: "Los Angeles Times Festival of Books",
+    location: "Los Angeles, CA, United States",
+    dates: "April 17 to April 18, 2027",
+    image: "/assets/images/book-fairs/Los Angeles Times Festival of Books/banner.png",
+    description:
+      "The largest book festival in the United States by attendance, the LA Times Festival of Books gathers around 160,000 readers across the University of Southern California campus over a single April weekend, with more than 550 authors programmed across nine stages. The festival is uniquely positioned to bridge serious literary culture and Hollywood adaptation, with regular appearances by film and television talent alongside Pulitzer winners and chart-topping memoirists. For West Coast media positioning, no other US event compares.",
+    highlights: [
+      "Nine programming stages across USC",
+      "Hollywood and literary crossover panels",
+      "LA Times Book Prizes ceremony",
+      "Cooking Stage and Poetry Stage",
+    ],
+  },
+];
+
 
 export type Book = {
   id: number;

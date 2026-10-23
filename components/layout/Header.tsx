@@ -8,16 +8,6 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 import MobileMenu from "../ui/MobileMenu";
 
-// const navItems = [
-//   { label: "Ghostwriting", href: "/ghostwriting" },
-//   { label: "Editing", href: "/editing" },
-//   { label: "Publishing", href: "/publishing" },
-//   { label: "Marketing", href: "/marketing" },
-//   { label: "Audiobook", href: "/audiobook" },
-//   { label: "About Us", href: "/about-us" },
-//   { label: "Contact Us", href: "/contact-us" },
-// ]
-
 const navItems = [
   { label: "Ghostwriting", href: "/ghostwriting" },
   { label: "Editing", href: "/editing" },
@@ -39,7 +29,7 @@ export default function Header() {
             src="/Collingwood-Logo.png"
             alt="The Collingwood Press"
             width={240}
-            height={50}
+            height={70}
             priority
             className="object-contain"
           />

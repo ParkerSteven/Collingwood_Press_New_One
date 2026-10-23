@@ -359,19 +359,6 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 xl:gap-10">
                         {/* Article Body Column */}
                         <article className="min-w-0 lg:col-span-9">
-                            {/* Featured Image */}
-                            {featuredImage && (
-                                <div className="mb-10 overflow-hidden rounded-xl border border-line bg-white shadow-card">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        src={featuredImage}
-                                        alt={title}
-                                        className="block h-auto max-h-[520px] w-full object-contain"
-                                        loading="eager"
-                                    />
-                                </div>
-                            )}
-
                             {/* Rendered WordPress HTML Content */}
                             <div
                                 className="blog-article-content rounded-xl border border-[#ebe4df] bg-white p-5 sm:p-7 lg:p-8"

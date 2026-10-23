@@ -341,15 +341,15 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                     {!fetchError && featuredPost && (
                         <div className="mb-14 overflow-hidden rounded-lg border border-[#ebe4df] bg-white shadow-[0_14px_45px_rgba(17,24,39,0.055)]">
                             <Link href={`/blogs/${featuredPost.slug}/`} className="group grid md:grid-cols-2">
-                                <div className="relative aspect-[16/11] overflow-hidden bg-[#eae8e3] md:aspect-auto md:min-h-[390px]">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <div className="relative h-[220px] sm:h-[260px] md:h-auto overflow-hidden ">
                                     <img
                                         src={getImageUrl(featuredPost)}
                                         alt={plainText(featuredPost.title.rendered)}
                                         loading="lazy"
-                                        className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+                                        className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.04]"
                                     />
-                                    <span className="absolute left-5 top-5 rounded-sm bg-[#eb6c63] px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white">
+
+                                    <span className="absolute left-5 top-5 z-10 rounded-sm bg-[#eb6c63] px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white">
                                         Featured Story
                                     </span>
                                 </div>

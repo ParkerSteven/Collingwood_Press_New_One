@@ -70,19 +70,8 @@ const defaultGuarantees: HeroGuarantee[] = [
 
 const defaultDescription = (
     <>
-        You have the expertise, the experience, or the story.
-        What you need is someone who can turn it into a finished
-        book. Our professional ghostwriting services pair you
-        with an experienced writer who captures your voice,
-        follows your direction, and delivers a complete{" "}
-        manuscript you are proud to put your name on.
-        You stay involved in the direction and revisions
-        at every stage. We handle the writing. The process is
-        fully confidential, and you retain all rights to the
-        finished work. Whether you are starting from a rough idea
-        or building on a partial draft, this is how you hire a
-        ghostwriter and get a book that reads like you wrote
-        it yourself.
+        You have the expertise, the experience, or the story. What you need is someone who can turn it into a finished book. Our professional ghostwriting services pair you with an experienced writer who captures your voice and turns your material into a finished manuscript you are proud to put your name on.
+        Whether you are starting from a rough idea or building on a partial draft, this is how you hire a ghostwriter and get a book that reads as if you wrote it yourself.
     </>
 );
 

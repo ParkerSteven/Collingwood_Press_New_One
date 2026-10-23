@@ -1,0 +1,26 @@
+# ==================================================
+# robots.txt for https://www.thecollingwoodpress.com
+# Last Updated: April 2026
+# ==================================================
+
+# ---- All Search Engine Crawlers ----
+User-agent: *
+
+# Block Thank You page from crawling
+Disallow: /thankyou/
+
+# Block API routes from crawling
+Disallow: /api/
+
+# Block landing pages from crawling
+Disallow: /lp/
+
+# Allow everything else
+Allow: /
+
+# ---- LLM Context & Agent Information ----
+# Allow crawling of our llm.txt file specifically for AI context ingestion
+Allow: /llm.txt
+
+# ---- Sitemap Location ----
+Sitemap: https://www.thecollingwoodpress.com/sitemap.xml

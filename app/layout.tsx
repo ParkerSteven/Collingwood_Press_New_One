@@ -300,6 +300,7 @@ export default function RootLayout({
       <body className="font-sans antialiased text-ink bg-paper selection:bg-coral selection:text-white">
 
         {/* Site-wide Schema.org JSON-LD */}
+        <meta name="p:domain_verify" content="ba918a4e719fc84c4b65cc03de6b3a41" />
         <script
           id="site-schema"
           type="application/ld+json"

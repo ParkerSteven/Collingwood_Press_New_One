@@ -53,9 +53,9 @@ export default function HeroAnimated() {
                     initial="hidden"
                     animate="show"
                     custom={2}
-                    className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-slate-300 font-sans font-normal max-w-2xl"
+                    className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-slate-300 font-sans font-normal pr-20"
                 >
-                    You wrote the book. You should own what comes next. The Collingwood Press offers full-service book publishing for authors who refuse to give up their rights or royalties. Senior editors, original book design, and global distribution, with 100% copyright and royalties retained. From manuscript to marketplace, your work stays yours.
+                    You wrote the book. You should own what comes next.<br /> The Collingwood Press offers full-service book publishing for authors who refuse to give up their rights or royalties. Senior editors, original book design, and global distribution, with 100% copyright and royalties retained. From manuscript to marketplace, your work stays yours.
                 </motion.p>
 
                 <motion.div
@@ -76,7 +76,17 @@ export default function HeroAnimated() {
                     </Button>
                     <Button
                         // onClick={openAIChat}
-                        href="/contact-us#manuscript-review"
+                        onClick={() => {
+                            if (typeof window !== 'undefined' && window.BrevoConversations) {
+                                // the API doesn't expose an "open" method – use openChat instead
+                                // passing `true` opens the widget immediately (argument is optional)
+                                window.BrevoConversations('openChat');
+                            } else {
+                                // fallback if the script hasn't injected yet; we don't have a /chat
+                                // route, so navigate to the homepage instead (or remove entirely)
+                                window.location.href = '/';
+                            }
+                        }}
                         variant="outline"
                         size="md"
                         className="text-white cursor-pointer"
@@ -141,14 +151,7 @@ export default function HeroAnimated() {
                 <div className="absolute inset-8 rounded-full pointer-events-none" />
 
                 <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]">
-                    <Image
-                        src="/assets/images/3DBooks New.png"
-                        alt="The Collingwood Press published book volumes"
-                        fill
-                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 480px, 520px"
-                        className="scale-[1.24] sm:scale-[1.3] lg:scale-[1.34] object-contain drop-shadow-[0_24px_40px_rgba(24,21,17,0.18)]"
-                        priority
-                    />
+
                 </div>
             </motion.div>
 
