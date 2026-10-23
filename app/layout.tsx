@@ -2,7 +2,6 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
-
 import "./globals.css";
 import { StickySocialStripLeft } from "@/components/ui/StickySocialStrip";
 import ChatWidgetManager from "@/components/site/ChatWidgetManager";
@@ -297,10 +296,12 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${cormorant.variable}`}
     >
+      <head>
+        <meta name="p:domain_verify" content="ba918a4e719fc84c4b65cc03de6b3a41" />
+      </head>
       <body className="font-sans antialiased text-ink bg-paper selection:bg-coral selection:text-white">
 
         {/* Site-wide Schema.org JSON-LD */}
-        <meta name="p:domain_verify" content="ba918a4e719fc84c4b65cc03de6b3a41" />
         <script
           id="site-schema"
           type="application/ld+json"
