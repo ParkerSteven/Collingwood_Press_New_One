@@ -298,14 +298,6 @@ export default function RootLayout({
       className={`${poppins.variable} ${cormorant.variable}`}
     >
       <head>
-        <meta
-          name="facebook-domain-verification"
-          content="lw3tzfad0y9qx9ewmwgjnn390w6pg3"
-        />
-        <meta
-          name="p:domain_verify"
-          content="ba918a4e719fc84c4b65cc03de6b3a41"
-        />
         {/* Google Analytics */}
         <script
           async
