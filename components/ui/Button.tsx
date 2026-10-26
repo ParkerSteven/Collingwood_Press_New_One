@@ -41,11 +41,11 @@ export default function Button({
   type = "button",
   onClick,
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-md font-sans font-medium tracking-[0.02em] transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E7665D] disabled:opacity-60 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`;
+  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-md font-sans font-medium tracking-[0.02em] transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E7665D] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (
-      <Link href={href} className={baseClasses}>
+      <Link href={href} onClick={onClick} className={baseClasses}>
         {children}
       </Link>
     );

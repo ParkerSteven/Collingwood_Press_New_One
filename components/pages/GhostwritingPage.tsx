@@ -5,29 +5,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import Eyebrow from "@/components/ui/Eyebrow";
 import SectionHeading from "@/components/ui/SectionHeading";
 import {
-    PenTool,
-    ShieldCheck,
-    Lock,
-    FileText,
-    Sparkles,
-    BookOpen,
-    CheckCircle2,
     ArrowRight,
-    Feather,
-    Lightbulb,
-    BriefcaseBusiness,
-    FileCheck2,
-    RefreshCw,
-    PenLine,
-    ListTree,
-    MessageSquare,
-    Bot,
-    Search,
-    Clock3,
-    UserCheck,
     Check,
 
 } from "lucide-react";

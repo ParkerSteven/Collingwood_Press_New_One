@@ -1,5 +1,6 @@
 
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import {
     ArrowRight,
     Lock,
@@ -11,6 +12,7 @@ import {
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
+import PopupForm from "../forms/popupform";
 
 const defaultClassName =
     "relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white";
@@ -33,7 +35,9 @@ interface HeroSectionProps {
     title?: string;
     highlightText?: string;
     description?: React.ReactNode;
-    buttons?: HeroButton[];
+    firstButtonText?: string;
+    secondButtonText?: string;
+    buttons?: any,
     guarantees?: HeroGuarantee[];
     children?: React.ReactNode;
     titleSuffix?: string;
@@ -42,13 +46,13 @@ interface HeroSectionProps {
 const defaultButtons: HeroButton[] = [
     {
         text: "Get a Ghostwriting Quote",
-        href: "/contact-us",
+        href: "/contact-us#manuscript-review",
         variant: "primary",
         showArrow: true,
     },
     {
         text: "Schedule a Consultation",
-        href: "/contact-us",
+        href: "/contact-us#manuscript-review",
         variant: "outline-white",
     },
 ];
@@ -81,31 +85,35 @@ export default function HeroSection({
     title = "Professional",
     highlightText = "Ghostwriting Services",
     description = defaultDescription,
-    buttons = defaultButtons,
+    firstButtonText = "Get a Ghostwriting Quote",
+    secondButtonText = "Schedule a Consultation",
     guarantees = defaultGuarantees,
     titleSuffix = "",
     children,
 }: HeroSectionProps) {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
+        <>
 
-        <section className={`${defaultClassName} ${className}`}>
-            {/* Background Effects */}
-            <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-            <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
 
-            <Container className="relative z-10">
-                <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
+            <section className={`${defaultClassName} ${className}`}>
+                {/* Background Effects */}
+                <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
+                <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
 
-                    {/* Eyebrow */}
-                    {eyebrow && (
-                        <Eyebrow tone="coral" align="center">
-                            {eyebrow}
-                        </Eyebrow>
-                    )}
+                <Container className="relative z-10">
+                    <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
 
-                    {/* Heading */}
-                    <h1
-                        className="
+                        {/* Eyebrow */}
+                        {eyebrow && (
+                            <Eyebrow tone="coral" align="center">
+                                {eyebrow}
+                            </Eyebrow>
+                        )}
+
+                        {/* Heading */}
+                        <h1
+                            className="
           mx-auto
           mt-5 sm:mt-6
           max-w-[650px]
@@ -120,21 +128,21 @@ export default function HeroSection({
           text-white
           text-balance
         "
-                    >
-                        {title}{" "}
+                        >
+                            {title}{" "}
 
-                        {highlightText && (
-                            <span className="block text-[#E7665D] italic sm:inline">
-                                {highlightText}
-                            </span>
-                        )}
-                        {titleSuffix && <> {titleSuffix}</>}
-                    </h1>
+                            {highlightText && (
+                                <span className="block text-[#E7665D] italic sm:inline">
+                                    {highlightText}
+                                </span>
+                            )}
+                            {titleSuffix && <> {titleSuffix}</>}
+                        </h1>
 
-                    {/* Description */}
-                    {description && (
-                        <div
-                            className="
+                        {/* Description */}
+                        {description && (
+                            <div
+                                className="
       mx-auto
       mt-6
       w-full
@@ -151,13 +159,13 @@ export default function HeroSection({
       [&_p]:m-0
       [&_p]:text-balance
     "
-                        >
-                            {description}
-                        </div>
-                    )}
+                            >
+                                {description}
+                            </div>
+                        )}
 
-                    {/* CTA Buttons */}
-                    {buttons.length > 0 && (
+                        {/* CTA Buttons */}
+
                         <div
                             className="
             mt-7 sm:mt-8 lg:mt-9
@@ -167,27 +175,40 @@ export default function HeroSection({
             sm:items-center sm:gap-4
           "
                         >
-                            {buttons.map((button, index) => (
-                                <Button
-                                    key={`${button.href}-${index}`}
-                                    href={button.href}
-                                    variant={button.variant ?? "primary"}
-                                    size="lg"
-                                >
-                                    <span>{button.text}</span>
-
-                                    {button.showArrow && (
-                                        <ArrowRight size={15} />
-                                    )}
-                                </Button>
-                            ))}
+                            <Button
+                                onClick={() => setIsPopupOpen(true)}
+                                variant="primary"
+                                size="md"
+                                className="shadow-sm hover:shadow-md cursor-pointer"
+                            >
+                                <span>{firstButtonText}</span>
+                                <ArrowRight size={15} />
+                            </Button>
+                            <Button
+                                onClick={() => {
+                                    if (typeof window !== 'undefined' && window.BrevoConversations) {
+                                        // the API doesn't expose an "open" method – use openChat instead
+                                        // passing `true` opens the widget immediately (argument is optional)
+                                        window.BrevoConversations('openChat');
+                                    } else {
+                                        // fallback if the script hasn't injected yet; we don't have a /chat
+                                        // route, so navigate to the homepage instead (or remove entirely)
+                                        window.location.href = '/';
+                                    }
+                                }}
+                                variant="outline"
+                                size="md"
+                                className="text-white cursor-pointer"
+                            >
+                                <span>{secondButtonText}</span>
+                            </Button>
                         </div>
-                    )}
 
-                    {/* Guarantees */}
-                    {guarantees.length > 0 && (
-                        <div
-                            className="
+
+                        {/* Guarantees */}
+                        {guarantees.length > 0 && (
+                            <div
+                                className="
             mt-9 sm:mt-10
             w-full
             max-w-5xl
@@ -199,31 +220,40 @@ export default function HeroSection({
             text-xs
             text-white/75
           "
-                        >
-                            {guarantees.map((item, index) => {
-                                const Icon = item.icon;
+                            >
+                                {guarantees.map((item, index) => {
+                                    const Icon = item.icon;
 
-                                return (
-                                    <div
-                                        key={index}
-                                        className="flex items-center gap-2"
-                                    >
-                                        <Icon
-                                            size={14}
-                                            className="shrink-0 text-[#E7665D]"
-                                        />
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="flex items-center gap-2"
+                                        >
+                                            <Icon
+                                                size={14}
+                                                className="shrink-0 text-[#E7665D]"
+                                            />
 
-                                        <span>{item.text}</span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    )}
+                                            <span>{item.text}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
 
-                    {children}
-                </div>
-            </Container>
-        </section>
+                        {children}
+                    </div>
+                </Container>
+            </section>
+
+            <PopupForm
+                isOpen={isPopupOpen}
+                onClose={() => setIsPopupOpen(false)}
+                source="Hero Section - Free Publishing Consultation"
+            />
+
+        </>
+
 
     );
 }

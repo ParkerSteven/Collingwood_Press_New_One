@@ -291,109 +291,97 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTAG_ID ?? "G-2TTE16DC3Z";
   return (
     <html
       lang="en"
       className={`${poppins.variable} ${cormorant.variable}`}
     >
       <head>
-        <meta name="p:domain_verify" content="ba918a4e719fc84c4b65cc03de6b3a41" />
-      </head>
-      <body className="font-sans antialiased text-ink bg-paper selection:bg-coral selection:text-white">
+        <meta
+          name="facebook-domain-verification"
+          content="lw3tzfad0y9qx9ewmwgjnn390w6pg3"
+        />
+        <meta
+          name="p:domain_verify"
+          content="ba918a4e719fc84c4b65cc03de6b3a41"
+        />
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YWRQMP00E2"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-        {/* Site-wide Schema.org JSON-LD */}
+gtag('config', 'G-YWRQMP00E2');`,
+          }}
+        />
+
+        {/* Trustpilot */}
+        <script
+          type="text/javascript"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          async
+        />
+
+        {/* Site-wide Schema.org JSON-LD graph */}
         <script
           id="site-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(siteSchema).replace(
-              /</g,
-              "\\u003c"
-            ),
+            __html: JSON.stringify(siteSchema),
           }}
         />
+      </head>
+      <body className="font-sans antialiased text-ink bg-paper selection:bg-coral selection:text-white">
 
-        {/* Google Analytics */}
-        <Script
-          id="google-tag-loader"
-          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-          strategy="afterInteractive"
-        />
-
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
-          {`
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-
-            gtag('js', new Date());
-
-            gtag('config', '${GOOGLE_ANALYTICS_ID}');
-
-            ${GOOGLE_TAG_ID !== GOOGLE_ANALYTICS_ID
-              ? `gtag('config', '${GOOGLE_TAG_ID}');`
-              : ""
-            }
-          `}
-        </Script>
-
-        {/* Facebook / Meta Pixel */}
-        <Script
-          id="facebook-pixel"
-          strategy="afterInteractive"
-        >
+        {/* Meta Pixel */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
-            {
-              if(f.fbq)return;
-              n=f.fbq=function(){
-                n.callMethod
-                  ? n.callMethod.apply(n,arguments)
-                  : n.queue.push(arguments)
-              };
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}
+            (window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
 
-              if(!f._fbq)f._fbq=n;
-              n.push=n;
-              n.loaded=!0;
-              n.version='2.0';
-              n.queue=[];
-              t=b.createElement(e);
-              t.async=!0;
-              t.src=v;
-              s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s);
-            }
-            (
-              window,
-              document,
-              'script',
-              'https://connect.facebook.net/en_US/fbevents.js'
-            );
-
-            fbq('init', '${FACEBOOK_PIXEL_ID}');
+            fbq('init', '905102058883202');
             fbq('track', 'PageView');
           `}
         </Script>
 
-        {/* Trustpilot Widget Script */}
+        {/* Google Tag */}
         <Script
-          id="trustpilot-script"
-          src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtmId}`}
           strategy="afterInteractive"
         />
 
+        {/* Google Analytics */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtmId}');
+          `}
+        </Script>
+
         {/* Mailmunch */}
         <Script
+          src="//a.mailmunch.co/app/v1/site.js"
           id="mailmunch-script"
-          src="https://a.mailmunch.co/app/v1/site.js"
-          data-mailmunch-site-id={MAILMUNCH_SITE_ID}
+          data-mailmunch-site-id="1103682"
           strategy="afterInteractive"
         />
+
 
         {/* Sticky Social Sidebar */}
         <StickySocialStripLeft />

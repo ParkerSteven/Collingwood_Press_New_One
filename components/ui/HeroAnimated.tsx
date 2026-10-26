@@ -75,7 +75,6 @@ export default function HeroAnimated() {
                         <ArrowRight size={15} />
                     </Button>
                     <Button
-                        // onClick={openAIChat}
                         onClick={() => {
                             if (typeof window !== 'undefined' && window.BrevoConversations) {
                                 // the API doesn't expose an "open" method – use openChat instead
