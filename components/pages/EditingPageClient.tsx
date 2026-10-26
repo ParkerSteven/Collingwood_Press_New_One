@@ -72,7 +72,7 @@ const editorialTiers = [
         name: "Proofreading",
         tagline: "The Final Pass Before Publication",
         description:
-            "Proofreading is the final pass before publication. It catches typographical errors, spelling mistakes, punctuation inconsistencies, and formatting problems that survive every prior round of editing. This service is for manuscripts that have already been through substantive editing and are ready for production. You receive a clean, corrected manuscript with all changes tracked.",
+            "The last check before your book is printed or uploaded. It catches the typos, spelling slips, punctuation inconsistencies and formatting problems that earlier rounds missed. Best for: manuscripts that are finished and ready for production.",
         focus: [
             "Typographical errors and spelling mistakes",
             "Punctuation and formatting consistency",
@@ -90,7 +90,7 @@ const editorialTiers = [
         name: "Copy Editing",
         tagline: "Grammar, Clarity, and Consistency",
         description:
-            "Copy editing enforces grammar, punctuation, spelling, syntax, and internal consistency at the sentence level. We follow the Chicago Manual of Style as the default standard. Your editor builds a custom style sheet for your manuscript that documents all terminology decisions, capitalization rules, and hyphenation choices. Timeline errors, character name inconsistencies, and factual questions are flagged. You receive a marked-up manuscript with tracked changes and a style sheet that follows the book into production.",
+            "Sentence-level accuracy: grammar, punctuation, spelling, syntax and consistency, checked against the Chicago Manual of Style. Timeline slips, character name mismatches and factual questions are flagged for you to resolve. Best for: books with solid structure that need precision.",
         focus: [
             "Grammar, punctuation, spelling, and syntax",
             "Chicago Manual of Style compliance",
@@ -108,7 +108,7 @@ const editorialTiers = [
         name: "Line Editing",
         tagline: "Stronger Prose and Author Voice",
         description:
-            "Line editing works at the sentence and paragraph level to improve flow and pacing, sharpen word choice, reduce repetition, and strengthen your voice. It is not about fixing errors. It is about making good writing better. Your editor tightens prose, eliminates passive constructions, and ensures tonal consistency across chapters while preserving the way you naturally write. You receive editorial comments and tracked changes throughout the manuscript.",
+            "Voice Line editing improves flow and pacing, sharpens word choice, cuts repetition and keeps the tone steady from chapter to chapter, while your natural voice stays yours. The aim is better writing, not just correct writing. Best for: structurally sound manuscripts that need stronger prose.",
         focus: [
             "Sentence flow, rhythm, and pacing",
             "Word choice and repetition reduction",
@@ -126,7 +126,7 @@ const editorialTiers = [
         name: "Developmental Editing",
         tagline: "Structure, Story, and Manuscript Development",
         description:
-            "Developmental editing addresses the structure of your book. Your editor evaluates narrative pacing, chapter organization, character arcs, thematic coherence, and genre expectations. For nonfiction, this includes argument structure, evidence placement, and reader progression. You receive a detailed editorial letter with specific, actionable recommendations plus inline comments throughout the manuscript. This is the most intensive level of manuscript editing and the one that produces the largest changes.",
+            "Developmental editing looks at the whole book: pacing, chapter order, character arcs, themes and genre expectations. For nonfiction, it covers argument structure, evidence placement and how the reader moves through the book. It is the deepest level, and it makes the biggest changes. Best for: first drafts, and books where the story or argument isn't working yet.",
         focus: [
             "Narrative pacing and chapter organization",
             "Character arcs, themes, and genre expectations",
@@ -141,6 +141,38 @@ const editorialTiers = [
     },
 ];
 
+
+const editingSteps = [
+    {
+        id: 1,
+        title: "Send Your Manuscript",
+        description:
+            "Upload your manuscript in Word (.doc or .docx). Google Docs and RTF files are accepted too. Want to test the fit first? Ask for a free sample edit.",
+        link: {
+            text: "manuscript",
+            href: "/blogs/prepare-a-manuscript-for-an-editor",
+        },
+    },
+    {
+        id: 2,
+        title: "Get a Fixed-Price Quote",
+        description:
+            "An editor reads your opening pages, confirms the level of work and sends a quote with the scope, price and timeline.",
+        needsVerification: true,
+    },
+    {
+        id: 3,
+        title: "Your Editor Gets to Work",
+        description:
+            "Your assigned editor works through your manuscript in Microsoft Word, at the level you chose.",
+    },
+    {
+        id: 4,
+        title: "Review Every Change",
+        description:
+            "You receive the edited manuscript with everything that goes with it, then accept or reject each change.",
+    },
+];
 
 export default function EditingPageClient() {
     return (
@@ -157,38 +189,11 @@ export default function EditingPageClient() {
                     highlightText="Book Editing Services"
                     description={
                         <p>
-                            A manuscript that loses readers in the first three
-                            chapters usually has a fixable problem. The pacing
-                            drags. The structure wanders. The sentences are
-                            clear to the writer but confusing to everyone else.
-                            These are editing problems, and they are the reason
-                            most rejection letters exist. Our book editing
-                            services cover four levels of professional editing:
-                            proofreading, copy editing, line editing, and
-                            developmental editing. Each one targets a different
-                            layer of the manuscript, and your editor recommends
-                            exactly which levels your book needs after reading
-                            the opening pages. You receive a marked-up manuscript
-                            with tracked changes, margin notes, and a custom style
-                            sheet. No automated tools. No anonymous freelancers.
-                            One assigned book editor who works with you by phone
-                            and email works with you from first read to final
-                            delivery.
+                            Finished your manuscript but worried it needs more than a spell check before readers see it? At The Collingwood Press, our book editing services work at four levels, from proofreading and copy editing to line editing and developmental editing, so your book gets the ones it needs. Your assigned expert editor starts with your opening pages, recommends where to begin, and stays with you from first read to final delivery.
                         </p>
                     }
-                    buttons={[
-                        {
-                            text: "Get a Quote",
-                            href: "/contact-us#manuscript-review",
-                            variant: "primary",
-                            showArrow: true,
-                        },
-                        {
-                            text: "Request a Free Sample Edit",
-                            href: "/contact-us#manuscript-review",
-                            variant: "outline-white",
-                        },
-                    ]}
+                    firstButtonText="Get a Editing Quote"
+                    secondButtonText="Schedule a Consultation"
                     guarantees={[
                         {
                             text: "Experienced Trade Press Editors",
@@ -204,9 +209,6 @@ export default function EditingPageClient() {
                         },
                     ]}
                 />
-
-
-                {/* REQUIRED NEW SECTION: Our Editing Process */}
 
                 {/* SECTION 2: EDITING FOR SELF-PUBLISHED AUTHORS */}
                 <section
@@ -227,235 +229,292 @@ export default function EditingPageClient() {
                             }
                             description={
                                 <>
-                                    If you are publishing independently, there is no
-                                    acquisitions editor at a publishing house catching
-                                    the problems before your book goes to market.
-                                    That responsibility falls on you, and it is the
-                                    single most important investment you can make
-                                    in your book&apos;s success. Our{" "}
-
-                                    book editing services for self-published authors
-                                    {" "}
-                                    follow the same standards used by traditional
-                                    trade publishers. We edit for{" "}
-                                    first-time authors,{" "}
-                                    indie authors with multiple titles,
-                                    and writers moving from traditional to self-publishing
-                                    who need the same editorial rigor they are used to.
-                                    We also offer{" "}
-                                    children&apos;s book editing{" "}
-                                    for picture books, chapter books, and middle grade,
-                                    with editors who understand the specific pacing,
-                                    vocabulary, and structural conventions those
-                                    formats require.
+                                    The Collingwood Press provides editing services for independent and self-published authors, whether you are finishing a first draft or preparing the next book in a series. We edit fiction, nonfiction and children&apos;s books, including picture books, chapter books and middle grade, always shaped around the readers each book is written for.
                                 </>
                             }
                         />
                     </Container>
                 </section>
 
-
-
                 {/* SECTION 3: FOUR LEVELS OF BOOK EDITING */}
+
+
                 <section
                     id="tiers"
-                    className="py-20 lg:py-28 bg-white border-b border-line"
+                    className="relative overflow-hidden border-b border-[#E8E3DD] bg-[#F8F7F3] py-12 sm:py-16 lg:py-28"
                 >
-                    <Container className="flex flex-col gap-14">
+                    {/* Subtle Grid Background */}
+                    <div
+                        className="pointer-events-none absolute inset-0 opacity-50"
+                        style={{
+                            backgroundImage:
+                                "linear-gradient(to right, rgba(120,110,100,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(120,110,100,0.07) 1px, transparent 1px)",
+                            backgroundSize: "34px 34px",
+                        }}
+                    />
+
+                    <Container className="relative z-10 w-full min-w-0">
 
                         {/* Section Heading */}
-                        <SectionHeading
-                            eyebrow="Choose the Right Service"
-                            title={
-                                <>
-                                    Choose the Right{" "}
-                                    <span className="italic text-[#E7665D]">
-                                        Book Editing Service
+                        <div className="mb-9 grid grid-cols-1 items-end gap-5 sm:mb-12 sm:gap-7 lg:mb-16 lg:grid-cols-2 lg:gap-16">
+                            <div className="min-w-0">
+                                <div className="mb-4 flex items-center gap-2 sm:mb-5 relative md:top-10">
+                                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-[#D5645C] sm:text-[11px]">
+                                        Choose the Right Service
                                     </span>
-                                </>
-                            }
-                            description="Editing is not one thing. It is four distinct services, each addressing a different layer of your manuscript. Most books need at least two. Your editor will tell you which ones your manuscript requires after the initial review. Here is what each service covers, who it is for, and what it costs."
-                        />
+                                </div>
 
-                        {/* Four Editorial Service Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {editorialTiers.map((item) => (
-                                <div
-                                    key={item.name}
-                                    className="p-8 sm:p-10 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col justify-between hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300"
-                                >
-                                    <div>
-                                        {/* Tier Number and Badge */}
-                                        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-line">
-                                            <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D]">
-                                                {item.tier}
-                                            </span>
+                                <h2 className="max-w-2xl font-serif text-[clamp(1.85rem,7vw,3.3rem)] font-bold leading-[1.12] tracking-tight text-[#202629] relative md:top-10">
+                                    Four Levels of Editing,{" "}
+                                    <span className="block text-[#D5645C]">
+                                        and the One Your Manuscript Needs
+                                    </span>
+                                </h2>
+                            </div>
 
-                                            <span className="font-sans text-[11px] text-ink-muted bg-[#fdf6f5] px-2.5 py-1 rounded-md border border-[#E7665D]/20 font-medium">
+                            <p className="max-w-xl text-[13px] leading-6 text-[#596064] sm:text-base sm:leading-7 lg:ml-auto">
+                                Editing is four separate services, each working on a different
+                                layer of your manuscript. Here is what each covers, who it
+                                suits and what it costs.
+                            </p>
+                        </div>
+
+                        {/* Responsive Staircase Cards */}
+                        <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4 xl:items-end xl:gap-4">
+                            {editorialTiers.map((item, index) => {
+                                const isFeatured = index === 3;
+
+                                const colors = [
+                                    {
+                                        border: "#D8A243",
+                                        accent: "#A97821",
+                                        background: "#FFFFFF",
+                                    },
+                                    {
+                                        border: "#E7665D",
+                                        accent: "#C75148",
+                                        background: "#FFFFFF",
+                                    },
+                                    {
+                                        border: "#B53D35",
+                                        accent: "#B53D35",
+                                        background: "#FFF2ED",
+                                    },
+                                    {
+                                        border: "#4A96B3",
+                                        accent: "#FFAAA2",
+                                        background: "#101A30",
+                                    },
+                                ];
+
+                                const theme = colors[index] ?? colors[1];
+
+                                return (
+                                    <div
+                                        key={item.name}
+                                        className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-lg border border-[#E5E0DB] border-t-[3px] p-5 shadow-[0_6px_20px_rgba(30,30,30,0.06)] transition-all duration-300 hover:border-[#E7665D]/40 hover:shadow-[0_16px_35px_rgba(30,30,30,0.12)] sm:p-6 xl:h-auto ${index === 0
+                                            ? "xl:min-h-[510px]"
+                                            : index === 1
+                                                ? "xl:min-h-[555px]"
+                                                : index === 2
+                                                    ? "xl:min-h-[600px]"
+                                                    : "xl:min-h-[650px]"
+                                            } ${isFeatured
+                                                ? "border-[#344B76] bg-gradient-to-br from-[#101A30] via-[#172B4D] to-[#294D78] text-white shadow-[0_16px_35px_rgba(16,26,48,0.2)]"
+                                                : ""
+                                            }`}
+                                        style={
+                                            !isFeatured
+                                                ? {
+                                                    backgroundColor: theme.background,
+                                                    borderTopColor: theme.border,
+                                                }
+                                                : {
+                                                    borderTopColor: theme.border,
+                                                }
+                                        }
+                                    >
+
+                                        {/* Card Header */}
+                                        <div className="mb-5 flex items-start justify-between gap-3 sm:mb-6">
+                                            <div
+                                                className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-lg sm:h-12 sm:w-12 ${isFeatured
+                                                    ? "bg-white/10 text-[#FFAAA2]"
+                                                    : "bg-[#F9EBE7] text-[#B53D35]"
+                                                    }`}
+                                            >
+                                                <span className="font-sans text-sm font-semibold">
+                                                    {String(index + 1).padStart(2, "0")}
+                                                </span>
+                                            </div>
+
+                                            <span
+                                                className={`max-w-[130px] text-right font-mono text-[9px] font-semibold uppercase leading-4 tracking-[0.1em] ${isFeatured
+                                                    ? "text-[#A8DFE2]"
+                                                    : "text-[#94682A]"
+                                                    }`}
+                                            >
                                                 {item.badge}
                                             </span>
                                         </div>
 
-                                        {/* H3 Service Title */}
-                                        <h3 className="font-serif text-[1.38rem] font-bold text-ink leading-snug">
+                                        {/* Service Title */}
+                                        <h3
+                                            className={`font-serif text-[1.3rem] font-bold leading-tight sm:text-[1.4rem] ${isFeatured ? "text-white" : "text-[#202629]"
+                                                }`}
+                                        >
                                             {item.name}
                                         </h3>
 
-                                        <span className="text-xs text-ink-muted italic block mt-1">
+                                        {/* Tagline */}
+                                        <p
+                                            className={`mt-2 text-xs font-semibold leading-5 ${isFeatured
+                                                ? "text-[#B5DCE0]"
+                                                : "text-[#B53D35]"
+                                                }`}
+                                        >
                                             {item.tagline}
-                                        </span>
+                                        </p>
 
-                                        {/* Full SEO Description */}
-                                        <div className="mt-3.5 text-sm text-ink-soft leading-relaxed">
+                                        {/* Description */}
+                                        <div
+                                            className={`mt-4 break-words text-[13px] leading-[1.75] sm:mt-5 ${isFeatured
+                                                ? "text-slate-200"
+                                                : "text-[#565B5E]"
+                                                }`}
+                                        >
                                             {item.description}
                                         </div>
 
                                         {/* Best For */}
-                                        <div className="mt-6 pt-5 border-t border-line/70">
-                                            <span className="text-[11px] font-bold uppercase tracking-wider text-[#E7665D] block mb-3">
-                                                Best For
-                                            </span>
-
-                                            <div className="flex items-start gap-2.5 text-xs text-ink-soft">
-                                                <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#E7665D]/15 text-[#E7665D] text-[10px] mt-0.5 font-bold">
-                                                    ✓
+                                        <div className="mt-5 sm:mt-6">
+                                            <div
+                                                className={`border-l-2 pl-3 ${isFeatured
+                                                    ? "border-[#7CD0D5]"
+                                                    : "border-[#E7665D]"
+                                                    }`}
+                                            >
+                                                <span
+                                                    className={`block font-mono text-[10px] font-bold uppercase tracking-[0.12em] ${isFeatured
+                                                        ? "text-[#B5DCE0]"
+                                                        : "text-[#94682A]"
+                                                        }`}
+                                                >
+                                                    Best For
                                                 </span>
 
-                                                <span className="leading-relaxed">
+                                                <p
+                                                    className={`mt-1 break-words text-xs leading-[1.7] ${isFeatured
+                                                        ? "text-slate-200"
+                                                        : "text-[#33383A]"
+                                                        }`}
+                                                >
                                                     {item.bestFor}
-                                                </span>
+                                                </p>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    {/* Pricing and Turnaround */}
-                                    <div className="mt-6 pt-5 border-t border-line/70">
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                                            <div>
-                                                <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
-                                                    Starting At
-                                                </span>
+                                        {/* Pricing Footer */}
+                                        <div
+                                            className={`mt-auto border-t border-dashed pt-5 ${isFeatured
+                                                ? "border-white/20"
+                                                : "border-[#DED8D2]"
+                                                }`}
+                                        >
+                                            <span
+                                                className={`block font-mono text-[10px] font-semibold uppercase tracking-[0.12em] ${isFeatured
+                                                    ? "text-slate-300"
+                                                    : "text-[#77716D]"
+                                                    }`}
+                                            >
+                                                From
+                                            </span>
 
-                                                <span className="font-serif text-xl font-bold text-[#E7665D] mt-1 block">
+                                            <div className="mt-1 flex flex-wrap items-baseline gap-2">
+                                                <span
+                                                    className={`font-serif text-[1.7rem] font-bold leading-tight sm:text-3xl ${isFeatured ? "text-white" : "text-[#202629]"
+                                                        }`}
+                                                >
                                                     {item.startingPrice}
                                                 </span>
                                             </div>
 
-                                            <div className="sm:text-right">
-                                                <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
+                                            {/* Turnaround */}
+                                            <div className="mt-5">
+                                                <span
+                                                    className={`block font-mono text-[10px] font-semibold uppercase tracking-[0.1em] ${isFeatured
+                                                        ? "text-slate-300"
+                                                        : "text-[#77716D]"
+                                                        }`}
+                                                >
                                                     Turnaround
                                                 </span>
 
-                                                <span className="text-sm font-semibold text-ink mt-1 block">
+                                                <span
+                                                    className={`mt-1 block text-xs font-semibold ${isFeatured
+                                                        ? "text-white"
+                                                        : "text-[#202629]"
+                                                        }`}
+                                                >
                                                     {item.turnaround}
                                                 </span>
                                             </div>
+
+                                            {/* Progress Indicator */}
+                                            <div className="mt-3 flex h-1.5 gap-[3px]">
+                                                {Array.from({ length: 8 }).map(
+                                                    (_, barIndex) => (
+                                                        <span
+                                                            key={barIndex}
+                                                            className="h-full flex-1 rounded-sm"
+                                                            style={{
+                                                                backgroundColor:
+                                                                    barIndex < (index + 1) * 2
+                                                                        ? isFeatured
+                                                                            ? "#65B5BD"
+                                                                            : theme.border
+                                                                        : isFeatured
+                                                                            ? "rgba(255,255,255,0.15)"
+                                                                            : "#E6E4E1",
+                                                            }}
+                                                        />
+                                                    )
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
 
                         {/* Bottom CTA */}
-                        <div className="p-6 sm:p-8 rounded-xl border border-[#E7665D]/20 bg-[#fdf6f5] shadow-sm max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 w-full">
-                            <div className="flex items-center gap-4">
-                                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white text-[#E7665D] border border-[#E7665D]/30">
-                                    <Search size={20} />
-                                </div>
+                        <div className="mt-8 flex w-full flex-col items-stretch gap-5 rounded-lg border border-[#E3DDD7] border-l-4 border-l-[#E7665D] bg-white p-5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+                            <div className="min-w-0 flex-1">
+                                <h3 className="font-serif text-lg font-bold leading-snug text-[#202629] sm:text-xl">
+                                    Not sure which service you need?
+                                </h3>
 
-                                <div>
-                                    <h3 className="font-serif text-lg font-bold text-ink">
-                                        Not sure which service you need?
-                                    </h3>
-
-                                    <p className="text-xs sm:text-sm text-ink-soft mt-1 leading-relaxed">
-                                        Get a personalized editing recommendation
-                                        for your manuscript.
-                                    </p>
-                                </div>
+                                <p className="mt-2 text-[13px] leading-relaxed text-[#646769] sm:text-sm">
+                                    Get a personalized editing recommendation for your manuscript.
+                                </p>
                             </div>
 
-                            <Button
-                                href="/contact-us#manuscript-review"
-                                variant="primary"
-                                size="lg"
-                            >
-                                <span>Get a Quote</span>
-                                <ArrowRight size={15} />
-                            </Button>
+                            <div className="w-full sm:w-auto sm:shrink-0">
+                                <Button
+                                    href="/contact-us#manuscript-review"
+                                    variant="primary"
+                                    size="lg"
+                                >
+                                    <span>Get a Quote</span>
+                                    <ArrowRight size={15} />
+                                </Button>
+                            </div>
                         </div>
+
                     </Container>
                 </section>
 
 
-                {/* Sample Edit Callout */}
-
-                {/* SECTION 4: HOW TO CHOOSE THE RIGHT EDITING SERVICE */}
-                <section className="hero-gradient py-20 lg:py-24 text-white border-b border-white/10 relative overflow-hidden paper-grain">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-
-                            {/* Eyebrow */}
-                            <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
-                                Practical Guidance
-                            </span>
-
-                            {/* H2 Heading */}
-                            <h2 className="mt-3 max-w-2xl font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
-                                How to Choose the Right <br />{" "}
-                                <span className="italic text-[#F08A82]">
-                                    Editing Service
-                                </span>
-                            </h2>
-
-                            {/* Content */}
-                            <div className="mt-5 flex flex-col gap-5 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
-                                <p>
-                                    If you are not sure which type of editing your
-                                    manuscript needs, start with this: read five
-                                    pages from the middle of your book out loud.
-                                    If the sentences feel awkward, wordy, or
-                                    repetitive, you probably need{" "}
-                                    line editing
-                                    . If the grammar and punctuation feel inconsistent
-                                    but the writing reads well, you need{" "}
-                                    copy editing
-                                    . If you are unsure whether the chapters are in
-                                    the right order, or whether the story holds
-                                    together, you need{" "}
-                                    developmental editing
-                                    . If the book has already been through substantive
-                                    editing and just needs a final check, you need{" "}
-                                    proofreading
-                                    .
-                                </p>
-
-                                <p>
-                                    Most manuscripts benefit from more than one
-                                    level. A common combination is developmental
-                                    editing followed by a copy edit and proofread.
-                                    We will tell you what we recommend after reading
-                                    your opening pages, and you decide how to proceed.
-                                </p>
-
-                                <p>
-                                    The{" "}
-                                    difference between line editing and
-                                    developmental editing{" "}
-                                    is scope. Developmental editing restructures
-                                    the book. Line editing polishes the prose.
-                                    One works on the blueprint; the other works
-                                    on the finish. If both need attention,
-                                    developmental comes first.
-                                </p>
-                            </div>
-
-
-                        </div>
-                    </Container>
-                </section>
 
                 {/* SECTION 5: HOW OUR BOOK EDITING PROCESS WORKS */}
                 <section
@@ -480,185 +539,36 @@ export default function EditingPageClient() {
                         />
 
                         {/* Four-Step Editorial Process */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
 
-                            {/* STEP 01 */}
-                            <div className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-7 sm:p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between">
-                                <div>
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-line/70">
-                                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                            <FileCheck2 size={20} />
-                                        </div>
-                                        <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
-                                            01
-                                        </span>
-                                    </div>
+                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                            {editingSteps.map((item) => (
+                                <div
+                                    key={item.id}
+                                    className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-[#344B76] bg-gradient-to-br from-[#101A30] via-[#172B4D] to-[#294D78] p-7 shadow-[0_12px_38px_rgba(16,26,48,0.18)] transition-all duration-500 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_22px_55px_rgba(25,55,100,0.35)] sm:p-8"
+                                >
 
-                                    <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-1">
-                                        Step 01
-                                    </span>
-
-                                    <h3 className="font-serif text-[1.28rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        1. Submit Your Manuscript
+                                    {/* Step Title */}
+                                    <h3 className="mb-4 text-base font-semibold leading-snug text-white sm:text-xl">
+                                        {item.title}
                                     </h3>
 
-                                    <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                        Send us your manuscript in Word (.doc or
-                                        .docx). We also accept Google Docs and RTF.
-                                        If you want to test the fit before committing,
-                                        request a free sample edit of your first
-                                        1,000 words.
+                                    {/* Step Description */}
+                                    <p className="text-sm leading-relaxed text-slate-200 sm:text-[14px]">
+                                        {item.description}
                                     </p>
                                 </div>
-
-                                <div className="mt-6 pt-4 border-t border-line/70">
-                                    <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
-                                        Key Deliverable
-                                    </span>
-                                    <span className="text-xs font-semibold text-ink mt-0.5 block">
-                                        Manuscript Submission &amp; Sample Edit Request
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* STEP 02 */}
-                            <div className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-7 sm:p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between">
-                                <div>
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-line/70">
-                                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                            <Search size={20} />
-                                        </div>
-                                        <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
-                                            02
-                                        </span>
-                                    </div>
-
-                                    <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-1">
-                                        Step 02
-                                    </span>
-
-                                    <h3 className="font-serif text-[1.28rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        2. Review and Quote
-                                    </h3>
-
-                                    <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                        A senior editor reads your opening pages,
-                                        assesses the level of work required, and
-                                        sends you a quote with a clear scope,
-                                        fixed price, and delivery timeline.
-                                        No surprises. The price we quote is
-                                        the price you pay.
-                                    </p>
-                                </div>
-
-                                <div className="mt-6 pt-4 border-t border-line/70">
-                                    <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
-                                        Key Deliverable
-                                    </span>
-                                    <span className="text-xs font-semibold text-ink mt-0.5 block">
-                                        Fixed-Price Quote &amp; Editorial Scope
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* STEP 03 */}
-                            <div className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-7 sm:p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between">
-                                <div>
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-line/70">
-                                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                            <PenTool size={20} />
-                                        </div>
-                                        <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
-                                            03
-                                        </span>
-                                    </div>
-
-                                    <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-1">
-                                        Step 03
-                                    </span>
-
-                                    <h3 className="font-serif text-[1.28rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        3. Editing
-                                    </h3>
-
-                                    <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                        Your assigned editor works through the
-                                        manuscript using tracked changes{" "}
-                                        and margin comments in Microsoft Word.
-                                        For developmental editing,
-                                        you also receive a standalone{" "}
-                                        editorial letter outlining
-                                        structural recommendations. You can reach
-                                        your editor by phone or email at any
-                                        point during the process.
-                                    </p>
-                                </div>
-
-                                <div className="mt-6 pt-4 border-t border-line/70">
-                                    <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
-                                        Key Deliverable
-                                    </span>
-                                    <span className="text-xs font-semibold text-ink mt-0.5 block">
-                                        Tracked Changes &amp; Editorial Recommendations
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* STEP 04 */}
-                            <div className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-7 sm:p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between">
-                                <div>
-                                    <div className="flex items-center justify-between pb-4 mb-5 border-b border-line/70">
-                                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                            <ClipboardCheck size={20} />
-                                        </div>
-                                        <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
-                                            04
-                                        </span>
-                                    </div>
-
-                                    <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-1">
-                                        Step 04
-                                    </span>
-
-                                    <h3 className="font-serif text-[1.28rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        4. Delivery and Revision
-                                    </h3>
-
-                                    <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                        You receive the completed{" "}
-                                        marked-up manuscript,
-                                        the custom style sheet, and any
-                                        supplementary documents. You review
-                                        the edits, accept or reject individual
-                                        changes, and come back with questions.
-                                        One round of follow-up correspondence
-                                        is included in every engagement.
-                                    </p>
-                                </div>
-
-                                <div className="mt-6 pt-4 border-t border-line/70">
-                                    <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
-                                        Key Deliverable
-                                    </span>
-                                    <span className="text-xs font-semibold text-ink mt-0.5 block">
-                                        Edited Manuscript &amp; Custom Style Sheet
-                                    </span>
-                                </div>
-                            </div>
+                            ))}
                         </div>
-
-
                     </Container>
                 </section>
 
-
-
                 {/* SECTION 6: WHAT YOU RECEIVE */}
+
                 <section
                     id="editing-deliverables"
-                    className="py-20 lg:py-28 bg-white border-b border-line"
+                    className="relative overflow-hidden bg-[#F8F9FC] py-14 lg:py-20"
                 >
-                    <Container className="flex flex-col gap-14 sm:gap-16">
+                    <Container className="flex flex-col gap-8 lg:gap-8">
 
                         {/* Section Heading */}
                         <SectionHeading
@@ -674,154 +584,115 @@ export default function EditingPageClient() {
                             description="Every editing engagement includes the following, regardless of which service level you choose."
                         />
 
-                        {/* Editing Deliverables Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* Editorial Deliverables - Clean Checklist Layout */}
+                        <div className="relative rounded-2xl px-5 py-9 sm:px-10 sm:py-12">
 
-                            {[
-                                {
-                                    title: "Marked-up Manuscript",
-                                    icon: FileCheck2,
-                                    badge: "Tracked Changes",
-                                    description:
-                                        "Marked-up manuscript with all edits visible in tracked changes. Nothing is changed silently.",
-                                },
-                                {
-                                    title: "Margin Comments",
-                                    icon: MessageSquareQuote,
-                                    badge: "Editorial Feedback",
-                                    description:
-                                        "Margin comments explaining the reasoning behind significant edits, so you understand the changes and learn from them.",
-                                },
-                                {
-                                    title: "Custom Style Sheet",
-                                    icon: ClipboardCheck,
-                                    badge: "Consistency",
-                                    description:
-                                        "Custom style sheet documenting terminology, capitalization, hyphenation, and spelling decisions specific to your book.",
-                                },
-                                {
-                                    title: "Chicago Manual of Style Compliance",
-                                    icon: BookOpen,
-                                    badge: "Editorial Standards",
-                                    description:
-                                        "Chicago Manual of Style compliance (current edition) as the default standard. APA, AP, or MLA available on request.",
-                                },
-                                {
-                                    title: "Direct Editor Communication",
-                                    icon: PhoneCall,
-                                    badge: "Personal Support",
-                                    description:
-                                        "Direct communication with your assigned editor by phone and email. You work directly with your assigned editor on all editorial questions. or a support queue.",
-                                },
-                                {
-                                    title: "One Round of Follow-up",
-                                    icon: CheckCheck,
-                                    badge: "Post-Delivery",
-                                    description:
-                                        "One round of follow-up included after delivery for questions, clarifications, or brief additional review.",
-                                },
-                            ].map((item) => {
-                                const Icon = item.icon;
-
-                                return (
+                            {/* Deliverables Bullet List */}
+                            <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
+                                {[
+                                    {
+                                        title: "Marked-up Manuscript",
+                                        icon: FileCheck2,
+                                        badge: "Tracked Changes",
+                                        description:
+                                            "Every edit appears in tracked changes, so nothing is changed silently.",
+                                    },
+                                    {
+                                        title: "Margin Comments",
+                                        icon: MessageSquareQuote,
+                                        badge: "Editorial Feedback",
+                                        description:
+                                            "Notes explaining the reasoning behind significant edits, so you understand each change and learn from it.",
+                                    },
+                                    {
+                                        title: "Custom Style Sheet",
+                                        icon: ClipboardCheck,
+                                        badge: "Consistency",
+                                        description:
+                                            "A record of the terminology, capitalization, hyphenation and spelling decisions made for your book.",
+                                    },
+                                    {
+                                        title: "Chicago Manual of Style Compliance",
+                                        icon: BookOpen,
+                                        badge: "Editorial Standards",
+                                        description:
+                                            "Our default standard, current edition. APA, AP or MLA on request.",
+                                    },
+                                    {
+                                        title: "Direct Editor Communication",
+                                        icon: PhoneCall,
+                                        badge: "Personal Support",
+                                        description:
+                                            "You talk to your assigned editor by phone and email about any editorial question, with no support queue in between.",
+                                    },
+                                    {
+                                        title: "One Round of Follow-up",
+                                        icon: CheckCheck,
+                                        badge: "Post-Delivery",
+                                        description:
+                                            "After delivery, one round for questions, clarifications or a brief additional review.",
+                                    },
+                                ].map((item) => (
                                     <div
                                         key={item.title}
-                                        className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-7 sm:p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col"
+                                        className="group flex items-start gap-4 border-t border-[#E6DED7] py-7 transition-colors duration-300"
                                     >
-                                        {/* Card Header */}
-                                        <div className="flex items-center justify-between gap-3 mb-5">
-                                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                                <Icon size={20} />
-                                            </div>
+                                        {/* Bullet Icon */}
+                                        <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FCEAE7] text-[#E7665D] transition-colors duration-300 group-hover:bg-[#E7665D] group-hover:text-white">
+                                            <CheckCircle2 size={17} strokeWidth={2} />
+                                        </div>
 
-                                            <span className="font-sans text-[10px] uppercase tracking-wider text-[#E7665D] font-semibold bg-[#fdf6f5] px-2.5 py-1 rounded border border-[#E7665D]/20 text-right">
+                                        {/* Content */}
+                                        <div className="min-w-0 flex-1">
+                                            <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#E7665D]">
                                                 {item.badge}
                                             </span>
-                                        </div>
 
-                                        {/* H3 */}
-                                        <h3 className="font-serif text-[1.25rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                            {item.title}
-                                        </h3>
+                                            <h4 className="mt-2 font-serif text-base font-bold leading-snug text-ink transition-colors duration-300 group-hover:text-[#E7665D] sm:text-[1.2rem]">
+                                                {item.title}
+                                            </h4>
 
-                                        <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                            {item.description}
-                                        </p>
-
-                                        <div className="mt-auto pt-6">
-                                            <div className="border-t border-line/60 pt-3 flex items-center gap-2 text-xs font-semibold text-[#E7665D]">
-                                                <CheckCircle2 size={14} />
-                                                <span>Included With Your Editing Service</span>
-                                            </div>
+                                            <p className="mt-2 text-sm leading-7 text-ink-soft sm:text-[14px] max-w-xl">
+                                                {item.description}
+                                            </p>
                                         </div>
                                     </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Developmental Editing Special Deliverable */}
-                        <div className="rounded-xl border border-[#E7665D]/25 bg-[#fdf6f5] p-7 sm:p-10 shadow-[0_4px_24px_0_rgba(231,102,93,0.08)]">
-                            <div className="flex flex-col md:flex-row items-start gap-6">
-
-                                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white text-[#E7665D] border border-[#E7665D]/30">
-                                    <Layers size={26} />
-                                </div>
-
-                                <div className="flex-1">
-                                    <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D]">
-                                        Additional Developmental Editing Deliverable
-                                    </span>
-
-                                    <h3 className="font-serif text-[1.5rem] sm:text-[1.7rem] font-bold text-ink mt-2 leading-tight">
-                                        Detailed Editorial Letter
-                                    </h3>
-
-                                    <p className="mt-3 text-sm sm:text-base text-ink-soft leading-relaxed">
-                                        For developmental editing,
-                                        you also receive a detailed{" "}
-                                        editorial letter (typically
-                                        5 to 15 pages) with specific, actionable
-                                        recommendations on structure, pacing,
-                                        character, and theme.
-                                    </p>
-                                </div>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Free Sample Edit CTA */}
-                        <div className="rounded-xl border border-[#E7665D]/25 bg-[#fdfbf7] p-8 sm:p-10 lg:p-12 shadow-sm">
-                            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
-                                <div className="flex-1 text-center lg:text-left">
-                                    <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D]">
+                        {/* Free Sample Edit CTA */}
+
+                        <div className="relative overflow-hidden rounded-2xl border border-[#344B76] bg-gradient-to-br from-[#101A30] via-[#172B4D] to-[#294D78] p-6 shadow-[0_12px_38px_rgba(16,26,48,0.18)] sm:p-10 lg:p-8">
+
+                            <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+
+                                {/* CTA Content */}
+                                <div className="max-w-2xl">
+                                    <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#FFAAA2]">
                                         Complimentary Editorial Evaluation
                                     </span>
 
-                                    <h3 className="mt-3 font-serif text-[1.7rem] sm:text-[1.7rem] font-bold text-ink leading-tight">
+                                    <h3 className="mt-3 font-serif text-xl font-bold leading-tight text-white sm:text-[1.4rem]">
                                         See Our Editing Approach Before You Commit
                                     </h3>
 
-                                    <p className="mt-3 text-sm sm:text-base text-ink-soft leading-relaxed max-w-2xl">
-                                        For a complimentary look at our editorial
-                                        approach, request a free sample edit of
-                                        your first 1,000 words. We return it
-                                        within 48 hours with tracked changes
-                                        and a brief diagnostic summary.
+                                    <p className="mt-4 text-sm leading-7 text-slate-200 sm:text-[14px]">
+                                        Send your first 1,000 words and see how we work before you decide. It comes back with tracked changes and a brief diagnostic summary.
                                     </p>
 
-                                    <div className="mt-5 flex flex-wrap justify-center lg:justify-start gap-5 text-xs text-ink-muted">
+                                    {/* Benefits */}
+                                    <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-200">
                                         <div className="flex items-center gap-2">
-                                            <Clock
-                                                size={15}
-                                                className="text-[#E7665D]"
-                                            />
+                                            <Clock size={16} className="text-[#FFAAA2]" />
                                             <span>48-Hour Turnaround</span>
                                         </div>
 
                                         <div className="flex items-center gap-2">
                                             <CheckCircle2
-                                                size={15}
-                                                className="text-[#E7665D]"
+                                                size={16}
+                                                className="text-[#FFAAA2]"
                                             />
                                             <span>No Purchase Obligation</span>
                                         </div>
@@ -833,7 +704,7 @@ export default function EditingPageClient() {
                                     <Button
                                         href="/contact-us#manuscript-review"
                                         variant="primary"
-                                        size="lg"
+                                        size="md"
                                     >
                                         <span>Request a Free Sample Edit</span>
                                         <ArrowRight size={15} />
@@ -841,8 +712,11 @@ export default function EditingPageClient() {
                                 </div>
                             </div>
                         </div>
+
+
                     </Container>
                 </section>
+
 
                 <FAQAccordion
                     items={editingFAQs}

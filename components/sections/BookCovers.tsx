@@ -73,7 +73,7 @@ export default function BookCarousel({
             }
             resetAutoSlide();
         }, AUTO_SLIDE_DELAY);
-    }, [bookCovers.length, clearAutoSlide, scroll]);
+    }, [clearAutoSlide, scroll]);
 
     useEffect(() => {
         resetAutoSlide();

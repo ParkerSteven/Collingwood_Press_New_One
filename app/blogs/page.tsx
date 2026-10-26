@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { CalendarDays, ArrowRight, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import { decodeHTMLEntities } from '@/lib/util';
@@ -342,11 +343,13 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                         <div className="mb-14 overflow-hidden rounded-lg border border-[#ebe4df] bg-white shadow-[0_14px_45px_rgba(17,24,39,0.055)]">
                             <Link href={`/blogs/${featuredPost.slug}/`} className="group grid md:grid-cols-2">
                                 <div className="relative h-[220px] sm:h-[260px] md:h-auto overflow-hidden ">
-                                    <img
+                                    <Image
                                         src={getImageUrl(featuredPost)}
                                         alt={plainText(featuredPost.title.rendered)}
+                                        fill
                                         loading="lazy"
                                         className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.04]"
+                                        sizes="(min-width: 768px) 50vw, 100vw"
                                     />
 
                                     <span className="absolute left-5 top-5 z-10 rounded-sm bg-[#eb6c63] px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white">
@@ -380,13 +383,14 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                                     className="group flex h-full flex-col overflow-hidden rounded-md border border-[#eae4df] bg-white shadow-[0_6px_20px_rgba(17,24,39,0.035)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(17,24,39,0.1)]"
                                 >
                                     <div className="relative aspect-[16/10] overflow-hidden bg-[#eeece8]">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
+                                        <Image
                                             src={getImageUrl(post)}
                                             alt={plainText(post.title.rendered)}
+                                            fill
                                             loading="lazy"
                                             decoding="async"
                                             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                                         />
                                         <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#eb6c63] transition-all duration-500 group-hover:w-full" />
                                     </div>
