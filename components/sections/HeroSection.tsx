@@ -43,20 +43,6 @@ interface HeroSectionProps {
     titleSuffix?: string;
 }
 
-const defaultButtons: HeroButton[] = [
-    {
-        text: "Get a Ghostwriting Quote",
-        href: "/contact-us#manuscript-review",
-        variant: "primary",
-        showArrow: true,
-    },
-    {
-        text: "Schedule a Consultation",
-        href: "/contact-us#manuscript-review",
-        variant: "outline-white",
-    },
-];
-
 const defaultGuarantees: HeroGuarantee[] = [
     {
         text: "100% Strict NDA Protection",
@@ -74,8 +60,7 @@ const defaultGuarantees: HeroGuarantee[] = [
 
 const defaultDescription = (
     <>
-        You have the expertise, the experience, or the story. What you need is someone who can turn it into a finished book. Our professional ghostwriting services pair you with an experienced writer who captures your voice and turns your material into a finished manuscript you are proud to put your name on.
-        Whether you are starting from a rough idea or building on a partial draft, this is how you hire a ghostwriter and get a book that reads as if you wrote it yourself.
+        You have the expertise, experience, or story. Our professional ghostwriting services pair you with a writer who captures your voice and delivers a finished manuscript you are proud to put your name on. Hire a ghostwriter at The Collingwood Press and get a book that reads as if you wrote it yourself.
     </>
 );
 
@@ -146,7 +131,7 @@ export default function HeroSection({
       mx-auto
       mt-6
       w-full
-      max-w-[880px]
+      max-w-[800px]
       text-center
       font-sans
       text-[15px]

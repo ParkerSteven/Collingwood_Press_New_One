@@ -9,6 +9,7 @@ import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import PrivacyOptOutForm from "@/components/sections/PrivacyOptForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.thecollingwoodpress.com/privacy-choices/' },
   title: "Your Privacy Choices | The Collingwood Press",
   description:
     "Learn how to opt out of the sale or sharing of personal information and exercise your privacy rights.",

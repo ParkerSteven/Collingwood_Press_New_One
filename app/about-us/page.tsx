@@ -1,5 +1,3 @@
-"use client";
-
 import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -17,6 +15,19 @@ import {
 import HeroSection from "@/components/sections/HeroSection";
 import StatBar from "@/components/sections/StatBar";
 import MarketingServices from "@/components/sections/MarketingServices";
+
+
+export const metadata = {
+    title: "About Us | Book Publishing Company",
+
+    description:
+        "Learn about The Collingwood Press, an independent book publishing company offering professional editing, design, publishing and distribution with 100% author ownership.",
+
+    alternates: {
+        canonical: "https://www.thecollingwoodpress.com/about-us/",
+    },
+};
+
 
 const blogArticles = [
     {
@@ -103,7 +114,7 @@ export default function AboutUsPage() {
                         },
                         {
                             text: "Contact Our Editorial Desk",
-                            href: "/contact-us#manuscript-review",
+                            href: "/contact-us/#manuscript-reviewave questions",
                             variant: "outline-white",
                         },
                     ]}
@@ -438,7 +449,7 @@ export default function AboutUsPage() {
                             {/* CTA Button */}
                             <div className="mt-10 text-center">
                                 <Button
-                                    href="/contact-us#manuscript-review"
+                                    href="/contact-us/#manuscript-reviewave questions"
                                     variant="primary"
                                     size="lg"
                                 >

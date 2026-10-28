@@ -191,11 +191,11 @@ export async function generateMetadata({ params }: BlogSlugPageProps): Promise<M
 
     const title = plainText(post.title.rendered);
     const excerpt = plainText(post.excerpt.rendered) || `Read ${title} on The Collingwood Press Journal.`;
-    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug}/`;
+    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug.replace(/\/+$/, "")}/`;
     const imageUrl = getImageUrl(post);
 
     return {
-        title: `${title} | The Collingwood Press Journal`,
+        title: `${title}`,
         description: excerpt.slice(0, 160),
         alternates: {
             canonical: canonicalUrl,
@@ -240,7 +240,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
     const readTimeMinutes = getReadingTime(post.content.rendered);
     const featuredImage = getImageUrl(post);
     const authorName = post._embedded?.author?.[0]?.name || 'The Collingwood Press Editorial Board';
-    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug}/`;
+    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug.replace(/\/+$/, "")}/`;
 
     // Extract categories
     const categories = post._embedded?.['wp:term']?.[0]?.map((term) => term.name).filter(Boolean) || [];
@@ -258,12 +258,12 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
         author: {
             '@type': 'Organization',
             name: authorName,
-            url: 'https://www.thecollingwoodpress.com',
+            url: 'https://www.thecollingwoodpress.com/',
         },
         publisher: {
             '@type': 'Organization',
             name: 'The Collingwood Press',
-            url: 'https://www.thecollingwoodpress.com',
+            url: 'https://www.thecollingwoodpress.com/',
             logo: {
                 '@type': 'ImageObject',
                 url: 'https://www.thecollingwoodpress.com/Collingwood-Logo.png',
@@ -386,7 +386,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                                         The Collingwood Press is an author-first hybrid publishing house dedicated to bringing transformative fiction, non-fiction, and memoirs into the global literary marketplace. Authors retain 100% rights, creative ownership, and royalty earnings while working with seasoned editors, book designers, and marketing strategists.
                                     </p>
                                     <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-semibold text-[#E7665D]">
-                                        <Link href="/about-us" className="inline-flex items-center gap-1 hover:underline">
+                                        <Link href="/about-us/" className="inline-flex items-center gap-1 hover:underline">
                                             Learn About Our Editorial Standards <ArrowRight className="h-3.5 w-3.5" />
                                         </Link>
                                     </div>
@@ -396,7 +396,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                             {/* Back to Blog Button */}
                             <div className="mt-10">
                                 <Link
-                                    href="/blogs"
+                                    href="/blogs/"
                                     className="inline-flex items-center gap-2 rounded-sm border border-line bg-white px-5 py-3 text-xs font-bold uppercase tracking-wider text-ink transition hover:border-[#E7665D] hover:text-[#E7665D] shadow-subtle"
                                 >
                                     <ArrowLeft className="h-4 w-4" /> Back to All Articles
@@ -438,7 +438,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
 
                                     <div className="mt-6 pt-5 border-t border-line/60">
                                         <Button
-                                            href="/contact-us"
+                                            href="/contact-us/"
                                             variant="primary"
                                             size="sm"
                                             className="w-full justify-center text-xs font-semibold py-3"
@@ -462,23 +462,23 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                                         Publishing Resources
                                     </h4>
                                     <div className="mt-4 flex flex-col divide-y divide-line/60 text-xs">
-                                        <Link href="/publishing" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
+                                        <Link href="/publishing/" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
                                             <span>Book Publishing Services</span>
                                             <ChevronRight className="h-3.5 w-3.5 text-ink-muted" />
                                         </Link>
-                                        <Link href="/editing" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
+                                        <Link href="/editing/" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
                                             <span>Developmental & Copy Editing</span>
                                             <ChevronRight className="h-3.5 w-3.5 text-ink-muted" />
                                         </Link>
-                                        <Link href="/ghostwriting" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
+                                        <Link href="/ghostwriting/" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
                                             <span>Professional Ghostwriting</span>
                                             <ChevronRight className="h-3.5 w-3.5 text-ink-muted" />
                                         </Link>
-                                        <Link href="/marketing" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
+                                        <Link href="/marketing/" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
                                             <span>Book Launch & Marketing</span>
                                             <ChevronRight className="h-3.5 w-3.5 text-ink-muted" />
                                         </Link>
-                                        <Link href="/audiobook" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
+                                        <Link href="/audiobook/" className="py-2.5 font-medium text-ink-soft hover:text-[#E7665D] transition flex items-center justify-between">
                                             <span>Audiobook Production</span>
                                             <ChevronRight className="h-3.5 w-3.5 text-ink-muted" />
                                         </Link>
@@ -503,7 +503,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                                     </h2>
                                 </div>
                                 <Link
-                                    href="/blogs"
+                                    href="/blogs/"
                                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#E7665D] hover:underline"
                                 >
                                     View All Articles <ArrowRight className="h-3.5 w-3.5" />
@@ -564,7 +564,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                         </p>
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                             <Button
-                                href="/contact-us"
+                                href="/contact-us/"
                                 variant="primary"
                                 size="md"
                                 className="font-semibold px-7 py-3.5 text-xs uppercase tracking-wider"
@@ -572,7 +572,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                                 Get My Free Manuscript Review <ArrowRight className="h-4 w-4 ml-2" />
                             </Button>
                             <Link
-                                href="/about-us"
+                                href="/about-us/"
                                 className="inline-flex items-center gap-2 rounded-xs border border-white/20 bg-white/5 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-white/10"
                             >
                                 Why Authors Choose Us

@@ -72,7 +72,7 @@ const editorialTiers = [
         name: "Proofreading",
         tagline: "The Final Pass Before Publication",
         description:
-            "The last check before your book is printed or uploaded. It catches the typos, spelling slips, punctuation inconsistencies and formatting problems that earlier rounds missed. Best for: manuscripts that are finished and ready for production.",
+            "Final check before publishing. We fix lingering typos, spelling errors, punctuation mistakes, and formatting issues for a flawless, professional book.",
         focus: [
             "Typographical errors and spelling mistakes",
             "Punctuation and formatting consistency",
@@ -80,7 +80,7 @@ const editorialTiers = [
             "Clean, corrected manuscript with tracked changes",
         ],
         bestFor:
-            "Manuscripts that are structurally and stylistically complete.",
+            "Manuscripts that are finished and ready for production.",
         startingPrice: "$0.01 per word",
         turnaround: "1 to 2 weeks",
         badge: "Final Quality Check",
@@ -90,7 +90,7 @@ const editorialTiers = [
         name: "Copy Editing",
         tagline: "Grammar, Clarity, and Consistency",
         description:
-            "Sentence-level accuracy: grammar, punctuation, spelling, syntax and consistency, checked against the Chicago Manual of Style. Timeline slips, character name mismatches and factual questions are flagged for you to resolve. Best for: books with solid structure that need precision.",
+            "We perfect grammar, punctuation, spelling, and syntax per Chicago Manual of Style, flagging timeline errors, name mismatches, and factual inconsistencies.",
         focus: [
             "Grammar, punctuation, spelling, and syntax",
             "Chicago Manual of Style compliance",
@@ -98,7 +98,7 @@ const editorialTiers = [
             "Custom style sheet and tracked changes",
         ],
         bestFor:
-            "Manuscripts with a solid structure that need grammatical precision and clarity and consistency.",
+            "Books with solid structure that need precision.",
         startingPrice: "$0.02 per word",
         turnaround: "2 to 4 weeks",
         badge: "Editorial Precision",
@@ -108,7 +108,7 @@ const editorialTiers = [
         name: "Line Editing",
         tagline: "Stronger Prose and Author Voice",
         description:
-            "Voice Line editing improves flow and pacing, sharpens word choice, cuts repetition and keeps the tone steady from chapter to chapter, while your natural voice stays yours. The aim is better writing, not just correct writing. Best for: structurally sound manuscripts that need stronger prose.",
+            "We refine flow, pacing, and word choice, cut repetition, and maintain consistent tone improving your writing while preserving your voice.",
         focus: [
             "Sentence flow, rhythm, and pacing",
             "Word choice and repetition reduction",
@@ -116,7 +116,7 @@ const editorialTiers = [
             "Editorial comments and tracked changes",
         ],
         bestFor:
-            "Manuscripts that are structurally sound but need stronger prose at the sentence level.",
+            "Structurally sound manuscripts that need stronger prose.",
         startingPrice: "$0.03 per word",
         turnaround: "3 to 5 weeks",
         badge: "Flow & Pacing",
@@ -126,7 +126,7 @@ const editorialTiers = [
         name: "Developmental Editing",
         tagline: "Structure, Story, and Manuscript Development",
         description:
-            "Developmental editing looks at the whole book: pacing, chapter order, character arcs, themes and genre expectations. For nonfiction, it covers argument structure, evidence placement and how the reader moves through the book. It is the deepest level, and it makes the biggest changes. Best for: first drafts, and books where the story or argument isn't working yet.",
+            "We analyze your entire book pacing, chapter flow, character arcs, themes, and argument structure to ensure a powerful, cohesive read.",
         focus: [
             "Narrative pacing and chapter organization",
             "Character arcs, themes, and genre expectations",
@@ -134,7 +134,7 @@ const editorialTiers = [
             "Detailed editorial letter and inline comments",
         ],
         bestFor:
-            "First drafts, manuscripts with structural problems, and books where the story or argument is not yet working.",
+            "First drafts, and books where the story or argument isn't working yet.",
         startingPrice: "$0.05 per word",
         turnaround: "4 to 8 weeks",
         badge: "Structural Editing",
@@ -189,7 +189,7 @@ export default function EditingPageClient() {
                     highlightText="Book Editing Services"
                     description={
                         <p>
-                            Finished your manuscript but worried it needs more than a spell check before readers see it? At The Collingwood Press, our book editing services work at four levels, from proofreading and copy editing to line editing and developmental editing, so your book gets the ones it needs. Your assigned expert editor starts with your opening pages, recommends where to begin, and stays with you from first read to final delivery.
+                            Need more than a spell check before readers see your book? At The Collingwood Press, we offer proofreading, copyediting, line editing, and developmental editing so your book gets exactly what it needs.
                         </p>
                     }
                     firstButtonText="Get a Editing Quote"
@@ -432,7 +432,7 @@ export default function EditingPageClient() {
 
                                             <div className="mt-1 flex flex-wrap items-baseline gap-2">
                                                 <span
-                                                    className={`font-serif text-[1.7rem] font-bold leading-tight sm:text-3xl ${isFeatured ? "text-white" : "text-[#202629]"
+                                                    className={`font-sans text-[0.8rem] font-semibold leading-tight sm:text-[1rem] ${isFeatured ? "text-white" : "text-[#202629]"
                                                         }`}
                                                 >
                                                     {item.startingPrice}
@@ -501,7 +501,7 @@ export default function EditingPageClient() {
 
                             <div className="w-full sm:w-auto sm:shrink-0">
                                 <Button
-                                    href="/contact-us#manuscript-review"
+                                    href="/contact-us/#manuscript-reviewave questions"
                                     variant="primary"
                                     size="lg"
                                 >
@@ -702,7 +702,7 @@ export default function EditingPageClient() {
                                 {/* CTA Button */}
                                 <div className="shrink-0">
                                     <Button
-                                        href="/contact-us#manuscript-review"
+                                        href="/contact-us/#manuscript-reviewave questions"
                                         variant="primary"
                                         size="md"
                                     >
@@ -756,7 +756,7 @@ export default function EditingPageClient() {
                         </>
                     }
                     buttonText="Get a Quote for Your Manuscript"
-                    buttonHref="/contact-us#manuscript-review"
+                    buttonHref="/contact-us/#manuscript-reviewave questions"
                 />
 
 

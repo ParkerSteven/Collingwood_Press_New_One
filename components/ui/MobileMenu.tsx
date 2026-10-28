@@ -53,7 +53,7 @@ export default function MobileMenu() {
                                 Direct Press Line: +1 (936) 223-3644
                             </a>
                             <Button
-                                href="/contact-us#manuscript-review"
+                                href="/contact-us/#manuscript-reviewave questions"
                                 variant="primary"
                                 size="sm"
                                 className="w-full text-xs font-semibold py-2.5"

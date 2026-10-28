@@ -243,7 +243,7 @@ export default function ProjectManagers() {
           </div>
 
           <Link
-            href="/contact-us#manuscript-review"
+            href="/contact-us/#manuscript-reviewave questions"
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-[#E7665D] px-5 py-3.5 font-sans text-sm font-semibold text-white transition-colors hover:bg-[#D9574E]"
           >
             Discuss Your Publishing Options

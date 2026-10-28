@@ -393,7 +393,7 @@ export default function MarketingPage() {
                     buttons={[
                         {
                             text: "Get Your Custom Marketing Plan",
-                            href: "/contact-us#manuscript-review",
+                            href: "/contact-us/#manuscript-reviewave questions",
                             variant: "primary",
                             showArrow: true,
                         },
@@ -861,7 +861,7 @@ export default function MarketingPage() {
                                     {/* CTA */}
                                     <div className="pt-2">
                                         <Button
-                                            href="/contact-us#manuscript-review"
+                                            href="/contact-us/#manuscript-reviewave questions"
                                             variant="primary"
                                             size="lg"
                                         >
@@ -1160,7 +1160,7 @@ export default function MarketingPage() {
                         {/* CTA BUTTON */}
                         <div className="text-center">
                             <Button
-                                href="/contact-us#manuscript-review"
+                                href="/contact-us/#manuscript-reviewave questions"
                                 variant="primary"
                                 size="lg"
                             >
@@ -1211,7 +1211,7 @@ export default function MarketingPage() {
                         </>
                     }
                     buttonText="Get Your Custom Marketing Plan"
-                    buttonHref="/contact-us#manuscript-review"
+                    buttonHref="/contact-us/#manuscript-reviewave questions"
                 />
 
 

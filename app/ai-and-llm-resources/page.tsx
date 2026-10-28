@@ -9,13 +9,11 @@ import {
     Palette,
     Megaphone,
     Headphones,
-    Building2,
     ShieldCheck,
     Globe2,
     Bot,
     FileText,
     ExternalLink,
-    Download,
     CheckCircle2,
     Mail,
 } from "lucide-react";
@@ -27,6 +25,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.thecollingwoodpress.com/ai-and-llm-resources/' },
     title: "AI & LLM Resources | The Collingwood Press",
     description:
         "Official information about The Collingwood Press, including company identity, publishing services, distribution, leadership, and resources for AI assistants.",

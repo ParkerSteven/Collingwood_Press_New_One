@@ -93,10 +93,10 @@ const WP_REQUEST_HEADERS = {
 
 function buildBlogPageHref(page: number): string {
     if (page <= 1) {
-        return '/blogs';
+        return '/blogs/';
     }
 
-    return `/blogs?page=${page}`;
+    return `/blogs/?page=${page}`;
 }
 
 function getVisiblePages(currentPage: number, totalPages: number): (number | 'ellipsis')[] {
@@ -483,7 +483,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                             Turn your manuscript into a published book with a team that understands your vision.
                         </p>
                         <Link
-                            href="/contact-us"
+                            href="/contact-us/"
                             className="mt-7 inline-flex items-center gap-2 rounded-sm bg-[#eb6c63] px-7 py-4 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#d85850]"
                         >
                             Let&apos;s Talk About Your Book <ArrowRight className="h-4 w-4" />

@@ -2,6 +2,7 @@ import GhostwritingClientPage from "@/components/pages/GhostwritingPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.thecollingwoodpress.com/ghostwriting/' },
     title:
         "Professional Ghostwriting Services | The Collingwood Press",
 

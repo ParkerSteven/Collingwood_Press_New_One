@@ -3,6 +3,7 @@ import AudiobookPage from "@/components/pages/AudioBookClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.thecollingwoodpress.com/audiobook/' },
   title:
     "Audiobook Production & Narration Services | The Collingwood Press",
 

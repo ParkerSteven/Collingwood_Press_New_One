@@ -38,7 +38,7 @@ export default function FinalCTA({
     </>
   ),
   buttonText = "Submit Manuscript for Free Editorial Review",
-  buttonHref = "/contact-us#manuscript-review",
+  buttonHref = "/contact-us/#manuscript-reviewave questions",
 }: FinalCTAProps) {
   return (
     <section
@@ -80,7 +80,7 @@ export default function FinalCTA({
           {/* Heading */}
           <h2
             id="final-cta-heading"
-            className="font-serif text-[2.4rem] max-w-2xl font-medium leading-[1.08] tracking-tight text-white sm:text-[2.7rem] lg:text-[2.9rem]"
+            className="font-serif text-[2rem] max-w-2xl font-medium leading-[1.08] tracking-tight text-white sm:text-[2.7rem] lg:text-[2.9rem]"
           >
             {title}
           </h2>

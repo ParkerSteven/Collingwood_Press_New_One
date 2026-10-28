@@ -55,7 +55,8 @@ export default function HeroAnimated() {
                     custom={2}
                     className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-slate-300 font-sans font-normal pr-20"
                 >
-                    You wrote the book. You should own what comes next.<br /> The Collingwood Press offers full-service book publishing for authors who refuse to give up their rights or royalties. Senior editors, original book design, and global distribution, with 100% copyright and royalties retained. From manuscript to marketplace, your work stays yours.
+                    You wrote the book. You should own what comes next.
+                    <br /> The Collingwood Press provides full-service book publishing with professional writing, senior editorial support, original cover design, and worldwide marketing and distribution. You retain 100% of your copyright and royalties.
                 </motion.p>
 
                 <motion.div

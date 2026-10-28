@@ -13,6 +13,7 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.thecollingwoodpress.com/terms-and-conditions/' },
   title: "Terms & Conditions | The Collingwood Press",
   description:
     "Everything you need to know about our terms, conditions, refund policies, copyright, and publishing services.",

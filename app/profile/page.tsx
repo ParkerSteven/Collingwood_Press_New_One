@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import IllustrationGallery from "@/components/sections/IlustrationGallery";
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.thecollingwoodpress.com/profile/' },
     title: "Explore the Collection | Collingwood Books",
     description: "Discover 24 books from the Collingwood collection.",
 };

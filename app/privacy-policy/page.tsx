@@ -17,6 +17,7 @@ import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.thecollingwoodpress.com/privacy-policy/' },
   title: "Privacy Policy | The Collingwood Press",
   description:
     "Learn how The Collingwood Press collects, uses, and protects your personal information.",

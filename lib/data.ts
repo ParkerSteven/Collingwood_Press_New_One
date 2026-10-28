@@ -115,7 +115,7 @@ export const resources = [
     description:
       "Standard 1-inch margins, Times or Garamond 12pt, styled headings, and clean page breaks. Request your copy through our manuscript review form.",
     buttonText: "Request Template",
-    href: "/contact-us#manuscript-review",
+    href: "/contact-us/#manuscript-reviewave questions",
   },
   {
     id: 2,
@@ -124,7 +124,7 @@ export const resources = [
     description:
       "Pacing worksheets and emotional arc mapping for autobiographical storytelling. Designed for memoirists working through their first draft.",
     buttonText: "Request Kit",
-    href: "/contact-us#manuscript-review",
+    href: "/contact-us/#manuscript-reviewave questions",
   },
   {
     id: 3,
@@ -133,7 +133,7 @@ export const resources = [
     description:
       "Strategic categorization guide to optimize bookstore discoverability. Understanding BISAC codes is essential for any author using book distribution services to reach the right readers.",
     buttonText: "Request Guide",
-    href: "/contact-us#manuscript-review",
+    href: "/contact-us/#manuscript-reviewave questions",
   },
 ];
 

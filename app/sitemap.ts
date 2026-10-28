@@ -1,6 +1,7 @@
 
 import type { MetadataRoute } from 'next';
 import { events, toSlug } from '../lib/data';
+
 interface BlogPost {
     slug: string;
     modified?: string;
@@ -10,6 +11,15 @@ interface BlogPost {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const siteUrl = 'https://www.thecollingwoodpress.com';
     const now = new Date();
+
+    // Helper: Ensure exactly one trailing slash
+    const withTrailingSlash = (path: string): string => {
+        const cleanPath = path.replace(/^\/+|\/+$/g, '');
+
+        return cleanPath
+            ? `${siteUrl}/${cleanPath}/`
+            : `${siteUrl}/`;
+    };
 
     // 1. Static Pages
     const staticPages: MetadataRoute.Sitemap = [
@@ -28,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/ai-and-llm-resources',
         '/team/daniel-drapper',
     ].map((route) => ({
-        url: `${siteUrl}${route}/`,
+        url: withTrailingSlash(route),
         lastModified: now,
         changeFrequency: 'weekly' as const,
         priority: route === '' ? 1 : 0.8,
@@ -51,23 +61,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             blogPosts = data
                 .filter((post) => post.slug)
                 .map((post) => ({
-                    url: `${siteUrl}/blogs/${post.slug}/`,
-                    lastModified: new Date(post.modified || post.date),
+                    url: withTrailingSlash(`/blogs/${post.slug}`),
+                    lastModified: new Date(
+                        post.modified || post.date
+                    ),
                     changeFrequency: 'weekly' as const,
                     priority: 0.7,
                 }));
+        } else {
+            console.error(
+                'Sitemap post fetch failed:',
+                res.status
+            );
         }
     } catch (error: unknown) {
         console.error('Sitemap post fetch error:', error);
     }
 
     // 3. Dynamic Events
-    const eventPages: MetadataRoute.Sitemap = events.map((event: any) => ({
-        url: `${siteUrl}/events/${toSlug(event.name)}/`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-    }));
+    const eventPages: MetadataRoute.Sitemap = events.map(
+        (event) => ({
+            url: withTrailingSlash(
+                `/events/${toSlug(event.name)}`
+            ),
+            lastModified: now,
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        })
+    );
 
-    return [...staticPages, ...blogPosts, ...eventPages];
+    return [
+        ...staticPages,
+        ...blogPosts,
+        ...eventPages,
+    ];
 }

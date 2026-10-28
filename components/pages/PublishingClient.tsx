@@ -21,6 +21,13 @@ import {
     Rocket,
     CheckCircle2,
     BookOpenCheck,
+    PenLine,
+    Layers3,
+    Globe2,
+    Truck,
+    Image as ImageIcon,
+    Database,
+    Megaphone,
 } from "lucide-react";
 import { formats } from "@/lib/formats";
 import { Fragment } from "react";
@@ -29,8 +36,6 @@ import { publishingFAQs, resources } from "@/lib/data";
 import FinalCTA from "../sections/FinalCTA";
 import Link from "next/link";
 import HeroSection from "../sections/HeroSection";
-import ResourceCard from "../ui/Card";
-
 
 const publishingRoadmap = [
     {
@@ -38,7 +43,7 @@ const publishingRoadmap = [
         title: "Manuscript Preparation",
         tagline: "Editorial & Intake Sign-Off",
         description:
-            "Your complete manuscript undergoes final file preparation, character styling verification, and intake audits. We resolve formatting conflicts, standardize heading structures, and certify a clean master document before any design work begins. For self-publishing for new authors, this phase eliminates the technical confusion that derails most first projects.",
+            "Your manuscript is reviewed, formatting issues are fixed, and a clean master document is prepared before design work begins.",
         milestone: "Certified Clean Master Document",
         icon: FileText,
     },
@@ -47,7 +52,7 @@ const publishingRoadmap = [
         title: "Cover & Interior Design",
         tagline: "Visual & Tactile Artistry",
         description:
-            "Our design team creates bespoke dust jacket artwork, selects genre-appropriate typography, and specifies tactile embellishments such as foil stamping, embossing, and soft-touch matte lamination. The interior layout is customized for your genre's visual conventions, not pulled from a generic template library.",
+            "Original cover artwork and a custom interior layout are created to match your genre and book type.",
         milestone: "Jacket Mechanicals & Sample Interior Spreads",
         icon: Palette,
     },
@@ -56,7 +61,7 @@ const publishingRoadmap = [
         title: "Formatting & Typesetting",
         tagline: "Adobe InDesign Precision",
         description:
-            "Every interior is hand-typeset in Adobe InDesign with meticulous attention to widows, orphans, and hyphen ladders. We produce print-ready PDF files calibrated for print-on-demand production alongside reflowable ePub3 files engineered for seamless rendering across all e-readers and tablets.",
+            "The book is professionally typeset in Adobe InDesign. Print-ready and eBook files are prepared for review.",
         milestone: "Full Bound Galley Proof for Author Review",
         icon: Layers,
     },
@@ -65,7 +70,7 @@ const publishingRoadmap = [
         title: "Publishing Setup",
         tagline: "Identifiers & Legal Cataloguing",
         description:
-            "We secure your dedicated Bowker ISBNs registered to your name, assign official EAN barcodes, file Library of Congress Control Numbers where applicable, and optimise BISAC subject keywords for retail discoverability. You are the publisher of record on every identifier. This is a core distinction of our self-publishing services: your name appears on the ISBN, not ours.",
+            "ISBNs are registered in your name, barcodes are generated, and all cataloguing details (including BISAC categories and metadata) are completed. You remain the publisher of record.",
         milestone: "Official Global Catalogue Filings",
         icon: Settings,
     },
@@ -74,7 +79,7 @@ const publishingRoadmap = [
         title: "Trade Distribution",
         tagline: "Global Wholesale Ingestion",
         description:
-            "Your book is ingested into the Ingram Content Group distribution network, making it orderable across 40,000+ bookstores, Barnes & Noble retail locations, Amazon marketplaces, and university library systems. Our Amazon KDP publishing services configuration ensures your Kindle edition, paperback, and hardcover are all live and optimized from launch.",
+            "Your book is distributed through Ingram and listed on Amazon KDP, Barnes & Noble, and other major platforms.",
         milestone: "Active Worldwide Bookseller Feed",
         icon: Globe,
     },
@@ -83,21 +88,90 @@ const publishingRoadmap = [
         title: "Launch & Release",
         tagline: "Publication Day Rollout",
         description:
-            "A coordinated market debut with synchronized live retail pages, physical availability for ordering, author-discount copy shipments, and promotional activation. Your book arrives on shelves and screens ready to sell, not buried behind incomplete metadata or delayed listings.",
+            "Retail pages go live, physical and digital editions become available, and your book is ready for sale.",
         milestone: "Shelf-Ready Physical & Digital Book",
         icon: Rocket,
     },
 ];
 
-const checklistItems = [
-    "Complete polished manuscript in Word or RTF format",
-    "Working author bio, credentials, and high-resolution portrait",
-    "Genre positioning & competitive title analysis",
-    "Dedicated ISBN registration & Barcode assignment",
-    "Library of Congress Control Number (LCCN) filing",
-    "BISAC subject categories & metadata search keywords",
-    "Interior typesetting approval & physical proof review",
-    "Final jacket mechanical proof & foil registration sign-off",
+
+const services = [
+    {
+        id: 1,
+        icon: FileText,
+        title: "Book Editing & Proofreading",
+        description:
+            "Developmental editing, copyediting, line editing, and proofreading to prepare your manuscript for publishing.",
+        href: "/editing",
+        linkText: "Learn more: Book Editing Services",
+    },
+    {
+        id: 2,
+        icon: Rocket,
+        title: "Book Marketing & Launch Strategy",
+        description:
+            "Amazon ads, reviewer outreach, and launch campaigns to help your book reach the right readers.",
+        href: "/marketing",
+        linkText: "Learn more: Book Marketing Services",
+    },
+    {
+        id: 3,
+        icon: BookOpenCheck,
+        title: "Audiobook Production & Distribution",
+        description:
+            "Professional narration, studio recording, and distribution to Audible, Apple Books, and other platforms.",
+        href: "/audiobook",
+        linkText: "Learn more: Audiobook Production Services",
+    },
+];
+
+const publishingFeatures = [
+    {
+        id: 1,
+        icon: ShieldCheck,
+        title: "100% Copyright & Royalty Retention",
+        description:
+            "You keep full ownership of your book and 100% of the royalties. This is written into every agreement.",
+    },
+    {
+        id: 2,
+        icon: BookOpenCheck,
+        title: "You Are the Publisher of Record",
+        description:
+            "ISBNs and retail accounts are registered in your name. We never list ourselves as the publisher.",
+    },
+    {
+        id: 3,
+        icon: FileSpreadsheet,
+        title: "Transparent Pricing",
+        description:
+            "No hidden fees. You review and approve the plan, timeline, and cost before any work begins.",
+    },
+    {
+        id: 4,
+        icon: FileText,
+        title: "Author Sign-Off",
+        description:
+            "No book goes live without your approval on the final galley proof.",
+    },
+];
+
+const phaseIcons = [
+    FileText,
+    PenLine,
+    Layers3,
+    Globe2,
+    Truck,
+    Rocket,
+];
+
+const milestoneIcons = [
+    FileText,
+    ImageIcon,
+    FileText,
+    Database,
+    Megaphone,
+    Rocket,
 ];
 
 const retailers: { name: string; slug?: string; img: string; color: string }[] = [
@@ -131,26 +205,13 @@ export default function PublishingClient() {
                     highlightText="First-Time Authors"
                     description={
                         <p>
-                            Your manuscript deserves more than a template upload
-                            and an automated conversion. Our book publishing
-                            services take every project from raw draft to
-                            retail-ready hardcover, paperback, and eBook through
-                            hands-on editorial development, custom InDesign
-                            typesetting, original cover artwork, and worldwide
-                            distribution via Amazon KDP, IngramSpark, and
-                            Barnes &amp; Noble. Whether you are a first-time author
-                            navigating the industry for the first time or a
-                            seasoned writer launching your next title, we handle
-                            the entire production pipeline while you retain
-                            100% of your copyright and royalties. No rights
-                            transfers. No royalty splits. Just professional
-                            publishing built around the author who wrote the book.
+                            You wrote the book. Now let’s publish it the right way. Our book publishing services turn your raw draft into a retail-ready hardcover, paperback, and eBook. We handle the full production process while you retain 100% of your copyright and royalties.
                         </p>
                     }
                     buttons={[
                         {
                             text: "Submit Manuscript for Publishing",
-                            href: "/contact-us#manuscript-review",
+                            href: "/contact-us/#manuscript-reviewave questions",
                             variant: "primary",
                             showArrow: true,
                         },
@@ -194,7 +255,7 @@ export default function PublishingClient() {
                                 </span>
                             </h2>
                             <p className="mt-1 text-xs py-6 sm:text-sm text-ink-muted">
-                                Publishing a book means nothing if readers cannot find it. Our book distribution services place your title across every major retail and library channel from day one. Through our partnership with the Ingram Content Group, your book enters a wholesale network that serves over 40,000 bookstores, academic institutions, and library systems worldwide. Simultaneously, we configure your listings on Amazon KDP, Barnes & Noble Press, Apple Books, Google Play Books, Kobo, Scribd, and OverDrive. Every listing is optimized with strategic BISAC categories, precise metadata, and search-friendly keywords so your title surfaces when readers browse your genre. This is not passive availability. It is active, strategic book publishing services distribution engineered for discoverability.
+                                Your book is distributed across major retail and library channels worldwide. Through the Ingram Content Group, it becomes available to over 40,000 bookstores and libraries. Listings are also set up on Amazon KDP, Barnes & Noble, Apple Books, and other leading platforms, with optimized metadata for stronger discoverability.
                             </p>
                         </div>
                     </div>
@@ -237,98 +298,104 @@ export default function PublishingClient() {
                             ))}
                         </div>
                     </div>
+                </section>
 
 
-                    <Container className="flex flex-col gap-14 sm:gap-16">
-                        <SectionHeading
-                            eyebrow="The End-to-End Roadmap"
-                            title={
-                                <>
-                                    From Manuscript to Published Book in{" "}
-                                    <span className="italic text-[#E7665D]">
-                                        Six Structured Phases
-                                    </span>
-                                </>
-                            }
-                            description="A professional book does not appear by accident. It moves through a defined production sequence where every phase has a clear deliverable and your explicit sign-off before the next begins. Our book publishing services follow a transparent, six-phase roadmap so you always know exactly where your project stands and what comes next."
-                        />
+                <section className="relative isolate overflow-hidden bg-[#07152B] py-20 sm:py-24 lg:py-28">
+                    {/* Background gradient */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#071429] via-[#102440] to-[#1D3B63]" />
 
-                        {/* 6-Step Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-                            {publishingRoadmap.map((step) => {
-                                const Icon = step.icon;
+                    {/* Soft atmospheric glow */}
+                    <div className="pointer-events-none absolute -right-40 -top-52 h-[650px] w-[650px] rounded-full bg-[#5277AB]/15 blur-[130px]" />
 
-                                const highlightedKeywords = [
-                                    "self-publishing for new authors",
-                                    "print-on-demand",
-                                    "self-publishing services",
-                                    "Amazon KDP publishing services",
-                                ];
+                    <div className="pointer-events-none absolute bottom-0 left-0 h-[450px] w-[550px] rounded-full bg-[#071225]/60 blur-[110px]" />
 
-                                const keywordPattern = new RegExp(
-                                    `(${highlightedKeywords.join("|")})`,
-                                    "gi"
-                                );
+                    <Container className="relative z-10 !max-w-none w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14 flex flex-col gap-12">
+                        {/* Section Heading */}
+                        <div className="relative z-10 mx-auto w-full max-w-none px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
 
-                                const descriptionParts = step.description.split(keywordPattern);
+                            <div className="mb-3 flex items-center gap-2">
+                                <span className="font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-[#EF746C]">
+                                    Here&apos;s How We Work
+                                </span>
+                            </div>
+
+                            <h2 className="max-w-[800px] font-serif text-[1.9rem] sm:text-[2rem] lg:text-[2.6rem] font-bold leading-[1.08] tracking-[-0.035em] text-white">
+                                From Manuscript to
+                                <br />
+                                Published Book in{" "}
+                                <span className="text-[#E7665D]">
+                                    Six Phases
+                                </span>
+                            </h2>
+
+                            <p className="mt-5 max-w-[630px] font-sans text-sm leading-[1.8] text-slate-300 sm:text-[15px]">
+                                Our book publishing services follow a transparent,
+                                six-phase roadmap so you always know exactly where
+                                your project stands and what comes next.
+                            </p>
+                        </div>
+
+                        {/* Six Phase Cards */}
+                        <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-4 2xl:gap-5 md:mx-12">
+                            {publishingRoadmap.map((step, index) => {
+                                const Icon = phaseIcons[index] || FileText;
+                                const MilestoneIcon = milestoneIcons[index] || FileText;
 
                                 return (
                                     <div
                                         key={step.number}
-                                        className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-8 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between"
+                                        className="group relative flex h-full min-w-0 w-full flex-col rounded-xl border border-[#344B76] bg-gradient-to-br from-[#101A30] via-[#172B4D] to-[#294D78] p-5 2xl:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/60 hover:shadow-[0_12px_35px_rgba(231,102,93,0.12)]"
                                     >
-                                        <div>
-                                            <div className="flex items-center justify-between pb-4 mb-4 border-b border-line/70">
-                                                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                                    <Icon size={20} />
-                                                </div>
+                                        {/* Phase number */}
+                                        <span className="font-sans text-[21px] font-extrabold leading-none tracking-tight text-[#F07870]">
+                                            {step.number}
+                                        </span>
 
-                                                <span className="font-serif text-2xl font-normal text-ink-muted/40 group-hover:text-[#E7665D] transition-colors">
-                                                    {step.number}
-                                                </span>
-                                            </div>
+                                        {/* Phase icon */}
+                                        <div className="mt-4 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full border border-[#E7665D]/30 bg-[radial-gradient(circle_at_50%_35%,#405371_0%,#25314D_55%,#17223C_100%)] text-[#F07870] shadow-[inset_0_0_12px_rgba(231,102,93,0.14),0_0_15px_rgba(231,102,93,0.08)] transition-all duration-300 group-hover:scale-105">
+                                            <Icon size={25} strokeWidth={1.8} />
+                                        </div>
 
-                                            <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-1">
-                                                Phase {step.number}
-                                            </span>
-
-                                            <h3 className="font-serif text-[1.28rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                                {`Phase ${step.number}: ${step.title} — ${step.tagline}`}
+                                        {/* Content */}
+                                        <div className="mt-4 flex-1">
+                                            <h3 className="font-serif text-[17px] 2xl:text-[19px] font-bold leading-[1.3] tracking-tight text-white">
+                                                {step.title}
                                             </h3>
 
-                                            <p className="text-sm text-ink-soft leading-relaxed mt-3">
-                                                {descriptionParts.map((part, index) =>
-                                                    highlightedKeywords.some(
-                                                        (keyword) =>
-                                                            keyword.toLowerCase() === part.toLowerCase()
-                                                    ) ? (
-                                                        <>
-                                                            {part}
-                                                        </>
-                                                    ) : (
-                                                        <Fragment key={index}>
-                                                            {part}
-                                                        </Fragment>
-                                                    )
-                                                )}
+                                            <p className="mt-3 font-sans text-[12px] 2xl:text-[13px] leading-[1.75] text-slate-300">
+                                                {step.description}
                                             </p>
                                         </div>
 
-                                        <div className="mt-6 pt-4 border-t border-line/70">
-                                            <span className="text-[10px] uppercase tracking-wider text-ink-muted block font-semibold">
-                                                Milestone Deliverable
-                                            </span>
+                                        {/* Deliverable */}
+                                        <div className="mt-7 flex min-h-[82px] w-full items-center gap-3 rounded-lg border border-[#3B5984]/65 bg-gradient-to-br from-[#142744] to-[#1B3B65]/85 p-3">
+                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E7665D]/20 bg-[#E7665D]/10 text-[#F07870]">
+                                                <MilestoneIcon size={19} strokeWidth={1.8} />
+                                            </div>
 
-                                            <span className="text-xs font-semibold text-ink mt-0.5 block">
-                                                {step.milestone}
-                                            </span>
+                                            <div className="min-w-0 flex-1">
+                                                <span className="block font-sans text-[9px] font-bold uppercase tracking-[0.08em] text-[#F07870]">
+                                                    Deliverable
+                                                </span>
+
+                                                <span className="mt-1 block break-words font-sans text-[11px] leading-[1.5] text-[#D3E3F8]">
+                                                    {step.milestone}
+                                                </span>
+                                            </div>
                                         </div>
+
+                                        {/* Arrow between cards */}
+                                        {index < publishingRoadmap.length - 1 && (
+                                            <div className="absolute -right-[23px] top-[23%] z-20 hidden h-8 w-8 items-center justify-center rounded-full border border-[#E7665D]/70 bg-[#142541] text-[#F07870] shadow-[0_0_0_3px_#102440] xl:flex">
+                                                <ArrowRight size={14} strokeWidth={1.8} />
+                                            </div>
+                                        )}
                                     </div>
                                 );
                             })}
                         </div>
                     </Container>
-
                 </section>
 
                 {/* Formats Section */}
@@ -338,16 +405,16 @@ export default function PublishingClient() {
                         eyebrow="Three Coordinated Editions"
                         title={
                             <>
-                                Publishing Solutions: Hardcover, Paperback &amp;{" "}
+                                Publish Your Book In Paperback, {" "}
                                 <span className="italic text-[#E7665D]">
-                                    eBook Under One Roof
+                                    Hardcover &amp; eBook Formats
                                 </span>
                             </>
                         }
-                        description="Every title we acquire is prepared simultaneously across three formats, each purpose-built for its reading environment. Our book publishing packages do not force you to choose between physical and digital. You get all three, produced to the same exacting standard."
+                        description="Every book is published in three editions hardcover, paperback and ebook, each designed for its format and built to one publishing standard."
                     />
 
-                    <Container className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center mt-20">
+                    <Container className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center mt-8">
                         {/* LEFT: Content */}
                         <div className="flex flex-col gap-10">
                             <div className="flex flex-col">
@@ -359,15 +426,7 @@ export default function PublishingClient() {
                                             title: "Collector-Grade Hardcovers",
                                             description: (
                                                 <>
-                                                    Archival Smyth-sewn binding with rich linen cloth or
-                                                    printed dust jacket, gold foil spine stamping, head
-                                                    and tail bands, and optional custom endpapers. Built
-                                                    for bookstore display, gift giving, and long-term
-                                                    shelf presence. Whether you are publishing literary
-                                                    fiction, a memoir, or a
-                                                    children&apos;s book
-                                                    , the hardcover edition establishes the authority of
-                                                    your work.
+                                                    Premium binding with dust jacket, built for bookstores, gifting, and long-term shelf presence.
                                                 </>
                                             ),
                                         },
@@ -375,13 +434,7 @@ export default function PublishingClient() {
                                             title: "French-Fold Trade Paperbacks",
                                             description: (
                                                 <>
-                                                    Premium 60lb or 70lb natural cream interior paper,
-                                                    velvet soft-touch matte lamination, scoring on hinges,
-                                                    and optional embossed spot UV lettering. This format
-                                                    is the commercial backbone of most
-                                                    indie publishing marketingServices
-                                                    because it balances quality with an accessible retail
-                                                    price that drives volume.
+                                                    High-quality trade paperback with professional finishes, designed for wider retail reach.
                                                 </>
                                             ),
                                         },
@@ -389,13 +442,7 @@ export default function PublishingClient() {
                                             title: "Mastered Reflowable ePubs & Kindle",
                                             description: (
                                                 <>
-                                                    Hand-coded valid ePub3 and Kindle formats tailored for
-                                                    responsive font scaling, high-DPI tablets, dynamic
-                                                    tables of contents, and cross-platform fidelity. Our
-                                                    ebook publishing
-                                                    process ensures your digital edition reads as polished
-                                                    as the print version on every device, from a Kindle
-                                                    Paperwhite to an iPad Pro.
+                                                    Clean, properly formatted files for Kindle and other devices that read well across platforms
                                                 </>
                                             ),
                                         },
@@ -451,92 +498,6 @@ export default function PublishingClient() {
                     </Container>
                 </section>
 
-                {/* Cover Design Spotlight Anchor Section */}
-
-                <section
-                    id="cover-design"
-                    className="py-20 lg:py-24 bg-[#fdfbf7] border-b border-line"
-                >
-                    <Container className="flex flex-col gap-12">
-                        <SectionHeading
-                            eyebrow="Visual Literature"
-                            title={
-                                <>
-                                    The Craft Behind Every Cover:{" "}
-                                    <span className="italic text-[#E7665D]">
-                                        Genre-Calibrated Visual Strategy
-                                    </span>
-                                </>
-                            }
-                            description="Your dust jacket is the first conversation your book holds with a reader. Our design team analyses current bestseller lists in your specific subgenre to balance familiar visual conventions with a distinctive artistic identity that stands apart on bookstore tables and thumbnail grids. Every cover is an original composition, not a stock-photo arrangement or a template swap."
-                        />
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
-                            {/* Card 1: Tactile Embellishments */}
-                            <div className="p-8 sm:p-9 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 transition-all duration-300">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-5">
-                                    <Palette size={22} />
-                                </div>
-
-                                <h3 className="font-serif text-xl font-bold text-ink">
-                                    Tactile Embellishments &amp; Premium Finishes
-                                </h3>
-
-                                <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                    Real metallic gold foil stamping, spot UV varnish, custom
-                                    blind debossing, and velvety soft-touch matte lamination.
-                                    These finishes transform a printed cover into a physical
-                                    experience that makes book collectors and bookstore buyers
-                                    take notice. Premium production is standard across our{" "}
-                                    <strong className="font-semibold text-ink">
-                                        book publishing services
-                                    </strong>
-                                    , not an upsell.
-                                </p>
-
-                                <div className="mt-5 pt-4 border-t border-line/70 flex items-center gap-2 text-xs text-[#E7665D] font-medium">
-                                    <CheckCircle2 size={14} />
-                                    <span>
-                                        Gold Foil &bull; Spot UV &bull; French-Folds
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* Card 2: Competitive Analysis */}
-                            <div className="p-8 sm:p-9 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] hover:border-[#E7665D]/50 transition-all duration-300">
-                                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-5">
-                                    <Globe size={22} />
-                                </div>
-
-                                <h3 className="font-serif text-xl font-bold text-ink">
-                                    Competitive Analysis &amp; Reader Psychology
-                                </h3>
-
-                                <p className="mt-3 text-sm text-ink-soft leading-relaxed">
-                                    We study the top-performing titles in your category,
-                                    identify the visual patterns readers associate with
-                                    quality in your genre, and design a cover that meets
-                                    those expectations while establishing your unique visual
-                                    identity. For{" "}
-                                    <strong className="font-semibold text-ink">
-                                        children&apos;s book publishers
-                                    </strong>{" "}
-                                    and authors in every genre, cover strategy is where sales
-                                    potential is won or lost.
-                                </p>
-
-                                <div className="mt-5 pt-4 border-t border-line/70 flex items-center gap-2 text-xs text-[#E7665D] font-medium">
-                                    <CheckCircle2 size={14} />
-                                    <span>
-                                        Competitive Analysis &bull; Reader Psychology
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
-
-
 
                 {/* The Collingwood Press Publishing Advantage */}
                 <section
@@ -548,225 +509,43 @@ export default function PublishingClient() {
                             eyebrow="The Collingwood Difference"
                             title={
                                 <>
-                                    The Collingwood Press Publishing Advantage:{" "}
+                                    The Collingwood Press{" "}
                                     <span className="italic text-[#E7665D]">
-                                        Guarantees That Protect Your Work
+                                        Publishing Advantage
                                     </span>
                                 </>
                             }
                             description="Not every self-publishing company operates with the same standards. Here is what sets our model apart and why authors trust us with their manuscripts."
                         />
 
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full">
-                            {/* Card 1: Copyright & Royalties */}
-                            <div className="p-7 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col hover:border-[#E7665D]/50 transition-all duration-300">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-4">
-                                    <ShieldCheck size={20} />
-                                </div>
+                            {publishingFeatures.map((feature) => {
+                                const Icon = feature.icon;
 
-                                <h3 className="font-serif text-lg font-bold text-ink leading-snug">
-                                    100% Copyright &amp; Royalty Retention
-                                </h3>
-
-                                <p className="text-sm text-ink-soft mt-3 leading-relaxed">
-                                    Your intellectual property stays exactly where it belongs:
-                                    with you. Full copyright ownership. Full royalties. Zero
-                                    exceptions. That guarantee is written into every publishing
-                                    agreement we sign.
-                                </p>
-                            </div>
-
-                            {/* Card 2: Publisher of Record */}
-                            <div className="p-7 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col hover:border-[#E7665D]/50 transition-all duration-300">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-4">
-                                    <BookOpenCheck size={20} />
-                                </div>
-
-                                <h3 className="font-serif text-lg font-bold text-ink leading-snug">
-                                    You Are the Publisher of Record
-                                </h3>
-
-                                <p className="text-sm text-ink-soft mt-3 leading-relaxed">
-                                    The ISBN is registered in your name. The retail accounts
-                                    are opened in your name. Some services assign an ISBN from
-                                    their own prefix and become the publisher on the record.
-                                    We never do that.
-                                </p>
-                            </div>
-
-                            {/* Card 3: Transparent Publishing Cost */}
-                            <div className="p-7 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col hover:border-[#E7665D]/50 transition-all duration-300">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-4">
-                                    <FileSpreadsheet size={20} />
-                                </div>
-
-                                <h3 className="font-serif text-lg font-bold text-ink leading-snug">
-                                    Transparent Book Publishing Cost &amp; Custom Packages
-                                </h3>
-
-                                <p className="text-sm text-ink-soft mt-3 leading-relaxed">
-                                    No hidden fees, no surprise invoices at production
-                                    milestones. Our
-                                    book publishing packages
-                                    are scoped and priced before work begins. You approve the
-                                    plan, the timeline, and the cost upfront. Every package is
-                                    tailored to your manuscript&apos;s specific needs rather
-                                    than forced into a one-size-fits-all tier.
-                                </p>
-                            </div>
-
-                            {/* Card 4: Galley Proof Review */}
-                            <div className="p-7 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col hover:border-[#E7665D]/50 transition-all duration-300">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-4">
-                                    <FileText size={20} />
-                                </div>
-
-                                <h3 className="font-serif text-lg font-bold text-ink leading-snug">
-                                    Galley Proof Review &amp; Author Sign-Off
-                                </h3>
-
-                                <p className="text-sm text-ink-soft mt-3 leading-relaxed">
-                                    The finished galley proof is the final checkpoint before
-                                    your book goes to retail. You read it, mark what needs
-                                    changing, and we do not upload until you have signed it
-                                    off. No book goes live without your explicit approval.
-                                </p>
-                            </div>
-                        </div>
-                    </Container>
-                </section>
-
-
-                {/* Author Checklist Anchor Section */}
-
-                {/* Section 8: Author Resource Library */}
-                <section
-                    id="author-resources"
-                    className="hero-gradient py-20 lg:py-28 text-white border-b border-white/10 relative overflow-hidden paper-grain"
-                >
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-5xl mx-auto">
-                            {/* Section Heading */}
-                            <div className="text-center mb-12">
-                                <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#F08A82]">
-                                    Author Resource Library
-                                </span>
-
-                                <h2 className="mt-3 max-w-3xl mx-auto font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight">
-                                    Manuscript Preparation Templates &amp; Style Guides
-                                </h2>
-
-                                <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                                    Download industry-standard manuscript formatting templates
-                                    and style guides crafted by our senior editorial directors.
-                                    These resources help
-                                    self-publishing for new Authors
-                                    start on the right foundation and reduce revision cycles
-                                    during production.
-                                </p>
-                            </div>
-
-                            {/* Resource Cards */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {resources.map((resource) => (
-                                    <ResourceCard
-                                        key={resource.id}
-                                        icon={resource.icon}
-                                        title={resource.title}
-                                        description={resource.description}
-                                        buttonText={resource.buttonText}
-                                        href={resource.href}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </Container>
-                </section>
-
-
-                {/* SECTION 9: Production Readiness Checklist */}
-                <section
-                    id="publishing-checklist"
-                    className="relative overflow-hidden bg-[#fdfbf7] py-20 lg:py-28 border-b border-line"
-                >
-                    {/* Subtle Background Decoration */}
-                    <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-[#E7665D]/5 blur-3xl pointer-events-none" />
-                    <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-[#E7665D]/5 blur-3xl pointer-events-none" />
-
-                    <Container className="relative z-10">
-                        <div className="max-w-5xl mx-auto">
-                            {/* Section Heading */}
-                            <div className="flex flex-col items-center text-center mb-12 lg:mb-14">
-                                <div className="flex items-center gap-3">
-                                    <span className="w-8 h-px bg-[#E7665D]/60" />
-                                    <span className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#E7665D] font-semibold">
-                                        Production Readiness
-                                    </span>
-                                    <span className="w-8 h-px bg-[#E7665D]/60" />
-                                </div>
-
-                                <h2 className="mt-4 max-w-2xl mx-auto font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-tight tracking-tight">
-                                    The Collingwood Author{" "}
-                                    <span className="text-[#E7665D]">
-                                        Publishing Checklist
-                                    </span>
-                                </h2>
-
-                                <p className="mt-4 text-sm sm:text-base text-ink-soft leading-relaxed max-w-2xl">
-                                    Every milestone we shepherd on your behalf before a single
-                                    carton of books ships from the bindery. This checklist
-                                    represents the complete scope of professional
-                                    book publishing services
-                                    production.
-                                </p>
-                            </div>
-
-                            {/* Checklist Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-                                {[
-                                    "Complete polished manuscript in Word or RTF format",
-                                    "Working author bio, credentials, and high-resolution portrait",
-                                    "Genre positioning and competitive title analysis",
-                                    "Dedicated ISBN registration and barcode assignment",
-                                    "Library of Congress Control Number (LCCN) filing",
-                                    "BISAC subject categories and metadata search keywords",
-                                    "Interior typesetting approval and physical proof review",
-                                    "Final jacket mechanical proof and foil registration sign-off",
-                                ].map((item, index) => (
+                                return (
                                     <div
-                                        key={index}
-                                        className="group flex items-center gap-4 rounded-xl border border-[#E7665D]/20 bg-white p-5 sm:p-6 shadow-[0_4px_20px_rgba(231,102,93,0.06)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_30px_rgba(231,102,93,0.12)] transition-all duration-300"
+                                        key={feature.id}
+                                        className="p-7 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col hover:border-[#E7665D]/50 transition-all duration-300"
                                     >
-                                        {/* Check Icon */}
-                                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5] border border-[#E7665D]/25 text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-all duration-300">
-                                            <CheckCircle2 size={20} />
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30 mb-4">
+                                            <Icon size={20} />
                                         </div>
 
-                                        {/* Checklist Content */}
-                                        <p className="text-sm sm:text-[15px] font-medium text-ink-soft leading-relaxed group-hover:text-ink transition-colors">
-                                            {item}
+                                        <h3 className="font-serif text-lg font-bold text-ink leading-snug">
+                                            {feature.title}
+                                        </h3>
+
+                                        <p className="text-sm text-ink-soft mt-3 leading-relaxed">
+                                            {feature.description}
                                         </p>
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* CTA */}
-                            <div className="mt-12 lg:mt-14 flex flex-col items-center text-center">
-                                <Button
-                                    href="/contact-us#manuscript-review"
-                                    variant="primary"
-                                    size="lg"
-                                >
-                                    <span>Begin Your Publishing Journey</span>
-                                    <ArrowRight size={16} />
-                                </Button>
-                            </div>
+                                );
+                            })}
                         </div>
+
                     </Container>
                 </section>
-
 
                 {/* SECTION 10: Related Author Services */}
                 <section
@@ -780,133 +559,67 @@ export default function PublishingClient() {
                         {/* Section Heading */}
                         <div className="flex flex-col items-center text-center">
                             <div className="flex items-center gap-3">
-                                <span className="w-8 h-px bg-[#E7665D]/60" />
+                                {/* <span className="w-8 h-px bg-[#E7665D]/60" /> */}
                                 <span className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#E7665D] font-semibold">
-                                    Complete Author Solutions
+                                    Craft, Publish & Grow
                                 </span>
-                                <span className="w-8 h-px bg-[#E7665D]/60" />
+                                {/* <span className="w-8 h-px bg-[#E7665D]/60" /> */}
                             </div>
 
                             <h2 className="mt-4 max-w-2xl font-serif text-[2rem] sm:text-[2.4rem] lg:text-[2.7rem] font-bold text-ink leading-tight tracking-tight">
-                                Related Author Services:{" "}
+                                Beyond Publishing<br />  {" "}
                                 <span className="text-[#E7665D]">
-                                    Editing, Marketing &amp; Audiobook Production
+                                    Complete Author Solutions
                                 </span>
                             </h2>
 
-                            <p className="mt-4 max-w-3xl text-sm sm:text-base text-ink-soft leading-relaxed">
-                                Publishing is one stage of a larger process. Our
-                                book publishing services
-                                integrate seamlessly with every other service an author needs.
-                                Whether your manuscript still requires editorial development
-                                or your published book is ready for a marketing campaign, our
-                                team coordinates every phase under one roof.
+                            <p className="mt-4 max-w-2xl text-sm sm:text-base text-ink-soft leading-relaxed">
+                                Discover the complete range of publishing services designed to bring your book to life, reach more readers, and grow your author brand.
                             </p>
                         </div>
 
                         {/* Service Cards */}
+
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
-                            {/* Card 1: Editing */}
-                            <div className="group flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white p-7 lg:p-8 shadow-[0_4px_24px_rgba(231,102,93,0.10)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_rgba(231,102,93,0.18)] transition-all duration-300">
-                                <div>
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] border border-[#E7665D]/25 text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-all duration-300">
-                                        <FileText size={22} />
-                                    </div>
+                            {services.map((service) => {
+                                const Icon = service.icon;
 
-                                    <h3 className="mt-6 font-serif text-xl font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        Book Editing &amp; Proofreading
-                                    </h3>
-
-                                    <p className="mt-4 text-sm text-ink-soft leading-relaxed">
-                                        Developmental editing, line editing, copy editing, and
-                                        proofreading from senior editors with deep genre knowledge.
-                                        Most manuscripts benefit from at least one editorial pass
-                                        before entering production. Our editing services prepare
-                                        your work for the publishing pipeline.
-                                    </p>
-                                </div>
-
-                                <div className="mt-7 border-t border-line/70 pt-5">
-                                    <Link
-                                        href="/editing"
-                                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
+                                return (
+                                    <div
+                                        key={service.id}
+                                        className="group flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white p-7 lg:p-8 shadow-[0_4px_24px_rgba(231,102,93,0.10)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_rgba(231,102,93,0.18)] transition-all duration-300"
                                     >
-                                        Learn more: Book Editing Services
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-300 group-hover:translate-x-1"
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
+                                        <div>
+                                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] border border-[#E7665D]/25 text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-all duration-300">
+                                                <Icon size={22} />
+                                            </div>
 
-                            {/* Card 2: Marketing */}
-                            <div className="group flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white p-7 lg:p-8 shadow-[0_4px_24px_rgba(231,102,93,0.10)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_rgba(231,102,93,0.18)] transition-all duration-300">
-                                <div>
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] border border-[#E7665D]/25 text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-all duration-300">
-                                        <Rocket size={22} />
+                                            <h3 className="mt-6 font-serif text-xl font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
+                                                {service.title}
+                                            </h3>
+
+                                            <p className="mt-4 text-sm text-ink-soft leading-relaxed">
+                                                {service.description}
+                                            </p>
+                                        </div>
+
+                                        <div className="mt-7 border-t border-line/70 pt-5">
+                                            <Link
+                                                href={service.href}
+                                                className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
+                                            >
+                                                {service.linkText}
+                                                <ArrowRight
+                                                    size={16}
+                                                    className="transition-transform duration-300 group-hover:translate-x-1"
+                                                />
+                                            </Link>
+                                        </div>
                                     </div>
-
-                                    <h3 className="mt-6 font-serif text-xl font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        Book Marketing &amp; Launch Strategy
-                                    </h3>
-
-                                    <p className="mt-4 text-sm text-ink-soft leading-relaxed">
-                                        Amazon advertising management, targeted reviewer outreach,
-                                        media placement campaigns, and coordinated launch
-                                        strategies built around your genre and audience. A
-                                        published book without a marketing plan is a book waiting
-                                        to be discovered by accident.
-                                    </p>
-                                </div>
-
-                                <div className="mt-7 border-t border-line/70 pt-5">
-                                    <Link
-                                        href="/marketing"
-                                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
-                                    >
-                                        Learn more: Book Marketing Services
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-300 group-hover:translate-x-1"
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
-
-                            {/* Card 3: Audiobook */}
-                            <div className="group flex flex-col justify-between rounded-xl border border-[#E7665D]/25 bg-white p-7 lg:p-8 shadow-[0_4px_24px_rgba(231,102,93,0.10)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_rgba(231,102,93,0.18)] transition-all duration-300">
-                                <div>
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] border border-[#E7665D]/25 text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-all duration-300">
-                                        <BookOpenCheck size={22} />
-                                    </div>
-
-                                    <h3 className="mt-6 font-serif text-xl font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        Audiobook Production &amp; Distribution
-                                    </h3>
-
-                                    <p className="mt-4 text-sm text-ink-soft leading-relaxed">
-                                        Voice actor casting, professional studio recording,
-                                        audio mastering, and distribution to Audible, Apple Books,
-                                        and Spotify. Reach the growing audience of listeners who
-                                        consume books through audio.
-                                    </p>
-                                </div>
-
-                                <div className="mt-7 border-t border-line/70 pt-5">
-                                    <Link
-                                        href="/audiobook"
-                                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#E7665D] hover:text-ink transition-colors"
-                                    >
-                                        Learn more: Audiobook Production Services
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-300 group-hover:translate-x-1"
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
+                                );
+                            })}
                         </div>
+
                     </Container>
                 </section>
                 <FAQAccordion
@@ -914,10 +627,8 @@ export default function PublishingClient() {
                     eyebrow="Publishing FAQ"
                     title={
                         <>
-                            Frequently Asked Questions About Our{" "}
-                            <span className="italic text-[#E7665D]">
-                                Book Publishing Services
-                            </span>
+                            Frequently Asked Questions
+
                         </>
                     }
                     sectionId="publishing-faq"
@@ -948,7 +659,7 @@ export default function PublishingClient() {
                         </>
                     }
                     buttonText="Submit Manuscript for Free Editorial Review"
-                    buttonHref="/contact-us#manuscript-review"
+                    buttonHref="/contact-us/#manuscript-reviewave questions"
                 />
             </main>
             <Footer />
