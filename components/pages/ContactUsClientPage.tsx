@@ -6,13 +6,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
     ArrowRight,
-    CheckCircle2,
     Mail,
     MapPin,
     Phone,
     BookOpen,
     Headphones,
-    Send,
     Facebook,
     Instagram,
     Linkedin,
@@ -22,7 +20,7 @@ import Container from "@/components/ui/Container";
 import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { submitToGoogleSheet } from "@/lib/submitToGoogleSheet";
+import { submitToGoogleSheet, submitToNewGoogleSheet } from "@/lib/submitToGoogleSheet";
 import HeroSection from "../sections/HeroSection";
 
 interface ContactFormData {
@@ -106,27 +104,47 @@ export default function ContactUsClientPage() {
         setIsSubmitting(true);
         setError("");
 
-        try {
-            const result = await submitToGoogleSheet({
-                name: formData.name,
-                email: formData.email,
-                phone: formData.phone,
-                message: formData.manuscript,
-                source: "Contact Us Page - Publishing Form",
-                marketingConsent: formData.marketingConsent,
-                preventRedirect: true,
-            });
+        const payload = {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.manuscript,
+            source: "Contact Us Page - Publishing Form",
+            marketingConsent: formData.marketingConsent,
+        };
 
-            // Submission failed
-            if (!result.success) {
+        try {
+            // Send data to old Make.com and new Google Sheet
+            const [oldResult, newResult] = await Promise.all([
+                submitToGoogleSheet({
+                    ...payload,
+                    preventRedirect: true,
+                }),
+                submitToNewGoogleSheet(payload),
+            ]);
+
+            // New Google Sheet submission failed
+            if (!newResult.success) {
+                console.error(
+                    "New Google Sheet submission failed:",
+                    newResult.message
+                );
+
                 setError(
-                    result.message ||
-                    "Something went wrong. Please try again."
+                    "Could not save your form to the new Google Sheet. Please contact support before submitting again."
                 );
                 return;
             }
 
-            // Submission successful - redirect to Thank You page
+            // Existing Make.com submission failed
+            if (!oldResult.success) {
+                console.warn(
+                    "Make.com submission failed:",
+                    oldResult.message
+                );
+            }
+
+            // Redirect after new Google Sheet succeeds
             const authorName = formData.name.trim();
 
             const thankYouUrl = authorName
@@ -136,11 +154,8 @@ export default function ContactUsClientPage() {
             router.push(thankYouUrl);
 
         } catch (error) {
-            console.error("Contact form submission error:", error);
-
-            setError(
-                "Unable to submit your request. Please try again later."
-            );
+            console.error("Contact form error:", error);
+            setError("Unable to submit your request.");
         } finally {
             setIsSubmitting(false);
         }

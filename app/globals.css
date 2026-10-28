@@ -45,7 +45,7 @@ body {
 }
 
 .hero-section-background {
-    background-image: url("/heroSec_bg.jpg");
+    background-image: url("/heroSec_bg.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

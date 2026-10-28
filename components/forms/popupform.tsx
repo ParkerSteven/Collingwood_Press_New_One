@@ -3,161 +3,230 @@
 import { useState, useEffect, useCallback, type ChangeEvent, type FormEvent } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
-import { submitToGoogleSheet } from "@/lib/submitToGoogleSheet";
+import { submitToGoogleSheet, submitToNewGoogleSheet } from "@/lib/submitToGoogleSheet";
 import Link from "next/link";
 import Image from "next/image";
 
 export interface PopupFormProps {
-    isOpen: boolean;
-    onClose: () => void;
-    source: string;
+  isOpen: boolean;
+  onClose: () => void;
+  source: string;
 }
 
 interface PopupFormData {
-    manuscript: string;
-    name: string;
-    email: string;
-    phone: string;
-    marketingConsent: boolean;
+  manuscript: string;
+  name: string;
+  email: string;
+  phone: string;
+  marketingConsent: boolean;
 }
 
 const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
-    const [formData, setFormData] = useState<PopupFormData>({
+  const [formData, setFormData] = useState<PopupFormData>({
+    manuscript: "",
+    name: "",
+    email: "",
+    phone: "+1 ",
+    marketingConsent: false,
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Escape key handler to close modal
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: globalThis.KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, handleClose]);
+
+
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    e.preventDefault();
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    const submissionSource = source || "Home Page Popup";
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.manuscript,
+      source: submissionSource,
+      marketingConsent: formData.marketingConsent,
+    };
+
+    try {
+      // Submit to existing Make.com AND new Google Sheet
+      const [oldResult, newResult] = await Promise.all([
+        submitToGoogleSheet({
+          ...payload,
+          preventRedirect: true,
+        }),
+        submitToNewGoogleSheet(payload),
+      ]);
+
+      // Check new Google Sheet submission
+      if (!newResult.success) {
+        console.error(
+          "Popup Google Sheet error:",
+          newResult.message
+        );
+
+        alert(
+          "Unable to save your details to Google Sheet. " +
+          "Please contact support before submitting again."
+        );
+        return;
+      }
+
+      // Check existing Make.com webhook
+      if (!oldResult.success) {
+        console.warn(
+          "Make.com webhook failed:",
+          oldResult.message
+        );
+      }
+
+      // Save popup flags in localStorage
+      try {
+        localStorage.setItem(
+          "ink_to_legacy_submitted",
+          "true"
+        );
+
+        localStorage.setItem(
+          "hasSubmittedLeadForm",
+          "true"
+        );
+      } catch (err) {
+        console.error(
+          "Failed to save popup flags:",
+          err
+        );
+      }
+
+      // Download free checklist PDF
+      try {
+        const link = document.createElement("a");
+
+        link.href =
+          "/assets/docs/The Authors Scam-Proof & Cost Checklist (F).pdf";
+
+        link.setAttribute(
+          "download",
+          "The Authors Scam-Proof & Cost Checklist (F).pdf"
+        );
+
+        link.rel = "noopener";
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+      } catch (err) {
+        console.error(
+          "Failed to download PDF:",
+          err
+        );
+      }
+
+      // Capture author name before resetting form
+      const authorName = formData.name.trim();
+
+      // Reset form
+      setFormData({
         manuscript: "",
         name: "",
         email: "",
         phone: "+1 ",
         marketingConsent: false,
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [mounted, setMounted] = useState(false);
+      });
 
-    const router = useRouter();
+      // Close popup
+      handleClose();
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+      // Redirect to Thank You page
+      const thankYouUrl = authorName
+        ? `/thankyou?name=${encodeURIComponent(authorName)}`
+        : "/thankyou";
 
-    const handleClose = useCallback(() => {
-        onClose();
-    }, [onClose]);
+      router.push(thankYouUrl);
 
-    // Prevent background scrolling when modal is open
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [isOpen]);
+    } catch (error) {
+      console.error(
+        "Popup submission error:",
+        error
+      );
 
-    // Escape key handler to close modal
-    useEffect(() => {
-        if (!isOpen) return;
-        const handleKeyDown = (e: globalThis.KeyboardEvent) => {
-            if (e.key === "Escape") {
-                handleClose();
-            }
-        };
-        window.addEventListener("keydown", handleKeyDown);
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [isOpen, handleClose]);
+      alert(
+        "Something went wrong. Please try again."
+      );
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
-        e.preventDefault();
-        if (isSubmitting) return;
-        setIsSubmitting(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-        const submissionSource = source || "Home Page Popup";
 
-        const result = await submitToGoogleSheet({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            message: formData.manuscript,
-            source: submissionSource,
-            marketingConsent: formData.marketingConsent,
-            preventRedirect: true, // Prevent the library redirect to handle download and smooth route transition client-side
-        });
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    const { name, value } = e.currentTarget;
 
-        if (!result.success) {
-            alert(result.message);
-            setIsSubmitting(false);
-            return;
-        }
+    if (name === "phone") {
+      if (!value.startsWith("+1 ")) return;
+      const digits = value.slice(3).replace(/\D/g, "");
+      if (digits.length > 10) return;
+      setFormData((prev) => ({ ...prev, phone: "+1 " + digits }));
+      return;
+    }
 
-        // Save flags in localStorage so popup won't show again
-        try {
-            localStorage.setItem("ink_to_legacy_submitted", "true");
-            localStorage.setItem("hasSubmittedLeadForm", "true");
-        } catch (err) {
-            console.error("Failed to save popup flag to localStorage:", err);
-        }
+    if (name === "marketingConsent" && e.currentTarget instanceof HTMLInputElement) {
+      const checked = e.currentTarget.checked;
+      setFormData((prev) => ({ ...prev, marketingConsent: checked }));
+      return;
+    }
 
-        // Automatically download the specified checklist PDF
-        try {
-            const link = document.createElement("a");
-            link.href =
-                "/assets/docs/The Authors Scam-Proof & Cost Checklist (F).pdf";
-            link.setAttribute(
-                "download",
-                "The Authors Scam-Proof & Cost Checklist (F).pdf",
-            );
-            link.rel = "noopener";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        } catch (err) {
-            console.error("Failed to auto-download PDF:", err);
-        }
+    if (name === "name" || name === "email" || name === "manuscript") {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
 
-        // Clear form data
-        setFormData({
-            manuscript: "",
-            name: "",
-            email: "",
-            phone: "+1 ",
-            marketingConsent: false,
-        });
+  if (!isOpen || !mounted) return null;
 
-        handleClose();
-
-        // Smooth client-side redirect to thank you page
-        const encodedName = encodeURIComponent((formData.name || "").trim());
-        router.push(`/thankyou${encodedName ? `?name=${encodedName}` : ""}`);
-        setIsSubmitting(false);
-    };
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-        const { name, value } = e.currentTarget;
-
-        if (name === "phone") {
-            if (!value.startsWith("+1 ")) return;
-            const digits = value.slice(3).replace(/\D/g, "");
-            if (digits.length > 10) return;
-            setFormData((prev) => ({ ...prev, phone: "+1 " + digits }));
-            return;
-        }
-
-        if (name === "marketingConsent" && e.currentTarget instanceof HTMLInputElement) {
-            const checked = e.currentTarget.checked;
-            setFormData((prev) => ({ ...prev, marketingConsent: checked }));
-            return;
-        }
-
-        if (name === "name" || name === "email" || name === "manuscript") {
-            setFormData((prev) => ({ ...prev, [name]: value }));
-        }
-    };
-
-    if (!isOpen || !mounted) return null;
-
-    return createPortal(
-        <>
-            <style>{`
+  return createPortal(
+    <>
+      <style>{`
         .lead-popup-overlay {
           position: fixed;
           inset: 0;
@@ -579,250 +648,250 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
         }
       `}</style>
 
-            {/* Backdrop */}
-            <div
-                className="lead-popup-overlay"
-                onClick={handleClose}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="popup-heading"
-                aria-describedby="popup-subheading"
-            >
-                {/* Modal Panel */}
-                <div className="lead-popup-panel" onClick={(e) => e.stopPropagation()}>
-                    {/* Left Column - Navy Information Panel */}
-                    <div className="lead-popup-left">
-                        <div>
-                            <div className="lead-popup-badge">Security Notice</div>
+      {/* Backdrop */}
+      <div
+        className="lead-popup-overlay"
+        onClick={handleClose}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="popup-heading"
+        aria-describedby="popup-subheading"
+      >
+        {/* Modal Panel */}
+        <div className="lead-popup-panel" onClick={(e) => e.stopPropagation()}>
+          {/* Left Column - Navy Information Panel */}
+          <div className="lead-popup-left">
+            <div>
+              <div className="lead-popup-badge">Security Notice</div>
 
-                            <h3 id="popup-heading">Protecting Our Author Community</h3>
+              <h3 id="popup-heading">Protecting Our Author Community</h3>
 
-                            <p className="lead-popup-security-message text-sm leading-relaxed">
-                                We&apos;ve been made aware of fraudulent individuals and
-                                organizations falsely claiming to represent The Collingwood
-                                Press. To help protect our authors, please verify that all
-                                communications originate from our official email domain, phone
-                                numbers, and verified channels listed below.
-                            </p>
-                        </div>
-
-                        <div>
-                            <div className="lead-popup-contact-details mt-5 rounded-xl border border-white/10 bg-white/5">
-                                <div className="mb-4">
-                                    <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                                        Official Email
-                                    </span>
-                                    <span className="mt-1 block text-sm font-medium text-white">
-                                        contact@thecollingwoodpress.com
-                                    </span>
-                                </div>
-
-                                <div className="mb-4">
-                                    <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                                        Official Phone Numbers
-                                    </span>
-
-                                    <div className="mt-2 flex flex-col gap-1 font-medium text-white">
-                                        <a href="tel:+19362233644">(936) 223-3644</a>
-                                        <a href="tel:+19362233730">(936) 223-3730</a>
-                                        <a href="tel:+18176324550">(817) 632-4550</a>
-                                    </div>
-                                </div>
-
-                                <div className="border-t border-white/10 pt-3">
-                                    <p className="lead-popup-security-message text-xs leading-relaxed">
-                                        We will never send unsolicited calls, use generic email
-                                        domains, or request wire transfers. Any communication
-                                        outside these official channels should be treated as
-                                        fraudulent and reported immediately.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="lead-popup-trust">
-                                <div className="lead-popup-trust-logos">
-                                    {/* IBPA */}
-                                    <Link
-                                        href="https://www.ibpa-online.org/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Image
-                                            src="/assets/images/IBPA_H_proudmember.png"
-                                            alt="IBPA Proud Member"
-                                            width={170}
-                                            height={50}
-                                        />
-                                    </Link>
-
-                                    {/* BBB */}
-                                    <Link
-                                        href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Image
-                                            src="/assets/images/blue-seal-200-42-whitetxt-bbb-1000231047.png"
-                                            alt="BBB Accredited"
-                                            width={150}
-                                            height={42}
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="lead-popup-footer-line ">
-                                Official Communication Channels • The Collingwood Press
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column - White Form Panel */}
-                    <div className="lead-popup-right">
-                        {/* Close Button 'x' */}
-                        <button
-                            type="button"
-                            onClick={handleClose}
-                            className="lead-popup-close"
-                            aria-label="Close popup"
-                        >
-                            ×
-                        </button>
-
-                        <div className="lead-popup-mini-label">Free Download</div>
-
-                        <h2>Thinking About Publishing Your Book?</h2>
-
-                        <p id="popup-subheading" className="lead-popup-sub">
-                            Get the checklist 1,500+ authors have used to spot scams and
-                            budget their launch correctly — before they sign with anyone.
-                        </p>
-
-                        <form
-                            onSubmit={handleSubmit}
-                            className="lead-popup-form"
-                            onKeyDown={(e) => {
-                                if (e.key === "Enter" && e.target instanceof HTMLInputElement) {
-                                    e.preventDefault();
-                                }
-                            }}
-                        >
-                            {/* Name */}
-                            <div className="lead-popup-field">
-                                <label htmlFor="popup-name">First Name</label>
-                                <input
-                                    id="popup-name"
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="Jordan"
-                                    required
-                                />
-                            </div>
-
-                            {/* Email */}
-                            <div className="lead-popup-field">
-                                <label htmlFor="popup-email">Email Address</label>
-                                <input
-                                    id="popup-email"
-                                    type="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    placeholder="you@email.com"
-                                    required
-                                />
-                            </div>
-
-                            {/* Phone */}
-                            <div className="lead-popup-field">
-                                <label htmlFor="popup-phone">Phone Number</label>
-                                <input
-                                    id="popup-phone"
-                                    type="tel"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    placeholder="+1 (555) 000-0000"
-                                    required
-                                />
-                            </div>
-
-                            {/* Manuscript textarea */}
-                            <div className="lead-popup-field">
-                                <label htmlFor="popup-manuscript">
-                                    Tell Us About Your Manuscript
-                                </label>
-                                <textarea
-                                    id="popup-manuscript"
-                                    name="manuscript"
-                                    value={formData.manuscript}
-                                    onChange={handleChange}
-                                    placeholder="Genre, word count, current status, etc..."
-                                    required
-                                />
-                            </div>
-
-                            {/* Marketing Consent */}
-                            <div className="flex items-start gap-2">
-                                <input
-                                    type="checkbox"
-                                    id="popupMarketingConsent"
-                                    name="marketingConsent"
-                                    checked={formData.marketingConsent}
-                                    onChange={handleChange}
-                                    className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#1f2a44]"
-                                />
-                                <label
-                                    htmlFor="popupMarketingConsent"
-                                    className="text-[11px] text-gray-500 leading-relaxed cursor-pointer select-none"
-                                >
-                                    By checking this box, you consent to receive marketing
-                                    communications from The Collingwood Press. Msg &amp; data rates
-                                    may apply. Reply STOP to unsubscribe. By submitting this form,
-                                    you agree to our{" "}
-                                    <a
-                                        href="/privacy-policy/"
-                                        className="text-[#1f2a44] underline hover:text-[#EB6358]"
-                                    >
-                                        The Collingwood Press
-                                    </a>{" "}
-                                    and{" "}
-                                    <a
-                                        href="/privacy-choices/"
-                                        className="text-[#1f2a44] underline hover:text-[#EB6358]"
-                                    >
-                                        Your Privacy Choices
-                                    </a>
-                                    .
-                                </label>
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="lead-popup-submit"
-                            >
-                                {isSubmitting ? "Sending..." : "Send Me the Free Checklist →"}
-                            </button>
-                        </form>
-
-                        <div className="lead-popup-meta">
-                            <span>
-                                Instant download. We&apos;ll send two short follow-up emails —
-                                unsubscribe anytime.
-                            </span>
-                            <button type="button" onClick={handleClose}>
-                                No thanks, I&apos;ll keep browsing
-                            </button>
-                        </div>
-                    </div>
-                </div>
+              <p className="lead-popup-security-message text-sm leading-relaxed">
+                We&apos;ve been made aware of fraudulent individuals and
+                organizations falsely claiming to represent The Collingwood
+                Press. To help protect our authors, please verify that all
+                communications originate from our official email domain, phone
+                numbers, and verified channels listed below.
+              </p>
             </div>
-        </>,
-        document.body
-    );
+
+            <div>
+              <div className="lead-popup-contact-details mt-5 rounded-xl border border-white/10 bg-white/5">
+                <div className="mb-4">
+                  <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                    Official Email
+                  </span>
+                  <span className="mt-1 block text-sm font-medium text-white">
+                    contact@thecollingwoodpress.com
+                  </span>
+                </div>
+
+                <div className="mb-4">
+                  <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                    Official Phone Numbers
+                  </span>
+
+                  <div className="mt-2 flex flex-col gap-1 font-medium text-white">
+                    <a href="tel:+19362233644">(936) 223-3644</a>
+                    <a href="tel:+19362233730">(936) 223-3730</a>
+                    <a href="tel:+18176324550">(817) 632-4550</a>
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-3">
+                  <p className="lead-popup-security-message text-xs leading-relaxed">
+                    We will never send unsolicited calls, use generic email
+                    domains, or request wire transfers. Any communication
+                    outside these official channels should be treated as
+                    fraudulent and reported immediately.
+                  </p>
+                </div>
+              </div>
+              <div className="lead-popup-trust">
+                <div className="lead-popup-trust-logos">
+                  {/* IBPA */}
+                  <Link
+                    href="https://www.ibpa-online.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/images/IBPA_H_proudmember.png"
+                      alt="IBPA Proud Member"
+                      width={170}
+                      height={50}
+                    />
+                  </Link>
+
+                  {/* BBB */}
+                  <Link
+                    href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/assets/images/blue-seal-200-42-whitetxt-bbb-1000231047.png"
+                      alt="BBB Accredited"
+                      width={150}
+                      height={42}
+                    />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lead-popup-footer-line ">
+                Official Communication Channels • The Collingwood Press
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - White Form Panel */}
+          <div className="lead-popup-right">
+            {/* Close Button 'x' */}
+            <button
+              type="button"
+              onClick={handleClose}
+              className="lead-popup-close"
+              aria-label="Close popup"
+            >
+              ×
+            </button>
+
+            <div className="lead-popup-mini-label">Free Download</div>
+
+            <h2>Thinking About Publishing Your Book?</h2>
+
+            <p id="popup-subheading" className="lead-popup-sub">
+              Get the checklist 1,500+ authors have used to spot scams and
+              budget their launch correctly — before they sign with anyone.
+            </p>
+
+            <form
+              onSubmit={handleSubmit}
+              className="lead-popup-form"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && e.target instanceof HTMLInputElement) {
+                  e.preventDefault();
+                }
+              }}
+            >
+              {/* Name */}
+              <div className="lead-popup-field">
+                <label htmlFor="popup-name">First Name</label>
+                <input
+                  id="popup-name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Jordan"
+                  required
+                />
+              </div>
+
+              {/* Email */}
+              <div className="lead-popup-field">
+                <label htmlFor="popup-email">Email Address</label>
+                <input
+                  id="popup-email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@email.com"
+                  required
+                />
+              </div>
+
+              {/* Phone */}
+              <div className="lead-popup-field">
+                <label htmlFor="popup-phone">Phone Number</label>
+                <input
+                  id="popup-phone"
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+1 (555) 000-0000"
+                  required
+                />
+              </div>
+
+              {/* Manuscript textarea */}
+              <div className="lead-popup-field">
+                <label htmlFor="popup-manuscript">
+                  Tell Us About Your Manuscript
+                </label>
+                <textarea
+                  id="popup-manuscript"
+                  name="manuscript"
+                  value={formData.manuscript}
+                  onChange={handleChange}
+                  placeholder="Genre, word count, current status, etc..."
+                  required
+                />
+              </div>
+
+              {/* Marketing Consent */}
+              <div className="flex items-start gap-2">
+                <input
+                  type="checkbox"
+                  id="popupMarketingConsent"
+                  name="marketingConsent"
+                  checked={formData.marketingConsent}
+                  onChange={handleChange}
+                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#1f2a44]"
+                />
+                <label
+                  htmlFor="popupMarketingConsent"
+                  className="text-[11px] text-gray-500 leading-relaxed cursor-pointer select-none"
+                >
+                  By checking this box, you consent to receive marketing
+                  communications from The Collingwood Press. Msg &amp; data rates
+                  may apply. Reply STOP to unsubscribe. By submitting this form,
+                  you agree to our{" "}
+                  <a
+                    href="/privacy-policy/"
+                    className="text-[#1f2a44] underline hover:text-[#EB6358]"
+                  >
+                    The Collingwood Press
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="/privacy-choices/"
+                    className="text-[#1f2a44] underline hover:text-[#EB6358]"
+                  >
+                    Your Privacy Choices
+                  </a>
+                  .
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="lead-popup-submit"
+              >
+                {isSubmitting ? "Sending..." : "Send Me the Free Checklist →"}
+              </button>
+            </form>
+
+            <div className="lead-popup-meta">
+              <span>
+                Instant download. We&apos;ll send two short follow-up emails —
+                unsubscribe anytime.
+              </span>
+              <button type="button" onClick={handleClose}>
+                No thanks, I&apos;ll keep browsing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>,
+    document.body
+  );
 };
 
 export default PopupForm;

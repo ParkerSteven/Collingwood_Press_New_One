@@ -18,51 +18,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Book Publishing & Author Services | The Collingwood Press",
+    "Trusted Book Publishing Company | The Collingwood Press",
 
   description:
-    "Publish your book with confidence. The Collingwood Press offers professional book publishing, ghostwriting, editing, marketing, and audiobook services for authors.",
+    "Looking for a book publishing company? Get writing, editing, publishing, marketing, distribution, and audiobook production with The Collingwood Press.",
 
   alternates: {
     canonical: "https://www.thecollingwoodpress.com/",
-  },
-
-  keywords: [
-    "book publishing services",
-    "professional book publishing company",
-    "book publishing company",
-    "author publishing services",
-    "ghostwriting services",
-    "book editing services",
-    "book marketing services",
-    "audiobook publishing",
-    "publish your book",
-    "self publishing services",
-    "book publishers for new authors",
-  ],
-
-  openGraph: {
-    title:
-      "Book Publishing & Author Services | The Collingwood Press",
-    description:
-      "Professional book publishing, ghostwriting, editing, marketing, and audiobook services to help authors bring their books to life.",
-    url: "https://www.thecollingwoodpress.com/",
-    siteName: "The Collingwood Press",
-    type: "website",
-    locale: "en_US",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Book Publishing & Author Services | The Collingwood Press",
-    description:
-      "Publish your book with professional publishing, editing, ghostwriting, and marketing support.",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 

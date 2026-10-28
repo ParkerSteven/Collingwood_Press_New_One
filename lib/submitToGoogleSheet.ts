@@ -1,4 +1,13 @@
 const WEBHOOK_URL = 'https://hook.us1.make.com/lqy6w5qba6mwnnbak7likgzti4edzt4h';
+interface NewSheetFormData {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    source: string;
+    marketingConsent: boolean;
+}
+
 
 export async function submitToGoogleSheet(data: any) {
     try {
@@ -78,6 +87,34 @@ This is an auto-generated lead notification from the website.`;
         return {
             success: false,
             message: 'There was an issue submitting your form. Please try again or contact us directly.',
+        };
+    }
+}
+
+export async function submitToNewGoogleSheet(
+    data: NewSheetFormData
+) {
+    try {
+        const response = await fetch("/api/new-google-sheet", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        return {
+            success: response.ok && result.success === true,
+            message: result.message || "",
+        };
+    } catch (error) {
+        console.error("New Sheet submission error:", error);
+
+        return {
+            success: false,
+            message: "Could not save data to new Google Sheet.",
         };
     }
 }
