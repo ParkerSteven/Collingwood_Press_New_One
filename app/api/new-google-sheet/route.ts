@@ -5,6 +5,7 @@ const ALLOWED_ORIGINS = [
     "https://www.thecollingwoodpress.com",
     "https://thecollingwoodpress.com",
     "https://childrenlp.thecollingwoodpress.com",
+    "https://marketinglp.thecollingwoodpress.com",
 ];
 
 function getCorsHeaders(request: Request) {
