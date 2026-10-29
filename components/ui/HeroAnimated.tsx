@@ -42,7 +42,7 @@ export default function HeroAnimated() {
                         <span className="shrink-0 font-sans text-[10.5px] uppercase font-semibold text-ink-muted tracking-[0.2em]">
                             Accredited &amp; Member
                         </span>
-                        <span className="h-px flex-1 bg-line" />
+                        <span className="h-px flex-1 bg-line max-w-xl" />
                     </div>
 
                     <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10">
@@ -86,7 +86,7 @@ export default function HeroAnimated() {
             </div>
 
             {/* Right Column - reserved for editorial image */}
-            <div className="relative mx-auto w-full max-w-[480px] lg:max-w-[520px] h-[460px] sm:h-[520px] lg:h-[550px] flex items-center justify-center">
+            <div className="relative hidden md:block mx-auto w-full max-w-[480px] lg:max-w-[520px] h-[460px] sm:h-[520px] lg:h-[550px] flex items-center justify-center">
                 <div className="absolute inset-8 rounded-full pointer-events-none" />
                 <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]" />
             </div>
