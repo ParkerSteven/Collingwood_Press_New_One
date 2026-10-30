@@ -1,19 +1,10 @@
 import Link from "next/link";
-import { Mail, Phone, ShieldCheck, Award, BookOpen, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import instagram from '@/public/assets/images/socials/instagram.svg';
 import tiktok from '@/public/assets/images/socials/tiktok.svg';
 
-// const servicesLinks = [
-//   { label: "Ghostwriting", href: "/ghostwriting" },
-//   { label: "Editing", href: "/editing" },
-//   { label: "Publishing", href: "/publishing" },
-//   { label: "Marketing", href: "/marketing" },
-//   { label: "Book Fairs", href: "/marketing#book-fairs" },
-//   { label: "Cover Design", href: "/publishing#cover-design" },
-//   { label: "Audiobook Production", href: "/audiobook" },
-// ];
 
 const servicesLinks = [
   { label: "Ghostwriting", href: "/ghostwriting" },
@@ -25,15 +16,6 @@ const servicesLinks = [
   { label: "Audiobook Production", href: "/audiobook" },
 ];
 
-// const companyLinks = [
-//   { label: "About Us", href: "/about-us" },
-//   { label: "Our Team", href: "/about-us#team" },
-//   { label: "Testimonials", href: "/#testimonials" },
-//   { label: "Contact", href: "/contact-us" },
-//   { label: "Blog", href: "/about-us#blog" },
-//   { label: "AI & LLM Resources", href: "/about-us#ai-resources" },
-// ];
-
 const companyLinks = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Team", href: "/#publishing-team" },
@@ -41,12 +23,6 @@ const companyLinks = [
   { label: "Blog", href: "/blogs" },
   { label: "AI & LLM Resources", href: "/ai-and-llm-resources" },
 ];
-
-// const authorLibraryLinks = [
-//   { label: "Templates", href: "/publishing#templates" },
-//   { label: "Collingwood Partners", href: "/about-us#partners" },
-//   { label: "Author Checklist", href: "/publishing#checklist" },
-// ];
 
 const authorLibraryLinks = [
   { label: "Templates", href: "#" },

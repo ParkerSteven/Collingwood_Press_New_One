@@ -28,25 +28,19 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function Home() {
   return (
     <>
       <UtilityBar />
       <Header />
       <main>
-        <Hero />
+        <Hero className="hero-section-background" />
         <StatBar stats={stats} />
         <PlatformLogos />
         <Testimonials />
         <TrustBand />
         <ServicesGrid />
-        {/* <CoverSpotlight /> */}
         <BookCarousel />
-        {/* <ProjectManagers /> */}
-        {/* <Catalog /> */}
-        {/* <RelatedCarousel /> */}
         <MarketingServices />
         <ManuscriptCTA />
         <FAQAccordion

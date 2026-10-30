@@ -1,15 +1,9 @@
-
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  Feather,
-  ArrowRight,
-} from "lucide-react";
+import { Feather, ArrowRight } from "lucide-react";
 
 import Container from "@/components/ui/Container";
 import ServiceCard from "../ui/ServicesCard";
+import AnimatedReveal from "../ui/AnimatedReveal";
 
 const services = [
   {
@@ -79,21 +73,16 @@ export default function TrustBand() {
 
       <Container>
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
+        <AnimatedReveal
+          y={20}
+          duration={0.6}
+          margin="-50px"
           className="relative z-10 mx-auto mb-12 max-w-3xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
-
             <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F08A82] sm:text-[11px]">
               Everything Your Book Needs, Handled by One Team
             </span>
-
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2
@@ -109,12 +98,12 @@ export default function TrustBand() {
           <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.95rem] leading-[1.85] text-slate-300 sm:text-[1rem]">
             Publishing a book involves dozens of moving parts,
             and no author should have to juggle them alone.
-            Our book publishing services
-            bring editing, design, production, distribution and
-            promotion together under one coordinated team,
-            so nothing falls through the cracks.
+            Our book publishing services bring editing, design,
+            production, distribution and promotion together
+            under one coordinated team, so nothing falls
+            through the cracks.
           </p>
-        </motion.div>
+        </AnimatedReveal>
 
         {/* Five service cards */}
         <div className="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6 lg:gap-6">
@@ -122,7 +111,7 @@ export default function TrustBand() {
             <ServiceCard
               key={service.number}
               number={service.number}
-              image={service?.image}
+              image={service.image}
               title={service.title}
               description={service.description}
               link={service.link}
@@ -133,11 +122,9 @@ export default function TrustBand() {
         </div>
 
         {/* Bottom statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <AnimatedReveal
+          y={16}
+          duration={0.5}
           className="relative z-10 mt-10 flex flex-col gap-5 rounded-md border border-white/10 bg-white/[0.035] px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-9"
         >
           <div className="flex items-start gap-4">
@@ -163,7 +150,7 @@ export default function TrustBand() {
             Explore Publishing Services
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
-        </motion.div>
+        </AnimatedReveal>
       </Container>
     </section>
   );

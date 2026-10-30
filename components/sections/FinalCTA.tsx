@@ -1,12 +1,8 @@
-
-"use client";
 import type { ReactNode } from "react";
-import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import {
-  ArrowRight,
-} from "lucide-react";
+import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import { ArrowRight } from "lucide-react";
 
 type FinalCTAProps = {
   eyebrow?: string;
@@ -15,6 +11,7 @@ type FinalCTAProps = {
   buttonText?: string;
   buttonHref?: string;
 };
+
 export default function FinalCTA({
   eyebrow = "Your Next Step Starts Here",
   title = (
@@ -38,7 +35,7 @@ export default function FinalCTA({
     </>
   ),
   buttonText = "Submit Manuscript for Free Editorial Review",
-  buttonHref = "/contact-us/#manuscript-reviewave questions",
+  buttonHref = "/contact-us/#manuscript-review",
 }: FinalCTAProps) {
   return (
     <section
@@ -46,7 +43,7 @@ export default function FinalCTA({
       aria-labelledby="final-cta-heading"
       className="hero-gradient relative overflow-hidden border-b border-white/10 bg-[#0D1527] py-20 text-white sm:py-28 lg:py-32"
     >
-      {/* Ambient background effects */}
+      {/* Ambient Background Effects */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-1/2 h-[450px] w-[750px] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E7665D]/[0.06] blur-[110px]"
@@ -59,22 +56,17 @@ export default function FinalCTA({
 
       <Container className="relative z-10">
         {/* Main CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
+        <AnimatedReveal
+          y={24}
+          duration={0.6}
+          margin="-50px"
           className="mx-auto flex max-w-4xl flex-col items-center text-center"
         >
           {/* Eyebrow */}
           <div className="mb-6 flex items-center justify-center gap-3">
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
-
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F08A82]">
               {eyebrow}
             </span>
-
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           {/* Heading */}
@@ -90,7 +82,7 @@ export default function FinalCTA({
             {description}
           </p>
 
-          {/* Main button */}
+          {/* Main Button */}
           <div className="mt-9 flex flex-col items-center gap-4">
             <Button
               href={buttonHref}
@@ -98,9 +90,7 @@ export default function FinalCTA({
               size="lg"
               className="max-w-full px-4 py-4 text-center text-sm shadow-[0_10px_30px_rgba(231,102,93,0.22)] transition-shadow hover:shadow-[0_15px_35px_rgba(231,102,93,0.3)] sm:px-9 sm:text-base"
             >
-              <span>
-                {buttonText}
-              </span>
+              <span>{buttonText}</span>
 
               <ArrowRight
                 size={16}
@@ -108,7 +98,7 @@ export default function FinalCTA({
               />
             </Button>
           </div>
-        </motion.div>
+        </AnimatedReveal>
       </Container>
     </section>
   );

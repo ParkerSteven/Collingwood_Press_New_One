@@ -1,13 +1,6 @@
-
-"use client";
-
-import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import {
-  Quote,
-  BookOpenText,
-  CheckCircle2,
-} from "lucide-react";
+import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import { Quote, BookOpenText } from "lucide-react";
 
 type Testimonial = {
   id: string;
@@ -20,21 +13,24 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: "01",
-    quote: "I review every detail, and the Collingwood Press team kept pace: editing done in July, formatting fixes turned around fast, and honest advice on how to position the book.",
+    quote:
+      "I review every detail, and the Collingwood Press team kept pace: editing done in July, formatting fixes turned around fast, and honest advice on how to position the book.",
     author: "Todd Shevlin",
     book: "12 Minutes to Freedom",
     genre: "",
   },
   {
     id: "02",
-    quote: "My first book, handled with care and encouragement: patient through every cover revision, and the decisions stayed mine.",
+    quote:
+      "My first book, handled with care and encouragement: patient through every cover revision, and the decisions stayed mine.",
     author: "John David Amon",
     book: "Grace in the Questions",
     genre: "",
   },
   {
     id: "03",
-    quote: "An absolute pleasure to work with. Pamela caught spelling, tense slips, and hidden errors in the recipes and index that everyone else had missed for years.",
+    quote:
+      "An absolute pleasure to work with. Pamela caught spelling, tense slips, and hidden errors in the recipes and index that everyone else had missed for years.",
     author: "Jill Coleman",
     book: "Mechanics for the body",
     genre: "",
@@ -49,22 +45,16 @@ export default function ManuscriptCTA() {
       className="relative overflow-hidden border-b border-line bg-white py-20 lg:py-28"
     >
       <Container>
-        {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+        {/* Section Heading */}
+        <AnimatedReveal
+          y={20}
+          duration={0.55}
           className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
-
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
               Hear It From Our Authors
             </span>
-
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2
@@ -76,24 +66,19 @@ export default function ManuscriptCTA() {
               Publishing With Us
             </span>
           </h2>
-        </motion.div>
+        </AnimatedReveal>
 
-        {/* Testimonials grid */}
-
-
+        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {testimonials.map((testimonial, index) => (
-            <motion.article
+            <AnimatedReveal
               key={testimonial.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.55,
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{ y: -8 }}
+              as="article"
+              y={24}
+              duration={0.55}
+              delay={index * 0.1}
+              amount={0.15}
+              hoverY={-8}
               className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-[#344B76] bg-gradient-to-br from-[#101A30] via-[#172B4D] to-[#294D78] p-7 shadow-[0_12px_38px_rgba(16,26,48,0.18)] transition-shadow duration-500 hover:border-[#E7665D]/50 hover:shadow-[0_22px_55px_rgba(25,55,100,0.35)] sm:p-9"
             >
               {/* Background Glow */}
@@ -161,11 +146,9 @@ export default function ManuscriptCTA() {
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </AnimatedReveal>
           ))}
         </div>
-
-
       </Container>
     </section>
   );

@@ -1,8 +1,6 @@
 
-'use client'
-import React, { useState } from "react";
+import type { ReactNode } from "react";
 import {
-    ArrowRight,
     Lock,
     ShieldCheck,
     CheckCircle2,
@@ -11,8 +9,8 @@ import {
 
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
-import Button from "@/components/ui/Button";
-import PopupForm from "../forms/popupform";
+import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import HeroSectionClient from "../ui/HeroSectionClient";
 
 const defaultClassName =
     "relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white";
@@ -34,12 +32,12 @@ interface HeroSectionProps {
     eyebrow?: string;
     title?: string;
     highlightText?: string;
-    description?: React.ReactNode;
+    description?: ReactNode;
     firstButtonText?: string;
     secondButtonText?: string;
-    buttons?: any,
+    buttons?: HeroButton[];
     guarantees?: HeroGuarantee[];
-    children?: React.ReactNode;
+    children?: ReactNode;
     titleSuffix?: string;
 }
 
@@ -60,7 +58,12 @@ const defaultGuarantees: HeroGuarantee[] = [
 
 const defaultDescription = (
     <>
-        You have the expertise, experience, or story. Our professional ghostwriting services pair you with a writer who captures your voice and delivers a finished manuscript you are proud to put your name on. Hire a ghostwriter at The Collingwood Press and get a book that reads as if you wrote it yourself.
+        You have the expertise, experience, or story. Our
+        professional ghostwriting services pair you with a writer
+        who captures your voice and delivers a finished manuscript
+        you are proud to put your name on. Hire a ghostwriter at
+        The Collingwood Press and get a book that reads as if you
+        wrote it yourself.
     </>
 );
 
@@ -76,43 +79,52 @@ export default function HeroSection({
     titleSuffix = "",
     children,
 }: HeroSectionProps) {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
-        <>
+        <section className={`${defaultClassName} ${className}`}>
+            {/* Background Effects */}
+            <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
 
+            <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
 
-            <section className={`${defaultClassName} ${className}`}>
-                {/* Background Effects */}
-                <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#E7665D]/10 blur-3xl pointer-events-none" />
-                <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-[#1877F2]/10 blur-3xl pointer-events-none" />
+            <Container className="relative z-10">
+                <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
 
-                <Container className="relative z-10">
-                    <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
-
-                        {/* Eyebrow */}
-                        {eyebrow && (
+                    {/* Eyebrow Animation */}
+                    {eyebrow && (
+                        <AnimatedReveal
+                            y={14}
+                            duration={0.5}
+                            delay={0}
+                        >
                             <Eyebrow tone="coral" align="center">
                                 {eyebrow}
                             </Eyebrow>
-                        )}
+                        </AnimatedReveal>
+                    )}
 
-                        {/* Heading */}
+                    {/* Heading Animation */}
+                    <AnimatedReveal
+                        y={20}
+                        duration={0.65}
+                        delay={0.1}
+                        className="w-full"
+                    >
                         <h1
                             className="
-          mx-auto
-          mt-5 sm:mt-6
-          max-w-[650px]
-          font-serif
-          text-[2.25rem]
-          sm:text-[2.4rem]
-          md:text-[2.8rem]
-          lg:text-[3.2rem]
-          font-bold
-          leading-[1.12]
-          tracking-tight
-          text-white
-          text-balance
-        "
+                                mx-auto
+                                mt-5 sm:mt-6
+                                max-w-[650px]
+                                font-serif
+                                text-[2.25rem]
+                                sm:text-[2.4rem]
+                                md:text-[2.8rem]
+                                lg:text-[3.2rem]
+                                font-bold
+                                leading-[1.12]
+                                tracking-tight
+                                text-white
+                                text-balance
+                            "
                         >
                             {title}{" "}
 
@@ -121,99 +133,84 @@ export default function HeroSection({
                                     {highlightText}
                                 </span>
                             )}
+
                             {titleSuffix && <> {titleSuffix}</>}
                         </h1>
+                    </AnimatedReveal>
 
-                        {/* Description */}
-                        {description && (
+                    {/* Description Animation */}
+                    {description && (
+                        <AnimatedReveal
+                            y={18}
+                            duration={0.6}
+                            delay={0.2}
+                            className="w-full"
+                        >
                             <div
                                 className="
-      mx-auto
-      mt-6
-      w-full
-      max-w-[800px]
-      text-center
-      font-sans
-      text-[15px]
-      sm:text-[16px]
-      lg:text-[17px]
-      leading-[1.8]
-      sm:leading-[1.75]
-      tracking-normal
-      text-slate-300
-      [&_p]:m-0
-      [&_p]:text-balance
-    "
+                                    mx-auto
+                                    mt-6
+                                    w-full
+                                    max-w-[600px]
+                                    text-center
+                                    font-sans
+                                    text-[15px]
+                                    sm:text-[16px]
+                                    lg:text-[17px]
+                                    leading-[1.8]
+                                    sm:leading-[1.75]
+                                    tracking-normal
+                                    text-slate-300
+                                    [&_p]:m-0
+                                    [&_p]:text-balance
+                                "
                             >
                                 {description}
                             </div>
-                        )}
+                        </AnimatedReveal>
+                    )}
 
-                        {/* CTA Buttons */}
+                    {/* Interactive CTA Buttons */}
+                    <AnimatedReveal
+                        y={20}
+                        duration={0.55}
+                        delay={0.3}
+                        className="w-full sm:w-auto"
+                    >
+                        <HeroSectionClient
+                            firstButtonText={firstButtonText}
+                            secondButtonText={secondButtonText}
+                        />
+                    </AnimatedReveal>
 
+                    {/* Guarantees Animation */}
+                    {guarantees.length > 0 && (
                         <div
                             className="
-            mt-7 sm:mt-8 lg:mt-9
-            flex w-full flex-col
-            items-stretch justify-center
-            gap-3 sm:w-auto sm:flex-row
-            sm:items-center sm:gap-4
-          "
+                                mt-9 sm:mt-10
+                                w-full
+                                max-w-5xl
+                                border-t border-white/10
+                                pt-6
+                                flex flex-wrap
+                                items-center justify-center
+                                gap-x-7 gap-y-4
+                                text-xs
+                                text-white/75
+                            "
                         >
-                            <Button
-                                onClick={() => setIsPopupOpen(true)}
-                                variant="primary"
-                                size="md"
-                                className="shadow-sm hover:shadow-md cursor-pointer"
-                            >
-                                <span>{firstButtonText}</span>
-                                <ArrowRight size={15} />
-                            </Button>
-                            <Button
-                                onClick={() => {
-                                    if (typeof window !== 'undefined' && window.BrevoConversations) {
-                                        // the API doesn't expose an "open" method – use openChat instead
-                                        // passing `true` opens the widget immediately (argument is optional)
-                                        window.BrevoConversations('openChat');
-                                    } else {
-                                        // fallback if the script hasn't injected yet; we don't have a /chat
-                                        // route, so navigate to the homepage instead (or remove entirely)
-                                        window.location.href = '/';
-                                    }
-                                }}
-                                variant="outline"
-                                size="md"
-                                className="text-white cursor-pointer"
-                            >
-                                <span>{secondButtonText}</span>
-                            </Button>
-                        </div>
+                            {guarantees.map((item, index) => {
+                                const Icon = item.icon;
 
-
-                        {/* Guarantees */}
-                        {guarantees.length > 0 && (
-                            <div
-                                className="
-            mt-9 sm:mt-10
-            w-full
-            max-w-5xl
-            border-t border-white/10
-            pt-6
-            flex flex-wrap
-            items-center justify-center
-            gap-x-7 gap-y-4
-            text-xs
-            text-white/75
-          "
-                            >
-                                {guarantees.map((item, index) => {
-                                    const Icon = item.icon;
-
-                                    return (
-                                        <div
-                                            key={index}
-                                            className="flex items-center gap-2"
-                                        >
+                                return (
+                                    <AnimatedReveal
+                                        key={index}
+                                        y={12}
+                                        duration={0.45}
+                                        delay={0.35 + index * 0.1}
+                                        amount={0.1}
+                                    >
+                                        <div className="flex items-center gap-2">
                                             <Icon
                                                 size={14}
                                                 className="shrink-0 text-[#E7665D]"
@@ -221,24 +218,15 @@ export default function HeroSection({
 
                                             <span>{item.text}</span>
                                         </div>
-                                    );
-                                })}
-                            </div>
-                        )}
+                                    </AnimatedReveal>
+                                );
+                            })}
+                        </div>
+                    )}
 
-                        {children}
-                    </div>
-                </Container>
-            </section>
-
-            <PopupForm
-                isOpen={isPopupOpen}
-                onClose={() => setIsPopupOpen(false)}
-                source="Hero Section - Free Publishing Consultation"
-            />
-
-        </>
-
-
+                    {children}
+                </div>
+            </Container>
+        </section>
     );
 }

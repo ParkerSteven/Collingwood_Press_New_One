@@ -1,15 +1,8 @@
-
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import {
-  UserRound,
-} from "lucide-react";
+import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import { UserRound } from "lucide-react";
 import { teamMembers } from "@/lib/data";
-
-
 
 export default function MarketingServices() {
   return (
@@ -19,22 +12,16 @@ export default function MarketingServices() {
       className="relative overflow-hidden border-b border-line bg-white py-20 lg:py-28"
     >
       <Container>
-        {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+        {/* Section Heading */}
+        <AnimatedReveal
+          y={20}
+          duration={0.55}
           className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
-
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
               The People Behind Your Publishing Journey
             </span>
-
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2
@@ -48,30 +35,25 @@ export default function MarketingServices() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.97rem] leading-[1.85] text-ink-muted sm:text-[1.05rem]">
-            Experienced professionals. Personal guidance. Direct communication.
-            These are the professionals who will work on
-            your manuscript.
+            Experienced professionals. Personal guidance. Direct
+            communication. These are the professionals who will
+            work on your manuscript.
           </p>
-        </motion.div>
+        </AnimatedReveal>
 
-
-
-        {/* Team member cards */}
+        {/* Team Member Cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {teamMembers.map((member, index) => {
             const Icon = member.icon;
 
             return (
-              <motion.article
+              <AnimatedReveal
                 key={member.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
+                as="article"
+                y={24}
+                duration={0.55}
+                delay={index * 0.1}
+                amount={0.15}
                 className="group relative flex h-full flex-col overflow-hidden rounded-md border border-[#E7665D]/20 bg-[#FCFAF7] shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/45 hover:shadow-[0_14px_38px_rgba(231,102,93,0.10)]"
               >
                 {/* Portrait */}
@@ -104,12 +86,8 @@ export default function MarketingServices() {
                     </div>
                   )}
 
-                  {/* Portrait overlay */}
+                  {/* Portrait Overlay */}
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#121A2B]/60 to-transparent" />
-
-                  {/* <span className="absolute left-5 top-5 rounded-sm border border-white/25 bg-[#121A2B]/65 px-3 py-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm">
-                    Team Member {member.id}
-                  </span> */}
 
                   <div className="absolute bottom-5 left-6 right-6">
                     <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-[#F7B0A9]">
@@ -122,7 +100,7 @@ export default function MarketingServices() {
                   </div>
                 </div>
 
-                {/* Profile content */}
+                {/* Profile Content */}
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#E7665D]/20 bg-[#FDF0ED] text-[#E7665D]">
@@ -137,14 +115,10 @@ export default function MarketingServices() {
                       <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-[#E7665D]">
                         {member.role}
                       </span>
-
-                      {/* <span className="mt-0.5 block font-sans text-[11px] text-ink-muted">
-                        {member.specialty}
-                      </span> */}
                     </div>
                   </div>
                 </div>
-              </motion.article>
+              </AnimatedReveal>
             );
           })}
         </div>

@@ -1,36 +1,35 @@
-
-"use client";
-
-import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import { publishingSteps } from "@/lib/data";
 import { CheckCircle2 } from "lucide-react";
+import AnimatedReveal from "../ui/AnimatedReveal";
+
+const positions = [
+  "lg:col-start-1 lg:row-start-1",
+  "lg:col-start-2 lg:row-start-1",
+  "lg:col-start-3 lg:row-start-1",
+  "lg:col-start-3 lg:row-start-2",
+  "lg:col-start-2 lg:row-start-2",
+  "lg:col-start-1 lg:row-start-2",
+];
 
 export default function ServicesGrid() {
   return (
-
     <section
       id="publishing-process"
       aria-labelledby="publishing-process-heading"
       className="relative overflow-hidden border-b border-line bg-[#FCFAF7] py-20 lg:py-28"
     >
       <Container>
-        {/* Section heading - unchanged */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+        {/* Section Heading */}
+        <AnimatedReveal
+          y={18}
+          duration={0.55}
           className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
-
             <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
               From First Chapter to Finished Book
             </span>
-
-            {/* <span className="h-px w-8 bg-[#E7665D]" /> */}
           </div>
 
           <h2
@@ -44,12 +43,11 @@ export default function ServicesGrid() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.96rem] leading-[1.85] text-ink-muted sm:text-[1rem]">
-            Publishing should never feel like guesswork. Here is
-            how a project moves through our
-            book publishing process
-            , typically in 3 to 6 months depending on scope.
+            Publishing should never feel like guesswork. Here is how
+            a project moves through our book publishing process,
+            typically in 3 to 6 months depending on scope.
           </p>
-        </motion.div>
+        </AnimatedReveal>
 
         {/* Connected Publishing Process */}
         <div className="relative mx-auto max-w-7xl">
@@ -57,31 +55,14 @@ export default function ServicesGrid() {
             {publishingSteps?.map((step, index) => {
               const Icon = step.icon;
 
-              // Snake flow:
-              // 1 -> 2 -> 3
-              //           |
-              // 6 <- 5 <- 4
-
-              const positions = [
-                "lg:col-start-1 lg:row-start-1",
-                "lg:col-start-2 lg:row-start-1",
-                "lg:col-start-3 lg:row-start-1",
-                "lg:col-start-3 lg:row-start-2",
-                "lg:col-start-2 lg:row-start-2",
-                "lg:col-start-1 lg:row-start-2",
-              ];
-
               return (
-                <motion.article
+                <AnimatedReveal
                   key={step.number}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{
-                    duration: 0.55,
-                    delay: (index % 3) * 0.1,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
+                  as="article"
+                  y={25}
+                  duration={0.55}
+                  delay={(index % 3) * 0.1}
+                  amount={0.15}
                   className={`group relative flex h-full min-w-0 flex-col rounded-xl border border-[#E7665D]/20 bg-white px-6 pb-7 pt-12 shadow-[0_8px_30px_rgba(17,26,48,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/50 hover:shadow-[0_15px_40px_rgba(231,102,93,0.12)] sm:px-8 ${positions[index] ?? ""}`}
                 >
                   {/* Floating Icon */}
@@ -104,7 +85,7 @@ export default function ServicesGrid() {
                     </span>
                   </div>
 
-                  {/* Original Content */}
+                  {/* Step Content */}
                   <div className="flex flex-1 flex-col">
                     <h3 className="font-serif text-[1.3rem] font-medium leading-[1.22] text-ink">
                       {step.title}
@@ -115,7 +96,7 @@ export default function ServicesGrid() {
                     </p>
                   </div>
 
-                  {/* Original Footer */}
+                  {/* Step Footer */}
                   <div className="mt-7 flex items-center gap-2 border-t border-line/70 pt-5">
                     <CheckCircle2
                       size={15}
@@ -129,7 +110,7 @@ export default function ServicesGrid() {
                     </span>
                   </div>
 
-                  {/* Desktop Right Connectors: 1->2, 2->3 */}
+                  {/* Desktop Right Connectors: 1 → 2, 2 → 3 */}
                   {index < 2 && (
                     <div
                       aria-hidden="true"
@@ -140,7 +121,7 @@ export default function ServicesGrid() {
                     </div>
                   )}
 
-                  {/* Desktop Down Connector: 3->4 */}
+                  {/* Desktop Down Connector: 3 → 4 */}
                   {index === 2 && (
                     <div
                       aria-hidden="true"
@@ -150,16 +131,15 @@ export default function ServicesGrid() {
                       <div className="absolute bottom-0 h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#E7665D]" />
                     </div>
                   )}
+
                   {/* Desktop Left Connectors: 4 → 5, 5 → 6 */}
                   {(index === 3 || index === 4) && (
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute right-full top-1/2 hidden w-12 -translate-y-1/2 items-center lg:flex"
                     >
-                      {/* Connecting Line */}
                       <div className="h-[2px] w-full bg-[#E7665D]/60" />
 
-                      {/* Left Pointing Arrow */}
                       <div className="absolute left-0 h-2.5 w-2.5 -rotate-45 border-l-2 border-t-2 border-[#E7665D]" />
                     </div>
                   )}
@@ -171,16 +151,16 @@ export default function ServicesGrid() {
                       className="pointer-events-none absolute left-1/2 top-full flex h-16 -translate-x-1/2 flex-col items-center lg:hidden"
                     >
                       <div className="h-full w-[2px] bg-[#E7665D]/60" />
+
                       <div className="absolute bottom-0 h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#E7665D]" />
                     </div>
                   )}
-                </motion.article>
+                </AnimatedReveal>
               );
             })}
           </div>
         </div>
       </Container>
     </section>
-
   );
 }
