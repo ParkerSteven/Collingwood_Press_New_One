@@ -15,6 +15,7 @@ import { faqs, stats } from "@/lib/data";
 import HomeBlogs from "@/components/sections/HomeBlogs";
 import BookCarousel from "@/components/sections/BookCovers";
 import type { Metadata } from "next";
+import ReactDOM from "react-dom";
 
 export const metadata: Metadata = {
   title:
@@ -29,6 +30,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  ReactDOM.preload("/heroSec_bg.webp", {
+    as: "image",
+    fetchPriority: "high",
+  });
   return (
     <>
       <UtilityBar />
