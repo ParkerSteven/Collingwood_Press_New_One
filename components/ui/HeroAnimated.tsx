@@ -1,8 +1,6 @@
-
 import Eyebrow from "@/components/ui/Eyebrow";
 import HeroActions from "./HeroActions";
 import type { HeroProps } from "@/types/types";
-import AnimatedReveal from "./AnimatedReveal";
 import {
     CustomTrustBadges,
     DefaultTrustBadges,
@@ -45,49 +43,104 @@ export default function HeroAnimated({
         <>
             {/* LEFT COLUMN */}
             <div className="max-w-5xl">
-                {/* Immediately visible */}
+
+                {/* Eyebrow — visible immediately */}
                 <Eyebrow tone="coral" align="left">
                     {eyebrow}
                 </Eyebrow>
 
-                {/* H1 — no animation */}
-                <h1 className="mt-6 font-serif text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem] font-medium leading-[1.05] text-white tracking-tight text-balance">
+                {/* H1 — LCP candidate, no animation */}
+                <h1
+                    className="
+                        mt-6
+                        font-serif
+                        text-[2.6rem]
+                        sm:text-[3rem]
+                        lg:text-[3.2rem]
+                        font-medium
+                        leading-[1.05]
+                        text-white
+                        tracking-tight
+                        text-balance
+                    "
+                >
                     {title}
                 </h1>
 
-                {/* Description — no animation */}
-                <p className="mt-6 text-[1.02rem] sm:text-[1.08rem] leading-relaxed text-slate-300 font-sans font-normal md:pr-20">
+                {/* Description — visible immediately */}
+                <p
+                    className="
+                        mt-6
+                        text-[1.02rem]
+                        sm:text-[1.08rem]
+                        leading-relaxed
+                        text-slate-300
+                        font-sans
+                        font-normal
+                        md:pr-20
+                    "
+                >
                     {description}
                 </p>
 
-                {/* Animated actions */}
-                <AnimatedReveal y={20} duration={0.6} delay={0.3}>
-                    {actions === undefined ? <HeroActions /> : actions}
-                </AnimatedReveal>
+                {/* Actions — animation temporarily disabled */}
+                {actions === undefined ? (
+                    <HeroActions />
+                ) : (
+                    actions
+                )}
 
-                {/* Animated trust badges */}
+                {/* Trust Badges — animation temporarily disabled */}
                 {showBadges && (
                     <div className="w-full max-w-[540px]">
-                        <AnimatedReveal y={16} duration={0.6} delay={0.4}>
-                            {badges === undefined ? (
-                                <DefaultTrustBadges heading={badgeHeading} />
-                            ) : (
-                                <CustomTrustBadges
-                                    badges={badges}
-                                    heading={badgeHeading}
-                                />
-                            )}
-                        </AnimatedReveal>
+                        {badges === undefined ? (
+                            <DefaultTrustBadges
+                                heading={badgeHeading}
+                            />
+                        ) : (
+                            <CustomTrustBadges
+                                badges={badges}
+                                heading={badgeHeading}
+                            />
+                        )}
                     </div>
                 )}
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="relative hidden md:block mx-auto w-full max-w-[480px] lg:max-w-[520px] h-[460px] sm:h-[520px] lg:h-[550px] items-center justify-center">
+            <div
+                className="
+                    relative
+                    hidden
+                    md:block
+                    mx-auto
+                    w-full
+                    max-w-[480px]
+                    lg:max-w-[520px]
+                    h-[460px]
+                    sm:h-[520px]
+                    lg:h-[550px]
+                    items-center
+                    justify-center
+                "
+            >
                 {rightContent === undefined ? (
                     <>
                         <div className="absolute inset-8 rounded-full pointer-events-none" />
-                        <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]" />
+
+                        <div
+                            className="
+                                relative
+                                w-full
+                                h-full
+                                flex
+                                items-center
+                                justify-center
+                                transition-transform
+                                duration-500
+                                hover:scale-[1.02]
+                            "
+                        />
                     </>
                 ) : (
                     rightContent

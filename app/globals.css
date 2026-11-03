@@ -707,3 +707,8 @@ h6 * {
     color: inherit;
     padding: 0;
 }
+
+/* Temporary Lighthouse diagnostic test */
+.paper-grain::before {
+    display: none;
+}

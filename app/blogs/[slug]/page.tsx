@@ -19,6 +19,7 @@ import Footer from '@/components/layout/Footer';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import BlogArticleActions from '@/components/sections/BlogArticleSections';
+import Image from 'next/image';
 
 export const revalidate = 60;
 
@@ -518,14 +519,15 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                                         className="group flex h-full flex-col overflow-hidden rounded-md border border-[#eae4df] bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-cardHover"
                                     >
                                         <div className="relative aspect-[16/10] overflow-hidden bg-[#eeece8]">
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
+                                            <Image
                                                 src={getImageUrl(relatedPost)}
                                                 alt={plainText(relatedPost.title.rendered)}
+                                                fill
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                                 loading="lazy"
-                                                decoding="async"
-                                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                             />
+
                                             <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#E7665D] transition-all duration-500 group-hover:w-full" />
                                         </div>
                                         <div className="flex flex-1 flex-col p-6">
