@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
-  LockKeyhole,
   Mail,
-  FileText,
   MapPin,
   Phone,
 } from "lucide-react";
@@ -15,6 +12,7 @@ import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
+import AnimatedReveal from "@/components/ui/AnimatedReveal";
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.thecollingwoodpress.com/privacy-policy/' },
@@ -179,25 +177,27 @@ export default function PrivacyPolicyPage() {
       {/* Hero Section */}
       <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-14 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-white/10 text-white">
         <Container className="max-w-3xl">
-          <Eyebrow tone="coral">
-            Legal Information &amp; Data Protection
-          </Eyebrow>
+          <AnimatedReveal y={16} duration={0.55} amount={0.1}>
+            <Eyebrow tone="coral">
+              Legal Information &amp; Data Protection
+            </Eyebrow>
 
-          <h1 className="mt-4 font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            Privacy{" "}
-            <span className="italic text-[#E7665D]">
-              Policy
-            </span>
-          </h1>
+            <h1 className="mt-4 font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+              Privacy{" "}
+              <span className="italic text-[#E7665D]">
+                Policy
+              </span>
+            </h1>
 
-          <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-            How The Collingwood Press collects, uses, and protects
-            your personal information.
-          </p>
+            <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+              How The Collingwood Press collects, uses, and protects
+              your personal information.
+            </p>
 
-          <p className="mt-2 text-xs text-[#ccccccad]">
-            Effective Date: January 1st, 2026
-          </p>
+            <p className="mt-2 text-xs text-[#ccccccad]">
+              Effective Date: January 1st, 2026
+            </p>
+          </AnimatedReveal>
         </Container>
       </section>
 
@@ -208,7 +208,7 @@ export default function PrivacyPolicyPage() {
           <div className="flex flex-col gap-10 font-sans text-sm text-ink-soft leading-relaxed">
 
             {/* Introduction */}
-            <div className="flex flex-col gap-4">
+            <AnimatedReveal y={16} duration={0.5} amount={0.1} className="flex flex-col gap-4">
               <p>
                 PLEASE REVIEW THIS PRIVACY POLICY CAREFULLY.
                 The Collingwood Press (&quot;We,&quot;
@@ -218,7 +218,7 @@ export default function PrivacyPolicyPage() {
                 your continued use of our services indicates
                 acceptance of those changes.
               </p>
-            </div>
+            </AnimatedReveal>
 
             {/* Dynamic Privacy Sections */}
             {privacySections.map(
@@ -228,87 +228,89 @@ export default function PrivacyPolicyPage() {
                   id={section.id}
                   className="scroll-mt-28"
                 >
-                  {/* Section Heading */}
-                  <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
-                    {section.title}
-                  </h2>
+                  <AnimatedReveal y={16} duration={0.5} amount={0.08}>
+                    {/* Section Heading */}
+                    <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
+                      {section.title}
+                    </h2>
 
-                  {/* Paragraphs */}
-                  {section.paragraphs?.map(
-                    (paragraph: string, index: number) => (
-                      <p
-                        key={index}
-                        className="mb-4 text-sm text-ink-soft leading-7"
-                      >
-                        {paragraph}
-                      </p>
-                    )
-                  )}
+                    {/* Paragraphs */}
+                    {section.paragraphs?.map(
+                      (paragraph: string, index: number) => (
+                        <p
+                          key={index}
+                          className="mb-4 text-sm text-ink-soft leading-7"
+                        >
+                          {paragraph}
+                        </p>
+                      )
+                    )}
 
-                  {/* Bullet Points */}
-                  {section.bullets && (
-                    <ul className="flex flex-col gap-3 mt-4 pl-5 list-disc marker:text-[#E7665D]">
-                      {section.bullets.map(
-                        (bullet: string, index: number) => (
-                          <li
-                            key={index}
-                            className="pl-1 text-sm text-ink-soft leading-7"
-                          >
-                            {bullet}
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  )}
-
-                  {/* Subsections */}
-                  {section.subsections?.map(
-                    (sub: PrivacySubsection, index: number) => (
-                      <div
-                        key={sub.title}
-                        className={index !== 0 ? "mt-8" : "mt-6"}
-                      >
-                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink mb-3">
-                          {sub.title}
-                        </h3>
-
-                        {/* Subsection Paragraphs */}
-                        {sub.paragraphs.map(
-                          (paragraph: string, i: number) => (
-                            <p
-                              key={i}
-                              className="mb-3 text-sm text-ink-soft leading-7"
+                    {/* Bullet Points */}
+                    {section.bullets && (
+                      <ul className="flex flex-col gap-3 mt-4 pl-5 list-disc marker:text-[#E7665D]">
+                        {section.bullets.map(
+                          (bullet: string, index: number) => (
+                            <li
+                              key={index}
+                              className="pl-1 text-sm text-ink-soft leading-7"
                             >
-                              {paragraph}
-                            </p>
+                              {bullet}
+                            </li>
                           )
                         )}
+                      </ul>
+                    )}
 
-                        {/* Subsection Bullets */}
-                        {sub.bullets && (
-                          <ul className="flex flex-col gap-3 mt-4 pl-5 list-disc marker:text-[#E7665D]">
-                            {sub.bullets.map(
-                              (bullet: string, i: number) => (
-                                <li
-                                  key={i}
-                                  className="pl-1 text-sm text-ink-soft leading-7"
-                                >
-                                  {bullet}
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        )}
-                      </div>
-                    )
-                  )}
+                    {/* Subsections */}
+                    {section.subsections?.map(
+                      (sub: PrivacySubsection, index: number) => (
+                        <div
+                          key={sub.title}
+                          className={index !== 0 ? "mt-8" : "mt-6"}
+                        >
+                          <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink mb-3">
+                            {sub.title}
+                          </h3>
 
-                  {/* Additional Description */}
-                  {section.after && (
-                    <p className="mt-5 text-sm text-ink-soft leading-7">
-                      {section.after}
-                    </p>
-                  )}
+                          {/* Subsection Paragraphs */}
+                          {sub.paragraphs.map(
+                            (paragraph: string, i: number) => (
+                              <p
+                                key={i}
+                                className="mb-3 text-sm text-ink-soft leading-7"
+                              >
+                                {paragraph}
+                              </p>
+                            )
+                          )}
+
+                          {/* Subsection Bullets */}
+                          {sub.bullets && (
+                            <ul className="flex flex-col gap-3 mt-4 pl-5 list-disc marker:text-[#E7665D]">
+                              {sub.bullets.map(
+                                (bullet: string, i: number) => (
+                                  <li
+                                    key={i}
+                                    className="pl-1 text-sm text-ink-soft leading-7"
+                                  >
+                                    {bullet}
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          )}
+                        </div>
+                      )
+                    )}
+
+                    {/* Additional Description */}
+                    {section.after && (
+                      <p className="mt-5 text-sm text-ink-soft leading-7">
+                        {section.after}
+                      </p>
+                    )}
+                  </AnimatedReveal>
                 </section>
               )
             )}
@@ -316,7 +318,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Contact Us Section */}
           <div className="mt-16 pt-12 border-t border-line">
-            <div className="text-center">
+            <AnimatedReveal y={20} duration={0.55} amount={0.1} className="text-center">
               <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E7665D]">
                 Need Assistance?
               </span>
@@ -380,7 +382,7 @@ export default function PrivacyPolicyPage() {
                 Contact Our Editorial Desk
                 <ArrowRight size={16} />
               </Link>
-            </div>
+            </AnimatedReveal>
           </div>
 
         </Container>

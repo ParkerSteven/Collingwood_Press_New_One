@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
+import AnimatedReveal from "@/components/ui/AnimatedReveal";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
@@ -34,15 +35,19 @@ export default function PrivacyChoicesPage() {
             </span>
           </h1>
 
-          <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-            Opt-out of the sale or sharing of your personal information.
-          </p>
+          <AnimatedReveal y={12} duration={0.5} delay={0.1} amount={0.1}>
+            <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+              Opt-out of the sale or sharing of your personal information.
+            </p>
+          </AnimatedReveal>
 
-          <p className="mt-3 text-xs text-[#ccccccad]">
-            Effective: January 1st, 2026
-            <span className="mx-2">|</span>
-            Last reviewed: January 1st, 2026
-          </p>
+          <AnimatedReveal y={12} duration={0.5} delay={0.18} amount={0.1}>
+            <p className="mt-3 text-xs text-[#ccccccad]">
+              Effective: January 1st, 2026
+              <span className="mx-2">|</span>
+              Last reviewed: January 1st, 2026
+            </p>
+          </AnimatedReveal>
         </Container>
       </section>
 
@@ -52,156 +57,165 @@ export default function PrivacyChoicesPage() {
           <div className="flex flex-col gap-10 text-sm text-ink-soft leading-relaxed font-sans">
 
             {/* Introduction */}
-            <div>
-              <p>
-                This page is primarily intended for California
-                residents exercising their rights under the
-                California Consumer Privacy Act (CCPA) and
-                California Privacy Rights Act (CPRA). Residents
-                of other states with applicable privacy laws
-                (Virginia, Colorado, Connecticut, Texas, etc.)
-                may also submit requests using the form below.
-              </p>
-            </div>
+            <AnimatedReveal y={14} duration={0.5} amount={0.1}>
+              <div>
+                <p>
+                  This page is primarily intended for California
+                  residents exercising their rights under the
+                  California Consumer Privacy Act (CCPA) and
+                  California Privacy Rights Act (CPRA). Residents
+                  of other states with applicable privacy laws
+                  (Virginia, Colorado, Connecticut, Texas, etc.)
+                  may also submit requests using the form below.
+                </p>
+              </div>
+
+            </AnimatedReveal>
 
             {/* What This Means */}
-            <section>
-              <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
-                1. What This Means
-              </h2>
+            <AnimatedReveal y={16} duration={0.5} amount={0.08}>
+              <section>
+                <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
+                  1. What This Means
+                </h2>
 
-              <div className="flex flex-col gap-4">
-                <p>
-                  The Collingwood Press uses third-party
-                  advertising and analytics technologies on
-                  our website. These include tools like
-                  Microsoft Advertising (Universal Event
-                  Tracking / UET) and Google Analytics.
-                  These technologies may collect data about
-                  your browsing behavior, such as the pages
-                  you visit and actions you take, and share
-                  that data with those platforms to serve
-                  you relevant ads on other websites.
-                </p>
+                <div className="flex flex-col gap-4">
+                  <p>
+                    The Collingwood Press uses third-party
+                    advertising and analytics technologies on
+                    our website. These include tools like
+                    Microsoft Advertising (Universal Event
+                    Tracking / UET) and Google Analytics.
+                    These technologies may collect data about
+                    your browsing behavior, such as the pages
+                    you visit and actions you take, and share
+                    that data with those platforms to serve
+                    you relevant ads on other websites.
+                  </p>
 
-                <p>
-                  Under California law (CCPA/CPRA), this type
-                  of data sharing may qualify as a &quot;sale&quot; or
-                  &quot;sharing&quot; of your personal information,
-                  even when no money changes hands. As a
-                  California resident, you have the right
-                  to opt out of this activity.
-                </p>
-              </div>
-            </section>
+                  <p>
+                    Under California law (CCPA/CPRA), this type
+                    of data sharing may qualify as a &quot;sale&quot; or
+                    &quot;sharing&quot; of your personal information,
+                    even when no money changes hands. As a
+                    California resident, you have the right
+                    to opt out of this activity.
+                  </p>
+                </div>
+              </section>
+            </AnimatedReveal>
 
             {/* What Data Is Involved */}
-            <section>
-              <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
-                2. What Data Is Involved
-              </h2>
+            <AnimatedReveal y={16} duration={0.5} amount={0.08}>
+              <section>
+                <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
+                  2. What Data Is Involved
+                </h2>
 
-              <div className="flex flex-col gap-4">
-                <p>
-                  <strong className="text-ink">
-                    Internet or network activity data:
-                  </strong>{" "}
-                  pages visited, session duration, ad interactions,
-                  referring URLs.
-                </p>
+                <div className="flex flex-col gap-4">
+                  <p>
+                    <strong className="text-ink">
+                      Internet or network activity data:
+                    </strong>{" "}
+                    pages visited, session duration, ad interactions,
+                    referring URLs.
+                  </p>
 
-                <p>
-                  <strong className="text-ink">
-                    Device identifiers:
-                  </strong>{" "}
-                  IP address, browser type, device IDs.
-                </p>
+                  <p>
+                    <strong className="text-ink">
+                      Device identifiers:
+                    </strong>{" "}
+                    IP address, browser type, device IDs.
+                  </p>
 
-                <p>
-                  <strong className="text-ink">
-                    Inferences:
-                  </strong>{" "}
-                  advertising profiles built from your browsing
-                  behavior on our site.
-                </p>
+                  <p>
+                    <strong className="text-ink">
+                      Inferences:
+                    </strong>{" "}
+                    advertising profiles built from your browsing
+                    behavior on our site.
+                  </p>
 
-                <p>
-                  We do not sell your name, email address,
-                  phone number, financial information, or
-                  manuscript data to third parties.
-                </p>
-              </div>
-            </section>
+                  <p>
+                    We do not sell your name, email address,
+                    phone number, financial information, or
+                    manuscript data to third parties.
+                  </p>
+                </div>
+              </section>
+            </AnimatedReveal>
 
             {/* How to Opt Out */}
-            <section>
-              <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
-                3. How To Opt Out
-              </h2>
+            <AnimatedReveal y={16} duration={0.5} amount={0.08}>
+              <section>
+                <h2 className="font-serif text-2xl sm:text-[1.8rem] font-bold text-ink leading-tight mb-4">
+                  3. How To Opt Out
+                </h2>
 
-              <p className="mb-6">
-                You have three ways to exercise your opt out
-                right. You may use any or all of them:
-              </p>
-
-              {/* Option A */}
-              <div className="rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-6 sm:p-8">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink leading-snug">
-                  Option A: Submit a Request Below
-                  <span className="block text-[#E7665D]">
-                    (Recommended)
-                  </span>
-                </h3>
-
-                <p className="mt-4 text-sm text-ink-soft leading-7">
-                  Complete the opt-out request form below with
-                  your name and email address. We will process
-                  your request within 15 business days and
-                  instruct our advertising partners to suppress
-                  your data from their targeting systems.
+                <p className="mb-6">
+                  You have three ways to exercise your opt out
+                  right. You may use any or all of them:
                 </p>
 
-                <PrivacyOptOutForm />
-              </div>
+                {/* Option A */}
+                <div className="rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-6 sm:p-8">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink leading-snug">
+                    Option A: Submit a Request Below
+                    <span className="block text-[#E7665D]">
+                      (Recommended)
+                    </span>
+                  </h3>
 
-              {/* Option B */}
-              <div className="mt-10">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink leading-snug mb-4">
-                  Option B: Use Your Browser&apos;s
-                  Global Privacy Control (GPC)
-                </h3>
+                  <p className="mt-4 text-sm text-ink-soft leading-7">
+                    Complete the opt-out request form below with
+                    your name and email address. We will process
+                    your request within 15 business days and
+                    instruct our advertising partners to suppress
+                    your data from their targeting systems.
+                  </p>
 
-                <p>
-                  We honor the Global Privacy Control (GPC)
-                  signal. If your browser or browser extension
-                  is configured to send a GPC signal, we will
-                  automatically treat this as an opt-out
-                  request for the sale and sharing of your
-                  personal information. No form submission
-                  required.
-                </p>
-              </div>
+                  <PrivacyOptOutForm />
+                </div>
 
-              {/* Option C */}
-              <div className="mt-10">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink leading-snug mb-4">
-                  Option C: Opt Out Directly with
-                  Our Advertising Partners
-                </h3>
+                {/* Option B */}
+                <div className="mt-10">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink leading-snug mb-4">
+                    Option B: Use Your Browser&apos;s
+                    Global Privacy Control (GPC)
+                  </h3>
 
-                <p>
-                  You may also opt out of interest-based
-                  advertising directly through our third
-                  party partners like Microsoft Advertising
-                  or Google Ads Settings.
-                </p>
-              </div>
-            </section>
+                  <p>
+                    We honor the Global Privacy Control (GPC)
+                    signal. If your browser or browser extension
+                    is configured to send a GPC signal, we will
+                    automatically treat this as an opt-out
+                    request for the sale and sharing of your
+                    personal information. No form submission
+                    required.
+                  </p>
+                </div>
+
+                {/* Option C */}
+                <div className="mt-10">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink leading-snug mb-4">
+                    Option C: Opt Out Directly with
+                    Our Advertising Partners
+                  </h3>
+
+                  <p>
+                    You may also opt out of interest-based
+                    advertising directly through our third
+                    party partners like Microsoft Advertising
+                    or Google Ads Settings.
+                  </p>
+                </div>
+              </section>
+            </AnimatedReveal>
           </div>
 
           {/* Contact Us */}
           <div className="mt-16 pt-12 border-t border-line">
-            <div className="text-center">
+            <AnimatedReveal y={18} duration={0.55} amount={0.1} className="text-center">
               <span className="font-sans text-xs uppercase tracking-[0.16em] font-semibold text-[#E7665D]">
                 Privacy Assistance
               </span>
@@ -251,7 +265,7 @@ export default function PrivacyChoicesPage() {
                 Contact Our Privacy Team
                 <ArrowRight size={16} />
               </Link>
-            </div>
+            </AnimatedReveal>
           </div>
         </Container>
       </main>

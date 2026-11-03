@@ -6,7 +6,6 @@ import FAQAccordion from "@/components/sections/FAQAccordion";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { editingFAQs } from "@/lib/data";
 import { CheckCircle2, ShieldCheck, FileCheck2 } from "lucide-react";
-
 import SelfPublishedAuthors from "@/components/editing/SelfPublishedAuthors";
 import EditingTiers from "@/components/editing/EditingTiers";
 import EditingProcess from "@/components/editing/EditingProcess";

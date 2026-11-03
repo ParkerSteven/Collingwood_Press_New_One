@@ -18,7 +18,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import BlogArticleActions from '@/components/pages/BlogArticleSections';
+import BlogArticleActions from '@/components/sections/BlogArticleSections';
 
 export const revalidate = 60;
 
