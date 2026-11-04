@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { StickySocialStripLeft } from "@/components/ui/StickySocialStrip";
@@ -10,21 +9,6 @@ import AnalyticsManager from "@/components/site/AnalyticsManager";
 import Clarity from "@/components/site/Clarity";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-// Fonts
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
 
 // Tracking IDs from previous layout
 const GOOGLE_ANALYTICS_ID = "G-YWRQMP00E2";
@@ -289,7 +273,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${cormorant.variable}`}
+      className={``}
     >
       <head>
         <meta
