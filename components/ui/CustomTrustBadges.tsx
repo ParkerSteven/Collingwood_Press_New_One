@@ -23,7 +23,7 @@ export function DefaultTrustBadges({ heading }: { heading: string }) {
                     className="flex h-11 items-center opacity-85 transition-opacity hover:opacity-100"
                 >
                     <Image
-                        src="/ibpa-proud-memberFooter.png"
+                        src="/ibpa-proud-memberFooter.webp"
                         alt="The Collingwood Press IBPA Member"
                         width={140}
                         height={44}
@@ -48,7 +48,7 @@ export function DefaultTrustBadges({ heading }: { heading: string }) {
                         width={140}
                         height={44}
                         sizes="140px"
-                        className="block h-auto max-h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        className="block h-auto max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                     />
                 </Link>
             </div>

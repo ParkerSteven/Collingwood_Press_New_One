@@ -14,7 +14,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
           <Image
-            src="/Collingwood-Logo.png"
+            src="/Collingwood-Logo.webp"
             alt="The Collingwood Press"
             width={240}
             height={70}
