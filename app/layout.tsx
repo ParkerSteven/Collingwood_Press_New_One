@@ -28,11 +28,6 @@ const cormorant = Cormorant_Garamond({
 
 // Tracking IDs from previous layout
 const GOOGLE_ANALYTICS_ID = "G-YWRQMP00E2";
-const GOOGLE_TAG_ID =
-  process.env.NEXT_PUBLIC_GTAG_ID ?? "G-2TTE16DC3Z";
-
-const FACEBOOK_PIXEL_ID = "905102058883202";
-const MAILMUNCH_SITE_ID = "1103682";
 
 // SEO Metadata
 export const metadata: Metadata = {
