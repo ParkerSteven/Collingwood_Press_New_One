@@ -1,3 +1,15 @@
+export const metadata: Metadata = {
+  title:
+    "Trusted Book Publishing Company | The Collingwood Press",
+
+  description:
+    "Looking for a book publishing company? Get writing, editing, publishing, marketing, distribution, and audiobook production with The Collingwood Press.",
+
+  alternates: {
+    canonical: "https://www.thecollingwoodpress.com/",
+  },
+};
+
 import UtilityBar from "@/components/layout/UtilityBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -15,20 +27,13 @@ import { faqs, stats } from "@/lib/data";
 import HomeBlogs from "@/components/sections/HomeBlogs";
 import BookCarousel from "@/components/sections/BookCovers";
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title:
-    "Trusted Book Publishing Company | The Collingwood Press",
-
-  description:
-    "Looking for a book publishing company? Get writing, editing, publishing, marketing, distribution, and audiobook production with The Collingwood Press.",
-
-  alternates: {
-    canonical: "https://www.thecollingwoodpress.com/",
-  },
-};
+import ReactDOM from "react-dom";
 
 export default function Home() {
+  ReactDOM.preload("/heroSec_bg.webp", {
+    as: "image",
+    fetchPriority: "high",
+  });
   return (
     <>
       <UtilityBar />
