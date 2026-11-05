@@ -1,9 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import instagram from '@/public/assets/images/socials/instagram.svg';
 import tiktok from '@/public/assets/images/socials/tiktok.svg';
+import PopupForm from "@/components/forms/popupform";
 
 
 const servicesLinks = [
@@ -25,8 +29,8 @@ const companyLinks = [
 ];
 
 const authorLibraryLinks = [
-  { label: "Templates", href: "#" },
-  { label: "Collingwood Partners", href: "#" },
+  { label: "Templates", href: "/author-resource-library/" },
+  { label: "Collingwood Partners", href: "/partners/" },
   { label: "Author Checklist", href: "#" },
 ];
 export const socialLinks = [
@@ -103,14 +107,14 @@ export const socialLinks = [
   },
 ];
 
-
-
 export default function Footer() {
+  const [isChecklistOpen, setIsChecklistOpen] = useState(false);
+
   return (
     <footer className="bg-[#0A111F] border-t border-[#1E293B] text-white font-sans selection:bg-[#E7665D] selection:text-white">
       <Container className="pt-16 pb-12 lg:pt-20 lg:pb-14">
         {/* Main Footer Content Grid */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6 xl:gap-8">
 
           {/* Left Column: Branding, Description & Badges (4 cols) */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-4 lg:pr-6">
@@ -203,9 +207,9 @@ export default function Footer() {
           </div>
 
           {/* Column 1: Services (2 cols) */}
-          <div className="flex flex-col gap-3.5 lg:col-span-3">
+          <div className="flex flex-col gap-3.5 lg:col-span-2">
             <h3 className="font-serif text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#E7665D]" />
+              <span className="w-2 h-2 rounded-full bg-[#E7665D] shrink-0" />
               Services
             </h3>
             <ul className="flex flex-col gap-2 mt-1">
@@ -223,9 +227,9 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Company (2 cols) */}
-          <div className="flex flex-col gap-3.5 lg:col-span-3">
+          <div className="flex flex-col gap-3.5 lg:col-span-2">
             <h3 className="font-serif text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#E7665D]" />
+              <span className="w-2 h-2 rounded-full bg-[#E7665D] shrink-0" />
               Company
             </h3>
             <ul className="flex flex-col gap-2 mt-1">
@@ -242,10 +246,40 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Column 3: Author Resource Library (2 cols) */}
+          <div className="flex flex-col gap-3.5 lg:col-span-2">
+            <h3 className="font-serif text-[1.05rem] font-bold text-white tracking-tight flex gap-2">
+              <span className="w-2 h-2 mt-2 rounded-full bg-[#E7665D] shrink-0" />
+              Author Resource Library
+            </h3>
+            <ul className="flex flex-col gap-2 mt-1">
+              {authorLibraryLinks.map((link) => (
+                <li key={link.label}>
+                  {link.label === "Author Checklist" ? (
+                    <button
+                      type="button"
+                      onClick={() => setIsChecklistOpen(true)}
+                      className="text-[0.86rem] text-slate-300 transition-colors hover:text-[#F08A82] hover:translate-x-0.5 inline-block text-left cursor-pointer bg-transparent border-0 p-0 font-normal font-sans"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-[0.86rem] text-slate-300 transition-colors hover:text-[#F08A82] hover:translate-x-0.5 inline-block"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Column 4: Contact & Social (2 cols) */}
           <div className="flex flex-col gap-3.5 lg:col-span-2">
             <h3 className="font-serif text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#E7665D]" />
+              <span className="w-2 h-2 rounded-full bg-[#E7665D] shrink-0" />
               Contact
             </h3>
             <div className="flex flex-col gap-2.5 mt-1 text-[0.85rem]">
@@ -304,6 +338,13 @@ export default function Footer() {
           </div>
         </div>
       </Container>
+
+      {/* Author Checklist Popup Form */}
+      <PopupForm
+        isOpen={isChecklistOpen}
+        onClose={() => setIsChecklistOpen(false)}
+        source="Footer - Author Checklist"
+      />
     </footer>
   );
 }
