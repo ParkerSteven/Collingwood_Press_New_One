@@ -8,6 +8,15 @@ import FAQAccordion from "@/components/sections/FAQAccordion";
 import { audiobookFAQs } from "@/lib/data";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Hero from "@/components/sections/Hero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.thecollingwoodpress.com/audiobook/' },
+  title: "Audiobook Recording & Production Services",
+  description:
+    "Turn your book into a high-quality audiobook with expert narration, studio recording, audio editing, mastering, and distribution to Audible, Apple Books, and Spotify.",
+};
+
 
 const defaultGuarantees = [
   "Professional Voice Actor Narrators",
@@ -17,9 +26,9 @@ const defaultGuarantees = [
 
 const defaultTitle = (
   <>
-    Professional Audiobook Production Services <br />
+    Audiobook Production  {''}
     <span className="text-[#E7665D] italic font-normal inline">
-      for Authors
+      Services for Authors
       <br className="hidden sm:block" />
     </span>
   </>

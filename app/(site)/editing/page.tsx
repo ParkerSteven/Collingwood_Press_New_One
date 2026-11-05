@@ -22,9 +22,9 @@ export default function Page() {
             <main className="bg-white text-ink">
                 <HeroSection
                     className="editing-hero-gradient"
-                    eyebrow="Professional Editorial Services"
-                    title="Professional"
-                    highlightText="Book Editing Services"
+                    eyebrow="BOOK EDITING & PUBLISHING EXPERTS"
+                    title="Book Editing"
+                    highlightText="& Formatting Services"
                     description={<p>Need more than a spell check before readers see your book? At The Collingwood Press, we offer proofreading, copyediting, line editing, and developmental editing so your book gets exactly what it needs.</p>}
                     firstButtonText="Get a Editing Quote"
                     secondButtonText="Schedule a Consultation"
