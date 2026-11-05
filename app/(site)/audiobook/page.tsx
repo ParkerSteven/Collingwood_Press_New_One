@@ -7,8 +7,6 @@ import AudiobookDistributionSection from "@/components/audiobook/AudiobookDistri
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import { audiobookFAQs } from "@/lib/data";
 import FinalCTA from "@/components/sections/FinalCTA";
-import HeroSection from "@/components/sections/HeroSection";
-import { Headphones, Mic2, ShieldCheck } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 
 const defaultGuarantees = [

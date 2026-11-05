@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 import ReactDOM from "react-dom";
 export const metadata: Metadata = {
   title:
-    "Trusted Book Publishing Company | The Collingwood Press",
+    "Trusted Book Publishing Company",
 
   description:
     "Looking for a book publishing company? Get writing, editing, publishing, marketing, distribution, and audiobook production with The Collingwood Press.",

@@ -64,6 +64,7 @@ export default function AboutUsPage() {
                             Our approach combines professional publishing standards with personalized support, giving authors greater control over their work, copyright, and royalties.
                         </p>
                     }
+                    button={false}
                     guarantees={[]}
                 />
                 <StatBar stats={AboutStats} />
