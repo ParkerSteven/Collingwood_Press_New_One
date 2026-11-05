@@ -62,7 +62,7 @@ export default function FAQAccordion({
                     >
                         <h2
                             id={headingId}
-                            className="font-serif mx-auto max-w-2xl text-[2rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.5rem] lg:text-[2.7rem]"
+                            className="font-serif mx-auto max-w-2xl text-[1.8rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.5rem] lg:text-[2.7rem]"
                         >
                             {title}
                         </h2>
@@ -111,14 +111,9 @@ export default function FAQAccordion({
                         />
 
                         <div>
-                            <h3 className="font-serif text-xl font-medium text-ink">
+                            <h3 className="font-sans text-xl font-medium text-ink">
                                 Still have questions?
                             </h3>
-
-                            <p className="mt-1 font-sans text-sm leading-relaxed text-ink-muted">
-                                Get guidance specific to your manuscript
-                                and publishing goals.
-                            </p>
                         </div>
                     </div>
 

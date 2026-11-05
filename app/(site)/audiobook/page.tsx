@@ -9,67 +9,45 @@ import { audiobookFAQs } from "@/lib/data";
 import FinalCTA from "@/components/sections/FinalCTA";
 import HeroSection from "@/components/sections/HeroSection";
 import { Headphones, Mic2, ShieldCheck } from "lucide-react";
+import Hero from "@/components/sections/Hero";
+
+const defaultGuarantees = [
+  "Professional Voice Actor Narrators",
+  "ACX/Audible-Compliant Files",
+  "Distribution to Audible, Spotify and Libraries",
+];
+
+const defaultTitle = (
+  <>
+    Professional Audiobook Production Services <br />
+    <span className="text-[#E7665D] italic font-normal inline">
+      for Authors
+      <br className="hidden sm:block" />
+    </span>
+  </>
+);
 
 export default function AudiobookPage() {
   return (
     <>
       <main className="bg-white text-ink">
-        <HeroSection
-          className="audiobook-hero-gradient"
+        <Hero
+          className="audiobook-hero-gradient border-white/10 text-white"
           eyebrow="Studio-Grade Audiobook Production"
-          title="Professional Audiobook Production"
-          highlightText="That Keeps Listeners Engaged"
-          description={
-            <p>
-              Most self-produced audiobooks lose listeners in the
-              first ten minutes. The narration is flat, the recording
-              has background noise, or the audio fails platform
-              technical requirements and gets rejected on upload.
-              These are production problems, and they are why
-              professional audiobook production exists. Our
-              audiobook production services handle everything from
-              narrator casting and studio recording to audio
-              mastering and distribution to Audible, Apple Books,
-              Spotify, and 40+ additional platforms. You provide
-              the manuscript. We deliver distribution-ready
-              chapter files that meet every technical standard
-              and sound the way a published audiobook should.
-            </p>
-          }
-          buttons={[
-            {
-              text: "Audition Narrators for Your Book",
-              href: "/contact-us/#manuscript-review",
-              variant: "primary",
-              showArrow: true,
-            },
-            {
-              text: "Explore the Production Process",
-              href: "#production-process",
-              variant: "outline-white",
-            },
-          ]}
-          guarantees={[
-            {
-              text: "SAG-AFTRA Professional Narrators",
-              icon: Mic2,
-            },
-            {
-              text: "100% Guaranteed ACX / Audible Acceptance",
-              icon: ShieldCheck,
-            },
-            {
-              text: "Distributed to Audible, Spotify & Libraries",
-              icon: Headphones,
-            },
-          ]}
+          title={defaultTitle}
+          highlightText="Services for Authors"
+          description="Most self-produced audiobooks lose listeners early because of flat narration, background noise, or files that fail platform checks. Our services cover narrator casting, studio recording, editing, mastering and distribution. You provide the manuscript. We deliver clean, distribution-ready files that sound like a published audiobook."
+          firstButtonText="Get a Audiobook Quote"
+          secondButtonText="Schedule a Consultation"
+          guarantees={defaultGuarantees}
+          showBadges={false}
         />
-        <ProductionIntroductionSection />
+        <AudiobookDistributionSection />
+        {/* <ProductionIntroductionSection /> */}
         <NarratorSelectionSection />
         <ProductionStepsSection />
         <AudiobookDeliverablesSection />
         <StudioStandardsSection />
-        <AudiobookDistributionSection />
         <FAQAccordion
           items={audiobookFAQs}
           eyebrow="Audiobook FAQ"
@@ -85,20 +63,15 @@ export default function AudiobookPage() {
           eyebrow="Start Production"
           title={
             <>
-              Get Your Audiobook Produced{" "}
+              Ready to Turn Your Book into{" "}
               <span className="block italic font-normal text-[#F08A82] sm:inline">
-                Without the Hassle
+                an Audiobook?
               </span>
             </>
           }
           description={
             <>
-              Send us your manuscript. We will review it, recommend
-              the right narration approach, and provide a quote
-              with a clear timeline and fixed price. If you want
-              to hear narrator options first, we can arrange
-              audition samples before you commit to anything.
-              The conversation starts when you are ready.
+              Send us your manuscript. We’ll recommend the right narration approach and give you a quote with a clear timeline and fixed price.
             </>
           }
           buttonText="Get a Custom Production Quote"

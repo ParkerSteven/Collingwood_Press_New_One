@@ -17,7 +17,7 @@ export default function PrivacyChoicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-14 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-white/10 text-white">
+      <section className="about-hero-gradient relative overflow-hidden paper-grain pt-14 pb-14 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-white/10 text-white">
         <Container className="max-w-3xl">
           <Eyebrow tone="coral">
             Author Preference Management

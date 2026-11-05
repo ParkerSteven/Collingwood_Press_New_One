@@ -281,7 +281,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
         <>
             <main className="min-h-screen bg-[#faf8f5] text-[#18233a]">
                 <HeroSection
-                    className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
+                    className="about-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
                     eyebrow="The Collingwood Press Journal"
                     title="Stories, Ideas &"
                     highlightText="Publishing Insights."

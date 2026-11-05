@@ -145,7 +145,7 @@ export default function Footer() {
                   className="flex items-center justify-center opacity-90 transition-opacity hover:opacity-100"
                 >
                   <Image
-                    src="/ibpa-proud-memberFooter.png"
+                    src="/ibpa-proud-memberFooter.webp"
                     alt="The Collingwood Press IBPA Member"
                     width={140}
                     height={48}
@@ -241,26 +241,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Column 3: Author Resource Library (2 cols) */}
-          {/* <div className="flex flex-col gap-3.5 lg:col-span-2">
-            <h3 className="font-serif text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#E7665D]" />
-              Author Library
-            </h3>
-            <ul className="flex flex-col gap-2 mt-1">
-              {authorLibraryLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[0.86rem] text-slate-300 transition-colors hover:text-[#F08A82] hover:translate-x-0.5 inline-block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
 
           {/* Column 4: Contact & Social (2 cols) */}
           <div className="flex flex-col gap-3.5 lg:col-span-2">

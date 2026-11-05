@@ -34,7 +34,10 @@ export default function Home() {
   return (
     <>
       <main>
-        <Hero className="hero-section-background" />
+        <Hero className="hero-section-background"
+          firstButtonText="Get a Free Publishing Consultation"
+          secondButtonText="Talk to a Senior Editor"
+        />
         <StatBar stats={stats} />
         <PlatformLogos />
         <Testimonials />

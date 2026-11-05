@@ -1,3 +1,4 @@
+
 import Eyebrow from "@/components/ui/Eyebrow";
 import HeroActions from "./HeroActions";
 import type { HeroProps } from "@/types/types";
@@ -5,6 +6,7 @@ import {
     CustomTrustBadges,
     DefaultTrustBadges,
 } from "./CustomTrustBadges";
+import AnimatedReveal from "./AnimatedReveal";
 
 const defaultTitle = (
     <>
@@ -33,7 +35,8 @@ export default function HeroAnimated({
     eyebrow = "Your Story. Your Vision. Your Publishing Journey.",
     title = defaultTitle,
     description = defaultDescription,
-    actions,
+    firstButtonText,
+    secondButtonText,
     badges,
     badgeHeading = "Accredited & Member",
     showBadges = true,
@@ -42,109 +45,117 @@ export default function HeroAnimated({
     return (
         <>
             {/* LEFT COLUMN */}
-            <div className="max-w-5xl">
+            <div className="mx-auto w-full max-w-5xl text-center sm:mx-0 sm:text-left">
 
-                {/* Eyebrow — visible immediately */}
-                <Eyebrow tone="coral" align="left">
-                    {eyebrow}
-                </Eyebrow>
+                {/* Eyebrow */}
+                <div className="flex justify-center sm:justify-start">
+                    <Eyebrow tone="coral" align="left">
+                        {eyebrow}
+                    </Eyebrow>
+                </div>
 
-                {/* H1 — LCP candidate, no animation */}
+                {/* Heading — no animation for LCP */}
                 <h1
                     className="
-                        mt-6
-                        font-serif
-                        text-[2.6rem]
-                        sm:text-[3rem]
-                        lg:text-[3.2rem]
-                        font-medium
-                        leading-[1.05]
-                        text-white
-                        tracking-tight
-                        text-balance
-                    "
+            mt-6 font-serif
+            text-[2.6rem]
+            sm:text-[3rem]
+            lg:text-[3.2rem]
+            font-medium leading-[1.05]
+            text-white tracking-tight text-balance
+            text-center sm:text-left
+          "
                 >
                     {title}
                 </h1>
 
-                {/* Description — visible immediately */}
-                <p
-                    className="
-                        mt-6
-                        text-[1.02rem]
-                        sm:text-[1.08rem]
-                        leading-relaxed
-                        text-slate-300
-                        font-sans
-                        font-normal
-                        md:pr-20
-                    "
+                {/* Description */}
+                <AnimatedReveal
+                    y={12}
+                    duration={0.5}
+                    delay={0.1}
                 >
-                    {description}
-                </p>
+                    <p
+                        className="
+              mx-auto mt-6
+              max-w-xl
+              font-sans
+              text-[1.02rem]
+              sm:mx-0 sm:text-[1.08rem]
+              leading-relaxed
+              font-normal text-slate-300
+              text-center sm:text-left
+              md:pr-20
+            "
+                    >
+                        {description}
+                    </p>
+                </AnimatedReveal>
 
-                {/* Actions — animation temporarily disabled */}
-                {actions === undefined ? (
-                    <HeroActions />
-                ) : (
-                    actions
-                )}
+                {/* Buttons */}
+                <AnimatedReveal
+                    y={16}
+                    duration={0.55}
+                    delay={0.15}
+                    className="w-full"
+                >
+                    <div className="flex w-full justify-center sm:justify-start">
+                        <HeroActions
+                            firstButtonText={firstButtonText}
+                            secondButtonText={secondButtonText}
+                        />
+                    </div>
+                </AnimatedReveal>
 
-                {/* Trust Badges — animation temporarily disabled */}
+                {/* Trust Badges */}
                 {showBadges && (
-                    <div className="w-full max-w-[540px]">
+                    <AnimatedReveal
+                        y={12}
+                        duration={0.5}
+                        delay={0.2}
+                        className="mx-auto w-full max-w-[540px] sm:mx-0"
+                    >
                         {badges === undefined ? (
-                            <DefaultTrustBadges
-                                heading={badgeHeading}
-                            />
+                            <DefaultTrustBadges heading={badgeHeading} />
                         ) : (
                             <CustomTrustBadges
                                 badges={badges}
                                 heading={badgeHeading}
                             />
                         )}
-                    </div>
+                    </AnimatedReveal>
                 )}
             </div>
 
-            {/* RIGHT COLUMN */}
+            {/* RIGHT COLUMN — unchanged */}
             <div
                 className="
-                    relative
-                    hidden
-                    md:block
-                    mx-auto
-                    w-full
-                    max-w-[480px]
-                    lg:max-w-[520px]
-                    h-[460px]
-                    sm:h-[520px]
-                    lg:h-[550px]
-                    items-center
-                    justify-center
-                "
+          relative hidden md:block
+          mx-auto w-full
+          max-w-[480px] lg:max-w-[520px]
+          h-[460px] sm:h-[520px] lg:h-[550px]
+        "
             >
-                {rightContent === undefined ? (
-                    <>
-                        <div className="absolute inset-8 rounded-full pointer-events-none" />
-
+                <AnimatedReveal
+                    y={20}
+                    duration={0.7}
+                    delay={0.15}
+                    className="h-full w-full"
+                >
+                    {rightContent === undefined ? (
                         <div
                             className="
-                                relative
-                                w-full
-                                h-full
-                                flex
-                                items-center
-                                justify-center
-                                transition-transform
-                                duration-500
-                                hover:scale-[1.02]
-                            "
+                flex h-full w-full
+                items-center justify-center
+                transition-transform duration-500
+                hover:scale-[1.02]
+                motion-reduce:transform-none
+              "
                         />
-                    </>
-                ) : (
-                    rightContent
-                )}
+                    ) : (
+                        rightContent
+                    )}
+                </AnimatedReveal>
             </div>
         </>
     );

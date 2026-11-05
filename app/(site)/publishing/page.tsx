@@ -73,7 +73,7 @@ export default function PublishingPage() {
                     description={
                         <>
                             Send us your manuscript or your opening chapters. A senior editor will review your work and provide a candid, no-obligation assessment of where it stands and what it needs. Whether you are weeks from publication or still refining your first draft, our{" "}
-                            <strong className="font-semibold text-white">book publishing services</strong>{" "}
+                            book publishing services{" "}
                             team will map the clearest path from manuscript to marketplace. The right publishing partner makes all the difference, and we are ready to prove it.
                         </>
                     }

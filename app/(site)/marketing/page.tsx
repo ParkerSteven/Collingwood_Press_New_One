@@ -21,7 +21,6 @@ export default function Page() {
             <main className="bg-white text-ink">
                 {/* Shared Hero - marketing props */}
                 <HeroSection {...marketingHeroProps} />
-
                 <MarketingServicesSection />
                 <MarketingProcessSection />
                 <AuthorBrandingSection />

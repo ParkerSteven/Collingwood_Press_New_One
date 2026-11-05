@@ -1,128 +1,154 @@
 import { Headphones, Sliders, ShieldCheck, Volume2, FileAudio, FileCheck2 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import { technicalSpecs } from "@/lib/data";
 
 export default function StudioStandardsSection() {
   return (
     <section
       id="studio-standards"
-      className="py-20 lg:py-28 bg-white border-b border-line"
+      className="border-b border-line bg-[#FCFAF7] py-16 lg:py-24"
     >
       <Container>
-        {/* Section Heading */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-          <AnimatedReveal y={16} duration={0.5} amount={0.2}>
-            <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D]">
-              Technical Specifications
-            </span>
-          </AnimatedReveal>
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 xl:gap-24">
 
-          <AnimatedReveal y={20} duration={0.55} delay={0.08} amount={0.2}>
-            <h2 className="mt-4 max-w-xl font-serif text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] text-ink">
-              Studio Standards That Meet{" "}
-              <span className="italic text-[#E7665D]">
-                Platform Requirements
+          {/* LEFT CONTENT */}
+          <div className="lg:sticky lg:top-28">
+            <AnimatedReveal
+              y={12}
+              duration={0.5}
+              amount={0.2}
+            >
+              <span className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-[#E7665D]">
+                Technical Specifications
               </span>
-            </h2>
-          </AnimatedReveal>
+            </AnimatedReveal>
 
-          <AnimatedReveal y={18} duration={0.55} delay={0.14} amount={0.2}>
-            <p className="mt-5 text-sm sm:text-base text-ink-muted leading-relaxed">
-              Audible and ACX reject files that do not meet their technical
-              specifications. Other platforms have their own requirements. Our
-              audiobook recording services produce files that comply with all of
-              them.
-            </p>
-          </AnimatedReveal>
-        </div>
+            <AnimatedReveal
+              y={18}
+              duration={0.55}
+              delay={0.06}
+              amount={0.2}
+            >
+              <h2
+                className="
+              mt-5 max-w-lg
+              font-serif text-[2.3rem]
+              font-bold leading-[1.15]
+              tracking-tight text-ink
+              sm:text-[2.5rem]
+              lg:text-[2.7rem]
+            "
+              >
+                Audiobook Technical{" "}
+                <span className="italic text-[#E7665D]">
+                  Standards We Meet
+                </span>
+              </h2>
+            </AnimatedReveal>
 
-        {/* Technical Specifications Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* RMS Levels */}
-          <AnimatedReveal as="article" y={24} duration={0.5} delay={0} amount={0.15} hoverY={-5} className="group rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-7 hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300">
-            <div className="flex items-center justify-between mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors">
-                <Volume2 size={23} />
-              </span>
-              <span className="font-serif text-2xl text-ink-muted/30">01</span>
-            </div>
-            <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">RMS Levels</h3>
-            <p className="text-sm text-ink-soft leading-relaxed">
-              -23dB to -18dB, consistent across all chapters.
-            </p>
-          </AnimatedReveal>
+            <AnimatedReveal
+              y={14}
+              duration={0.5}
+              delay={0.12}
+              amount={0.2}
+            >
+              <p className="mt-6 max-w-md text-sm leading-[1.9] text-ink-muted sm:text-base">
+                Audible and ACX reject files that miss their
+                specifications. Our recording and mastering is
+                built to pass them. A human engineer listens
+                to every file before delivery.
+              </p>
+            </AnimatedReveal>
 
-          {/* Peak Headroom */}
-          <AnimatedReveal as="article" y={24} duration={0.5} delay={0.07} amount={0.15} hoverY={-5} className="group rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-7 hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300">
-            <div className="flex items-center justify-between mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors">
-                <Sliders size={23} />
-              </span>
-              <span className="font-serif text-2xl text-ink-muted/30">02</span>
-            </div>
-            <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">Peak Headroom</h3>
-            <p className="text-sm text-ink-soft leading-relaxed">
-              -3dB maximum, preventing distortion on any playback system.
-            </p>
-          </AnimatedReveal>
 
-          {/* Noise Floor */}
-          <AnimatedReveal as="article" y={24} duration={0.5} delay={0.14} amount={0.15} hoverY={-5} className="group rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-7 hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300">
-            <div className="flex items-center justify-between mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors">
-                <ShieldCheck size={23} />
-              </span>
-              <span className="font-serif text-2xl text-ink-muted/30">03</span>
-            </div>
-            <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">Noise Floor</h3>
-            <p className="text-sm text-ink-soft leading-relaxed">
-              Below -60dB RMS, eliminating audible background hiss.
-            </p>
-          </AnimatedReveal>
+          </div>
 
-          {/* Room Tone */}
-          <AnimatedReveal as="article" y={24} duration={0.5} delay={0.05} amount={0.15} hoverY={-5} className="group rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-7 hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300">
-            <div className="flex items-center justify-between mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors">
-                <Headphones size={23} />
-              </span>
-              <span className="font-serif text-2xl text-ink-muted/30">04</span>
-            </div>
-            <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">Room Tone</h3>
-            <p className="text-sm text-ink-soft leading-relaxed">
-              Matched across chapters so transitions sound natural.
-            </p>
-          </AnimatedReveal>
+          {/* RIGHT SPECIFICATIONS */}
+          <div className="min-w-0">
+            <AnimatedReveal
+              y={20}
+              duration={0.55}
+              amount={0.1}
+              className="
+            overflow-hidden rounded-2xl
+            border border-[#E7665D]/20
+            bg-white
+            shadow-[0_12px_40px_rgba(16,26,48,0.04)]
+          "
+            >
+              <div className="divide-y divide-[#E7665D]/10">
+                {technicalSpecs.map((spec) => {
+                  const Icon = spec.icon;
 
-          {/* File Format */}
-          <AnimatedReveal as="article" y={24} duration={0.5} delay={0.12} amount={0.15} hoverY={-5} className="group rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-7 hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300">
-            <div className="flex items-center justify-between mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors">
-                <FileAudio size={23} />
-              </span>
-              <span className="font-serif text-2xl text-ink-muted/30">05</span>
-            </div>
-            <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">File Format</h3>
-            <p className="text-sm text-ink-soft leading-relaxed">
-              MP3 at 192kbps or higher constant bitrate, 44.1 kHz sample rate, mono.
-            </p>
-          </AnimatedReveal>
+                  return (
+                    <div
+                      key={spec.id}
+                      className="
+                    group flex items-center gap-4
+                    px-5 py-5
+                    transition-colors duration-300
+                    hover:bg-[#FFF8F6]
+                    sm:gap-5 sm:px-7
+                  "
+                    >
+                      {/* Icon */}
+                      <div
+                        className="
+                      flex h-11 w-11 shrink-0
+                      items-center justify-center
+                      rounded-xl bg-[#FDF3F1]
+                      text-[#E7665D]
+                      transition-[background-color,color,transform]
+                      duration-300
+                      group-hover:scale-105
+                      group-hover:bg-[#E7665D]
+                      group-hover:text-white
+                      sm:h-12 sm:w-12
+                    "
+                      >
+                        <Icon
+                          size={21}
+                          strokeWidth={1.8}
+                          aria-hidden="true"
+                        />
+                      </div>
 
-          {/* Human Quality Control */}
-          <AnimatedReveal as="article" y={24} duration={0.5} delay={0.19} amount={0.15} hoverY={-5} className="group rounded-xl border border-[#E7665D]/20 bg-[#fdfbf7] p-7 hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300">
-            <div className="flex items-center justify-between mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors">
-                <FileCheck2 size={23} />
-              </span>
-              <span className="font-serif text-2xl text-ink-muted/30">06</span>
-            </div>
-            <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">Human Quality Control</h3>
-            <p className="text-sm text-ink-soft leading-relaxed">
-              Every file goes through human quality control before delivery.
-              We do not rely on automated checks alone. A production engineer
-              listens to verify compliance before any file leaves the studio.
-            </p>
-          </AnimatedReveal>
+                      {/* Specification Details */}
+                      <div className="min-w-0 flex-1">
+                        <h3
+                          className="
+                        font-serif text-base
+                        font-bold text-ink
+                        sm:text-[17px]
+                      "
+                        >
+                          {spec.title}
+                        </h3>
+
+                        <p className="mt-1 text-xs leading-relaxed text-ink-muted sm:text-sm">
+                          {spec.description}
+                        </p>
+                      </div>
+
+                      {/* Value */}
+                      <div className="min-w-0 max-w-[42%] text-right">
+                        <p
+                          className="
+                        text-xs font-bold
+                        leading-snug text-[#E7665D]
+                        sm:text-sm
+                      "
+                        >
+                          {spec.value}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </AnimatedReveal>
+          </div>
         </div>
       </Container>
     </section>

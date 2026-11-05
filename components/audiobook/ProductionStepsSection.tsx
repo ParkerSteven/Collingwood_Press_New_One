@@ -11,7 +11,7 @@ export default function ProductionStepsSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#E7665D]/10 blur-[100px] rounded-full pointer-events-none" />
 
       <Container className="relative z-10">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center justify-center text-center">
 
           <AnimatedReveal y={24} duration={0.6} amount={0.2}>
             {/* Eyebrow */}
@@ -21,14 +21,14 @@ export default function ProductionStepsSection() {
 
             {/* H2 Heading */}
             <h2 className="mt-3 font-serif text-[2.2rem] sm:text-[2.6rem] font-bold text-white leading-tight max-w-3xl">
-              How We Produce Your Audiobook{" "}
+              How Our Audiobook Production {" "}
               <span className="italic text-[#E7665D]">
-                Step by Step
+                Process Works
               </span>
             </h2>
 
             {/* Introduction */}
-            <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+            <p className="mt-4 text-sm sm:text-base mx-auto text-slate-300 leading-relaxed max-w-2xl">
               Every project follows the same production sequence.
               What the author provides is a finalized manuscript.
               What the author receives is a set of mastered,
@@ -53,16 +53,12 @@ export default function ProductionStepsSection() {
               </div>
 
               <h3 className="font-serif text-[1.3rem] font-bold text-white leading-snug mb-4">
-                1. Manuscript Preparation and Pronunciation Notes
+                Manuscript Preparation
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                We review the manuscript and mark it up with
-                pronunciation keys for proper nouns, character voice
-                notes, pacing cues, and any specialized terminology.
-                This annotated script becomes the narrator&apos;s
-                reference document and prevents mispronunciations
-                from reaching the recording.
+                We mark up the manuscript with pronunciation keys, character notes and pacing cues.
+
               </p>
             </AnimatedReveal>
 
@@ -78,17 +74,11 @@ export default function ProductionStepsSection() {
               </div>
 
               <h3 className="font-serif text-[1.3rem] font-bold text-white leading-snug mb-4">
-                2. Narrator Casting and Audition Samples
+                Narrator Casting
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                We select narrators from our talent roster based on
-                genre, tone, and your preferences. Each candidate
-                records a custom audition sample from your manuscript.
-                You review the samples and choose the voice. For{" "}
-                author narrated audiobook
-                projects, we skip casting and move directly to
-                recording preparation.
+                We shortlist narrators and send custom audition samples from your manuscript so you can choose.
               </p>
             </AnimatedReveal>
 
@@ -104,15 +94,11 @@ export default function ProductionStepsSection() {
               </div>
 
               <h3 className="font-serif text-[1.3rem] font-bold text-white leading-snug mb-4">
-                3. Studio Recording
+                Studio Recording
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                Recording takes place in acoustically isolated studio
-                environments. A dedicated producer directs the session,
-                monitoring pronunciation accuracy, emotional
-                consistency, and energy across long recording sessions.
-                Raw tracks are captured at broadcast-quality sample rates.
+                Sessions happen in isolated studios with a producer checking accuracy and energy.
               </p>
             </AnimatedReveal>
 
@@ -128,17 +114,11 @@ export default function ProductionStepsSection() {
               </div>
 
               <h3 className="font-serif text-[1.3rem] font-bold text-white leading-snug mb-4">
-                4. Editing and Post-Production
+                Editing Production
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                Audio editors proof-listen against the manuscript
-                word by word. Mouth clicks, stray breaths, retakes,
-                ambient noise, and pacing errors are removed.{" "}
-                Post-production
-                produces clean, assembled{" "}
-                chapter files
-                ready for mastering.
+                Editors proof-listen against the manuscript and remove clicks, breaths, retakes and noise.
               </p>
             </AnimatedReveal>
 
@@ -154,20 +134,11 @@ export default function ProductionStepsSection() {
               </div>
 
               <h3 className="font-serif text-[1.3rem] font-bold text-white leading-snug mb-4">
-                5. Audio Mastering to Platform Standards
+                Audio Mastering
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                <strong className="font-semibold text-white">
-                  Audio mastering
-                </strong>{" "}
-                calibrates the final files to meet Audible, ACX, and
-                retailer technical requirements: RMS levels between
-                -23dB and -18dB, peak headroom at -3dB, noise floor
-                below -60dB, and consistent room tone across all
-                chapters. The result is an{" "}
-                Audible ready audiobook
-                that passes platform review on the first submission.
+                Files are mastered to Audible/ACX specs and a human engineer listens through every file.
               </p>
             </AnimatedReveal>
 
@@ -184,18 +155,15 @@ export default function ProductionStepsSection() {
               </div>
 
               <h3 className="font-serif text-[1.3rem] font-bold text-white leading-snug mb-4">
-                6. Final Review and Delivery
+                Final Review and Delivery
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                You receive the mastered files for final review. One round of
-                corrections is included. Once approved, the files are formatted
-                for distribution and uploaded to your selected platforms.
+                You review the files (one round of corrections included), then we format and upload.
               </p>
             </AnimatedReveal>
 
           </div>
-
 
           {/* Typical Timeline & CTA */}
           <AnimatedReveal y={20} duration={0.55} amount={0.2} className="mt-10 flex flex-col items-center text-center gap-6">

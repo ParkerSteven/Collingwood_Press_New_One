@@ -39,6 +39,7 @@ interface HeroSectionProps {
     guarantees?: HeroGuarantee[];
     children?: ReactNode;
     titleSuffix?: string;
+    button?: boolean
 }
 
 const defaultGuarantees: HeroGuarantee[] = [
@@ -73,11 +74,12 @@ export default function HeroSection({
     title = "Professional",
     highlightText = "Ghostwriting Services",
     description = defaultDescription,
-    firstButtonText = "Get a Ghostwriting Quote",
+    firstButtonText = "Get a Marketing Quote",
     secondButtonText = "Schedule a Consultation",
     guarantees = defaultGuarantees,
     titleSuffix = "",
     children,
+    button
 }: HeroSectionProps) {
     return (
         <section className={`${defaultClassName} ${className}`}>
@@ -115,10 +117,7 @@ export default function HeroSection({
                                 mt-5 sm:mt-6
                                 max-w-[650px]
                                 font-serif
-                                text-[2.25rem]
-                                sm:text-[2.4rem]
-                                md:text-[2.8rem]
-                                lg:text-[3.2rem]
+                                text-[2.6rem] sm:text-[3rem] lg:text-[3.2rem]
                                 font-bold
                                 leading-[1.12]
                                 tracking-tight
@@ -177,10 +176,14 @@ export default function HeroSection({
                         delay={0.3}
                         className="w-full sm:w-auto"
                     >
-                        <HeroSectionClient
-                            firstButtonText={firstButtonText}
-                            secondButtonText={secondButtonText}
-                        />
+                        {
+                            button ?
+                                <HeroSectionClient
+                                    firstButtonText={firstButtonText}
+                                    secondButtonText={secondButtonText}
+                                /> : ""
+                        }
+
                     </AnimatedReveal>
 
                     {/* Guarantees Animation */}

@@ -17,28 +17,28 @@ const deliverables = [
     icon: FileAudio,
     title: "Mastered Chapter Files",
     description:
-      "Mastered chapter files in MP3 and WAV format, calibrated to Audible/ACX technical specifications.",
+      "Mastered chapter files in MP3 and WAV, calibrated to ACX/Audible specifications",
   },
   {
     number: "02",
     icon: Headphones,
     title: "Chapter Markers and Metadata",
     description:
-      "Chapter markers and metadata formatted for platform ingestion.",
+      "Chapter markers and metadata formatted for platform upload.",
   },
   {
     number: "03",
     icon: FileCheck2,
     title: "Pronunciation Guide",
     description:
-      "Pronunciation guide used during recording, provided for your records.",
+      "Pronunciation guide used during recording.",
   },
   {
     number: "04",
     icon: ShieldCheck,
     title: "Quality Control Report",
     description:
-      "Quality control report confirming RMS levels, noise floor, and peak headroom compliance.",
+      "Quality control report confirming RMS, noise floor and peak headroom.",
   },
   {
     number: "05",
@@ -52,7 +52,7 @@ const deliverables = [
     icon: Globe2,
     title: "Upload Support",
     description:
-      "Upload support for Audible, Apple Books, and your selected distribution platforms.",
+      "Upload support for your selected platforms.",
   },
 ];
 
@@ -75,9 +75,9 @@ export default function AudiobookDeliverablesSection() {
           </span>
 
           <h2 className="mt-4 font-serif text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] text-ink">
-            What You Actually Get with Our{" "}
+            What&apos;s Included in Your <br /> {" "}
             <span className="italic text-[#E7665D]">
-              Audiobook Production
+              Audiobook Package
             </span>
           </h2>
 
@@ -103,19 +103,14 @@ export default function AudiobookDeliverablesSection() {
                 hoverY={-6}
                 className="group h-full rounded-xl border border-[#E7665D]/20 bg-white p-7 shadow-sm hover:border-[#E7665D]/50 hover:shadow-lg transition-[border-color,box-shadow] duration-300"
               >
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center gap-2 mb-5">
                   <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white transition-colors duration-300">
                     <Icon size={23} />
                   </span>
-
-                  <span className="font-serif text-2xl text-ink-muted/30">
-                    {item.number}
-                  </span>
+                  <h3 className="font-serif text-[1rem] pt-2 font-bold text-ink mb-3">
+                    {item.title}
+                  </h3>
                 </div>
-
-                <h3 className="font-serif text-[1.25rem] font-bold text-ink mb-3">
-                  {item.title}
-                </h3>
 
                 <p className="text-sm text-ink-soft leading-relaxed">
                   {item.description}
@@ -137,8 +132,8 @@ export default function AudiobookDeliverablesSection() {
             <ShieldCheck size={25} />
           </span>
 
-          <p className="font-serif text-lg sm:text-xl font-semibold text-ink leading-relaxed">
-            You retain all rights to the final audio files.{" "}
+          <p className="font-sans text-base sm:text-base font-semibold text-ink leading-relaxed">
+            You keep all rights to the final audio files.{" "}
             <span className="text-[#E7665D]">
               The recordings belong to you.
             </span>

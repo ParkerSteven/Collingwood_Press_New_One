@@ -1,59 +1,67 @@
-import { Layers, Globe, ShieldCheck, Palette, FileSpreadsheet, FileText, Settings, Rocket, BookOpenCheck, PenLine, Layers3, Globe2, Truck, Image as ImageIcon, Database, Megaphone } from "lucide-react";
-
+import {
+    Layers,
+    Volume2,
+    Sliders,
+    Headphones,
+    FileAudio,
+    type LucideIcon, Globe, ShieldCheck, Palette, FileSpreadsheet, FileText, Settings, Rocket, BookOpenCheck, PenLine, Layers3, Globe2, Truck, Image as ImageIcon, Database, Megaphone
+} from "lucide-react";
+import {
+} from "lucide-react";
 export const publishingRoadmap = [
     {
         number: "01",
-        title: "Manuscript Preparation",
+        title: "1. Manuscript Preparation",
         tagline: "Editorial & Intake Sign-Off",
         description:
             "Your manuscript is reviewed, formatting issues are fixed, and a clean master document is prepared before design work begins.",
         milestone: "Certified Clean Master Document",
-        icon: FileText,
+        image: "/CollingwoodPressIcons/Manuscript Preparation.png",
     },
     {
         number: "02",
-        title: "Cover & Interior Design",
+        title: "2. Cover & Interior Design",
         tagline: "Visual & Tactile Artistry",
         description:
             "Original cover artwork and a custom interior layout are created to match your genre and book type.",
         milestone: "Jacket Mechanicals & Sample Interior Spreads",
-        icon: Palette,
+        image: "/CollingwoodPressIcons/Cover & Interior Design.png",
     },
     {
         number: "03",
-        title: "Formatting & Typesetting",
+        title: "3. Formatting & Typesetting",
         tagline: "Adobe InDesign Precision",
         description:
             "The book is professionally typeset in Adobe InDesign. Print-ready and eBook files are prepared for review.",
         milestone: "Full Bound Galley Proof for Author Review",
-        icon: Layers,
+        image: "/CollingwoodPressIcons/Formatting & Typesetting.png",
     },
     {
         number: "04",
-        title: "Publishing Setup",
+        title: "4. Publishing Setup",
         tagline: "Identifiers & Legal Cataloguing",
         description:
             "ISBNs are registered in your name, barcodes are generated, and all cataloguing details (including BISAC categories and metadata) are completed. You remain the publisher of record.",
         milestone: "Official Global Catalogue Filings",
-        icon: Settings,
+        image: "/CollingwoodPressIcons/Publishing Setup.png",
     },
     {
         number: "05",
-        title: "Trade Distribution",
+        title: "5. Trade Distribution",
         tagline: "Global Wholesale Ingestion",
         description:
             "Your book is distributed through Ingram and listed on Amazon KDP, Barnes & Noble, and other major platforms.",
         milestone: "Active Worldwide Bookseller Feed",
-        icon: Globe,
+        image: "/CollingwoodPressIcons/Trade Distribution.png",
     },
     {
         number: "06",
-        title: "Launch & Release",
+        title: "6. Launch & Release",
         tagline: "Publication Day Rollout",
         description:
             "Retail pages go live, physical and digital editions become available, and your book is ready for sale.",
         milestone: "Shelf-Ready Physical & Digital Book",
-        icon: Rocket,
+        image: "/CollingwoodPressIcons/Launch & Release.png",
     },
 ];
 
@@ -61,7 +69,7 @@ export const publishingRoadmap = [
 export const services = [
     {
         id: 1,
-        icon: FileText,
+        image: "/CollingwoodPressIcons/Book Editing & Proofreading.png",
         title: "Book Editing & Proofreading",
         description:
             "Developmental editing, copyediting, line editing, and proofreading to prepare your manuscript for publishing.",
@@ -70,7 +78,7 @@ export const services = [
     },
     {
         id: 2,
-        icon: Rocket,
+        image: "/CollingwoodPressIcons/Book Marketing & Launch Strategy.png",
         title: "Book Marketing & Launch Strategy",
         description:
             "Amazon ads, reviewer outreach, and launch campaigns to help your book reach the right readers.",
@@ -79,7 +87,7 @@ export const services = [
     },
     {
         id: 3,
-        icon: BookOpenCheck,
+        image: "/CollingwoodPressIcons/Audiobook Production & Distribution.png",
         title: "Audiobook Production & Distribution",
         description:
             "Professional narration, studio recording, and distribution to Audible, Apple Books, and other platforms.",
@@ -150,4 +158,44 @@ export const retailers: { name: string; slug?: string; img: string; color: strin
     { name: "Books-A-Million", img: "/bam.png", color: "C8102E" },
     // { name: "Lulu", img: "/lulu.svg", color: "E63946" },
     { name: "Smashwords", img: "/sw.png", color: "F5A623" },
+];
+
+interface TechnicalSpec {
+    id: number;
+    title: string;
+    description: string;
+    icon: LucideIcon;
+}
+
+export const technicalSpecs: TechnicalSpec[] = [
+    {
+        id: 1,
+        title: "RMS Levels",
+        description: "-23dB to -18dB, consistent across chapters.",
+        icon: Volume2,
+    },
+    {
+        id: 2,
+        title: "Peak Headroom",
+        description: "-3dB maximum",
+        icon: Sliders,
+    },
+    {
+        id: 3,
+        title: "Noise Floor",
+        description: "Below -60dB RMS",
+        icon: ShieldCheck,
+    },
+    {
+        id: 4,
+        title: "Room Tone",
+        description: "Matched across chapters.",
+        icon: Headphones,
+    },
+    {
+        id: 5,
+        title: "File Format",
+        description: "MP3, 192kbps or higher constant bitrate, 44.1 kHz.",
+        icon: FileAudio,
+    },
 ];

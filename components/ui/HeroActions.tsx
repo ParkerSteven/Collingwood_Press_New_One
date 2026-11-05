@@ -12,7 +12,7 @@ const PopupForm = dynamic(
     { ssr: false }
 );
 
-export default function HeroActions() {
+export default function HeroActions({ firstButtonText, secondButtonText }: any) {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleChat = () => {
@@ -36,7 +36,7 @@ export default function HeroActions() {
                     size="md"
                     className="shadow-sm hover:shadow-md cursor-pointer"
                 >
-                    <span>Get a Free Publishing Consultation</span>
+                    <span>{firstButtonText}</span>
                     <ArrowRight size={15} />
                 </Button>
 
@@ -46,7 +46,7 @@ export default function HeroActions() {
                     size="md"
                     className="text-white cursor-pointer"
                 >
-                    Talk to a Senior Editor
+                    <span>{secondButtonText}</span>
                 </Button>
             </div>
 

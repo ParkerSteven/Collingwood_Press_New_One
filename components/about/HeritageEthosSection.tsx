@@ -3,7 +3,7 @@ import AnimatedReveal from "@/components/ui/AnimatedReveal";
 
 export default function HeritageEthosSection() {
     return (
-        <section className="py-20 lg:py-14 bg-[#fdfbf7] border-b border-line">
+        <section className="py-20 lg:py-14 items-center justify-center bg-[#fdfbf7] border-b border-line">
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
                     <AnimatedReveal className="flex flex-col gap-5" y={24} duration={0.6} amount={0.15}>
@@ -12,27 +12,17 @@ export default function HeritageEthosSection() {
                         </span>
 
                         <h2 className="font-serif text-[2rem] font-bold text-ink leading-tight">
-                            An Independent Press Built on Direct Author Relationships
+                            Our Approach to <br /> <span className="font-serif text-[2rem] font-bold text-[#E7665D] leading-tight"> Independent Publishing</span>
                         </h2>
 
                         <p className="text-sm text-ink-soft leading-relaxed font-sans">
-                            The publishing industry gives authors two options, and neither one
-                            works well. Traditional houses reject the vast majority of
-                            submissions without reading past the first few pages. Vanity
-                            presses accept everything, charge upfront fees, and deliver
-                            automated output with no editorial involvement. Neither model
-                            serves the author who has a serious manuscript and wants
-                            professional results.
+                            We believe independent authors deserve professional publishing services without compromising ownership or creative control.
                         </p>
-
-                        <p className="text-sm text-ink-soft leading-relaxed font-sans">
-                            The Collingwood Press, a subsidiary of Hambone Publishers LLC,
-                            operates as a third option. We pair every author with a named
-                            editor who reads the manuscript, provides candid feedback by
-                            phone, and manages the project through production and
-                            distribution. We do not use automated formatting tools. We do
-                            not assign your book to a queue. You work with real people who
-                            understand publishing.
+                        <p className="text-sm text-ink-soft leading-relaxed font-sans" >
+                            Unlike traditional publishing models, our process focuses on direct communication, personalized editorial guidance, and professional book production.
+                        </p>
+                        <p className="text-sm text-ink-soft leading-relaxed font-sans" >
+                            Every author works with an experienced editor who provides manuscript feedback and guidance throughout the publishing journey.
                         </p>
                     </AnimatedReveal>
 
@@ -45,7 +35,7 @@ export default function HeritageEthosSection() {
                         className="p-8 sm:p-10 rounded-xl border border-[#E7665D]/25 bg-white shadow-[0_4px_24px_0_rgba(231,102,93,0.12),0_1px_4px_0_rgba(0,0,0,0.06)] flex flex-col gap-6"
                     >
                         <h3 className="font-serif text-xl font-bold text-ink">
-                            What We Commit To
+                            What Makes Us Different?
                         </h3>
 
                         <div className="flex flex-col gap-4 text-xs sm:text-sm text-ink-soft">
@@ -95,19 +85,13 @@ export default function HeritageEthosSection() {
                         hoverY={-5}
                         className="p-8 rounded-xl bg-white border border-[#E7665D]/25 shadow-sm"
                     >
-                        <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-2">
-                            Our Mission
-                        </span>
 
                         <h3 className="font-serif text-2xl font-bold text-ink mb-3">
                             Our Mission
                         </h3>
 
                         <p className="text-sm text-ink-soft leading-relaxed">
-                            To give independent authors access to the same quality of
-                            editing, design, and distribution that the largest publishing
-                            houses deliver, without requiring them to surrender their
-                            rights, their royalties, or their creative direction.
+                            To make professional book publishing accessible to independent authors while protecting their creative freedom, ownership, and royalties.
                         </p>
                     </AnimatedReveal>
 
@@ -120,23 +104,16 @@ export default function HeritageEthosSection() {
                         hoverY={-5}
                         className="p-8 rounded-xl bg-white border border-[#E7665D]/25 shadow-sm"
                     >
-                        <span className="font-sans text-[11px] uppercase tracking-[0.16em] font-bold text-[#E7665D] block mb-2">
-                            Our Vision
-                        </span>
-
                         <h3 className="font-serif text-2xl font-bold text-ink mb-3">
                             Our Vision
                         </h3>
 
                         <p className="text-sm text-ink-soft leading-relaxed">
-                            A publishing industry where the quality of the finished book
-                            depends on the standards of the people who made it, not on
-                            whether the author signed with a major house or published
-                            independently.
+                            To create a publishing environment where every author has access to quality editing, professional production, and global distribution, regardless of how they choose to publish.
                         </p>
                     </AnimatedReveal>
                 </div>
             </Container>
-        </section>
+        </section >
     );
 }

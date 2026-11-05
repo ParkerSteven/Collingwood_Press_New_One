@@ -16,7 +16,16 @@ export default function Hero({
         ${className}
       `}
     >
-      <Container className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12 xl:gap-14 relative z-10">
+      <Container
+        className="
+          relative z-10
+          grid grid-cols-1
+          items-center justify-center
+          gap-10
+          lg:grid-cols-[1.12fr_0.88fr]
+          lg:gap-12 xl:gap-14
+        "
+      >
         <HeroAnimated {...props} />
       </Container>
     </section>

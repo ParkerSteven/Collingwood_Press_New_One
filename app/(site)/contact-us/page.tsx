@@ -16,7 +16,7 @@ export default function ContactUsPage() {
         <>
             <main className="bg-white text-ink">
                 <HeroSection
-                    className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
+                    className="about-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
                     eyebrow="Contact Our Publishing Team"
                     title="Let's Talk About"
                     highlightText="Your Book."

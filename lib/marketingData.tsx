@@ -17,96 +17,109 @@ import {
 
 export const bookMarketingServices = [
     {
-        title: "Amazon Listing Optimization ",
-        icon: Search,
+        title: "Amazon Listing Optimization",
+        image: "/CollingwoodPressIcons/Amazon Listing Optimization.png",
         badge: "Amazon SEO",
         description: (
             <>
-                We rewrite your description, choose categories and keywords, and set up A+ content and pricing, then track rankings and adjust as results come in.
+                We rewrite your description, choose categories and keywords,
+                and set up A+ content and pricing, then track rankings and
+                adjust as results come in.
             </>
         ),
-        href: 'https://www.thecollingwoodpress.com/blogs/self-publishing-on-amazon/'
+        href: "https://www.thecollingwoodpress.com/blogs/self-publishing-on-amazon/",
     },
     {
         title: "Social Media, BookTok, and Creator Campaigns",
-        icon: Share2,
+        image: "/CollingwoodPressIcons/Social Media, BookTok, and Creator Campaigns.png",
         badge: "Social Growth",
         description: (
             <>
-                Platform-native content and creator partnerships matched to your genre, with every post pointing readers to your Amazon page, email list, or pre-order link.
+                Platform-native content and creator partnerships matched to
+                your genre, with every post pointing readers to your Amazon
+                page, email list, or pre-order link.
             </>
         ),
-        href: 'https://www.thecollingwoodpress.com/blogs/proven-digital-marketing-strategies/'
+        href: "https://www.thecollingwoodpress.com/blogs/proven-digital-marketing-strategies/",
     },
     {
         title: "Email and Reader Audience Building",
-        icon: Mail,
+        image: "/CollingwoodPressIcons/Email and Reader Audience Building.png",
         badge: "Email Funnels",
         description: (
             <>
-                Reader magnets, a newsletter on Mailchimp or Substack, and automated sequences that turn new subscribers into an audience you own.
+                Reader magnets, a newsletter on Mailchimp or Substack, and
+                automated sequences that turn new subscribers into an
+                audience you own.
             </>
         ),
-        href: 'https://www.thecollingwoodpress.com/blogs/how-to-sell-books-directly-to-readers/'
+        href: "https://www.thecollingwoodpress.com/blogs/how-to-sell-books-directly-to-readers/",
     },
     {
         title: "Paid Advertising for Books",
-        icon: TrendingUp,
+        image: "/CollingwoodPressIcons/Paid Advertising for Books.png",
         badge: "Paid Campaigns",
         description: (
             <>
-                Amazon Ads and Meta ads aimed at readers of similar authors, with creative testing and a budget agreed before spend begins. We also prepare and submit BookBub Featured Deal applications, and BookBub&apos;s editors decide which books run.
+                Amazon Ads and Meta ads aimed at readers of similar authors,
+                with creative testing and a budget agreed before spend begins.
+                We also prepare and submit BookBub Featured Deal applications,
+                and BookBub&apos;s editors decide which books run.
             </>
         ),
-        href: 'https://www.thecollingwoodpress.com//blogs/book-ads-mistakes-authors-should-avoid/'
+        href: "https://www.thecollingwoodpress.com/blogs/book-ads-mistakes-authors-should-avoid/",
     },
     {
         title: "Media, PR, and Podcast Outreach",
-        icon: Radio,
+        image: "/CollingwoodPressIcons/Media, PR, and Podcast Outreach.png",
         badge: "Media PR",
         description: (
             <>
-                Pitches to podcasts, publications, reviewers, and book bloggers, tailored to your book and your expertise. Coverage can never be guaranteed.
+                Pitches to podcasts, publications, reviewers, and book
+                bloggers, tailored to your book and your expertise.
+                Coverage can never be guaranteed.
             </>
         ),
-        href: 'https://www.thecollingwoodpress.com/blogs/public-relations-for-authors-tips/'
+        href: "https://www.thecollingwoodpress.com/blogs/public-relations-for-authors-tips/",
     },
     {
         title: "Book Launch Campaigns",
-        icon: Rocket,
+        image: "/CollingwoodPressIcons/Book Launch Campaigns.png",
         badge: "Book Launch",
         description: (
             <>
-                A launch plan that sequences ARC copies, pre-order offers, promotional pricing, social, and ads over several weeks. Advance readers get free copies with no obligation to review.
+                A launch plan that sequences ARC copies, pre-order offers,
+                promotional pricing, social, and ads over several weeks.
+                Advance readers get free copies with no obligation to review.
             </>
         ),
-        href: 'https://www.thecollingwoodpress.com/blogs/book-launch-checklist/'
+        href: "https://www.thecollingwoodpress.com/blogs/book-launch-checklist/",
     },
 ];
 
 
 
 export const authorBrandingPillars = [
-  {
-    title: "Author Identity",
-    description:
-      "Consistent author identity across Amazon, social media, and your website.",
-  },
-  {
-    title: "Owned Email Audience",
-    description:
-      "Owned email audience that does not depend on any platform's algorithm.",
-  },
-  {
-    title: "Press Kit and Media Page",
-    description:
-      "Press kit and media page built for podcast hosts, journalists, and event organizers.",
-  },
-  {
-    title: "Cross-Title Promotion Strategy",
-    description:
-      "Cross-title promotion strategy so every new book lifts backlist sales.",
-  },
+    {
+        title: "Author Identity",
+        description:
+            "Consistent author identity across Amazon, social media, and your website.",
+    },
+    {
+        title: "Owned Email Audience",
+        description:
+            "Owned email audience that does not depend on any platform's algorithm.",
+    },
+    {
+        title: "Press Kit and Media Page",
+        description:
+            "Press kit and media page built for podcast hosts, journalists, and event organizers.",
+    },
+    {
+        title: "Cross-Title Promotion Strategy",
+        description:
+            "Cross-title promotion strategy so every new book lifts backlist sales.",
+    },
 ];
 
 export const marketingHeroProps = {
@@ -157,16 +170,6 @@ export const marketingHeroProps = {
 };
 
 export const marketingFAQs = [
-    {
-        question: "What's included in book marketing services?",
-        answer:
-            "Our book marketing services typically include Amazon listing optimization, paid advertising across Amazon and Meta, social media content and management, email marketing setup, media outreach, and performance reporting. The exact scope depends on your book, your genre, and your goals. Every engagement starts with a review and a custom plan.",
-    },
-    {
-        question: "How do book marketing services work?",
-        answer:
-            "We start by reviewing your book and its current market position. From there, we build a plan with specific channels, tactics, and timelines. Once approved, we execute the campaign and report on results monthly. The book marketing process for authors follows four stages: review, plan, execute, and report.",
-    },
     {
         question: "How much do book marketing services cost?",
         answer:

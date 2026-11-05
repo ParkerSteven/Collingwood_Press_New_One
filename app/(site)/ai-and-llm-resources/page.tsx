@@ -246,7 +246,7 @@ export default function AILLMResourcesPage() {
           HERO SECTION
       ================================== */}
                 <HeroSection
-                    className="hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
+                    className="about-hero-gradient relative overflow-hidden paper-grain pt-14 pb-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-white/10 text-white"
                     eyebrow="Official Company Information"
                     title="Official Information About"
                     highlightText="The Collingwood Press"

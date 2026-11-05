@@ -10,9 +10,14 @@ import {
   PenLine,
   PackageCheck,
   BriefcaseBusiness,
+  Volume2,
+  Sliders,
+  ShieldCheck,
+  Headphones,
+  FileAudio,
+  AudioLines,
+  LucideIcon
 } from "lucide-react";
-
-import type { LucideIcon } from "lucide-react";
 
 export const benefits = [
   {
@@ -435,21 +440,6 @@ export const publishingFAQs = [
       "Yes. A first book follows the same professional production path as any other title. You remain the publisher of record. We handle the editorial development, the cover design, the interior typesetting, and the retail setup. You do not need a literary agent, and you do not surrender your book to a traditional house. Our self-publishing services are built for authors at every stage.",
   },
   {
-    question: "Do I need an ISBN to self-publish?",
-    answer:
-      "Print distribution requires an ISBN, and so does placement in any store beyond Amazon. We register the ISBN directly to you, so you are the publisher of record. A free KDP ISBN lists Amazon as the publisher instead. We do not use one.",
-  },
-  {
-    question: "How do I get my book on Amazon KDP and IngramSpark?",
-    answer:
-      "We prepare the production files and the metadata, then open both accounts in your name. KDP carries the Kindle edition, paperback, and hardcover. IngramSpark is the path to bookstores and libraries worldwide. You keep the login credentials. Our Amazon KDP publishing services handle every technical requirement.",
-  },
-  {
-    question: "What formats can you publish?",
-    answer:
-      "Paperback, hardcover, and eBook. Print editions use print-on-demand production, which eliminates the need for large upfront print runs. Audiobook production is available as a separate service, recorded by a professional narrator.",
-  },
-  {
     question: "Who is the publisher of record?",
     answer:
       "You are. The ISBN is registered in your name, and the retail accounts are opened in your name. Some self-publishing company services assign an ISBN from their own prefix, making them the publisher on the record. We never do that.",
@@ -458,11 +448,6 @@ export const publishingFAQs = [
     question: "What is a galley proof, and do I see it?",
     answer:
       "It is the finished proof of the pages, bound and printed before the book goes to retail. You read every page, mark what needs changing, and we do not upload the final files until you have signed off. No book goes live without your explicit approval.",
-  },
-  {
-    question: "Can I publish a book without handing it to a publisher?",
-    answer:
-      "Yes. This is a self-publishing services model, not a rights deal. You hire the production. You keep the copyright and the royalties. The Collingwood Press provides professional-grade execution without requiring you to surrender any ownership.",
   },
   {
     question: "What happens after the book is live?",
@@ -483,21 +468,13 @@ export const publishingFAQs = [
 
 
 export const editingFAQs = [
-  {
-    question: "What's included in book editing services?",
-    answer:
-      "Every engagement includes a marked-up manuscript with tracked changes, margin comments, a custom style sheet, and direct communication with your editor. Developmental editing also includes a standalone editorial letter. The specific scope depends on which service level your manuscript needs.",
-  },
+
   {
     question: "How much do book editing services cost?",
     answer:
       "Pricing depends on your manuscript's word count and the level of editing required. Proofreading services start at $0.01 per word. Copyediting starts at $0.02. Line editing starts at $0.03. Developmental editing starts at $0.05. Exact pricing is provided after we review your manuscript.",
   },
-  {
-    question: "How do book editing services work?",
-    answer:
-      "You submit your manuscript, we review the opening pages and send a quote, your assigned editor completes the work using tracked changes, and you receive the marked-up file with a style sheet and any supplementary documents. The book editing services process follows four steps: submit, review, edit, deliver.",
-  },
+
   {
     question: "Do you offer book editing services for self-published authors?",
     answer:
@@ -513,22 +490,13 @@ export const editingFAQs = [
     answer:
       "Yes. Send us your first 1,000 words and a senior editor will return them within 48 hours with tracked changes, margin notes, and a brief assessment. No payment required, no obligation.",
   },
-  {
-    question:
-      "What is the difference between line editing and developmental editing?",
-    answer:
-      "Developmental editing addresses the book's structure: chapter order, pacing, character arcs, and thematic coherence. Line editing addresses the prose: sentence rhythm, word choice, clarity, and voice. Developmental works on the blueprint. Line editing works on the finish. If both need attention, developmental comes first.",
-  },
+
   {
     question: "What file format do you accept?",
     answer:
       "We accept Word (.doc and .docx), Google Docs, and RTF. Edits are returned in Word with tracked changes enabled. If you need a different format, let us know when you submit.",
   },
-  {
-    question: "Can I communicate with the editor?",
-    answer:
-      "Yes. You speak directly with the editor assigned to your project by phone and email. You are not routed through a customer service team or a project manager. Your editor is your single point of contact from start to delivery.",
-  },
+
   {
     question: "Do you edit children's books?",
     answer:
@@ -538,11 +506,6 @@ export const editingFAQs = [
 
 
 export const audiobookFAQs = [
-  {
-    question: "What's included in audiobook production services?",
-    answer:
-      "Our audiobook production services include manuscript preparation, narrator casting with custom audition samples, studio recording, editing, mastering to platform specifications, quality control, one round of revisions, and upload support for Audible and other platforms. You receive mastered chapter files, metadata, and a pronunciation guide.",
-  },
   {
     question: "How much does audiobook production cost?",
     answer:
@@ -574,43 +537,14 @@ export const audiobookFAQs = [
     answer:
       "Yes. Audiobook production is a standalone project. Your book does not need to be republished. If you have a finalized manuscript in print or ebook, we can begin production immediately.",
   },
-  {
-    question: "What file formats and standards do you deliver?",
-    answer:
-      "Mastered chapter files in MP3 (192kbps or higher, 44.1 kHz, mono) and WAV. All files meet Audible/ACX specifications for RMS levels, peak headroom, and noise floor. Chapter markers and metadata are included for platform ingestion.",
-  },
-  {
-    question: "Do you offer a sample or audition?",
-    answer:
-      "Yes. Before production begins, we record custom audition samples from your manuscript using narrators matched to your genre. You review the samples and select your narrator before any full recording starts.",
-  },
+
 ];
 
 export const ghostwritingFAQs = [
   {
-    question: "How much do ghostwriting services cost?",
-    answer:
-      "Ghostwriting cost depends on manuscript length, genre complexity, research needs, timeline, and ghostwriter experience. We provide a clear quote after the consultation. There are no hidden fees, and the quoted price covers the agreed scope of work.",
-  },
-  {
     question: "How long does it take to ghostwrite a book?",
     answer:
       "Most projects take 4 to 9 months from consultation to final delivery. Shorter books and straightforward narratives move faster. Research-heavy nonfiction and complex fiction take longer. Your quote includes specific milestone dates for each stage of the process.",
-  },
-  {
-    question: "Can I choose my ghostwriter?",
-    answer:
-      "Yes. We recommend ghostwriters based on genre experience, writing style, and availability. You review their background and, in most cases, speak with them before the project begins. You are never assigned a writer without your approval.",
-  },
-  {
-    question: "What's included in ghostwriting services?",
-    answer:
-      "A collaborative outline, a full manuscript written in staged drafts, agreed revision rounds, voice matching, and a final clean file in Word format. Editing and design are separate. Everything included is defined and agreed before work starts.",
-  },
-  {
-    question: "How does the ghostwriting process work?",
-    answer:
-      "Consultation, outline approval, staged writing with feedback at defined intervals, revisions on the completed draft, and final delivery. You review and approve key stages throughout. The publishing path is discussed as a natural next step once the manuscript is finished.",
   },
   {
     question: "Is ghostwriting confidential?",
@@ -1148,3 +1082,50 @@ export const illustrationProjects: IllustrationProject[] = Array.from(
     };
   },
 );
+
+
+
+export const technicalSpecs = [
+  {
+    id: 1,
+    title: "RMS Levels",
+    value: "-23 dB to -18 dB",
+    description: "Consistent across chapters.",
+    icon: Volume2,
+  },
+  {
+    id: 2,
+    title: "Peak Headroom",
+    value: "-3 dB maximum",
+    description: "Controlled audio peaks.",
+    icon: Sliders,
+  },
+  {
+    id: 3,
+    title: "Noise Floor",
+    value: "Below -60 dB RMS",
+    description: "Clean background audio.",
+    icon: ShieldCheck,
+  },
+  {
+    id: 4,
+    title: "Room Tone",
+    value: "Matched across chapters",
+    description: "Consistent recording environment.",
+    icon: Headphones,
+  },
+  {
+    id: 5,
+    title: "File Format",
+    value: "MP3, 192 kbps or higher",
+    description: "Constant bitrate.",
+    icon: FileAudio,
+  },
+  {
+    id: 6,
+    title: "Sample Rate",
+    value: "44.1 kHz",
+    description: "Audio sampling frequency.",
+    icon: AudioLines,
+  },
+];

@@ -5,6 +5,8 @@ import Button from "@/components/ui/Button";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedReveal from "@/components/ui/AnimatedReveal";
 import Image from "next/image";
+import ProfessionalNarrator from "/CollingwoodPressIcons/ProfessionalNarrator.png";
+import AuthorNarrated from "/CollingwoodPressIcons/AuthorNarrated.png";
 
 export default function NarratorSelectionSection() {
   return (
@@ -18,16 +20,16 @@ export default function NarratorSelectionSection() {
           amount={0.2}
         >
           <SectionHeading
-            eyebrow="Narrator Casting"
+            eyebrow="Choose Your Narrator"
             title={
               <>
-                Professional Narrator or Author-Narrated:{" "}
+                Professional Voice Actor{" "}
                 <span className="italic text-[#E7665D]">
-                  Which Fits Your Book?
+                  or Author-Narrated
                 </span>
               </>
             }
-            description="The narrator is the single most important creative decision in audiobook production. The right voice brings the book to life. The wrong one makes listeners stop. We offer two paths, and your choice depends on genre, personal preference, timeline, and budget."
+            description="The narrator is the biggest creative decision. We offer two paths based on your genre, timeline and budget."
           />
         </AnimatedReveal>
 
@@ -44,26 +46,22 @@ export default function NarratorSelectionSection() {
               amount={0.2}
               className="flex items-start gap-5 py-6 border-t border-[#E7665D]/20"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30">
-                <Mic2 size={22} />
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5]">
+                <Image
+                  src="/CollingwoodPressIcons/ProfessionalNarrator.png"
+                  alt="Professional Narrator"
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 object-contain"
+                />
               </span>
-
               <div className="flex-1">
                 <h3 className="font-serif text-[1.2rem] pt-2 font-bold text-ink leading-snug mb-3">
-                  Professional Narrator
+                  Professional Audiobook Narrator
                 </h3>
 
                 <p className="text-sm sm:text-sm text-ink-soft leading-relaxed">
-                  For most fiction and nonfiction titles, a
-                  professional narration performer produces the best
-                  result. We cast from a roster of experienced
-                  voice actor narration professionals and present you
-                  with custom audition samples recorded from your
-                  manuscript. You listen, compare, and select the voice
-                  that fits your book. The narrator records in a
-                  professional studio environment under direction from
-                  an audio producer who monitors pronunciation,
-                  pacing, and emotional consistency.
+                  Best for most fiction and nonfiction. We cast from experienced voice actors and send custom audition samples recorded from your manuscript. You choose the voice. The narrator records in a professional studio with a producer monitoring pronunciation, pacing and consistency.
                 </p>
               </div>
             </AnimatedReveal>
@@ -76,24 +74,22 @@ export default function NarratorSelectionSection() {
               amount={0.2}
               className="flex items-start gap-5 py-6 border-t border-b border-[#E7665D]/20"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/30">
-                <UserCheck size={22} />
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#fdf6f5]">
+                <Image
+                  src="/CollingwoodPressIcons/AuthorNarrated.png"
+                  alt="Professional Narrator"
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 object-contain"
+                />
               </span>
-
               <div className="flex-1">
                 <h3 className="font-serif pt-2 text-[1.2rem] font-bold text-ink leading-snug mb-3">
-                  Author-Narrated
+                  Author-Narrated Audiobook
                 </h3>
 
                 <p className="text-sm sm:text-sm text-ink-soft leading-relaxed">
-                  For memoirs, personal nonfiction, and authors with
-                  a strong public speaking presence, an author narrated
-                  audiobook can be the right choice. We provide guided
-                  recording support, pronunciation review, and the same
-                  post-production and mastering pipeline that
-                  professional narrator projects receive. The technical
-                  quality of the finished files is identical regardless
-                  of who reads.
+                  Better for memoirs, personal nonfiction and authors with a strong speaking presence. You get guided recording support and pronunciation review. Post-production quality stays the same as professional narrator projects.
                 </p>
               </div>
             </AnimatedReveal>

@@ -5,6 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { platformStrip, brandMarks, getPlatformSymbol } from "./PlatformMarks";
 import { bookMarketingServices, campaignFactors } from "@/lib/marketingData";
 import Link from "next/link";
+import Image from "next/image";
 
 
 export default function MarketingServicesSection() {
@@ -206,47 +207,94 @@ export default function MarketingServicesSection() {
                     }
                 />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {bookMarketingServices.map((svc) => {
-                        const Icon = svc.icon;
-
-                        return (
-                            <div
-                                key={svc.title}
-                                className="group relative rounded-xl border border-[#E7665D]/25 bg-white p-7 shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)] hover:border-[#E7665D]/50 hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between"
-                            >
-                                <div>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#fdf6f5] text-[#E7665D] border border-[#E7665D]/25 group-hover:bg-[#E7665D] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                                            <Icon size={20} />
-                                        </div>
-
-                                        <span className="font-sans text-[10px] uppercase tracking-wider text-[#E7665D] font-semibold bg-[#fdf6f5] px-2.5 py-0.5 rounded border border-[#E7665D]/20">
-                                            {svc.badge}
-                                        </span>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {bookMarketingServices.map((svc) => (
+                        <div
+                            key={svc.title}
+                            className="
+        group relative flex flex-col justify-between
+        rounded-xl border border-[#E7665D]/25
+        bg-white p-7
+        shadow-[0_4px_24px_0_rgba(231,102,93,0.10),0_1px_4px_0_rgba(0,0,0,0.04)]
+        transition-[border-color,box-shadow] duration-300
+        hover:border-[#E7665D]/50
+        hover:shadow-[0_8px_36px_0_rgba(231,102,93,0.18),0_2px_8px_0_rgba(0,0,0,0.08)]
+      "
+                        >
+                            <div>
+                                {/* Image & Badge */}
+                                <div className="mb-4 flex items-center justify-between">
+                                    <div
+                                        className="
+              flex h-14 w-14 shrink-0
+              items-center justify-center
+              rounded-lg
+              bg-[#fdf6f5]
+              transition-transform duration-300
+              group-hover:scale-105
+            "
+                                    >
+                                        <Image
+                                            src={svc.image}
+                                            alt={`${svc.title} icon`}
+                                            width={44}
+                                            height={44}
+                                            className="
+                h-11 w-11 object-contain
+                transition-transform duration-300
+                group-hover:scale-110
+              "
+                                        />
                                     </div>
 
-                                    <h3 className="font-serif text-[1.2rem] font-bold text-ink leading-snug group-hover:text-[#E7665D] transition-colors">
-                                        {svc.title}
-                                    </h3>
-
-                                    <div className="mt-2.5 text-xs sm:text-sm text-ink-soft leading-relaxed">
-                                        {svc.description}
-                                    </div>
+                                    <span
+                                        className="
+              rounded border border-[#E7665D]/20
+              bg-[#fdf6f5] px-2.5 py-0.5
+              font-sans text-[10px] font-semibold
+              uppercase tracking-wider text-[#E7665D]
+            "
+                                    >
+                                        {svc.badge}
+                                    </span>
                                 </div>
 
-                                <div className="mt-3 flex items-center ">
-                                    <Link
-                                        href={svc.href}
-                                        className="flex items-center justify-center gap-2 border-t border-line/60 pt-3 text-xs font-semibold text-[#E7665D] transition-all duration-300 hover:gap-3"
-                                    >
-                                        <span>Learn More</span>
-                                        <ArrowRight size={14} />
-                                    </Link>
+                                {/* Title */}
+                                <h3
+                                    className="
+            font-serif text-[1.2rem] font-bold
+            leading-snug text-ink
+            transition-colors duration-300
+            group-hover:text-[#E7665D]
+          "
+                                >
+                                    {svc.title}
+                                </h3>
+
+                                {/* Description */}
+                                <div className="mt-2.5 text-xs leading-relaxed text-ink-soft sm:text-sm">
+                                    {svc.description}
                                 </div>
                             </div>
-                        );
-                    })}
+
+                            {/* Link */}
+                            <div className="mt-3 flex items-center">
+                                <Link
+                                    href={svc.href}
+                                    className="
+            flex items-center justify-center gap-2
+            border-t border-line/60 pt-3
+            text-xs font-semibold text-[#E7665D]
+            transition-[gap] duration-300
+            hover:gap-3
+          "
+                                >
+                                    <span>Learn More</span>
+                                    <ArrowRight size={14} aria-hidden="true" />
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </Container>
 

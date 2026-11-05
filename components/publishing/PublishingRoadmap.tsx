@@ -5,12 +5,13 @@ import {
     phaseIcons,
     milestoneIcons,
 } from "@/lib/publishingData";
+import Image from "next/image";
 
 export default function PublishingRoadmap() {
     return (
         <section
             id="publishing-roadmap"
-            className="relative isolate overflow-hidden bg-[#07152B] py-16 sm:py-20 lg:py-24"
+            className="relative isolate overflow-hidden bg-[#07152B] py-16 sm:py-20 lg:py-22"
         >
             {/* Background Gradient */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#071429] via-[#102440] to-[#1D3B63]" />
@@ -70,22 +71,15 @@ export default function PublishingRoadmap() {
                 {/* Roadmap Grid */}
                 <div
                     className="
-                        grid w-full min-w-0
-                        grid-cols-1
-                        gap-5
-                        sm:grid-cols-2
-                        lg:grid-cols-3
-                        lg:gap-6
-                        2xl:grid-cols-6
-                        2xl:gap-4
-                    "
+    grid w-full min-w-0
+    grid-cols-1 gap-5
+    sm:grid-cols-2
+    lg:grid-cols-3 lg:gap-6
+    2xl:grid-cols-6 2xl:gap-4
+  "
                 >
                     {publishingRoadmap.map((step, index) => {
-                        const Icon =
-                            phaseIcons[index] || FileText;
-
-                        const MilestoneIcon =
-                            milestoneIcons[index] || FileText;
+                        const MilestoneIcon = milestoneIcons[index] || FileText;
 
                         return (
                             <AnimatedReveal
@@ -97,56 +91,71 @@ export default function PublishingRoadmap() {
                                 amount={0.1}
                                 hoverY={-5}
                                 className="
-                                    group relative
-                                    flex h-full min-w-0 flex-col
-                                    rounded-xl
-                                    border border-[#344B76]
-                                    bg-gradient-to-br
-                                    from-[#101A30]
-                                    via-[#172B4D]
-                                    to-[#294D78]
-                                    p-5
-                                    shadow-[0_8px_30px_rgba(0,0,0,0.12)]
-                                    transition-[border-color,box-shadow]
-                                    duration-300
-                                    hover:border-[#E7665D]/60
-                                    hover:shadow-[0_12px_35px_rgba(231,102,93,0.12)]
-                                    min-[1800px]:p-6
-                                "
+          group relative
+          flex h-full min-w-0 flex-col
+          rounded-xl
+          border border-[#344B76]
+          bg-gradient-to-br
+          from-[#101A30]
+          via-[#172B4D]
+          to-[#294D78]
+          p-5
+          shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+          transition-[border-color,box-shadow]
+          duration-300
+          hover:border-[#E7665D]/60
+          hover:shadow-[0_12px_35px_rgba(231,102,93,0.12)]
+          min-[1800px]:p-6
+        "
                             >
-                                {/* Phase Number */}
-                                <span className="font-sans text-[21px] font-extrabold leading-none text-[#F07870]">
-                                    {step.number}
-                                </span>
-                                <div className="flex flex-col sm:flex-row gap-4 items-center">
 
-                                    {/* Phase Icon */}
+                                {/* Phase Image & Title */}
+                                <div className="flex flex-col items-center gap-4 sm:flex-row">
                                     <div
                                         className="
-                                        mt-5 flex h-12 w-12
-                                        shrink-0 items-center
-                                        justify-center rounded-full
-                                        border border-[#E7665D]/30
-                                        bg-[radial-gradient(circle_at_50%_35%,#405371_0%,#25314D_55%,#17223C_100%)]
-                                        text-[#F07870]
-                                        transition-transform duration-300
-                                        group-hover:scale-105
-                                    "
+              md:mt-5 flex h-16 w-16
+              shrink-0 items-center
+              justify-center rounded-full
+              transition-transform duration-300
+              group-hover:scale-105
+            "
                                     >
-                                        <Icon
-                                            size={23}
-                                            strokeWidth={1.8}
+                                        <Image
+                                            src={step.image}
+                                            alt={`${step.title} icon`}
+                                            width={44}
+                                            height={44}
+                                            className="
+                h-11 w-11 object-contain
+                transition-transform duration-300
+                group-hover:scale-110
+              "
                                         />
-
                                     </div>
-                                    <h3 className="font-serif text-[17px] font-bold leading-[1.35] text-white 2xl:text-[16px] min-[1800px]:text-[19px] pt-4">
+
+                                    <h3
+                                        className="
+              md:pt-4 font-serif
+              text-[17px] font-bold
+              leading-[1.35] text-white
+              2xl:text-[16px]
+              min-[1800px]:text-[19px]
+            "
+                                    >
                                         {step.title}
                                     </h3>
                                 </div>
 
                                 {/* Card Content */}
                                 <div className="mt-5 flex-1">
-                                    <p className=" font-sans text-[13px] leading-[1.8] text-slate-300 2xl:text-[12px] min-[1800px]:text-[13px]">
+                                    <p
+                                        className="
+              font-sans text-[13px]
+              leading-[1.8] text-slate-300
+              2xl:text-[12px]
+              min-[1800px]:text-[13px]
+            "
+                                    >
                                         {step.description}
                                     </p>
                                 </div>
@@ -154,22 +163,30 @@ export default function PublishingRoadmap() {
                                 {/* Deliverable */}
                                 <div
                                     className="
-                                        mt-4 flex min-h-[90px]
-                                        w-full min-w-0
-                                        items-center gap-3
-                                        rounded-lg
-                                        border border-[#3B5984]/65
-                                        bg-gradient-to-br
-                                        from-[#142744]
-                                        to-[#1B3B65]/85
-                                        p-3
-                                        2xl:gap-2
-                                        2xl:p-2.5
-                                        min-[1800px]:gap-3
-                                        min-[1800px]:p-3
-                                    "
+            mt-4 flex min-h-[90px]
+            w-full min-w-0
+            items-center gap-3
+            rounded-lg
+            border border-[#3B5984]/65
+            bg-gradient-to-br
+            from-[#142744]
+            to-[#1B3B65]/85
+            p-3
+            2xl:gap-2 2xl:p-2.5
+            min-[1800px]:gap-3
+            min-[1800px]:p-3
+          "
                                 >
-                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#E7665D]/20 bg-[#E7665D]/10 text-[#F07870]">
+                                    <div
+                                        className="
+              flex h-9 w-9 shrink-0
+              items-center justify-center
+              rounded-full
+              border border-[#E7665D]/20
+              bg-[#E7665D]/10
+              text-[#F07870]
+            "
+                                    >
                                         <MilestoneIcon
                                             size={18}
                                             strokeWidth={1.8}
@@ -177,43 +194,50 @@ export default function PublishingRoadmap() {
                                     </div>
 
                                     <div className="min-w-0 flex-1">
-                                        <span className="block text-[9px] font-bold uppercase tracking-[0.08em] text-[#F07870]">
+                                        <span
+                                            className="
+                block text-[9px] font-bold
+                uppercase tracking-[0.08em]
+                text-[#F07870]
+              "
+                                        >
                                             Deliverable
                                         </span>
 
-                                        <span className="mt-1 block break-words text-[11px] leading-[1.5] text-[#D3E3F8]">
+                                        <span
+                                            className="
+                mt-1 block break-words
+                text-[11px] leading-[1.5]
+                text-[#D3E3F8]
+              "
+                                        >
                                             {step.milestone}
                                         </span>
                                     </div>
                                 </div>
 
                                 {/* Connecting Arrow */}
-                                {index <
-                                    publishingRoadmap.length - 1 && (
-                                        <div
-                                            className="
-                                            absolute
-                                            -right-[17px]
-                                            top-[25%]
-                                            z-20
-                                            hidden h-7 w-7
-                                            items-center
-                                            justify-center
-                                            rounded-full
-                                            border border-[#E7665D]/70
-                                            bg-[#142541]
-                                            text-[#F07870]
-                                            shadow-[0_0_0_3px_#102440]
-                                            2xl:flex
-                                        "
-                                            aria-hidden="true"
-                                        >
-                                            <ArrowRight
-                                                size={14}
-                                                strokeWidth={1.8}
-                                            />
-                                        </div>
-                                    )}
+                                {index < publishingRoadmap.length - 1 && (
+                                    <div
+                                        className="
+              absolute -right-[17px] top-[25%]
+              z-20 hidden h-7 w-7
+              items-center justify-center
+              rounded-full
+              border border-[#E7665D]/70
+              bg-[#142541]
+              text-[#F07870]
+              shadow-[0_0_0_3px_#102440]
+              2xl:flex
+            "
+                                        aria-hidden="true"
+                                    >
+                                        <ArrowRight
+                                            size={14}
+                                            strokeWidth={1.8}
+                                        />
+                                    </div>
+                                )}
                             </AnimatedReveal>
                         );
                     })}

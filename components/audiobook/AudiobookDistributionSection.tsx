@@ -38,17 +38,14 @@ export default function AudiobookDistributionSection() {
           </span>
 
           <h2 className="mt-4 max-w-2xl font-serif text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] text-ink">
-            Distribution-Ready Files for{" "}
+            Audiobook Distribution to {" "}
             <span className="italic text-[#E7665D]">
-              Audible, Apple Books, and More
+              Audible, Apple Books and More
             </span>
           </h2>
 
           <p className="mt-5 text-sm sm:text-base text-ink-muted leading-relaxed">
-            Once your files are approved, we prepare them for
-            audiobook distribution across all major listening
-            platforms. You choose where your audiobook is
-            available, and you retain full rights and royalties.
+            Once approved, we prepare your files for distribution across Audible, Amazon, Apple Books, Google Play Books, Spotify, Kobo, Scribd, Barnes & Noble, OverDrive, Hoopla, Libro.fm and Storytel. You choose the platforms and keep full rights and royalties.
           </p>
         </AnimatedReveal>
 
@@ -94,9 +91,22 @@ export default function AudiobookDistributionSection() {
                       >
                         <div className="flip-inner">
                           <div className="flip-face mk-platform-front">
-                            <span className="font-serif text-[18px] sm:text-[20px] tracking-wide text-ink text-center px-3 font-semibold">
-                              {r.name}
-                            </span>
+                            {r.mark ? (
+                              <Image
+                                src={r.mark}
+                                alt=""
+                                aria-hidden="true"
+                                width={150}
+                                height={42}
+                                className="max-h-[42px] max-w-[150px] w-auto object-contain"
+                              />
+                            ) : (
+                              <Headphones
+                                size={32}
+                                aria-hidden="true"
+                                className="text-[#A83E39]"
+                              />
+                            )}
                           </div>
 
                           <div className="flip-face flip-back mk-platform-back">
@@ -136,12 +146,7 @@ export default function AudiobookDistributionSection() {
           className="mt-12 max-w-4xl mx-auto"
         >
           <p className="text-sm sm:text-base text-ink-muted leading-relaxed text-center">
-            For authors who want to self-publish audiobook editions
-            independently, we deliver the finished files and
-            metadata formatted for direct upload to ACX,
-            Findaway Voices, or any distributor you choose.
-            For authors who want us to handle distribution, we
-            manage the upload process and confirm each listing is live.
+            Prefer to publish yourself? We deliver upload-ready files and metadata for ACX, Findaway Voices or any distributor. If you want us to handle it, we manage the upload and confirm each listing is live.
           </p>
         </AnimatedReveal>
       </Container>

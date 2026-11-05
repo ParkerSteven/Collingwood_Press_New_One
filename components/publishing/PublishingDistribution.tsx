@@ -7,7 +7,7 @@ export default function PublishingDistribution() {
     return (
         <section
             id="publishing-process"
-            className="py-20 lg:py-20 bg-[#fdfbf7] border-b border-line"
+            className="pt-14 lg:pt-20 lg:pb-4 bg-[#fdfbf7] border-b border-line"
         >
             {/* Section Heading */}
             <div className="relative mx-auto max-w-[1360px] px-6 lg:px-12 pt-6 pb-2">
@@ -66,61 +66,109 @@ export default function PublishingDistribution() {
                 </div>
             </div>
 
-            {/* Animated Retailer Carousel */}
-            <div className="relative pt-4 pb-12 lg:mb-20 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] overflow-hidden">
-
-                <AnimatedReveal
-                    y={18}
-                    duration={0.7}
-                    delay={0.1}
-                    amount={0.1}
-                    className="w-full"
+            <div className="mx-auto w-full max-w-[1360px] min-w-0 px-4 sm:px-6 lg:px-12">
+                <div
+                    className="
+      relative w-full min-w-0 overflow-hidden
+      pt-4 pb-10 lg:pb-14
+      [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]
+    "
                 >
-                    <div className="carousel-track flex gap-4 w-max px-6 animate-marquee">
-                        {[...retailers, ...retailers].map((r, i) => (
-                            <div
-                                key={`${r.name}-${i}`}
-                                className="flip-card w-[200px] h-[92px] flex-none cursor-pointer"
-                                tabIndex={i < retailers.length ? 0 : -1}
-                                aria-hidden={
-                                    i >= retailers.length
-                                        ? true
-                                        : undefined
-                                }
-                            >
-                                <div className="flip-inner shadow-sm hover:shadow-md transition-shadow">
+                    <AnimatedReveal
+                        y={18}
+                        duration={0.7}
+                        delay={0.1}
+                        amount={0.1}
+                        className="w-full min-w-0"
+                    >
+                        <div
+                            className="
+          carousel-track flex w-max
+          max-w-none gap-4
+          animate-marquee
+          motion-reduce:animate-none
+          motion-reduce:flex-wrap
+          motion-reduce:w-full
+          motion-reduce:justify-center
+        "
+                        >
+                            {[...retailers, ...retailers].map((r, i) => {
+                                const isDuplicate = i >= retailers.length;
 
-                                    {/* Front */}
-                                    <div className="flip-face bg-paper/95 border border-line hover:border-[#E7665D] transition-colors">
-                                        {r.img && (
-                                            <Image
-                                                src={r.img}
-                                                alt={i < retailers.length ? r.name : ""}
-                                                width={150}
-                                                height={42}
-                                                className="max-h-[42px] max-w-[150px] w-auto h-auto object-contain"
-                                            />
-                                        )}
+                                return (
+                                    <div
+                                        key={`${r.name}-${i}`}
+                                        className="
+                flip-card
+                h-[76px] w-[155px]
+                flex-none
+                sm:h-[86px] sm:w-[180px]
+                lg:h-[92px] lg:w-[200px]
+              "
+                                        tabIndex={isDuplicate ? -1 : 0}
+                                        aria-hidden={isDuplicate ? true : undefined}
+                                    >
+                                        <div className="flip-inner shadow-sm transition-shadow duration-300 hover:shadow-md">
+
+                                            {/* Front */}
+                                            <div
+                                                className="
+                    flip-face border border-line
+                    bg-paper/95
+                    transition-colors duration-300
+                    hover:border-[#E7665D]
+                  "
+                                            >
+                                                {r.img && (
+                                                    <Image
+                                                        src={r.img}
+                                                        alt={isDuplicate ? "" : r.name}
+                                                        width={150}
+                                                        height={42}
+                                                        sizes="(max-width: 640px) 115px, (max-width: 1024px) 135px, 150px"
+                                                        className="
+                        h-auto w-auto
+                        max-h-[34px] max-w-[115px]
+                        object-contain
+                        sm:max-h-[38px] sm:max-w-[135px]
+                        lg:max-h-[42px] lg:max-w-[150px]
+                      "
+                                                    />
+                                                )}
+                                            </div>
+
+                                            {/* Back */}
+                                            <div
+                                                className="
+                    flip-face flip-back
+                    border border-[#E7665D]/30
+                    bg-white px-3 sm:px-4
+                  "
+                                            >
+                                                {r.img && (
+                                                    <Image
+                                                        src={r.img}
+                                                        alt=""
+                                                        width={150}
+                                                        height={42}
+                                                        sizes="(max-width: 640px) 115px, (max-width: 1024px) 135px, 150px"
+                                                        className="
+                        h-auto w-auto
+                        max-h-[34px] max-w-[115px]
+                        object-contain
+                        sm:max-h-[38px] sm:max-w-[135px]
+                        lg:max-h-[42px] lg:max-w-[150px]
+                      "
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    {/* Back */}
-                                    <div className="flip-face flip-back bg-white border border-[#E7665D]/30 px-4">
-                                        {r.img && (
-                                            <Image
-                                                src={r.img}
-                                                alt=""
-                                                width={150}
-                                                height={42}
-                                                className="max-h-[42px] max-w-[150px] w-auto h-auto object-contain"
-                                            />
-                                        )}
-                                    </div>
-
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </AnimatedReveal>
+                                );
+                            })}
+                        </div>
+                    </AnimatedReveal>
+                </div>
             </div>
         </section>
     );

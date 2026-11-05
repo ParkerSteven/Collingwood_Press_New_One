@@ -4,6 +4,7 @@ import AnimatedReveal from "@/components/ui/AnimatedReveal";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/lib/publishingData";
+import Image from "next/image";
 
 export default function RelatedAuthorServices() {
     return (
@@ -39,7 +40,7 @@ export default function RelatedAuthorServices() {
                             {/* Heading */}
                             <h2 className="font-serif text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[2.8rem]">
                                 Beyond Publishing
-                                <span className="mt-3 block leading-[1.2] text-[#E7665D]">
+                                <span className="mt-1 md:mt-3 block leading-[1.2] text-[#E7665D]">
                                     Complete Author Solutions
                                 </span>
                             </h2>
@@ -69,52 +70,116 @@ export default function RelatedAuthorServices() {
                         id="related-services-list"
                         className="order-2 flex flex-col gap-4 lg:order-1 lg:gap-5"
                     >
-                        {services.map((service, index) => {
-                            const Icon = service.icon;
+                        {services.map((service, index) => (
+                            <AnimatedReveal
+                                key={service.id}
+                                y={24}
+                                delay={index * 0.12}
+                                duration={0.55}
+                                amount={0.15}
+                                className="
+        group relative overflow-hidden
+        rounded-xl border border-white/10
+        bg-white/[0.07] p-5
+        shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+        backdrop-blur-sm
+        transition-[border-color,background-color,box-shadow]
+        duration-300
+        hover:border-[#E7665D]/45
+        hover:bg-white/[0.11]
+        hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)]
+        sm:p-6
+      "
+                            >
+                                {/* Accent Line */}
+                                <div
+                                    className="
+          absolute bottom-0 left-0 top-0
+          w-[3px] bg-[#E7665D]
+          opacity-0 transition-opacity duration-300
+          group-hover:opacity-100
+        "
+                                />
 
-                            return (
-                                <AnimatedReveal
-                                    key={service.id}
-                                    y={24}
-                                    delay={index * 0.12}
-                                    duration={0.55}
-                                    amount={0.15}
-                                    className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.07] p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E7665D]/45 hover:bg-white/[0.11] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] sm:p-6"
-                                >
-                                    {/* Accent Line */}
-                                    <div className="absolute bottom-0 left-0 top-0 w-[3px] bg-[#E7665D] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                                <div className="flex items-start gap-4 sm:gap-5">
 
-                                    <div className="flex items-start gap-4 sm:gap-5">
-                                        {/* Icon */}
-                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-[#E7665D]/25 bg-[#E7665D]/10 text-[#F17A70] transition-all duration-300 group-hover:border-[#E7665D] group-hover:bg-[#E7665D] group-hover:text-white sm:h-14 sm:w-14">
-                                            <Icon size={23} strokeWidth={1.8} />
-                                        </div>
-
-                                        {/* Card Content */}
-                                        <div className="min-w-0 flex-1">
-                                            <h3 className="font-serif text-lg font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[#F17A70] sm:text-xl">
-                                                {service.title}
-                                            </h3>
-
-                                            <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                                                {service.description}
-                                            </p>
-
-                                            <Link
-                                                href={service.href}
-                                                className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[#F17A70] transition-colors hover:text-white sm:text-sm"
-                                            >
-                                                {service.linkText}
-                                                <ArrowRight
-                                                    size={15}
-                                                    className="transition-transform duration-300 group-hover:translate-x-1"
-                                                />
-                                            </Link>
-                                        </div>
+                                    {/* Service Image */}
+                                    <div
+                                        className="
+            flex h-14 w-14 shrink-0
+            items-center justify-center
+            rounded-lg
+            border border-[#E7665D]/25
+            bg-[#E7665D]/10
+            transition-[border-color,background-color,transform]
+            duration-300
+            group-hover:scale-105
+            group-hover:border-[#E7665D]
+            group-hover:bg-[#E7665D]/20
+            sm:h-16 sm:w-16
+          "
+                                    >
+                                        <Image
+                                            src={service.image}
+                                            alt={`${service.title} icon`}
+                                            width={52}
+                                            height={52}
+                                            className="
+              h-12 w-12 object-contain
+              transition-transform duration-300
+              group-hover:scale-110
+              sm:h-14 sm:w-14
+            "
+                                        />
                                     </div>
-                                </AnimatedReveal>
-                            );
-                        })}
+
+                                    {/* Card Content */}
+                                    <div className="min-w-0 flex-1">
+
+                                        {/* Title */}
+                                        <h3
+                                            className="
+              font-serif text-lg font-bold
+              leading-snug text-white
+              transition-colors duration-300
+              group-hover:text-[#F17A70]
+              sm:text-xl
+            "
+                                        >
+                                            {service.title}
+                                        </h3>
+
+                                        {/* Description */}
+                                        <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                                            {service.description}
+                                        </p>
+
+                                        {/* Link */}
+                                        <Link
+                                            href={service.href}
+                                            className="
+              mt-4 inline-flex items-center gap-2
+              text-xs font-semibold text-[#F17A70]
+              transition-colors duration-300
+              hover:text-white
+              sm:text-sm
+            "
+                                        >
+                                            {service.linkText}
+
+                                            <ArrowRight
+                                                size={15}
+                                                aria-hidden="true"
+                                                className="
+                transition-transform duration-300
+                group-hover:translate-x-1
+              "
+                                            />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </AnimatedReveal>
+                        ))}
                     </div>
                 </div>
             </Container>

@@ -72,23 +72,23 @@ export default function FinalCTA({
           {/* Heading */}
           <h2
             id="final-cta-heading"
-            className="font-serif text-[2rem] max-w-2xl font-medium leading-[1.08] tracking-tight text-white sm:text-[2.7rem] lg:text-[2.9rem]"
+            className="font-serif text-[1.6rem] max-w-2xl font-medium leading-[1.08] tracking-tight text-white sm:text-[2.7rem] lg:text-[2.9rem]"
           >
             {title}
           </h2>
 
           {/* Description */}
-          <p className="mx-auto mt-7 max-w-3xl font-sans text-[0.98rem] leading-[1.9] text-slate-300 sm:text-[1rem]">
+          <p className="mx-auto mt-7 max-w-3xl font-sans text-[0.8rem] leading-[1.9] text-slate-300 sm:text-[1rem]">
             {description}
           </p>
 
           {/* Main Button */}
-          <div className="mt-9 flex flex-col items-center gap-4">
+          <div className="mt-9 flex flex-col items-center gap-2">
             <Button
               href={buttonHref}
               variant="primary"
               size="lg"
-              className="max-w-full px-4 py-4 text-center text-sm shadow-[0_10px_30px_rgba(231,102,93,0.22)] transition-shadow hover:shadow-[0_15px_35px_rgba(231,102,93,0.3)] sm:px-9 sm:text-base"
+              className="max-w-full px-2 py-4 text-center text-[14px] shadow-[0_10px_30px_rgba(231,102,93,0.22)] transition-shadow hover:shadow-[0_15px_35px_rgba(231,102,93,0.3)] sm:px-9 sm:text-base"
             >
               <span>{buttonText}</span>
 
