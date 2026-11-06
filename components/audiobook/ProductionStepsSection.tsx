@@ -32,7 +32,7 @@ export default function ProductionStepsSection() {
               Every project follows the same production sequence.
               What the author provides is a finalized manuscript.
               What the author receives is a set of mastered,
-              distribution-ready
+              distribution ready
               audio files.
             </p>
 
@@ -118,7 +118,7 @@ export default function ProductionStepsSection() {
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                Editors proof-listen against the manuscript and remove clicks, breaths, retakes and noise.
+                Editors proof listen against the manuscript and remove clicks, breaths, retakes and noise.
               </p>
             </AnimatedReveal>
 

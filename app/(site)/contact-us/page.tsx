@@ -23,7 +23,7 @@ export default function ContactUsPage() {
                     description={
                         <p>
                             We respond to every inquiry within 1 business day.
-                            Share your vision, questions, or manuscript—our
+                            Share your vision, questions, or manuscript our
                             team is ready to help.
                         </p>
                     }

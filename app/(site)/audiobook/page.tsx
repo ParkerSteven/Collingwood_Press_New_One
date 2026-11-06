@@ -40,10 +40,10 @@ export default function AudiobookPage() {
       <main className="bg-white text-ink">
         <Hero
           className="audiobook-hero-gradient border-white/10 text-white"
-          eyebrow="Studio-Grade Audiobook Production"
+          eyebrow="Studio Grade Audiobook Production"
           title={defaultTitle}
           highlightText="Services for Authors"
-          description="Most self-produced audiobooks lose listeners early because of flat narration, background noise, or files that fail platform checks. Our services cover narrator casting, studio recording, editing, mastering and distribution. You provide the manuscript. We deliver clean, distribution-ready files that sound like a published audiobook."
+          description="Most self produced audiobooks lose listeners early because of flat narration, background noise, or files that fail platform checks. Our services cover narrator casting, studio recording, editing, mastering and distribution. You provide the manuscript. We deliver clean, distribution ready files that sound like a published audiobook."
           firstButtonText="Get a Audiobook Quote"
           secondButtonText="Schedule a Consultation"
           guarantees={defaultGuarantees}

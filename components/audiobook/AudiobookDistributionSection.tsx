@@ -146,7 +146,7 @@ export default function AudiobookDistributionSection() {
           className="mt-12 max-w-4xl mx-auto"
         >
           <p className="text-sm sm:text-base text-ink-muted leading-relaxed text-center">
-            Prefer to publish yourself? We deliver upload-ready files and metadata for ACX, Findaway Voices or any distributor. If you want us to handle it, we manage the upload and confirm each listing is live.
+            Prefer to publish yourself? We deliver upload ready files and metadata for ACX, Findaway Voices or any distributor. If you want us to handle it, we manage the upload and confirm each listing is live.
           </p>
         </AnimatedReveal>
       </Container>

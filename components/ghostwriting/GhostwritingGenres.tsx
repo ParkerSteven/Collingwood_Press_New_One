@@ -20,7 +20,7 @@ export default function GhostwritingGenres() {
                     className="flex flex-col items-center text-center max-w-3xl mx-auto"
                 >
                     <span className="font-sans text-xs uppercase tracking-[0.16em] font-bold text-[#E7665D]">
-                        Genre-Specific Expertise
+                        Genre Specific Expertise
                     </span>
 
                     <h2 className="mt-4 font-serif text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.14] text-ink">

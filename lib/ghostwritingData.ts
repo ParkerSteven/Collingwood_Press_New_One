@@ -91,7 +91,7 @@ export const stepsData = [
         image: "/ghostwritingpageIcon/Next Step Publishing Path.jpg",
         title: "6. Publishing Path",
         description:
-            "We can then talk through traditional submission, hybrid publishing, or self-publishing, and the editing, cover design, formatting, and distribution support available.",
+            "We can then talk through traditional submission, hybrid publishing, or self publishing, and the editing, cover design, formatting, and distribution support available.",
     },
 ];
 
@@ -130,19 +130,49 @@ export const deliverablesData = [
 ];
 
 
+
 export const humanGhostwritingData = [
     {
         id: 1,
-        image: "/ghostwritingpageIcon/AI writing.jpg",
-        description:
-            "AI tools can produce text fast. They cannot capture your voice, make the judgment calls behind a book's argument, or hold an emotional tone across a full-length book. A memoir that reads like software does not sound like its subject.",
+        heading: "Human Ghostwriting",
+        image: "/ghostwritingpageIcon/Human Writer.webp",
+        theme: "orange",
+        points: [
+            {
+                id: 1,
+                icon: "users",
+                description:
+                    "A human ghostwriter takes time to understand your experiences, perspective, and the unique voice you want your book to reflect.",
+            },
+            {
+                id: 2,
+                icon: "book",
+                description:
+                    "They organize your ideas into a well-structured manuscript, ensuring every chapter connects naturally with the overall story.",
+            },
+        ],
     },
     {
         id: 2,
-        image: "/ghostwritingpageIcon/Human Writer.jpg",
-        description:
-            "A human ghostwriter interviews you, learns your perspective, and responds to your feedback. The book sounds like it was written by someone who knows your subject, because it was written by someone who spent months learning it from you.",
+        heading: "AI Writing Tools",
+        image: "/ghostwritingpageIcon/AI Writer.webp",
+        theme: "blue",
+        points: [
+            {
+                id: 1,
+                icon: "zap",
+                description:
+                    "AI can generate content quickly, but often misses your unique voice, personal experiences, and emotional depth.",
+            },
+            {
+                id: 2,
+                icon: "alert",
+                description:
+                    "Without proper direction, AI may struggle to maintain consistent tone, accurate details, and narrative flow throughout a book.",
+            },
+        ],
     },
+
 ];
 
 
@@ -152,14 +182,14 @@ export const pricingFactorsData = [
         number: "01",
         title: "Manuscript Length",
         description:
-            "A 30,000-word business book costs less than a 90,000-word novel.",
+            "A 30,000 word business book costs less than a 90,000-word novel.",
     },
     {
         id: 2,
         number: "02",
         title: "Genre and Complexity",
         description:
-            "Research-heavy nonfiction and multi-character fiction require more time than a straightforward personal narrative.",
+            "Research heavy nonfiction and multi-character fiction require more time than a straightforward personal narrative.",
     },
     {
         id: 3,

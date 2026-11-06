@@ -763,7 +763,7 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
 
             <p id="popup-subheading" className="lead-popup-sub">
               Get the checklist 1,500+ authors have used to spot scams and
-              budget their launch correctly — before they sign with anyone.
+              budget their launch correctly before they sign with anyone.
             </p>
 
             <form
@@ -879,7 +879,7 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
 
             <div className="lead-popup-meta">
               <span>
-                Instant download. We&apos;ll send two short follow-up emails —
+                Instant download. We&apos;ll send two short follow up emails
                 unsubscribe anytime.
               </span>
               <button type="button" onClick={handleClose}>

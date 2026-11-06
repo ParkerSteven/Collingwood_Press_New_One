@@ -20,7 +20,7 @@ const services = [
     image: "/CollingwoodPressIcons/Ghostwriting.png",
     title: "Ghostwriting Services",
     description:
-      "Our ghostwriting services match you with a professional writer who interviews you, captures your voice and delivers a complete, publication-ready manuscript.",
+      "Our ghostwriting services match you with a professional writer who interviews you, captures your voice and delivers a complete, publication ready manuscript.",
     link: "/ghostwriting/",
     cta: "Explore our ghostwriting services",
   },
@@ -38,7 +38,7 @@ const services = [
     image: "/CollingwoodPressIcons/Marketing.png",
     title: "Book Marketing, PR & Launch Strategy",
     description:
-      "Our professional book marketing services combine data-driven campaigns and targeted PR to maximize your visibility.",
+      "Our professional book marketing services combine data driven campaigns and targeted PR to maximize your visibility.",
     link: "/marketing/",
     cta: "Explore our marketing services",
   },

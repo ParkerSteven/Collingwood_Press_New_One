@@ -135,7 +135,7 @@ export default function Footer() {
 
               <p className="text-[0.78rem] leading-relaxed text-slate-300 max-w-sm font-sans mt-3">
                 A boutique independent press dedicated to shepherding fine manuscripts into print with
-                trade-grade editing, bespoke typography, and international distribution.
+                trade grade editing, bespoke typography, and international distribution.
               </p>
             </div>
             {/* Accreditation Badges */}
@@ -250,7 +250,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3.5 lg:col-span-2">
             <h3 className="font-serif text-[1.05rem] font-bold text-white tracking-tight flex gap-2">
               <span className="w-2 h-2 mt-2 rounded-full bg-[#E7665D] shrink-0" />
-              Author Resource Library
+              Author Resources
             </h3>
             <ul className="flex flex-col gap-2 mt-1">
               {authorLibraryLinks.map((link) => (

@@ -23,7 +23,7 @@ export default function Hero({
           items-center justify-center
           gap-10
           lg:grid-cols-[1.12fr_0.88fr]
-          lg:gap-12 xl:gap-14
+          lg:gap-8 xl:gap-10
         "
       >
         <HeroAnimated {...props} />

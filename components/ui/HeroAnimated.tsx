@@ -21,13 +21,14 @@ const defaultTitle = (
 
 const defaultDescription = (
     <>
-        You wrote the book. You should own what comes next.
+        <span className="text-white font-semibold">You wrote the book. You should own what comes next.</span>
         <br />
-        The Collingwood Press provides full-service book publishing
+        The Collingwood Press provides full service book publishing
         with professional writing, senior editorial support,
         original cover design, and worldwide marketing and
-        distribution. You retain 100% of your copyright
-        and royalties.
+        distribution.<br />
+        <span className="text-white font-semibold"> You retain 100% of your copyright
+            and royalties.</span>
     </>
 );
 

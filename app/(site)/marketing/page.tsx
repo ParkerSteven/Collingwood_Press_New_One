@@ -51,7 +51,7 @@ export default function Page() {
                             book marketing consultant
                             on our team will review your genre positioning, your
                             current market presence, and your goals, then deliver
-                            a clear assessment of what a results-driven campaign
+                            a clear assessment of what a results driven campaign
                             would look like for your title. The plan is free.
                             The conversation starts when you are ready.
                         </>

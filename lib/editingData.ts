@@ -86,7 +86,7 @@ export const editingSteps = [
     },
     {
         id: 2,
-        title: "Get a Fixed-Price Quote",
+        title: "Get a Fixed Price Quote",
         description:
             "An editor reads your opening pages, confirms the level of work and sends a quote with the scope, price and timeline.",
         needsVerification: true,

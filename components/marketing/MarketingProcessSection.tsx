@@ -10,7 +10,7 @@ export default function MarketingProcessSection() {
         <section className="py-20 lg:py-24 bg-white border-b border-line">
             <Container className="flex flex-col gap-12">
                 <SectionHeading
-                    eyebrow="Four-Stage Campaign Framework"
+                    eyebrow="Four Stage Campaign Framework"
                     title={
                         <>
                             How Our{" "}

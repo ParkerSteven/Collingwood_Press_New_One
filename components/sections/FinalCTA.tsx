@@ -26,7 +26,7 @@ export default function FinalCTA({
     <>
       Send us your manuscript or your opening chapters.
       A senior editor will review your work and give you
-      a candid, no-obligation assessment of where it
+      a candid, no obligation assessment of where it
       stands and what it needs. Whether you are weeks
       from publication or still shaping a first draft,
       we will help you map the clearest path forward.
@@ -41,7 +41,7 @@ export default function FinalCTA({
     <section
       id="final-cta"
       aria-labelledby="final-cta-heading"
-      className="hero-gradient relative overflow-hidden border-b border-white/10 bg-[#0D1527] py-20 text-white sm:py-28 lg:py-32"
+      className="hero-gradient relative overflow-hidden border-b border-white/10 bg-[#0D1527] py-14 text-white sm:py-18 lg:py-20"
     >
       {/* Ambient Background Effects */}
       <div

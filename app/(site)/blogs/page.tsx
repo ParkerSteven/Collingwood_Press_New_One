@@ -81,7 +81,7 @@ export async function generateMetadata({ searchParams }: BlogsPageProps): Promis
     };
 }
 
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 12;
 const WP_POSTS_ENDPOINT = 'https://collingwoodblogs.hambonepublishers.com/wp-json/wp/v2/posts';
 const WP_REQUEST_HEADERS = {
     Accept: 'application/json',
@@ -133,9 +133,11 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
     try {
         const fetchPostsPage = async (page: number): Promise<PostsPageResult> => {
             const params = new URLSearchParams({
-                _embed: '1',
+                _embed: "1",
                 page: String(page),
                 per_page: String(POSTS_PER_PAGE),
+                orderby: "date",
+                order: "desc",
             });
 
             const MAX_RETRIES = 3;
@@ -274,8 +276,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
     const plainText = (html: string): string =>
         decodeHTMLEntities(html.replace(/<[^>]*>/g, '').trim());
 
-    const featuredPost = posts[0];
-    const otherPosts = posts.slice(1);
+    const sortedPosts = [...posts].sort(
+        (a, b) =>
+            new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
 
     return (
         <>
@@ -305,7 +309,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                     <div className="mb-10 flex flex-col justify-between gap-5 border-b border-[#dededb] pb-7 sm:flex-row sm:items-end">
                         <div>
                             <div className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.19em] text-[#e76860]">
-                                <span className="h-px w-7 bg-[#e76860]" /> From Our Journal
+                                From Our Journal
                             </div>
                             <h2 className="font-serif text-3xl font-bold tracking-tight text-[#18233a] sm:text-4xl">
                                 {currentPage === 1 ? 'Latest Publishing Articles' : `Publishing Articles – Page ${currentPage}`}
@@ -313,9 +317,6 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                             <p className="mt-3 text-sm leading-7 text-[#697180]">
                                 Insights and inspiration for every chapter of your author journey.
                             </p>
-                        </div>
-                        <div className="inline-flex items-center gap-2 self-start rounded-full border border-[#e8e0dc] bg-white px-4 py-2 text-xs font-semibold text-[#646b77] sm:self-auto">
-                            <BookOpen className="h-4 w-4 text-[#e76860]" /> Page {currentPage} of {totalPages}
                         </div>
                     </div>
 
@@ -334,73 +335,125 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                         </div>
                     )}
 
-                    {!fetchError && featuredPost && (
-                        <div className="mb-14 overflow-hidden rounded-lg border border-[#ebe4df] bg-white shadow-[0_14px_45px_rgba(17,24,39,0.055)]">
-                            <Link href={`/blogs/${featuredPost.slug}/`} className="group grid md:grid-cols-2">
-                                <div className="relative h-[220px] sm:h-[260px] md:h-auto overflow-hidden ">
-                                    <Image
-                                        src={getImageUrl(featuredPost)}
-                                        alt={plainText(featuredPost.title.rendered)}
-                                        fill
-                                        loading="lazy"
-                                        className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.04]"
-                                        sizes="(min-width: 768px) 50vw, 100vw"
-                                    />
 
-                                    <span className="absolute left-5 top-5 z-10 rounded-sm bg-[#eb6c63] px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white">
-                                        Featured Story
-                                    </span>
-                                </div>
-                                <div className="flex flex-col justify-center px-7 py-10 sm:px-10 lg:px-14">
-                                    <span className="mb-5 flex items-center gap-2 text-xs font-medium text-[#7d8490]">
-                                        <CalendarDays className="h-4 w-4 text-[#eb6c63]" /> {formatDate(featuredPost.date)}
-                                    </span>
-                                    <h3 className="font-serif text-3xl font-bold leading-tight text-[#172238] transition-colors group-hover:text-[#d85b53] sm:text-4xl">
-                                        {plainText(featuredPost.title.rendered)}
-                                    </h3>
-                                    <p className="mt-5 line-clamp-4 text-sm leading-8 text-[#717784] sm:text-base">
-                                        {plainText(featuredPost.excerpt.rendered)}
-                                    </p>
-                                    <span className="mt-8 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.12em] text-[#e26860]">
-                                        Read Full Article <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                    </span>
-                                </div>
-                            </Link>
-                        </div>
-                    )}
-
-                    {!fetchError && otherPosts.length > 0 && (
-                        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-                            {otherPosts.map((post) => (
+                    {/* ALL BLOG POSTS - LATEST FIRST */}
+                    {!fetchError && sortedPosts.length > 0 && (
+                        <div
+                            className="
+      grid grid-cols-1
+      gap-5
+      sm:grid-cols-2
+      lg:grid-cols-3
+      xl:grid-cols-4
+    "
+                        >
+                            {sortedPosts.map((post) => (
                                 <Link
                                     key={post.id}
                                     href={`/blogs/${post.slug}/`}
-                                    className="group flex h-full flex-col overflow-hidden rounded-md border border-[#eae4df] bg-white shadow-[0_6px_20px_rgba(17,24,39,0.035)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(17,24,39,0.1)]"
+                                    className="
+          group flex h-full flex-col
+          overflow-hidden rounded-md
+          border border-[#eae4df]
+          bg-white
+          shadow-[0_6px_20px_rgba(17,24,39,0.035)]
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:border-[#eb6c63]/40
+          hover:shadow-[0_16px_36px_rgba(17,24,39,0.1)]
+        "
                                 >
-                                    <div className="relative aspect-[16/10] overflow-hidden bg-[#eeece8]">
+                                    {/* BLOG IMAGE */}
+                                    <div
+                                        className="
+            relative aspect-[16/10]
+            overflow-hidden bg-[#eeece8]
+          "
+                                    >
                                         <Image
                                             src={getImageUrl(post)}
                                             alt={plainText(post.title.rendered)}
                                             fill
                                             loading="lazy"
-                                            decoding="async"
-                                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                            sizes="
+              (min-width: 1280px) 25vw,
+              (min-width: 1024px) 33vw,
+              (min-width: 640px) 50vw,
+              100vw
+            "
+                                            className="
+              object-cover
+              transition-transform duration-500
+              group-hover:scale-105
+            "
                                         />
-                                        <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#eb6c63] transition-all duration-500 group-hover:w-full" />
+
+                                        {/* HOVER ACCENT */}
+                                        <span
+                                            className="
+              absolute bottom-0 left-0
+              h-1 w-0 bg-[#eb6c63]
+              transition-all duration-500
+              group-hover:w-full
+            "
+                                        />
                                     </div>
-                                    <div className="flex flex-1 flex-col p-7">
-                                        <span className="mb-4 flex items-center gap-2 text-xs text-[#838995]">
-                                            <CalendarDays className="h-4 w-4 text-[#e96961]" /> {formatDate(post.date)}
+
+                                    {/* BLOG CONTENT */}
+                                    <div className="flex flex-1 flex-col p-5">
+                                        {/* DATE */}
+                                        <span
+                                            className="
+              mb-3 flex items-center gap-2
+              text-[11px] text-[#838995]
+            "
+                                        >
+                                            <CalendarDays className="h-3.5 w-3.5 shrink-0 text-[#e96961]" />
+                                            {formatDate(post.date)}
                                         </span>
-                                        <h3 className="line-clamp-3 font-serif text-[23px] font-bold leading-[1.32] text-[#172238] transition-colors group-hover:text-[#d85b53]">
+
+                                        {/* TITLE */}
+                                        <h3
+                                            className="
+              line-clamp-3
+              font-serif text-[19px] font-bold
+              leading-[1.35] text-[#172238]
+              transition-colors
+              group-hover:text-[#d85b53]
+            "
+                                        >
                                             {plainText(post.title.rendered)}
                                         </h3>
-                                        <p className="mt-4 line-clamp-3 flex-1 text-sm leading-7 text-[#737a85]">
+
+                                        {/* EXCERPT */}
+                                        <p
+                                            className="
+              mt-3 line-clamp-3 flex-1
+              text-[13px] leading-6
+              text-[#737a85]
+            "
+                                        >
                                             {plainText(post.excerpt.rendered)}
                                         </p>
-                                        <span className="mt-7 inline-flex items-center gap-2 border-t border-[#eee9e6] pt-5 text-[11px] font-bold uppercase tracking-widest text-[#e26860]">
-                                            Read More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+
+                                        {/* READ MORE */}
+                                        <span
+                                            className="
+              mt-5 inline-flex items-center gap-2
+              border-t border-[#eee9e6]
+              pt-4 text-[10px] font-bold
+              uppercase tracking-widest
+              text-[#e26860]
+            "
+                                        >
+                                            Read More
+                                            <ArrowRight
+                                                className="
+                h-4 w-4
+                transition-transform duration-300
+                group-hover:translate-x-1
+              "
+                                            />
                                         </span>
                                     </div>
                                 </Link>

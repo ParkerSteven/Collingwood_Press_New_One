@@ -60,7 +60,7 @@ export default function PublishingAdvantages() {
                                 amount={0.2}
                             >
                                 <p className="mt-6 max-w-lg font-sans text-sm leading-[1.9] text-ink-soft sm:text-base">
-                                    Not every self-publishing company operates
+                                    Not every self publishing company operates
                                     with the same standards. Here is what sets
                                     our model apart and why authors trust us
                                     with their manuscripts.

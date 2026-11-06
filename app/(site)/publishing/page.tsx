@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 
 const defaultTitle = (
     <>
-        Professional Book Publishing Services for <br />
+        Book Publishing Services for  <span className="text-[#E7665D] italic font-normal inline">First </span> <br />
         <span className="text-[#E7665D] italic font-normal inline">
-            First-Time Authors
+            Time Authors
             <br className="hidden sm:block" />
         </span>
     </>
@@ -35,13 +35,13 @@ export default function PublishingPage() {
             <main className="bg-white text-ink">
                 <Hero
                     className="publishing-hero-gradient"
-                    eyebrow="Full-Service Independent Trade Publishing"
+                    eyebrow="Full Service Independent Trade Publishing"
                     title={defaultTitle}
                     highlightText="Ghostwriting Services"
                     titleSuffix=""
-                    description="You wrote the book. Now let’s publish it the right way. Our book publishing services turn your raw draft into a retail-ready hardcover, paperback, and eBook. We handle the full production process while you retain 100% of your copyright and royalties."
+                    description="You wrote the book. Now let’s publish it the right way. Our book publishing services turn your raw draft into a retail ready hardcover, paperback, and eBook. We handle the full production process while you retain 100% of your copyright and royalties."
                     firstButtonText="Submit Manuscript for Publishing"
-                    secondButtonText="Explore The 6-Step Journey"
+                    secondButtonText="Explore The 6 Steps Journey"
                     guarantees={[
                         { text: "Ingram Global Wholesale Distribution", icon: CheckCircle2 },
                         { text: "100% Author Copyright & Royalties", icon: ShieldCheck },
@@ -72,7 +72,7 @@ export default function PublishingPage() {
                     }
                     description={
                         <>
-                            Send us your manuscript or your opening chapters. A senior editor will review your work and provide a candid, no-obligation assessment of where it stands and what it needs. Whether you are weeks from publication or still refining your first draft, our{" "}
+                            Send us your manuscript or your opening chapters. A senior editor will review your work and provide a candid, no obligation assessment of where it stands and what it needs. Whether you are weeks from publication or still refining your first draft, our{" "}
                             book publishing services{" "}
                             team will map the clearest path from manuscript to marketplace. The right publishing partner makes all the difference, and we are ready to prove it.
                         </>

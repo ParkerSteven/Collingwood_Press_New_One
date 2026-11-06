@@ -76,7 +76,7 @@ export default function PrivacyChoicesPage() {
 
                 <div className="flex flex-col gap-4">
                   <p>
-                    The Collingwood Press uses third-party
+                    The Collingwood Press uses third party
                     advertising and analytics technologies on
                     our website. These include tools like
                     Microsoft Advertising (Universal Event

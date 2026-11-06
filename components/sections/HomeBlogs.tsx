@@ -30,7 +30,7 @@ const blogPosts = [
         imageAlt: "Professional manuscript editing process",
         title: "Book Marketing in 2026: Costs & Strategies to Sell Books",
         description:
-            "Plan, budget and launch with a proven book marketing process. Costs, timelines, checklists and strategies for self-published and traditionally published authors.",
+            "Plan, budget and launch with a proven book marketing process. Costs, timelines, checklists and strategies for self published and traditionally published authors.",
         href: "https://www.thecollingwoodpress.com/blogs/book-marketing-guide/",
     },
     {
@@ -48,7 +48,7 @@ const blogPosts = [
         imageAlt: "Professional book marketing strategies",
         title: "How Long Does It Take to Publish a Book? 2026 Timeline",
         description:
-            "How Long Does It Take to Publish a Book? Check 2026 timelines for self-publishing, traditional publishing, Amazon KDP, and every major step.",
+            "How Long Does It Take to Publish a Book? Check 2026 timelines for self publishing, traditional publishing, Amazon KDP, and every major step.",
         href: "https://www.thecollingwoodpress.com/blogs/how-long-does-it-take-to-publish-a-book/",
     },
     {

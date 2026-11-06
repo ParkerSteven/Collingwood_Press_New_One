@@ -16,7 +16,7 @@ export default function AuthorBrandingSection() {
                         <div className="flex flex-col gap-6">
                             <div className="inline-flex items-center gap-3">
                                 <span className="font-sans text-xs uppercase tracking-[0.18em] font-bold text-[#E7665D]">
-                                    Long-Term Author Growth
+                                    Long Term Author Growth
                                 </span>
                             </div>
 
@@ -59,7 +59,7 @@ export default function AuthorBrandingSection() {
 
                             {/* CONCLUSION */}
                             <p className="text-sm sm:text-base text-ink-soft leading-relaxed font-sans">
-                                These are not add-ons. They are the
+                                These are not add ons. They are the
                                 infrastructure that separates authors who
                                 sell one book from authors who build a
                                 readership. Our book marketing agency builds
@@ -89,17 +89,17 @@ export default function AuthorBrandingSection() {
                             </div>
 
                             <h3 className="font-serif text-2xl font-bold text-white">
-                                Long-Term Author Growth
+                                Long Term Author Growth
                             </h3>
 
                             <span className="text-xs uppercase tracking-widest text-[#F08A82] font-semibold mt-1">
-                                Beyond Single-Book Marketing
+                                Beyond Single Book Marketing
                             </span>
 
                             <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xs">
                                 Build a recognizable author identity,
                                 grow your owned audience, and create
-                                long-term systems that support every
+                                long term systems that support every
                                 future book release.
                             </p>
 
@@ -142,7 +142,7 @@ export default function AuthorBrandingSection() {
                                         className="text-[#E7665D]"
                                     />
                                     <span>
-                                        Cross-Title Promotion Strategy
+                                        Cross Title Promotion Strategy
                                     </span>
                                 </div>
                             </div>

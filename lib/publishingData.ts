@@ -8,11 +8,12 @@ import {
 } from "lucide-react";
 import {
 } from "lucide-react";
+
 export const publishingRoadmap = [
     {
         number: "01",
         title: "1. Manuscript Preparation",
-        tagline: "Editorial & Intake Sign-Off",
+        tagline: "Editorial & Intake Sign Off",
         description:
             "Your manuscript is reviewed, formatting issues are fixed, and a clean master document is prepared before design work begins.",
         milestone: "Certified Clean Master Document",
@@ -32,7 +33,7 @@ export const publishingRoadmap = [
         title: "3. Formatting & Typesetting",
         tagline: "Adobe InDesign Precision",
         description:
-            "The book is professionally typeset in Adobe InDesign. Print-ready and eBook files are prepared for review.",
+            "The book is professionally typeset in Adobe InDesign. Print ready and eBook files are prepared for review.",
         milestone: "Full Bound Galley Proof for Author Review",
         image: "/CollingwoodPressIcons/Formatting & Typesetting.png",
     },
@@ -60,11 +61,10 @@ export const publishingRoadmap = [
         tagline: "Publication Day Rollout",
         description:
             "Retail pages go live, physical and digital editions become available, and your book is ready for sale.",
-        milestone: "Shelf-Ready Physical & Digital Book",
+        milestone: "Shelf Ready Physical & Digital Book",
         image: "/CollingwoodPressIcons/Launch & Release.png",
     },
 ];
-
 
 export const services = [
     {
@@ -121,7 +121,7 @@ export const publishingFeatures = [
     {
         id: 4,
         icon: FileText,
-        title: "Author Sign-Off",
+        title: "Author Sign Off",
         description:
             "No book goes live without your approval on the final galley proof.",
     },

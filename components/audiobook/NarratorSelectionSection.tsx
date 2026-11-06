@@ -25,7 +25,7 @@ export default function NarratorSelectionSection() {
               <>
                 Professional Voice Actor{" "}
                 <span className="italic text-[#E7665D]">
-                  or Author-Narrated
+                  or Author Narrated
                 </span>
               </>
             }
@@ -66,7 +66,7 @@ export default function NarratorSelectionSection() {
               </div>
             </AnimatedReveal>
 
-            {/* Author-Narrated */}
+            {/* Author Narrated */}
             <AnimatedReveal
               y={30}
               duration={0.65}
@@ -85,11 +85,11 @@ export default function NarratorSelectionSection() {
               </span>
               <div className="flex-1">
                 <h3 className="font-serif pt-2 text-[1.2rem] font-bold text-ink leading-snug mb-3">
-                  Author-Narrated Audiobook
+                  Author Narrated Audiobook
                 </h3>
 
                 <p className="text-sm sm:text-sm text-ink-soft leading-relaxed">
-                  Better for memoirs, personal nonfiction and authors with a strong speaking presence. You get guided recording support and pronunciation review. Post-production quality stays the same as professional narrator projects.
+                  Better for memoirs, personal nonfiction and authors with a strong speaking presence. You get guided recording support and pronunciation review. Post production quality stays the same as professional narrator projects.
                 </p>
               </div>
             </AnimatedReveal>

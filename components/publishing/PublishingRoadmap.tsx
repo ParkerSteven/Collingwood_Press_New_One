@@ -61,7 +61,7 @@ export default function PublishingRoadmap() {
                     >
                         <p className="mt-5 max-w-[650px] font-sans text-sm leading-[1.8] text-slate-300 sm:text-base">
                             Our book publishing services follow a
-                            transparent, six-phase roadmap so you
+                            transparent, six phase roadmap so you
                             always know exactly where your project
                             stands and what comes next.
                         </p>
@@ -196,7 +196,7 @@ export default function PublishingRoadmap() {
                                     <div className="min-w-0 flex-1">
                                         <span
                                             className="
-                block text-[9px] font-bold
+                block text-[12px] font-bold
                 uppercase tracking-[0.08em]
                 text-[#F07870]
               "

@@ -16,14 +16,14 @@ export default function SelfPublishedAuthors() {
                             <>
                                 Book Editing Services{" "}
                                 <span className="italic text-[#E7665D]">
-                                    for Self-Published Authors
+                                    for Self Published Authors
                                 </span>{" "}
 
                             </>
                         }
                         description={
                             <>
-                                The Collingwood Press provides editing services for independent and self-published authors, whether you are finishing a first draft or preparing the next book in a series. We edit fiction, nonfiction and children&apos;s books, including picture books, chapter books and middle grade, always shaped around the readers each book is written for.
+                                The Collingwood Press provides editing services for independent and self published authors, whether you are finishing a first draft or preparing the next book in a series. We edit fiction, nonfiction and children&apos;s books, including picture books, chapter books and middle grade, always shaped around the readers each book is written for.
                             </>
                         }
                     />

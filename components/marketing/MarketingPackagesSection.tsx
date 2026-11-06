@@ -95,7 +95,7 @@ export default function MarketingPackagesSection() {
                                 <div className="flex items-center gap-2 mb-2.5 text-xs font-sans text-[#F08A82]">
                                     <CheckCircle2 size={14} />
                                     <span className="font-semibold">
-                                        Budget-Focused Marketing
+                                        Budget Focused Marketing
                                     </span>
                                 </div>
 
@@ -116,7 +116,7 @@ export default function MarketingPackagesSection() {
                             <div className="mt-5 pt-3 border-t border-white/10 flex items-center gap-2 text-[11px] text-[#F08A82] font-medium">
                                 <CheckCircle2 size={13} />
                                 <span>
-                                    Goal-Based Planning and Custom Pricing
+                                    Goal Based Planning and Custom Pricing
                                 </span>
                             </div>
                         </div>

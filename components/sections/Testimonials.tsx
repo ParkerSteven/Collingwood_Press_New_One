@@ -20,7 +20,7 @@ export default function Testimonials() {
               <AnimatedReveal y={15} duration={0.5} delay={0}>
                 <div className="mb-5 flex items-center gap-3">
                   <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#E7665D]">
-                    Author-First Publishing, Built Around Your Rights
+                    Author First Publishing, Built Around Your Rights
                   </span>
                 </div>
               </AnimatedReveal>
@@ -51,7 +51,7 @@ export default function Testimonials() {
               {/* Description 2 */}
               <AnimatedReveal y={20} duration={0.6} delay={0.3}>
                 <p className="max-w-lg text-left font-sans text-[0.9rem] pt-4 leading-[1.9] text-ink-soft">
-                  The Collingwood Press brings major-house editorial
+                  The Collingwood Press brings major house editorial
                   standards to every project while leaving you in
                   full control of your work. You work with the same
                   small team from the first manuscript review through

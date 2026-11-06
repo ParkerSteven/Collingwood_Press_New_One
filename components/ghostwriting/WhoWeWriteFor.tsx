@@ -40,11 +40,11 @@ export default function WhoWeWriteFor() {
                             amount={0.2}
                         >
                             <p>
-                                Not all of our clients are full-time writers.
+                                Not all of our clients are full time writers.
                                 They are executives, consultants, entrepreneurs,
-                                and subject-matter experts with a book in them
+                                and subject matter experts with a book in them
                                 but no time or writing background to draft
-                                60,000 words. Some are first-time authors who
+                                60,000 words. Some are first time authors who
                                 know their story. Others are public figures
                                 who want a book that matches the credibility
                                 they have built.

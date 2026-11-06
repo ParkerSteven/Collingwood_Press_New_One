@@ -32,8 +32,8 @@ const templates: Template[] = [
 
 const services = [
   { number: "01", title: "Professional Editing", description: "Developmental, line, and copy editing that gives your manuscript the attention it deserves.", href: "/editing/", action: "Explore Editing" },
-  { number: "02", title: "Interior Formatting", description: "Beautiful, professional interiors tailored to your book, from manuscript to print-ready files.", href: "/publishing/", action: "Explore Formatting" },
-  { number: "03", title: "Custom Cover Design", description: "Stand out on the shelf with a polished cover designed for your audience and genre.", href: "/publishing/", action: "Explore Cover Design" },
+  { number: "02", title: "Book Publishing", description: "Get your book published with professional support from preparation through distribution and launch.", href: "/publishing/", action: "Explore Publishing" },
+  { number: "03", title: "Book Marketing", description: "Promote your book with campaigns that build visibility, attract readers, and drive sales.", href: "/marketing/", action: "Explore Marketing" },
 ];
 
 function SectionTitle({ eyebrow, children, light = false, description }: { eyebrow: string; children: ReactNode; light?: boolean; description?: string }) {
@@ -160,7 +160,7 @@ export default function ResourceLibrary() {
     />
 
     <section id="browse-templates" className="scroll-mt-20 bg-white py-18 sm:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8">
-      <SectionTitle eyebrow="The Free Resource Collection" description="From your first draft to your book launch, find professionally structured tools made for real authors.">Find the Right Resource <br/> <span className="text-[#E7665D]">For Your Book</span></SectionTitle>
+      <SectionTitle eyebrow="The Free Resource Collection" description="From your first draft to your book launch, find professionally structured tools made for real authors.">Find the Right Resource <br /> <span className="text-[#E7665D]">For Your Book</span></SectionTitle>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{templates.map(template => <article key={template.title} className="bg-paper-card group flex flex-col rounded-xl border border-[#eee7df] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#eab3a8] hover:shadow-xl">
         <div className="mb-8 flex items-start justify-between"><DocumentIcon type={template.type} />{template.badge && <span className="rounded-full bg-[#ffe9e4] px-2.5 py-1 text-[9px] font-extrabold tracking-wider text-[#d45b52]">{template.badge}</span>}</div>
         <h3 className="text-lg font-semibold leading-snug text-[#17243c]">{template.title}</h3>

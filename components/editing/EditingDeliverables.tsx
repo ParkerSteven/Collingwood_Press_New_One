@@ -36,7 +36,7 @@ export default function EditingDeliverables() {
                     <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
                         {[
                             {
-                                title: "Marked-up Manuscript",
+                                title: "Marked up Manuscript",
                                 icon: FileCheck2,
                                 badge: "Tracked Changes",
                                 description:
@@ -71,9 +71,9 @@ export default function EditingDeliverables() {
                                     "You talk to your assigned editor by phone and email about any editorial question, with no support queue in between.",
                             },
                             {
-                                title: "One Round of Follow-up",
+                                title: "One Round of Follow up",
                                 icon: CheckCheck,
-                                badge: "Post-Delivery",
+                                badge: "Post Delivery",
                                 description:
                                     "After delivery, one round for questions, clarifications or a brief additional review.",
                             },
@@ -170,7 +170,7 @@ export default function EditingDeliverables() {
                                         size={16}
                                         className="text-[#FFAAA2]"
                                     />
-                                    <span>48-Hour Turnaround</span>
+                                    <span>48 Hours Turnaround</span>
                                 </div>
 
                                 <div className="flex items-center gap-2">

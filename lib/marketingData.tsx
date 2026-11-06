@@ -35,9 +35,9 @@ export const bookMarketingServices = [
         badge: "Social Growth",
         description: (
             <>
-                Platform-native content and creator partnerships matched to
+                Platform native content and creator partnerships matched to
                 your genre, with every post pointing readers to your Amazon
-                page, email list, or pre-order link.
+                page, email list, or pre order link.
             </>
         ),
         href: "https://www.thecollingwoodpress.com/blogs/proven-digital-marketing-strategies/",
@@ -88,7 +88,7 @@ export const bookMarketingServices = [
         badge: "Book Launch",
         description: (
             <>
-                A launch plan that sequences ARC copies, pre-order offers,
+                A launch plan that sequences ARC copies, pre order offers,
                 promotional pricing, social, and ads over several weeks.
                 Advance readers get free copies with no obligation to review.
             </>
@@ -116,9 +116,9 @@ export const authorBrandingPillars = [
             "Press kit and media page built for podcast hosts, journalists, and event organizers.",
     },
     {
-        title: "Cross-Title Promotion Strategy",
+        title: "Cross Title Promotion Strategy",
         description:
-            "Cross-title promotion strategy so every new book lifts backlist sales.",
+            "Cross title promotion strategy so every new book lifts backlist sales.",
     },
 ];
 
@@ -127,15 +127,15 @@ export const marketingHeroProps = {
 
     eyebrow: "Strategic Book Marketing for Independent Authors",
 
-    title: "Professional",
+    title: "Book Marketing Services ",
 
-    highlightText: "Book Marketing Services",
+    highlightText: "for Self-Published Authors",
 
-    titleSuffix: "for Self-Published Authors",
+    titleSuffix: "",
 
     description: (
         <p>
-            Published your book, or about to launch, and not sure how readers will find it? At The Collingwood Press, our book marketing services help self-published authors reach the right readers. We build one plan around your book, genre, and goals, and you&apos;ll see what we will do and what it costs before work begins
+            Published your book, or about to launch, and not sure how readers will find it? At The Collingwood Press, our book marketing services help self published authors reach the right readers. We build one plan around your book, genre, and goals, and you&apos;ll see what we will do and what it costs before work begins
         </p>
     ),
 
@@ -177,9 +177,9 @@ export const marketingFAQs = [
     },
     {
         question:
-            "What do book marketing services for self-published authors include?",
+            "What do book marketing services for self published authors include?",
         answer:
-            "Book marketing services for indie authors cover the same channels and tactics as any campaign, with additional focus on areas where self-published authors typically need the most help: Amazon optimization, building an email audience, and establishing credibility through reviews and media coverage. We work with self-published authors at every stage, from first launch to backlist revival.",
+            "Book marketing services for indie authors cover the same channels and tactics as any campaign, with additional focus on areas where self published authors typically need the most help: Amazon optimization, building an email audience, and establishing credibility through reviews and media coverage. We work with self published authors at every stage, from first launch to backlist revival.",
     },
     {
         question: "Can you market a book that has already been published?",
@@ -195,7 +195,7 @@ export const marketingFAQs = [
     {
         question: "Do you offer affordable book marketing services?",
         answer:
-            "Yes. Not every author needs a full multi-channel campaign. We scope affordable book marketing services around the channels most likely to produce results for your genre and budget. A focused plan built around Amazon Ads and one additional channel can produce meaningful sales movement without a large upfront investment.",
+            "Yes. Not every author needs a full multi channel campaign. We scope affordable book marketing services around the channels most likely to produce results for your genre and budget. A focused plan built around Amazon Ads and one additional channel can produce meaningful sales movement without a large upfront investment.",
     },
     {
         question: "How is performance measured?",
@@ -221,7 +221,7 @@ export const campaignFactors = [
         title: "Book stage",
         icon: CalendarDays,
         description:
-            "A pre-launch title needs different work from a backlist book with a year of sales behind it.",
+            "A pre launch title needs different work from a backlist book with a year of sales behind it.",
     },
     {
         title: "Budget",

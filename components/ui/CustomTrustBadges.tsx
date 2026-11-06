@@ -37,6 +37,7 @@ export function DefaultTrustBadges({ heading }: { heading: string }) {
                     aria-hidden="true"
                 />
 
+
                 <Link
                     href="https://www.bbb.org/us/tx/livingston/profile/book-publishers/collingwood-press-0825-1000231047/#sealclick"
                     target="_blank"
@@ -45,12 +46,13 @@ export function DefaultTrustBadges({ heading }: { heading: string }) {
                     <Image
                         src="/blue-seal.png"
                         alt="The Collingwood Press BBB Business Review"
-                        width={140}
-                        height={44}
-                        sizes="140px"
-                        className="block h-auto max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        width={190}
+                        height={60}
+                        sizes="190px"
+                        className="block h-auto max-h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                     />
                 </Link>
+
             </div>
         </div>
     );

@@ -1,8 +1,12 @@
 
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Mail, Headphones, BookOpen } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import PopupForm from "@/components/forms/popupform";
 
 const contactOptions = [
     {
@@ -17,9 +21,10 @@ const contactOptions = [
         icon: Headphones,
         title: "Audiobook Quote",
         description:
-            "Get a personalized quote for your audiobook project—fast and easy.",
+            "Get a personalized quote for your audiobook project fast and easy.",
         buttonText: "Get a Quote",
         href: "/audiobook",
+        isPopup: true,
     },
     {
         icon: BookOpen,
@@ -32,6 +37,8 @@ const contactOptions = [
 ];
 
 export default function ContactOptionsSection() {
+    const [isAudiobookPopupOpen, setIsAudiobookPopupOpen] = useState(false);
+
     return (
         <section className="border-b border-line bg-[#fdfbf7] py-16 sm:py-20 lg:py-24">
             <Container>
@@ -62,18 +69,36 @@ export default function ContactOptionsSection() {
                                     {option.description}
                                 </p>
 
-                                <Link
-                                    href={option.href}
-                                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#E7665D] px-5 py-3 font-sans text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#D8574E]"
-                                >
-                                    {option.buttonText}
-                                    <ArrowRight size={15} />
-                                </Link>
+                                {option.isPopup || option.title === "Audiobook Quote" ? (
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsAudiobookPopupOpen(true)}
+                                        className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#E7665D] px-5 py-3 font-sans text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#D8574E] cursor-pointer"
+                                    >
+                                        {option.buttonText}
+                                        <ArrowRight size={15} />
+                                    </button>
+                                ) : (
+                                    <Link
+                                        href={option.href}
+                                        className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#E7665D] px-5 py-3 font-sans text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#D8574E]"
+                                    >
+                                        {option.buttonText}
+                                        <ArrowRight size={15} />
+                                    </Link>
+                                )}
                             </AnimatedReveal>
                         );
                     })}
                 </div>
             </Container>
+
+            {/* Audiobook Quote Popup Form */}
+            <PopupForm
+                isOpen={isAudiobookPopupOpen}
+                onClose={() => setIsAudiobookPopupOpen(false)}
+                source="Contact Page - Audiobook Quote"
+            />
         </section>
     );
 }

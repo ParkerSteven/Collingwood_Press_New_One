@@ -31,14 +31,14 @@ const faqs = [
   },
   {
     question:
-      "What is the difference between hybrid, traditional and self-publishing?",
+      "What is the difference between hybrid, traditional and self publishing?",
     answer:
-      "Traditional publishing is publisher-funded, but the house keeps most of the royalties and most of the creative control. Hybrid publishing is also author-funded, and the publisher usually stays on the contract and often keeps a share of the royalties. Self-publishing leaves you as the publisher. You keep the copyright and the royalties, and you hire the team. The Collingwood Press is an assisted self-publishing company. You stay the publisher. We handle the editing, design and distribution.",
+      "Traditional publishing is publisher-funded, but the house keeps most of the royalties and most of the creative control. Hybrid publishing is also author-funded, and the publisher usually stays on the contract and often keeps a share of the royalties. Self publishing leaves you as the publisher. You keep the copyright and the royalties, and you hire the team. The Collingwood Press is an assisted self publishing company. You stay the publisher. We handle the editing, design and distribution.",
   },
   {
     question: "How much does it cost to publish a book?",
     answer:
-      "In 2026, a typical professional self-published book runs about $2,940 to $5,660, based on Reedsy’s review of more than 230,000 freelancer quotes. Editing is the largest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting and ads sit outside that range. With The Collingwood Press, the price depends on the services you choose. You fund the work, and you keep the copyright and 100% royalties. Request a free consultation for an itemized quote.",
+      "In 2026, a typical professional self published book runs about $2,940 to $5,660, based on Reedsy’s review of more than 230,000 freelancer quotes. Editing is the largest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting and ads sit outside that range. With The Collingwood Press, the price depends on the services you choose. You fund the work, and you keep the copyright and 100% royalties. Request a free consultation for an itemized quote.",
   },
   {
     question: "Where will my book be available?",
@@ -58,7 +58,7 @@ const faqs = [
   {
     question: "Can I self-publish a children's book with you?",
     answer:
-      "Yes. Children's book publishing here is a self-publishing service, not a rights deal. You can come to us with a finished manuscript, or with a story you want help writing. We match the editorial work, illustration and production to the book, then set up distribution.",
+      "Yes. Children's book publishing here is a self publishing service, not a rights deal. You can come to us with a finished manuscript, or with a story you want help writing. We match the editorial work, illustration and production to the book, then set up distribution.",
   },
 ];
 
@@ -85,7 +85,7 @@ const blogPosts = [
     number: "03",
     icon: PenLine,
     category: "Editorial Guidance",
-    title: "A First-Time Author's Guide to the Editing Process",
+    title: "A First Time Author's Guide to the Editing Process",
     description:
       "How developmental editing, line editing, copy editing and proofreading differ, and which stages your manuscript actually needs.",
     href: "", // Add actual published guide URL

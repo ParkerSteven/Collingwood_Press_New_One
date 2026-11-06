@@ -22,7 +22,7 @@ export default function MarketingServicesSection() {
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center">
                     <Eyebrow tone="coral" align="center">
-                        Multi-Channel Campaign Management
+                        Multi Channel Campaign Management
                     </Eyebrow>
 
                     <h2 className="mt-5 max-w-[850px] font-serif text-[1.9rem] font-medium leading-[1.15] tracking-tight text-ink sm:text-[2.4rem] md:text-[2.6rem] lg:text-[2.9rem]">

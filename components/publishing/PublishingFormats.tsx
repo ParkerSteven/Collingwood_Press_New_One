@@ -28,18 +28,18 @@ export default function PublishingFormats() {
 
                             const updatedFormats = [
                                 {
-                                    title: "Collector-Grade Hardcovers",
+                                    title: "Collector Grade Hardcovers",
                                     description: (
                                         <>
-                                            Premium binding with dust jacket, built for bookstores, gifting, and long-term shelf presence.
+                                            Premium binding with dust jacket, built for bookstores, gifting, and long term shelf presence.
                                         </>
                                     ),
                                 },
                                 {
-                                    title: "French-Fold Trade Paperbacks",
+                                    title: "French Fold Trade Paperbacks",
                                     description: (
                                         <>
-                                            High-quality trade paperback with professional finishes, designed for wider retail reach.
+                                            High quality trade paperback with professional finishes, designed for wider retail reach.
                                         </>
                                     ),
                                 },

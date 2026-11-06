@@ -63,7 +63,7 @@ const privacySections: PrivacySection[] = [
       {
         title: "c. Information from Other Sources",
         paragraphs: [
-          "We may supplement our data with information from third-party service providers you use, such as chat tools or social login services, and publicly available databases.",
+          "We may supplement our data with information from third party service providers you use, such as chat tools or social login services, and publicly available databases.",
         ],
       },
     ],
@@ -133,7 +133,7 @@ const privacySections: PrivacySection[] = [
     id: "third-party",
     title: "Third Party Links",
     paragraphs: [
-      "Our site may contain links to third-party websites. This Privacy Policy does not apply to those sites. Please review their privacy practices directly; we are not responsible for their content or data handling.",
+      "Our site may contain links to third party websites. This Privacy Policy does not apply to those sites. Please review their privacy practices directly; we are not responsible for their content or data handling.",
     ],
   },
   {

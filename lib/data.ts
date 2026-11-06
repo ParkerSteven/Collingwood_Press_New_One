@@ -32,7 +32,7 @@ export const benefits = [
     icon: "/CollingwoodPressIcons/Custom InDesign Typography.png",
     title: "Custom InDesign Typography",
     description:
-      "Professional interior formatting that looks print-ready.",
+      "Professional interior formatting that looks print ready.",
   },
   {
     number: "03",
@@ -90,7 +90,7 @@ export const publishingSteps = [
     title: "Cover Design & Interior Typesetting",
     icon: Palette,
     description:
-      "We design an original cover and hand-typeset your interior in Adobe InDesign. You review and approve proofs before anything goes to print.",
+      "We design an original cover and hand typeset your interior in Adobe InDesign. You review and approve proofs before anything goes to print.",
     note: "Original design & approved proofs",
   },
   {
@@ -99,7 +99,7 @@ export const publishingSteps = [
     icon: PackageCheck,
     description:
       "We prepare your final files and configure metadata, categories and keywords, then set up distribution to Amazon, IngramSpark, Barnes & Noble and other retail channels.",
-    note: "Retail-ready production",
+    note: "Retail ready production",
   },
   {
     number: "06",
@@ -235,14 +235,14 @@ export interface AIPolicyItem {
 
 export const aiPolicyData: AIPolicyItem[] = [
   {
-    title: "No AI-Generated Manuscript Content",
+    title: "No AI Generated Manuscript Content",
     description:
-      "We do not use AI text generation tools in place of human editors, ghostwriters, or proofreaders. Every line of every manuscript is written, revised, and reviewed by a professional. AI-generated prose does not meet our editorial standards and is not accepted as a deliverable.",
+      "We do not use AI text generation tools in place of human editors, ghostwriters, or proofreaders. Every line of every manuscript is written, revised, and reviewed by a professional. AI generated prose does not meet our editorial standards and is not accepted as a deliverable.",
   },
   {
     title: "Copyright Protection Against LLM Scraping",
     description:
-      "We register copyright notices, apply digital watermarks, and configure DRM protections designed to prevent unauthorized use of your published content by commercial AI training systems. Your intellectual property is protected against ingestion by third-party models.",
+      "We register copyright notices, apply digital watermarks, and configure DRM protections designed to prevent unauthorized use of your published content by commercial AI training systems. Your intellectual property is protected against ingestion by third party models.",
   },
   {
     title: "Ethical Use of Research Tools",
@@ -348,7 +348,7 @@ export const termsSections: TermsSection[] = [
   {
     title: "Liability Restrictions",
     paragraphs: [
-      "You agree to hold the Company, its employees, officers, directors, shareholders, agents, representatives, affiliates, subsidiaries, advertising, promotion, and fulfillment agencies, and third-party providers or sources of information or data, and legal advisors (the \"Company's Affiliates\") harmless from any and all losses, damages, rights, claims, and actions of any kind arising from your use of the Site.",
+      "You agree to hold the Company, its employees, officers, directors, shareholders, agents, representatives, affiliates, subsidiaries, advertising, promotion, and fulfillment agencies, and third party providers or sources of information or data, and legal advisors (the \"Company's Affiliates\") harmless from any and all losses, damages, rights, claims, and actions of any kind arising from your use of the Site.",
     ],
   },
   {
@@ -399,9 +399,9 @@ export const partners = [
 export const faqs = [
   {
     question:
-      "How does The Collingwood Press differ from a self-publishing vanity mill or self-serve platform?",
+      "How does The Collingwood Press differ from a self publishing vanity mill or self serve platform?",
     answer:
-      "Unlike automated self-publishing mills that charge exorbitant fees for automated PDF exports, The Collingwood Press operates with the ethos of a traditional literary house. Every author is assigned a dedicated senior trade editor who reads the manuscript line-by-line, discusses structural revisions directly by phone, and coordinates bespoke interior typesetting, custom cover art, and global distribution.",
+      "Unlike automated self publishing mills that charge exorbitant fees for automated PDF exports, The Collingwood Press operates with the ethos of a traditional literary house. Every author is assigned a dedicated senior trade editor who reads the manuscript line by line, discusses structural revisions directly by phone, and coordinates bespoke interior typesetting, custom cover art, and global distribution.",
   },
 
   {
@@ -422,27 +422,27 @@ export const faqs = [
   },
   {
     question:
-      "What is the difference between hybrid, traditional and self-publishing?",
+      "What is the difference between hybrid, traditional and self publishing?",
     answer:
-      "Traditional publishing is publisher-funded, but the house keeps most of the royalties and most of the creative control. Hybrid publishing is also author-funded, and the publisher usually stays on the contract and often keeps a share of the royalties. Self-publishing leaves you as the publisher. You keep the copyright and the royalties, and you hire the team.",
+      "Traditional publishing is publisher funded, but the house keeps most of the royalties and most of the creative control. Hybrid publishing is also author funded, and the publisher usually stays on the contract and often keeps a share of the royalties. Self publishing leaves you as the publisher. You keep the copyright and the royalties, and you hire the team.",
   },
   {
     question: "How much does it cost to publish a book?",
     answer:
-      "In 2026, a typical professional self-published book runs about $2,940 to $5,660, based on a review of more than 230,000 freelancer quotes. Editing is the highest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting, and ads sit outside that range.",
+      "In 2026, a typical professional self published book runs about $2,940 to $5,660, based on a review of more than 230,000 freelancer quotes. Editing is the highest cost. A custom cover most often falls between $625 and $1,250. Illustration, ghostwriting, and ads sit outside that range.",
   },
 ];
 
 export const publishingFAQs = [
   {
-    question: "Can a first-time author publish with you?",
+    question: "Can a first time author publish with you?",
     answer:
-      "Yes. A first book follows the same professional production path as any other title. You remain the publisher of record. We handle the editorial development, the cover design, the interior typesetting, and the retail setup. You do not need a literary agent, and you do not surrender your book to a traditional house. Our self-publishing services are built for authors at every stage.",
+      "Yes. A first book follows the same professional production path as any other title. You remain the publisher of record. We handle the editorial development, the cover design, the interior typesetting, and the retail setup. You do not need a literary agent, and you do not surrender your book to a traditional house. Our self publishing services are built for authors at every stage.",
   },
   {
     question: "Who is the publisher of record?",
     answer:
-      "You are. The ISBN is registered in your name, and the retail accounts are opened in your name. Some self-publishing company services assign an ISBN from their own prefix, making them the publisher on the record. We never do that.",
+      "You are. The ISBN is registered in your name, and the retail accounts are opened in your name. Some self publishing company services assign an ISBN from their own prefix, making them the publisher on the record. We never do that.",
   },
   {
     question: "What is a galley proof, and do I see it?",
@@ -460,9 +460,9 @@ export const publishingFAQs = [
       "Publishing a children's book follows the same path as any other title. You stay the publisher, and we handle the editing, cover, interior, and distribution. A picture book or early reader also needs an age range, a reading level, and, when the story calls for it, an illustrator from our artist network. You approve the galley proof before it goes to retail, and you keep the copyright and royalties. Send the manuscript or opening pages for a senior editor review, usually within 5 to 7 days.",
   },
   {
-    question: "Can I self-publish a children's book with you?",
+    question: "Can I self publish a children's book with you?",
     answer:
-      "Yes. Children's book publishing here is a self-publishing service, not a rights deal. You can come to us with a finished manuscript, or with a story you want help writing. We match the editorial work, illustration, and production to the book, then set up distribution.",
+      "Yes. Children's book publishing here is a self publishing service, not a rights deal. You can come to us with a finished manuscript, or with a story you want help writing. We match the editorial work, illustration, and production to the book, then set up distribution.",
   },
 ];
 
@@ -476,9 +476,9 @@ export const editingFAQs = [
   },
 
   {
-    question: "Do you offer book editing services for self-published authors?",
+    question: "Do you offer book editing services for self published authors?",
     answer:
-      "Yes. The majority of our clients are self-published authors and indie authors who need professional editing without signing with a traditional publisher. We follow the same standards used by trade houses.",
+      "Yes. The majority of our clients are self published authors and indie authors who need professional editing without signing with a traditional publisher. We follow the same standards used by trade houses.",
   },
   {
     question: "Which type of editing do I need?",
@@ -509,7 +509,7 @@ export const audiobookFAQs = [
   {
     question: "How much does audiobook production cost?",
     answer:
-      "Cost depends on the length of the manuscript, the narrator selected, and whether you choose professional narration or author-narrated recording. We provide a custom quote after reviewing your manuscript. Pricing is per finished hour of audio, and a typical 60,000-word book produces approximately 7 to 8 hours of finished audio.",
+      "Cost depends on the length of the manuscript, the narrator selected, and whether you choose professional narration or author narrated recording. We provide a custom quote after reviewing your manuscript. Pricing is per finished hour of audio, and a typical 60,000-word book produces approximately 7 to 8 hours of finished audio.",
   },
   {
     question: "How long does audiobook production take?",
@@ -524,13 +524,13 @@ export const audiobookFAQs = [
   {
     question: "Do you distribute to Audible and other platforms?",
     answer:
-      "Yes. We prepare distribution-ready files for Audible, Apple Books, Spotify, Google Play, Kobo, Scribd, Barnes & Noble, OverDrive, and other platforms. We can handle the upload process for you or deliver the files for you to distribute independently.",
+      "Yes. We prepare distribution ready files for Audible, Apple Books, Spotify, Google Play, Kobo, Scribd, Barnes & Noble, OverDrive, and other platforms. We can handle the upload process for you or deliver the files for you to distribute independently.",
   },
   {
     question:
-      "What's the difference between author-narrated and professional narrator?",
+      "What's the difference between author narrated and professional narrator?",
     answer:
-      "A professional narrator is a trained voice performer who records in a studio environment under a producer's direction. An author narrated audiobook uses your own voice, with guided recording support and the same post-production and mastering. Professional narration is the standard choice for most genres. Author narration works well for memoirs and personal nonfiction where your voice is part of the book's identity.",
+      "A professional narrator is a trained voice performer who records in a studio environment under a producer's direction. An author narrated audiobook uses your own voice, with guided recording support and the same post production and mastering. Professional narration is the standard choice for most genres. Author narration works well for memoirs and personal nonfiction where your voice is part of the book's identity.",
   },
   {
     question: "Can I produce an audiobook for an already published book?",
@@ -549,12 +549,12 @@ export const ghostwritingFAQs = [
   {
     question: "Is ghostwriting confidential?",
     answer:
-      "Yes. Every project is covered by a non-disclosure agreement. The ghostwriter's involvement, the manuscript content, and the project details stay private. Confidentiality is standard across all of our ghostwriting services.",
+      "Yes. Every project is covered by a non disclosure agreement. The ghostwriter's involvement, the manuscript content, and the project details stay private. Confidentiality is standard across all of our ghostwriting services.",
   },
   {
-    question: "Do you offer ghostwriting for self-published authors?",
+    question: "Do you offer ghostwriting for self published authors?",
     answer:
-      "Yes. Ghostwriting services for self-published authors follow the same process. Once the manuscript is delivered, we can discuss editing, design, and publishing support so the book moves from finished draft to published title without delays.",
+      "Yes. Ghostwriting services for self published authors follow the same process. Once the manuscript is delivered, we can discuss editing, design, and publishing support so the book moves from finished draft to published title without delays.",
   },
   {
     question: "Can you work from a partial manuscript or outline?",
@@ -569,7 +569,7 @@ export const ghostwritingFAQs = [
   {
     question: "What happens after the manuscript is finished?",
     answer:
-      "The finished manuscript is ready for editing and production. We can discuss the best publishing path for your book, whether that is traditional submission, hybrid publishing, or self-publishing, and connect you with the right support for editing, cover design, formatting, and distribution.",
+      "The finished manuscript is ready for editing and production. We can discuss the best publishing path for your book, whether that is traditional submission, hybrid publishing, or self publishing, and connect you with the right support for editing, cover design, formatting, and distribution.",
   },
 ];
 
@@ -987,7 +987,7 @@ export const bookCovers: Book[] = [
   {
     id: 15,
     title: "Llama Louise: The Shy Llama That Wasn't",
-    author: "Reneé Marie Borowy",
+    author: "Renee' Marie Borowy",
     image: "/assets/images/bookmockups/Bk15.jpg",
     slug: "https://www.amazon.com/Llama-Louise-Shy-That-Wasnt/dp/B0FF66WYQB/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.R6EgJdl-hnKGwcjiAGIiZcqqYDtQVQKFIqxFRgQvccFTimGtukvzARWFdDQTdVbnp9VLglET7r17cBRjttl8-mH6FWbCqcZltALG3DB9-W4D3q_u4rK-LNucfRInAXRr-75q0ZIZgj1_iPOWOoBwgQ.m0BdwEqYQdM6krDk96JOUQlJwy8UrX42k15a-PvFcPw&qid=1774022526&sr=8-1",
   },

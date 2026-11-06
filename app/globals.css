@@ -286,6 +286,28 @@ h6 * {
 }
 
 
+@keyframes book-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-book-marquee {
+    animation: book-marquee 80s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-book-marquee {
+        animation: none;
+    }
+}
+
+
+
 @media (min-width: 1024px) {
     .hero-section-background {
         background-image: url("/heroSec_bg.webp");
@@ -326,7 +348,7 @@ h6 * {
 
     .audiobook-hero-gradient {
         background:
-            url("/audiobook_HeroSC.jpeg");
+            url("/audiobook_HeroSC.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
