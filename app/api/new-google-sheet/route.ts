@@ -97,6 +97,12 @@ export async function POST(request: Request) {
                 message,
                 source: data.source ?? "Contact Form",
                 marketingConsent: data.marketingConsent === true,
+
+                // Forward page URL to Google Apps Script
+                websiteUrl:
+                    typeof data.websiteUrl === "string"
+                        ? data.websiteUrl.trim()
+                        : "",
             }),
             redirect: "follow",
             cache: "no-store",

@@ -85,6 +85,7 @@ const PopupForm = ({ isOpen, onClose, source }: PopupFormProps) => {
       message: formData.manuscript,
       source: submissionSource,
       marketingConsent: formData.marketingConsent,
+      websiteUrl: window.location.href,
     };
 
     try {
