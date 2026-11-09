@@ -122,6 +122,15 @@ export const authorBrandingPillars = [
     },
 ];
 
+const defaultDescription = (
+    <>
+        <span className="text-white text-base font-semibold"> Publishing your book is just the beginning.</span>
+        <br />
+        Published your book, or about to launch, and not sure how readers will find it? At The Collingwood Press, our book marketing services help self published authors reach the right readers. We build one plan around your book, genre, and goals, and you&apos;ll see what we will do and what it costs before work begins<br />
+        <span className="text-white text-base font-semibold">Reach the right readers. Build your audience. Grow your book&apos;s visibility.</span>
+    </>
+);
+
 export const marketingHeroProps = {
     className: "marketing-hero-gradient",
 
@@ -134,9 +143,7 @@ export const marketingHeroProps = {
     titleSuffix: "",
 
     description: (
-        <p>
-            Published your book, or about to launch, and not sure how readers will find it? At The Collingwood Press, our book marketing services help self published authors reach the right readers. We build one plan around your book, genre, and goals, and you&apos;ll see what we will do and what it costs before work begins
-        </p>
+        defaultDescription
     ),
 
     buttons: [

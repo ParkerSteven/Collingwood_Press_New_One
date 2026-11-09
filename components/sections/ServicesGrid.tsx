@@ -79,10 +79,6 @@ export default function ServicesGrid() {
                     <span className="font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-[#E7665D]">
                       Step {step.number}
                     </span>
-
-                    <span className="font-serif text-4xl italic text-[#E7665D]/20">
-                      {step.number}
-                    </span>
                   </div>
 
                   {/* Step Content */}

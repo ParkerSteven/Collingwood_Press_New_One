@@ -269,18 +269,7 @@ export default function BlogCarousel({
 
             {/* Bottom Controls */}
             <div className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-line/50 pt-7 sm:mt-12 sm:flex-row">
-                {/* Page Counter */}
-                <div className="flex items-center gap-2.5 font-sans text-xs uppercase tracking-wider text-ink-muted">
-                    <span className="font-serif text-base font-semibold text-ink">
-                        {String(currentPage + 1).padStart(2, "0")}
-                    </span>
 
-                    <span className="h-px w-6 bg-[#E7665D]/40" />
-
-                    <span>
-                        {String(totalPages).padStart(2, "0")}
-                    </span>
-                </div>
 
                 {/* Pagination Dots */}
                 <div
@@ -299,8 +288,8 @@ export default function BlogCarousel({
                                 }
                                 onClick={() => goToPage(index)}
                                 className={`rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-[#E7665D] ${currentPage === index
-                                        ? "h-2.5 w-8 bg-[#E7665D] shadow-[0_2px_8px_rgba(231,102,93,0.35)]"
-                                        : "h-2.5 w-2.5 bg-[#E7665D]/25 hover:bg-[#E7665D]/50"
+                                    ? "h-2.5 w-8 bg-[#E7665D] shadow-[0_2px_8px_rgba(231,102,93,0.35)]"
+                                    : "h-2.5 w-2.5 bg-[#E7665D]/25 hover:bg-[#E7665D]/50"
                                     }`}
                             />
                         )

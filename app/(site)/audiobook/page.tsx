@@ -24,6 +24,16 @@ const defaultGuarantees = [
   "Distribution to Audible, Spotify and Libraries",
 ];
 
+const defaultDescription = (
+  <>
+    <span className="text-white  text-base font-semibold">Give your book a voice readers love to listen to.</span>
+    <br />
+    Most self produced audiobooks lose listeners early because of flat narration, background noise, or files that fail platform checks. Our services cover narrator casting, studio recording, editing, mastering and distribution. You provide the manuscript.<br />
+    <span className="text-white text-base font-semibold">Professional narration. Studio quality sound. Distribution ready audiobooks.</span>
+  </>
+);
+
+
 const defaultTitle = (
   <>
     Audiobook Production  {''}
@@ -43,7 +53,7 @@ export default function AudiobookPage() {
           eyebrow="Studio Grade Audiobook Production"
           title={defaultTitle}
           highlightText="Services for Authors"
-          description="Most self produced audiobooks lose listeners early because of flat narration, background noise, or files that fail platform checks. Our services cover narrator casting, studio recording, editing, mastering and distribution. You provide the manuscript. We deliver clean, distribution ready files that sound like a published audiobook."
+          description={defaultDescription}
           firstButtonText="Get a Audiobook Quote"
           secondButtonText="Schedule a Consultation"
           guarantees={defaultGuarantees}

@@ -16,6 +16,16 @@ export const metadata: Metadata = {
         "Professional book editing services including developmental editing, copyediting, line editing, and proofreading. Get a free sample edit and a clear quote.",
 };
 
+const defaultDescription = (
+    <>
+        <span className="text-white font-semibold">Great books deserve more than a basic proofread.</span>
+        <br />
+        Need more than a spell check before readers see your book? At The Collingwood Press, we offer proofreading, copyediting, line editing, and developmental editing so your book gets exactly what it needs.<br />
+        <span className="text-white font-semibold"> Every word refined. Every chapter strengthened. Your story perfected.</span>
+    </>
+);
+
+
 export default function Page() {
     return (
         <>
@@ -25,7 +35,7 @@ export default function Page() {
                     eyebrow="BOOK EDITING & PUBLISHING EXPERTS"
                     title="Book Editing"
                     highlightText="& Formatting Services"
-                    description={<p>Need more than a spell check before readers see your book? At The Collingwood Press, we offer proofreading, copyediting, line editing, and developmental editing so your book gets exactly what it needs.</p>}
+                    description={defaultDescription}
                     firstButtonText="Get a Editing Quote"
                     secondButtonText="Schedule a Consultation"
                     guarantees={[

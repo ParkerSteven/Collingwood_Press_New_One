@@ -35,6 +35,15 @@ const defaultTitle = (
     </>
 );
 
+const defaultDescription = (
+    <>
+        <span className="text-white font-semibold">Your idea deserves to become a book worth reading.</span>
+        <br />
+        Bring your book idea to life with professional ghostwriting services. Work with experienced writers who understand your vision, capture your voice, and help turn your ideas into a professionally written manuscript.<br />
+        <span className="text-white font-semibold"> Your vision. Your voice. A professionally written manuscript.</span>
+    </>
+);
+
 export default function Page() {
     return (
         <>
@@ -45,7 +54,7 @@ export default function Page() {
                     title={defaultTitle}
                     highlightText="Ghostwriting Services"
                     titleSuffix=""
-                    description="Bring your book idea to life with professional ghostwriting services. Work with experienced writers who understand your vision, capture your voice, and help turn your ideas into a professionally written manuscript."
+                    description={defaultDescription}
                     firstButtonText="Get a Ghostwriting Quote"
                     secondButtonText="Schedule a Consultation"
                     guarantees={defaultGuarantees}

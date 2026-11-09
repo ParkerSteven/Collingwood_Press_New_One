@@ -18,7 +18,14 @@ export const metadata: Metadata = {
         "Turn your manuscript into a published book with our book publishing services, including formatting, cover design, ISBN, Amazon KDP, and global distribution.",
 };
 
-
+const defaultDescription = (
+    <>
+        <span className="text-white text-base font-semibold"> Your manuscript deserves a professional publishing journey.</span>
+        <br />
+        Our book publishing services turn your raw draft into a retail ready hardcover, paperback, and eBook. We handle the full production process.<br />
+        <span className="text-white text-base font-semibold">You retain 100% of your copyright and royalties.</span>
+    </>
+);
 const defaultTitle = (
     <>
         Book Publishing Services for  <span className="text-[#E7665D] italic font-normal inline">First </span> <br />
@@ -39,7 +46,7 @@ export default function PublishingPage() {
                     title={defaultTitle}
                     highlightText="Ghostwriting Services"
                     titleSuffix=""
-                    description="You wrote the book. Now let’s publish it the right way. Our book publishing services turn your raw draft into a retail ready hardcover, paperback, and eBook. We handle the full production process while you retain 100% of your copyright and royalties."
+                    description={defaultDescription}
                     firstButtonText="Submit Manuscript for Publishing"
                     secondButtonText="Explore The 6 Steps Journey"
                     guarantees={[

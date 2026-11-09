@@ -47,6 +47,15 @@ const coreValues = [
         desc: "Every author receives direct guidance and support from a dedicated publishing professional.",
     },
 ];
+const defaultDescription = (
+    <>
+        <span className="text-white  text-base font-semibold">Helping authors bring their stories to life.</span>
+        <br />
+        Founded in 2009, The Collingwood Press helps independent authors bring their books to life through professional ghostwriting, editing, publishing, marketing, and audiobook production. We combine expert support with personalized service, ensuring authors retain control of their work, copyright, and royalties.<br />
+        <span className="text-white text-base font-semibold">Your book. Your rights. Your publishing journey.</span>
+    </>
+);
+
 
 export default function AboutUsPage() {
     return (
@@ -57,13 +66,7 @@ export default function AboutUsPage() {
                     eyebrow="Founded in 2009. Subsidiary of Hambone Publishers LLC."
                     title="A Book Publishing Company"
                     highlightText="Built Around the Author"
-                    description={
-                        <p>
-                            Founded in 2009, The Collingwood Press helps independent authors turn their manuscripts into professionally published books. We provide comprehensive book publishing services, including ghostwriting, editing, book design, publishing, marketing, and audiobook production.
-
-                            Our approach combines professional publishing standards with personalized support, giving authors greater control over their work, copyright, and royalties.
-                        </p>
-                    }
+                    description={defaultDescription}
                     button={false}
                     guarantees={[]}
                 />

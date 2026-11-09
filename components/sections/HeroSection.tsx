@@ -199,7 +199,8 @@ export default function HeroSection({
                                 items-center justify-center
                                 gap-x-7 gap-y-4
                                 text-xs
-                                text-white/75
+                                text-white
+                                font-bold
                             "
                         >
                             {guarantees.map((item, index) => {

@@ -30,7 +30,7 @@ const companyLinks = [
 
 const authorLibraryLinks = [
   { label: "Templates", href: "/author-resource-library/" },
-  { label: "Collingwood Partners", href: "/partners/" },
+  { label: "The Collingwood Press Partners", href: "/partners/" },
   { label: "Author Checklist", href: "#" },
 ];
 export const socialLinks = [

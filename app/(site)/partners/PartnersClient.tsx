@@ -116,7 +116,7 @@ export default function PartnersClient() {
       {/* Existing shared HeroSection, rather than a custom one-off hero. */}
       <HeroSection
         className="about-hero-gradient relative overflow-hidden paper-grain border-b border-white/10 pt-14 pb-16 text-white sm:pb-20 lg:pt-20 lg:pb-24"
-        eyebrow="The Collingwood Press · Collingwood Partners"
+        eyebrow="The Collingwood Press Partners"
         title="You Know the Authors."
         highlightText="We Reward the Connection."
         description={
@@ -155,8 +155,8 @@ export default function PartnersClient() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.27em] text-[#E7665D]">A Simple Partnership</p>
-            <h2 className="text-3xl font-bold leading-tight text-[#17243c] sm:text-4xl">How <span className="text-[#E7665D]">Collingwood Partners</span> Works</h2>
-            <p className="mt-4 text-sm leading-7 text-[#697284] sm:text-base">Three straightforward steps, from joining the program to earning on successful referrals.</p>
+            <h2 className="text-3xl max-w-xl mx-auto font-bold leading-tight text-[#17243c] sm:text-4xl">How <span className="text-[#E7665D]"> The Collingwood Press </span>Partners Works</h2>
+            <p className="mt-4 text-sm max-w-xl mx-auto leading-7 text-[#697284] sm:text-base">Three straightforward steps, from joining the program to earning on successful referrals.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {steps.map((step) => (
