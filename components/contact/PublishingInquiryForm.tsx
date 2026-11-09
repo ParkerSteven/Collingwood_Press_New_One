@@ -47,6 +47,9 @@ export default function PublishingInquiryForm() {
             websiteUrl: window.location.href,
         };
 
+        console.log("++++++", payload);
+
+
         try {
             // Send data to old Make.com and new Google Sheet
             const [oldResult, newResult] = await Promise.all([
