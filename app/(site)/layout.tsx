@@ -9,14 +9,14 @@ const poppins = Poppins({
     subsets: ["latin"],
     variable: "--font-poppins",
     display: "swap",
-    weight: ["300", "400", "500", "600", "700", "800"],
+    weight: ["400", "500", "600", "700"],
 });
 
 const cormorant = Cormorant_Garamond({
     subsets: ["latin"],
     variable: "--font-serif",
     display: "swap",
-    weight: ["400", "500", "600", "700"],
+    weight: ["400", "600", "700"],
     style: ["normal", "italic"],
 });
 

@@ -1,13 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import instagram from '@/public/assets/images/socials/instagram.svg';
 import tiktok from '@/public/assets/images/socials/tiktok.svg';
-import PopupForm from "@/components/forms/popupform";
+
+const PopupForm = dynamic(() => import("@/components/forms/popupform"), {
+  ssr: false,
+});
 
 
 const servicesLinks = [
@@ -339,12 +343,14 @@ export default function Footer() {
         </div>
       </Container>
 
-      {/* Author Checklist Popup Form */}
-      <PopupForm
-        isOpen={isChecklistOpen}
-        onClose={() => setIsChecklistOpen(false)}
-        source="Footer - Author Checklist"
-      />
+      {/* Author Checklist Popup Form - dynamically mounted on demand */}
+      {isChecklistOpen && (
+        <PopupForm
+          isOpen={isChecklistOpen}
+          onClose={() => setIsChecklistOpen(false)}
+          source="Footer - Author Checklist"
+        />
+      )}
     </footer>
   );
 }

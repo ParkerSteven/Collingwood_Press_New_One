@@ -2,11 +2,15 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowRight, Mail, Headphones, BookOpen } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AnimatedReveal from "@/components/ui/AnimatedReveal";
-import PopupForm from "@/components/forms/popupform";
+
+const PopupForm = dynamic(() => import("@/components/forms/popupform"), {
+    ssr: false,
+});
 
 const contactOptions = [
     {
@@ -93,12 +97,14 @@ export default function ContactOptionsSection() {
                 </div>
             </Container>
 
-            {/* Audiobook Quote Popup Form */}
-            <PopupForm
-                isOpen={isAudiobookPopupOpen}
-                onClose={() => setIsAudiobookPopupOpen(false)}
-                source="Contact Page - Audiobook Quote"
-            />
+            {/* Audiobook Quote Popup Form - dynamically mounted on demand */}
+            {isAudiobookPopupOpen && (
+                <PopupForm
+                    isOpen={isAudiobookPopupOpen}
+                    onClose={() => setIsAudiobookPopupOpen(false)}
+                    source="Contact Page - Audiobook Quote"
+                />
+            )}
         </section>
     );
 }
