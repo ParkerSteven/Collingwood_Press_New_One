@@ -261,7 +261,7 @@ export default function BlogCarousel({
                             handlePrev();
                         }
                     }}
-                    className="flex cursor-grab select-none snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-1 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E7665D] lg:gap-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="flex cursor-grab select-none gap-4 overflow-x-auto scroll-smooth px-1 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E7665D] lg:gap-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                 >
                     {children}
                 </div>

@@ -108,7 +108,7 @@ export default function HomeBlogs() {
                                 href={post.href}
                                 data-blog-card
                                 draggable={false}
-                                className="group block w-full shrink-0 snap-start min-w-0 sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-80px)/5)]"
+                                className="group block w-full shrink-0 min-w-0 sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-80px)/5)]"
                             >
                                 <article className="flex h-full flex-col overflow-hidden rounded-sm border border-[#E7665D]/20 bg-white shadow-[0_5px_24px_rgba(17,26,48,0.04)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#E7665D]/50 group-hover:shadow-[0_12px_32px_rgba(231,102,93,0.15)]">
                                     {/* Blog Image */}
