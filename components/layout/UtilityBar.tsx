@@ -8,11 +8,11 @@ export default function UtilityBar() {
       <Container className="flex flex-col sm:flex-row items-center justify-between gap-2">
         <div className="flex items-center gap-5">
           <Link
-            href="mailto:info@thecollingwoodpress.com"
+            href="mailto:contact@thecollingwoodpress.com"
             className="inline-flex items-center gap-1.5 text-[#fff] transition-colors tracking-wide"
           >
             <Mail size={13} className="text-[#fff]" />
-            <span>info@thecollingwoodpress.com</span>
+            <span>contact@thecollingwoodpress.com</span>
           </Link>
           <span className="hidden md:inline-block w-[1px] h-3 bg-[#fff]" />
           <Link

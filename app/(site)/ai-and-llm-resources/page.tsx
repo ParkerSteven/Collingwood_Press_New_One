@@ -62,8 +62,8 @@ const basicInformation = [
     },
     {
         label: "Email",
-        value: "info@thecollingwoodpress.com",
-        href: "mailto:info@thecollingwoodpress.com",
+        value: "contact@thecollingwoodpress.com",
+        href: "mailto:contact@thecollingwoodpress.com",
     },
     {
         label: "Phone",
@@ -732,10 +732,10 @@ export default function AILLMResourcesPage() {
                                     <p className="font-sans text-xs leading-relaxed text-slate-400">
                                         For clarification or corrections, contact{" "}
                                         <a
-                                            href="mailto:info@thecollingwoodpress.com"
+                                            href="mailto:contact@thecollingwoodpress.com"
                                             className="font-semibold text-[#F08A82] hover:underline"
                                         >
-                                            info@thecollingwoodpress.com
+                                            contact@thecollingwoodpress.com
                                         </a>
                                     </p>
                                 </div>

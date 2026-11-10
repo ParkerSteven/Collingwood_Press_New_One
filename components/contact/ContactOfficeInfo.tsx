@@ -88,10 +88,10 @@ export default function ContactOfficeInfo() {
                                             </h4>
 
                                             <a
-                                                href="mailto:info@thecollingwoodpress.com"
+                                                href="mailto:contact@thecollingwoodpress.com"
                                                 className="mt-1 block break-all font-sans text-sm text-ink-soft hover:text-[#E7665D]"
                                             >
-                                                info@thecollingwoodpress.com
+                                                contact@thecollingwoodpress.com
                                             </a>
                                         </div>
                                     </div>

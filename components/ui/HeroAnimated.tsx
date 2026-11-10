@@ -75,6 +75,7 @@ export default function HeroAnimated({
                     y={12}
                     duration={0.5}
                     delay={0.1}
+                    animateOnMount={false}
                 >
                     <p
                         className="
@@ -99,6 +100,7 @@ export default function HeroAnimated({
                     duration={0.55}
                     delay={0.15}
                     className="w-full"
+                    animateOnMount={false}
                 >
                     <div className="flex w-full justify-center sm:justify-start">
                         <HeroActions
@@ -115,6 +117,7 @@ export default function HeroAnimated({
                         duration={0.5}
                         delay={0.2}
                         className="mx-auto w-full max-w-[540px] sm:mx-0"
+                        animateOnMount={false}
                     >
                         {badges === undefined ? (
                             <DefaultTrustBadges heading={badgeHeading} />

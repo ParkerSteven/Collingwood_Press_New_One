@@ -99,42 +99,6 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
     const { openPopup } = usePopup();
     const pathname = usePathname();
 
-    // Load widget on user interaction or after 4 seconds
-    useEffect(() => {
-        const events: (keyof WindowEventMap)[] = [
-            "scroll",
-            "mousemove",
-            "touchstart",
-            "keydown",
-        ];
-
-        const handleInteraction = (): void => {
-            setShouldLoadWidget(true);
-
-            events.forEach((event) => {
-                window.removeEventListener(event, handleInteraction);
-            });
-        };
-
-        events.forEach((event) => {
-            window.addEventListener(event, handleInteraction, {
-                passive: true,
-            });
-        });
-
-        const timer = window.setTimeout(() => {
-            setShouldLoadWidget(true);
-        }, 4000);
-
-        return () => {
-            window.clearTimeout(timer);
-
-            events.forEach((event) => {
-                window.removeEventListener(event, handleInteraction);
-            });
-        };
-    }, []);
-
     // Handle fallback popup
     useEffect(() => {
         const handleOpenPopup = (): void => {

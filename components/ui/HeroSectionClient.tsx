@@ -30,7 +30,7 @@ export default function HeroSectionClient({
         ) {
             brevoWindow.BrevoConversations("openChat");
         } else {
-            window.location.href = "/";
+            window.dispatchEvent(new Event("openAIChat"));
         }
     };
 

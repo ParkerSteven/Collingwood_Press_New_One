@@ -19,13 +19,40 @@ export default function AnalyticsManager() {
             window.addEventListener(event, handleInteraction, { passive: true })
         );
 
-        // Load after 4 seconds regardless if they don't move
-        const timer = setTimeout(() => {
+        let idleCallbackId: number | undefined;
+        let fallbackTimer: number | undefined;
+        const loadWhenIdle = () => {
             setShouldLoad(true);
-        }, 4000);
+        };
+        const scheduleLoadWhenIdle = () => {
+            if (typeof window.requestIdleCallback === "function") {
+                idleCallbackId = window.requestIdleCallback(loadWhenIdle, {
+                    timeout: 5000,
+                });
+            } else {
+                fallbackTimer = window.setTimeout(loadWhenIdle, 1000);
+            }
+        };
+
+        if (document.readyState === "complete") {
+            scheduleLoadWhenIdle();
+        } else {
+            window.addEventListener("load", scheduleLoadWhenIdle, {
+                once: true,
+            });
+        }
 
         return () => {
-            clearTimeout(timer);
+            window.removeEventListener("load", scheduleLoadWhenIdle);
+            if (
+                idleCallbackId !== undefined &&
+                typeof window.cancelIdleCallback === "function"
+            ) {
+                window.cancelIdleCallback(idleCallbackId);
+            }
+            if (fallbackTimer !== undefined) {
+                window.clearTimeout(fallbackTimer);
+            }
             ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event =>
                 window.removeEventListener(event, handleInteraction)
             );

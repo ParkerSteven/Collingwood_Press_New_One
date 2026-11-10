@@ -284,11 +284,11 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-2.5 mt-1 text-[0.85rem]">
               <Link
-                href="mailto:info@thecollingwoodpress.com"
+                href="mailto:contact@thecollingwoodpress.com"
                 className="text-slate-300 hover:text-[#F08A82] transition-colors break-words flex items-center gap-2 group"
               >
                 <Mail size={14} className="text-[#E7665D] shrink-0 group-hover:scale-110 transition-transform" />
-                <span>info@thecollingwoodpress.com</span>
+                <span>contact@thecollingwoodpress.com</span>
               </Link>
 
               <Link

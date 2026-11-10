@@ -12,7 +12,6 @@ import { faqs, stats } from "@/lib/data";
 import HomeBlogs from "@/components/sections/HomeBlogs";
 import BookCarousel from "@/components/sections/BookCovers";
 import type { Metadata } from "next";
-import ReactDOM from "react-dom";
 export const metadata: Metadata = {
   title:
     "Trusted Book Publishing Company",
@@ -27,12 +26,15 @@ export const metadata: Metadata = {
 
 
 export default function Home() {
-  ReactDOM.preload("/heroSec_bg.webp", {
-    as: "image",
-    fetchPriority: "high",
-  });
   return (
     <>
+      <link
+        rel="preload"
+        href="/heroSec_bg.webp"
+        as="image"
+        media="(min-width: 1024px)"
+        fetchPriority="high"
+      />
       <main>
         <Hero className="hero-section-background"
           firstButtonText="Get a Free Publishing Consultation"

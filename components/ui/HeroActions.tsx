@@ -22,8 +22,7 @@ export default function HeroActions({ firstButtonText, secondButtonText }: any) 
         ) {
             window.BrevoConversations("openChat");
         } else {
-            // Prevent unexpected homepage navigation
-            console.warn("Chat widget is not available yet.");
+            window.dispatchEvent(new Event("openAIChat"));
         }
     };
 

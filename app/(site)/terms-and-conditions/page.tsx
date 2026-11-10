@@ -213,14 +213,14 @@ export default function TermsAndConditionsPage() {
                 </div>
 
                 <a
-                  href="mailto:info@thecollingwoodpress.com"
+                  href="mailto:contact@thecollingwoodpress.com"
                   className="flex items-center gap-2 hover:text-[#E7665D] transition-colors"
                 >
                   <Mail
                     size={16}
                     className="text-[#E7665D]"
                   />
-                  info@thecollingwoodpress.com
+                  contact@thecollingwoodpress.com
                 </a>
 
                 <a

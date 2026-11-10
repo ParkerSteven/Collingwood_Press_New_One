@@ -111,7 +111,7 @@ const siteSchema = {
         "The Collingwood Press is a Fort Worth, Texas-based independent book publishing company and imprint of Hambone Publishers, offering ghostwriting, editing, cover design, book marketing, distribution, and audiobook production.",
 
       telephone: "+19362233644",
-      email: "info@thecollingwoodpress.com",
+      email: "contact@thecollingwoodpress.com",
 
       contactPoint: {
         "@type": "ContactPoint",
@@ -280,13 +280,6 @@ export default function RootLayout({
           name="facebook-domain-verification"
           content="lw3tzfad0y9qx9ewmwgjnn390w6pg3"
         />
-        {/* Trustpilot */}
-        <script
-          type="text/javascript"
-          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-          async
-        />
-
         {/* Site-wide Schema.org JSON-LD graph */}
         <script
           id="site-schema"
@@ -298,29 +291,38 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased text-ink bg-paper selection:bg-coral selection:text-white">
 
+        <Script
+          id="trustpilot-bootstrap"
+          src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          strategy="lazyOnload"
+        />
+
         {/* Meta Pixel */}
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            !function(f)
+            {if(f.fbq)return;var n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
             if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}
-            (window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
+            n.queue=[]}
+            (window);
 
             fbq('init', '905102058883202');
             fbq('track', 'PageView');
           `}
         </Script>
+        <Script
+          id="facebook-pixel-library"
+          src="https://connect.facebook.net/en_US/fbevents.js"
+          strategy="lazyOnload"
+        />
 
         {/* Google Tag */}
         <Script
+          id="google-tag-library"
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${gtmId}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         {/* Google Analytics */}
@@ -341,7 +343,7 @@ export default function RootLayout({
           src="//a.mailmunch.co/app/v1/site.js"
           id="mailmunch-script"
           data-mailmunch-site-id="1103682"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
 

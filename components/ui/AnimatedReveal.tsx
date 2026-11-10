@@ -13,6 +13,7 @@ interface AnimatedRevealProps {
     amount?: number;
     margin?: string;
     hoverY?: number;
+    animateOnMount?: boolean;
 }
 
 export default function AnimatedReveal({
@@ -25,9 +26,10 @@ export default function AnimatedReveal({
     amount,
     margin,
     hoverY,
+    animateOnMount = true,
 }: AnimatedRevealProps) {
     const animationProps = {
-        initial: { opacity: 0, y },
+        initial: animateOnMount ? { opacity: 0, y } : false,
         whileInView: { opacity: 1, y: 0 },
         viewport: {
             once: true,

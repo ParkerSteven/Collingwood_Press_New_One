@@ -30,9 +30,9 @@ export default function SiteLayout({
         <div className={`${poppins.variable} ${cormorant.variable} font-sans min-h-screen`}>
             <UtilityBar />
             <Header />
-            <main style={{ margin: 0, padding: 0 }}>
+            <div style={{ margin: 0, padding: 0 }}>
                 {children}
-            </main>
+            </div>
             <Footer />
         </div>
     );
