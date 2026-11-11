@@ -48,12 +48,6 @@ export default function HeroAnimated({
             {/* LEFT COLUMN */}
             <div className="mx-auto w-full max-w-5xl text-center sm:mx-0 sm:text-left">
 
-                {/* Eyebrow */}
-                <div className="flex justify-center sm:justify-start">
-                    <Eyebrow tone="coral" align="left">
-                        {eyebrow}
-                    </Eyebrow>
-                </div>
 
                 {/* Heading — no animation for LCP */}
                 <h1
@@ -77,9 +71,16 @@ export default function HeroAnimated({
                     delay={0.1}
                     animateOnMount={false}
                 >
+                    {/* Eyebrow */}
+                    <div className="flex justify-center sm:justify-start mt-6">
+                        <Eyebrow tone="coral" align="left">
+                            {eyebrow}
+                        </Eyebrow>
+                    </div>
+
                     <p
                         className="
-              mx-auto mt-6
+              mx-auto mt-4
               max-w-xl
               font-sans
               text-[1.02rem]

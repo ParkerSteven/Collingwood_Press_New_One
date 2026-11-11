@@ -34,7 +34,7 @@ export default function Page() {
                     className="editing-hero-gradient"
                     eyebrow="BOOK EDITING & PUBLISHING EXPERTS"
                     title="Book Editing"
-                    highlightText="& Formatting Services"
+                    highlightText="& Proofreading Services"
                     description={defaultDescription}
                     firstButtonText="Get a Editing Quote"
                     secondButtonText="Schedule a Consultation"

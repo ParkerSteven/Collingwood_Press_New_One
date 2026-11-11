@@ -37,10 +37,9 @@ const defaultTitle = (
 
 const defaultDescription = (
     <>
-        <span className="text-white font-semibold">Your idea deserves to become a book worth reading.</span>
         <br />
-        Bring your book idea to life with professional ghostwriting services. Work with experienced writers who understand your vision, capture your voice, and help turn your ideas into a professionally written manuscript.<br />
-        <span className="text-white font-semibold"> Your vision. Your voice. A professionally written manuscript.</span>
+        <p className="relative bottom-6">Bring your book idea to life with professional ghostwriting services. Work with experienced writers who understand your vision, capture your voice, and help turn your ideas into a professionally written manuscript.<br />
+            <span className="text-white font-semibold text-base"> Your vision. Your voice. A professionally written manuscript.</span></p>
     </>
 );
 

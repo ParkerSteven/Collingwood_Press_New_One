@@ -20,8 +20,7 @@ export const metadata: Metadata = {
 
 const defaultDescription = (
     <>
-        <span className="text-white text-base font-semibold"> Your manuscript deserves a professional publishing journey.</span>
-        <br />
+        Your manuscript deserves a professional publishing journey.
         Our book publishing services turn your raw draft into a retail ready hardcover, paperback, and eBook. We handle the full production process.<br />
         <span className="text-white text-base font-semibold">You retain 100% of your copyright and royalties.</span>
     </>

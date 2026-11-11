@@ -10,7 +10,7 @@ export default function Eyebrow({
 }) {
   const toneClasses: Record<string, string> = {
     gold: "text-[#D4AF37]",
-    coral: "text-[#E7665D]",
+    coral: "text-[#E7665D] font-semibold",
     terracotta: "text-[#E7665D]",
     ink: "text-ink-soft",
     forest: "text-forest",
