@@ -283,7 +283,12 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
             <main className="min-h-screen bg-[#faf8f5] text-[#181511]">
                 {/* Scoped rules for the HTML coming from WordPress */}
                 <style>{`
-                    .blog-article-content { min-width: 0; overflow-wrap: break-word; }
+                    .blog-article-content {
+                        min-width: 0;
+                        overflow-wrap: break-word;
+                        /* Standalone WP tables can scroll on narrow screens. */
+                        overflow-x: auto;
+                    }
                     .blog-article-content img,
                     .blog-article-content figure img {
                         display: block;
@@ -297,38 +302,58 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                         font-weight: 700;
                         margin-right: 0.3rem;
                     }
-                    .blog-article-content figure { max-width: 100%; margin-left: 0; margin-right: 0; }
-                    .blog-article-content .wp-block-table { max-width: 100%; overflow-x: auto; }
-                    .blog-article-content table {
-                        display: block;
-                        width: 100%;
+                    .blog-article-content figure {
+                        max-width: 100%;
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                    .blog-article-content .wp-block-table {
+                        width: 100% !important;
+                        max-width: 100%;
                         overflow-x: auto;
-                        border-collapse: collapse;
                         -webkit-overflow-scrolling: touch;
+                    }
+                    .blog-article-content table {
+                        /* Keep native table layout: columns follow their content. */
+                        display: table !important;
+                        width: 100% !important;
+                        min-width: 100%;
+                        table-layout: auto !important;
+                        border-collapse: collapse !important;
+                        border-spacing: 0;
+                        border: 1px solid #e8e0dc !important;
+                        margin: 1rem 0;
+                    }
+                    .blog-article-content .wp-block-table table {
+                        margin: 0;
                     }
                     .blog-article-content table th,
                     .blog-article-content table td {
+                        min-width: 0 !important;
+                        width: auto !important;
                         padding: 12px 14px;
-                        min-width: 145px;
                         vertical-align: top;
                         text-align: left;
                         white-space: normal;
                         word-break: normal;
-                        overflow-wrap: normal;
-                        hyphens: none;
+                        overflow-wrap: break-word;
+                        border: 1px solid #e8e0dc !important;
                     }
-                    .blog-article-content table th:first-child,
-                    .blog-article-content table td:first-child {
-                        min-width: 190px;
+                    .blog-article-content table th {
+                        font-weight: 600;
+                        background-color: #faf8f5;
                     }
-                    .blog-article-content table th { font-weight: 600; }
-                    .blog-article-content :is(h2, h3, h4):has(+ p) { scroll-margin-top: 100px; }
+                    .blog-article-content table tbody tr:nth-child(even) {
+                        background-color: #fcfaf8;
+                    }
                     @media (max-width: 639px) {
                         .blog-article-content table th,
-                        .blog-article-content table td { min-width: 130px; padding: 10px 12px; }
-                        .blog-article-content table th:first-child,
-                        .blog-article-content table td:first-child { min-width: 165px; }
+                        .blog-article-content table td {
+                            padding: 10px 12px;
+                            font-size: 13px;
+                        }
                     }
+                    .blog-article-content :is(h2, h3, h4):has(+ p) { scroll-margin-top: 100px; }
                 `}</style>
                 {/* Hero / Header Section */}
                 <section className="relative overflow-hidden bg-[#0d1527] pt-12 pb-16 text-white sm:pt-16 sm:pb-24 border-b border-white/10">

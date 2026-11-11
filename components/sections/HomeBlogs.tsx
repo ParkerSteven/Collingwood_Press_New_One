@@ -62,42 +62,47 @@ const blogPosts = [
     },
 ];
 
-export default function HomeBlogs() {
+export default function HomeBlogs({ headings = false, show = false }) {
     return (
         <section
             id="publishing-insights"
             aria-labelledby="publishing-insights-heading"
             className="relative overflow-hidden border-b border-line bg-[#FCFAF7] py-20 lg:py-28"
         >
-            <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16">
+            <div className={`mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16`}>
                 {/* Blog Heading */}
-                <AnimatedReveal
-                    y={20}
-                    duration={0.55}
-                    className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
-                >
-                    <div className="mb-5 flex items-center justify-center gap-3">
-                        <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
-                            From The Collingwood Press
-                        </span>
-                    </div>
+                {
+                    headings ?
+                        ''
+                        :
+                        <AnimatedReveal
+                            y={20}
+                            duration={0.55}
+                            className="mx-auto mb-14 max-w-3xl text-center lg:mb-16"
+                        >
+                            <div className="mb-5 flex items-center justify-center gap-3">
+                                <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E7665D]">
+                                    From The Collingwood Press
+                                </span>
+                            </div>
 
-                    <h2
-                        id="publishing-insights-heading"
-                        className="font-serif text-[2rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.5rem] lg:text-[2.7rem]"
-                    >
-                        Publishing Insights{" "}
-                        <span className="italic text-[#E7665D]">
-                            &amp; Industry Guides
-                        </span>
-                    </h2>
+                            <h2
+                                id="publishing-insights-heading"
+                                className="font-serif text-[2rem] font-medium leading-[1.12] tracking-tight text-ink sm:text-[2.5rem] lg:text-[2.7rem]"
+                            >
+                                Publishing Insights{" "}
+                                <span className="italic text-[#E7665D]">
+                                    &amp; Industry Guides
+                                </span>
+                            </h2>
 
-                    <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.96rem] leading-[1.85] text-ink-muted sm:text-[1.04rem]">
-                        The publishing landscape shifts quickly. Stay ahead with
-                        practical guides and honest perspectives from our
-                        editorial team.
-                    </p>
-                </AnimatedReveal>
+                            <p className="mx-auto mt-6 max-w-2xl font-sans text-[0.96rem] leading-[1.85] text-ink-muted sm:text-[1.04rem]">
+                                The publishing landscape shifts quickly. Stay ahead with
+                                practical guides and honest perspectives from our
+                                editorial team.
+                            </p>
+                        </AnimatedReveal>
+                }
 
                 {/* Carousel */}
                 <AnimatedReveal y={24} duration={0.6}>
@@ -154,6 +159,7 @@ export default function HomeBlogs() {
                             </Link>
                         ))}
                     </BlogCarousel>
+
                 </AnimatedReveal>
             </div>
         </section>

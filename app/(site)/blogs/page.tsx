@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { CalendarDays, ArrowRight, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import { decodeHTMLEntities } from '@/lib/util';
 import HeroSection from '@/components/sections/HeroSection';
+import HomeBlogs from '@/components/sections/HomeBlogs';
 
 type BlogSearchParams = {
     page?: string | string[];
@@ -75,8 +76,8 @@ export async function generateMetadata({ searchParams }: BlogsPageProps): Promis
             canonical: canonicalUrl,
         },
         title: currentPage > 1
-            ? `The Publishing Blueprint (Page ${currentPage}) | The Collingwood Press Blog`
-            : 'The Publishing Blueprint | The Collingwood Press Blog',
+            ? `The Publishing Blueprint (Page ${currentPage})`
+            : 'The Publishing Blueprint',
         description: 'Mastering the art of modern publishing. Expert strategies, industry trends, and exclusive stories to elevate your book.',
     };
 }
@@ -321,10 +322,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
                     </div>
 
                     {fetchError && (
-                        <div className="rounded-lg border border-[#f0c6c1] bg-[#fff6f4] px-8 py-16 text-center">
-                            <h3 className="font-serif text-2xl font-bold">Unable to Load Blogs</h3>
-                            <p className="mt-3 text-sm text-[#697180]">Please try again in a little while.</p>
-                        </div>
+                        <HomeBlogs show={true} headings={true} />
                     )}
 
                     {!fetchError && posts.length === 0 && (
