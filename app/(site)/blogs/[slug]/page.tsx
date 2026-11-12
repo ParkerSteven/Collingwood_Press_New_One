@@ -38,6 +38,15 @@ type WordPressPost = {
     slug: string;
     date: string;
     modified?: string;
+    yoast_head_json?: {
+        title?: string;
+        description?: string;
+        og_title?: string;
+        og_description?: string;
+        og_image?: Array<{ url?: string }>;
+        twitter_title?: string;
+        twitter_description?: string;
+    };
     title: { rendered: string };
     excerpt: { rendered: string };
     content: { rendered: string };
@@ -63,7 +72,7 @@ const WP_REQUEST_HEADERS = {
 
 async function fetchPostBySlug(slug: string): Promise<WordPressPost | null> {
     const params = new URLSearchParams({
-        slug: encodeURIComponent(slug),
+        slug,
         _embed: '1',
     });
 
@@ -176,53 +185,44 @@ const getImageUrl = (post: WordPressPost): string => {
     return featured || contentImage || 'https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=1200&auto=format&fit=crop';
 };
 
+// Generate dynamic SEO metadata from WordPress, prioritizing Yoast SEO fields.
 export async function generateMetadata({ params }: BlogSlugPageProps): Promise<Metadata> {
-    const resolvedParams = await Promise.resolve(params);
-    const post = await fetchPostBySlug(resolvedParams.slug);
+    const { slug } = await params;
+    const post = await fetchPostBySlug(slug);
 
     if (!post) {
-        return {
-            title: 'Article Not Found | The Collingwood Press',
-            description: 'The requested article could not be found.',
-        };
+        return { title: 'Post Not Found | The Collingwood Press' };
     }
 
-    const title = plainText(post.title.rendered);
-    const excerpt = plainText(post.excerpt.rendered) || `Read ${title} on The Collingwood Press Journal.`;
-    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug.replace(/\/+$/, "")}/`;
-    const imageUrl = getImageUrl(post);
+    const yoast = post.yoast_head_json;
+    const seoTitle = yoast?.title || `${plainText(post.title.rendered)} | The Collingwood Press`;
+    const seoDescription = yoast?.description || plainText(post.excerpt?.rendered || '').slice(0, 160);
+    const ogImage = yoast?.og_image?.[0]?.url || getImageUrl(post);
+    const tags = post._embedded?.['wp:term']?.[1] || [];
 
     return {
-        title: `${title}`,
-        description: excerpt.slice(0, 160),
+        title: seoTitle,
+        description: seoDescription,
+        keywords: tags.map((tag) => tag.name).filter((name): name is string => Boolean(name)).join(', '),
         alternates: {
-            canonical: canonicalUrl,
+            canonical: `https://www.thecollingwoodpress.com/blogs/${encodeURIComponent(post.slug)}/`,
         },
         openGraph: {
-            title,
-            description: excerpt.slice(0, 160),
-            url: canonicalUrl,
-            siteName: 'The Collingwood Press',
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: title,
-                },
-            ],
+            title: yoast?.og_title || seoTitle,
+            description: yoast?.og_description || seoDescription,
+            images: [{ url: ogImage }],
             type: 'article',
             publishedTime: post.date,
-            modifiedTime: post.modified || post.date,
         },
         twitter: {
             card: 'summary_large_image',
-            title,
-            description: excerpt.slice(0, 160),
-            images: [imageUrl],
+            title: yoast?.twitter_title || seoTitle,
+            description: yoast?.twitter_description || seoDescription,
+            images: [ogImage],
         },
     };
 }
+
 
 export default async function BlogPostPage({ params }: BlogSlugPageProps) {
     const resolvedParams = await Promise.resolve(params);
