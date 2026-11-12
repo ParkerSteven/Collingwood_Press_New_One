@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.thecollingwoodpress.com/editing/' },
-    title: "Professional Book Editing Services",
+    title: "Professional Book Editing Services | The Collingwood Press",
     description:
         "Professional book editing services including developmental editing, copyediting, line editing, and proofreading. Get a free sample edit and a clear quote.",
 };

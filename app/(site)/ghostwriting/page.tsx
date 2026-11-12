@@ -15,7 +15,7 @@ import Hero from "@/components/sections/Hero";
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.thecollingwoodpress.com/ghostwriting/' },
     title:
-        "Professional Ghostwriting Services",
+        "Professional Ghostwriting Services | The Collingwood Press",
 
     description:
         "Turn your ideas into a book with professional ghostwriting services. Work with experienced writers, retain full rights, and keep your story confidential.",

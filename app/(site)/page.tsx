@@ -14,7 +14,7 @@ import BookCarousel from "@/components/sections/BookCovers";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title:
-    "Trusted Book Publishing Company",
+    "Trusted Book Publishing Company | The Collingwood Press",
 
   description:
     "Looking for a book publishing company? Get writing, editing, publishing, marketing, distribution, and audiobook production with The Collingwood Press.",

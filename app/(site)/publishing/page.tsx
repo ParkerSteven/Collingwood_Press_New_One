@@ -13,7 +13,7 @@ import Hero from "@/components/sections/Hero";
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.thecollingwoodpress.com/publishing/' },
     title:
-        "Book Publishing Services for First-Time Authors",
+        "Book Publishing Services for First-Time Authors | The Collingwood Press",
     description:
         "Turn your manuscript into a published book with our book publishing services, including formatting, cover design, ISBN, Amazon KDP, and global distribution.",
 };

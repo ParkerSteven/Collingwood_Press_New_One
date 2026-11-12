@@ -3,7 +3,7 @@ import PartnersClient from './PartnersClient';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.thecollingwoodpress.com/partners/' },
-  title: 'Collingwood Partners | The Collingwood Press',
+  title: 'The Collingwood Press Partners | The Collingwood Press',
   description:
     'Introduce authors to The Collingwood Press and earn a 10% referral commission when a referred writer begins a publishing project.',
   keywords:

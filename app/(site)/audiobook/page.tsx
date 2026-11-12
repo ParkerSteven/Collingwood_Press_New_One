@@ -12,7 +12,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.thecollingwoodpress.com/audiobook/' },
-  title: "Audiobook Recording & Production Services",
+  title: "Audiobook Recording & Production Services | The Collingwood Press",
   description:
     "Turn your book into a high-quality audiobook with expert narration, studio recording, audio editing, mastering, and distribution to Audible, Apple Books, and Spotify.",
 };

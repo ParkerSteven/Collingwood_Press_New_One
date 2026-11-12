@@ -15,7 +15,7 @@ import AiResourcesSection from "@/components/about/AiResourcesSection";
 
 
 export const metadata = {
-    title: "About Us | Book Publishing Company",
+    title: "About Us | Book Publishing Company | The Collingwood Press",
 
     description:
         "Learn about The Collingwood Press, an independent book publishing company offering professional editing, design, publishing and distribution with 100% author ownership.",

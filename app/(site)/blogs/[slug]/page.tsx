@@ -195,7 +195,7 @@ export async function generateMetadata({ params }: BlogSlugPageProps): Promise<M
     }
 
     const yoast = post.yoast_head_json;
-    const seoTitle = yoast?.title || `${plainText(post.title.rendered)} | The Collingwood Press`;
+    const seoTitle = yoast?.title || `${plainText(post.title.rendered)}`;
     const seoDescription = yoast?.description || plainText(post.excerpt?.rendered || '').slice(0, 160);
     const ogImage = yoast?.og_image?.[0]?.url || getImageUrl(post);
     const tags = post._embedded?.['wp:term']?.[1] || [];

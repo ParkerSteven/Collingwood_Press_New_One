@@ -10,7 +10,7 @@ import { marketingFAQs, marketingHeroProps } from "@/lib/marketingData";
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.thecollingwoodpress.com/marketing/' },
-    title: "Book Marketing Services for Self Published Authors",
+    title: "Book Marketing Services for Self Published Authors | The Collingwood Press",
     description:
         "Book marketing services built to sell more copies: Amazon Ads, BookTok, media PR, and launch campaigns. Get your custom marketing plan today.",
 };

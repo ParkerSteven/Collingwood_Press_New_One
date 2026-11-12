@@ -76,8 +76,8 @@ export async function generateMetadata({ searchParams }: BlogsPageProps): Promis
             canonical: canonicalUrl,
         },
         title: currentPage > 1
-            ? `The Publishing Blueprint (Page ${currentPage})`
-            : 'The Publishing Blueprint',
+            ? `The Publishing Blueprint (Page ${currentPage}) | The Collingwood Press`
+            : 'The Publishing Blueprint | The Collingwood Press',
         description: 'Mastering the art of modern publishing. Expert strategies, industry trends, and exclusive stories to elevate your book.',
     };
 }

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.thecollingwoodpress.com"),
 
   title: {
-    default: "Trusted Book Publishing Company | Keep 100% Royalties",
-    template: "%s | The Collingwood Press",
+    default: "Trusted Book Publishing Company | Keep 100% Royalties | The Collingwood Press",
+    template: "%s",
   },
 
   description:
