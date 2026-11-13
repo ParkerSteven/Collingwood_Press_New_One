@@ -346,7 +346,6 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
 
-
         {/* Sticky Social Sidebar */}
         <StickySocialStripLeft />
 

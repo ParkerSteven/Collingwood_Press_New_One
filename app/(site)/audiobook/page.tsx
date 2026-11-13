@@ -26,8 +26,6 @@ const defaultGuarantees = [
 
 const defaultDescription = (
   <>
-    <span className="text-white  text-base font-semibold">Give your book a voice readers love to listen to.</span>
-    <br />
     Most self produced audiobooks lose listeners early because of flat narration, background noise, or files that fail platform checks. Our services cover narrator casting, studio recording, editing, mastering and distribution. You provide the manuscript.<br />
     <span className="text-white text-base font-semibold">Professional narration. Studio quality sound. Distribution ready audiobooks.</span>
   </>

@@ -19,40 +19,13 @@ export default function AnalyticsManager() {
             window.addEventListener(event, handleInteraction, { passive: true })
         );
 
-        let idleCallbackId: number | undefined;
-        let fallbackTimer: number | undefined;
-        const loadWhenIdle = () => {
+        // Load after 4 seconds regardless if they don't move
+        const timer = setTimeout(() => {
             setShouldLoad(true);
-        };
-        const scheduleLoadWhenIdle = () => {
-            if (typeof window.requestIdleCallback === "function") {
-                idleCallbackId = window.requestIdleCallback(loadWhenIdle, {
-                    timeout: 5000,
-                });
-            } else {
-                fallbackTimer = window.setTimeout(loadWhenIdle, 1000);
-            }
-        };
-
-        if (document.readyState === "complete") {
-            scheduleLoadWhenIdle();
-        } else {
-            window.addEventListener("load", scheduleLoadWhenIdle, {
-                once: true,
-            });
-        }
+        }, 4000);
 
         return () => {
-            window.removeEventListener("load", scheduleLoadWhenIdle);
-            if (
-                idleCallbackId !== undefined &&
-                typeof window.cancelIdleCallback === "function"
-            ) {
-                window.cancelIdleCallback(idleCallbackId);
-            }
-            if (fallbackTimer !== undefined) {
-                window.clearTimeout(fallbackTimer);
-            }
+            clearTimeout(timer);
             ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event =>
                 window.removeEventListener(event, handleInteraction)
             );
@@ -79,33 +52,26 @@ export default function AnalyticsManager() {
             </Script>
 
             {/* Inspectlet tracking code */}
-            <Script id="inspectlet" strategy="lazyOnload">
-                {`
-    (function() {
-      window.__insp = window.__insp || [];
-      window.__insp.push(['wid', 1755129041]);
-
-      var ldinsp = function() {
-        if (typeof window.__inspld !== "undefined") return;
-
-        window.__inspld = 1;
-
-        var insp = document.createElement('script');
-        insp.type = 'text/javascript';
-        insp.async = true;
-        insp.id = 'inspsync';
-
-        insp.src =
-          'https://cdn.inspectlet.com/inspectlet.js?wid=1755129041&r=' +
-          Math.floor(new Date().getTime() / 3600000);
-
-        document.head.appendChild(insp);
-      };
-
-      setTimeout(ldinsp, 0);
-    })();
-  `}
-            </Script>
+            <Script id="inspectlet" strategy="lazyOnload">{`
+        (function() {
+          window._insp = window._insp || [];
+          __insp.push(['wid', 1755129041]);
+          var ldinsp = function(){
+            if(typeof window._inspld != "undefined") return;
+            window._inspld = 1;
+            var insp = document.createElement('script');
+            insp.type = 'text/javascript';
+            insp.async = true;
+            insp.id = "inspsync";
+            insp.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://cdn.inspectlet.com/inspectlet.js?wid=1755129041&r=' +
+              Math.floor(new Date().getTime()/3600000);
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(insp, x);
+          };
+          setTimeout(ldinsp, 0);
+        })();
+      `}</Script>
 
             {/* Bing UET */}
             <Script id="bing-uet" strategy="lazyOnload">{`

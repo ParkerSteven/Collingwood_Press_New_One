@@ -13,18 +13,7 @@ const PopupForm = dynamic(
 );
 
 export default function HeroActions({ firstButtonText, secondButtonText }: any) {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-    const handleChat = () => {
-        if (
-            typeof window !== "undefined" &&
-            window.BrevoConversations
-        ) {
-            window.BrevoConversations("openChat");
-        } else {
-            window.dispatchEvent(new Event("openAIChat"));
-        }
-    };
+    const [isPopupOpen, setIsPopupOpen] = useState(false)
 
     return (
         <>
@@ -40,7 +29,17 @@ export default function HeroActions({ firstButtonText, secondButtonText }: any) 
                 </Button>
 
                 <Button
-                    onClick={handleChat}
+                    onClick={() => {
+                        if (typeof window !== 'undefined' && window.BrevoConversations) {
+                            // the API doesn't expose an "open" method – use openChat instead
+                            // passing `true` opens the widget immediately (argument is optional)
+                            window.BrevoConversations('openChat');
+                        } else {
+                            // fallback if the script hasn't injected yet; we don't have a /chat
+                            // route, so navigate to the homepage instead (or remove entirely)
+                            window.location.href = '/';
+                        }
+                    }}
                     variant="outline"
                     size="md"
                     className="text-white cursor-pointer"

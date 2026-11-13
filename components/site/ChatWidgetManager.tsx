@@ -4,30 +4,20 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
-import { getStoredAdTracking } from "@/lib/adTracking";
 import { usePopup } from "@/contexts/PopupContext";
 import AIHelpSidebar from "./AIHelpSidebar";
+import { getStoredAdTracking } from "@/lib/adTracking";
 
-type ActiveWidget = "brevo" | "jotform" | null;
+// Widget Types
+type WidgetType = "brevo" | "jotform" | null;
 
-interface BrevoIntegrationData {
-    msclkid: string;
-    ad_click_time: string;
-    ad_landing_url: string;
-}
-
-type BrevoConversationsFunction = {
-    (
-        command: "updateIntegrationData",
-        data: BrevoIntegrationData
-    ): void;
-    (command: "openChat"): void;
-    q?: unknown[][];
-};
-
+// Brevo Conversations Window Type
 declare global {
     interface Window {
-        BrevoConversations?: BrevoConversationsFunction;
+        BrevoConversations?: (
+            command: string,
+            data?: Record<string, string>
+        ) => void;
         BrevoConversationsID?: string;
         BrevoConversationsConfig?: {
             verticalSpacing?: number;
@@ -36,20 +26,21 @@ declare global {
     }
 }
 
+// Check Home Page
 function isHomePage(pathname: string | null): boolean {
     const normalized = pathname?.replace(/\/$/, "") || "/";
     return normalized === "/";
 }
 
-function getPakistanMinutes(): number {
+// Get Karachi Time in Minutes
+function getKarachiMinutes(): number {
     const now = new Date();
 
-    const formatter = new Intl.DateTimeFormat("en-US", {
+    const formatter = new Intl.DateTimeFormat("en-GB", {
         timeZone: "Asia/Karachi",
         hour12: false,
         hour: "numeric",
         minute: "numeric",
-        hourCycle: "h23",
     });
 
     const timeParts = formatter.formatToParts(now);
@@ -67,18 +58,18 @@ function getPakistanMinutes(): number {
         }
     });
 
-    if (hour === 24) {
-        hour = 0;
-    }
+    if (hour === 24) hour = 0;
 
     return hour * 60 + minute;
 }
 
+// Check Brevo Time
 function isBrevoTime(): boolean {
-    const currentMinutes = getPakistanMinutes();
+    const currentMinutes = getKarachiMinutes();
 
-    const brevoStart = 17 * 60 + 30;
-    const brevoEnd = 3 * 60 + 10;
+    // Brevo AI Chat: 6:00 PM to 4:30 AM
+    const brevoStart = 18 * 60;
+    const brevoEnd = 4 * 60 + 30;
 
     return (
         currentMinutes >= brevoStart ||
@@ -86,9 +77,9 @@ function isBrevoTime(): boolean {
     );
 }
 
-export default function ChatWidgetManager(): React.JSX.Element | null {
+export default function ChatWidgetManager() {
     const [activeWidget, setActiveWidget] =
-        useState<ActiveWidget>(null);
+        useState<WidgetType>(null);
 
     const [isSidebarOpen, setIsSidebarOpen] =
         useState<boolean>(false);
@@ -99,6 +90,46 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
     const { openPopup } = usePopup();
     const pathname = usePathname();
 
+    // Load widget after user interaction
+    useEffect(() => {
+        const events: string[] = [
+            "scroll",
+            "mousemove",
+            "touchstart",
+            "keydown",
+        ];
+
+        const handleInteraction = (): void => {
+            setShouldLoadWidget(true);
+
+            events.forEach((event: string) => {
+                window.removeEventListener(event, handleInteraction);
+            });
+        };
+
+        events.forEach((event: string) => {
+            window.addEventListener(event, handleInteraction, {
+                passive: true,
+            });
+        });
+
+        // Fallback timer: 4 seconds
+        const timer: ReturnType<typeof setTimeout> = setTimeout(
+            () => {
+                setShouldLoadWidget(true);
+            },
+            4000
+        );
+
+        return () => {
+            clearTimeout(timer);
+
+            events.forEach((event: string) => {
+                window.removeEventListener(event, handleInteraction);
+            });
+        };
+    }, []);
+
     // Handle fallback popup
     useEffect(() => {
         const handleOpenPopup = (): void => {
@@ -107,10 +138,10 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
                 return;
             }
 
-            if (isBrevoTime()) {
-                openPopup();
-            } else {
+            if (!isBrevoTime()) {
                 setIsSidebarOpen(true);
+            } else {
+                openPopup();
             }
         };
 
@@ -127,111 +158,28 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
         };
     }, [openPopup, pathname]);
 
-    // Handle opening active chat directly (Brevo or Jotform)
-    useEffect(() => {
-        const handleOpenAIChat = (): void => {
-            setShouldLoadWidget(true);
-
-            const tryOpen = (): boolean => {
-                const w = window as any;
-
-                // 1. Try Brevo Conversations API
-                if (typeof w.BrevoConversations === "function") {
-                    try {
-                        w.BrevoConversations("show");
-                        w.BrevoConversations("openChat", true);
-                        w.BrevoConversations("expandWidget", true);
-                        return true;
-                    } catch (e) {}
-                } else if (w.BrevoConversations && Array.isArray(w.BrevoConversations.q)) {
-                    w.BrevoConversations("show");
-                    w.BrevoConversations("openChat", true);
-                }
-
-                // 2. Try Brevo iframe trigger click or hash navigation
-                const brevoIframe = document.querySelector<HTMLElement>(
-                    "#brevo-conversations-widget, .brevo-conversations-widget, iframe[src*='conversations-widget.brevo.com']"
-                );
-                if (brevoIframe) {
-                    try {
-                        window.location.hash = "brevoConversationsExpanded";
-                    } catch (e) {}
-                }
-
-                // 3. Try global jotformAgentInstance
-                const agentInstance = w.jotformAgentInstance;
-                if (agentInstance && typeof agentInstance.setIsOpened === "function") {
-                    agentInstance.setIsOpened(true);
-                    if (typeof agentInstance.setIsExpanded === "function") {
-                        agentInstance.setIsExpanded(true);
-                    }
-                    return true;
-                }
-
-                // 4. Try clicking DOM elements inside the Jotform widget container
-                const trigger = document.querySelector<HTMLElement>(
-                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b .__chat, " +
-                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b .__avatar, " +
-                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b input, " +
-                    "#JotformAgent-019d4a7018e47a9ba9de1aa47b2de6686c0b button"
-                );
-
-                if (trigger) {
-                    trigger.click();
-                    return true;
-                }
-
-                return false;
-            };
-
-            // Pre-queue for Brevo immediately in case script is in flight
-            const w = window as any;
-            if (w.BrevoConversations) {
-                try {
-                    w.BrevoConversations("show");
-                    w.BrevoConversations("openChat", true);
-                } catch (e) {}
-            }
-
-            if (!tryOpen()) {
-                let attempts = 0;
-                const pollInterval = window.setInterval(() => {
-                    attempts += 1;
-                    if (tryOpen() || attempts >= 30) {
-                        window.clearInterval(pollInterval);
-                    }
-                }, 150);
-            }
-        };
-
-        window.addEventListener("openAIChat", handleOpenAIChat);
-
-        return () => {
-            window.removeEventListener("openAIChat", handleOpenAIChat);
-        };
-    }, []);
-
-    // Determine active chat widget based on Pakistan time
+    // Check time and select active widget
     useEffect(() => {
         const checkTimeAndSetWidget = (): void => {
-            setActiveWidget(
-                isBrevoTime() ? "brevo" : "jotform"
-            );
+            if (isBrevoTime()) {
+                setActiveWidget("brevo");
+            } else {
+                setActiveWidget("jotform");
+            }
         };
 
         checkTimeAndSetWidget();
 
-        const interval = window.setInterval(
-            checkTimeAndSetWidget,
-            60000
-        );
+        const interval: ReturnType<typeof setInterval> =
+            setInterval(checkTimeAndSetWidget, 60000);
 
         return () => {
-            window.clearInterval(interval);
+            clearInterval(interval);
         };
     }, []);
 
-    // Send stored ad tracking data to Brevo
+    // Attach stored ad-click attribution
+    // to the live Brevo Conversations session
     useEffect(() => {
         if (
             activeWidget !== "brevo" ||
@@ -240,62 +188,53 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
             return;
         }
 
-        const {
-            msclkid,
-            msclkidTs,
-            landingUrl,
-        } = getStoredAdTracking();
+        const { msclkid, msclkidTs, landingUrl } =
+            getStoredAdTracking();
 
-        if (!msclkid) {
-            return;
-        }
+        if (!msclkid) return;
 
         let attempts = 0;
         const maxAttempts = 20;
 
-        const poll = window.setInterval(() => {
-            attempts += 1;
+        const poll: ReturnType<typeof setInterval> =
+            setInterval(() => {
+                attempts += 1;
 
-            if (
-                typeof window.BrevoConversations === "function"
-            ) {
-                window.BrevoConversations(
-                    "updateIntegrationData",
-                    {
-                        msclkid,
-                        ad_click_time: msclkidTs || "",
-                        ad_landing_url: landingUrl || "",
-                    }
-                );
+                if (
+                    typeof window !== "undefined" &&
+                    typeof window.BrevoConversations === "function"
+                ) {
+                    window.BrevoConversations(
+                        "updateIntegrationData",
+                        {
+                            msclkid,
+                            ad_click_time: String(msclkidTs || ""),
+                            ad_landing_url: String(landingUrl || ""),
+                        }
+                    );
 
-                window.clearInterval(poll);
-            } else if (attempts >= maxAttempts) {
-                window.clearInterval(poll);
-            }
-        }, 300);
+                    clearInterval(poll);
+                } else if (attempts >= maxAttempts) {
+                    clearInterval(poll);
+                }
+            }, 300);
 
         return () => {
-            window.clearInterval(poll);
+            clearInterval(poll);
         };
     }, [activeWidget, shouldLoadWidget]);
 
-    if (!activeWidget) {
-        return null;
-    }
+    if (!activeWidget) return null;
 
     return (
         <>
-            {/* Brevo Live Chat Widget */}
+            {/* Brevo Widget */}
             {activeWidget === "brevo" && shouldLoadWidget && (
                 <>
-                    <Script
-                        id="brevo-init"
-                        strategy="afterInteractive"
-                    >
+                    <Script id="brevo-init" strategy="lazyOnload">
                         {`
               (function(d, w, c) {
-                w.BrevoConversationsID =
-                  '6a4bda091ec9d4d3c004acf1';
+                w.BrevoConversationsID = '6a4bda091ec9d4d3c004acf1';
 
                 w.BrevoConversationsConfig = {
                   verticalSpacing: 120,
@@ -306,16 +245,9 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
                   (w[c].q = w[c].q || []).push(arguments);
                 };
 
-                if (w.__pendingOpenAIChat) {
-                  w[c]('show');
-                  w[c]('openChat', true);
-                  w.__pendingOpenAIChat = false;
-                }
-
                 var s = d.createElement('script');
                 s.async = true;
-                s.src =
-                  'https://conversations-widget.brevo.com/brevo-conversations.js';
+                s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
 
                 if (d.head) {
                   d.head.appendChild(s);
@@ -338,66 +270,28 @@ export default function ChatWidgetManager(): React.JSX.Element | null {
                 </>
             )}
 
-            {/* Jotform AI Agent */}
+            {/* Jotform Widget */}
             {activeWidget === "jotform" && (
                 <>
                     {shouldLoadWidget && (
                         <Script
                             id="jotform-agent-auto"
-                            strategy="afterInteractive"
+                            strategy="lazyOnload"
                         >
                             {`
+                // Inject Jotform Agent script
                 (function() {
-                  var _AgentInitializer = window.AgentInitializer;
-                  function wrapInit(ai) {
-                    if (!ai || ai.__wrapped) return ai;
-                    var origInit = ai.init;
-                    if (typeof origInit === 'function') {
-                      ai.init = function(config) {
-                        var instance = origInit.call(this, config);
-                        window.jotformAgentInstance = instance;
-                        if (window.__pendingOpenAIChat) {
-                          try {
-                            instance.setIsOpened(true);
-                            if (instance.setIsExpanded) instance.setIsExpanded(true);
-                          } catch (e) {}
-                          window.__pendingOpenAIChat = false;
-                        }
-                        return instance;
-                      };
-                      ai.__wrapped = true;
-                    }
-                    return ai;
-                  }
-
-                  if (_AgentInitializer) {
-                    wrapInit(_AgentInitializer);
-                  }
-
-                  try {
-                    Object.defineProperty(window, 'AgentInitializer', {
-                      configurable: true,
-                      enumerable: true,
-                      get: function() { return _AgentInitializer; },
-                      set: function(val) { _AgentInitializer = wrapInit(val); }
-                    });
-                  } catch (e) {}
-
                   var s = document.createElement('script');
-                  s.src =
-                    'https://cdn.jotfor.ms/agent/embedjs/019d4a7018e47a9ba9de1aa47b2de6686c0b/embed.js';
+                  s.src = 'https://cdn.jotfor.ms/agent/embedjs/019d4a7018e47a9ba9de1aa47b2de6686c0b/embed.js';
                   s.async = true;
                   document.head.appendChild(s);
                 })();
 
-                window.openAIChat = function() {
-                  window.dispatchEvent(new Event('openAIChat'));
-                };
-
+                // Fallback popup handler
                 window.BrevoConversations = function(command) {
                   if (command === 'openChat') {
                     window.dispatchEvent(
-                      new Event('openAIChat')
+                      new Event('openFallbackPopup')
                     );
                   }
                 };

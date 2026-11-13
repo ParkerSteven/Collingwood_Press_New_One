@@ -1,15 +1,15 @@
 
 "use client";
 
-import PopupForm from "@/components/forms/popupform";
 import React, {
     createContext,
     useContext,
     useState,
     useRef,
-    type ReactNode,
+    ReactNode,
 } from "react";
 
+import PopupForm from "@/components/forms/popupform";
 
 // Context Type
 interface PopupContextType {
@@ -18,7 +18,7 @@ interface PopupContextType {
     isPopupOpen: boolean;
 }
 
-// Provider Props
+// Provider Props Type
 interface PopupProviderProps {
     children: ReactNode;
 }
@@ -30,7 +30,7 @@ const PopupContext = createContext<PopupContextType | undefined>(
 
 export function PopupProvider({
     children,
-}: PopupProviderProps): React.JSX.Element {
+}: PopupProviderProps) {
     const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
     const [popupSource, setPopupSource] = useState<string>(
@@ -41,20 +41,16 @@ export function PopupProvider({
 
     const popupClosedRef = useRef<boolean>(false);
 
-    // Open Popup
     const openPopup = (
         source: string = "General Lead Popup"
     ): void => {
         popupClosedRef.current = false;
 
-        setPopupInstance((instance: number) => instance + 1);
-
+        setPopupInstance((instance) => instance + 1);
         setPopupSource(source);
-
         setIsPopupOpen(true);
     };
 
-    // Close Popup
     const closePopup = (): void => {
         // Mark that the user intentionally closed the popup
         popupClosedRef.current = true;
@@ -83,7 +79,6 @@ export function PopupProvider({
     );
 }
 
-// Custom Hook
 export function usePopup(): PopupContextType {
     const context = useContext(PopupContext);
 
