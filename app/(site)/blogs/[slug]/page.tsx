@@ -239,6 +239,22 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
     const featuredImage = getImageUrl(post);
     const authorName = post._embedded?.author?.[0]?.name || 'The Collingwood Press Editorial Board';
     const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug.replace(/\/+$/, "")}/`;
+    const articleContent = post.slug === 'audiobook-distribution-platforms'
+        ? post.content.rendered.replace(
+            '<a href="https://thecollingwoodpress.com/audiobook-services">The Collingwood Press</a>',
+            '<a href="https://thecollingwoodpress.com/audiobook/">The Collingwood Press</a>',
+        )
+        : post.slug === 'book-editing-guide'
+            ? post.content.rendered.replace(
+                '<a href="https://www.thecollingwoodpress.com/blogs/how-professional-book-edits-transforms-rough-drafts-into-bestsellers/">professional book editing can transform rough drafts into polished books</a>',
+                '<a href="https://www.thecollingwoodpress.com/blogs/book-edits-turn-drafts-into-bestsellers/">professional book editing can transform rough drafts into polished books</a>',
+            )
+            : post.slug === 'smart-ways-to-make-a-book-cover'
+                ? post.content.rendered.replace(
+                    '<a href="https://www.thecollingwoodpress.com/blogs/dont-judge-a-book-by-its-co">judge a book by its cover</a>',
+                    '<a href="https://www.thecollingwoodpress.com/blogs/dont-judge-a-book-by-its-cover/">judge a book by its cover</a>',
+                )
+                : post.content.rendered;
 
     // Extract categories
     const categories = post._embedded?.['wp:term']?.[0]?.map((term) => term.name).filter(Boolean) || [];
@@ -382,7 +398,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                             <div
                                 className="blog-article-content rounded-xl border border-[#ebe4df] bg-white p-5 sm:p-7 lg:p-8"
                                 dangerouslySetInnerHTML={{
-                                    __html: formatBlogHtml(post.content.rendered),
+                                    __html: formatBlogHtml(articleContent),
                                 }}
                             />
 
