@@ -21,7 +21,7 @@ const servicesLinks = [
   { label: "Marketing", href: "/marketing" },
   // { label: "Book Fairs", href: "#" },
   // { label: "Cover Design", href: "#" },
-  { label: "Audiobook Production", href: "/audiobook" },
+  { label: "Audiobook Production", href: "/audiobook/" },
 ];
 
 const companyLinks = [

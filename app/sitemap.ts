@@ -34,7 +34,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { path: '/privacy-policy', priority: 0.3 },
         { path: '/terms-and-conditions', priority: 0.3 },
         { path: '/ai-and-llm-resources', priority: 0.8 },
-        { path: '/team/daniel-drapper', priority: 0.8 },
     ];
 
     const staticPages: MetadataRoute.Sitemap =

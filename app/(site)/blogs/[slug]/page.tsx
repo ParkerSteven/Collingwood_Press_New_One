@@ -239,22 +239,50 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
     const featuredImage = getImageUrl(post);
     const authorName = post._embedded?.author?.[0]?.name || 'The Collingwood Press Editorial Board';
     const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug.replace(/\/+$/, "")}/`;
+    
+    // Sanitize outdated internal URLs in article HTML to point directly to canonical destinations
+    const sanitizedRawContent = post.content.rendered
+        .replace(
+            /https?:\/\/(?:www\.)?thecollingwoodpress\.com\/blogs\/dont-judge-a-book-by-its-co\/?/g,
+            'https://www.thecollingwoodpress.com/blogs/dont-judge-a-book-by-its-cover/'
+        )
+        .replace(
+            /(href=["'])\/blogs\/dont-judge-a-book-by-its-co\/?/g,
+            '$1/blogs/dont-judge-a-book-by-its-cover/'
+        )
+        .replace(
+            /https?:\/\/(?:www\.)?thecollingwoodpress\.com\/blogs\/how-professional-book-edits-transforms-rough-drafts-into-bestsellers\/?/g,
+            'https://www.thecollingwoodpress.com/blogs/book-edits-turn-drafts-into-bestsellers/'
+        )
+        .replace(
+            /(href=["'])\/blogs\/how-professional-book-edits-transforms-rough-drafts-into-bestsellers\/?/g,
+            '$1/blogs/book-edits-turn-drafts-into-bestsellers/'
+        )
+        .replace(
+            /https?:\/\/(?:www\.)?thecollingwoodpress\.com\/audiobook-services\/?/g,
+            'https://www.thecollingwoodpress.com/audiobook/'
+        )
+        .replace(
+            /(href=["'])\/audiobook-services\/?/g,
+            '$1/audiobook/'
+        );
+
     const articleContent = post.slug === 'audiobook-distribution-platforms'
-        ? post.content.rendered.replace(
+        ? sanitizedRawContent.replace(
             '<a href="https://thecollingwoodpress.com/audiobook-services">The Collingwood Press</a>',
-            '<a href="https://thecollingwoodpress.com/audiobook/">The Collingwood Press</a>',
+            '<a href="https://www.thecollingwoodpress.com/audiobook/">The Collingwood Press</a>',
         )
         : post.slug === 'book-editing-guide'
-            ? post.content.rendered.replace(
+            ? sanitizedRawContent.replace(
                 '<a href="https://www.thecollingwoodpress.com/blogs/how-professional-book-edits-transforms-rough-drafts-into-bestsellers/">professional book editing can transform rough drafts into polished books</a>',
                 '<a href="https://www.thecollingwoodpress.com/blogs/book-edits-turn-drafts-into-bestsellers/">professional book editing can transform rough drafts into polished books</a>',
             )
             : post.slug === 'smart-ways-to-make-a-book-cover'
-                ? post.content.rendered.replace(
+                ? sanitizedRawContent.replace(
                     '<a href="https://www.thecollingwoodpress.com/blogs/dont-judge-a-book-by-its-co">judge a book by its cover</a>',
                     '<a href="https://www.thecollingwoodpress.com/blogs/dont-judge-a-book-by-its-cover/">judge a book by its cover</a>',
                 )
-                : post.content.rendered;
+                : sanitizedRawContent;
 
     // Extract categories
     const categories = post._embedded?.['wp:term']?.[0]?.map((term) => term.name).filter(Boolean) || [];

@@ -11,7 +11,7 @@ const navItems = [
     { label: "Editing", href: "/editing" },
     { label: "Publishing", href: "/publishing" },
     { label: "Marketing", href: "/marketing" },
-    { label: "Audiobook", href: "/audiobook" },
+    { label: "Audiobook", href: "/audiobook/" },
     { label: "About Us", href: "/about-us" },
     { label: "Contact Us", href: "/contact-us" },
 ];

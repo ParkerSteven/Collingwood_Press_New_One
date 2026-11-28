@@ -27,7 +27,7 @@ const contactOptions = [
         description:
             "Get a personalized quote for your audiobook project fast and easy.",
         buttonText: "Get a Quote",
-        href: "/audiobook",
+        href: "/audiobook/",
         isPopup: true,
     },
     {

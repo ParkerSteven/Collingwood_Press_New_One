@@ -174,7 +174,7 @@ export async function generateMetadata({ params }: BlogSlugPageProps): Promise<M
 
     const title = plainText(post.title.rendered);
     const excerpt = plainText(post.excerpt.rendered) || `Read ${title} on The Collingwood Press Journal.`;
-    const canonicalUrl = `https://www.thecollingwoodpress.com/blog/${post.slug}/`;
+    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug}/`;
     const imageUrl = getImageUrl(post);
 
     return {
@@ -223,7 +223,34 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
     const readTimeMinutes = getReadingTime(post.content.rendered);
     const featuredImage = getImageUrl(post);
     const authorName = post._embedded?.author?.[0]?.name || 'The Collingwood Press Editorial Board';
-    const canonicalUrl = `https://www.thecollingwoodpress.com/blog/${post.slug}/`;
+    const canonicalUrl = `https://www.thecollingwoodpress.com/blogs/${post.slug}/`;
+
+    // Sanitize outdated internal URLs in article HTML to point directly to canonical destinations
+    const sanitizedContent = (post.content.rendered || '')
+        .replace(
+            /https?:\/\/(?:www\.)?thecollingwoodpress\.com\/blogs\/dont-judge-a-book-by-its-co\/?/g,
+            'https://www.thecollingwoodpress.com/blogs/dont-judge-a-book-by-its-cover/'
+        )
+        .replace(
+            /(href=["'])\/blogs\/dont-judge-a-book-by-its-co\/?/g,
+            '$1/blogs/dont-judge-a-book-by-its-cover/'
+        )
+        .replace(
+            /https?:\/\/(?:www\.)?thecollingwoodpress\.com\/blogs\/how-professional-book-edits-transforms-rough-drafts-into-bestsellers\/?/g,
+            'https://www.thecollingwoodpress.com/blogs/book-edits-turn-drafts-into-bestsellers/'
+        )
+        .replace(
+            /(href=["'])\/blogs\/how-professional-book-edits-transforms-rough-drafts-into-bestsellers\/?/g,
+            '$1/blogs/book-edits-turn-drafts-into-bestsellers/'
+        )
+        .replace(
+            /https?:\/\/(?:www\.)?thecollingwoodpress\.com\/audiobook-services\/?/g,
+            'https://www.thecollingwoodpress.com/audiobook/'
+        )
+        .replace(
+            /(href=["'])\/audiobook-services\/?/g,
+            '$1/audiobook/'
+        );
 
     // Extract categories
     const categories = post._embedded?.['wp:term']?.[0]?.map((term) => term.name).filter(Boolean) || [];
@@ -345,7 +372,7 @@ export default async function BlogPostPage({ params }: BlogSlugPageProps) {
                             {/* Rendered WordPress HTML Content */}
                             <div
                                 className="blog-article-content rounded-xl border border-[#ebe4df] bg-white p-6 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgba(17,24,39,0.04)]"
-                                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+                                dangerouslySetInnerHTML={{ __html: sanitizedContent }}
                             />
 
                             {/* Share Strip & Article Footer */}
